@@ -31,7 +31,7 @@ module tb_gates();
     wire y4;
     wire y5;
     wire y6;
-
+/*
 gates dut(
     .a (a),
     .b (b),
@@ -43,6 +43,9 @@ gates dut(
     .y5(y5),
     .y6(y6)
     );
+ */
+ 
+    gates dut(a, b, y0, y1, y2, y3, y4, y5, y6);
     
     initial begin
         #00 a = 1'b0; b = 1'b0;

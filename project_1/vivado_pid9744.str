@@ -1,0 +1,148 @@
+/*
+
+Xilinx Vivado v2020.2 (64-bit) [Major: 2020, Minor: 2]
+SW Build: 3064766 on Wed Nov 18 09:12:45 MST 2020
+IP Build: 3064653 on Wed Nov 18 14:17:31 MST 2020
+
+Process ID (PID): 9744
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Mon Nov 04 15:06:40 KST 2024
+Time zone: 	Korean Standard Time (Asia/Seoul)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 16
+
+Screen size: 2560x1440
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.2 64-bit
+Java home: 	C:/Xilinx/Vivado/2020.2/tps/win64/jre11.0.2
+Java executable location: 	C:/Xilinx/Vivado/2020.2/tps/win64/jre11.0.2/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	kccistc
+User home directory: C:/Users/kccistc
+User working directory: D:/GitHub/harman_Verilog/project_1
+User country: 	KR
+User language: 	ko
+User locale: 	ko_KR
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2020.2
+RDI_DATADIR: C:/Xilinx/Vivado/2020.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2020.2/bin
+
+Vivado preferences file location: C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/2020.2/vivado.xml
+Vivado preferences directory: C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/2020.2/
+Vivado layouts directory: C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/2020.2/data/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2020.2/lib/classes/planAhead.jar
+Vivado log file location: 	D:/GitHub/harman_Verilog/project_1/vivado.log
+Vivado journal file location: 	D:/GitHub/harman_Verilog/project_1/vivado.jou
+Engine tmp dir: 	D:/GitHub/harman_Verilog/project_1/.Xil/Vivado-9744-DESKTOP-7CFQ9ND
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_HLS: C:/Xilinx/Vitis_HLS/2020.2
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2020.2
+XILINX_SDK: C:/Xilinx/Vitis/2020.2
+XILINX_VITIS: C:/Xilinx/Vitis/2020.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2020.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2020.2
+
+
+GUI allocated memory:	177 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,117 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bz (cr):  Open Project : addNotify
+// Opening Vivado Project: D:\GitHub\harman_Verilog\project_1\project_1.xpr. Version: Vivado v2020.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project D:/GitHub/harman_Verilog/project_1/project_1.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 85 MB (+86596kb) [00:00:07]
+// [Engine Memory]: 1,117 MB (+1019263kb) [00:00:07]
+// [GUI Memory]: 109 MB (+20621kb) [00:00:07]
+// [GUI Memory]: 123 MB (+9041kb) [00:00:08]
+// WARNING: HEventQueue.dispatchEvent() is taking  1739 ms.
+// Tcl Message: open_project D:/GitHub/harman_Verilog/project_1/project_1.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/kccistc/Documents/GitHub/Verilog/project_1' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'. 
+// Project name: project_1; location: D:/GitHub/harman_Verilog/project_1; part: xc7a35tcpg236-1
+dismissDialog("Open Project"); // bz
+// HMemoryUtils.trashcanNow. Engine heap size: 1,117 MB. GUI used memory: 65 MB. Current time: 11/4/24, 3:06:40 PM KST
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 139 MB (+10251kb) [00:00:13]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 3, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 3, true, false, false, false, false, true); // D - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 2, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 2, true, false, false, false, false, true); // D - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_gates (tb_gates.v)]", 7, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, tb_gates (tb_gates.v)]", 7, true, false, false, false, false, true); // D - Double Click - Node
+selectCodeEditor("tb_gates.v", 242, 410); // bP
+selectCodeEditor("tb_gates.v", 90, 440); // bP
+// Elapsed time: 13 seconds
+selectCodeEditor("tb_gates.v", 49, 637); // bP
+typeControlKey((HResource) null, "tb_gates.v", 'c'); // bP
+selectCodeEditor("tb_gates.v", 13, 687); // bP
+typeControlKey((HResource) null, "tb_gates.v", 'v'); // bP
+selectCodeEditor("tb_gates.v", 74, 619); // bP
+// Elapsed time: 30 seconds
+selectCodeEditor("tb_gates.v", 214, 476); // bP
+selectCodeEditor("tb_gates.v", 229, 458); // bP
+selectCodeEditor("tb_gates.v", 448, 464); // bP
+selectCodeEditor("tb_gates.v", 448, 467); // bP
+selectCodeEditor("tb_gates.v", 10, 443); // bP
+selectCodeEditor("tb_gates.v", 322, 448); // bP
+// Elapsed time: 18 seconds
+selectCodeEditor("tb_gates.v", 308, 380); // bP
+selectCodeEditor("tb_gates.v", 303, 389); // bP
+selectCodeEditor("tb_gates.v", 309, 390); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
