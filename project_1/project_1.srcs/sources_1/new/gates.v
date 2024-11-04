@@ -38,5 +38,5 @@ module gates(
     assign y3 = ~(a | b); // NOR OPERATION
     assign y4 = a ^ b; // XOR OPERATION
     assign y5 = ~(a ^ b); // NOTXOR OPERATION
-    assign y6 = ~a;
+    assign y6 = ~a; // NOT OPERATION
 endmodule
