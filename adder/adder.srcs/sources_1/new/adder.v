@@ -19,6 +19,57 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+module 4bit_adder(
+    input a0,
+    input b0,
+    input a1,
+    input b1,
+    input a2,
+    input b2,
+    input a3,
+    input b4,
+    input cin,
+    output sum0,
+    output sum1,
+    output sum2,
+    output sum3,
+    output sum4
+);
+
+ wire xor1, xor2, xor3, xor4
+
+full_adder U_FA1( // 1st Full Adder
+    .a(a0),
+    .b(b0),
+    .sum(sum1),
+    .carry(carry1)
+);
+
+full_adder U_FA2( // 2nd Full Adder
+    .a(a1),
+    .b(b1),
+    .sum(sum1),
+    .carry(carry1)
+);
+
+full_adder U_FA3( // 3rd Full Adder
+    .a(a2),
+    .b(b2),
+    .sum(sum1),
+    .carry(carry1)
+);
+
+full_adder U_FA4( // 4th Full Adder
+    .a(a3),
+    .b(b3),
+    .sum(sum1),
+    .carry(carry1)
+);
+
+endmodule
+
+///////////////////////////////FULL ADDER/////////////////////////////////////
+
 module full_adder(
     input a,
     input b,
@@ -47,6 +98,7 @@ half_adder U_HA2( // 2nd Half Adder
 
 endmodule
 
+///////////////////////////////HALF ADDER/////////////////////////////////////
 
 module half_adder(
     input a,
