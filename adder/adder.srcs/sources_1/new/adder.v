@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2024/11/04 15:42:20
+// Create Date: 2024/11/04 17:29:40
 // Design Name: 
 // Module Name: adder
 // Project Name: 
@@ -19,7 +19,8 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module 4bit_adder(
+
+module _4bit_adder(
     input a0,
     input b0,
     input a1,
@@ -27,27 +28,29 @@ module 4bit_adder(
     input a2,
     input b2,
     input a3,
-    input b4,
+    input b3,
     input cin,
     output sum0,
     output sum1,
     output sum2,
     output sum3,
-    output sum4
+    output carry
 );
 
- wire xor1, xor2, xor3, xor4, carry0, carry1, carry2, carry4, sum0, sum1, sum2, sum3
+ wire carry0, carry1, carry2, carry4, sum0, sum1, sum2, sum3;
 
 full_adder U_FA1( // 1st Full Adder
     .a(a0),
     .b(b0),
-    .sum(sum1),
-    .carry(carry1)
+    .cin(cin),
+    .sum(sum0),
+    .carry(carry0)
 );
 
 full_adder U_FA2( // 2nd Full Adder
     .a(a1),
     .b(b1),
+    .cin(carry0),
     .sum(sum1),
     .carry(carry1)
 );
@@ -55,16 +58,20 @@ full_adder U_FA2( // 2nd Full Adder
 full_adder U_FA3( // 3rd Full Adder
     .a(a2),
     .b(b2),
-    .sum(sum1),
-    .carry(carry1)
+    .cin(carry1),
+    .sum(sum2),
+    .carry(carry2)
 );
 
 full_adder U_FA4( // 4th Full Adder
     .a(a3),
     .b(b3),
-    .sum(sum1),
-    .carry(carry1)
+    .cin(carry2),
+    .sum(sum3),
+    .carry(carry3)
 );
+
+assign carry = carry3;
 
 endmodule
 
