@@ -36,7 +36,7 @@ module 4bit_adder(
     output sum4
 );
 
- wire xor1, xor2, xor3, xor4
+ wire xor1, xor2, xor3, xor4, carry0, carry1, carry2, carry4, sum0, sum1, sum2, sum3
 
 full_adder U_FA1( // 1st Full Adder
     .a(a0),
