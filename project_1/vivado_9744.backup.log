@@ -2,10 +2,10 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Mon Nov  4 15:27:56 2024
-# Process ID: 5040
+# Start of session at: Mon Nov  4 15:06:29 2024
+# Process ID: 9744
 # Current directory: D:/GitHub/harman_Verilog/project_1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17224 D:\GitHub\harman_Verilog\project_1\project_1.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15284 D:\GitHub\harman_Verilog\project_1\project_1.xpr
 # Log file: D:/GitHub/harman_Verilog/project_1/vivado.log
 # Journal file: D:/GitHub/harman_Verilog/project_1\vivado.jou
 #-----------------------------------------------------------
@@ -20,4 +20,4 @@ INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
 update_compile_order -fileset sources_1
 exit
-INFO: [Common 17-206] Exiting Vivado at Mon Nov  4 15:29:00 2024...
+INFO: [Common 17-206] Exiting Vivado at Mon Nov  4 15:27:42 2024...
