@@ -22,13 +22,18 @@
 module calculator (
     input [3:0] a,
     input [3:0] b,
+    input [1:0] swtich,
     output [3:0] fndcom,
     output [7:0] fndfont,
     output carry
     );
 
     wire [3:0] w_sum;
-    assign fndcom = 4'b1110;
+
+    fnd_controller U_fnd_control(
+    .switch_in(swtich),
+    .switch_out(fndcom)
+    );
 
     adder U_4bit_adder (
         .a(a),

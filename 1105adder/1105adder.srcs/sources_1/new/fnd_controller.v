@@ -21,8 +21,19 @@
 
 
 module fnd_controller(
-
+    input [1:0] switch_in,
+    output reg [4:0] switch_out
     );
+
+    always @(switch_in) begin
+        case (switch_in)
+            2'b00 : switch_out = 4'b1110;
+            2'b01 : switch_out = 4'b1101;
+            2'b10 : switch_out = 4'b1011;
+            2'b11 : switch_out = 4'b0111;
+            default: switch_out = 4'b1111;
+        endcase
+    end
 endmodule
 
 
