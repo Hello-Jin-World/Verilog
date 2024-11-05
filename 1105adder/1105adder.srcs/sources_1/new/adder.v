@@ -20,29 +20,132 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module calculator (
-    input [3:0] a,
+/*    input [3:0] a,
     input [3:0] b,
     input [1:0] sel,
     output [3:0] fndcom,
-    output [7:0] fndfont,
-    output carry
+    output [7:0] fndfont
     );
 
     wire [3:0] w_sum;
+    wire w_carry;
+
 
     adder U_4bit_adder (
         .a(a),
         .b(b),
         .sum(w_sum),
-        .carry(carry)
+        .carry(w_carry)
     );
 
    fnd_controller U_fnd_controller(
     .fndsel(sel),
-    .bcddata(w_sum),
+    .bcddata({w_carry, w_sum}),
     .fndcom(fndcom),
     .fndfont(fndfont)
+);*/
+
+    input [7:0] a,
+    input [7:0] b,
+    input [1:0] sel,
+    output [3:0] fndcom,
+    output [7:0] fndfont
+    );
+
+    wire [7:0] w_sum;
+    wire w_carry;
+
+    adder_8bit U_8bit_adder (
+        .a(a),
+        .b(b),
+        .sum(w_sum),
+        .carry(w_carry)
+    );
+
+   fnd_controller U_fnd_controller(
+    .fndsel(sel),
+    .bcddata({w_carry, w_sum}),
+    .fndcom(fndcom),
+    .fndfont(fndfont)
+   );
+   
+endmodule
+
+
+module adder_8bit(
+    input  [7:0] a,
+    input  [7:0] b,
+    output [7:0] sum,
+    output       carry
 );
+
+wire carry0, carry1, carry2, carry3, carry4, carry5, carry6;
+
+full_adder U_FA0(
+    .a(a[0]),
+    .b(b[0]),
+    .cin(1'b0),
+    .sum(sum[0]),
+    .carry(carry0)
+);
+
+full_adder U_FA1(
+    .a(a[1]),
+    .b(b[1]),
+    .cin(carry0),
+    .sum(sum[1]),
+    .carry(carry1)
+);
+
+full_adder U_FA2(
+    .a(a[2]),
+    .b(b[2]),
+    .cin(carry1),
+    .sum(sum[2]),
+    .carry(carry2)
+);
+
+full_adder U_FA3(
+    .a(a[3]),
+    .b(b[3]),
+    .cin(carry2),
+    .sum(sum[3]),
+    .carry(carry3)
+);
+
+full_adder U_FA4(
+    .a(a[4]),
+    .b(b[4]),
+    .cin(carry3),
+    .sum(sum[4]),
+    .carry(carry4)
+);
+
+full_adder U_FA5(
+    .a(a[5]),
+    .b(b[5]),
+    .cin(carry4),
+    .sum(sum[5]),
+    .carry(carry5)
+);
+
+full_adder U_FA6(
+    .a(a[6]),
+    .b(b[6]),
+    .cin(carry5),
+    .sum(sum[6]),
+    .carry(carry6)
+);
+
+full_adder U_FA7(
+    .a(a[7]),
+    .b(b[7]),
+    .cin(carry6),
+    .sum(sum[7]),
+    .carry(carry7)
+);
+assign carry = carry7;
+
 endmodule
 
 module adder(
