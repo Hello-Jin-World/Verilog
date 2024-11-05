@@ -35,16 +35,6 @@ module tb_adder ();
 
     integer i;
     initial begin
-        #00 a = 1;
-        b = 2;
-        #10 a = 5;
-        b = 3;
-        #10 a = 1;
-        b = 5;
-        #10 a = 2;
-        b = 4;
-        #10 a = 1;
-        b = 1;
         for (i = 0; i < 20; i = i + 1) begin
             #10 a = i;
             b = i + 1;
