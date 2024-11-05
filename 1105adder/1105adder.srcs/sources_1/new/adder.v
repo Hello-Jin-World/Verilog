@@ -19,6 +19,29 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+module calculator (
+    input [3:0] a,
+    input [3:0] b,
+    output [3:0] fndcom,
+    output [7:0] fndfont,
+    output carry
+    );
+
+    wire [3:0] w_sum;
+    assign fndcom = 4'b1110;
+
+    adder U_4bit_adder (
+        .a(a),
+        .b(b),
+        .sum(w_sum),
+        .carry(carry)
+    );
+
+    BCDtoSEG_decoder U_BCDtoSEG (
+        .bcd(w_sum),
+        .seg(fndfont)
+    );
+endmodule
 
 module adder(
     input  [3:0] a,

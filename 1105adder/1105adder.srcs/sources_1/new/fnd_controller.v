@@ -51,6 +51,7 @@ module BCDtoSEG_decoder(
             4'he : seg = 8'h86;
             4'hf : seg = 8'h8e;
             default: seg = 8'hff;
+        endcase
     end
 endmodule
 
