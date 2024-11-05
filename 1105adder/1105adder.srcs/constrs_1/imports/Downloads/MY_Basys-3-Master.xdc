@@ -25,8 +25,8 @@ set_property -dict { PACKAGE_PIN W13  IOSTANDARD LVCMOS33 } [get_ports { b[3]  }
 #set_property -dict { package_pin r3   iostandard lvcmos33 } [get_ports { sw[11] }]; #io_l2p_t0_34               ,sch=sw11
 #set_property -dict { package_pin w2   iostandard lvcmos33 } [get_ports { sw[12] }]; #io_l5n_t0_34               ,sch=sw12
 #set_property -dict { package_pin u1   iostandard lvcmos33 } [get_ports { sw[13] }]; #io_l3n_t0_dqs_34           ,sch=sw13
-set_property -dict { package_pin t1   iostandard lvcmos33 } [get_ports { swtich[0] }]; #io_l3p_t0_dqs_34           ,sch=sw14
-set_property -dict { PACKAGE_PIN R2   IOSTANDARD LVCMOS33 } [get_ports { swtich[1] }]; #IO_L1P_T0_34               ,Sch=SW15
+set_property -dict { package_pin t1   iostandard lvcmos33 } [get_ports { sel[0] }]; #io_l3p_t0_dqs_34           ,sch=sw14
+set_property -dict { PACKAGE_PIN R2   IOSTANDARD LVCMOS33 } [get_ports { sel[1] }]; #IO_L1P_T0_34               ,Sch=SW15
 
 
 ## LEDs

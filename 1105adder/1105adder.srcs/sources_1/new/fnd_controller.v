@@ -19,8 +19,25 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
 module fnd_controller(
+    input [1:0] fndsel,
+    input [3:0] bcddata,
+    output [3:0] fndcom,
+    output [7:0] fndfont
+    );
+
+    decoder_2x4 U_decoder_2x4(
+        .switch_in(fndsel),
+        .switch_out(fndcom)
+    );
+
+    BCDtoSEG_decoder U_BCDtoSEG (
+        .bcd(bcddata),
+        .seg(fndfont)
+    );
+endmodule 
+
+module decoder_2x4(
     input [1:0] switch_in,
     output reg [4:0] switch_out
     );
