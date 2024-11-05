@@ -79,7 +79,7 @@ module adder_8bit(
     output       carry
 );
 
-wire carry0, carry1, carry2, carry3, carry4, carry5, carry6;
+wire carry0, carry1, carry2, carry3, carry4, carry5, carry6, carry7;
 
 full_adder U_FA0(
     .a(a[0]),
