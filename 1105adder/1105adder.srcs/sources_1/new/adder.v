@@ -46,19 +46,19 @@ full_adder U_FA1(
 );
 
 full_adder U_FA2(
-    .a(a[1]),
-    .b(b[1]),
+    .a(a[2]),
+    .b(b[2]),
     .cin(carry1),
     .sum(sum[2]),
     .carry(carry2)
 );
 
 full_adder U_FA3(
-    .a(a[1]),
-    .b(b[1]),
+    .a(a[3]),
+    .b(b[3]),
     .cin(carry2),
     .sum(sum[3]),
-    .carry(carry3)
+    .carry(carry)
 );
 
 assign carry = carry3;
