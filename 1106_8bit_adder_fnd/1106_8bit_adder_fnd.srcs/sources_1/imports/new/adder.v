@@ -30,7 +30,8 @@ module calculator (
 
     wire [7:0] w_sum;
     wire w_carry;
-/*
+    wire [13:0] w_bcddata;
+    /*
     adder_8bit U_8bit_adder (
         .a(a),
         .b(b),
@@ -38,17 +39,47 @@ module calculator (
         .sum(w_sum),
         .carry(w_carry)
     );
-*/
+    */
+    clk_div_100ms U_clk_div_100ms(
+        .clk(clk),
+        .reset(reset),
+        .digit(w_bcddata)
+    );
+
     fnd_controller U_fnd_controller (
         .clk(clk),
         .reset(reset),
-        //.bcddata({5'b0, w_carry, w_sum}),  // For 14bit format (add MSB 5'b0)
-        .fndcom (fndcom),
+        .bcddata(w_bcddata),  // For 14bit format (add MSB 5'b0)
+        .fndcom(fndcom),
         .fndfont(fndfont)
     );
-
 endmodule
 
+module clk_div_100ms (
+    input clk,
+    input reset,
+    output [13:0] digit
+);
+
+    reg [23:0] r_counter;
+    reg [13:0] r_digit;
+
+    assign digit = r_digit;  // enable 'output reg o_clk'
+
+    always @(posedge clk, posedge reset) begin
+        if (reset) begin
+            r_counter <= 0;
+            r_digit   <= 14'b0;
+        end else begin
+            if (r_counter == 10_000_000 - 1) begin
+                r_counter <= 0;
+                r_digit   <= r_digit + 1;
+            end else begin
+                r_counter <= r_counter + 1;
+            end
+        end
+    end
+endmodule
 
 module adder_8bit (  // lector version
     input  [7:0] a,
