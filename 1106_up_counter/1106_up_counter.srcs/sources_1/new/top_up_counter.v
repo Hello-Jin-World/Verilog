@@ -22,6 +22,7 @@
 module top_up_counter (
     input clk,
     input reset,
+    input [1:0] switch,
     output [3:0] fndcom,
     output [7:0] fndfont
 );
@@ -30,7 +31,7 @@ module top_up_counter (
     wire [13:0] w_counter;
 
     clk_div_10 U_clk_div_10 (
-        .clk  (clk),
+        .clk(clk),
         .reset(reset),
         .o_clk(w_clk_10hz)
     );
@@ -38,6 +39,7 @@ module top_up_counter (
     up_counter U_up_counter (
         .clk(w_clk_10hz),
         .reset(reset),
+        .switch(switch),
         .counter(w_counter)
     );
 
@@ -80,6 +82,7 @@ endmodule
 module up_counter (
     input clk,
     input reset,
+    input [1:0] switch,
     output [13:0] counter
 );
 
@@ -88,12 +91,12 @@ module up_counter (
     assign counter = r_counter;
 
     always @(posedge clk, posedge reset) begin
-        if (reset) begin
+        if (reset | switch[1]) begin
             r_counter <= 0;
         end else begin
             if (r_counter == 9999) begin
                 r_counter <= 0;
-            end else begin
+            end else if (switch[0]) begin
                 r_counter <= r_counter + 1;
             end
         end
