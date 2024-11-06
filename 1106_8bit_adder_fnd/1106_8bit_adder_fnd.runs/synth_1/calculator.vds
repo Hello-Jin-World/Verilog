@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Wed Nov  6 09:54:33 2024
-# Process ID: 4464
+# Start of session at: Wed Nov  6 10:52:49 2024
+# Process ID: 11936
 # Current directory: D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.runs/synth_1
 # Command line: vivado.exe -log calculator.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source calculator.tcl
 # Log file: D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.runs/synth_1/calculator.vds
@@ -17,47 +17,49 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 4800
+INFO: [Synth 8-7075] Helper process launched with PID 4724
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1105.809 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1105.637 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'calculator' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:22]
-INFO: [Synth 8-6157] synthesizing module 'adder_8bit' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:51]
-INFO: [Synth 8-6157] synthesizing module 'adder_4bit' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:78]
-INFO: [Synth 8-6157] synthesizing module 'full_adder' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:124]
-INFO: [Synth 8-6157] synthesizing module 'half_adder' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:154]
-INFO: [Synth 8-6155] done synthesizing module 'half_adder' (1#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:154]
-INFO: [Synth 8-6155] done synthesizing module 'full_adder' (2#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:124]
-INFO: [Synth 8-6155] done synthesizing module 'adder_4bit' (3#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:78]
-INFO: [Synth 8-6155] done synthesizing module 'adder_8bit' (4#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:51]
+INFO: [Synth 8-6157] synthesizing module 'adder_8bit' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:53]
+INFO: [Synth 8-6157] synthesizing module 'adder_4bit' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:80]
+INFO: [Synth 8-6157] synthesizing module 'full_adder' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:126]
+INFO: [Synth 8-6157] synthesizing module 'half_adder' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:156]
+INFO: [Synth 8-6155] done synthesizing module 'half_adder' (1#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:156]
+INFO: [Synth 8-6155] done synthesizing module 'full_adder' (2#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:126]
+INFO: [Synth 8-6155] done synthesizing module 'adder_4bit' (3#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:80]
+INFO: [Synth 8-6155] done synthesizing module 'adder_8bit' (4#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:53]
 INFO: [Synth 8-6157] synthesizing module 'fnd_controller' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:22]
-INFO: [Synth 8-6157] synthesizing module 'decoder_2x4' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:93]
-INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:99]
-INFO: [Synth 8-6155] done synthesizing module 'decoder_2x4' (5#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:93]
-WARNING: [Synth 8-689] width (4) of port connection 'switch_out' does not match port width (5) of module 'decoder_2x4' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:33]
-INFO: [Synth 8-6157] synthesizing module 'digit_splitter' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:59]
-INFO: [Synth 8-6155] done synthesizing module 'digit_splitter' (6#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:59]
-INFO: [Synth 8-6157] synthesizing module 'mux_4x1' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:73]
-INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:82]
-INFO: [Synth 8-6155] done synthesizing module 'mux_4x1' (7#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:73]
-INFO: [Synth 8-6157] synthesizing module 'BCDtoSEG_decoder' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:110]
-INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:117]
-INFO: [Synth 8-6155] done synthesizing module 'BCDtoSEG_decoder' (8#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:110]
-INFO: [Synth 8-6155] done synthesizing module 'fnd_controller' (9#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:22]
-INFO: [Synth 8-6155] done synthesizing module 'calculator' (10#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:22]
+INFO: [Synth 8-6157] synthesizing module 'counter' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:67]
+INFO: [Synth 8-6155] done synthesizing module 'counter' (5#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:67]
+INFO: [Synth 8-6157] synthesizing module 'decoder_2x4' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:116]
+INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:122]
+INFO: [Synth 8-6155] done synthesizing module 'decoder_2x4' (6#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:116]
+WARNING: [Synth 8-689] width (4) of port connection 'switch_out' does not match port width (5) of module 'decoder_2x4' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:41]
+INFO: [Synth 8-6157] synthesizing module 'digit_splitter' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:82]
+INFO: [Synth 8-6155] done synthesizing module 'digit_splitter' (7#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:82]
+INFO: [Synth 8-6157] synthesizing module 'mux_4x1' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:96]
+INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:105]
+INFO: [Synth 8-6155] done synthesizing module 'mux_4x1' (8#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:96]
+INFO: [Synth 8-6157] synthesizing module 'BCDtoSEG_decoder' [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:133]
+INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:140]
+INFO: [Synth 8-6155] done synthesizing module 'BCDtoSEG_decoder' (9#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'fnd_controller' (10#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/fnd_controller.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'calculator' (11#1) [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/sources_1/imports/new/adder.v:22]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1105.809 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1105.637 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1105.809 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1105.637 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1105.809 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1105.637 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1105.809 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1105.637 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -68,36 +70,40 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/calculator_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1141.164 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1148.547 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1141.164 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1148.547 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1141.164 ; gain = 35.355
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1148.547 ; gain = 42.910
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1141.164 ; gain = 35.355
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1148.547 ; gain = 42.910
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1141.164 ; gain = 35.355
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1148.547 ; gain = 42.910
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1141.164 ; gain = 35.355
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1148.547 ; gain = 42.910
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    2 Bit       Adders := 1     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 16    
++---Registers : 
+	                2 Bit    Registers := 1     
 +---Muxes : 
 	   4 Input    4 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
@@ -116,25 +122,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 1141.164 ; gain = 35.355
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1148.547 ; gain = 42.910
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1150.613 ; gain = 44.805
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:14 . Memory (MB): peak = 1151.352 ; gain = 45.715
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1150.766 ; gain = 44.957
+Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 1200.793 ; gain = 95.156
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1173.312 ; gain = 67.504
+Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 1201.863 ; gain = 96.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -152,37 +158,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1188.078 ; gain = 82.270
+Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1202.629 ; gain = 96.992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1188.078 ; gain = 82.270
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1202.629 ; gain = 96.992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1188.078 ; gain = 82.270
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1202.629 ; gain = 96.992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1188.078 ; gain = 82.270
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1202.629 ; gain = 96.992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1188.078 ; gain = 82.270
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1202.629 ; gain = 96.992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1188.078 ; gain = 82.270
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1202.629 ; gain = 96.992
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -198,35 +204,38 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |CARRY4 |     5|
-|2     |LUT2   |    19|
-|3     |LUT3   |     7|
-|4     |LUT4   |    17|
-|5     |LUT5   |    13|
-|6     |LUT6   |    15|
-|7     |IBUF   |    18|
-|8     |OBUF   |    12|
+|1     |BUFG   |     1|
+|2     |CARRY4 |     5|
+|3     |LUT1   |     1|
+|4     |LUT2   |    20|
+|5     |LUT3   |     7|
+|6     |LUT4   |    18|
+|7     |LUT5   |    13|
+|8     |LUT6   |    15|
+|9     |FDCE   |     2|
+|10    |IBUF   |    18|
+|11    |OBUF   |    12|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1188.078 ; gain = 82.270
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1202.629 ; gain = 96.992
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1188.078 ; gain = 46.914
-Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1188.078 ; gain = 82.270
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:17 . Memory (MB): peak = 1202.629 ; gain = 54.082
+Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 1202.629 ; gain = 96.992
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1200.156 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1214.707 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1200.156 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1214.707 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-38 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+40 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1200.156 ; gain = 94.348
+synth_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:22 . Memory (MB): peak = 1214.707 ; gain = 109.070
 INFO: [Common 17-1381] The checkpoint 'D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.runs/synth_1/calculator.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file calculator_utilization_synth.rpt -pb calculator_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Nov  6 09:54:56 2024...
+INFO: [Common 17-206] Exiting Vivado at Wed Nov  6 10:53:15 2024...

@@ -20,16 +20,24 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module fnd_controller (
-    input  [1:0] fndsel,
+    input         clk,
+    input         reset,
     input  [13:0] bcddata,
-    output [3:0] fndcom,
-    output [7:0] fndfont
+    output [ 3:0] fndcom,
+    output [ 7:0] fndfont
 );
 
     wire [3:0] w_digit_1, w_digit_10, w_digit_100, w_digit_1000, w_bcd;
+    wire [1:0] w_fndsel;
+
+    counter U_counter (
+        .clk(clk),
+        .reset(reset),
+        .counter(w_fndsel)
+    );
 
     decoder_2x4 U_decoder_2x4 (
-        .switch_in (fndsel),
+        .switch_in (w_fndsel),
         .switch_out(fndcom)
     );
 
@@ -42,7 +50,7 @@ module fnd_controller (
     );
 
     mux_4x1 U_mux_4x1 (
-        .sel(fndsel),
+        .sel(w_fndsel),
         .x0 (w_digit_1),
         .x1 (w_digit_10),
         .x2 (w_digit_100),
@@ -71,12 +79,38 @@ module counter (
     end
 endmodule
 
+module clk_div (
+    input clk,
+    input reset,
+    output o_clk
+);
+
+    reg r_counter;
+    reg r_clk;
+
+    always @(posedge clk, posedge reset) begin
+        if (reset) begin
+            r_counter <= 0;
+            r_clk <= 1'b0;
+        end
+        else begin
+            if (r_counter == 100_000_000 - 1) begin
+                r_counter <= 0;
+                r_clk <= 1'b1;
+            end else begin
+                r_counter <= r_counter + 1;
+                r_clk <= 1'b0;
+            end
+        end
+    end
+endmodule
+
 module digit_splitter (
     input  [13:0] digit,
-    output [3:0] digit_1,
-    output [3:0] digit_10,
-    output [3:0] digit_100,
-    output [3:0] digit_1000
+    output [ 3:0] digit_1,
+    output [ 3:0] digit_10,
+    output [ 3:0] digit_100,
+    output [ 3:0] digit_1000
 );
 
     assign digit_1 = digit % 10;
