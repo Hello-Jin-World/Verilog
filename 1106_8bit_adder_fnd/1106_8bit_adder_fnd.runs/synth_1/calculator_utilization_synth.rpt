@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Wed Nov  6 14:07:13 2024
+| Date         : Wed Nov  6 14:16:11 2024
 | Host         : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 | Command      : report_utilization -file calculator_utilization_synth.rpt -pb calculator_utilization_synth.pb
 | Design       : calculator
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  211 |     0 |     20800 |  1.01 |
-|   LUT as Logic          |  211 |     0 |     20800 |  1.01 |
+| Slice LUTs*             |  238 |     0 |     20800 |  1.14 |
+|   LUT as Logic          |  238 |     0 |     20800 |  1.14 |
 |   LUT as Memory         |    0 |     0 |      9600 |  0.00 |
 | Slice Registers         |   58 |     0 |     41600 |  0.14 |
 |   Register as Flip Flop |   58 |     0 |     41600 |  0.14 |
@@ -149,15 +149,15 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     |   94 |                 LUT |
-| LUT2     |   62 |                 LUT |
+| LUT2     |  108 |                 LUT |
+| LUT6     |   66 |                 LUT |
 | FDCE     |   58 |        Flop & Latch |
-| LUT4     |   48 |                 LUT |
-| LUT3     |   35 |                 LUT |
-| CARRY4   |   34 |          CarryLogic |
-| LUT5     |   31 |                 LUT |
+| LUT4     |   47 |                 LUT |
+| CARRY4   |   47 |          CarryLogic |
+| LUT3     |   46 |                 LUT |
+| LUT5     |   29 |                 LUT |
+| LUT1     |   24 |                 LUT |
 | OBUF     |   12 |                  IO |
-| LUT1     |    6 |                 LUT |
 | IBUF     |    2 |                  IO |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+

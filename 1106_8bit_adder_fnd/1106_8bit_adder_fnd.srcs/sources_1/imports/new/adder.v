@@ -73,7 +73,7 @@ module clk_div_100ms (
         end else begin
             if (r_counter == 10_000_000 - 1) begin
                 r_counter <= 0;
-                r_digit   <= r_digit + 1;
+                r_digit   <= (r_digit + 1) % 10_000;
             end else begin
                 r_counter <= r_counter + 1;
             end
