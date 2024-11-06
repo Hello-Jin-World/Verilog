@@ -40,7 +40,7 @@ module calculator (
 
    fnd_controller U_fnd_controller(
     .fndsel(sel),
-    .bcddata({w_carry, w_sum}),
+    .bcddata({5'b0, w_carry, w_sum}), // For 14bit format (add MSB 5'b0)
     .fndcom(fndcom),
     .fndfont(fndfont)
    );

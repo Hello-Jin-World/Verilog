@@ -21,7 +21,7 @@
 
 module fnd_controller (
     input  [1:0] fndsel,
-    input  [8:0] bcddata,
+    input  [13:0] bcddata,
     output [3:0] fndcom,
     output [7:0] fndfont
 );
@@ -56,8 +56,23 @@ module fnd_controller (
     );
 endmodule
 
+module counter (
+    input            clk,
+    input            reset,
+    output reg [1:0] counter
+);
+
+    always @(posedge clk, posedge reset) begin
+        if (reset) begin
+            counter <= 0;
+        end else begin
+            counter <= counter + 1;
+        end
+    end
+endmodule
+
 module digit_splitter (
-    input  [8:0] digit,
+    input  [13:0] digit,
     output [3:0] digit_1,
     output [3:0] digit_10,
     output [3:0] digit_100,
