@@ -19,3 +19,26 @@ INFO: [Netlist 29-17] Analyzing 34 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2020.2
 INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+Finished Parsing XDC File [D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1105.047 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1105.047 ; gain = 0.000
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.626 . Memory (MB): peak = 1105.047 ; gain = 0.000
+
+Starting Cache Timing Information Task
