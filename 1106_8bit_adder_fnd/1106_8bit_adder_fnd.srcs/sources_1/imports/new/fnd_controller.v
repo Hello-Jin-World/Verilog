@@ -29,6 +29,13 @@ module fnd_controller (
 
     wire [3:0] w_digit_1, w_digit_10, w_digit_100, w_digit_1000, w_bcd;
     wire [1:0] w_fndsel;
+    wire w_clk;
+
+    clk_div U_clk_div(
+        .clk(clk),
+        .reset(reset),
+        .o_clk(w_clk)
+    );
 
     counter U_counter (
         .clk(clk),
@@ -80,13 +87,15 @@ module counter (
 endmodule
 
 module clk_div (
-    input clk,
-    input reset,
+    input  clk,
+    input  reset,
     output o_clk
 );
 
-    reg r_counter;
+    reg [16:0] r_counter;
     reg r_clk;
+
+    assign o_clk = r_clk; // enable 'output reg o_clk'
 
     always @(posedge clk, posedge reset) begin
         if (reset) begin
