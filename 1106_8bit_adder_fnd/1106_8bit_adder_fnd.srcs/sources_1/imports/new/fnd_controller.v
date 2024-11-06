@@ -38,7 +38,7 @@ module fnd_controller (
     );
 
     counter U_counter (
-        .clk(clk),
+        .clk(w_clk),
         .reset(reset),
         .counter(w_fndsel)
     );
@@ -103,7 +103,7 @@ module clk_div (
             r_clk <= 1'b0;
         end
         else begin
-            if (r_counter == 100_000_000 - 1) begin
+            if (r_counter == 100_000 - 1) begin
                 r_counter <= 0;
                 r_clk <= 1'b1;
             end else begin

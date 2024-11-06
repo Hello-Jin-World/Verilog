@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Wed Nov  6 10:53:22 2024
-# Process ID: 13040
+# Start of session at: Wed Nov  6 11:25:58 2024
+# Process ID: 12280
 # Current directory: D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.runs/impl_1
 # Command line: vivado.exe -log calculator.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source calculator.tcl -notrace
 # Log file: D:/GitHub/harman_Verilog/1106_8bit_adder_fnd/1106_8bit_adder_fnd.runs/impl_1/calculator.vdi
