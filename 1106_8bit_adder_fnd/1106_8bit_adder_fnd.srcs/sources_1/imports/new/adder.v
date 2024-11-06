@@ -30,7 +30,7 @@ module calculator (
 
     wire [7:0] w_sum;
     wire w_carry;
-
+/*
     adder_8bit U_8bit_adder (
         .a(a),
         .b(b),
@@ -38,11 +38,11 @@ module calculator (
         .sum(w_sum),
         .carry(w_carry)
     );
-
+*/
     fnd_controller U_fnd_controller (
         .clk(clk),
         .reset(reset),
-        .bcddata({5'b0, w_carry, w_sum}),  // For 14bit format (add MSB 5'b0)
+        //.bcddata({5'b0, w_carry, w_sum}),  // For 14bit format (add MSB 5'b0)
         .fndcom (fndcom),
         .fndfont(fndfont)
     );

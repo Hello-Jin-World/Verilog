@@ -22,7 +22,7 @@
 module fnd_controller (
     input         clk,
     input         reset,
-    input  [13:0] bcddata,
+    //input  [19:0] bcddata,
     output [ 3:0] fndcom,
     output [ 7:0] fndfont
 );
@@ -30,6 +30,13 @@ module fnd_controller (
     wire [3:0] w_digit_1, w_digit_10, w_digit_100, w_digit_1000, w_bcd;
     wire [1:0] w_fndsel;
     wire w_clk;
+    wire [13:0] w_bcddata;
+
+    clk_div_100ms U_clk_div_100ms(
+        .clk(clk),
+        .reset(reset),
+        .digit(w_bcddata)
+    );
 
     clk_div U_clk_div(
         .clk(clk),
@@ -49,7 +56,7 @@ module fnd_controller (
     );
 
     digit_splitter U_digit_splitter (
-        .digit(bcddata),
+        .digit(w_bcddata),
         .digit_1(w_digit_1),
         .digit_10(w_digit_10),
         .digit_100(w_digit_100),
@@ -69,6 +76,33 @@ module fnd_controller (
         .bcd(w_bcd),
         .seg(fndfont)
     );
+endmodule
+
+module clk_div_100ms (
+    input  clk,
+    input  reset,
+    output [13:0] digit
+);
+
+    reg [23:0] r_counter;
+    reg [13:0] r_digit;
+
+    assign digit = r_digit; // enable 'output reg o_clk'
+
+    always @(posedge clk, posedge reset) begin
+        if (reset) begin
+            r_counter <= 0;
+            r_digit <= 14'b0;
+        end
+        else begin
+            if (r_counter == 10_000_000 - 1) begin
+                r_counter <= 0;
+                r_digit <= r_digit + 1;
+            end else begin
+                r_counter <= r_counter + 1;
+            end
+        end
+    end
 endmodule
 
 module counter (
