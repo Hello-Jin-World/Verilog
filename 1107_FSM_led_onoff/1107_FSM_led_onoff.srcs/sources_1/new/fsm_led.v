@@ -21,20 +21,21 @@
 
 
 module fsm_led (
-    input  clk,
-    input  reset,
-    input  switch,
-    output reg led
+    input            clk,
+    input            reset,
+    input      [2:0] switch,
+    output reg [1:0] led
     //output led
 );
-    parameter LED_OFF = 1'b0, LED_ON = 1'b1;  // like #define on C
+    parameter LED_00 = 2'b00, LED_01 = 2'b01, LED_10 = 2'b10, LED_11 = 2'b11;  // like #define on C
 
-    reg state, state_next;
+    reg [1:0] state;
+    reg [1:0] state_next;
 
     //state registor
     always @(posedge clk, posedge reset) begin
         if (reset) begin
-            state <= LED_OFF;
+            state <= LED_00;
         end else begin
             state <= state_next;
         end
@@ -43,20 +44,44 @@ module fsm_led (
     // next state combinational logic
     always @(*) begin  // detect all input
         case (state)
-            LED_OFF: begin
-                //led = 1'b0;
-                if (switch == 1'b1) begin
-                    state_next = LED_ON;
+            LED_00: begin
+                if (switch == 3'b001) begin
+                    state_next = LED_01;
+                end else if (switch == 3'b101) begin
+                    state_next = LED_10;
+                end else if (switch == 3'b100) begin
+                    state_next = LED_11;
                 end else begin
-                    state_next = LED_OFF;
+                    state_next = LED_00;
                 end
             end
-            1'b1: begin
-                //led = 1'b1;
-                if (switch == 1'b0) begin
-                    state_next = LED_OFF;
+            LED_01: begin
+                if (switch == 3'b011) begin
+                    state_next = LED_10;
+                end else if (switch == 3'b000) begin
+                    state_next = LED_00;
                 end else begin
-                    state_next = LED_ON;
+                    state_next = LED_01;
+                end
+            end
+            LED_10: begin
+                if (switch == 3'b010) begin
+                    state_next = LED_11;
+                end else if (switch == 3'b111) begin
+                    state_next = LED_01;
+                end else begin
+                    state_next = LED_10;
+                end
+            end
+            LED_11: begin
+                if (switch == 3'b000) begin
+                    state_next = LED_00;
+                end else if (switch == 3'b111) begin
+                    state_next = LED_01;
+                end else if (switch == 3'b110) begin
+                    state_next = LED_10;
+                end else begin
+                    state_next = LED_11;
                 end
             end
             default: state_next = state;
@@ -66,8 +91,10 @@ module fsm_led (
     // output combinational logic
     always @(*) begin
         case (state)
-            1'b0: led = 1'b0;
-            1'b1: led = 1'b1;
+            LED_00: led = 2'b00;
+            LED_01: led = 2'b01;
+            LED_10: led = 2'b10;
+            LED_11: led = 2'b11;
         endcase
     end
 
