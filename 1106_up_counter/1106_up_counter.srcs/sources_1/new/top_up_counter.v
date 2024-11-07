@@ -90,7 +90,7 @@ module up_counter (
 
     assign counter = r_counter;
 
-    always @(posedge clk, posedge reset) begin
+always @(posedge clk, posedge reset) begin
         if (reset | switch[1]) begin
             r_counter <= 0;
         end else begin
