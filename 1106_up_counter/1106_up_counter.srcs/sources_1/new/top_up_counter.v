@@ -51,7 +51,7 @@ module top_up_counter (
         .fndfont(fndfont)
     );
 endmodule
-123
+
 module clk_div_10 (
     input  clk,
     input  reset,
