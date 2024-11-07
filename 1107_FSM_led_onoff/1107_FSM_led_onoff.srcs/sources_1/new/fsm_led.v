@@ -24,15 +24,17 @@ module fsm_led (
     input  clk,
     input  reset,
     input  switch,
-    output led
+    output reg led
+    //output led
 );
+    parameter LED_OFF = 1'b0, LED_ON = 1'b1;  // like #define on C
 
     reg state, state_next;
 
     //state registor
     always @(posedge clk, posedge reset) begin
         if (reset) begin
-            state <= 1'b0;
+            state <= LED_OFF;
         end else begin
             state <= state_next;
         end
@@ -41,18 +43,20 @@ module fsm_led (
     // next state combinational logic
     always @(*) begin  // detect all input
         case (state)
-            1'b0: begin
+            LED_OFF: begin
+                //led = 1'b0;
                 if (switch == 1'b1) begin
-                    state_next = 1'b1;
+                    state_next = LED_ON;
                 end else begin
-                    state_next = 1'b0;
+                    state_next = LED_OFF;
                 end
             end
             1'b1: begin
+                //led = 1'b1;
                 if (switch == 1'b0) begin
-                    state_next = 1'b0;
+                    state_next = LED_OFF;
                 end else begin
-                    state_next = 1'b1;
+                    state_next = LED_ON;
                 end
             end
             default: state_next = state;
@@ -66,4 +70,6 @@ module fsm_led (
             1'b1: led = 1'b1;
         endcase
     end
+
+    // assign led = (state == LED_ON) ? 1'b1 : 1'b0;
 endmodule
