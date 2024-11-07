@@ -40,7 +40,7 @@ module led_sw (
             end else if (switch == 3'b111 & r_led == 2'b11) begin
                 r_led <= 2'b10;
             end else if (switch == 3'b110 & r_led == 2'b10) begin
-                r_led <= 2'b11;
+                r_led <= 2'b11; 
             end else begin
                 r_led <= r_led;
             end
