@@ -44,16 +44,14 @@ module fsm_led (
             1'b0: begin
                 if (switch == 1'b1) begin
                     state_next = 1'b1;
-                end
-                else begin
+                end else begin
                     state_next = 1'b0;
                 end
             end
             1'b1: begin
                 if (switch == 1'b0) begin
                     state_next = 1'b0;
-                end
-                else begin
+                end else begin
                     state_next = 1'b1;
                 end
             end
@@ -61,4 +59,11 @@ module fsm_led (
         endcase
     end
 
+    // output combinational logic
+    always @(*) begin
+        case (state)
+            1'b0: led = 1'b0;
+            1'b1: led = 1'b1;
+        endcase
+    end
 endmodule
