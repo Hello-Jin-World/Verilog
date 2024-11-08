@@ -151,11 +151,14 @@ module control_unit (
     parameter STOP = 2'b00, RUN = 2'b01, CLEAR = 2'b10;
 
     reg [1:0] state, state_next;
+    reg r_button_state;
 
     always @(posedge clk, posedge reset) begin
         if (reset) begin
             state <= STOP;
+            r_button_state <= 1'b0;
         end else begin
+            r_button_state <= r_button_state;
             state <= state_next;
         end
     end
@@ -163,13 +166,35 @@ module control_unit (
     // next state combinational logic
     always @(*) begin
         state_next = state;
+        /*
+        if (i_clear == 1'b1 & state == STOP) begin
+            state_next = CLEAR;
+        end else begin
+            if (i_run_stop == 1'b1) begin
+                if (state == STOP & r_button_state == 1'b0) begin
+                    r_button_state = 1'b1;
+                    state_next = RUN;
+                end else if (state == RUN & r_button_state == 1'b1) begin
+                    r_button_state = 1'b0;
+                    state_next = STOP;
+                end
+            end
+        end
+        */
+        r_button_state = 1'b0;
         case (state)
             STOP: begin
-                if (i_run_stop == 1'b1) state_next = RUN;
+                if (i_run_stop == 1'b1 & r_button_state == 1'b0) begin
+                    state_next = RUN;
+                    r_button_state = 1'b1;
+                end
                 else if (i_clear == 1'b1) state_next = CLEAR;
             end
             RUN: begin
-                if (i_run_stop == 1'b0) state_next = STOP;
+                if (i_run_stop == 1'b1) begin
+                    state_next = STOP;
+                    r_button_state = 1'b0;
+                end
             end
             CLEAR: begin
                 if (i_clear == 1'b0) state_next = STOP;
@@ -194,5 +219,17 @@ module control_unit (
                 o_clear = 1'b1;
             end
         endcase
+        /*
+        case (r_button_state)
+            1'b0 : begin
+                o_run_stop = 1'b0;
+                o_clear = 1'b0;
+            end
+            1'b1 : begin
+                o_run_stop = 1'b1;
+                o_clear = 1'b0;
+            end
+        endcase
+        */
     end
 endmodule

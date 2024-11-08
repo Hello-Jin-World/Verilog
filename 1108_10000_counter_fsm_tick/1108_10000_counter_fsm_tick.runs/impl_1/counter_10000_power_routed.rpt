@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Fri Nov  8 13:47:48 2024
+| Date             : Fri Nov  8 15:05:35 2024
 | Host             : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 | Command          : report_power -file counter_10000_power_routed.rpt -pb counter_10000_power_summary_routed.pb -rpx counter_10000_power_routed.rpx
 | Design           : counter_10000
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.104        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.032        |
+| Dynamic (W)              | 0.033        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
@@ -53,12 +53,12 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.001 |      404 |       --- |             --- |
-|   LUT as Logic |     0.001 |      209 |     20800 |            1.00 |
+| Slice Logic    |     0.002 |      404 |       --- |             --- |
+|   LUT as Logic |     0.002 |      209 |     20800 |            1.00 |
 |   CARRY4       |    <0.001 |       34 |      8150 |            0.42 |
 |   Register     |    <0.001 |       61 |     41600 |            0.15 |
 |   Others       |     0.000 |        9 |       --- |             --- |
-| Signals        |     0.001 |      314 |       --- |             --- |
+| Signals        |     0.001 |      316 |       --- |             --- |
 | I/O            |     0.029 |       16 |       106 |           15.09 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.104 |          |           |                 |
@@ -71,7 +71,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.013 |       0.004 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.014 |       0.004 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.014 |       0.001 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.009 |       0.008 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -140,7 +140,7 @@ Table of Contents
 +--------------------+-----------+
 | Name               | Power (W) |
 +--------------------+-----------+
-| counter_10000      |     0.032 |
+| counter_10000      |     0.033 |
 |   U_counter_tick   |     0.001 |
 |   U_fnd_controller |     0.002 |
 +--------------------+-----------+
