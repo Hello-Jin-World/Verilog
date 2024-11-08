@@ -46,6 +46,7 @@ module button_detector(
 
     localparam N = 7;
     reg [N : 0] q_reg, q_next;
+    reg edge_reg;
     wire w_debounce;
 
     always @(posedge r_clk, posedge reset) begin
@@ -58,5 +59,11 @@ module button_detector(
     end
 
     assign w_debounce = &q_reg; // & -> all
+
+    always @(posedge clk ) begin
+        edge_reg <= w_debounce;
+    end
+
+    assign o_btn = w_debounce & ~edge_reg;
 
 endmodule
