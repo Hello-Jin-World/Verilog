@@ -26,8 +26,8 @@ module led_Mealy (
     input      switch,
     output reg led
 );
-    parameter LED_OFF = 1'b0, LED_ON = 1'b1;
-    reg state, state_next;
+    parameter LED_OFF = 2'b00, LED_ON_1 = 2'b01, LED_ON_2 = 2'b10, LED_ON_3 = 2'b11;
+    reg [1:0] state, state_next;
 
     // state register
     always @(posedge clk, posedge reset) begin
@@ -43,11 +43,15 @@ module led_Mealy (
         state_next = state; // default
         case (state)
             LED_OFF : begin
-                if (switch == 1'b1) state_next = LED_ON;
+                if (switch == 1'b1) state_next = LED_ON_1;
             end
-            LED_ON : begin
-                if (switch == 1'b0) state_next = LED_OFF;
+            LED_ON_1 : begin
+                if (switch == 1'b0) state_next = LED_ON_2;
             end
+            LED_ON_2 : begin
+                if (switch == 1'b1) state_next = LED_OFF;
+            end
+            default : state_next = LED_OFF;
         endcase
     end
 
@@ -62,9 +66,17 @@ module led_Mealy (
                 led = 1'b0;
             end
         end
-        LED_ON : begin
+        LED_ON_1 : begin
 //            led = 1'b1; // Moore Machine
             if (switch == 1'b0) begin
+                led = 1'b0; // Mealy Machine
+            end else begin
+                led = 1'b1;
+            end
+        end  
+        LED_ON_2: begin
+//            led = 1'b1; // Moore Machine
+            if (switch == 1'b1) begin
                 led = 1'b0; // Mealy Machine
             end else begin
                 led = 1'b1;
