@@ -28,8 +28,23 @@ module counter_10000 (
     output [3:0] fndcom,
     output [7:0] fndfont
 );
-    wire w_tick, w_run_stop, w_clear;
+    wire w_tick, w_run_stop, w_clear, w_btn_run__stop, w_btn_clear;
     wire [13:0] w_counter;
+
+
+    button_detector U_Btn_RunStop (
+        .clk  (clk),
+        .reset(reset),
+        .i_btn(run_stop),
+        .o_btn(w_btn_run__stop)
+    );
+
+    button_detector U_Btn_Clear (
+        .clk  (clk),
+        .reset(reset),
+        .i_btn(run_stop),
+        .o_btn(w_btn_clear)
+    );
 
     ///data path///
     clock_div U_clock_div (
@@ -52,8 +67,8 @@ module counter_10000 (
     control_unit U_control_unit (
         .clk(clk),
         .reset(reset),
-        .i_run_stop(run_stop),
-        .i_clear(clear),
+        .i_run_stop(w_btn_run__stop),
+        .i_clear(w_btn_clear),
         .o_run_stop(w_run_stop),
         .o_clear(w_clear)
     );
@@ -151,14 +166,11 @@ module control_unit (
     parameter STOP = 2'b00, RUN = 2'b01, CLEAR = 2'b10;
 
     reg [1:0] state, state_next;
-    reg r_button_state;
 
     always @(posedge clk, posedge reset) begin
         if (reset) begin
             state <= STOP;
-            r_button_state <= 1'b0;
         end else begin
-            r_button_state <= r_button_state;
             state <= state_next;
         end
     end
@@ -166,38 +178,19 @@ module control_unit (
     // next state combinational logic
     always @(*) begin
         state_next = state;
-        /*
-        if (i_clear == 1'b1 & state == STOP) begin
-            state_next = CLEAR;
-        end else begin
-            if (i_run_stop == 1'b1) begin
-                if (state == STOP & r_button_state == 1'b0) begin
-                    r_button_state = 1'b1;
-                    state_next = RUN;
-                end else if (state == RUN & r_button_state == 1'b1) begin
-                    r_button_state = 1'b0;
-                    state_next = STOP;
-                end
-            end
-        end
-        */
-        r_button_state = 1'b0;
         case (state)
             STOP: begin
-                if (i_run_stop == 1'b1 & r_button_state == 1'b0) begin
+                if (i_run_stop == 1'b1) begin
                     state_next = RUN;
-                    r_button_state = 1'b1;
-                end
-                else if (i_clear == 1'b1) state_next = CLEAR;
+                end else if (i_clear == 1'b1) state_next = CLEAR;
             end
             RUN: begin
                 if (i_run_stop == 1'b1) begin
                     state_next = STOP;
-                    r_button_state = 1'b0;
                 end
             end
             CLEAR: begin
-                if (i_clear == 1'b0) state_next = STOP;
+                state_next = STOP;
             end
         endcase
     end

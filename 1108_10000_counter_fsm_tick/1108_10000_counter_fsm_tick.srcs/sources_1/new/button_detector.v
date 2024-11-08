@@ -28,7 +28,12 @@ module button_detector(
     );
     reg [$clog2(100000) - 1 : 0] r_counter;
     reg r_clk;
+    localparam N = 7;
+    reg [N : 0] q_reg, q_next;
+    reg edge_reg;
+    wire w_debounce;
 
+//clock devider (1khz)
     always @(posedge clk, posedge reset) begin
         if (reset) begin
             r_counter <= 0;
@@ -44,26 +49,23 @@ module button_detector(
         end
     end
 
-    localparam N = 7;
-    reg [N : 0] q_reg, q_next;
-    reg edge_reg;
-    wire w_debounce;
-
+//debounce circuit
     always @(posedge r_clk, posedge reset) begin
         if (reset) q_reg <= 0;
         else q_reg <= q_next;
     end
 
     always @(i_btn, q_reg) begin
-        q_next = {i_btn, q_reg[N : 1]};  // general shift
+        q_next = {i_btn, q_reg[N : 1]};  // general shift register code.
     end
 
     assign w_debounce = &q_reg; // & -> all
 
+//edge detector
     always @(posedge clk ) begin
-        edge_reg <= w_debounce;
+        edge_reg <= w_debounce; // Flip Flop
     end
 
-    assign o_btn = w_debounce & ~edge_reg;
+    assign o_btn = w_debounce & ~edge_reg; // Rising Edge Detector
 
 endmodule
