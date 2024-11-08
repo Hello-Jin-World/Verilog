@@ -31,8 +31,8 @@ module fnd_controller (
     wire [1:0] w_fndsel;
     wire w_clk;
 
-    clk_div U_clk_div(
-        .clk(clk),
+    clk_div U_clk_div (
+        .clk  (clk),
         .reset(reset),
         .o_clk(w_clk)
     );
@@ -96,14 +96,13 @@ module clk_div (
     reg [16:0] r_counter;
     reg r_clk;
 
-    assign o_clk = r_clk; // enable 'output reg o_clk'
+    assign o_clk = r_clk;  // enable 'output reg o_clk'
 
     always @(posedge clk, posedge reset) begin
         if (reset) begin
             r_counter <= 0;
             r_clk <= 1'b0;
-        end
-        else begin
+        end else begin
             if (r_counter == 100_000 - 1) begin
                 r_counter <= 0;
                 r_clk <= 1'b1;
@@ -125,8 +124,9 @@ module digit_splitter (
 
     assign digit_1 = digit % 10;
     assign digit_10 = digit / 10 % 10;
-    assign digit_100 = digit / 100 % 10;
-    assign digit_1000 = digit / 1000 % 10;
+    assign digit_100 = (digit / 100 % 10) % 6;
+    assign digit_1000 = digit / 600 % 10;
+
 endmodule
 
 module mux_4x1 (

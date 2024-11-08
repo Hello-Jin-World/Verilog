@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Fri Nov  8 16:41:48 2024
+| Date         : Fri Nov  8 17:44:50 2024
 | Host         : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file counter_10000_control_sets_placed.rpt
 | Design       : counter_10000
@@ -59,10 +59,10 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |               2 |            2 |
-| No           | No                    | Yes                    |              75 |           22 |
+| No           | No                    | Yes                    |              75 |           23 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |              39 |            9 |
+| Yes          | No                    | Yes                    |              39 |           12 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -70,16 +70,16 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+---------------------------------+---------------------------------------------+------------------+------------------+----------------+--------------+
-|           Clock Signal          |                Enable Signal                | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
-+---------------------------------+---------------------------------------------+------------------+------------------+----------------+--------------+
-|  U_fnd_controller/U_clk_div/CLK |                                             | reset_IBUF       |                1 |              2 |         2.00 |
-|  clk_IBUF_BUFG                  |                                             |                  |                2 |              2 |         1.00 |
-|  U_Btn_Clear/r_clk_reg_n_0      |                                             | reset_IBUF       |                2 |              8 |         4.00 |
-|  U_Btn_RunStop/r_clk            |                                             | reset_IBUF       |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG                  | U_control_unit/E[0]                         | reset_IBUF       |                3 |             14 |         4.67 |
-|  clk_IBUF_BUFG                  | U_control_unit/FSM_onehot_state_reg[2]_0[0] | reset_IBUF       |                6 |             25 |         4.17 |
-|  clk_IBUF_BUFG                  |                                             | reset_IBUF       |               17 |             57 |         3.35 |
-+---------------------------------+---------------------------------------------+------------------+------------------+----------------+--------------+
++---------------------------------+-----------------------------------+------------------+------------------+----------------+--------------+
+|           Clock Signal          |           Enable Signal           | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++---------------------------------+-----------------------------------+------------------+------------------+----------------+--------------+
+|  U_fnd_controller/U_clk_div/CLK |                                   | reset_IBUF       |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG                  |                                   |                  |                2 |              2 |         1.00 |
+|  U_Btn_Clear/r_clk_reg_n_0      |                                   | reset_IBUF       |                2 |              8 |         4.00 |
+|  U_Btn_RunStop/r_clk            |                                   | reset_IBUF       |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                  | U_control_unit/E[0]               | reset_IBUF       |                3 |             14 |         4.67 |
+|  clk_IBUF_BUFG                  | U_clock_div/r_counter[23]_i_1_n_0 | reset_IBUF       |                9 |             25 |         2.78 |
+|  clk_IBUF_BUFG                  |                                   | reset_IBUF       |               19 |             57 |         3.00 |
++---------------------------------+-----------------------------------+------------------+------------------+----------------+--------------+
 
 

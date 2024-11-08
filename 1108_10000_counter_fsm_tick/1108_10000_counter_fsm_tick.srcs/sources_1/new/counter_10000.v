@@ -145,7 +145,7 @@ module counter_tick (
         if (clear == 1'b1) begin
             counter_next = 0;
         end else if (tick == 1'b1) begin
-            if (counter_reg == 10_000 - 1) begin
+            if (counter_reg == 6_000 - 1) begin
                 counter_next = 0;
             end else if (run_stop == 1'b1) begin
                 counter_next = counter_reg + 1;
