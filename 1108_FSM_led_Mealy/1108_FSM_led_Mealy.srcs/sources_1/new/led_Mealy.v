@@ -40,15 +40,15 @@ module led_Mealy (
 
     // next state combinational logic
     always @(*) begin
-        state_next = state; // default
+        state_next = LED_OFF;  // default
         case (state)
-            LED_OFF : begin
+            LED_OFF: begin
                 if (switch == 1'b1) state_next = LED_ON_1;
             end
-            LED_ON_1 : begin
+            LED_ON_1: begin
                 if (switch == 1'b0) state_next = LED_ON_2;
             end
-            LED_ON_2 : begin
+            LED_ON_2: begin
                 if (switch == 1'b1) state_next = LED_OFF;
             end
         endcase
@@ -56,32 +56,32 @@ module led_Mealy (
 
     // output combinational logic
     always @(*) begin
-       led = 1'b0; 
-       case (state)
-        LED_OFF : begin
-//            led = 1'b0; // Moore Machine
-            if (switch == 1'b1) begin
-                led = 1'b1; // Mealy Machine
-            end else begin
-                led = 1'b0;
+        led = 1'b0;
+        case (state)
+            LED_OFF: begin
+                //            led = 1'b0; // Moore Machine
+                if (switch == 1'b1) begin
+                    led = 1'b1;  // Mealy Machine
+                end else begin
+                    led = 1'b0;
+                end
             end
-        end
-        LED_ON_1 : begin
-//            led = 1'b1; // Moore Machine
-            if (switch == 1'b0) begin
-                led = 1'b0; // Mealy Machine
-            end else begin
-                led = 1'b1;
+            LED_ON_1: begin
+                //            led = 1'b1; // Moore Machine
+                if (switch == 1'b0) begin
+                    led = 1'b0;  // Mealy Machine
+                end else begin
+                    led = 1'b1;
+                end
             end
-        end  
-        LED_ON_2: begin
-//            led = 1'b1; // Moore Machine
-            if (switch == 1'b1) begin
-                led = 1'b0; // Mealy Machine
-            end else begin
-                led = 1'b1;
+            LED_ON_2: begin
+                //            led = 1'b1; // Moore Machine
+                if (switch == 1'b1) begin
+                    led = 1'b0;  // Mealy Machine
+                end else begin
+                    led = 1'b1;
+                end
             end
-        end  
-       endcase 
+        endcase
     end
 endmodule
