@@ -27,19 +27,19 @@ module button_detector(
     output o_btn
     );
     reg [$clog2(100000) - 1 : 0] r_counter;
-    reg r_tick;
+    reg r_clk;
 
     always @(posedge clk, posedge reset) begin
         if (reset) begin
             r_counter <= 0;
-            r_tick <= 1'b0;
+            r_clk <= 1'b0;
         end else begin
             if (r_counter == 100_000 - 1) begin
                 r_counter <= 0;
-                r_tick <= 1'b1;
+                r_clk <= 1'b1;
             end else begin
                 r_counter <= r_counter + 1;
-                r_tick <= 1'b0;
+                r_clk <= 1'b0;
             end
         end
     end
@@ -48,7 +48,7 @@ module button_detector(
     reg [N : 0] q_reg, q_next;
     wire w_debounce;
 
-    always @(posedge r_tick, posedge reset) begin
+    always @(posedge r_clk, posedge reset) begin
         if (reset) q_reg <= 0;
         else q_reg <= q_next;
     end
