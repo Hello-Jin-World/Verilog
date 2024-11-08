@@ -40,7 +40,7 @@ module led_Mealy (
 
     // next state combinational logic
     always @(*) begin
-        state_next = state; // default
+        state_next = LED_OFF; // default
         case (state)
             LED_OFF : begin
                 if (switch == 1'b1) state_next = LED_ON_1;
@@ -51,12 +51,12 @@ module led_Mealy (
             LED_ON_2 : begin
                 if (switch == 1'b1) state_next = LED_OFF;
             end
-            default : state_next = LED_OFF;
         endcase
     end
 
     // output combinational logic
     always @(*) begin
+       led = 1'b0; 
        case (state)
         LED_OFF : begin
 //            led = 1'b0; // Moore Machine
@@ -82,9 +82,6 @@ module led_Mealy (
                 led = 1'b1;
             end
         end  
-        default: begin
-            led = 1'b0;
-        end 
        endcase 
     end
 endmodule
