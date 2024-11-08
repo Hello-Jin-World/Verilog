@@ -56,7 +56,7 @@ module clock_div (
     input  reset,
     output tick
 );
-    reg [$clog2(100_000) - 1 : 0] r_counter;  // auto calculate bit (log2)
+    reg [$clog2(10_000_000) - 1 : 0] r_counter;  // auto calculate bit (log2)
     reg r_tick;
 
     assign tick = r_tick;
@@ -66,7 +66,7 @@ module clock_div (
             r_counter <= 0;
             r_tick <= 1'b0;
         end else begin
-            if (r_counter == 100_000 - 1) begin
+            if (r_counter == 10_000_000 - 1) begin
                 r_counter <= 0;
                 r_tick <= 1'b1;
             end else begin

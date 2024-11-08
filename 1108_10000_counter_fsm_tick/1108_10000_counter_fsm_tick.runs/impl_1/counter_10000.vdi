@@ -1,14 +1,14 @@
-
-*** Running vivado
-    with args -log counter_10000.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source counter_10000.tcl -notrace
-
-
-
-****** Vivado v2020.2 (64-bit)
-  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
-  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Nov  8 11:46:01 2024
+# Process ID: 19684
+# Current directory: D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/impl_1
+# Command line: vivado.exe -log counter_10000.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source counter_10000.tcl -notrace
+# Log file: D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/impl_1/counter_10000.vdi
+# Journal file: D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
 source counter_10000.tcl -notrace
 Command: link_design -top counter_10000 -part xc7a35tcpg236-1
 Design is defaulting to srcset: sources_1
