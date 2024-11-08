@@ -21,10 +21,10 @@
 
 
 module led_Mealy (
-    input  clk,
-    input  reset,
-    input  switch,
-    output led
+    input      clk,
+    input      reset,
+    input      switch,
+    output reg led
 );
     parameter LED_OFF = 1'b0, LED_ON = 1'b1;
     reg state, state_next;
@@ -49,5 +49,26 @@ module led_Mealy (
                 if (switch == 1'b0) state_next = LED_OFF;
             end
         endcase
+    end
+
+    // output combinational logic
+    always @(*) begin
+       case (state)
+        LED_OFF : begin
+            led = 1'b0;
+            if (switch == 1'b1) begin
+                led = 1'b1;
+            end
+        end
+        LED_ON : begin
+            led = 1'b1;
+            if (switch == 1'b0) begin
+                led = 1'b0;
+            end
+        end  
+        default: begin
+            led = 1'b0;
+        end 
+       endcase 
     end
 endmodule
