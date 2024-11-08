@@ -48,7 +48,7 @@ module button_detector(
     reg [N : 0] q_reg, q_next;
     wire w_debounce;
 
-    always @(posedge clk, posedge reset) begin
+    always @(posedge r_tick, posedge reset) begin
         if (reset) q_reg <= 0;
         else q_reg <= q_next;
     end
