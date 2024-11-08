@@ -40,7 +40,7 @@ module led_Mealy (
 
     // next state combinational logic
     always @(*) begin
-        state_next = LED_OFF; // default
+        state_next = state; // default
         case (state)
             LED_OFF : begin
                 if (switch == 1'b1) state_next = LED_ON_1;
