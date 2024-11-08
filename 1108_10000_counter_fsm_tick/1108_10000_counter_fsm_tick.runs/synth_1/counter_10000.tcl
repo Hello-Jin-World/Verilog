@@ -93,6 +93,7 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
+  D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/button_detector.v
   D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v
   D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v
 }

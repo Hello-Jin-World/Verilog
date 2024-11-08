@@ -42,7 +42,7 @@ module counter_10000 (
     button_detector U_Btn_Clear (
         .clk  (clk),
         .reset(reset),
-        .i_btn(run_stop),
+        .i_btn(clear),
         .o_btn(w_btn_clear)
     );
 
@@ -212,17 +212,5 @@ module control_unit (
                 o_clear = 1'b1;
             end
         endcase
-        /*
-        case (r_button_state)
-            1'b0 : begin
-                o_run_stop = 1'b0;
-                o_clear = 1'b0;
-            end
-            1'b1 : begin
-                o_run_stop = 1'b1;
-                o_clear = 1'b0;
-            end
-        endcase
-        */
     end
 endmodule

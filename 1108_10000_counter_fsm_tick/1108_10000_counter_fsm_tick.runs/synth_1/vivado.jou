@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Fri Nov  8 15:04:18 2024
-# Process ID: 10900
+# Start of session at: Fri Nov  8 16:40:48 2024
+# Process ID: 9776
 # Current directory: D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/synth_1
 # Command line: vivado.exe -log counter_10000.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source counter_10000.tcl
 # Log file: D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/synth_1/counter_10000.vds
