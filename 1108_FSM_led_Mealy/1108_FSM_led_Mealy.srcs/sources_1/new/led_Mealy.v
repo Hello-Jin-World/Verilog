@@ -55,15 +55,19 @@ module led_Mealy (
     always @(*) begin
        case (state)
         LED_OFF : begin
-            led = 1'b0;
+//            led = 1'b0; // Moore Machine
             if (switch == 1'b1) begin
-                led = 1'b1;
+                led = 1'b1; // Mealy Machine
+            end else begin
+                led = 1'b0;
             end
         end
         LED_ON : begin
-            led = 1'b1;
+//            led = 1'b1; // Moore Machine
             if (switch == 1'b0) begin
-                led = 1'b0;
+                led = 1'b0; // Mealy Machine
+            end else begin
+                led = 1'b1;
             end
         end  
         default: begin
