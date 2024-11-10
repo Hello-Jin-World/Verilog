@@ -1,12 +1,24 @@
 #-----------------------------------------------------------
-# Vivado v2020.2 (64-bit)
-# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
-# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Fri Nov  8 17:43:49 2024
-# Process ID: 4088
-# Current directory: D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/synth_1
-# Command line: vivado.exe -log counter_10000.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source counter_10000.tcl
-# Log file: D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/synth_1/counter_10000.vds
-# Journal file: D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/synth_1\vivado.jou
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sun Nov 10 03:28:42 2024
+# Process ID: 904
+# Current directory: /home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/synth_1
+# Command line: vivado -log counter_10000.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source counter_10000.tcl
+# Log file: /home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/synth_1/counter_10000.vds
+# Journal file: /home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/synth_1/vivado.jou
+# Running On        :ac33c46d4ba5
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 22.04.5 LTS
+# Processor Detail  :
+# CPU Frequency     :
+# CPU Physical cores:10
+# CPU Logical cores :10
+# Host memory       :16748 MB
+# Swap memory       :2147 MB
+# Total Virtual     :18896 MB
+# Available Virtual :15341 MB
 #-----------------------------------------------------------
 source counter_10000.tcl -notrace

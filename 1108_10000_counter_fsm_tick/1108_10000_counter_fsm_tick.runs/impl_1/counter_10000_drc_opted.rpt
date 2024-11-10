@@ -1,14 +1,14 @@
-Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
-------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Fri Nov  8 17:44:48 2024
-| Host         : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Sun Nov 10 03:30:29 2024
+| Host         : ac33c46d4ba5 running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_drc -file counter_10000_drc_opted.rpt -pb counter_10000_drc_opted.pb -rpx counter_10000_drc_opted.rpx
 | Design       : counter_10000
 | Device       : xc7a35tcpg236-1
 | Speed File   : -1
 | Design State : Synthesized
-------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
 
 Report DRC
 

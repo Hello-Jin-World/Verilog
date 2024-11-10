@@ -1,103 +1,113 @@
 #-----------------------------------------------------------
-# Vivado v2020.2 (64-bit)
-# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
-# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Fri Nov  8 17:43:49 2024
-# Process ID: 4088
-# Current directory: D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/synth_1
-# Command line: vivado.exe -log counter_10000.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source counter_10000.tcl
-# Log file: D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/synth_1/counter_10000.vds
-# Journal file: D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/synth_1\vivado.jou
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sun Nov 10 03:28:42 2024
+# Process ID: 904
+# Current directory: /home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/synth_1
+# Command line: vivado -log counter_10000.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source counter_10000.tcl
+# Log file: /home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/synth_1/counter_10000.vds
+# Journal file: /home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/synth_1/vivado.jou
+# Running On        :ac33c46d4ba5
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 22.04.5 LTS
+# Processor Detail  :
+# CPU Frequency     :
+# CPU Physical cores:10
+# CPU Logical cores :10
+# Host memory       :16748 MB
+# Swap memory       :2147 MB
+# Total Virtual     :18896 MB
+# Available Virtual :15341 MB
 #-----------------------------------------------------------
 source counter_10000.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1997.922 ; gain = 113.008 ; free physical = 10867 ; free virtual = 14384
 Command: synth_design -top counter_10000 -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
-INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Device 21-9227] Part: xc7a35tcpg236-1 does not have CEAM library.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 6036
+INFO: [Synth 8-7075] Helper process launched with PID 944
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1105.238 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2784.957 ; gain = 415.637 ; free physical = 9937 ; free virtual = 13249
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'counter_10000' [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:23]
-INFO: [Synth 8-6157] synthesizing module 'button_detector' [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/button_detector.v:23]
-	Parameter N bound to: 7 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'button_detector' (1#1) [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/button_detector.v:23]
-INFO: [Synth 8-6157] synthesizing module 'clock_div' [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:85]
-INFO: [Synth 8-6155] done synthesizing module 'clock_div' (2#1) [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:85]
-INFO: [Synth 8-6157] synthesizing module 'counter_tick' [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:120]
-INFO: [Synth 8-6155] done synthesizing module 'counter_tick' (3#1) [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:120]
-INFO: [Synth 8-6157] synthesizing module 'control_unit' [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:158]
-	Parameter STOP bound to: 2'b00 
-	Parameter RUN bound to: 2'b01 
-	Parameter CLEAR bound to: 2'b10 
-INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:181]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:202]
-INFO: [Synth 8-6155] done synthesizing module 'control_unit' (4#1) [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:158]
-INFO: [Synth 8-6157] synthesizing module 'fnd_controller' [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:22]
-INFO: [Synth 8-6157] synthesizing module 'clk_div' [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:90]
-INFO: [Synth 8-6155] done synthesizing module 'clk_div' (5#1) [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:90]
-INFO: [Synth 8-6157] synthesizing module 'counter' [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:75]
-INFO: [Synth 8-6155] done synthesizing module 'counter' (6#1) [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:75]
-INFO: [Synth 8-6157] synthesizing module 'decoder_2x4' [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:152]
-INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:158]
-INFO: [Synth 8-6155] done synthesizing module 'decoder_2x4' (7#1) [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:152]
-WARNING: [Synth 8-689] width (4) of port connection 'switch_out' does not match port width (5) of module 'decoder_2x4' [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:48]
-INFO: [Synth 8-6157] synthesizing module 'digit_splitter' [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:117]
-INFO: [Synth 8-6155] done synthesizing module 'digit_splitter' (8#1) [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:117]
-INFO: [Synth 8-6157] synthesizing module 'mux_4x1' [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:132]
-INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:141]
-INFO: [Synth 8-6155] done synthesizing module 'mux_4x1' (9#1) [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:132]
-INFO: [Synth 8-6157] synthesizing module 'BCDtoSEG_decoder' [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:169]
-INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:176]
-INFO: [Synth 8-6155] done synthesizing module 'BCDtoSEG_decoder' (10#1) [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:169]
-INFO: [Synth 8-6155] done synthesizing module 'fnd_controller' (11#1) [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:22]
-INFO: [Synth 8-6155] done synthesizing module 'counter_10000' (12#1) [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:23]
+INFO: [Synth 8-6157] synthesizing module 'counter_10000' [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:23]
+INFO: [Synth 8-6157] synthesizing module 'button_detector' [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/button_detector.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'button_detector' (0#1) [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/button_detector.v:23]
+INFO: [Synth 8-6157] synthesizing module 'clock_div' [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:85]
+INFO: [Synth 8-6155] done synthesizing module 'clock_div' (0#1) [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:85]
+INFO: [Synth 8-6157] synthesizing module 'counter_tick' [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:120]
+INFO: [Synth 8-6155] done synthesizing module 'counter_tick' (0#1) [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:120]
+INFO: [Synth 8-6157] synthesizing module 'control_unit' [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:158]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:181]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:202]
+INFO: [Synth 8-6155] done synthesizing module 'control_unit' (0#1) [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:158]
+INFO: [Synth 8-6157] synthesizing module 'fnd_controller' [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:22]
+INFO: [Synth 8-6157] synthesizing module 'clk_div' [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:90]
+INFO: [Synth 8-6155] done synthesizing module 'clk_div' (0#1) [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:90]
+INFO: [Synth 8-6157] synthesizing module 'counter' [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:75]
+INFO: [Synth 8-6155] done synthesizing module 'counter' (0#1) [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:75]
+INFO: [Synth 8-6157] synthesizing module 'decoder_2x4' [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:152]
+INFO: [Synth 8-226] default block is never used [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:158]
+INFO: [Synth 8-6155] done synthesizing module 'decoder_2x4' (0#1) [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:152]
+WARNING: [Synth 8-689] width (4) of port connection 'switch_out' does not match port width (5) of module 'decoder_2x4' [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:48]
+INFO: [Synth 8-6157] synthesizing module 'digit_splitter' [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:117]
+INFO: [Synth 8-6155] done synthesizing module 'digit_splitter' (0#1) [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:117]
+INFO: [Synth 8-6157] synthesizing module 'mux_4x1' [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:132]
+INFO: [Synth 8-226] default block is never used [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:141]
+INFO: [Synth 8-6155] done synthesizing module 'mux_4x1' (0#1) [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:132]
+INFO: [Synth 8-6157] synthesizing module 'BCDtoSEG_decoder' [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:169]
+INFO: [Synth 8-226] default block is never used [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:176]
+INFO: [Synth 8-6155] done synthesizing module 'BCDtoSEG_decoder' (0#1) [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:169]
+INFO: [Synth 8-6155] done synthesizing module 'fnd_controller' (0#1) [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/imports/new/fnd_controller.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'counter_10000' (0#1) [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/sources_1/new/counter_10000.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1105.238 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2862.766 ; gain = 493.445 ; free physical = 9583 ; free virtual = 12911
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1105.238 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2877.770 ; gain = 508.449 ; free physical = 9563 ; free virtual = 12892
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1105.238 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2877.770 ; gain = 508.449 ; free physical = 9563 ; free virtual = 12892
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1105.238 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2878.453 ; gain = 0.051 ; free physical = 9547 ; free virtual = 12882
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
-Finished Parsing XDC File [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/counter_10000_propImpl.xdc].
+Parsing XDC File [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+Finished Parsing XDC File [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/counter_10000_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/counter_10000_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1165.691 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3032.883 ; gain = 0.000 ; free physical = 9344 ; free virtual = 12899
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1165.691 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3033.020 ; gain = 0.078 ; free physical = 9344 ; free virtual = 12899
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1165.691 ; gain = 60.453
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3034.246 ; gain = 664.926 ; free physical = 9352 ; free virtual = 12907
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1165.691 ; gain = 60.453
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3042.375 ; gain = 673.055 ; free physical = 9352 ; free virtual = 12907
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1165.691 ; gain = 60.453
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3042.406 ; gain = 673.086 ; free physical = 9362 ; free virtual = 12917
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'control_unit'
 ---------------------------------------------------------------------------------------------------
@@ -109,7 +119,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'contr
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'control_unit'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1165.691 ; gain = 60.453
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 3043.676 ; gain = 674.355 ; free physical = 9355 ; free virtual = 12910
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -128,13 +138,12 @@ Detailed RTL Component Info :
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 6     
 +---Muxes : 
-	   2 Input   24 Bit        Muxes := 2     
-	   2 Input   17 Bit        Muxes := 3     
-	   2 Input   14 Bit        Muxes := 2     
+	   2 Input   24 Bit        Muxes := 1     
+	   2 Input   14 Bit        Muxes := 1     
 	   4 Input    4 Bit        Muxes := 2     
 	   3 Input    3 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 7     
+	   2 Input    1 Bit        Muxes := 4     
 	   3 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -151,26 +160,27 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 1165.691 ; gain = 60.453
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 3045.348 ; gain = 676.027 ; free physical = 9344 ; free virtual = 12901
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:18 . Memory (MB): peak = 1168.598 ; gain = 63.359
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 3092.281 ; gain = 722.961 ; free physical = 9271 ; free virtual = 12833
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:24 . Memory (MB): peak = 1268.633 ; gain = 163.395
+Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 3092.320 ; gain = 723.000 ; free physical = 9295 ; free virtual = 12856
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:25 . Memory (MB): peak = 1269.699 ; gain = 164.461
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 3092.320 ; gain = 723.000 ; free physical = 9295 ; free virtual = 12856
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -188,37 +198,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 1269.699 ; gain = 164.461
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 3092.320 ; gain = 723.000 ; free physical = 9294 ; free virtual = 12855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 1269.699 ; gain = 164.461
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 3092.320 ; gain = 723.000 ; free physical = 9294 ; free virtual = 12855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 1269.699 ; gain = 164.461
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 3092.320 ; gain = 723.000 ; free physical = 9294 ; free virtual = 12855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 1269.699 ; gain = 164.461
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 3092.320 ; gain = 723.000 ; free physical = 9294 ; free virtual = 12855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 1269.699 ; gain = 164.461
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 3092.320 ; gain = 723.000 ; free physical = 9294 ; free virtual = 12855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 1269.699 ; gain = 164.461
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 3092.320 ; gain = 723.000 ; free physical = 9294 ; free virtual = 12855
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -237,11 +247,11 @@ Report Cell Usage:
 |1     |BUFG   |     1|
 |2     |CARRY4 |    45|
 |3     |LUT1   |    13|
-|4     |LUT2   |   136|
-|5     |LUT3   |    49|
-|6     |LUT4   |    56|
-|7     |LUT5   |    44|
-|8     |LUT6   |    84|
+|4     |LUT2   |    95|
+|5     |LUT3   |    83|
+|6     |LUT4   |    59|
+|7     |LUT5   |    45|
+|8     |LUT6   |    75|
 |9     |FDCE   |   113|
 |10    |FDPE   |     1|
 |11    |FDRE   |     2|
@@ -249,25 +259,29 @@ Report Cell Usage:
 |13    |OBUF   |    12|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 1269.699 ; gain = 164.461
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 3092.320 ; gain = 723.000 ; free physical = 9294 ; free virtual = 12855
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:25 . Memory (MB): peak = 1269.699 ; gain = 104.008
-Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 1269.699 ; gain = 164.461
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 3092.320 ; gain = 567.297 ; free physical = 9293 ; free virtual = 12855
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 3092.320 ; gain = 723.000 ; free physical = 9293 ; free virtual = 12855
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1281.641 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3092.320 ; gain = 0.000 ; free physical = 9576 ; free virtual = 13142
 INFO: [Netlist 29-17] Analyzing 45 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 10 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1281.641 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3092.320 ; gain = 0.000 ; free physical = 9742 ; free virtual = 13308
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
+Synth Design complete | Checksum: b806b937
 INFO: [Common 17-83] Releasing license: Synthesis
-46 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+47 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:32 . Memory (MB): peak = 1281.641 ; gain = 176.402
-INFO: [Common 17-1381] The checkpoint 'D:/GitHub/harman_Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/synth_1/counter_10000.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file counter_10000_utilization_synth.rpt -pb counter_10000_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Nov  8 17:44:23 2024...
+synth_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:41 . Memory (MB): peak = 3092.320 ; gain = 1094.141 ; free physical = 9742 ; free virtual = 13309
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2497.070; main = 1862.904; forked = 664.295
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 5446.223; main = 3073.812; forked = 2400.785
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3099.219 ; gain = 0.355 ; free physical = 9741 ; free virtual = 13308
+INFO: [Common 17-1381] The checkpoint '/home/user/project/Verilog/1108_10000_counter_fsm_tick/1108_10000_counter_fsm_tick.runs/synth_1/counter_10000.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file counter_10000_utilization_synth.rpt -pb counter_10000_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 10 03:29:38 2024...
