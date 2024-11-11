@@ -48,6 +48,10 @@ module tb_stopwatch ();
         #10 run = 1'b1;
         wait (sec == 4);
         @(posedge clk) run = 1'b0;
+        repeat (10) @(posedge clk);
+        run = 1'b1;
+        wait (sec == 6);
+        clear = 1'b1;
     end
 
 
