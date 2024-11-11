@@ -1,0 +1,8 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+D:/GitHub/harman_Verilog/1111_lector_stopwatch/1111_lector_stopwatch.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,,,,,,,
+D:/GitHub/harman_Verilog/1111_lector_stopwatch/1111_lector_stopwatch.srcs/sim_1/new/tb_stopwatch.v,1731306457,verilog,,,,tb_stopwatch,,,,,,,,
+D:/GitHub/harman_Verilog/1111_lector_stopwatch/1111_lector_stopwatch.srcs/sources_1/imports/new/fnd_controller.v,1731304279,verilog,,,,BCDtoSEG_decoder;clk_div;counter;decoder_2x4;digit_splitter;fnd_controller;mux_4x1,,,,,,,,
+D:/GitHub/harman_Verilog/1111_lector_stopwatch/1111_lector_stopwatch.srcs/sources_1/new/stopwatch_datapath.v,1731306941,verilog,,D:/GitHub/harman_Verilog/1111_lector_stopwatch/1111_lector_stopwatch.srcs/sim_1/new/tb_stopwatch.v,,clk_div_stopwatch;stopwatch_datapath;time_clock_counter,,,,,,,,
