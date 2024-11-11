@@ -1,0 +1,11 @@
+0.7
+2020.2
+May 22 2024
+18:54:44
+/home/user/project/Verilog/1111_hour_min_sec_msec_stopwatch/1111_hour_min_sec_msec_stopwatch.sim/sim_1/behav/xsim/glbl.v,1708598507,verilog,,,,glbl,,,,,,,,
+/home/user/project/Verilog/1111_hour_min_sec_msec_stopwatch/1111_hour_min_sec_msec_stopwatch.srcs/sim_1/new/tb_stopwatch.v,1731331856,verilog,,,,tb_stopwatch,,,,,,,,
+/home/user/project/Verilog/1111_hour_min_sec_msec_stopwatch/1111_hour_min_sec_msec_stopwatch.srcs/sources_1/imports/sources_1/imports/new/button_detector.v,1731331023,verilog,,/home/user/project/Verilog/1111_hour_min_sec_msec_stopwatch/1111_hour_min_sec_msec_stopwatch.srcs/sources_1/imports/sources_1/imports/new/fnd_controller.v,,button_detector,,,,,,,,
+/home/user/project/Verilog/1111_hour_min_sec_msec_stopwatch/1111_hour_min_sec_msec_stopwatch.srcs/sources_1/imports/sources_1/imports/new/fnd_controller.v,1731323942,verilog,,/home/user/project/Verilog/1111_hour_min_sec_msec_stopwatch/1111_hour_min_sec_msec_stopwatch.srcs/sources_1/imports/sources_1/new/stopwatch_control_unit.v,,BCDtoSEG_decoder;clk_div;counter;decoder_2x4;digit_splitter;fnd_controller;mux_4x1;select_fnd,,,,,,,,
+/home/user/project/Verilog/1111_hour_min_sec_msec_stopwatch/1111_hour_min_sec_msec_stopwatch.srcs/sources_1/imports/sources_1/new/stopwatch_control_unit.v,1731323942,verilog,,/home/user/project/Verilog/1111_hour_min_sec_msec_stopwatch/1111_hour_min_sec_msec_stopwatch.srcs/sources_1/imports/sources_1/new/stopwatch_datapath.v,,stopwatch_control_unit,,,,,,,,
+/home/user/project/Verilog/1111_hour_min_sec_msec_stopwatch/1111_hour_min_sec_msec_stopwatch.srcs/sources_1/imports/sources_1/new/stopwatch_datapath.v,1731331040,verilog,,/home/user/project/Verilog/1111_hour_min_sec_msec_stopwatch/1111_hour_min_sec_msec_stopwatch.srcs/sources_1/imports/sources_1/new/top_stopwatch.v,,clk_div_stopwatch;stopwatch_datapath;time_clock_counter,,,,,,,,
+/home/user/project/Verilog/1111_hour_min_sec_msec_stopwatch/1111_hour_min_sec_msec_stopwatch.srcs/sources_1/imports/sources_1/new/top_stopwatch.v,1731327898,verilog,,/home/user/project/Verilog/1111_hour_min_sec_msec_stopwatch/1111_hour_min_sec_msec_stopwatch.srcs/sim_1/new/tb_stopwatch.v,,top_stopwatch,,,,,,,,

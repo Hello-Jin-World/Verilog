@@ -94,7 +94,7 @@ module clk_div_stopwatch (
     input  clear,
     output o_clk
 );
-    reg [$clog2(1_000_000) - 1 : 0] r_counter_reg, r_counter_next;
+    reg [$clog2(10) - 1 : 0] r_counter_reg, r_counter_next;
     reg r_clk_reg, r_clk_next;
 
     assign o_clk = r_clk_reg;
@@ -115,7 +115,7 @@ module clk_div_stopwatch (
         r_clk_next = r_clk_reg;
         r_counter_next = r_counter_reg;
         if (run == 1'b1) begin
-            if (r_counter_reg == 1_000_000 - 1) begin
+            if (r_counter_reg == 10 - 1) begin
                 r_counter_next = 0;
                 r_clk_next = 1'b1;
             end else begin
