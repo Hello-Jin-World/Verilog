@@ -88,7 +88,8 @@ module counter_10000 (
     fnd_controller U_fnd_controller (
         .clk(clk),
         .reset(reset),
-        .bcddata({w_counter_min, w_counter_sec}),
+        .counter_sec(w_counter_sec),
+        .counter_min(w_counter_min),
         .fndcom(fndcom),
         .fndfont(fndfont)
     );
@@ -137,7 +138,7 @@ module counter_tick (
     input clear,
     //output min_signal,
     output [9:0] counter_sec,
-    output [13:10] counter_min
+    output [3:0] counter_min
 );
     reg [9:0] counter_reg, counter_next;
     reg [3:0] min_reg, min_next;
