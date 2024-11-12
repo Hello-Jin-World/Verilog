@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Nov 12 20:24:28 2024
+# Process ID: 12716
+# Current directory: D:/GitHub/harman_Verilog/1112_clock_stopwatch/1112_clock_stopwatch.runs/impl_1
+# Command line: vivado.exe -log top_stopwatch_clock.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_stopwatch_clock.tcl -notrace
+# Log file: D:/GitHub/harman_Verilog/1112_clock_stopwatch/1112_clock_stopwatch.runs/impl_1/top_stopwatch_clock.vdi
+# Journal file: D:/GitHub/harman_Verilog/1112_clock_stopwatch/1112_clock_stopwatch.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source top_stopwatch_clock.tcl -notrace
