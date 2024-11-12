@@ -255,9 +255,9 @@ module top_clock (
     );
 
     btn_up_time U_btn_up_time (
-        .btn_set_sec       (button0),
-        .btn_set_min       (button1),
-        .btn_set_hour      (button2),
+        .button0           (button0),
+        .button1           (button1),
+        .button2           (button2),
         .sw_clock_stopwatch(sw_clock_stopwatch),
         .sec               (w_sec),               // 1sec
         .min               (w_min),               // 1min
@@ -339,9 +339,9 @@ module clk_div (
 endmodule
 
 module btn_up_time (
-    input        btn_set_sec,
-    input        btn_set_min,
-    input        btn_set_hour,
+    input        button0,
+    input        button1,
+    input        button2,
     input        sw_clock_stopwatch,
     input  [6:0] sec,                 // 1sec
     input  [6:0] min,                 // 1min
@@ -364,18 +364,21 @@ module btn_up_time (
         r_min  = min;
         r_hour = hour;
         if (sw_clock_stopwatch == 1'b0) begin
-            if (btn_set_sec) begin
-                r_sec = r_sec + 1;
-            end else if (btn_set_min) begin
-                r_min = r_min + 1;
-            end else if (btn_set_hour) begin
-                r_hour = r_hour + 1;
+            if (button0) begin
+                r_sec = sec + 1;
             end else begin
-                r_sec  = sec;
-                r_min  = min;
+                r_sec = sec;
+            end
+            if (button1) begin
+                r_min = min + 1;
+            end else begin
+                r_min = min;
+            end
+            if (button2) begin
+                r_hour = hour + 1;
+            end else begin
                 r_hour = hour;
             end
         end
     end
-
 endmodule
