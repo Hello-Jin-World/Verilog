@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/GitHub/harman_Verilog/1112_clock_stopwatch/1112_clock_stopwatch.runs/synth_1/top_stopwatch_clock.tcl"
+  variable script "/home/user/project/Verilog/1112_clock_stopwatch/1112_clock_stopwatch.runs/synth_1/top_stopwatch_clock.tcl"
   variable category "vivado_synth"
 }
 
@@ -55,24 +55,11 @@ if {$::dispatch::connected} {
   }
 }
 
-proc create_report { reportName command } {
-  set status "."
-  append status $reportName ".fail"
-  if { [file exists $status] } {
-    eval file delete [glob $status]
-  }
-  send_msg_id runtcl-4 info "Executing : $command"
-  set retval [eval catch { $command } msg]
-  if { $retval != 0 } {
-    set fp [open $status w]
-    close $fp
-    send_msg_id runtcl-5 warning "$msg"
-  }
-}
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 4
-set_param synth.incrementalSynthesisCache C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-15068-DESKTOP-7CFQ9ND/incrSyn
+set_param checkpoint.writeSynthRtdsInDcp 1
+set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
+set_param synth.incrementalSynthesisCache /tmp/.Xil_user/Vivado-302-81591a5344ca/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -81,24 +68,22 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir D:/GitHub/harman_Verilog/1112_clock_stopwatch/1112_clock_stopwatch.cache/wt [current_project]
-set_property parent.project_path D:/GitHub/harman_Verilog/1112_clock_stopwatch/1112_clock_stopwatch.xpr [current_project]
+set_property webtalk.parent_dir /home/user/project/Verilog/1112_clock_stopwatch/1112_clock_stopwatch.cache/wt [current_project]
+set_property parent.project_path /home/user/project/Verilog/1112_clock_stopwatch/1112_clock_stopwatch.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property board_part_repo_paths {C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store} [current_project]
-set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
-set_property ip_output_repo d:/GitHub/harman_Verilog/1112_clock_stopwatch/1112_clock_stopwatch.cache/ip [current_project]
+set_property ip_output_repo /home/user/project/Verilog/1112_clock_stopwatch/1112_clock_stopwatch.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  D:/GitHub/harman_Verilog/1112_clock_stopwatch/1112_clock_stopwatch.srcs/sources_1/imports/sources_1/imports/new/button_detector.v
-  D:/GitHub/harman_Verilog/1112_clock_stopwatch/1112_clock_stopwatch.srcs/sources_1/new/clock_datapath.v
-  D:/GitHub/harman_Verilog/1112_clock_stopwatch/1112_clock_stopwatch.srcs/sources_1/new/fnd_control_for_clock.v
-  D:/GitHub/harman_Verilog/1112_clock_stopwatch/1112_clock_stopwatch.srcs/sources_1/imports/sources_1/imports/new/fnd_controller.v
-  D:/GitHub/harman_Verilog/1112_clock_stopwatch/1112_clock_stopwatch.srcs/sources_1/imports/sources_1/new/stopwatch_control_unit.v
-  D:/GitHub/harman_Verilog/1112_clock_stopwatch/1112_clock_stopwatch.srcs/sources_1/imports/sources_1/new/stopwatch_datapath.v
-  D:/GitHub/harman_Verilog/1112_clock_stopwatch/1112_clock_stopwatch.srcs/sources_1/imports/sources_1/new/top_stopwatch.v
+  /home/user/project/Verilog/1112_clock_stopwatch/1112_clock_stopwatch.srcs/sources_1/imports/sources_1/imports/new/button_detector.v
+  /home/user/project/Verilog/1112_clock_stopwatch/1112_clock_stopwatch.srcs/sources_1/new/clock_datapath.v
+  /home/user/project/Verilog/1112_clock_stopwatch/1112_clock_stopwatch.srcs/sources_1/new/fnd_control_for_clock.v
+  /home/user/project/Verilog/1112_clock_stopwatch/1112_clock_stopwatch.srcs/sources_1/imports/sources_1/imports/new/fnd_controller.v
+  /home/user/project/Verilog/1112_clock_stopwatch/1112_clock_stopwatch.srcs/sources_1/imports/sources_1/new/stopwatch_control_unit.v
+  /home/user/project/Verilog/1112_clock_stopwatch/1112_clock_stopwatch.srcs/sources_1/imports/sources_1/new/stopwatch_datapath.v
+  /home/user/project/Verilog/1112_clock_stopwatch/1112_clock_stopwatch.srcs/sources_1/imports/sources_1/new/top_stopwatch.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -109,8 +94,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc D:/GitHub/harman_Verilog/1112_clock_stopwatch/1112_clock_stopwatch.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc
-set_property used_in_implementation false [get_files D:/GitHub/harman_Verilog/1112_clock_stopwatch/1112_clock_stopwatch.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+read_xdc /home/user/project/Verilog/1112_clock_stopwatch/1112_clock_stopwatch.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc
+set_property used_in_implementation false [get_files /home/user/project/Verilog/1112_clock_stopwatch/1112_clock_stopwatch.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
@@ -129,7 +114,7 @@ set_param constraints.enableBinaryConstraints false
 write_checkpoint -force -noxdef top_stopwatch_clock.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file top_stopwatch_clock_utilization_synth.rpt -pb top_stopwatch_clock_utilization_synth.pb"
+generate_parallel_reports -reports { "report_utilization -file top_stopwatch_clock_utilization_synth.rpt -pb top_stopwatch_clock_utilization_synth.pb"  } 
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

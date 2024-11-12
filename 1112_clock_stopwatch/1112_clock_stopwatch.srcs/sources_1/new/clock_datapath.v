@@ -23,6 +23,10 @@
 module clock_datapath (
     input        clk,
     input        reset,
+    input        button0,
+    input        button1,
+    input        button2,
+    input        sw_clock_stopwatch,
     output [6:0] msec,
     output [6:0] sec,
     output [6:0] min,
@@ -55,6 +59,8 @@ module clock_datapath (
     ) U_time_counter_for_clock_sec (
         .clk(clk),
         .reset(reset),
+        .button(button0),
+        .sw_clock_stopwatch(sw_clock_stopwatch),
         .i_time_tick(w_mil_tick),
         .o_time_tick(w_sec_tick),
         .o_time(sec)
@@ -66,6 +72,8 @@ module clock_datapath (
     ) U_time_counter_for_clock_min (
         .clk(clk),
         .reset(reset),
+        .button(button1),
+        .sw_clock_stopwatch(sw_clock_stopwatch),
         .i_time_tick(w_sec_tick),
         .o_time_tick(w_min_tick),
         .o_time(min)
@@ -77,6 +85,8 @@ module clock_datapath (
     ) U_time_counter_for_clock_hour (
         .clk(clk),
         .reset(reset),
+        .button(button2),
+        .sw_clock_stopwatch(sw_clock_stopwatch),
         .i_time_tick(w_min_tick),
         .o_time_tick(),
         .o_time(hour)
@@ -124,6 +134,8 @@ module time_clock_counter_for_clock #(
 ) (
     input                    clk,
     input                    reset,
+    input                    button,
+    input                    sw_clock_stopwatch,
     input                    i_time_tick,
     output                   o_time_tick,
     output [BIT_WIDTH - 1:0] o_time
@@ -156,6 +168,9 @@ module time_clock_counter_for_clock #(
                 time_tick_next    = 1'b0;
                 time_counter_next = time_counter_reg + 1;
             end
+        end
+        if (button & sw_clock_stopwatch == 1'b0) begin
+            time_counter_next = time_counter_reg + 1;
         end
     end
 endmodule

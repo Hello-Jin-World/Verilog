@@ -28,14 +28,13 @@ module top_stopwatch_clock (
     input        button1,
     input        button2,
     output [3:0] fndcom,
-    output [7:0] fndfont
+    output [7:0] fndfont,
+    output [3:0] led
 );
 
     wire [2:0] w_fndsel;
     wire w_button0, w_button1, w_button2;
     wire [7:0] w_stopwatch_fndfont, w_clock_fndfont;
-    wire w_btn_set_sec, w_btn_set_min, w_btn_set_hour;
-    wire w_btn_run_stop, w_btn_clear;
 
     button_detector U_button0_detector (
         .clk  (clk),
@@ -56,19 +55,12 @@ module top_stopwatch_clock (
         .o_btn(w_button2)
     );
 
-    /*
-    clock_stopwatch_button U_clock_stopwatch_button (
-        .button0(w_button0),
-        .button1(w_button1),
-        .button2(w_button2),
+    led_state U_led_state(
+        .sw_mode(sw_mode),
         .sw_clock_stopwatch(sw_clock_stopwatch),
-        .clock_button0(w_btn_set_sec),
-        .clock_button1(w_btn_set_min),
-        .clock_button2(w_btn_set_hour),
-        .stopwatch_button0(w_btn_run_stop),
-        .stopwatch_button1(w_btn_clear)
+        .led(led)
     );
-*/
+
     clk_div U_clk_div (
         .clk  (clk),
         .reset(reset),
@@ -117,69 +109,6 @@ module top_stopwatch_clock (
     );
 endmodule
 
-module clock_stopwatch_button (
-    input      button0,
-    input      button1,
-    input      button2,
-    input      sw_clock_stopwatch,
-    output reg clock_button0,
-    output reg clock_button1,
-    output reg clock_button2,
-    output reg stopwatch_button0,
-    output reg stopwatch_button1
-);
-
-    always @(*) begin
-        clock_button0 = 0;
-        clock_button1 = 0;
-        clock_button2 = 0;
-        stopwatch_button0 = 0;
-        stopwatch_button1 = 0;
-        if (sw_clock_stopwatch == 1'b0) begin
-            if (button0 == 1'b1 | button1 == 1'b1 | button2 == 1'b1) begin
-                clock_button0 = button0;
-                clock_button1 = button1;
-                clock_button2 = button2;
-                stopwatch_button0 = 0;
-                stopwatch_button1 = 0;
-            end
-        end else if (sw_clock_stopwatch == 1'b1) begin
-            if (button0 == 1'b1 | button2 == 1'b1) begin
-                stopwatch_button0 = button0;
-                stopwatch_button1 = button2;
-                clock_button0 = 0;
-                clock_button1 = 0;
-                clock_button2 = 0;
-            end
-        end
-        /*
-        case (sw_clock_stopwatch)
-            1'b1: begin
-                clock_button0 = button0;
-                clock_button1 = button1;
-                clock_button2 = button2;
-                stopwatch_button0 = 0;
-                stopwatch_button1 = 0;
-            end
-            1'b0: begin
-                stopwatch_button0 = button0;
-                stopwatch_button1 = button2;
-                clock_button0 = 0;
-                clock_button1 = 0;
-                clock_button2 = 0;
-            end
-            default: begin
-                clock_button0 = 0;
-                clock_button1 = 0;
-                clock_button2 = 0;
-                stopwatch_button0 = 0;
-                stopwatch_button1 = 0;
-            end
-        endcase*/
-    end
-
-endmodule
-
 module top_stopwatch (
     input        clk,
     input        reset,
@@ -204,7 +133,6 @@ module top_stopwatch (
         .run(w_btn_run_stop),
         .clear(w_btn_clear)
     );
-
 
     stopwatch_datapath U_stopwatch_datapath (
         .clk  (clk),
@@ -243,28 +171,18 @@ module top_clock (
 );
 
     wire [6:0] w_msec, w_sec, w_min, w_hour;
-    wire [6:0] w_sec_oper, w_min_oper, w_hour_oper;
 
     clock_datapath U_clock_datapath (
         .clk  (clk),
         .reset(reset),
+        .button0(button0),
+        .button1(button1),
+        .button2(button2),
+        .sw_clock_stopwatch(sw_clock_stopwatch),
         .msec (w_msec),
         .sec  (w_sec),
         .min  (w_min),
         .hour (w_hour)
-    );
-
-    btn_up_time U_btn_up_time (
-        .button0           (button0),
-        .button1           (button1),
-        .button2           (button2),
-        .sw_clock_stopwatch(sw_clock_stopwatch),
-        .sec               (w_sec),               // 1sec
-        .min               (w_min),               // 1min
-        .hour              (w_hour),              // 1hour
-        .result_sec        (w_sec_oper),
-        .result_min        (w_min_oper),
-        .result_hour       (w_hour_oper)
     );
 
     fnd_control_for_clock U_fnd_control_for_clock (
@@ -273,9 +191,9 @@ module top_clock (
         .sw_mode(sw_mode),
         .sel    (sel),
         .msec   (w_msec),       // 0.1sec
-        .sec    (w_sec_oper),   // 1sec
-        .min    (w_min_oper),   // 1min
-        .hour   (w_hour_oper),  // 1hour
+        .sec    (w_sec),   // 1sec
+        .min    (w_min),   // 1min
+        .hour   (w_hour),  // 1hour
         .fndfont(fndfont)
     );
 
@@ -338,46 +256,24 @@ module clk_div (
     end
 endmodule
 
-module btn_up_time (
-    input        button0,
-    input        button1,
-    input        button2,
-    input        sw_clock_stopwatch,
-    input  [6:0] sec,                 // 1sec
-    input  [6:0] min,                 // 1min
-    input  [6:0] hour,                // 1hour
-    output [6:0] result_sec,
-    output [6:0] result_min,
-    output [6:0] result_hour
+module led_state (
+    input sw_mode,
+    input sw_clock_stopwatch,
+    output reg [3:0] led
 );
-
-    reg [6:0] r_sec;
-    reg [6:0] r_min;
-    reg [6:0] r_hour;
-
-    assign result_sec  = r_sec;
-    assign result_min  = r_min;
-    assign result_hour = r_hour;
-
+    
     always @(*) begin
-        r_sec  = sec;
-        r_min  = min;
-        r_hour = hour;
-        if (sw_clock_stopwatch == 1'b0) begin
-            if (button0) begin
-                r_sec = sec + 1;
+        if (sw_clock_stopwatch) begin
+            if (sw_mode) begin
+                led = 4'b1000;
             end else begin
-                r_sec = sec;
+                led = 4'b0100;
             end
-            if (button1) begin
-                r_min = min + 1;
+        end else begin
+            if (sw_mode) begin
+                led = 4'b0010;
             end else begin
-                r_min = min;
-            end
-            if (button2) begin
-                r_hour = hour + 1;
-            end else begin
-                r_hour = hour;
+                led = 4'b0001;
             end
         end
     end

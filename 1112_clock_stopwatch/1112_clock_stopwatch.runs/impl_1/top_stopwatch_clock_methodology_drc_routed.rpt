@@ -1,8 +1,8 @@
-Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Tue Nov 12 20:39:54 2024
-| Host         : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Tue Nov 12 16:24:02 2024
+| Host         : 81591a5344ca running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_methodology -file top_stopwatch_clock_methodology_drc_routed.rpt -pb top_stopwatch_clock_methodology_drc_routed.pb -rpx top_stopwatch_clock_methodology_drc_routed.rpx
 | Design       : top_stopwatch_clock
 | Device       : xc7a35tcpg236-1
@@ -170,52 +170,52 @@ Related violations: <none>
 
 TIMING-18#1 Warning
 Missing input or output delay  
-An input delay is missing on reset relative to clock(s) sys_clk_pin
+An input delay is missing on reset relative to the rising and/or falling clock edge(s) of sys_clk_pin.
 Related violations: <none>
 
 TIMING-18#2 Warning
 Missing input or output delay  
-An input delay is missing on sw_clock_stopwatch relative to clock(s) sys_clk_pin
+An input delay is missing on sw_clock_stopwatch relative to the rising and/or falling clock edge(s) of sys_clk_pin.
 Related violations: <none>
 
 TIMING-18#3 Warning
 Missing input or output delay  
-An output delay is missing on fndfont[0] relative to clock(s) sys_clk_pin
+An output delay is missing on fndfont[0] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
 Related violations: <none>
 
 TIMING-18#4 Warning
 Missing input or output delay  
-An output delay is missing on fndfont[1] relative to clock(s) sys_clk_pin
+An output delay is missing on fndfont[1] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
 Related violations: <none>
 
 TIMING-18#5 Warning
 Missing input or output delay  
-An output delay is missing on fndfont[2] relative to clock(s) sys_clk_pin
+An output delay is missing on fndfont[2] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
 Related violations: <none>
 
 TIMING-18#6 Warning
 Missing input or output delay  
-An output delay is missing on fndfont[3] relative to clock(s) sys_clk_pin
+An output delay is missing on fndfont[3] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
 Related violations: <none>
 
 TIMING-18#7 Warning
 Missing input or output delay  
-An output delay is missing on fndfont[4] relative to clock(s) sys_clk_pin
+An output delay is missing on fndfont[4] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
 Related violations: <none>
 
 TIMING-18#8 Warning
 Missing input or output delay  
-An output delay is missing on fndfont[5] relative to clock(s) sys_clk_pin
+An output delay is missing on fndfont[5] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
 Related violations: <none>
 
 TIMING-18#9 Warning
 Missing input or output delay  
-An output delay is missing on fndfont[6] relative to clock(s) sys_clk_pin
+An output delay is missing on fndfont[6] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
 Related violations: <none>
 
 TIMING-18#10 Warning
 Missing input or output delay  
-An output delay is missing on fndfont[7] relative to clock(s) sys_clk_pin
+An output delay is missing on fndfont[7] relative to the rising and/or falling clock edge(s) of sys_clk_pin.
 Related violations: <none>
 
 
