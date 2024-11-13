@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -80,6 +81,7 @@ set_property webtalk.parent_dir D:/GitHub/harman_Verilog/1112_clock_stopwatch_wi
 set_property parent.project_path D:/GitHub/harman_Verilog/1112_clock_stopwatch_windows/1112_clock_stopwatch_windows.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
+set_property ip_output_repo d:/GitHub/harman_Verilog/1112_clock_stopwatch_windows/1112_clock_stopwatch_windows.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }

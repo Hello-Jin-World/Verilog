@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Wed Nov 13 09:15:54 2024
+| Date             : Wed Nov 13 13:40:19 2024
 | Host             : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 | Command          : report_power -file top_stopwatch_clock_power_routed.rpt -pb top_stopwatch_clock_power_summary_routed.pb -rpx top_stopwatch_clock_power_routed.rpx
 | Design           : top_stopwatch_clock
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.104        |
+| Total On-Chip Power (W)  | 0.103        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.033        |
+| Dynamic (W)              | 0.031        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.5         |
@@ -52,17 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.001 |      576 |       --- |             --- |
-|   LUT as Logic |     0.001 |      236 |     20800 |            1.13 |
-|   CARRY4       |    <0.001 |       26 |      8150 |            0.32 |
+| Clocks         |     0.001 |        3 |       --- |             --- |
+| Slice Logic    |     0.001 |      611 |       --- |             --- |
+|   LUT as Logic |     0.001 |      258 |     20800 |            1.24 |
+|   CARRY4       |    <0.001 |       30 |      8150 |            0.37 |
 |   Register     |    <0.001 |      201 |     41600 |            0.48 |
-|   F7/F8 Muxes  |    <0.001 |        3 |     32600 |           <0.01 |
-|   Others       |     0.000 |       19 |       --- |             --- |
-| Signals        |     0.001 |      494 |       --- |             --- |
-| I/O            |     0.028 |       23 |       106 |           21.70 |
+|   F7/F8 Muxes  |    <0.001 |        5 |     32600 |            0.02 |
+|   Others       |     0.000 |       21 |       --- |             --- |
+| Signals        |     0.001 |      520 |       --- |             --- |
+| I/O            |     0.027 |       23 |       106 |           21.70 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.104 |          |           |                 |
+| Total          |     0.103 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -141,7 +141,7 @@ Table of Contents
 +----------------------+-----------+
 | Name                 | Power (W) |
 +----------------------+-----------+
-| top_stopwatch_clock  |     0.033 |
+| top_stopwatch_clock  |     0.031 |
 |   U_top_clock        |     0.001 |
 |     U_clock_datapath |     0.001 |
 +----------------------+-----------+

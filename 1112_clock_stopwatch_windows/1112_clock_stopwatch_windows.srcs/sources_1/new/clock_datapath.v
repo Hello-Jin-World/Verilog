@@ -170,7 +170,7 @@ module time_clock_counter_for_clock #(
             end
         end
         if (button & sw_clock_stopwatch == 1'b0) begin
-            time_counter_next = time_counter_reg + 1;
+            time_counter_next = (time_counter_reg + 1) % 60;
         end
     end
 endmodule
