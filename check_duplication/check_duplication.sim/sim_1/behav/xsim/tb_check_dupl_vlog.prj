@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../check_duplication.srcs/sources_1/new/check_dupl.v" \
+"../../../../check_duplication.srcs/sim_1/new/tb_check_dupl.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
