@@ -22,15 +22,42 @@
 
 module tb_check_dupl ();
 
-    reg [7:0] in_bit;
-    wire [7:0] out_bit;
+    reg  clk;
+    reg  reset;
+    reg  in_bit;
+    wire out_bit;
 
     check_dupl U_check_dupl (
+        .clk(clk),
+        .reset(reset),
         .in_bit(in_bit),
         .out_bit(out_bit)
     );
 
+    always #05 clk = ~clk;
+    //integer i;
+
+    always #10 in_bit = $urandom();
+
     initial begin
-        in_bit = 8'b01110001;
+        #00 clk = 1'b1;
+        reset = 1'b1;
+        in_bit = 1'b0;
+        //i = 1'b0;
     end
+
+/*
+    task rand_num(output rand_bit);
+        reg [31:0] rand_number;
+        integer i;
+        begin
+            rand_number = $urandom;
+            $display("random : %b\n", rand_number);
+            for (i = 0; i < 32; i = i + 1) begin
+                rand_bit = rand_number[0];
+                rand_number = rand_number >> 1;
+            end
+        end
+    endtask
+*/
 endmodule
