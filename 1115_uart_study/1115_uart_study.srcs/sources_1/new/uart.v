@@ -25,9 +25,12 @@ module uart (
     input        reset,
     input        tx_start,
     input  [7:0] tx_data,
+    input        rx,
     output       tx,
     output       tx_busy,
-    output       tx_done
+    output       tx_done,
+    output [7:0] rx_data,
+    output       rx_done
 );
 
     wire w_tick;
@@ -47,6 +50,15 @@ module uart (
         .tx(tx),
         .tx_busy(tx_busy),
         .tx_done(tx_done)
+    );
+
+    reciever U_reciever (
+        .clk(clk),
+        .reset(reset),
+        .br_tick(w_tick),
+        .rx(rx),
+        .rx_data(rx_data),
+        .rx_done(rx_done)
     );
 
 endmodule
@@ -92,9 +104,9 @@ module transmitter (
     output       tx_done
 );
 
-    parameter IDLE = 0, START = 1, DATA = 2, STOP = 3;
+    localparam IDLE = 0, START = 1, DATA = 2, STOP = 3;
 
-    reg [3:0] state, state_next;
+    reg [1:0] state, state_next;
     reg [7:0] tx_temp_data_reg, tx_temp_data_next;  // latching
     reg tx_reg, tx_next, tx_done_reg, tx_done_next;
     reg [3:0] tick_count_reg, tick_count_next;
@@ -263,6 +275,99 @@ module transmitter (
                         tick_count_next = 0;
                     end else begin
                         tick_count_next = tick_count_reg + 1;
+                    end
+                end
+            end
+        endcase
+    end
+endmodule
+
+
+module reciever (
+    input        clk,
+    input        reset,
+    input        br_tick,
+    input        rx,
+    output [7:0] rx_data,
+    output       rx_done
+);
+
+    localparam IDLE = 0, START = 1, DATA = 2, STOP = 3;
+
+    reg [1:0] state, state_next;
+    reg [3:0] br_tick_count_reg, br_tick_count_next;
+    reg [7:0] rx_data_reg, rx_data_next;
+    reg [2:0] bit_count_reg, bit_count_next;
+    reg rx_done_reg, rx_done_next;
+
+    assign rx_data = rx_data_reg;
+    assign rx_done = rx_done_reg;
+
+    always @(posedge clk, posedge reset) begin
+        if (reset) begin
+            state             <= IDLE;
+            br_tick_count_reg <= 0;
+            rx_data_reg       <= 0;
+            bit_count_reg     <= 0;
+            rx_done_reg       <= 0;
+        end else begin
+            state             <= state_next;
+            br_tick_count_reg <= br_tick_count_next;
+            rx_data_reg       <= rx_data_next;
+            bit_count_reg     <= bit_count_next;
+            rx_done_reg       <= rx_done_next;
+        end
+    end
+
+    always @(*) begin
+        state_next         = state;
+        br_tick_count_next = br_tick_count_reg;
+        rx_data_next       = rx_data_reg;
+        bit_count_next     = bit_count_reg;
+        rx_done_next       = rx_done_reg;
+        case (state)
+            IDLE: begin
+                rx_done_next = 1'b0;
+                if (rx == 1'b0) begin
+                    br_tick_count_next = 0;
+                    state_next         = START;
+                end
+            end
+            START: begin
+                if (br_tick == 1'b1) begin
+                    if (br_tick_count_reg == 7) begin
+                        br_tick_count_next = 0;
+                        state_next         = DATA;
+                    end else begin
+                        br_tick_count_next = br_tick_count_reg + 1;
+                    end
+                end
+            end
+            DATA: begin
+                if (br_tick == 1'b1) begin
+                    if (br_tick_count_reg == 15) begin
+                        br_tick_count_next = 0;
+                        rx_data_next = {rx, rx_data_reg[7:1]};  // shift
+                        // first in -> 0'bit (LSB)
+                        if (bit_count_reg == 7) begin
+                            bit_count_next = 0;
+                            state_next     = STOP;
+                        end else begin
+                            bit_count_next = bit_count_reg + 1;
+                        end
+                    end else begin
+                        br_tick_count_next = br_tick_count_reg + 1;
+                    end
+                end
+            end
+            STOP: begin
+                if (br_tick == 1'b1) begin
+                    if (br_tick_count_reg == 15) begin
+                        br_tick_count_next = 0;
+                        state_next         = IDLE;
+                        rx_done_next       = 1'b1;
+                    end else begin
+                        br_tick_count_next = br_tick_count_reg + 1;
                     end
                 end
             end
