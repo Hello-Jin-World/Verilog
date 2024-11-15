@@ -23,17 +23,22 @@
 module uart (
     input        clk,
     input        reset,
+    // UART Tx
     input        tx_start,
     input  [7:0] tx_data,
-    input        rx,
     output       tx,
     output       tx_busy,
     output       tx_done,
+    // UART Rx
+    input        rx,
     output [7:0] rx_data,
     output       rx_done
 );
 
     wire w_tick;
+    wire [7:0] w_rx_data;
+
+    assign rx_data = w_rx_data;
 
     baudrate_generator U_baudrate_generator (
         .clk(clk),
@@ -46,7 +51,7 @@ module uart (
         .reset(reset),
         .br_tick(w_tick),
         .tx_start(tx_start),
-        .tx_data(tx_data),
+        .tx_data(w_rx_data),
         .tx(tx),
         .tx_busy(tx_busy),
         .tx_done(tx_done)
@@ -57,7 +62,7 @@ module uart (
         .reset(reset),
         .br_tick(w_tick),
         .rx(rx),
-        .rx_data(rx_data),
+        .rx_data(w_rx_data),
         .rx_done(rx_done)
     );
 
@@ -373,4 +378,5 @@ module reciever (
             end
         endcase
     end
+
 endmodule

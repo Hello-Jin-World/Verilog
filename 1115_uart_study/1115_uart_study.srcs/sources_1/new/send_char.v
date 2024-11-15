@@ -20,6 +20,33 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
+module uart_loopback (
+    input  clk,
+    input  reset,
+    input  rx,
+    output tx
+);
+
+    wire [7:0] w_loopdata;
+    wire w_rx_done;
+
+    uart U_uart (
+        .clk(clk),
+        .reset(reset),
+        // UART Tx
+        .tx_start(w_rx_done),
+        .tx_data(w_loopdata),
+        .tx(tx),
+        .tx_busy(),
+        .tx_done(),
+        // UART Rx
+        .rx(rx),
+        .rx_data(w_loopdata),
+        .rx_done(w_rx_done)
+    );
+endmodule
+
+/*
 module send_char (
     input  clk,
     input  reset,
@@ -66,3 +93,4 @@ module send_char (
         end
     end
 endmodule
+*/
