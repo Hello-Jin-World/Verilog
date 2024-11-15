@@ -26,6 +26,7 @@ module uart (
     input        tx_start,
     input  [7:0] tx_data,
     output       tx,
+    output       tx_busy,
     output       tx_done
 );
 
@@ -44,6 +45,7 @@ module uart (
         .tx_start(tx_start),
         .tx_data(tx_data),
         .tx(tx),
+        .tx_busy(tx_busy),
         .tx_done(tx_done)
     );
 
@@ -86,6 +88,7 @@ module transmitter (
     input        tx_start,
     input  [7:0] tx_data,
     output       tx,
+    output       tx_busy,
     output       tx_done
 );
 
@@ -96,18 +99,21 @@ module transmitter (
     reg tx_reg, tx_next, tx_done_reg, tx_done_next;
     reg [3:0] tick_count_reg, tick_count_next;
     reg [2:0] bit_count_reg, bit_count_next;
+    reg tx_busy_reg, tx_busy_next;
 
     assign tx      = tx_reg;
     assign tx_done = tx_done_reg;
+    assign tx_busy = tx_busy_reg;
 
     always @(posedge clk, posedge reset) begin
         if (reset) begin
             state            <= IDLE;
             tx_reg           <= 1'b0;
-            tx_done_reg      <= 1'b0;
+            tx_done_reg      <= 1'b1;
             tx_temp_data_reg <= 0;
             tick_count_reg   <= 0;
             bit_count_reg    <= 0;
+            tx_busy_reg      <= 0;
         end else begin
             state            <= state_next;
             tx_reg           <= tx_next;
@@ -115,6 +121,7 @@ module transmitter (
             tx_temp_data_reg <= tx_temp_data_next;
             tick_count_reg   <= tick_count_next;
             bit_count_reg    <= bit_count_next;
+            tx_busy_reg      <= tx_busy_next;
         end
     end
 
@@ -125,12 +132,17 @@ module transmitter (
         state_next        = state;
         tick_count_next   = tick_count_reg;
         bit_count_next    = bit_count_reg;
+        tx_busy_next      = tx_busy_reg;
         case (state)
             IDLE: begin
                 tx_next      = 1'b1;
                 tx_done_next = 1'b0;
+                tx_busy_next = 1'b0;
                 if (tx_start == 1'b1) begin
                     tx_temp_data_next = tx_data;  // data latching
+                    tick_count_next = 0;
+                    bit_count_next = 0;
+                    tx_busy_next = 1'b1;
                     state_next = START;
                 end
             end
@@ -155,8 +167,8 @@ module transmitter (
                             state_next = STOP;
                         end else begin
                             tx_temp_data_next = {
-                                1'b0, tx_temp_data_reg[7:1] // shift
-                            }; 
+                                1'b0, tx_temp_data_reg[7:1]  // shift
+                            };
                             bit_count_next = bit_count_reg + 1;
                         end
                     end else begin
