@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1731655579">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1731656159">
   <File Type="PA-TCL" Name="uart_loopback.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="uart_loopback_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="uart_loopback_reports.tcl"/>

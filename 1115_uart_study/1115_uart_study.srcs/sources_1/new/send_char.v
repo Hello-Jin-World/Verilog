@@ -21,10 +21,11 @@
 
 
 module uart_loopback (
-    input  clk,
-    input  reset,
-    input  rx,
-    output tx
+    input      clk,
+    input      reset,
+    input      rx,
+    output     tx,
+    output reg led
 );
 
     wire [7:0] w_loopdata;
@@ -44,7 +45,18 @@ module uart_loopback (
         .rx_data(w_loopdata),
         .rx_done(w_rx_done)
     );
+
+    always @(*) begin
+        led = 0;
+        if (w_loopdata == "1") begin
+            led = 1'b1;
+        end else if (w_loopdata == "2") begin
+            led = 1'b0;
+        end
+    end
 endmodule
+
+
 
 /*
 module send_char (

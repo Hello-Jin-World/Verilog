@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Fri Nov 15 16:26:45 2024
+| Date         : Fri Nov 15 16:36:26 2024
 | Host         : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 | Command      : report_utilization -file uart_loopback_utilization_synth.rpt -pb uart_loopback_utilization_synth.pb
 | Design       : uart_loopback
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   42 |     0 |     20800 |  0.20 |
-|   LUT as Logic          |   42 |     0 |     20800 |  0.20 |
+| Slice LUTs*             |   44 |     0 |     20800 |  0.21 |
+|   LUT as Logic          |   44 |     0 |     20800 |  0.21 |
 |   LUT as Memory         |    0 |     0 |      9600 |  0.00 |
 | Slice Registers         |   47 |     0 |     41600 |  0.11 |
 |   Register as Flip Flop |   47 |     0 |     41600 |  0.11 |
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |    4 |     0 |       106 |  3.77 |
+| Bonded IOB                  |    5 |     0 |       106 |  4.72 |
 | Bonded IPADs                |    0 |     0 |        10 |  0.00 |
 | Bonded OPADs                |    0 |     0 |         4 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         5 |  0.00 |
@@ -150,13 +150,13 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDCE     |   47 |        Flop & Latch |
-| LUT3     |   17 |                 LUT |
-| LUT6     |   14 |                 LUT |
+| LUT3     |   18 |                 LUT |
+| LUT6     |   15 |                 LUT |
 | LUT5     |   13 |                 LUT |
 | LUT4     |    8 |                 LUT |
 | LUT2     |    3 |                 LUT |
 | IBUF     |    3 |                  IO |
-| OBUF     |    1 |                  IO |
+| OBUF     |    2 |                  IO |
 | LUT1     |    1 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+

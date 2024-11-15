@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Fri Nov 15 16:27:25 2024
+| Date         : Fri Nov 15 16:37:05 2024
 | Host         : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 | Command      : report_methodology -file uart_loopback_methodology_drc_routed.rpt -pb uart_loopback_methodology_drc_routed.pb -rpx uart_loopback_methodology_drc_routed.rpx
 | Design       : uart_loopback
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 3
+             Violations found: 4
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
-| TIMING-18 | Warning  | Missing input or output delay | 3          |
+| TIMING-18 | Warning  | Missing input or output delay | 4          |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
@@ -43,6 +43,11 @@ An input delay is missing on rx relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#3 Warning
+Missing input or output delay  
+An output delay is missing on led relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#4 Warning
 Missing input or output delay  
 An output delay is missing on tx relative to clock(s) sys_clk_pin
 Related violations: <none>
