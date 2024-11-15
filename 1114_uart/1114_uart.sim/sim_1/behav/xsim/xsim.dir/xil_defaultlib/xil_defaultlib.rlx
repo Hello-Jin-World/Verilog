@@ -3,7 +3,7 @@
 Nov 18 2020
 09:47:47
 D:/GitHub/harman_Verilog/1114_uart/1114_uart.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,,,,,,,
-D:/GitHub/harman_Verilog/1114_uart/1114_uart.srcs/sim_1/new/tb_uart.v,1731573565,verilog,,,,tb_uart,,,,,,,,
-D:/GitHub/harman_Verilog/1114_uart/1114_uart.srcs/sources_1/new/rx_module.v,1731574674,verilog,,D:/GitHub/harman_Verilog/1114_uart/1114_uart.srcs/sources_1/new/tx_module.v,,rx_module,,,,,,,,
-D:/GitHub/harman_Verilog/1114_uart/1114_uart.srcs/sources_1/new/tx_module.v,1731574802,verilog,,D:/GitHub/harman_Verilog/1114_uart/1114_uart.srcs/sources_1/new/uart.v,,tx_module,,,,,,,,
+D:/GitHub/harman_Verilog/1114_uart/1114_uart.srcs/sim_1/new/tb_uart.v,1731630110,verilog,,,,tb_uart,,,,,,,,
+D:/GitHub/harman_Verilog/1114_uart/1114_uart.srcs/sources_1/new/rx_module.v,1731630540,verilog,,D:/GitHub/harman_Verilog/1114_uart/1114_uart.srcs/sources_1/new/tx_module.v,,rx_module,,,,,,,,
+D:/GitHub/harman_Verilog/1114_uart/1114_uart.srcs/sources_1/new/tx_module.v,1731574865,verilog,,D:/GitHub/harman_Verilog/1114_uart/1114_uart.srcs/sources_1/new/uart.v,,tx_module,,,,,,,,
 D:/GitHub/harman_Verilog/1114_uart/1114_uart.srcs/sources_1/new/uart.v,1731573578,verilog,,D:/GitHub/harman_Verilog/1114_uart/1114_uart.srcs/sim_1/new/tb_uart.v,,clk_div_9600;uart,,,,,,,,

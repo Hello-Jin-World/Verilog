@@ -37,7 +37,7 @@ module tb_uart ();
     );
 
     always #5 clk = ~clk;
-    always #50 data = 8'b10010100;
+    always #50 data = 8'b01000111;
 
     initial begin
         #00 clk = 1'b0;

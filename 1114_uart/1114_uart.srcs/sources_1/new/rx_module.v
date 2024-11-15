@@ -73,9 +73,9 @@ module rx_module (
                 save_rx_data = r_rx_data;
                 r_rx_data = 8'b11111111;
             end
-            default: begin
-                state = IDLE;
-                save_rx_data = 0;
+            default: begin    
+                r_rx_data = 0;
+                save_rx_data = r_rx_data;
             end
         endcase
     end
