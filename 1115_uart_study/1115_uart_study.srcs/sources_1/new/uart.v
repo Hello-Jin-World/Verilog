@@ -55,7 +55,7 @@ module baudrate_generator (
     output br_tick
 );
 
-    reg [13:0] r_counter;
+    reg [$clog2(100_000_000 / 9600 / 16)-1 : 0] r_counter;
     reg r_tick;
     reg [3:0] state, state_next;
 
@@ -67,7 +67,7 @@ module baudrate_generator (
             r_counter <= 0;
             r_tick    <= 1'b0;
         end else begin
-            if (r_counter == 100_000_000 / 9600 - 1) begin
+            if (r_counter == 100_000_000 / 9600 / 16 - 1) begin
                 r_counter <= 0;
                 r_tick    <= 1'b1;
             end else begin
@@ -89,12 +89,13 @@ module transmitter (
     output       tx_done
 );
 
-    parameter IDLE = 0, START = 1, DATA0 = 2, DATA1 = 3, DATA2 = 4
-    , DATA3 = 5, DATA4 = 6, DATA5 = 7, DATA6 = 8, DATA7 = 9, STOP = 10;
+    parameter IDLE = 0, START = 1, DATA = 2, STOP = 3;
 
     reg [3:0] state, state_next;
     reg [7:0] tx_temp_data_reg, tx_temp_data_next;  // latching
     reg tx_reg, tx_next, tx_done_reg, tx_done_next;
+    reg [3:0] tick_count_reg, tick_count_next;
+    reg [2:0] bit_count_reg, bit_count_next;
 
     assign tx      = tx_reg;
     assign tx_done = tx_done_reg;
@@ -105,11 +106,15 @@ module transmitter (
             tx_reg           <= 1'b0;
             tx_done_reg      <= 1'b0;
             tx_temp_data_reg <= 0;
+            tick_count_reg   <= 0;
+            bit_count_reg    <= 0;
         end else begin
             state            <= state_next;
             tx_reg           <= tx_next;
             tx_done_reg      <= tx_done_next;
             tx_temp_data_reg <= tx_temp_data_next;
+            tick_count_reg   <= tick_count_next;
+            bit_count_reg    <= bit_count_next;
         end
     end
 
@@ -118,6 +123,8 @@ module transmitter (
         tx_done_next      = tx_done_reg;
         tx_temp_data_next = tx_temp_data_reg;
         state_next        = state;
+        tick_count_next   = tick_count_reg;
+        bit_count_next    = bit_count_reg;
         case (state)
             IDLE: begin
                 tx_next      = 1'b1;
@@ -130,62 +137,121 @@ module transmitter (
             START: begin
                 tx_next = 1'b0;
                 if (br_tick == 1'b1) begin
-                    state_next = DATA0;
+                    if (tick_count_reg == 15) begin
+                        state_next = DATA;
+                        tick_count_next = 0;
+                    end else begin
+                        tick_count_next = tick_count_reg + 1;
+                    end
                 end
             end
-            DATA0: begin
+            DATA: begin
                 tx_next = tx_temp_data_reg[0];
                 if (br_tick == 1'b1) begin
-                    state_next = DATA1;
+                    if (tick_count_reg == 15) begin
+                        tick_count_next = 0;
+                        if (bit_count_reg == 7) begin
+                            bit_count_next = 0;
+                            state_next = STOP;
+                        end else begin
+                            tx_temp_data_next = {
+                                1'b0, tx_temp_data_reg[7:1] // shift
+                            }; 
+                            bit_count_next = bit_count_reg + 1;
+                        end
+                    end else begin
+                        tick_count_next = tick_count_reg + 1;
+                    end
                 end
             end
+            /*
             DATA1: begin
                 tx_next = tx_temp_data_reg[1];
                 if (br_tick == 1'b1) begin
-                    state_next = DATA2;
+                    if (tick_count_reg == 15) begin
+                        state_next = DATA2;
+                        tick_count_next = 0;
+                    end else begin
+                        tick_count_next = tick_count_reg + 1;
+                    end
                 end
             end
             DATA2: begin
                 tx_next = tx_temp_data_reg[2];
                 if (br_tick == 1'b1) begin
-                    state_next = DATA3;
+                    if (tick_count_reg == 15) begin
+                        state_next = DATA3;
+                        tick_count_next = 0;
+                    end else begin
+                        tick_count_next = tick_count_reg + 1;
+                    end
                 end
             end
             DATA3: begin
                 tx_next = tx_temp_data_reg[3];
                 if (br_tick == 1'b1) begin
-                    state_next = DATA4;
+                    if (tick_count_reg == 15) begin
+                        state_next = DATA4;
+                        tick_count_next = 0;
+                    end else begin
+                        tick_count_next = tick_count_reg + 1;
+                    end
                 end
             end
             DATA4: begin
                 tx_next = tx_temp_data_reg[4];
                 if (br_tick == 1'b1) begin
-                    state_next = DATA5;
+                    if (tick_count_reg == 15) begin
+                        state_next = DATA5;
+                        tick_count_next = 0;
+                    end else begin
+                        tick_count_next = tick_count_reg + 1;
+                    end
                 end
             end
             DATA5: begin
                 tx_next = tx_temp_data_reg[5];
                 if (br_tick == 1'b1) begin
-                    state_next = DATA6;
+                    if (tick_count_reg == 15) begin
+                        state_next = DATA6;
+                        tick_count_next = 0;
+                    end else begin
+                        tick_count_next = tick_count_reg + 1;
+                    end
                 end
             end
             DATA6: begin
                 tx_next = tx_temp_data_reg[6];
                 if (br_tick == 1'b1) begin
-                    state_next = DATA7;
+                    if (tick_count_reg == 15) begin
+                        state_next = DATA7;
+                        tick_count_next = 0;
+                    end else begin
+                        tick_count_next = tick_count_reg + 1;
+                    end
                 end
             end
             DATA7: begin
                 tx_next = tx_temp_data_reg[7];
                 if (br_tick == 1'b1) begin
-                    state_next = STOP;
+                    if (tick_count_reg == 15) begin
+                        state_next = STOP;
+                        tick_count_next = 0;
+                    end else begin
+                        tick_count_next = tick_count_reg + 1;
+                    end
                 end
-            end
+            end*/
             STOP: begin
                 tx_next = 1'b1;
                 if (br_tick == 1'b1) begin
-                    tx_done_next = 1'b1;
-                    state_next   = IDLE;
+                    if (tick_count_reg == 15) begin
+                        tx_done_next = 1'b1;
+                        state_next = IDLE;
+                        tick_count_next = 0;
+                    end else begin
+                        tick_count_next = tick_count_reg + 1;
+                    end
                 end
             end
         endcase
