@@ -39,8 +39,8 @@ module tb_add_sub ();
     );
 
     initial begin
-        #5 a = 8'b10100101;
-         b = 8'b10000111;
+        #5 a = 4;
+         b = 8;
         cin = 0;
         mode_select = 1;
     end
