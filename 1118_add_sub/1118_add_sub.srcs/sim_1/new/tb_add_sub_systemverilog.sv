@@ -26,6 +26,22 @@ class transaction;
     rand bit         mode_select;
 endclass  //transaction
 
+class generator;
+
+    transaction tr;
+
+    function new();
+        tr = new();
+    endfunction  //new()
+
+    task run();
+        repeat (100000) begin  // 
+            trans.randomize();
+        end
+    endtask
+
+endclass  //generator
+
 module tb_add_sub_systemverilog ();
     transaction       trans;  // handler for instance
 
@@ -51,7 +67,7 @@ module tb_add_sub_systemverilog ();
         //$srandom(10); // seed
         trans = new();  // make instance on handler
         //mode_select = 1'b1;  // 0 : add, 1: sub
-        repeat (1000) begin  // 
+        repeat (100000) begin  // 
             trans.randomize();
             a = trans.a;
             b = trans.b;
@@ -63,7 +79,7 @@ module tb_add_sub_systemverilog ();
             //b_sum = sum;
             case (trans.mode_select)
                 1'b0: begin
-                    $write("%d : a(%d) + b(%d) = result(%d)", $time, trans.a,
+                    $write("%d : a(%d) + b(%d) = result(%0d)", $time, trans.a,
                            trans.b, sum);
                     if ((trans.a + trans.b) == sum) begin
                         $display("\t pass!!!\n");
@@ -72,7 +88,7 @@ module tb_add_sub_systemverilog ();
                     end
                 end
                 1'b1: begin
-                    $write("%d : a(%d) - b(%d) = result(%d)", $time, trans.a,
+                    $write("%d : a(%d) - b(%d) = result(%0d)", $time, trans.a,
                            trans.b, i_sum);
                     if ((trans.a - trans.b) == i_sum) begin
                         $display("\t pass!!!\n");
