@@ -35,7 +35,8 @@ module tb_add_sub_systemverilog ();
     wire        [7:0] sum;
     wire              carry;
     int               i = 0;
-    byte              b_sum;
+    //byte              b_sum;
+    int i_a, i_b, i_sum;
 
     add_sub dut (
         .a(a),
@@ -47,6 +48,7 @@ module tb_add_sub_systemverilog ();
     );
 
     initial begin
+        //$srandom(10); // seed
         trans = new();  // make instance on handler
         //mode_select = 1'b1;  // 0 : add, 1: sub
         repeat (1000) begin  // 
@@ -54,20 +56,25 @@ module tb_add_sub_systemverilog ();
             a = trans.a;
             b = trans.b;
             mode_select = trans.mode_select;
+            i_a = trans.a;
+            i_b = trans.b;
+            i_sum = i_a - i_b;
             #10;
-            b_sum = sum;
-            $write("%d : a(%d) %c b(%d) = result(%d)", $time, trans.a,
-                   (mode_select) ? "-" : "+", trans.b, b_sum);
+            //b_sum = sum;
             case (trans.mode_select)
                 1'b0: begin
-                    if ((trans.a + trans.b) == b_sum) begin
+                    $write("%d : a(%d) + b(%d) = result(%d)", $time, trans.a,
+                           trans.b, sum);
+                    if ((trans.a + trans.b) == sum) begin
                         $display("\t pass!!!\n");
                     end else begin
                         $display("\t fail...\n");
                     end
                 end
                 1'b1: begin
-                    if ((trans.a - trans.b) == b_sum) begin
+                    $write("%d : a(%d) - b(%d) = result(%d)", $time, trans.a,
+                           trans.b, i_sum);
+                    if ((trans.a - trans.b) == i_sum) begin
                         $display("\t pass!!!\n");
                     end else begin
                         $display("\t fail...\n");

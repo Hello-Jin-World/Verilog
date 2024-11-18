@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir D:/GitHub/harman_Verilog/1118_add_sub/1118_add_sub.sim/sim_1/behav/xsim/xsim.dir/tb_add_sub_systemverilog_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Mon Nov 18 14:48:32 2024" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Mon Nov 18 15:07:27 2024" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2020.2 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "3064766" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "44136bca-741c-479f-80bc-201c867c94ad" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "985f3293a34d418cb0bf4d9a3f624919" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "55" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "61" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Windows Server 2016 or Windows 10" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "12th Gen Intel(R) Core(TM) i7-1260P" -context "user_environment"
@@ -37,7 +37,7 @@ webtalk_add_data -client xsim -key Total_Nets -value "0" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Total_Processes -value "61" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Total_Instances -value "30" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Xilinx_HDL_Libraries_Used -value "secureip unimacro_ver unisims_ver " -context "xsim\\usage"
-webtalk_add_data -client xsim -key Compiler_Time -value "0.37_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Compiler_Memory -value "60828_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 3281823805 -regid "" -xml D:/GitHub/harman_Verilog/1118_add_sub/1118_add_sub.sim/sim_1/behav/xsim/xsim.dir/tb_add_sub_systemverilog_behav/webtalk/usage_statistics_ext_xsim.xml -html D:/GitHub/harman_Verilog/1118_add_sub/1118_add_sub.sim/sim_1/behav/xsim/xsim.dir/tb_add_sub_systemverilog_behav/webtalk/usage_statistics_ext_xsim.html -wdm D:/GitHub/harman_Verilog/1118_add_sub/1118_add_sub.sim/sim_1/behav/xsim/xsim.dir/tb_add_sub_systemverilog_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Compiler_Time -value "0.31_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Compiler_Memory -value "60864_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 3883574683 -regid "" -xml D:/GitHub/harman_Verilog/1118_add_sub/1118_add_sub.sim/sim_1/behav/xsim/xsim.dir/tb_add_sub_systemverilog_behav/webtalk/usage_statistics_ext_xsim.xml -html D:/GitHub/harman_Verilog/1118_add_sub/1118_add_sub.sim/sim_1/behav/xsim/xsim.dir/tb_add_sub_systemverilog_behav/webtalk/usage_statistics_ext_xsim.html -wdm D:/GitHub/harman_Verilog/1118_add_sub/1118_add_sub.sim/sim_1/behav/xsim/xsim.dir/tb_add_sub_systemverilog_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate
