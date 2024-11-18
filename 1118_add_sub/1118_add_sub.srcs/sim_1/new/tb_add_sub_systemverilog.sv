@@ -36,7 +36,7 @@ class generator;
 
     task run();
         repeat (100000) begin  // 
-            trans.randomize();
+            tr.randomize();
         end
     endtask
 
