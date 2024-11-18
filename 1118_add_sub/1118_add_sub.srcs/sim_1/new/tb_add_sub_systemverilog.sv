@@ -43,14 +43,15 @@ class generator;
 endclass  //generator
 
 module tb_add_sub_systemverilog ();
-    transaction       trans;  // handler for instance
+    // transaction       trans;  // handler for instance
+    generator       gen;
 
-    reg         [7:0] a;
-    reg         [7:0] b;
-    reg               mode_select;
-    wire        [7:0] sum;
-    wire              carry;
-    int               i = 0;
+    reg       [7:0] a;
+    reg       [7:0] b;
+    reg             mode_select;
+    wire      [7:0] sum;
+    wire            carry;
+    int             i = 0;
     //byte              b_sum;
     int i_a, i_b, i_sum;
 
@@ -64,10 +65,13 @@ module tb_add_sub_systemverilog ();
     );
 
     initial begin
+        gen = new();
+        gen.run();  // member_fuction
+
         //$srandom(10); // seed
-        trans = new();  // make instance on handler
+        // trans = new();  // make instance on handler
         //mode_select = 1'b1;  // 0 : add, 1: sub
-        repeat (100000) begin  // 
+        /*    repeat (100000) begin  // 
             trans.randomize();
             a = trans.a;
             b = trans.b;
@@ -97,6 +101,6 @@ module tb_add_sub_systemverilog ();
                     end
                 end
             endcase
-        end
+        end*/
     end
 endmodule
