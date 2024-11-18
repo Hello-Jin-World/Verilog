@@ -19,53 +19,66 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+interface adder_intf;
+    logic [7:0] a;
+    logic [7:0] b;
+    logic mode_select;
+endinterface  //adder_intf
+
 
 class transaction;
     rand logic [7:0] a;
     rand logic [7:0] b;
-    rand bit         mode_select;
+    rand logic       mode_select;
 endclass  //transaction
 
+
 class generator;
+    virtual adder_intf adder_if;
+    transaction        tr;
 
-    transaction tr;
-
-    function new();
-        tr = new();
+    function new(virtual adder_intf adder_interface);
+        this.adder_if = adder_interface;
+        tr            = new();
     endfunction  //new()
 
     task run();
-        repeat (100000) begin  // 
+        repeat (100000) begin
             tr.randomize();
+            adder_if.a           = tr.a;
+            adder_if.b           = tr.b;
+            adder_if.mode_select = tr.mode_select;
         end
     endtask
-
 endclass  //generator
 
+
 module tb_add_sub_systemverilog ();
+
+    adder_intf adder_interface ();  // interface instance
+
     // transaction       trans;  // handler for instance
     generator       gen;
 
-    reg       [7:0] a;
-    reg       [7:0] b;
-    reg             mode_select;
+    //reg       [7:0] a;
+    //reg       [7:0] b;
+    //reg             mode_select;
     wire      [7:0] sum;
     wire            carry;
-    int             i = 0;
     //byte              b_sum;
-    int i_a, i_b, i_sum;
+    //int i_a, i_b, i_sum;
 
     add_sub dut (
-        .a(a),
-        .b(b),
+        .a(adder_interface.a),
+        .b(adder_interface.b),
         .cin(cin),
-        .mode_select(mode_select),
+        .mode_select(adder_interface.mode_select),
         .sum(sum),
         .carry(carry)
     );
 
     initial begin
-        gen = new();
+        gen = new(adder_interface);
         gen.run();  // member_fuction
 
         //$srandom(10); // seed
