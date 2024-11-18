@@ -37,8 +37,8 @@ class generator;
     virtual adder_intf adder_if;
     transaction        tr;
 
-    function new(virtual adder_intf adder_interface);
-        this.adder_if = adder_interface;
+    function new(virtual adder_intf adder_interf);
+        this.adder_if = adder_interf;
         tr            = new();
     endfunction  //new()
 
