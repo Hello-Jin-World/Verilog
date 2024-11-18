@@ -75,12 +75,13 @@ IKI_DLLESPEC extern void execute_86(char*, char *);
 IKI_DLLESPEC extern void execute_87(char*, char *);
 IKI_DLLESPEC extern void execute_88(char*, char *);
 IKI_DLLESPEC extern void vlog_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
-funcp funcTab[21] = {(funcp)execute_32, (funcp)execute_80, (funcp)execute_81, (funcp)execute_82, (funcp)execute_79, (funcp)execute_6, (funcp)vlog_simple_process_execute_0_fast_no_reg_no_agg, (funcp)execute_43, (funcp)execute_39, (funcp)execute_40, (funcp)execute_34, (funcp)execute_35, (funcp)execute_36, (funcp)execute_37, (funcp)execute_83, (funcp)execute_84, (funcp)execute_85, (funcp)execute_86, (funcp)execute_87, (funcp)execute_88, (funcp)vlog_transfunc_eventcallback};
-const int NumRelocateId= 21;
+IKI_DLLESPEC extern void vlog_transfunc_eventcallback_2state(char*, char*, unsigned, unsigned, unsigned, char *);
+funcp funcTab[22] = {(funcp)execute_32, (funcp)execute_80, (funcp)execute_81, (funcp)execute_82, (funcp)execute_79, (funcp)execute_6, (funcp)vlog_simple_process_execute_0_fast_no_reg_no_agg, (funcp)execute_43, (funcp)execute_39, (funcp)execute_40, (funcp)execute_34, (funcp)execute_35, (funcp)execute_36, (funcp)execute_37, (funcp)execute_83, (funcp)execute_84, (funcp)execute_85, (funcp)execute_86, (funcp)execute_87, (funcp)execute_88, (funcp)vlog_transfunc_eventcallback, (funcp)vlog_transfunc_eventcallback_2state};
+const int NumRelocateId= 22;
 
 void relocate(char *dp)
 {
-	iki_relocate(dp, "xsim.dir/tb_add_sub_systemverilog_behav/xsim.reloc",  (void **)funcTab, 21);
+	iki_relocate(dp, "xsim.dir/tb_add_sub_systemverilog_behav/xsim.reloc",  (void **)funcTab, 22);
 
 	/*Populate the transaction function pointer field in the whole net structure */
 }
@@ -102,8 +103,8 @@ iki_register_root_pointers(1, 12064, 0,0,0) ;
 
 }
 #include "iki_bridge.h"
-void subprog_m_bb571e65_541ab7df_1() ;
-static char* ng00[] = {(void *)subprog_m_bb571e65_541ab7df_1};
+void subprog_m_a9b64d92_541ab7df_1() ;
+static char* ng00[] = {(void *)subprog_m_a9b64d92_541ab7df_1};
 void relocate(char *);
 
 void sensitize(char *);

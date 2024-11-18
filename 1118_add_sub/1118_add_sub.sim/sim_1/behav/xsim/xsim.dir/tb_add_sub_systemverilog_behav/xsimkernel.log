@@ -1,0 +1,4 @@
+Running: xsim.dir/tb_add_sub_systemverilog_behav/xsimk.exe -simmode gui -wdb tb_add_sub_systemverilog_behav.wdb -simrunnum 0 -socket 61006
+Design successfully loaded
+Design Loading Memory Usage: 7008 KB (Peak: 7008 KB)
+Design Loading CPU Usage: 0 ms
