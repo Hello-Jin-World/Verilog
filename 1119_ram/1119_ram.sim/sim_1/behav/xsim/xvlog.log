@@ -1,2 +1,2 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/GitHub/harman_Verilog/1119_ram/1119_ram.srcs/sim_1/new/tb_ram_systemverilog.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/user/project/Verilog/1119_ram/1119_ram.srcs/sim_1/new/tb_ram_systemverilog.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_ram_systemverilog

@@ -1,1 +1,1 @@
--wto "47d66ed6872740dbad5de5be6fcc1751" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "uvm" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "tb_ram_systemverilog_behav" "xil_defaultlib.tb_ram_systemverilog" "xil_defaultlib.glbl" -log "elaborate.log" 
+--incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "uvm" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "tb_ram_systemverilog_behav" "xil_defaultlib.tb_ram_systemverilog" "xil_defaultlib.glbl" -log "elaborate.log" 

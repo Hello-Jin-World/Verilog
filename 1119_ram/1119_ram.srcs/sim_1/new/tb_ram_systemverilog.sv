@@ -67,6 +67,13 @@ class driver;
     endfunction  //new()
 
 int i = 0;
+    task reset ();
+        v_ram_intf.w_data  = 0;
+        v_ram_intf.address = 0;
+        v_ram_intf.rw      = 0;
+        @(posedge v_ram_intf.clk);
+    endtask //
+
     task run();
         forever begin
             drv_ram_gen2drv_mbox.get(trans);
@@ -105,11 +112,9 @@ module tb_ram_systemverilog ();
 
         gen = new(ram_gen2drv_mbox);
         drv = new(ram_gen2drv_mbox, ram_intf);
-        ram_intf.address = 0;
-        ram_intf.w_data = 0;
-        ram_intf.rw = 0;
-        ram_intf.r_data = 0;
-        #5;
+
+        drv.reset();
+
         fork
             gen.run(10000);
             drv.run();
