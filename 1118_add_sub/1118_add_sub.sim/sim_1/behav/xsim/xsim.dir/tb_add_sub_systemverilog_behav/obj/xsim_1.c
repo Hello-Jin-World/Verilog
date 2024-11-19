@@ -54,34 +54,33 @@
 #endif
 typedef void (*funcp)(char *, char *);
 extern int main(int, char**);
-IKI_DLLESPEC extern void execute_32(char*, char *);
-IKI_DLLESPEC extern void execute_80(char*, char *);
-IKI_DLLESPEC extern void execute_81(char*, char *);
-IKI_DLLESPEC extern void execute_82(char*, char *);
-IKI_DLLESPEC extern void execute_79(char*, char *);
-IKI_DLLESPEC extern void execute_6(char*, char *);
-IKI_DLLESPEC extern void vlog_simple_process_execute_0_fast_no_reg_no_agg(char*, char*, char*);
-IKI_DLLESPEC extern void execute_43(char*, char *);
-IKI_DLLESPEC extern void execute_39(char*, char *);
-IKI_DLLESPEC extern void execute_40(char*, char *);
-IKI_DLLESPEC extern void execute_34(char*, char *);
 IKI_DLLESPEC extern void execute_35(char*, char *);
-IKI_DLLESPEC extern void execute_36(char*, char *);
-IKI_DLLESPEC extern void execute_37(char*, char *);
 IKI_DLLESPEC extern void execute_83(char*, char *);
 IKI_DLLESPEC extern void execute_84(char*, char *);
 IKI_DLLESPEC extern void execute_85(char*, char *);
+IKI_DLLESPEC extern void execute_82(char*, char *);
+IKI_DLLESPEC extern void execute_9(char*, char *);
+IKI_DLLESPEC extern void vlog_simple_process_execute_0_fast_no_reg_no_agg(char*, char*, char*);
+IKI_DLLESPEC extern void execute_46(char*, char *);
+IKI_DLLESPEC extern void execute_42(char*, char *);
+IKI_DLLESPEC extern void execute_43(char*, char *);
+IKI_DLLESPEC extern void execute_37(char*, char *);
+IKI_DLLESPEC extern void execute_38(char*, char *);
+IKI_DLLESPEC extern void execute_39(char*, char *);
+IKI_DLLESPEC extern void execute_40(char*, char *);
 IKI_DLLESPEC extern void execute_86(char*, char *);
 IKI_DLLESPEC extern void execute_87(char*, char *);
 IKI_DLLESPEC extern void execute_88(char*, char *);
+IKI_DLLESPEC extern void execute_89(char*, char *);
+IKI_DLLESPEC extern void execute_90(char*, char *);
+IKI_DLLESPEC extern void execute_91(char*, char *);
 IKI_DLLESPEC extern void vlog_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
-IKI_DLLESPEC extern void vlog_transfunc_eventcallback_2state(char*, char*, unsigned, unsigned, unsigned, char *);
-funcp funcTab[22] = {(funcp)execute_32, (funcp)execute_80, (funcp)execute_81, (funcp)execute_82, (funcp)execute_79, (funcp)execute_6, (funcp)vlog_simple_process_execute_0_fast_no_reg_no_agg, (funcp)execute_43, (funcp)execute_39, (funcp)execute_40, (funcp)execute_34, (funcp)execute_35, (funcp)execute_36, (funcp)execute_37, (funcp)execute_83, (funcp)execute_84, (funcp)execute_85, (funcp)execute_86, (funcp)execute_87, (funcp)execute_88, (funcp)vlog_transfunc_eventcallback, (funcp)vlog_transfunc_eventcallback_2state};
-const int NumRelocateId= 22;
+funcp funcTab[21] = {(funcp)execute_35, (funcp)execute_83, (funcp)execute_84, (funcp)execute_85, (funcp)execute_82, (funcp)execute_9, (funcp)vlog_simple_process_execute_0_fast_no_reg_no_agg, (funcp)execute_46, (funcp)execute_42, (funcp)execute_43, (funcp)execute_37, (funcp)execute_38, (funcp)execute_39, (funcp)execute_40, (funcp)execute_86, (funcp)execute_87, (funcp)execute_88, (funcp)execute_89, (funcp)execute_90, (funcp)execute_91, (funcp)vlog_transfunc_eventcallback};
+const int NumRelocateId= 21;
 
 void relocate(char *dp)
 {
-	iki_relocate(dp, "xsim.dir/tb_add_sub_systemverilog_behav/xsim.reloc",  (void **)funcTab, 22);
+	iki_relocate(dp, "xsim.dir/tb_add_sub_systemverilog_behav/xsim.reloc",  (void **)funcTab, 21);
 
 	/*Populate the transaction function pointer field in the whole net structure */
 }
@@ -93,7 +92,7 @@ void sensitize(char *dp)
 
 void simulate(char *dp)
 {
-iki_register_root_pointers(1, 12064, 0,0,0) ; 
+iki_register_root_pointers(1, 12064, 2,0,0) ; 
 		iki_schedule_processes_at_time_zero(dp, "xsim.dir/tb_add_sub_systemverilog_behav/xsim.reloc");
 	// Initialize Verilog nets in mixed simulation, for the cases when the value at time 0 should be propagated from the mixed language Vhdl net
 	iki_execute_processes();
@@ -103,8 +102,8 @@ iki_register_root_pointers(1, 12064, 0,0,0) ;
 
 }
 #include "iki_bridge.h"
-void subprog_m_a9b64d92_541ab7df_1() ;
-static char* ng00[] = {(void *)subprog_m_a9b64d92_541ab7df_1};
+void subprog_m_a3083212_541ab7df_1() ;
+static char* ng00[] = {(void *)subprog_m_a3083212_541ab7df_1};
 void relocate(char *);
 
 void sensitize(char *);

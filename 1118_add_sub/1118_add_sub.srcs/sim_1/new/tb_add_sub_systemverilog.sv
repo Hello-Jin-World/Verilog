@@ -48,6 +48,7 @@ class generator;
             adder_if.a           = tr.a;
             adder_if.b           = tr.b;
             adder_if.mode_select = tr.mode_select;
+            #10;
         end
     endtask
 endclass  //generator
