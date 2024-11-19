@@ -31,6 +31,12 @@ module ram (
     reg [7:0] mem[0:1023];
 
     always @(posedge clk) begin
+        if (rw) begin
+            mem[address] <= w_data;
+        end else begin
+            r_data <= mem[address];
+        end
+        /*
         case (rw)
             1'b0: begin
                 r_data <= mem[address];
@@ -39,5 +45,6 @@ module ram (
                 mem[address] <= w_data;
             end
         endcase
+        */
     end
 endmodule
