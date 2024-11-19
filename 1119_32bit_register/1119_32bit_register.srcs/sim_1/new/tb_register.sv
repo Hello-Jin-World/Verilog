@@ -37,40 +37,69 @@ endclass  //transaction
 
 class generator;
     transaction trans;
-    virtual reg_interface reg_intf;
-    int i = 0;
 
-    function new(virtual reg_interface reg_interf);  // create instance
-        this.reg_intf = reg_interf;  // When create instance, operate this line
+    mailbox #(transaction) gen2drv_mbox;  // create headler gen2drv_mbox
+    event gen_next_event; // event : default feature in system verilog
+
+    function new(mailbox#(transaction) gen2drv_mbox_v);  // create instance
+        this.gen2drv_mbox = gen2drv_mbox_v;  // reference
         trans = new();
     endfunction  //new()
 
+    task run(int count);
+        repeat (count) begin
+            assert (trans.randomize())
+            else $display("[GEN] trans.radomize() error \n");  //error_process
+            gen2drv_mbox.put(trans);  // put : default feature in system verilog
+            trans.display("GEN");
+            @(gen_next_event);
+        end
+    endtask  //run int countor
+
+endclass
+
+class driver;
+    transaction trans;
+    virtual reg_interface reg_intf;
+
+    mailbox #(transaction) gen2drv_mbox;  // create headler gen2drv_mbox
+    event gen_next_event;
+
+    function new(mailbox#(transaction) gen2drv_mbox_v,
+                 virtual reg_interface reg_interf);
+        this.gen2drv_mbox = gen2drv_mbox_v;  // reference
+        this.reg_intf = reg_interf;
+    endfunction  //new()
+
     task reset();
-        reg_intf.d <= 0;
+        reg_intf.d     <= 0;
         reg_intf.reset <= 1'b1;
         repeat (5) @(posedge reg_intf.clk);
         reg_intf.reset <= 1'b0;
         @(posedge reg_intf.clk);  // when appear clk edge, output data
     endtask  //reset
 
-    task run(int count);
-        repeat (count) begin
-            assert (trans.randomize())
-            else $display("[GEN] trans.radomize() error \n");  //error_process
+    task run();
+        forever begin
+            gen2drv_mbox.get(trans);  // get transaction address, put in trans
+            // get -> blocking
             reg_intf.d = trans.data;
-            $display("%d", i);
-            trans.display("GEN_IN");
+            trans.display("DRV_IN");
             @(posedge reg_intf.clk);  // when appear clk edge, output data
             trans.out = reg_intf.q;
-            trans.display("GEN_OUT");
-            i++;
+            trans.display("DRV_OUT");
+            if (trans.data == trans.out) $display("pass!!!");
+            else $display("fail...");
         end
-    endtask  //run int countor
-endclass
+    endtask  //run 
+endclass  //driver
 
 module tb_register ();
     reg_interface reg_intf(); // When this moment, reg_interface be instantiation
     generator gen;
+    driver drv;
+
+    mailbox #(transaction) gen2drv_mbox;
 
     register dut (  // connect interface cable with dut
         .clk  (reg_intf.clk),
@@ -83,10 +112,19 @@ module tb_register ();
 
     initial begin
         reg_intf.clk = 0;
-        gen = new(reg_intf)
-            ;  // connet interface(hardware) with generator(class, software)
-        gen.reset();
-        gen.run(10);
+
+        gen2drv_mbox = new();  // create mailbox instance
+
+        gen = new(gen2drv_mbox);
+        drv = new(gen2drv_mbox, reg_intf);
+        // connet interface(hardware) with generator(class, software)
+        //gen = new(reg_intf)
+        //    ;  // connet interface(hardware) with generator(class, software)
+        drv.reset();
+        fork
+            drv.run();
+            gen.run(5);
+        join_any
     end
 
 endmodule
