@@ -122,10 +122,14 @@ class scoreboard;
     mailbox #(transaction) mon2scb_mbox;
     transaction trans;
     event gen_next_event;
+    int total_cnt, pass_cnt, fail_cnt;
 
     function new(mailbox#(transaction) mon2scb_mbox, event gen_next_event);
         this.mon2scb_mbox   = mon2scb_mbox;
         this.gen_next_event = gen_next_event;
+        total_cnt           = 0;
+        pass_cnt            = 0;
+        fail_cnt            = 0;
     endfunction
 
     task run();
@@ -134,12 +138,14 @@ class scoreboard;
             trans.display("SCB");
             if (trans.data == trans.out) begin
                 $display("--> pass!!!! %x == %x", trans.data, trans.out);
+                pass_cnt++;
             end else begin
                 $display("--> fail.... %x == %x", trans.data, trans.out);
+                fail_cnt++;
             end
+            total_cnt++;
             ->gen_next_event;
         end
-
     endtask  //run  //scoreboard
 endclass
 
@@ -165,6 +171,18 @@ class envirnment;
         scb = new(mon2scb_mbox, gen_next_event);
     endfunction  //new()
 
+    task report();
+        $display("====================================");
+        $display("========    Final Report    ========");
+        $display("====================================");
+        $display("=======    Total Test : %d   =======", scb.total_cnt);
+        $display("=======     Pass Test : %d   =======", scb.pass_cnt);
+        $display("=======     Fail Test : %d   =======", scb.fail_cnt);
+        $display("====================================");
+        $display("====   Test Bench is finished   ====");
+        $display("====================================");
+    endtask
+
     task pre_run();
         drv.reset();
     endtask  //pre_run
@@ -176,6 +194,7 @@ class envirnment;
             mon.run();
             scb.run();
         join_any
+        report();
         #10 $finish;
     endtask
 
@@ -204,7 +223,7 @@ module tb_register ();
 
     initial begin
         env = new(reg_intf);
-        env.run_test();        
+        env.run_test();
     end
 
 endmodule
