@@ -39,10 +39,12 @@ class generator;
     transaction trans;
 
     mailbox #(transaction) gen2drv_mbox;  // create headler gen2drv_mbox
-    event gen_next_event; // event : default feature in system verilog
+    event gen_next_event;  // event : default feature in system verilog
 
-    function new(mailbox#(transaction) gen2drv_mbox_v);  // create instance
+    function new(mailbox#(transaction) gen2drv_mbox_v,
+                 event gen_next_event);  // create instance
         this.gen2drv_mbox = gen2drv_mbox_v;  // reference
+        this.gen_next_event = gen_next_event;
         trans = new();
     endfunction  //new()
 
@@ -66,9 +68,10 @@ class driver;
     event gen_next_event;
 
     function new(mailbox#(transaction) gen2drv_mbox_v,
-                 virtual reg_interface reg_interf);
+                 virtual reg_interface reg_interf, event gen_next_event);
         this.gen2drv_mbox = gen2drv_mbox_v;  // reference
         this.reg_intf = reg_interf;
+        this.gen_next_event = gen_next_event;
     endfunction  //new()
 
     task reset();
@@ -84,12 +87,14 @@ class driver;
             gen2drv_mbox.get(trans);  // get transaction address, put in trans
             // get -> blocking
             reg_intf.d = trans.data;
+            trans.out = reg_intf.q;
             trans.display("DRV_IN");
             @(posedge reg_intf.clk);  // when appear clk edge, output data
-            trans.out = reg_intf.q;
+            #1 trans.out = reg_intf.q;
             trans.display("DRV_OUT");
             if (trans.data == trans.out) $display("pass!!!");
             else $display("fail...");
+            ->gen_next_event; // trig event
         end
     endtask  //run 
 endclass  //driver
@@ -98,6 +103,7 @@ module tb_register ();
     reg_interface reg_intf(); // When this moment, reg_interface be instantiation
     generator gen;
     driver drv;
+    event gen_next_event;
 
     mailbox #(transaction) gen2drv_mbox;
 
@@ -115,8 +121,8 @@ module tb_register ();
 
         gen2drv_mbox = new();  // create mailbox instance
 
-        gen = new(gen2drv_mbox);
-        drv = new(gen2drv_mbox, reg_intf);
+        gen = new(gen2drv_mbox, gen_next_event);
+        drv = new(gen2drv_mbox, reg_intf, gen_next_event);
         // connet interface(hardware) with generator(class, software)
         //gen = new(reg_intf)
         //    ;  // connet interface(hardware) with generator(class, software)
