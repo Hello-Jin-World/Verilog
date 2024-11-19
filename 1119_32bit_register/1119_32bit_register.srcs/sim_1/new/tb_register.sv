@@ -57,7 +57,6 @@ class generator;
             @(gen_next_event);
         end
     endtask  //run int countor
-
 endclass
 
 class driver;
@@ -65,13 +64,11 @@ class driver;
     virtual reg_interface reg_intf;
 
     mailbox #(transaction) gen2drv_mbox;  // create headler gen2drv_mbox
-    event gen_next_event;
 
     function new(mailbox#(transaction) gen2drv_mbox_v,
-                 virtual reg_interface reg_interf, event gen_next_event);
+                 virtual reg_interface reg_interf);
         this.gen2drv_mbox = gen2drv_mbox_v;  // reference
         this.reg_intf = reg_interf;
-        this.gen_next_event = gen_next_event;
     endfunction  //new()
 
     task reset();
@@ -87,25 +84,110 @@ class driver;
             gen2drv_mbox.get(trans);  // get transaction address, put in trans
             // get -> blocking
             reg_intf.d = trans.data;
-            trans.out = reg_intf.q;
-            trans.display("DRV_IN");
-            @(posedge reg_intf.clk);  // when appear clk edge, output data
-            #1 trans.out = reg_intf.q;
-            trans.display("DRV_OUT");
-            if (trans.data == trans.out) $display("pass!!!");
-            else $display("fail...");
-            ->gen_next_event; // trig event
+            trans.display("DRV");
+            //@(posedge reg_intf.clk);  // when appear clk edge, output data
+            // #1 trans.out = reg_intf.q;
+            // trans.display("DRV_OUT");
+            // if (trans.data == trans.out) $display("pass!!!");
+            // else $display("fail...");
         end
     endtask  //run 
 endclass  //driver
 
-module tb_register ();
-    reg_interface reg_intf(); // When this moment, reg_interface be instantiation
+class monitor;
+    virtual reg_interface reg_intf;
+    mailbox #(transaction) mon2scb_mbox;
+    transaction trans;
+
+    function new(mailbox#(transaction) mon2scb_mbox,
+                 virtual reg_interface reg_intf);
+        this.reg_intf = reg_intf;
+        this.mon2scb_mbox = mon2scb_mbox;
+    endfunction  //new()
+
+    task run();
+        forever begin
+            trans = new();
+            #2 trans.data = reg_intf.d;
+            @(posedge reg_intf.clk);
+            #1 trans.out = reg_intf.q;
+            mon2scb_mbox.put(trans);
+            trans.display("MON");
+        end
+
+    endtask  //run
+endclass  //monitor
+
+class scoreboard;
+    mailbox #(transaction) mon2scb_mbox;
+    transaction trans;
+    event gen_next_event;
+
+    function new(mailbox#(transaction) mon2scb_mbox, event gen_next_event);
+        this.mon2scb_mbox   = mon2scb_mbox;
+        this.gen_next_event = gen_next_event;
+    endfunction
+
+    task run();
+        forever begin
+            mon2scb_mbox.get(trans);
+            trans.display("SCB");
+            if (trans.data == trans.out) begin
+                $display("--> pass!!!! %x == %x", trans.data, trans.out);
+            end else begin
+                $display("--> fail.... %x == %x", trans.data, trans.out);
+            end
+            ->gen_next_event;
+        end
+
+    endtask  //run  //scoreboard
+endclass
+
+class envirnment;
+
     generator gen;
     driver drv;
+    monitor mon;
+    scoreboard scb;
+
     event gen_next_event;
 
     mailbox #(transaction) gen2drv_mbox;
+    mailbox #(transaction) mon2scb_mbox;
+
+    function new(virtual reg_interface reg_intf);
+        gen2drv_mbox = new();  // create mailbox instance
+        mon2scb_mbox = new();
+
+        gen = new(gen2drv_mbox, gen_next_event);
+        drv = new(gen2drv_mbox, reg_intf);
+        mon = new(mon2scb_mbox, reg_intf);
+        scb = new(mon2scb_mbox, gen_next_event);
+    endfunction  //new()
+
+    task pre_run();
+        drv.reset();
+    endtask  //pre_run
+
+    task run();
+        fork
+            gen.run(100);
+            drv.run();
+            mon.run();
+            scb.run();
+        join_any
+        #10 $finish;
+    endtask
+
+    task run_test();
+        pre_run();
+        run();
+    endtask  //run_test
+endclass  //envirnment
+
+module tb_register ();
+    reg_interface reg_intf(); // When this moment, reg_interface be instantiation
+    envirnment env;
 
     register dut (  // connect interface cable with dut
         .clk  (reg_intf.clk),
@@ -118,19 +200,11 @@ module tb_register ();
 
     initial begin
         reg_intf.clk = 0;
+    end
 
-        gen2drv_mbox = new();  // create mailbox instance
-
-        gen = new(gen2drv_mbox, gen_next_event);
-        drv = new(gen2drv_mbox, reg_intf, gen_next_event);
-        // connet interface(hardware) with generator(class, software)
-        //gen = new(reg_intf)
-        //    ;  // connet interface(hardware) with generator(class, software)
-        drv.reset();
-        fork
-            drv.run();
-            gen.run(5);
-        join_any
+    initial begin
+        env = new(reg_intf);
+        env.run_test();        
     end
 
 endmodule
