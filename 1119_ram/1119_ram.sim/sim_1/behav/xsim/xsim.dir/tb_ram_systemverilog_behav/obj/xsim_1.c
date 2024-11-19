@@ -54,33 +54,34 @@
 #endif
 typedef void (*funcp)(char *, char *);
 extern int main(int, char**);
-IKI_DLLESPEC extern void execute_9(char*, char *);
-IKI_DLLESPEC extern void execute_10(char*, char *);
-IKI_DLLESPEC extern void execute_16(char*, char *);
-IKI_DLLESPEC extern void execute_17(char*, char *);
-IKI_DLLESPEC extern void execute_18(char*, char *);
-IKI_DLLESPEC extern void execute_19(char*, char *);
-IKI_DLLESPEC extern void vlog_simple_process_execute_0_fast_for_reg(char*, char*, char*);
+IKI_DLLESPEC extern void execute_20(char*, char *);
 IKI_DLLESPEC extern void execute_21(char*, char *);
-IKI_DLLESPEC extern void execute_8(char*, char *);
-IKI_DLLESPEC extern void execute_12(char*, char *);
-IKI_DLLESPEC extern void execute_13(char*, char *);
-IKI_DLLESPEC extern void execute_14(char*, char *);
-IKI_DLLESPEC extern void execute_15(char*, char *);
-IKI_DLLESPEC extern void execute_22(char*, char *);
-IKI_DLLESPEC extern void execute_23(char*, char *);
-IKI_DLLESPEC extern void execute_24(char*, char *);
-IKI_DLLESPEC extern void execute_25(char*, char *);
+IKI_DLLESPEC extern void execute_30(char*, char *);
+IKI_DLLESPEC extern void execute_31(char*, char *);
+IKI_DLLESPEC extern void execute_32(char*, char *);
+IKI_DLLESPEC extern void execute_33(char*, char *);
+IKI_DLLESPEC extern void vlog_simple_process_execute_0_fast_for_reg(char*, char*, char*);
+IKI_DLLESPEC extern void execute_35(char*, char *);
+IKI_DLLESPEC extern void execute_19(char*, char *);
 IKI_DLLESPEC extern void execute_26(char*, char *);
 IKI_DLLESPEC extern void execute_27(char*, char *);
+IKI_DLLESPEC extern void execute_28(char*, char *);
+IKI_DLLESPEC extern void execute_29(char*, char *);
+IKI_DLLESPEC extern void execute_36(char*, char *);
+IKI_DLLESPEC extern void execute_37(char*, char *);
+IKI_DLLESPEC extern void execute_38(char*, char *);
+IKI_DLLESPEC extern void execute_39(char*, char *);
+IKI_DLLESPEC extern void execute_40(char*, char *);
+IKI_DLLESPEC extern void execute_41(char*, char *);
 IKI_DLLESPEC extern void vlog_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
-IKI_DLLESPEC extern void transaction_10(char*, char*, unsigned, unsigned, unsigned);
-funcp funcTab[21] = {(funcp)execute_9, (funcp)execute_10, (funcp)execute_16, (funcp)execute_17, (funcp)execute_18, (funcp)execute_19, (funcp)vlog_simple_process_execute_0_fast_for_reg, (funcp)execute_21, (funcp)execute_8, (funcp)execute_12, (funcp)execute_13, (funcp)execute_14, (funcp)execute_15, (funcp)execute_22, (funcp)execute_23, (funcp)execute_24, (funcp)execute_25, (funcp)execute_26, (funcp)execute_27, (funcp)vlog_transfunc_eventcallback, (funcp)transaction_10};
-const int NumRelocateId= 21;
+IKI_DLLESPEC extern void transaction_35(char*, char*, unsigned, unsigned, unsigned);
+IKI_DLLESPEC extern void transaction_43(char*, char*, unsigned, unsigned, unsigned);
+funcp funcTab[22] = {(funcp)execute_20, (funcp)execute_21, (funcp)execute_30, (funcp)execute_31, (funcp)execute_32, (funcp)execute_33, (funcp)vlog_simple_process_execute_0_fast_for_reg, (funcp)execute_35, (funcp)execute_19, (funcp)execute_26, (funcp)execute_27, (funcp)execute_28, (funcp)execute_29, (funcp)execute_36, (funcp)execute_37, (funcp)execute_38, (funcp)execute_39, (funcp)execute_40, (funcp)execute_41, (funcp)vlog_transfunc_eventcallback, (funcp)transaction_35, (funcp)transaction_43};
+const int NumRelocateId= 22;
 
 void relocate(char *dp)
 {
-	iki_relocate(dp, "xsim.dir/tb_ram_systemverilog_behav/xsim.reloc",  (void **)funcTab, 21);
+	iki_relocate(dp, "xsim.dir/tb_ram_systemverilog_behav/xsim.reloc",  (void **)funcTab, 22);
 
 	/*Populate the transaction function pointer field in the whole net structure */
 }
@@ -92,7 +93,7 @@ void sensitize(char *dp)
 
 void simulate(char *dp)
 {
-iki_register_root_pointers(1, 5808, 2,0,0) ; 
+iki_register_root_pointers(3, 5992, 7,0,0,5808, 2,0,0,6176, 3,0,0) ; 
 		iki_schedule_processes_at_time_zero(dp, "xsim.dir/tb_ram_systemverilog_behav/xsim.reloc");
 	// Initialize Verilog nets in mixed simulation, for the cases when the value at time 0 should be propagated from the mixed language Vhdl net
 	iki_execute_processes();
@@ -102,8 +103,8 @@ iki_register_root_pointers(1, 5808, 2,0,0) ;
 
 }
 #include "iki_bridge.h"
-void subprog_m_47a85347_ad139b06_1() ;
-static char* ng00[] = {(void *)subprog_m_47a85347_ad139b06_1};
+void subprog_m_7d3dacfb_ad139b06_1() ;
+static char* ng00[] = {(void *)subprog_m_7d3dacfb_ad139b06_1};
 void relocate(char *);
 
 void sensitize(char *);
