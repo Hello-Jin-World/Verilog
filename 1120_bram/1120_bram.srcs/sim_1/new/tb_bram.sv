@@ -41,6 +41,11 @@ class transaction;
 
     constraint wdata_aaaa {wdata inside {[0 : 100]};}
 
+    constraint write_weighted_distribute {
+        write dist {1:=80, 0:=40}; // 1 <- 80/120, 0 <- 40/120
+        //write dist {1:/80, 0:/20}; // 1 <- 80%, 0 <- 20%
+    }
+
     task display(string name);
         $display("[%s] write: %x, addr: %x, wdata: %x, rdata:%x", name, write,
                  addr, wdata, rdata);
@@ -152,6 +157,7 @@ class scoreboard;
     byte rdata;
 
     int total_cnt;
+    int write_cnt;
     int pass_cnt;
     int fail_cnt;
 
@@ -159,6 +165,7 @@ class scoreboard;
         this.mon2scb_mbox = mon2scb_mbox;
         this.gen_next_event = gen_next_event;
         total_cnt = 0;
+        write_cnt = 0;
         pass_cnt = 0;
         fail_cnt = 0;
     endfunction  //new()
@@ -169,6 +176,7 @@ class scoreboard;
             trans.display("SCB");
             if (trans.write) begin
                 mem[trans.addr] = trans.wdata;
+                write_cnt++;
             end else begin
                 rdata = mem[trans.addr];
                 if (rdata == trans.rdata) begin
@@ -180,9 +188,9 @@ class scoreboard;
                              trans.rdata);
                     fail_cnt++;
                 end
-                total_cnt++;
             end
             //$display("%p", mem);
+            total_cnt++;
             ->gen_next_event;
         end
     endtask  //run
@@ -215,6 +223,8 @@ class environment;
         $display("========    Final Report    ========");
         $display("====================================");
         $display("Total Test : %d", scb.total_cnt);
+        $display("Write Test : %d", scb.write_cnt);
+        $display("========     Read Result    ========");
         $display(" Pass Test : %d ", scb.pass_cnt);
         $display(" Fail Test : %d ", scb.fail_cnt);
         $display("====================================");
