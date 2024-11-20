@@ -52,29 +52,12 @@ class generator;
 
     task run(int count);
         repeat (count) begin
-            for (int i = 0; i < 1024; i++) begin
-                trans = new();
-                assert (trans.randomize())
-                else $error("[GEN] trans.randomize() error!!!!");
-                trans.write = 1'b1;
-                trans.addr  = i;
-                //random value is stored sequentially.
-                gen2drv_mbox.put(trans);
-                trans.display("GEN");
-                @(gen_next_event);
-            end
-            for (int i = 0; i < 1024; i++) begin
-                
-                trans = new();
-                assert (trans.randomize())
-                else $error("[GEN] trans.randomize() error!!!!");
-                trans.write = 1'b0;
-                trans.addr  = i;
-                //random value is stored sequentially.
-                gen2drv_mbox.put(trans);
-                trans.display("GEN");
-                @(gen_next_event);
-            end
+            trans = new();
+            assert (trans.randomize())
+            else $error("[GEN] trans.randomize() error!!!!");
+            gen2drv_mbox.put(trans);
+            trans.display("GEN");
+            @(gen_next_event);
         end
     endtask  //run
 endclass  //generator
@@ -98,6 +81,13 @@ class driver;
         ram_intf.addr  = 0;
         ram_intf.wdata = 0;
         repeat (5) @(posedge ram_intf.clk);
+
+        for (int i = 0; i < 1024; i++) begin  // memory reset all address contain 0
+            ram_intf.write = 1'b1;
+            ram_intf.wdata = 0;
+            ram_intf.addr  = i;
+            @(posedge ram_intf.clk);
+        end
     endtask  //reset
 
     task run();
@@ -180,9 +170,9 @@ class scoreboard;
                              trans.rdata);
                     fail_cnt++;
                 end
-                total_cnt++;
             end
-            //$display("%p", mem);
+                total_cnt++;
+            $display("%p", mem);
             ->gen_next_event;
         end
     endtask  //run
@@ -214,9 +204,9 @@ class environment;
         $display("====================================");
         $display("========    Final Report    ========");
         $display("====================================");
-        $display("=======    Total Test : %d   =======", scb.total_cnt);
-        $display("=======     Pass Test : %d   =======", scb.pass_cnt);
-        $display("=======     Fail Test : %d   =======", scb.fail_cnt);
+        $display("Total Test : %d", scb.total_cnt);
+        $display(" Pass Test : %d ", scb.pass_cnt);
+        $display(" Fail Test : %d ", scb.fail_cnt);
         $display("====================================");
         $display("====   Test Bench is finished   ====");
         $display("====================================");
@@ -228,7 +218,7 @@ class environment;
 
     task run();
         fork
-            gen.run(10);
+            gen.run(10000);
             drv.run();
             mon.run();
             scb.run();
