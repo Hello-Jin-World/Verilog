@@ -33,6 +33,12 @@ class transaction;
     rand logic [7:0] wdata;
     logic      [7:0] rdata;
 
+    constraint addr_limit {
+        addr > 10;
+        addr < 20;  //smaller or equal than
+        // AND
+    }
+
     task display(string name);
         $display("[%s] write: %x, addr: %x, wdata: %x, rdata:%x", name, write,
                  addr, wdata, rdata);
@@ -82,7 +88,9 @@ class driver;
         ram_intf.wdata = 0;
         repeat (5) @(posedge ram_intf.clk);
 
-        for (int i = 0; i < 1024; i++) begin  // memory reset all address contain 0
+        for (
+            int i = 0; i < 1024; i++
+        ) begin  // memory reset all address contain 0
             ram_intf.write = 1'b1;
             ram_intf.wdata = 0;
             ram_intf.addr  = i;
@@ -171,7 +179,7 @@ class scoreboard;
                     fail_cnt++;
                 end
             end
-                total_cnt++;
+            total_cnt++;
             $display("%p", mem);
             ->gen_next_event;
         end
