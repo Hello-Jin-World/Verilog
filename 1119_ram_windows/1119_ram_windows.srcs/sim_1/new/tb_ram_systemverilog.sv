@@ -76,9 +76,10 @@ class driver;
     endfunction  //new()
 
     task reset();
-        @(posedge v_ram_intf.clk);
+        #2
         v_ram_intf.w_data  = 0;
         v_ram_intf.address = 0;
+        //@(posedge v_ram_intf.clk);
         //v_ram_intf.rw      = 0;
     endtask  //
 
@@ -210,7 +211,7 @@ module tb_ram_systemverilog ();
 
     initial begin
         ram_intf.clk = 0;
-        ram_intf.rw  = 0;
+        ram_intf.rw  = 1;
     end
 
     initial begin
