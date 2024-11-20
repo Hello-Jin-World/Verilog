@@ -42,8 +42,8 @@ class transaction;
     constraint wdata_aaaa {wdata inside {[0 : 100]};}
 
     constraint write_weighted_distribute {
-        write dist {1:=80, 0:=40}; // 1 <- 80/120, 0 <- 40/120
-        //write dist {1:/80, 0:/20}; // 1 <- 80%, 0 <- 20%
+        //write dist {1:=80, 0:=40}; // 1 <- 80/120, 0 <- 40/120
+        write dist {1:/80, 0:/20}; // 1 <- 80%, 0 <- 20%
     }
 
     task display(string name);
