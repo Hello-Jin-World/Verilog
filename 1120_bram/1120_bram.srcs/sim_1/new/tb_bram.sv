@@ -39,6 +39,8 @@ class transaction;
         // AND
     }
 
+    constraint wdata_aaaa {wdata inside {[0 : 100]};}
+
     task display(string name);
         $display("[%s] write: %x, addr: %x, wdata: %x, rdata:%x", name, write,
                  addr, wdata, rdata);
@@ -178,9 +180,9 @@ class scoreboard;
                              trans.rdata);
                     fail_cnt++;
                 end
+                total_cnt++;
             end
-            total_cnt++;
-            $display("%p", mem);
+            //$display("%p", mem);
             ->gen_next_event;
         end
     endtask  //run
