@@ -4,5 +4,15 @@ Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 095f862a43
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'rx' is not connected on this instance [D:/GitHub/harman_Verilog/1115_uart_study/1115_uart_study.srcs/sim_1/new/tb_uart.v:32]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.baudrate_generator
+Compiling module xil_defaultlib.transmitter
+Compiling module xil_defaultlib.reciever
+Compiling module xil_defaultlib.uart
+Compiling module xil_defaultlib.tb_uart
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_uart_behav

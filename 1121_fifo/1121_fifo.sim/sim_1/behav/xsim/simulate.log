@@ -1,0 +1,742 @@
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+[DRV] DUT Reset Done!
+---------------------
+[GEN] op: 0, wdata: 237, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 237, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:   0, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata:   0, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 1, wdata:  17, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata:  17, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  17, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] op: x, wdata:  17, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] data stored in queue :  17
+'{17}
+--------------------
+[GEN] op: 1, wdata: 156, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 156, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 156, wr_en: 1, full: 0, rdata:  17, rd_en: 0, empty: 0
+[SCB] op: x, wdata: 156, wr_en: 1, full: 0, rdata:  17, rd_en: 0, empty: 0
+[SCB] data stored in queue : 156
+'{156,17}
+--------------------
+[GEN] op: 0, wdata:  96, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  96, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 156, wr_en: 0, full: 0, rdata:  17, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 156, wr_en: 0, full: 0, rdata:  17, rd_en: 1, empty: 0
+[SCB] data read in queue :  17
+PASS!!!!
+'{156}
+--------------------
+[GEN] op: 0, wdata: 123, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 123, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 156, wr_en: 0, full: 0, rdata: 156, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 156, wr_en: 0, full: 0, rdata: 156, rd_en: 1, empty: 0
+[SCB] data read in queue : 156
+PASS!!!!
+'{}
+--------------------
+[GEN] op: 1, wdata:  50, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata:  50, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  50, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] op: x, wdata:  50, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] data stored in queue :  50
+'{50}
+--------------------
+[GEN] op: 0, wdata:  67, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  67, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  50, wr_en: 0, full: 0, rdata:  50, rd_en: 1, empty: 0
+[SCB] op: x, wdata:  50, wr_en: 0, full: 0, rdata:  50, rd_en: 1, empty: 0
+[SCB] data read in queue :  50
+PASS!!!!
+'{}
+--------------------
+[GEN] op: 0, wdata: 140, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 140, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  50, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata:  50, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 194, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 194, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  50, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata:  50, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata:  86, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  86, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  50, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata:  50, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 1, wdata: 185, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 185, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 185, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] op: x, wdata: 185, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] data stored in queue : 185
+'{185}
+--------------------
+[GEN] op: 0, wdata: 151, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 151, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 185, wr_en: 0, full: 0, rdata: 185, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 185, wr_en: 0, full: 0, rdata: 185, rd_en: 1, empty: 0
+[SCB] data read in queue : 185
+PASS!!!!
+'{}
+--------------------
+[GEN] op: 0, wdata: 238, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 238, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 185, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 185, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 245, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 245, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 185, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 185, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata:   2, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:   2, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 185, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 185, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata:  16, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  16, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 185, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 185, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata:  61, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  61, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 185, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 185, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 249, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 249, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 185, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 185, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 1, wdata: 133, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 133, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 133, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] op: x, wdata: 133, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] data stored in queue : 133
+'{133}
+--------------------
+[GEN] op: 0, wdata: 110, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 110, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 133, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 133, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 0
+[SCB] data read in queue : 133
+PASS!!!!
+'{}
+--------------------
+[GEN] op: 1, wdata: 236, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 236, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 236, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] op: x, wdata: 236, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] data stored in queue : 236
+'{236}
+--------------------
+[GEN] op: 0, wdata:  71, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  71, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 236, wr_en: 0, full: 0, rdata: 236, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 236, wr_en: 0, full: 0, rdata: 236, rd_en: 1, empty: 0
+[SCB] data read in queue : 236
+PASS!!!!
+'{}
+--------------------
+[GEN] op: 0, wdata: 246, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 246, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 236, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 236, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata:  78, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  78, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 236, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 236, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 197, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 197, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 236, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 236, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata:  76, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  76, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 236, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 236, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 203, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 203, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 236, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 236, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 242, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 242, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 236, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 236, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 255, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 255, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 236, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 236, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 126, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 126, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 236, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 236, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 1, wdata:  37, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata:  37, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  37, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] op: x, wdata:  37, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] data stored in queue :  37
+'{37}
+--------------------
+[GEN] op: 0, wdata: 132, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 132, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  37, wr_en: 0, full: 0, rdata:  37, rd_en: 1, empty: 0
+[SCB] op: x, wdata:  37, wr_en: 0, full: 0, rdata:  37, rd_en: 1, empty: 0
+[SCB] data read in queue :  37
+PASS!!!!
+'{}
+--------------------
+[GEN] op: 0, wdata:  92, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  92, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  37, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata:  37, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 1, wdata: 167, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 167, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 167, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] op: x, wdata: 167, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] data stored in queue : 167
+'{167}
+--------------------
+[GEN] op: 1, wdata:  74, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata:  74, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  74, wr_en: 1, full: 0, rdata: 167, rd_en: 0, empty: 0
+[SCB] op: x, wdata:  74, wr_en: 1, full: 0, rdata: 167, rd_en: 0, empty: 0
+[SCB] data stored in queue :  74
+'{74,167}
+--------------------
+[GEN] op: 0, wdata:  74, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  74, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  74, wr_en: 0, full: 0, rdata: 167, rd_en: 1, empty: 0
+[SCB] op: x, wdata:  74, wr_en: 0, full: 0, rdata: 167, rd_en: 1, empty: 0
+[SCB] data read in queue : 167
+PASS!!!!
+'{74}
+--------------------
+[GEN] op: 0, wdata:  86, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  86, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  74, wr_en: 0, full: 0, rdata:  74, rd_en: 1, empty: 0
+[SCB] op: x, wdata:  74, wr_en: 0, full: 0, rdata:  74, rd_en: 1, empty: 0
+[SCB] data read in queue :  74
+PASS!!!!
+'{}
+--------------------
+[GEN] op: 0, wdata:  68, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  68, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  74, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata:  74, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 170, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 170, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  74, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata:  74, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 229, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 229, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  74, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata:  74, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 1, wdata: 166, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 166, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 166, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] op: x, wdata: 166, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] data stored in queue : 166
+'{166}
+--------------------
+[GEN] op: 0, wdata: 211, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 211, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 166, wr_en: 0, full: 0, rdata: 166, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 166, wr_en: 0, full: 0, rdata: 166, rd_en: 1, empty: 0
+[SCB] data read in queue : 166
+PASS!!!!
+'{}
+--------------------
+[GEN] op: 1, wdata: 232, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 232, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 232, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] op: x, wdata: 232, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] data stored in queue : 232
+'{232}
+--------------------
+[GEN] op: 0, wdata:   0, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:   0, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 232, wr_en: 0, full: 0, rdata: 232, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 232, wr_en: 0, full: 0, rdata: 232, rd_en: 1, empty: 0
+[SCB] data read in queue : 232
+PASS!!!!
+'{}
+--------------------
+[GEN] op: 0, wdata:  41, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  41, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 232, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 232, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 114, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 114, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 232, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 232, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 158, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 158, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 232, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 232, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 1, wdata: 212, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 212, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 212, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] op: x, wdata: 212, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] data stored in queue : 212
+'{212}
+--------------------
+[GEN] op: 1, wdata: 136, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 136, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 136, wr_en: 1, full: 0, rdata: 212, rd_en: 0, empty: 0
+[SCB] op: x, wdata: 136, wr_en: 1, full: 0, rdata: 212, rd_en: 0, empty: 0
+[SCB] data stored in queue : 136
+'{136,212}
+--------------------
+[GEN] op: 0, wdata:   5, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:   5, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 136, wr_en: 0, full: 0, rdata: 212, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 136, wr_en: 0, full: 0, rdata: 212, rd_en: 1, empty: 0
+[SCB] data read in queue : 212
+PASS!!!!
+'{136}
+--------------------
+[GEN] op: 1, wdata: 212, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 212, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 212, wr_en: 1, full: 0, rdata: 136, rd_en: 0, empty: 0
+[SCB] op: x, wdata: 212, wr_en: 1, full: 0, rdata: 136, rd_en: 0, empty: 0
+[SCB] data stored in queue : 212
+'{212,136}
+--------------------
+[GEN] op: 0, wdata:  72, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  72, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 212, wr_en: 0, full: 0, rdata: 136, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 212, wr_en: 0, full: 0, rdata: 136, rd_en: 1, empty: 0
+[SCB] data read in queue : 136
+PASS!!!!
+'{212}
+--------------------
+[GEN] op: 0, wdata: 197, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 197, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 212, wr_en: 0, full: 0, rdata: 212, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 212, wr_en: 0, full: 0, rdata: 212, rd_en: 1, empty: 0
+[SCB] data read in queue : 212
+PASS!!!!
+'{}
+--------------------
+[GEN] op: 0, wdata: 152, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 152, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 212, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 212, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 1, wdata: 137, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 137, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 137, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] op: x, wdata: 137, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] data stored in queue : 137
+'{137}
+--------------------
+[GEN] op: 0, wdata:  74, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  74, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 137, wr_en: 0, full: 0, rdata: 137, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 137, wr_en: 0, full: 0, rdata: 137, rd_en: 1, empty: 0
+[SCB] data read in queue : 137
+PASS!!!!
+'{}
+--------------------
+[GEN] op: 1, wdata: 164, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 164, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 164, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] op: x, wdata: 164, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] data stored in queue : 164
+'{164}
+--------------------
+[GEN] op: 1, wdata: 124, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 124, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 124, wr_en: 1, full: 0, rdata: 164, rd_en: 0, empty: 0
+[SCB] op: x, wdata: 124, wr_en: 1, full: 0, rdata: 164, rd_en: 0, empty: 0
+[SCB] data stored in queue : 124
+'{124,164}
+--------------------
+[GEN] op: 0, wdata: 187, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 187, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 124, wr_en: 0, full: 0, rdata: 164, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 124, wr_en: 0, full: 0, rdata: 164, rd_en: 1, empty: 0
+[SCB] data read in queue : 164
+PASS!!!!
+'{124}
+--------------------
+[GEN] op: 1, wdata:   8, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata:   8, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:   8, wr_en: 1, full: 0, rdata: 124, rd_en: 0, empty: 0
+[SCB] op: x, wdata:   8, wr_en: 1, full: 0, rdata: 124, rd_en: 0, empty: 0
+[SCB] data stored in queue :   8
+'{8,124}
+--------------------
+[GEN] op: 0, wdata:  52, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  52, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:   8, wr_en: 0, full: 0, rdata: 124, rd_en: 1, empty: 0
+[SCB] op: x, wdata:   8, wr_en: 0, full: 0, rdata: 124, rd_en: 1, empty: 0
+[SCB] data read in queue : 124
+PASS!!!!
+'{8}
+--------------------
+[GEN] op: 0, wdata:  45, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  45, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:   8, wr_en: 0, full: 0, rdata:   8, rd_en: 1, empty: 0
+[SCB] op: x, wdata:   8, wr_en: 0, full: 0, rdata:   8, rd_en: 1, empty: 0
+[SCB] data read in queue :   8
+PASS!!!!
+'{}
+--------------------
+[GEN] op: 0, wdata: 166, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 166, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:   8, wr_en: 0, full: 0, rdata:  50, rd_en: 1, empty: 1
+[SCB] op: x, wdata:   8, wr_en: 0, full: 0, rdata:  50, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 1, wdata: 148, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 148, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 148, wr_en: 1, full: 0, rdata:  50, rd_en: 0, empty: 1
+[SCB] op: x, wdata: 148, wr_en: 1, full: 0, rdata:  50, rd_en: 0, empty: 1
+[SCB] data stored in queue : 148
+'{148}
+--------------------
+[GEN] op: 1, wdata: 159, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 159, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 159, wr_en: 1, full: 0, rdata: 148, rd_en: 0, empty: 0
+[SCB] op: x, wdata: 159, wr_en: 1, full: 0, rdata: 148, rd_en: 0, empty: 0
+[SCB] data stored in queue : 159
+'{159,148}
+--------------------
+[GEN] op: 0, wdata: 225, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 225, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 148, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 148, rd_en: 1, empty: 0
+[SCB] data read in queue : 148
+PASS!!!!
+'{159}
+--------------------
+[GEN] op: 0, wdata: 134, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 134, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 159, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 159, rd_en: 1, empty: 0
+[SCB] data read in queue : 159
+PASS!!!!
+'{}
+--------------------
+[GEN] op: 0, wdata: 140, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 140, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata:  42, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  42, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 204, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 204, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata:  10, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  10, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata:  47, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  47, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 102, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 102, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata:  48, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  48, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 117, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 117, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata:  10, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  10, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 159, wr_en: 0, full: 0, rdata: 133, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 1, wdata: 242, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 242, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 242, wr_en: 1, full: 0, rdata: 133, rd_en: 0, empty: 1
+[SCB] op: x, wdata: 242, wr_en: 1, full: 0, rdata: 133, rd_en: 0, empty: 1
+[SCB] data stored in queue : 242
+'{242}
+--------------------
+[GEN] op: 1, wdata: 109, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 109, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 109, wr_en: 1, full: 0, rdata: 242, rd_en: 0, empty: 0
+[SCB] op: x, wdata: 109, wr_en: 1, full: 0, rdata: 242, rd_en: 0, empty: 0
+[SCB] data stored in queue : 109
+'{109,242}
+--------------------
+[GEN] op: 0, wdata:   6, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:   6, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 109, wr_en: 0, full: 0, rdata: 242, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 109, wr_en: 0, full: 0, rdata: 242, rd_en: 1, empty: 0
+[SCB] data read in queue : 242
+PASS!!!!
+'{109}
+--------------------
+[GEN] op: 0, wdata: 185, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 185, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 109, wr_en: 0, full: 0, rdata: 109, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 109, wr_en: 0, full: 0, rdata: 109, rd_en: 1, empty: 0
+[SCB] data read in queue : 109
+PASS!!!!
+'{}
+--------------------
+[GEN] op: 0, wdata: 140, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 140, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 109, wr_en: 0, full: 0, rdata:  37, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 109, wr_en: 0, full: 0, rdata:  37, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 231, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 231, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 109, wr_en: 0, full: 0, rdata:  37, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 109, wr_en: 0, full: 0, rdata:  37, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 1, wdata: 199, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 199, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 199, wr_en: 1, full: 0, rdata:  37, rd_en: 0, empty: 1
+[SCB] op: x, wdata: 199, wr_en: 1, full: 0, rdata:  37, rd_en: 0, empty: 1
+[SCB] data stored in queue : 199
+'{199}
+--------------------
+[GEN] op: 0, wdata: 188, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 188, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 199, wr_en: 0, full: 0, rdata: 199, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 199, wr_en: 0, full: 0, rdata: 199, rd_en: 1, empty: 0
+[SCB] data read in queue : 199
+PASS!!!!
+'{}
+--------------------
+[GEN] op: 0, wdata:  20, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  20, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 199, wr_en: 0, full: 0, rdata: 167, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 199, wr_en: 0, full: 0, rdata: 167, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 231, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 231, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 199, wr_en: 0, full: 0, rdata: 167, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 199, wr_en: 0, full: 0, rdata: 167, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 1, wdata: 234, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 234, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 234, wr_en: 1, full: 0, rdata: 167, rd_en: 0, empty: 1
+[SCB] op: x, wdata: 234, wr_en: 1, full: 0, rdata: 167, rd_en: 0, empty: 1
+[SCB] data stored in queue : 234
+'{234}
+--------------------
+[GEN] op: 1, wdata: 241, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 241, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 241, wr_en: 1, full: 0, rdata: 234, rd_en: 0, empty: 0
+[SCB] op: x, wdata: 241, wr_en: 1, full: 0, rdata: 234, rd_en: 0, empty: 0
+[SCB] data stored in queue : 241
+'{241,234}
+--------------------
+[GEN] op: 0, wdata:  46, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  46, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 241, wr_en: 0, full: 0, rdata: 234, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 241, wr_en: 0, full: 0, rdata: 234, rd_en: 1, empty: 0
+[SCB] data read in queue : 234
+PASS!!!!
+'{241}
+--------------------
+[GEN] op: 0, wdata: 200, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 200, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 241, wr_en: 0, full: 0, rdata: 241, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 241, wr_en: 0, full: 0, rdata: 241, rd_en: 1, empty: 0
+[SCB] data read in queue : 241
+PASS!!!!
+'{}
+--------------------
+[GEN] op: 0, wdata: 153, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 153, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 241, wr_en: 0, full: 0, rdata: 166, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 241, wr_en: 0, full: 0, rdata: 166, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata:  70, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  70, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 241, wr_en: 0, full: 0, rdata: 166, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 241, wr_en: 0, full: 0, rdata: 166, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 213, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 213, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 241, wr_en: 0, full: 0, rdata: 166, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 241, wr_en: 0, full: 0, rdata: 166, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata:  61, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  61, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 241, wr_en: 0, full: 0, rdata: 166, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 241, wr_en: 0, full: 0, rdata: 166, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 151, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 151, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 241, wr_en: 0, full: 0, rdata: 166, rd_en: 1, empty: 1
+[SCB] op: x, wdata: 241, wr_en: 0, full: 0, rdata: 166, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 1, wdata:  70, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata:  70, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  70, wr_en: 1, full: 0, rdata: 166, rd_en: 0, empty: 1
+[SCB] op: x, wdata:  70, wr_en: 1, full: 0, rdata: 166, rd_en: 0, empty: 1
+[SCB] data stored in queue :  70
+'{70}
+--------------------
+[GEN] op: 1, wdata: 174, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 174, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 174, wr_en: 1, full: 0, rdata:  70, rd_en: 0, empty: 0
+[SCB] op: x, wdata: 174, wr_en: 1, full: 0, rdata:  70, rd_en: 0, empty: 0
+[SCB] data stored in queue : 174
+'{174,70}
+--------------------
+[GEN] op: 0, wdata: 108, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 108, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 174, wr_en: 0, full: 0, rdata:  70, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 174, wr_en: 0, full: 0, rdata:  70, rd_en: 1, empty: 0
+[SCB] data read in queue :  70
+PASS!!!!
+'{174}
+--------------------
+[GEN] op: 1, wdata: 235, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 235, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 235, wr_en: 1, full: 0, rdata: 174, rd_en: 0, empty: 0
+[SCB] op: x, wdata: 235, wr_en: 1, full: 0, rdata: 174, rd_en: 0, empty: 0
+[SCB] data stored in queue : 235
+'{235,174}
+--------------------
+[GEN] op: 1, wdata:  61, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata:  61, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  61, wr_en: 1, full: 0, rdata: 174, rd_en: 0, empty: 0
+[SCB] op: x, wdata:  61, wr_en: 1, full: 0, rdata: 174, rd_en: 0, empty: 0
+[SCB] data stored in queue :  61
+'{61,235,174}
+--------------------
+====================================
+========    Final Report    ========
+====================================
+Total Test :         100
+ Push Test :          29
+========     Read Result    ========
+ Pass Test :          26 
+ Fail Test :           0 
+====================================
+====   Test Bench is finished   ====
+====================================
+$finish called at time : 1105 ns : File "D:/GitHub/harman_Verilog/1121_fifo/1121_fifo.srcs/sim_1/new/tb_fifo.sv" Line 273
