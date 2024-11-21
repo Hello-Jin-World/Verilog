@@ -3,9 +3,9 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Thu Nov 21 15:04:46 2024">
+<application name="pa" timeStamp="Thu Nov 21 15:05:09 2024">
 <section name="Project Information" visible="false">
-<property name="ProjectID" value="1f8a08dcd8c34cb9bbe358b03ff9a67f" type="ProjectID"/>
+<property name="ProjectID" value="a79b25dd67b347eab2c13a9f6b6a5974" type="ProjectID"/>
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
@@ -17,23 +17,15 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
 </item>
 <item name="Java Command Handlers">
-<property name="CloseProject" value="2" type="JavaHandler"/>
-<property name="NewProject" value="1" type="JavaHandler"/>
+<property name="ExitApp" value="2" type="JavaHandler"/>
+<property name="SimulationRun" value="8" type="JavaHandler"/>
 </item>
 <item name="Gui Handlers">
-<property name="AbstractCombinedPanel_REMOVE_SELECTED_ELEMENTS" value="1" type="GuiHandlerData"/>
-<property name="BaseDialog_OK" value="2" type="GuiHandlerData"/>
-<property name="BoardChooser_BOARD_TABLE" value="1" type="GuiHandlerData"/>
-<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="14" type="GuiHandlerData"/>
-<property name="MainMenuMgr_EDIT" value="2" type="GuiHandlerData"/>
-<property name="MainMenuMgr_FILE" value="2" type="GuiHandlerData"/>
-<property name="MainMenuMgr_PROJECT" value="1" type="GuiHandlerData"/>
-<property name="PACommandNames_NEW_PROJECT" value="1" type="GuiHandlerData"/>
-<property name="ProjectNameChooser_PROJECT_NAME" value="1" type="GuiHandlerData"/>
-<property name="SrcChooserPanel_ADD_DIRECTORIES" value="4" type="GuiHandlerData"/>
-<property name="SrcChooserTable_SRC_CHOOSER_TABLE" value="1" type="GuiHandlerData"/>
+<property name="BaseDialog_OK" value="1" type="GuiHandlerData"/>
+<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="9" type="GuiHandlerData"/>
+<property name="PACommandNames_SIMULATION_RESET_BEHAVIORAL" value="1" type="GuiHandlerData"/>
+<property name="PACommandNames_SIMULATION_RUN_BEHAVIORAL" value="7" type="GuiHandlerData"/>
 <property name="SyntheticaGettingStartedView_RECENT_PROJECTS" value="2" type="GuiHandlerData"/>
-<property name="TaskBanner_CLOSE" value="2" type="GuiHandlerData"/>
 </item>
 <item name="Other">
 <property name="GuiMode" value="48" type="GuiMode"/>

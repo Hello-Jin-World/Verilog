@@ -41,7 +41,7 @@ module fifo (
         .raddr(w_rd_ptr),
         .rdata(rdata)
     );
-    
+
     fifo_control_unit U_fifo_control_unit (
         .clk(clk),
         .reset(reset),
@@ -90,22 +90,22 @@ module fifo_control_unit (
     reg [3:0] wr_ptr_reg, wr_ptr_next;
     reg [3:0] rd_ptr_reg, rd_ptr_next;
 
-    assign wr_ptr = full_reg;
-    assign full   = empty_reg;
-    assign rd_ptr = wr_ptr_reg;
-    assign empty  = rd_ptr_reg;
+    assign full   = full_reg;
+    assign empty  = empty_reg;
+    assign wr_ptr = wr_ptr_reg;
+    assign rd_ptr = rd_ptr_reg;
 
     always @(posedge clk, posedge reset) begin
         if (reset) begin
             full_reg   <= 0;
-            empty_reg  <= 0;
+            empty_reg  <= 1;
             wr_ptr_reg <= 0;
             rd_ptr_reg <= 0;
         end else begin
-            full_next   <= full_reg;
-            empty_next  <= empty_reg;
-            wr_ptr_next <= wr_ptr_reg;
-            rd_ptr_next <= rd_ptr_reg;
+            full_reg   <= full_next;
+            empty_reg  <= empty_next;
+            wr_ptr_reg <= wr_ptr_next;
+            rd_ptr_reg <= rd_ptr_next;
         end
     end
 
