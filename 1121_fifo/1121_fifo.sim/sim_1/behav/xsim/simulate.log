@@ -1,0 +1,89 @@
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+[DRV] DUT Reset Done!
+---------------------
+[GEN] op: 0, wdata: 237, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 237, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:   0, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata:   0, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 1, wdata:  17, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata:  17, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  17, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] op: x, wdata:  17, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] data stored in queue :  17
+'{17}
+--------------------
+[GEN] op: 1, wdata: 156, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata: 156, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 156, wr_en: 1, full: 0, rdata:  17, rd_en: 0, empty: 0
+[SCB] op: x, wdata: 156, wr_en: 1, full: 0, rdata:  17, rd_en: 0, empty: 0
+[SCB] data stored in queue : 156
+'{156,17}
+--------------------
+[GEN] op: 0, wdata:  96, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  96, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 156, wr_en: 0, full: 0, rdata:  17, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 156, wr_en: 0, full: 0, rdata:  17, rd_en: 1, empty: 0
+[SCB] data read in queue :  17
+PASS!!!!
+'{156}
+--------------------
+[GEN] op: 0, wdata: 123, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 123, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata: 156, wr_en: 0, full: 0, rdata: 156, rd_en: 1, empty: 0
+[SCB] op: x, wdata: 156, wr_en: 0, full: 0, rdata: 156, rd_en: 1, empty: 0
+[SCB] data read in queue : 156
+PASS!!!!
+'{}
+--------------------
+[GEN] op: 1, wdata:  50, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 1, wdata:  50, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  50, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] op: x, wdata:  50, wr_en: 1, full: 0, rdata:   x, rd_en: 0, empty: 1
+[SCB] data stored in queue :  50
+'{50}
+--------------------
+[GEN] op: 0, wdata:  67, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  67, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  50, wr_en: 0, full: 0, rdata:  50, rd_en: 1, empty: 0
+[SCB] op: x, wdata:  50, wr_en: 0, full: 0, rdata:  50, rd_en: 1, empty: 0
+[SCB] data read in queue :  50
+PASS!!!!
+'{}
+--------------------
+[GEN] op: 0, wdata: 140, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 140, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  50, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata:  50, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata: 194, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata: 194, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  50, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata:  50, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+[GEN] op: 0, wdata:  86, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[DRV] op: 0, wdata:  86, wr_en: x, full: x, rdata:   x, rd_en: x, empty: x
+[MON] op: x, wdata:  50, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] op: x, wdata:  50, wr_en: 0, full: 0, rdata:   x, rd_en: 1, empty: 1
+[SCB] queue is empty
+'{}
+--------------------
+====================================
+========    Final Report    ========
+====================================
+Total Test :          10
+ Push Test :           3
+========     Read Result    ========
+ Pass Test :           3 
+ Fail Test :           0 
+====================================
+====   Test Bench is finished   ====
+====================================
+$finish called at time : 205 ns : File "D:/GitHub/harman_Verilog/1121_fifo/11

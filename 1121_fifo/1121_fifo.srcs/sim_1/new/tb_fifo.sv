@@ -45,12 +45,12 @@ class transaction;
             name, operation, wdata, wr_en, full, rdata, rd_en, empty);
     endtask  //display
 
-    // constraint oper_cntl {
-    //     operation dist {
-    //         0 :/ 40,
-    //         0 :/ 80
-    //     };
-    // }
+    constraint oper_cntl {
+        operation dist {
+            0 :/ 70,
+            1 :/ 30
+        };
+    }
 endclass  //transaction
 
 
