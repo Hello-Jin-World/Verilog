@@ -264,7 +264,7 @@ class environment;
 
     task run();
         fork
-            gen.run(10);
+            gen.run(100);
             drv.run();
             mon.run();
             scb.run();
