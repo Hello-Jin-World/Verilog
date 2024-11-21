@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Nov 21 18:43:52 2024
+# Process ID: 16228
+# Current directory: D:/GitHub/harman_Verilog/1121_uart_fifo/1121_uart_fifo.runs/impl_1
+# Command line: vivado.exe -log uart_loopback.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source uart_loopback.tcl -notrace
+# Log file: D:/GitHub/harman_Verilog/1121_uart_fifo/1121_uart_fifo.runs/impl_1/uart_loopback.vdi
+# Journal file: D:/GitHub/harman_Verilog/1121_uart_fifo/1121_uart_fifo.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source uart_loopback.tcl -notrace
