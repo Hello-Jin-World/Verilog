@@ -36,17 +36,6 @@ module uart_fifo_loopback (
     wire       rx_fifo_empty;
     wire       tx_fifo_full;
 
-    ila_0 your_instance_name (
-        .clk(clk),  // input wire clk
-
-
-        .probe0(tx),  // input wire [0:0]  tx
-        .probe1(rx),  // input wire [0:0]  rx
-        .probe2(tx_start),  // input wire [0:0] tx_start 
-        .probe3(rx_done),  // input wire [0:0]  rx_done
-        .probe4(loop_data2),  // input wire [7:0]  tx_data
-        .probe5(loop_data0)  // input wire [7:0] rx_data 
-    );
 
     uart U_uart (
         .clk(clk),
@@ -67,10 +56,22 @@ module uart_fifo_loopback (
         .reset(reset),
         .wdata(loop_data1),
         .wr_en(~rx_fifo_empty),
-        .rd_en(tx_busy),
+        .rd_en(~tx_busy),
         .rdata(loop_data2),
         .full (tx_fifo_full),
         .empty(tx_start)
+    );
+
+    ila_0 your_instance_name (
+        .clk(clk),  // input wire clk
+
+
+        .probe0(tx),  // input wire [0:0]  tx
+        .probe1(rx),  // input wire [0:0]  rx
+        .probe2(tx_fifo_full),  // input wire [0:0] tx_start 
+        .probe3(rx_fifo_empty),  // input wire [0:0]  rx_done
+        .probe4(loop_data2),  // input wire [7:0]  tx_data
+        .probe5(loop_data1)  // input wire [7:0] rx_data 
     );
 
     fifo U_RX_fifo (
