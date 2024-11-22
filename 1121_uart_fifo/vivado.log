@@ -179,3 +179,5 @@ refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
 INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 write_schematic -format pdf -orientation portrait D:/GitHub/harman_Verilog/1121_uart_fifo/schematic.pdf
 D:/GitHub/harman_Verilog/1121_uart_fifo/schematic.pdf
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 21 19:09:05 2024...
