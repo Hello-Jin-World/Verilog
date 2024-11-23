@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2024/11/22 14:07:03
+// Create Date: 2024/11/23 16:06:33
 // Design Name: 
-// Module Name: dht11_control_unit
+// Module Name: dht11_controlunit
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -320,7 +320,7 @@ module receive_data (
                     if (i == 40) begin
                         i = 0;
                         state_next = NONE;
-                        mode = 1;
+                        mode = 0;
                         wr_en_next = 1;
                     end
                 end
