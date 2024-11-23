@@ -1,0 +1,7 @@
+0.7
+2020.2
+May 22 2024
+18:54:44
+/home/user/project/Verilog/DHT11/DHT11.sim/sim_1/behav/xsim/glbl.v,1708598507,verilog,,,,glbl,,,,,,,,
+/home/user/project/Verilog/DHT11/DHT11.srcs/sim_1/new/tb_dht11.v,1732384746,verilog,,,,tb_dht11,,,,,,,,
+/home/user/project/Verilog/DHT11/DHT11.srcs/sources_1/new/dht11_control.v,1732385481,verilog,,/home/user/project/Verilog/DHT11/DHT11.srcs/sim_1/new/tb_dht11.v,,clock_divider;count_5sec;dht11_control;receive_data;select_io;start_signal,,,,,,,,
