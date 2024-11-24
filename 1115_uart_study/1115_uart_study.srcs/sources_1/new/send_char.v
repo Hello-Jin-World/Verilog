@@ -20,45 +20,44 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module uart_loopback (
-    input      clk,
-    input      reset,
-    input      rx,
-    output     tx,
-    output reg led
-);
+// module uart_loopback (
+//     input      clk,
+//     input      reset,
+//     input      rx,
+//     output     tx,
+//     output reg led
+// );
 
-    wire [7:0] w_loopdata;
-    wire w_rx_done;
+//     wire [7:0] w_loopdata;
+//     wire w_rx_done;
 
-    uart U_uart (
-        .clk(clk),
-        .reset(reset),
-        // UART Tx
-        .tx_start(w_rx_done),
-        .tx_data(w_loopdata),
-        .tx(tx),
-        .tx_busy(),
-        .tx_done(),
-        // UART Rx
-        .rx(rx),
-        .rx_data(w_loopdata),
-        .rx_done(w_rx_done)
-    );
+//     uart U_uart (
+//         .clk(clk),
+//         .reset(reset),
+//         // UART Tx
+//         .tx_start(w_rx_done),
+//         .tx_data(w_loopdata),
+//         .tx(tx),
+//         .tx_busy(),
+//         .tx_done(),
+//         // UART Rx
+//         .rx(rx),
+//         .rx_data(w_loopdata),
+//         .rx_done(w_rx_done)
+//     );
 
-    always @(*) begin
-        led = 0;
-        if (w_loopdata == "1") begin
-            led = 1'b1;
-        end else if (w_loopdata == "2") begin
-            led = 1'b0;
-        end
-    end
-endmodule
+//     always @(*) begin
+//         led = 0;
+//         if (w_loopdata == "1") begin
+//             led = 1'b1;
+//         end else if (w_loopdata == "2") begin
+//             led = 1'b0;
+//         end
+//     end
+// endmodule
 
 
 
-/*
 module send_char (
     input  clk,
     input  reset,
@@ -105,4 +104,3 @@ module send_char (
         end
     end
 endmodule
-*/

@@ -36,9 +36,21 @@ module top_dht11 (
         .reset(reset),
         .ioport(ioport),
         .wr_en(wr_en),
-        .tem_hum_data(w_data),
-        .temp_out(temp_out)
+        .tem_hum_data(w_data)
+        // .temp_out(temp_out)
     );
+
+    // ila_0 U_ila_0 (
+    //     clk(clk),
+
+
+    //     probe0(ioport),
+    //     probe1(wr_en),
+    //     probe2(r_data),
+    //     probe3(),
+    //     probe4(w_data),
+    //     probe5()
+    // );
 
     fifo U_fifo (
         .clk  (clk),

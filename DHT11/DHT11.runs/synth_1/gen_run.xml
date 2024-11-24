@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1732422978" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_dht11.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1732438889" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_dht11.dcp">
   <File Type="VDS-TIMING-PB" Name="top_dht11_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="top_dht11_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="top_dht11.dcp"/>
@@ -77,4 +77,5 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
 </GenRun>

@@ -97,8 +97,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -106,9 +104,8 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param checkpoint.writeSynthRtdsInDcp 1
   set_param chipscope.maxJobs 2
-  set_param synth.incrementalSynthesisCache /tmp/.Xil_user/Vivado-307-46b657ed0ba8/incrSyn
+  set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 10  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a35tcpg236-1
@@ -122,9 +119,11 @@ OPTRACE "set parameters" START { }
   set_property parent.project_path /home/user/project/Verilog/DHT11/DHT11.xpr [current_project]
   set_property ip_output_repo /home/user/project/Verilog/DHT11/DHT11.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet /home/user/project/Verilog/DHT11/DHT11.runs/synth_1/top_dht11.dcp
+  read_ip -quiet /home/user/project/Verilog/DHT11/DHT11.srcs/sources_1/ip/ila_0/ila_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc /home/user/project/Verilog/DHT11/DHT11.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc
 OPTRACE "read constraints: implementation" END { }
@@ -290,6 +289,7 @@ set rc [catch {
   create_msg_db write_bitstream.pb
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   catch { write_mem_info -force -no_partial_mmi top_dht11.mmi }
 OPTRACE "write_bitstream setup" END { }
 OPTRACE "write_bitstream" START { }
