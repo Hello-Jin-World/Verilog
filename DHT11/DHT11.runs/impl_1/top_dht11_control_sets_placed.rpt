@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
-| Date         : Sat Nov 23 17:47:01 2024
-| Host         : 43d5c8679207 running 64-bit Ubuntu 22.04.5 LTS
+| Date         : Sun Nov 24 04:38:22 2024
+| Host         : 46b657ed0ba8 running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_control_sets -verbose -file top_dht11_control_sets_placed.rpt
 | Design       : top_dht11
 | Device       : xc7a35t
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     9 |
-|    Minimum number of control sets                        |     9 |
+| Total control sets                                       |    10 |
+|    Minimum number of control sets                        |    10 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
 | Unused register locations in slices containing registers |    32 |
@@ -39,7 +39,7 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     9 |
+| Total control sets |    10 |
 | >= 0 to < 4        |     2 |
 | >= 4 to < 6        |     3 |
 | >= 6 to < 8        |     0 |
@@ -47,7 +47,7 @@ Table of Contents
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     1 |
-| >= 16              |     2 |
+| >= 16              |     3 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               2 |            2 |
-| No           | No                    | Yes                    |              36 |           14 |
+| No           | No                    | No                     |              34 |           12 |
+| No           | No                    | Yes                    |              36 |           15 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |              58 |           17 |
+| Yes          | No                    | Yes                    |              58 |           20 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -70,18 +70,19 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+------------------------------------------------+----------------------------------------------------------+------------------+------------------+----------------+--------------+
-|                  Clock Signal                  |                       Enable Signal                      | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
-+------------------------------------------------+----------------------------------------------------------+------------------+------------------+----------------+--------------+
-|  U_dht11_control/U_clock_divider/tick          |                                                          |                  |                1 |              1 |         1.00 |
-|  U_dht11_control/U_start_signal/mode_reg_reg_0 |                                                          |                  |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG                                 | U_fifo/U_fifo_control_unit/rd_ptr_reg[3]_i_1_n_0         | reset_IBUF       |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG                                 | U_uart/U_transmitter/tick_count_next                     | reset_IBUF       |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG                                 | U_fifo/U_fifo_control_unit/wr_ptr_reg[3]_i_1_n_0         | reset_IBUF       |                2 |              4 |         2.00 |
-|  clk_IBUF_BUFG                                 | U_dht11_control/U_receive_data/counter_reg[7]_i_1__1_n_0 | reset_IBUF       |                3 |              8 |         2.67 |
-|  clk_IBUF_BUFG                                 | U_dht11_control/U_start_signal/counter_reg[14]_i_1_n_0   | reset_IBUF       |                3 |             15 |         5.00 |
-|  clk_IBUF_BUFG                                 | U_dht11_control/U_clock_divider/tick                     | reset_IBUF       |                7 |             23 |         3.29 |
-|  clk_IBUF_BUFG                                 |                                                          | reset_IBUF       |               14 |             36 |         2.57 |
-+------------------------------------------------+----------------------------------------------------------+------------------+------------------+----------------+--------------+
++------------------------------------------------+-----------------------------------------------------------+------------------+------------------+----------------+--------------+
+|                  Clock Signal                  |                       Enable Signal                       | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------------------------------------+-----------------------------------------------------------+------------------+------------------+----------------+--------------+
+|  U_dht11_control/U_clock_divider/tick_100khz   |                                                           |                  |                1 |              1 |         1.00 |
+|  U_dht11_control/U_start_signal/mode_reg_reg_0 |                                                           |                  |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                                 | U_fifo/U_fifo_control_unit/rd_ptr_reg[3]_i_1_n_1          | reset_IBUF       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG                                 | U_uart/U_transmitter/tick_count_next                      | reset_IBUF       |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG                                 | U_fifo/U_fifo_control_unit/wr_ptr_reg[3]_i_1_n_1          | reset_IBUF       |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG                                 | U_dht11_control/U_clock_divider/E[0]                      | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                                 | U_dht11_control/U_start_signal/counter_reg[14]_i_1__0_n_1 | reset_IBUF       |                5 |             15 |         3.00 |
+|  clk_IBUF_BUFG                                 | U_dht11_control/U_clock_divider/tick_100khz               | reset_IBUF       |                6 |             23 |         3.83 |
+|  n_0_171_BUFG                                  |                                                           |                  |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG                                 |                                                           | reset_IBUF       |               15 |             36 |         2.40 |
++------------------------------------------------+-----------------------------------------------------------+------------------+------------------+----------------+--------------+
 
 

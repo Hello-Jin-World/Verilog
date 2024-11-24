@@ -26,32 +26,23 @@ module dht11_control (
     inout         ioport,
     output        wr_en,
     output [39:0] tem_hum_data,
-    output          temp_out
+    output        temp_out
 );
 
-    wire        io_mode;
-    wire        signal;
-    reg         receive_dht11_data;
-    wire        tick;
-    wire        start_dht11;
-    wire        start_receive_data;
+    wire io_mode;
+    wire signal;
+    wire receive_dht11_data;
+    wire tick;
+    wire start_dht11;
+    wire start_receive_data;
 
-    assign ioport = io_mode ? signal : 1'bz;  // If you want to send(out) "HIGH"
-    //    assign xxxx   = mode ? 1'bz : ioport;  // If you want to read(in) INPUT data
-
-    always @(*) begin  // Read Data (INPUT MODE)
-        if (!io_mode) begin
-            receive_dht11_data = ioport;
-        end
-    end
-    /*
     select_io U_select_io (
         .mode(io_mode),
         .ioport(ioport),
         .out_data(signal),
         .in_data(receive_dht11_data)
     );
-*/
+
     clock_divider U_clock_divider (
         .clk(clk),
         .reset(reset),
@@ -115,7 +106,7 @@ module count_5sec (
         counter_next     = counter_reg;
         start_dht11_next = start_dht11_next;
         if (tick) begin
-            if (counter_reg == 5_000 - 1) begin
+            if (counter_reg == 5_000_000 - 1) begin
                 counter_next     = 0;
                 start_dht11_next = 1;
             end else begin
@@ -141,7 +132,7 @@ module select_io (
 
     always @(*) begin  // Read Data (INPUT MODE)
         if (!mode) begin
-            in_data = ioport;
+            in_data <= ioport;
         end
     end
 
@@ -248,7 +239,8 @@ module start_signal (
 
         if (lets_start_dht11_reg) begin
             if (!signal_reg) begin
-                if (counter_reg == 1800 - 1) begin // count(maintain) start signal(LOW) for 18ms.
+                if (counter_reg == 18000 - 1) begin // count(maintain) start signal(LOW) for 18ms.
+                    //if (counter_reg == 1800 - 1) begin // count(maintain) start signal(LOW) for 18ms.
                     counter_next = 0;
                     signal_next  = 1'b1;
                 end
@@ -273,7 +265,7 @@ module receive_data (
     input         start_receive_data,
     input         input_mode,
     output        wr_en,
-    output [39:0] tem_hum_data,
+    output reg [39:0] tem_hum_data,
     output        temp_out
 );
 
@@ -281,16 +273,18 @@ module receive_data (
     reg [$clog2(160) - 1:0] counter_reg, counter_next;
     reg [39:0] tem_hum_data_reg, tem_hum_data_next;
     reg wr_en_reg, wr_en_next;
+    reg wait_more;
 
     reg temp_reg, temp_next;
-    assign temp_out = temp_reg;
+    assign temp_out     = temp_reg;
 
-    assign tem_hum_data = tem_hum_data_reg;
+    // assign tem_hum_data = tem_hum_data_reg;
     assign wr_en        = wr_en_reg;
 
     localparam NONE = 2'b00, WAIT = 2'b01, WAIT_RECEIVE = 2'b10, RECEIVE = 2'b11;
 
-    integer i;
+     integer i;
+    // reg [$clog2(40)-1:0] i;
 
     always @(posedge clk, posedge reset) begin
         if (reset) begin
@@ -298,13 +292,14 @@ module receive_data (
             state_reg        <= 2'b00;
             tem_hum_data_reg <= 0;
             wr_en_reg        <= 0;
-            temp_reg <= 0;
+            temp_reg         <= 0;
+            wait_more <= 0;
         end else begin
             counter_reg      <= counter_next;
             state_reg        <= state_next;
             tem_hum_data_reg <= tem_hum_data_next;
             wr_en_reg        <= wr_en_next;
-            temp_reg                <= temp_next;
+            temp_reg         <= temp_next;
         end
     end
 
@@ -313,7 +308,7 @@ module receive_data (
         state_next        = state_reg;
         tem_hum_data_next = tem_hum_data_reg;
         wr_en_next        = wr_en_reg;
-        temp_next = temp_reg;
+        temp_next         = temp_reg;
         if (tick) begin
             counter_next = counter_reg + 1;
         end
@@ -325,46 +320,64 @@ module receive_data (
                         state_next   = WAIT;
                         counter_next = 0;
                         wr_en_next   = 0;
-                    end else begin
-                        i = 0;
-                        state_next = NONE;
-                    end
+                     end // else begin
+                    //     i = 0;
+                    //     state_next = NONE;
+                    // end
                 end
                 WAIT: begin
                     if (counter_reg == 160 - 1) begin
                         state_next   = WAIT_RECEIVE;
                         counter_next = 0;
-                    end else begin
-                        state_next = WAIT;
-                    end
+                     end// else begin
+                    //     state_next = WAIT;
+                    // end
                 end
                 WAIT_RECEIVE: begin
                     if (dht11_data) begin
                         state_next   = RECEIVE;
                         counter_next = 0;
-                    end else begin
-                        state_next = WAIT_RECEIVE;
-                        if (i == 8) begin
-                            i = 0;
-                            state_next = NONE;
-                            wr_en_next = 1;
-                        end
+                     end //else begin
+                    //     state_next = WAIT_RECEIVE;
+                    //     // if (i == 8) begin
+                    //     //     i = 0;
+                    //     //     state_next = NONE;
+                    //     //     wr_en_next = 1;
+                    //     // end
+                    // end
+                    if (i == 8) begin
+                        tem_hum_data = tem_hum_data_reg;
+                        wr_en_next = 1;
+                        i = 0;
+                        state_next = NONE;
                     end
                 end
                 RECEIVE: begin
-                    if (!dht11_data) begin
-                        counter_next = 0;
-                        i = i + 1;
-                        state_next = WAIT_RECEIVE;
-                    end else begin
-                        if (counter_reg > 50) begin
+                    // if (!dht11_data) begin
+                    //     counter_next = 0;
+                    //     i = i + 1;
+                    //     state_next = WAIT_RECEIVE;
+                    // end else begin
+                    if (counter_reg == 35 - 1) begin
+                        if (dht11_data) begin
                             tem_hum_data_next[i] = 1'b1;
                             temp_next = 1;
+                            wait_more = 1;
                         end else begin
                             tem_hum_data_next[i] = 1'b0;
                             temp_next = 0;
+                            state_next = WAIT_RECEIVE;
+                            i = i + 1;
                         end
                     end
+                    if (wait_more) begin
+                        if (!dht11_data) begin
+                            state_next = WAIT_RECEIVE;
+                            wait_more = 0;
+                            i = i + 1;
+                        end
+                    end
+                    // end
                 end
             endcase
         end
