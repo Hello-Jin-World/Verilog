@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Nov 24 23:14:41 2024
+# Process ID: 2960
+# Current directory: D:/Verilog/Verilog/DHT11_windows
+# Command line: wbtcv.exe -mode batch -source D:/Verilog/Verilog/DHT11_windows/DHT11_windows.hw/webtalk/labtool_webtalk.tcl -notrace
+# Log file: D:/Verilog/Verilog/DHT11_windows/webtalk.log
+# Journal file: D:/Verilog/Verilog/DHT11_windows\webtalk.jou
+#-----------------------------------------------------------
+source D:/Verilog/Verilog/DHT11_windows/DHT11_windows.hw/webtalk/labtool_webtalk.tcl -notrace
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:22 . Memory (MB): peak = 81.852 ; gain = 7.410
+INFO: [Common 17-206] Exiting Webtalk at Sun Nov 24 23:15:03 2024...

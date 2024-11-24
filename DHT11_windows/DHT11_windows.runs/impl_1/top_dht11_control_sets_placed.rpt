@@ -1,0 +1,86 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Mon Nov 25 01:55:01 2024
+| Host         : DESKTOP-PFRE25G running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_dht11_control_sets_placed.rpt
+| Design       : top_dht11
+| Device       : xc7a35t
+--------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |     8 |
+|    Minimum number of control sets                        |     8 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    33 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |     8 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     1 |
+| >= 16              |     2 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               2 |            2 |
+| No           | No                    | Yes                    |              68 |           29 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |              49 |           16 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------------------------+-----------------------------------------------------------+------------------+------------------+----------------+--------------+
+|                Clock Signal                |                       Enable Signal                       | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------------------------------------+-----------------------------------------------------------+------------------+------------------+----------------+--------------+
+|  U_dht11_control/U_clock_divider/E[0]      |                                                           |                  |                1 |              1 |         1.00 |
+|  U_dht11_control/U_start_signal/ioport_TRI |                                                           |                  |                1 |              1 |         1.00 |
+|  U_fnd_controller/U_clk_div/CLK            |                                                           | reset_IBUF       |                2 |              3 |         1.50 |
+|  clk_IBUF_BUFG                             | U_dht11_control/U_receive_data/i_reg[5]_i_1_n_0           | reset_IBUF       |                3 |              6 |         2.00 |
+|  clk_IBUF_BUFG                             | U_dht11_control/U_clock_divider/r_tick_reg_0[0]           | reset_IBUF       |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                             | U_dht11_control/U_start_signal/counter_reg[14]_i_1__0_n_0 | reset_IBUF       |                4 |             15 |         3.75 |
+|  clk_IBUF_BUFG                             | U_dht11_control/U_clock_divider/E[0]                      | reset_IBUF       |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG                             |                                                           | reset_IBUF       |               27 |             65 |         2.41 |
++--------------------------------------------+-----------------------------------------------------------+------------------+------------------+----------------+--------------+
+
+

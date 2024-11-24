@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/GitHub/harman_Verilog/1115_uart_stopwatch/1115_uart_stopwatch.runs/synth_1/uart_loopback.tcl"
+  variable script "D:/Verilog/Verilog/1115_uart_stopwatch/1115_uart_stopwatch.runs/synth_1/uart_loopback.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,8 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 4
-set_param synth.incrementalSynthesisCache C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-7452-DESKTOP-7CFQ9ND/incrSyn
+set_param chipscope.maxJobs 1
 set_param xicom.use_bs_reader 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
@@ -81,24 +80,22 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir D:/GitHub/harman_Verilog/1115_uart_stopwatch/1115_uart_stopwatch.cache/wt [current_project]
-set_property parent.project_path D:/GitHub/harman_Verilog/1115_uart_stopwatch/1115_uart_stopwatch.xpr [current_project]
+set_property webtalk.parent_dir D:/Verilog/Verilog/1115_uart_stopwatch/1115_uart_stopwatch.cache/wt [current_project]
+set_property parent.project_path D:/Verilog/Verilog/1115_uart_stopwatch/1115_uart_stopwatch.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property board_part_repo_paths {C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store} [current_project]
-set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
-set_property ip_output_repo d:/GitHub/harman_Verilog/1115_uart_stopwatch/1115_uart_stopwatch.cache/ip [current_project]
+set_property ip_output_repo d:/Verilog/Verilog/1115_uart_stopwatch/1115_uart_stopwatch.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  D:/GitHub/harman_Verilog/1115_uart_stopwatch/1115_uart_stopwatch.srcs/sources_1/imports/harman_Verilog/1115_uart_study/1115_uart_study.srcs/sources_1/imports/new/button_detector.v
-  D:/GitHub/harman_Verilog/1115_uart_stopwatch/1115_uart_stopwatch.srcs/sources_1/imports/harman_Verilog/1112_stopwatch_dot/1112_stopwatch_dot.srcs/sources_1/imports/sources_1/imports/new/fnd_controller.v
-  D:/GitHub/harman_Verilog/1115_uart_stopwatch/1115_uart_stopwatch.srcs/sources_1/imports/harman_Verilog/1112_stopwatch_dot/1112_stopwatch_dot.srcs/sources_1/imports/sources_1/new/stopwatch_control_unit.v
-  D:/GitHub/harman_Verilog/1115_uart_stopwatch/1115_uart_stopwatch.srcs/sources_1/imports/harman_Verilog/1112_stopwatch_dot/1112_stopwatch_dot.srcs/sources_1/imports/sources_1/new/stopwatch_datapath.v
-  D:/GitHub/harman_Verilog/1115_uart_stopwatch/1115_uart_stopwatch.srcs/sources_1/imports/harman_Verilog/1112_stopwatch_dot/1112_stopwatch_dot.srcs/sources_1/imports/sources_1/new/top_stopwatch.v
-  D:/GitHub/harman_Verilog/1115_uart_stopwatch/1115_uart_stopwatch.srcs/sources_1/imports/harman_Verilog/1115_uart_study/1115_uart_study.srcs/sources_1/new/uart.v
-  D:/GitHub/harman_Verilog/1115_uart_stopwatch/1115_uart_stopwatch.srcs/sources_1/imports/harman_Verilog/1115_uart_study/1115_uart_study.srcs/sources_1/new/send_char.v
+  D:/Verilog/Verilog/1115_uart_stopwatch/1115_uart_stopwatch.srcs/sources_1/imports/harman_Verilog/1115_uart_study/1115_uart_study.srcs/sources_1/imports/new/button_detector.v
+  D:/Verilog/Verilog/1115_uart_stopwatch/1115_uart_stopwatch.srcs/sources_1/imports/harman_Verilog/1112_stopwatch_dot/1112_stopwatch_dot.srcs/sources_1/imports/sources_1/imports/new/fnd_controller.v
+  D:/Verilog/Verilog/1115_uart_stopwatch/1115_uart_stopwatch.srcs/sources_1/imports/harman_Verilog/1112_stopwatch_dot/1112_stopwatch_dot.srcs/sources_1/imports/sources_1/new/stopwatch_control_unit.v
+  D:/Verilog/Verilog/1115_uart_stopwatch/1115_uart_stopwatch.srcs/sources_1/imports/harman_Verilog/1112_stopwatch_dot/1112_stopwatch_dot.srcs/sources_1/imports/sources_1/new/stopwatch_datapath.v
+  D:/Verilog/Verilog/1115_uart_stopwatch/1115_uart_stopwatch.srcs/sources_1/imports/harman_Verilog/1112_stopwatch_dot/1112_stopwatch_dot.srcs/sources_1/imports/sources_1/new/top_stopwatch.v
+  D:/Verilog/Verilog/1115_uart_stopwatch/1115_uart_stopwatch.srcs/sources_1/imports/harman_Verilog/1115_uart_study/1115_uart_study.srcs/sources_1/new/uart.v
+  D:/Verilog/Verilog/1115_uart_stopwatch/1115_uart_stopwatch.srcs/sources_1/imports/harman_Verilog/1115_uart_study/1115_uart_study.srcs/sources_1/new/send_char.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -109,8 +106,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc D:/GitHub/harman_Verilog/1115_uart_stopwatch/1115_uart_stopwatch.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc
-set_property used_in_implementation false [get_files D:/GitHub/harman_Verilog/1115_uart_stopwatch/1115_uart_stopwatch.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+read_xdc D:/Verilog/Verilog/1115_uart_stopwatch/1115_uart_stopwatch.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc
+set_property used_in_implementation false [get_files D:/Verilog/Verilog/1115_uart_stopwatch/1115_uart_stopwatch.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

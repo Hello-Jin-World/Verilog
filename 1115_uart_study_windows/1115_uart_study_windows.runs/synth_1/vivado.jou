@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Nov 24 23:16:01 2024
+# Process ID: 13612
+# Current directory: D:/Verilog/Verilog/1115_uart_study_windows/1115_uart_study_windows.runs/synth_1
+# Command line: vivado.exe -log send_char.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source send_char.tcl
+# Log file: D:/Verilog/Verilog/1115_uart_study_windows/1115_uart_study_windows.runs/synth_1/send_char.vds
+# Journal file: D:/Verilog/Verilog/1115_uart_study_windows/1115_uart_study_windows.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source send_char.tcl -notrace

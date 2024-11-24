@@ -1,0 +1,205 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Nov 24 22:46:44 2024
+# Process ID: 1176
+# Current directory: D:/Verilog/Verilog/DHT11
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17180 D:\Verilog\Verilog\DHT11\DHT11.xpr
+# Log file: D:/Verilog/Verilog/DHT11/vivado.log
+# Journal file: D:/Verilog/Verilog/DHT11\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Verilog/Verilog/DHT11/DHT11.xpr
+INFO: [Project 1-313] Project file moved from '/home/user/project/Verilog/DHT11' since last save.
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionXsim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionModelSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionQuesta
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionXcelium
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionVCS
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionRiviera
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionActiveHdl
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionXsim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionModelSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionQuesta
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionXcelium
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionVCS
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionRiviera
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionActiveHdl
+WARNING: [filemgmt 56-2] Board Part Repository Path: Could not find the directory 'D:/.Xilinx/Vivado/2024.1/xhub/board_store/xilinx_board_store', nor could it be found using path 'D:/home/user/.Xilinx/Vivado/2024.1/xhub/board_store/xilinx_board_store'.
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name EnableResourceEstimation
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimCompileState
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name ClassicSocBoot
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name LocalIPRepoLeafDirName
+ERROR: [Runs 36-378] The checkpoint 'D:/Verilog/Verilog/DHT11/DHT11.srcs/utils_1/imports/synth_1/top_dht11.dcp' was created with 'Vivado v2024.1 (64-bit)', and cannot be opened in this version.
+open_project D:/Verilog/Verilog/mini_project_dht11/mini_project_dht11.xpr
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store'.
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/Verilog/Verilog/mini_project_dht11/mini_project_dht11.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+update_compile_order -fileset sources_1
+close_project
+open_project D:/Verilog/Verilog/DHT11/DHT11.xpr
+INFO: [Project 1-313] Project file moved from '/home/user/project/Verilog/DHT11' since last save.
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionXsim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionModelSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionQuesta
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionXcelium
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionVCS
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionRiviera
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionActiveHdl
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionXsim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionModelSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionQuesta
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionXcelium
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionVCS
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionRiviera
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionActiveHdl
+WARNING: [filemgmt 56-2] Board Part Repository Path: Could not find the directory 'D:/.Xilinx/Vivado/2024.1/xhub/board_store/xilinx_board_store', nor could it be found using path 'D:/home/user/.Xilinx/Vivado/2024.1/xhub/board_store/xilinx_board_store'.
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name EnableResourceEstimation
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimCompileState
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name ClassicSocBoot
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name LocalIPRepoLeafDirName
+ERROR: [Runs 36-378] The checkpoint 'D:/Verilog/Verilog/DHT11/DHT11.srcs/utils_1/imports/synth_1/top_dht11.dcp' was created with 'Vivado v2024.1 (64-bit)', and cannot be opened in this version.
+open_project D:/Verilog/Verilog/mini_project_dht11/mini_project_dht11.xpr
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store'.
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/Verilog/Verilog/mini_project_dht11/mini_project_dht11.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+update_compile_order -fileset sources_1
+xhub::refresh_catalog [xhub::get_xstores xilinx_board_store]
+xhub::refresh_catalog: Time (s): cpu = 00:00:06 ; elapsed = 00:00:32 . Memory (MB): peak = 1163.188 ; gain = 0.000
+xhub::uninstall [xhub::get_xitems digilentinc.com:xilinx_board_store:basys3:1.1]
+INFO: [xhubtcl 76-35] Un-installing object 'digilentinc.com:xilinx_board_store:basys3:1.1' ...
+INFO: [Common 17-1574] Object digilentinc.com:xilinx_board_store:basys3:1.1 has been un-installed successfully.
+set_param board.repoPaths {C:/Users/danie/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store}
+xhub::install [xhub::get_xitems digilentinc.com:xilinx_board_store:basys3:1.1]
+INFO: [xhubtcl 76-32] Installing object 'digilentinc.com:xilinx_board_store:basys3:1.1' ...
+INFO: [Common 17-1570] Installing object digilentinc.com:xilinx_board_store:basys3:1.1 from remote host https://github.com/Xilinx/XilinxBoardStore.git
+INFO: [Common 17-1573] Object digilentinc.com:xilinx_board_store:basys3:1.1 has been installed successfully.
+close_project
+create_project DHT11_windows D:/Verilog/Verilog/DHT11_windows -part xc7vx485tffg1157-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+import_files -norecurse {D:/Verilog/Verilog/DHT11/DHT11.srcs/sources_1/new/top_dht11.v D:/Verilog/Verilog/DHT11/DHT11.srcs/sources_1/new/dht11_control.v D:/Verilog/Verilog/DHT11/DHT11.srcs/sources_1/new/fifo.v D:/Verilog/Verilog/DHT11/DHT11.srcs/sources_1/new/uart.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+add_files -fileset constrs_1 -norecurse D:/Verilog/Verilog/DHT11/DHT11.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc
+import_files -fileset constrs_1 D:/Verilog/Verilog/DHT11/DHT11.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Nov 24 22:55:41 2024] Launched synth_1...
+Run output will be captured here: D:/Verilog/Verilog/DHT11_windows/DHT11_windows.runs/synth_1/runme.log
+[Sun Nov 24 22:55:41 2024] Launched impl_1...
+Run output will be captured here: D:/Verilog/Verilog/DHT11_windows/DHT11_windows.runs/impl_1/runme.log
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7vx485tffg1157-1
+Top: top_dht11
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2038.770 ; gain = 247.270
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_dht11' [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/top_dht11.v:23]
+INFO: [Synth 8-6157] synthesizing module 'dht11_control' [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/dht11_control.v:23]
+INFO: [Synth 8-6157] synthesizing module 'select_io' [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/dht11_control.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'select_io' (1#1) [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/dht11_control.v:121]
+INFO: [Synth 8-6157] synthesizing module 'clock_divider' [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/dht11_control.v:151]
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (2#1) [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/dht11_control.v:151]
+INFO: [Synth 8-6157] synthesizing module 'count_5sec' [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/dht11_control.v:83]
+INFO: [Synth 8-6155] done synthesizing module 'count_5sec' (3#1) [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/dht11_control.v:83]
+INFO: [Synth 8-6157] synthesizing module 'start_signal' [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/dht11_control.v:179]
+INFO: [Synth 8-6155] done synthesizing module 'start_signal' (4#1) [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/dht11_control.v:179]
+INFO: [Synth 8-6157] synthesizing module 'receive_data' [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/dht11_control.v:260]
+	Parameter NONE bound to: 2'b00 
+	Parameter WAIT bound to: 2'b01 
+	Parameter WAIT_RECEIVE bound to: 2'b10 
+	Parameter RECEIVE bound to: 2'b11 
+INFO: [Synth 8-6155] done synthesizing module 'receive_data' (5#1) [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/dht11_control.v:260]
+WARNING: [Synth 8-689] width (40) of port connection 'tem_hum_data' does not match port width (8) of module 'receive_data' [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/dht11_control.v:78]
+INFO: [Synth 8-6155] done synthesizing module 'dht11_control' (6#1) [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/dht11_control.v:23]
+INFO: [Synth 8-6157] synthesizing module 'fifo' [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/fifo.v:23]
+INFO: [Synth 8-6157] synthesizing module 'register_file' [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/fifo.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'register_file' (7#1) [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/fifo.v:57]
+INFO: [Synth 8-6157] synthesizing module 'fifo_control_unit' [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/fifo.v:77]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_control_unit' (8#1) [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/fifo.v:77]
+INFO: [Synth 8-6155] done synthesizing module 'fifo' (9#1) [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/fifo.v:23]
+WARNING: [Synth 8-689] width (40) of port connection 'wdata' does not match port width (8) of module 'fifo' [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/top_dht11.v:58]
+INFO: [Synth 8-6157] synthesizing module 'uart' [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/uart.v:23]
+INFO: [Synth 8-6157] synthesizing module 'baudrate_generator' [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/uart.v:71]
+INFO: [Synth 8-6155] done synthesizing module 'baudrate_generator' (10#1) [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/uart.v:71]
+INFO: [Synth 8-6157] synthesizing module 'transmitter' [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/uart.v:101]
+	Parameter IDLE bound to: 0 - type: integer 
+	Parameter START bound to: 1 - type: integer 
+	Parameter DATA bound to: 2 - type: integer 
+	Parameter STOP bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'transmitter' (11#1) [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/uart.v:101]
+INFO: [Synth 8-6157] synthesizing module 'reciever' [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/uart.v:291]
+	Parameter IDLE bound to: 0 - type: integer 
+	Parameter START bound to: 1 - type: integer 
+	Parameter DATA bound to: 2 - type: integer 
+	Parameter STOP bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'reciever' (12#1) [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/uart.v:291]
+INFO: [Synth 8-6155] done synthesizing module 'uart' (13#1) [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/uart.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top_dht11' (14#1) [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/top_dht11.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2114.746 ; gain = 323.246
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2121.520 ; gain = 330.020
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2121.520 ; gain = 330.020
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2121.520 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+CRITICAL WARNING: [Common 17-69] Command failed: 'W5' is not a valid site or package pin name. [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc:8]
+CRITICAL WARNING: [Common 17-69] Command failed: 'U18' is not a valid site or package pin name. [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc:71]
+CRITICAL WARNING: [Common 17-69] Command failed: 'J1' is not a valid site or package pin name. [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc:80]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx485tffg1157-1' part. [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc:147]
+Finished Parsing XDC File [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2255.562 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 2368.633 ; gain = 577.133
+31 Infos, 2 Warnings, 4 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 2368.633 ; gain = 1045.648
+refresh_design
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+CRITICAL WARNING: [Common 17-69] Command failed: 'W5' is not a valid site or package pin name. [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc:8]
+CRITICAL WARNING: [Common 17-69] Command failed: 'U18' is not a valid site or package pin name. [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc:71]
+CRITICAL WARNING: [Common 17-69] Command failed: 'J1' is not a valid site or package pin name. [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc:80]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx485tffg1157-1' part. [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc:147]
+Finished Parsing XDC File [D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+Completed Processing XDC Constraints
+
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Nov 24 23:01:37 2024] Launched synth_1...
+Run output will be captured here: D:/Verilog/Verilog/DHT11_windows/DHT11_windows.runs/synth_1/runme.log
+[Sun Nov 24 23:01:37 2024] Launched impl_1...
+Run output will be captured here: D:/Verilog/Verilog/DHT11_windows/DHT11_windows.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 24 23:02:09 2024...
