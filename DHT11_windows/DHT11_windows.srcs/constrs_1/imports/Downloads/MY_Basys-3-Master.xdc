@@ -144,7 +144,7 @@ set_property -dict { PACKAGE_PIN J1  IOSTANDARD LVCMOS33 } [get_ports { ioport }
 ##USB-RS232 Interface
 
 #set_property -dict { PACKAGE_PIN B18  IOSTANDARD LVCMOS33 } [get_ports { rx }]; #IO_L19P_T3_16      ,Sch=UART_TXD_IN
-#set_property -dict { PACKAGE_PIN A18  IOSTANDARD LVCMOS33 } [get_ports { tx }]; #IO_L19N_T3_VREF_16 ,Sch=UART_RXD_OUT
+set_property -dict { PACKAGE_PIN A18  IOSTANDARD LVCMOS33 } [get_ports { tx }]; #IO_L19N_T3_VREF_16 ,Sch=UART_RXD_OUT
 
 
 ##USB HID (PS/2)

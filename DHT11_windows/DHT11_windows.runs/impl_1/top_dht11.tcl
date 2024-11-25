@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "D:/Verilog/Verilog/DHT11_windows/DHT11_windows.runs/impl_1/top_dht11.tcl"
+  variable script "D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.runs/impl_1/top_dht11.tcl"
   variable category "vivado_impl"
 }
 
@@ -115,8 +115,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -124,26 +122,25 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 1
-  set_param synth.incrementalSynthesisCache D:/Verilog/Verilog/DHT11_windows/.Xil/Vivado-12928-DESKTOP-PFRE25G/incrSyn
+  set_param chipscope.maxJobs 4
   set_param xicom.use_bs_reader 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a35tcpg236-1
-  set_property board_part_repo_paths {C:/Users/danie/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store} [current_project]
+  set_property board_part_repo_paths {C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store} [current_project]
   set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir D:/Verilog/Verilog/DHT11_windows/DHT11_windows.cache/wt [current_project]
-  set_property parent.project_path D:/Verilog/Verilog/DHT11_windows/DHT11_windows.xpr [current_project]
-  set_property ip_output_repo D:/Verilog/Verilog/DHT11_windows/DHT11_windows.cache/ip [current_project]
+  set_property webtalk.parent_dir D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.cache/wt [current_project]
+  set_property parent.project_path D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.xpr [current_project]
+  set_property ip_output_repo D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet D:/Verilog/Verilog/DHT11_windows/DHT11_windows.runs/synth_1/top_dht11.dcp
+  add_files -quiet D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.runs/synth_1/top_dht11.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc D:/Verilog/Verilog/DHT11_windows/DHT11_windows.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc
+  read_xdc D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

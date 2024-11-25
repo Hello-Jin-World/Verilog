@@ -24,10 +24,10 @@ module fnd_controller (
     input        reset,
     input        sw_mode,
     input  [7:0] u_command,
-    input  [6:0] msec,       // 0.1sec
-    input  [6:0] sec,        // 1sec
-    input  [6:0] min,        // 1min
-    input  [6:0] hour,       // 1hour
+    input  [7:0] msec,       // 0.1sec
+    input  [7:0] sec,        // 1sec
+    input  [7:0] min,        // 1min
+    input  [7:0] hour,       // 1hour
     output [3:0] fndcom,
     output [7:0] fndfont
 );
@@ -94,7 +94,7 @@ module fnd_controller (
         .x3 (w_sec_digit_10),
         .x4 (4'hf),
         .x5 (4'hf),
-        .x6 (w_dot),
+        .x6 (4'hf),
         .x7 (4'hf),
         .y  (w_sec_msec_bcd)
     );
@@ -107,7 +107,7 @@ module fnd_controller (
         .x3 (w_hour_digit_10),
         .x4 (4'hf),
         .x5 (4'hf),
-        .x6 (w_dot),
+        .x6 (4'hf),
         .x7 (4'hf),
         .y  (w_min_hour_bcd)
     );
@@ -171,7 +171,7 @@ module clk_div (
 endmodule
 
 module digit_splitter (
-    input  [6:0] digit,
+    input  [7:0] digit,
     output [3:0] digit_1,
     output [3:0] digit_10
 );
@@ -179,6 +179,8 @@ module digit_splitter (
     assign digit_1  = digit % 10;
     assign digit_10 = digit / 10 % 10;
 
+    // assign digit_10  = digit[3:0];
+    // assign digit_1 = digit[7:4];
 endmodule
 
 module mux_8x1 (
@@ -328,7 +330,7 @@ module BCDtoSEG_decoder (
 endmodule
 
 module comparator (
-    input  [6:0] x,
+    input  [7:0] x,
     output [3:0] y
 );
 

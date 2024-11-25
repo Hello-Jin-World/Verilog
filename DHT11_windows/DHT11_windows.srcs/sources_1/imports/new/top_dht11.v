@@ -25,7 +25,7 @@ module top_dht11 (
     input        reset,
     inout        ioport,
     input        sw_mode,
-    // output tx
+    output       tx,
     output [3:0] fndcom,
     output [7:0] fndfont
 );
@@ -49,39 +49,39 @@ module top_dht11 (
     );
 
     fnd_controller U_fnd_controller (
-        .clk(clk),
-        .reset(reset),
-        .sw_mode(sw_mode),
+        .clk      (clk),
+        .reset    (reset),
+        .sw_mode  (sw_mode),
         .u_command(),
-        .msec(dec_hum),
-        .sec(int_hum),
-        .min(dec_tem),
-        .hour(int_tem),
-        .fndcom(fndcom),
-        .fndfont(fndfont)
+        .msec     (dec_hum),
+        .sec      (int_hum),
+        .min      (dec_tem),
+        .hour     (int_tem),
+        .fndcom   (fndcom),
+        .fndfont  (fndfont)
     );
 
-    // fifo U_fifo (
-    //     .clk  (clk),
-    //     .reset(reset),
-    //     .wdata(w_data),
-    //     .wr_en(wr_en),
-    //     .rd_en(~tx_busy),
-    //     .rdata(r_data),
-    //     .full (),
-    //     .empty(tx_start)
-    // );
+    fifo U_fifo (
+        .clk  (clk),
+        .reset(reset),
+        .wdata(int_hum),
+        .wr_en(wr_en),
+        .rd_en(~tx_busy),
+        .rdata(r_data),
+        .full (),
+        .empty(tx_start)
+    );
 
-    // uart U_uart (
-    //     .clk(clk),
-    //     .reset(reset),
-    //     .tx_start(~tx_start),
-    //     .tx_data(8'h30),
-    //     .tx(tx),
-    //     .tx_busy(tx_busy),
-    //     .tx_done(),
-    //     .rx(),
-    //     .rx_data(),
-    //     .rx_done()
-    // );
+    uart U_uart (
+        .clk(clk),
+        .reset(reset),
+        .tx_start(~tx_start),
+        .tx_data(int_hum),
+        .tx(tx),
+        .tx_busy(tx_busy),
+        .tx_done(),
+        .rx(),
+        .rx_data(),
+        .rx_done()
+    );
 endmodule

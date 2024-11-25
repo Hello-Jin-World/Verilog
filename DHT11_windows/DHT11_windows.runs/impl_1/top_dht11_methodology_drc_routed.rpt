@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Mon Nov 25 01:55:20 2024
-| Host         : DESKTOP-PFRE25G running 64-bit major release  (build 9200)
+| Date         : Mon Nov 25 13:06:10 2024
+| Host         : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_dht11_methodology_drc_routed.rpt -pb top_dht11_methodology_drc_routed.pb -rpx top_dht11_methodology_drc_routed.rpx
 | Design       : top_dht11
 | Device       : xc7a35tcpg236-1
@@ -23,13 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 16
+             Violations found: 34
 +-----------+------------------+-------------------------------+------------+
 | Rule      | Severity         | Description                   | Violations |
 +-----------+------------------+-------------------------------+------------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell   | 3          |
-| TIMING-18 | Warning          | Missing input or output delay | 11         |
-| TIMING-20 | Warning          | Non-clocked latch             | 2          |
+| TIMING-18 | Warning          | Missing input or output delay | 12         |
+| TIMING-20 | Warning          | Non-clocked latch             | 19         |
 +-----------+------------------+-------------------------------+------------+
 
 2. REPORT DETAILS
@@ -104,12 +104,102 @@ Missing input or output delay
 An output delay is missing on fndfont[7] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
+TIMING-18#12 Warning
+Missing input or output delay  
+An output delay is missing on tx relative to clock(s) sys_clk_pin
+Related violations: <none>
+
 TIMING-20#1 Warning
 Non-clocked latch  
 The latch U_dht11_control/U_count_5sec/start_dht11_next_reg cannot be properly analyzed as its control pin U_dht11_control/U_count_5sec/start_dht11_next_reg/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#2 Warning
+Non-clocked latch  
+The latch U_dht11_control/U_receive_data/dec_hum_reg[7] cannot be properly analyzed as its control pin U_dht11_control/U_receive_data/dec_hum_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch U_dht11_control/U_receive_data/int_hum_reg[0] cannot be properly analyzed as its control pin U_dht11_control/U_receive_data/int_hum_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch U_dht11_control/U_receive_data/int_hum_reg[1] cannot be properly analyzed as its control pin U_dht11_control/U_receive_data/int_hum_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch U_dht11_control/U_receive_data/int_hum_reg[2] cannot be properly analyzed as its control pin U_dht11_control/U_receive_data/int_hum_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch U_dht11_control/U_receive_data/int_hum_reg[3] cannot be properly analyzed as its control pin U_dht11_control/U_receive_data/int_hum_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch U_dht11_control/U_receive_data/int_hum_reg[4] cannot be properly analyzed as its control pin U_dht11_control/U_receive_data/int_hum_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch U_dht11_control/U_receive_data/int_hum_reg[5] cannot be properly analyzed as its control pin U_dht11_control/U_receive_data/int_hum_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch U_dht11_control/U_receive_data/int_hum_reg[6] cannot be properly analyzed as its control pin U_dht11_control/U_receive_data/int_hum_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#10 Warning
+Non-clocked latch  
+The latch U_dht11_control/U_receive_data/int_hum_reg[7] cannot be properly analyzed as its control pin U_dht11_control/U_receive_data/int_hum_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch U_dht11_control/U_receive_data/int_tem_reg[0] cannot be properly analyzed as its control pin U_dht11_control/U_receive_data/int_tem_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch U_dht11_control/U_receive_data/int_tem_reg[1] cannot be properly analyzed as its control pin U_dht11_control/U_receive_data/int_tem_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch U_dht11_control/U_receive_data/int_tem_reg[2] cannot be properly analyzed as its control pin U_dht11_control/U_receive_data/int_tem_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#14 Warning
+Non-clocked latch  
+The latch U_dht11_control/U_receive_data/int_tem_reg[3] cannot be properly analyzed as its control pin U_dht11_control/U_receive_data/int_tem_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#15 Warning
+Non-clocked latch  
+The latch U_dht11_control/U_receive_data/int_tem_reg[4] cannot be properly analyzed as its control pin U_dht11_control/U_receive_data/int_tem_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#16 Warning
+Non-clocked latch  
+The latch U_dht11_control/U_receive_data/int_tem_reg[5] cannot be properly analyzed as its control pin U_dht11_control/U_receive_data/int_tem_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#17 Warning
+Non-clocked latch  
+The latch U_dht11_control/U_receive_data/int_tem_reg[6] cannot be properly analyzed as its control pin U_dht11_control/U_receive_data/int_tem_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#18 Warning
+Non-clocked latch  
+The latch U_dht11_control/U_receive_data/int_tem_reg[7] cannot be properly analyzed as its control pin U_dht11_control/U_receive_data/int_tem_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#19 Warning
 Non-clocked latch  
 The latch U_dht11_control/U_select_io/in_data_reg cannot be properly analyzed as its control pin U_dht11_control/U_select_io/in_data_reg/G is not reached by a timing clock
 Related violations: <none>
