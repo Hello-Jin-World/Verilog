@@ -364,7 +364,7 @@ module receive_data (
     always @(*) begin
         state_next               = state_reg;
         tem_hum_data_next        = tem_hum_data_reg;
-        counter_next             = counter_next;
+        counter_next             = counter_reg;
         i_next                   = i_reg;
         finish_receive_data_next = finish_receive_data_reg;
 
