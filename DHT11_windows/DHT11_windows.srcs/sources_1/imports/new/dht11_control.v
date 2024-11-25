@@ -256,7 +256,7 @@ module start_signal (
                     signal_next  = 1'b1;
                 end
             end else begin
-                if (counter_reg == 40 - 1) begin // count(maintain) DHT_wait_signal(HIGH) for 20~40us.
+                if (counter_reg == 35 - 1) begin // count(maintain) DHT_wait_signal(HIGH) for 20~40us.
                     counter_next = 0;
                     mode_next             = 1'b0; // end start process, and io_port set input mode.
                     lets_start_dht11_next = 1'b0;
@@ -286,7 +286,7 @@ module receive_data (
     // output            temp_out
 );
 
-    reg [1:0] state_reg, state_next;
+    reg [2:0] state_reg, state_next;
     reg [$clog2(160) - 1:0] counter_reg, counter_next;
     reg [39:0] tem_hum_data_reg, tem_hum_data_next;
     reg wr_en_reg, wr_en_next;
@@ -302,7 +302,7 @@ module receive_data (
     // assign int_tem = tem_hum_data_reg[23:16];
     // assign dec_tem = tem_hum_data_reg[31:24];
 
-    localparam NONE = 2'b00, WAIT = 2'b01, WAIT_RECEIVE = 2'b10, RECEIVE = 2'b11;
+    localparam NONE = 3'b000, WAIT_1 = 3'b001, WAIT_2 = 3'b010, WAIT_RECEIVE = 3'b011, RECEIVE = 3'b100, WAIT_0 = 3'b101;
 
     reg [5:0] i_reg, i_next;
     // reg [$clog2(40)-1:0] i;
@@ -310,11 +310,11 @@ module receive_data (
     always @(posedge clk, posedge reset) begin
         if (reset) begin
             counter_reg      <= 0;
-            state_reg        <= 2'b00;
+            state_reg        <= 3'b000;
             tem_hum_data_reg <= 0;
             wr_en_reg        <= 0;
             // temp_reg         <= 0;
-            i_reg            <= 0;
+            i_reg            <= 39;
             wait_more_reg    <= 0;
         end else begin
             counter_reg      <= counter_next;
@@ -343,40 +343,56 @@ module receive_data (
             case (state_reg)
                 NONE: begin
                     if (start_receive_data) begin
-                        state_next   = WAIT;
+                        state_next   = WAIT_0;
                         counter_next = 0;
+                    end else begin
+                        i_next = 39;
+                        wr_en_next = 0;
+                        // if (counter_next == 50) begin
+                        // int_hum = tem_hum_data_reg[39:32];
+                        // dec_hum    = tem_hum_data_reg[31:24];
+                        // // dec_hum = 0;
+                        // int_tem = tem_hum_data_reg[23:16];
+                        // dec_tem    = tem_hum_data_reg[15:8];
+                        // dec_tem = 0;
                     end  // else begin
-                    wr_en_next = 0;
-                    if (counter_next == 50) begin
-                        int_hum = tem_hum_data_reg[7:0];
-                        // dec_hum    = tem_hum_data_reg[16:8];
-                        dec_hum = 0;
-                        int_tem = tem_hum_data_reg[23:16];
-                        // dec_tem    = tem_hum_data_reg[31:24];
-                        dec_tem = 0;
-                        // int_hum    = 8'b01010010; 
-                        // dec_hum    = 0; 
-                        // int_tem    = 8'b00011001;
-                        // dec_tem    = 0;
-                    end
+                    // int_hum    = 8'b01010010; 
+                    // dec_hum    = 0; 
+                    // int_tem    = 8'b00011001;
+                    // dec_tem    = 0;
+                    // end
                     // tem_hum_data_next = 0;
                     //     i = 0;
                     //     state_next = NONE;
                     // end
                 end
-                WAIT: begin
-                    if (counter_reg == 160 - 1) begin
-                        state_next   = WAIT_RECEIVE;
-                        counter_next = 0;
-                    end  // else begin
-                    //     state_next = WAIT;
-                    // end
+                WAIT_0: begin
+                    if(dht11_data == 1'b0) begin
+                        state_next = WAIT_1;
+                    end
+                end
+
+                WAIT_1: begin
+                    if (dht11_data == 1'b1) begin
+                        state_next = WAIT_2;
+                    // end else begin
+                    //     state_next = WAIT_1;
+                    end
+                end
+                WAIT_2: begin
+                    if (dht11_data == 1'b0) begin
+                        state_next = WAIT_RECEIVE;
+                    // end else begin
+                    //     state_next = WAIT_2;
+                    end
                 end
                 WAIT_RECEIVE: begin
-                    if (dht11_data) begin
+                    if (dht11_data == 1'b1) begin
+                        i_next       = i_reg - 1;
                         state_next   = RECEIVE;
                         counter_next = 0;
-                    end  //else begin
+                    end
+                    //else begin
                     //     state_next = WAIT_RECEIVE;
                     //     // if (i == 8) begin
                     //     //     i = 0;
@@ -391,49 +407,78 @@ module receive_data (
                     // end
                 end
                 RECEIVE: begin
+                    if (!dht11_data) begin
+                        if (counter_reg < 35) begin
+                            tem_hum_data_next[i_reg] = 1'b0;
+                            if (i_reg == 0) begin
+                                state_next = NONE;
+                                wr_en_next = 1;
+                                int_hum = tem_hum_data_reg[39:32];
+                                dec_hum    = tem_hum_data_reg[31:24];
+                                // dec_hum = 0;
+                                int_tem = tem_hum_data_reg[23:16];
+                                dec_tem    = tem_hum_data_reg[15:8];
+                            end else begin
+                                state_next = WAIT_RECEIVE;
+                            end
+                        end else begin
+                            tem_hum_data_next[i_reg] = 1'b1;
+                            if (i_reg == 0) begin
+                                state_next = NONE;
+                                wr_en_next = 1;
+                                int_hum = tem_hum_data_reg[39:32];
+                                dec_hum    = tem_hum_data_reg[31:24];
+                                // dec_hum = 0;
+                                int_tem = tem_hum_data_reg[23:16];
+                                dec_tem    = tem_hum_data_reg[15:8];
+                            end else begin
+                                state_next = WAIT_RECEIVE;
+                            end
+                        end
+                    end
                     // if (!dht11_data) begin
                     //     counter_next = 0;
                     //     i = i + 1;
                     //     state_next = WAIT_RECEIVE;
                     // end else begin
-                    if (counter_reg == 35 - 1) begin
-                        if (dht11_data) begin
-                            tem_hum_data_next[i_reg] = 1'b1;
-                            // temp_next = 1;
-                            wait_more_next = 1;
-                        end else begin
-                            tem_hum_data_next[i_reg] = 1'b0;
-                            // temp_next = 0;
-                            i_next = i_reg + 1;
-                            state_next = WAIT_RECEIVE;
-                            if (i_next == 40) begin
-                                // if (tem_hum_data_reg[39:32] == tem_hum_data_reg[7:0]+tem_hum_data_reg[15:8]+tem_hum_data_reg[23:16]+tem_hum_data_reg[31:24]) begin
-                                counter_next = 0;
-                                wr_en_next   = 1;
-                                i_next       = 0;
-                                state_next   = NONE;
-                                // end
-                            end
-                            // i = i + 1;
-                        end
-                    end
-                    if (wait_more_reg) begin
-                        if (!dht11_data) begin
-                            i_next = i_reg + 1;
-                            wait_more_next = 0;
-                            state_next = WAIT_RECEIVE;
-                            // i = i + 1;
-                            if (i_next == 40) begin
-                                // if (tem_hum_data_reg[39:32] == tem_hum_data_reg[7:0]+tem_hum_data_reg[15:8]+tem_hum_data_reg[23:16]+tem_hum_data_reg[31:24]) begin
-                                counter_next = 0;
-                                wr_en_next   = 1;
-                                i_next       = 0;
-                                state_next   = NONE;
-                                // end
-                            end
-                        end
-                    end
+                    // if (counter_reg == 40 - 1) begin
+                    //     if (dht11_data) begin
+                    //         // temp_next = 1;
+                    //         wait_more_next = 1;
+                    //     end else begin
+                    //         tem_hum_data_next[i_reg] = 1'b0;
+                    //         // temp_next = 0;
+                    //         i_next = i_reg - 1;
+                    //         state_next = WAIT_RECEIVE;
+                    //         if (i_reg == 0) begin
+                    //             // if (tem_hum_data_reg[39:32] == tem_hum_data_reg[7:0]+tem_hum_data_reg[15:8]+tem_hum_data_reg[23:16]+tem_hum_data_reg[31:24]) begin
+                    //             counter_next = 0;
+                    //             wr_en_next   = 1;
+                    //             i_next       = 0;
+                    //             state_next   = NONE;
+                    //             // end
+                    //         end
+                    //         // i = i + 1;
+                    //     end
                     // end
+                    // if (wait_more_reg) begin
+                    //     if (!dht11_data) begin
+                    //         tem_hum_data_next[i_reg] = 1'b1;
+                    //         i_next = i_reg - 1;
+                    //         wait_more_next = 0;
+                    //         state_next = WAIT_RECEIVE;
+                    //         // i = i + 1;
+                    //         if (i_reg == 0) begin
+                    //             // if (tem_hum_data_reg[39:32] == tem_hum_data_reg[7:0]+tem_hum_data_reg[15:8]+tem_hum_data_reg[23:16]+tem_hum_data_reg[31:24]) begin
+                    //             counter_next = 0;
+                    //             wr_en_next   = 1;
+                    //             i_next       = 39;
+                    //             state_next   = NONE;
+                    //             // end
+                    //         end
+                    //     end
+                    // end
+                    // // end
                 end
             endcase
         end

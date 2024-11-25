@@ -32,20 +32,20 @@ module top_dht11 (
 
     wire wr_en, tx_busy, tx_start;
     wire [7:0] r_data;
-    wire [7:0] int_hum;
-    wire [7:0] dec_hum;
-    wire [7:0] int_tem;
-    wire [7:0] dec_tem;
+    wire [7:0] hum_int;
+    wire [7:0] hum_dec;
+    wire [7:0] tem_int;
+    wire [7:0] tem_dec;
 
-    dht11_control U_dht11_control (
+    dht11_control_pls U_dht11_control (
         .clk(clk),
         .reset(reset),
         .ioport(ioport),
         .wr_en(wr_en),
-        .int_hum(int_hum),
-        .dec_hum(dec_hum),
-        .int_tem(int_tem),
-        .dec_tem(dec_tem)
+        .hum_int(hum_int),
+        .hum_dec(hum_dec),
+        .tem_int(tem_int),
+        .tem_dec(tem_dec)
     );
 
     fnd_controller U_fnd_controller (
@@ -53,10 +53,10 @@ module top_dht11 (
         .reset    (reset),
         .sw_mode  (sw_mode),
         .u_command(),
-        .msec     (dec_hum),
-        .sec      (int_hum),
-        .min      (dec_tem),
-        .hour     (int_tem),
+        .msec     (hum_dec),
+        .sec      (hum_int),
+        .min      (tem_dec),
+        .hour     (tem_int),
         .fndcom   (fndcom),
         .fndfont  (fndfont)
     );
@@ -64,7 +64,7 @@ module top_dht11 (
     fifo U_fifo (
         .clk  (clk),
         .reset(reset),
-        .wdata(int_hum),
+        .wdata(hum_int),
         .wr_en(wr_en),
         .rd_en(~tx_busy),
         .rdata(r_data),
@@ -73,15 +73,15 @@ module top_dht11 (
     );
 
     uart U_uart (
-        .clk(clk),
-        .reset(reset),
+        .clk     (clk),
+        .reset   (reset),
         .tx_start(~tx_start),
-        .tx_data(int_hum),
-        .tx(tx),
-        .tx_busy(tx_busy),
-        .tx_done(),
-        .rx(),
-        .rx_data(),
-        .rx_done()
+        .tx_data (hum_int),
+        .tx      (tx),
+        .tx_busy (tx_busy),
+        .tx_done (),
+        .rx      (),
+        .rx_data (),
+        .rx_done ()
     );
 endmodule

@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 4
 set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
@@ -78,8 +79,10 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.cache/wt [current_project]
 set_property parent.project_path D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.xpr [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part_repo_paths {C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store} [current_project]
@@ -89,12 +92,18 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/dht11_control.v
+  D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/new/dht11_control_pls.v
   D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/fifo.v
   D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/fnd_controller.v
   D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/uart.v
   D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/top_dht11.v
 }
+read_ip -quiet d:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/ip/ila_0/ila_0.xci
+set_property used_in_synthesis false [get_files -all d:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all d:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all d:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all d:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.gen/sources_1/ip/ila_0/ila_0_ooc.xdc]
+
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
