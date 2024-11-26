@@ -1,10 +1,7 @@
 onbreak {quit -f}
 onerror {quit -f}
 
-vsim  -lib xil_defaultlib ila_0_opt
-
-set NumericStdNoWarnings 1
-set StdArithNoWarnings 1
+vsim -lib xil_defaultlib ila_0_opt
 
 do {wave.do}
 
@@ -14,6 +11,6 @@ view signals
 
 do {ila_0.udo}
 
-run 1000ns
+run -all
 
 quit -force

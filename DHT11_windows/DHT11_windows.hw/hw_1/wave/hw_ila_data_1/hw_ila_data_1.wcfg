@@ -10,304 +10,503 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1024fs"></ZoomEndTime>
-      <Cursor1Time time="200fs"></Cursor1Time>
+      <ZoomEndTime time="1777fs"></ZoomEndTime>
+      <Cursor1Time time="512fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="376"></NameColumnWidth>
-      <ValueColumnWidth column_width="164"></ValueColumnWidth>
+      <NameColumnWidth column_width="657"></NameColumnWidth>
+      <ValueColumnWidth column_width="323"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="41" />
+   <WVObjectSize size="69" />
    <wave_markers>
    </wave_markers>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_1" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_1" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_1</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_1</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_1</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_10" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_10" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_10</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_10</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_10</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_11" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_11" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_11</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_11</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_11</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_12" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_12" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_12</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_12</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_12</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_13" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_13" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_13</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_13</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_13</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_14" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_14" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_14</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_14</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_14</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_15" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_15" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_15</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_15</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_15</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_16" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_16" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_16</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_16</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_16</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_17" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_17" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_17</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_17</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_17</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_18" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_18" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_18</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_18</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_18</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_19" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_19" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_19</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_19</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_19</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_2" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_2" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_2</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_2</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_2</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_20" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_20" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_20</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_20</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_20</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_21" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_21" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_21</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_21</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_21</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_22" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_22" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_22</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_22</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_22</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_23" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_23" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_23</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_23</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_23</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_24" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_24" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_24</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_24</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_24</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_25" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_25" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_25</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_25</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_25</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_26" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_26" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_26</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_26</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_26</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_27" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_27" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_27</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_27</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_27</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_28" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_28" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_28</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_28</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_28</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_29" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_29" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_29</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_29</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_29</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_3" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_3" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_3</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_3</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_3</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_30" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_30" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_30</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_30</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_30</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_31" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_31" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_31</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_31</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_31</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_32" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_32" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_32</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_32</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_32</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_4" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_33" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_4</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_33</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_33</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_34" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_34</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_34</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_35" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_35</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_35</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_36" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_36</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_36</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_37" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_37</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_37</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_38" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_38</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_38</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_39" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_39</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_39</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_4" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_4</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_4</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_5" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_40" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_5</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_40</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_40</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_41" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_41</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_41</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_42" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_42</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_42</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_43" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_43</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_43</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_44" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_44</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_44</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_45" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_45</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_45</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_46" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_46</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_46</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_47" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_47</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_47</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_48" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_48</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_48</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_49" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_49</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_49</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_5" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_5</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_5</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_6" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_50" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_6</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_50</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_50</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_51" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_51</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_51</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_52" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_52</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_52</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_53" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_53</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_53</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_54" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_54</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_54</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_55" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_55</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_55</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_56" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_56</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_56</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_57" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_57</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_57</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_58" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_58</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_58</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_6" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_6</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_6</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_7" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_7" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_7</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_7</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_7</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_8" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_8" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_8</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_8</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_8</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/&lt;const0&gt;_9" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/&lt;const0&gt;_9" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/&lt;const0&gt;_9</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/&lt;const0&gt;_9</obj_property>
       <obj_property name="ObjectShortName">&lt;const0&gt;_9</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/dht11_data" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/counter_reg" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/dht11_data</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/counter_reg[14:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_reg[14:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/dht11_data" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/dht11_data</obj_property>
       <obj_property name="ObjectShortName">dht11_data</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/finish_receive_data" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/hum_int" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/finish_receive_data</obj_property>
-      <obj_property name="ObjectShortName">finish_receive_data</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/hum_int[7:0]</obj_property>
+      <obj_property name="ObjectShortName">hum_int[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/start_receive_data" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/i_reg" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/start_receive_data</obj_property>
-      <obj_property name="ObjectShortName">start_receive_data</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/i_reg[5:0]</obj_property>
+      <obj_property name="ObjectShortName">i_reg[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/state_reg" type="array">
+   <wvobject fp_name="U_dht11_control/U_start_signal/state_reg" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/state_reg[2:0]</obj_property>
-      <obj_property name="ObjectShortName">state_reg[2:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/state_reg[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state_reg[3:0]</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/tick" type="logic">
+   <wvobject fp_name="U_dht11_control/U_start_signal/tick" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/tick</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/tick</obj_property>
       <obj_property name="ObjectShortName">tick</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/counter_reg" type="array">
+   <wvobject fp_name="U_dht11_control/U_start_signal/mode_reg" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/counter_reg[6:0]</obj_property>
-      <obj_property name="ObjectShortName">counter_reg[6:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/mode_reg</obj_property>
+      <obj_property name="ObjectShortName">mode_reg</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/hum_dec" type="array">
+   <wvobject fp_name="U_dht11_control/U_start_signal/state_reg" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/hum_dec[7:0]</obj_property>
-      <obj_property name="ObjectShortName">hum_dec[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/state_reg[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state_reg[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_dht11_control/U_receive_data/hum_int" type="array">
+   <wvobject fp_name="U_dht11_control/U_start_signal/state_reg" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_dht11_control/U_receive_data/hum_int[7:0]</obj_property>
-      <obj_property name="ObjectShortName">hum_int[7:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/state_reg[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state_reg[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_dht11_control/U_start_signal/tem_hum_data_reg" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_dht11_control/U_start_signal/tem_hum_data_reg[39:0]</obj_property>
+      <obj_property name="ObjectShortName">tem_hum_data_reg[39:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

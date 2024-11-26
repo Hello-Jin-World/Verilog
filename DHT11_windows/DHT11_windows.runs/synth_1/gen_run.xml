@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1732538290">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1732606107">
   <File Type="PA-TCL" Name="top_dht11.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="top_dht11_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_dht11_reports.tcl"/>
   <File Type="RDS-RDS" Name="top_dht11.vds"/>
-  <File Type="RDS-UTIL" Name="top_dht11_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="top_dht11_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="top_dht11.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="top_dht11_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="top_dht11_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/dht11_control_pls.v">
+    <File Path="$PSRCDIR/sources_1/new/dht11_control_plssss.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -56,7 +51,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/new/dht11_control.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../DHT11/DHT11.srcs/sources_1/new/dht11_control.v"/>
         <Attr Name="ImportTime" Val="1732455760"/>
         <Attr Name="UsedIn" Val="synthesis"/>

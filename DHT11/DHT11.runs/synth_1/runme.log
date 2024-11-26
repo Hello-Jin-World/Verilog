@@ -1,4 +1,0 @@
-
-*** Running vivado
-    with args -log top_dht11.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_dht11.tcl
-

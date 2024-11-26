@@ -70,9 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param tcl.collectionResultDisplayLimit 0
-set_param chipscope.maxJobs 4
-set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -92,13 +89,14 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/new/dht11_control_pls.v
+  D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/new/dht11_control_plssss.v
   D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/fifo.v
   D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/fnd_controller.v
   D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/uart.v
   D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/top_dht11.v
+  D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/imports/new/dht11_control.v
 }
-read_ip -quiet d:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/ip/ila_0/ila_0.xci
+read_ip -quiet D:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.srcs/sources_1/ip/ila_0/ila_0.xci
 set_property used_in_synthesis false [get_files -all d:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all d:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all d:/GitHub/harman_Verilog/DHT11_windows/DHT11_windows.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
