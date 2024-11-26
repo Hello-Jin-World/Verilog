@@ -280,6 +280,7 @@ module start_signal (
                 end
             end
             WAIT_0: begin
+                signal_next = 1'b0;
                 if (tick) begin
                     counter_next = counter_reg + 1;
                     if (dht11_data) begin

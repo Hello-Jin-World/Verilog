@@ -20,29 +20,29 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 interface dht11_interface;
-    rogic       clk;
-    rogic       reset;
+    logic       clk;
+    logic       reset;
     wire        ioport;
-    rogic       mode;
-    rogic [7:0] hum_int;
-    rogic [7:0] hum_dec;
-    rogic [7:0] tem_int;
-    rogic [7:0] tem_dec;
-    rogic       come_data;
-    rogic       out_data;
-    rogic       tick;
+    logic       mode;
+    logic [7:0] hum_int;
+    logic [7:0] hum_dec;
+    logic [7:0] tem_int;
+    logic [7:0] tem_dec;
+    logic       come_data;
+    logic       out_data;
 
     assign ioport.come_data = mode ? out_data : 1'bz;
 endinterface  //dht11_interface
 
 class transaction;
-    rand rogic [7:0] hum_int;
-    rand rogic [7:0] hum_dec;
-    rand rogic [7:0] tem_int;
-    rand rogic [7:0] tem_dec;
-    logic out_data;
-    logic come_data;
-    logic mode;
+    logic      [7:0] hum_int;
+    logic      [7:0] hum_dec;
+    logic      [7:0] tem_int;
+    logic      [7:0] tem_dec;
+    logic            out_data;
+    logic            come_data;
+    logic            mode;
+    rand logic [6:0] set_up_time;
 
     task display(string name);
         $display("[%s] humidity : %d.%d,  temperature : %d.%d", name, hum_int,
@@ -88,16 +88,16 @@ class driver;
 
     task reset();
         #0;
-        dht11_intf.reset = 1'b1;
-        dht11_intf.clk = 1'b0;
-        dht11_intf.mode = 1'b1;
-        dht11_intf.hum_int = 0;
-        dht11_intf.hum_dec = 0;
-        dht11_intf.tem_int = 0;
-        dht11_intf.tem_dec = 0;
+        dht11_intf.reset     = 1'b1;
+        dht11_intf.clk       = 1'b0;
+        dht11_intf.mode      = 1'b1;
+        dht11_intf.hum_int   = 0;
+        dht11_intf.hum_dec   = 0;
+        dht11_intf.tem_int   = 0;
+        dht11_intf.tem_dec   = 0;
         dht11_intf.come_data = 0;
-        dht11_intf.out_data = 0;
-        dht11_intf.tick = 0;
+        dht11_intf.out_data  = 0;
+        dht11_intf.tick      = 0;
         #5;
         dht11_intf.reset = 1'b0;
         repeat (5) @(posedge dht11_intf.clk);
@@ -105,7 +105,7 @@ class driver;
 
     // reg [$clog2(18_000) - 1:0] tick;
 
-    task tick(int count); // count * 1us tick
+    task tick(int count);  // count * 1us tick
         repeat (count) begin
             repeat (100) @(posedge dht11_intf.clk);
         end
@@ -117,10 +117,29 @@ class driver;
         @(posedge dht11_intf.clk);
     endtask  //start
 
-    task start_dht11 ();
-       wait(dht11_intf.ioport == 0); // 18ms    LOW
-       wait(dht11_intf.ioport == 1); // 20~40us HIGH
-    endtask //start_dht11
+    task start_dht11();
+        // dht11_intf.mode     = 1'b1;
+        // dht11_intf.out_data = 1'b0;
+        // @(posedge dht11_intf.clk);
+        wait (dht11_intf.ioport == 0);  // 18ms    LOW
+        wait (dht11_intf.ioport == 1);  // 20~40us HIGH
+        wait (dht11_intf.ioport == 0);  // start receive
+        repeat (5) @(posedge dht11_intf.clk);
+        dht11_intf.come_data = 1'b0;
+        tick(60);
+        dht11_intf.come_data = 1'b1;
+        tick(75);
+        for (int i = 0; i < 40; i++) begin
+            dht11_intf.come_data = 1'b0;
+            tick(50);
+            dht11_intf.come_data = 1'b1; 
+            tick(trans.set_up_time);
+        end
+    endtask  //start_dht11
+
+    task receive_dht11();
+
+    endtask  //receive_dht11
 
     task dht11_action();
 
