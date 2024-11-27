@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Tue Nov 26 18:27:58 2024
-# Process ID: 13228
+# Start of session at: Wed Nov 27 10:04:41 2024
+# Process ID: 3720
 # Current directory: D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1
 # Command line: vivado.exe -log top_dht11.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_dht11.tcl
 # Log file: D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/top_dht11.vds
@@ -17,17 +17,17 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 16756
+INFO: [Synth 8-7075] Helper process launched with PID 1848
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1105.559 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1105.188 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top_dht11' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:23]
 INFO: [Synth 8-6157] synthesizing module 'DHT11_control' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:23]
-INFO: [Synth 8-6157] synthesizing module 'clock_divider' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:131]
-INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (1#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:131]
+INFO: [Synth 8-6157] synthesizing module 'clock_divider' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (1#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:133]
 INFO: [Synth 8-6157] synthesizing module 'count_5sec' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:93]
 INFO: [Synth 8-6155] done synthesizing module 'count_5sec' (2#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:93]
-INFO: [Synth 8-6157] synthesizing module 'start_signal' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:159]
+INFO: [Synth 8-6157] synthesizing module 'start_signal' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:161]
 	Parameter IDLE bound to: 4'b0000 
 	Parameter START_L bound to: 4'b0001 
 	Parameter START_H bound to: 4'b0010 
@@ -36,7 +36,7 @@ INFO: [Synth 8-6157] synthesizing module 'start_signal' [D:/GitHub/harman_Verilo
 	Parameter READ_LOW bound to: 4'b0101 
 	Parameter READ_HIGH bound to: 4'b0110 
 	Parameter DATA_DIST bound to: 4'b0111 
-INFO: [Synth 8-6155] done synthesizing module 'start_signal' (3#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:159]
+INFO: [Synth 8-6155] done synthesizing module 'start_signal' (3#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:161]
 INFO: [Synth 8-6155] done synthesizing module 'DHT11_control' (4#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:23]
 INFO: [Synth 8-6157] synthesizing module 'fnd_controller' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:23]
 INFO: [Synth 8-6157] synthesizing module 'clk_div' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:147]
@@ -89,18 +89,18 @@ INFO: [Synth 8-6155] done synthesizing module 'reciever' (19#1) [D:/GitHub/harma
 INFO: [Synth 8-6155] done synthesizing module 'uart' (20#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'top_dht11' (21#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1105.559 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1105.188 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1105.559 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1105.188 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1105.559 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1105.188 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1105.559 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1105.188 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -111,31 +111,31 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_dht11_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1178.027 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1174.246 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1178.027 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1174.246 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1178.027 ; gain = 72.469
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1174.246 ; gain = 69.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1178.027 ; gain = 72.469
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1174.246 ; gain = 69.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1178.027 ; gain = 72.469
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1174.246 ; gain = 69.059
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'start_signal'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'transmitter'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'reciever'
-WARNING: [Synth 8-327] inferring latch for variable 'start_dht11_next_reg' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:117]
+WARNING: [Synth 8-327] inferring latch for variable 'start_dht11_next_reg' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:118]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -169,7 +169,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'reciever'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1178.027 ; gain = 72.469
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 1174.246 ; gain = 69.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -231,25 +231,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 1178.027 ; gain = 72.469
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:03 ; elapsed = 00:00:16 . Memory (MB): peak = 1174.246 ; gain = 69.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 1178.027 ; gain = 72.469
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:21 . Memory (MB): peak = 1174.246 ; gain = 69.059
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 1188.586 ; gain = 83.027
+Finished Timing Optimization : Time (s): cpu = 00:00:04 ; elapsed = 00:00:22 . Memory (MB): peak = 1180.938 ; gain = 75.750
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 1190.785 ; gain = 85.227
+Finished Technology Mapping : Time (s): cpu = 00:00:04 ; elapsed = 00:00:22 . Memory (MB): peak = 1183.492 ; gain = 78.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -267,37 +267,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1206.629 ; gain = 101.070
+Finished IO Insertion : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1199.262 ; gain = 94.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1206.629 ; gain = 101.070
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1199.262 ; gain = 94.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1206.629 ; gain = 101.070
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1199.262 ; gain = 94.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1206.629 ; gain = 101.070
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1199.262 ; gain = 94.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1206.629 ; gain = 101.070
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1199.262 ; gain = 94.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1206.629 ; gain = 101.070
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1199.262 ; gain = 94.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -331,18 +331,18 @@ Report Cell Usage:
 |16    |OBUF   |    13|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1206.629 ; gain = 101.070
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1199.262 ; gain = 94.074
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:20 . Memory (MB): peak = 1206.629 ; gain = 28.602
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:21 . Memory (MB): peak = 1206.629 ; gain = 101.070
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:03 ; elapsed = 00:00:22 . Memory (MB): peak = 1199.262 ; gain = 25.016
+Synthesis Optimization Complete : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1199.262 ; gain = 94.074
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1218.645 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1211.371 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 25 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 2 inverter(s) to 2 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1222.676 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1214.395 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 3 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
@@ -351,9 +351,7 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 68 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:26 . Memory (MB): peak = 1222.676 ; gain = 117.117
-INFO: [Common 17-600] The following parameters have non-default value.
-tcl.collectionResultDisplayLimit
+synth_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:29 . Memory (MB): peak = 1214.395 ; gain = 109.207
 INFO: [Common 17-1381] The checkpoint 'D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/top_dht11.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_dht11_utilization_synth.rpt -pb top_dht11_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Nov 26 18:28:28 2024...
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 27 10:05:14 2024...
