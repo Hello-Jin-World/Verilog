@@ -61,14 +61,6 @@ module register_file (
     input  [7:0] raddr,
     output [7:0] rdata
 );
-    ila_1 U_ila_1 (
-        .clk(clk),
-        .probe0(waddr),
-        .probe1(wdata),
-        .probe2(wr_en),
-        .probe3(raddr),
-        .probe4(rdata)
-    );
 
     reg [7:0] mem[0:255];
 

@@ -86,17 +86,6 @@ module top_dht11 (
         .empty(tx_start)
     );
 
-    ila_0 U_ilaV_0 (
-        .clk(clk),
-        .probe0(fifo_data),
-        .probe1(fifo_en),
-        .probe2(tx_busy),
-        .probe3(r_data),
-        .probe4(tx_start),
-        .probe5(tx)
-    );
-
-
     uart U_uart (
         .clk     (clk),
         .reset   (reset),
