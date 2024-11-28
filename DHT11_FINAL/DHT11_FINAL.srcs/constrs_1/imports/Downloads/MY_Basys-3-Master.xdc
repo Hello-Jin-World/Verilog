@@ -12,7 +12,7 @@ create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports clk
 ## Switches
 
 set_property -dict { PACKAGE_PIN V17  IOSTANDARD LVCMOS33 } [get_ports { sw_mode  }]; #IO_L19N_T3_A09_D25_VREF_14 ,Sch=SW0
-#set_property -dict { PACKAGE_PIN V16  IOSTANDARD LVCMOS33 } [get_ports { sw[1]  }]; #IO_L19P_T3_A10_D26_14      ,Sch=SW1
+set_property -dict { PACKAGE_PIN V16  IOSTANDARD LVCMOS33 } [get_ports { sw_clock_stopwatch  }]; #IO_L19P_T3_A10_D26_14      ,Sch=SW1
 #set_property -dict { PACKAGE_PIN W16  IOSTANDARD LVCMOS33 } [get_ports { sw[2]  }]; #IO_L20P_T3_A08_D24_14      ,Sch=SW2
 #set_property -dict { PACKAGE_PIN W17  IOSTANDARD LVCMOS33 } [get_ports { sw[3]  }]; #IO_L20N_T3_A07_D23_14      ,Sch=SW3
 #set_property -dict { PACKAGE_PIN W15  IOSTANDARD LVCMOS33 } [get_ports { sw[4]  }]; #IO_L21N_T3_DQS_A06_D22_14  ,Sch=SW4
@@ -31,10 +31,10 @@ set_property -dict { PACKAGE_PIN R2   IOSTANDARD LVCMOS33 } [get_ports { dht_sw_
 
 ## LEDs
 
-#set_property -dict { PACKAGE_PIN U16  IOSTANDARD LVCMOS33 } [get_ports { led[0]  }]; #IO_L23N_T3_A02_D18_14        ,Sch=LED0
-#set_property -dict { PACKAGE_PIN E19  IOSTANDARD LVCMOS33 } [get_ports { led[1]  }]; #IO_L3N_T0_DQS_EMCCLK_14      ,Sch=LED1
-#set_property -dict { PACKAGE_PIN U19  IOSTANDARD LVCMOS33 } [get_ports { led[2]  }]; #IO_L15P_T2_DQS_RDWR_B_14     ,Sch=LED2
-#set_property -dict { PACKAGE_PIN V19  IOSTANDARD LVCMOS33 } [get_ports { led[3]  }]; #IO_L15N_T2_DQS_DOUT_CSO_B_14 ,Sch=LED3
+set_property -dict { PACKAGE_PIN U16  IOSTANDARD LVCMOS33 } [get_ports { led[0]  }]; #IO_L23N_T3_A02_D18_14        ,Sch=LED0
+set_property -dict { PACKAGE_PIN E19  IOSTANDARD LVCMOS33 } [get_ports { led[1]  }]; #IO_L3N_T0_DQS_EMCCLK_14      ,Sch=LED1
+set_property -dict { PACKAGE_PIN U19  IOSTANDARD LVCMOS33 } [get_ports { led[2]  }]; #IO_L15P_T2_DQS_RDWR_B_14     ,Sch=LED2
+set_property -dict { PACKAGE_PIN V19  IOSTANDARD LVCMOS33 } [get_ports { led[3]  }]; #IO_L15N_T2_DQS_DOUT_CSO_B_14 ,Sch=LED3
 #set_property -dict { PACKAGE_PIN W18  IOSTANDARD LVCMOS33 } [get_ports { led[4]  }]; #IO_L16P_T2_CSI_B_14          ,Sch=LED4
 #set_property -dict { PACKAGE_PIN U15  IOSTANDARD LVCMOS33 } [get_ports { led[5]  }]; #IO_L23P_T3_A03_D19_14        ,Sch=LED5
 #set_property -dict { PACKAGE_PIN U14  IOSTANDARD LVCMOS33 } [get_ports { led[6]  }]; #IO_25_14                     ,Sch=LED6
@@ -46,7 +46,7 @@ set_property -dict { PACKAGE_PIN R2   IOSTANDARD LVCMOS33 } [get_ports { dht_sw_
 #set_property -dict { PACKAGE_PIN P3   IOSTANDARD LVCMOS33 } [get_ports { led[12] }]; #IO_L12N_T1_MRCC_35           ,Sch=LED12
 #set_property -dict { PACKAGE_PIN N3   IOSTANDARD LVCMOS33 } [get_ports { led[13] }]; #IO_L12P_T1_MRCC_35           ,Sch=LED13
 #set_property -dict { PACKAGE_PIN P1   IOSTANDARD LVCMOS33 } [get_ports { led[14] }]; #IO_L19N_T3_VREF_35           ,Sch=LED14
-#set_property -dict { PACKAGE_PIN L1   IOSTANDARD LVCMOS33 } [get_ports { led[15] }]; #IO_L6N_T0_VREF_35            ,Sch=LED15
+set_property -dict { PACKAGE_PIN L1   IOSTANDARD LVCMOS33 } [get_ports { result }]; #IO_L6N_T0_VREF_35            ,Sch=LED15
 
 
 ##7 segment display
@@ -68,10 +68,10 @@ set_property -dict { PACKAGE_PIN W4  IOSTANDARD LVCMOS33 } [get_ports { fndcom[3
 
 ##Buttons
 
-set_property -dict { PACKAGE_PIN U18  IOSTANDARD LVCMOS33 } [get_ports { reset }]; #IO_L18N_T2_A11_D27_14 ,Sch=BTNC
-#set_property -dict { PACKAGE_PIN T18  IOSTANDARD LVCMOS33 } [get_ports { btnU }]; #IO_L17N_T2_A13_D29_14 ,Sch=BTNU
-set_property -dict { PACKAGE_PIN W19  IOSTANDARD LVCMOS33 } [get_ports { btn_clear }]; #IO_L16N_T2_A15_D31_14 ,Sch=BTNL
-set_property -dict { PACKAGE_PIN T17  IOSTANDARD LVCMOS33 } [get_ports { btn_run_stop }]; #IO_L17P_T2_A14_D30_14 ,Sch=BTNR
+set_property -dict { PACKAGE_PIN U18  IOSTANDARD LVCMOS33 } [get_ports { button1 }]; #IO_L18N_T2_A11_D27_14 ,Sch=BTNC
+set_property -dict { PACKAGE_PIN T18  IOSTANDARD LVCMOS33 } [get_ports { reset }]; #IO_L17N_T2_A13_D29_14 ,Sch=BTNU
+set_property -dict { PACKAGE_PIN W19  IOSTANDARD LVCMOS33 } [get_ports { button2 }]; #IO_L16N_T2_A15_D31_14 ,Sch=BTNL
+set_property -dict { PACKAGE_PIN T17  IOSTANDARD LVCMOS33 } [get_ports { button0 }]; #IO_L17P_T2_A14_D30_14 ,Sch=BTNR
 #set_property -dict { PACKAGE_PIN U17  IOSTANDARD LVCMOS33 } [get_ports { btnD }]; #IO_L18P_T2_A12_D28_14 ,Sch=BTND
 
 
@@ -143,7 +143,7 @@ set_property -dict { PACKAGE_PIN P18  IOSTANDARD LVCMOS33 } [get_ports { ioport 
 
 ##USB-RS232 Interface
 
-#set_property -dict { PACKAGE_PIN B18  IOSTANDARD LVCMOS33 } [get_ports { RsRx }]; #IO_L19P_T3_16      ,Sch=UART_TXD_IN
+set_property -dict { PACKAGE_PIN B18  IOSTANDARD LVCMOS33 } [get_ports { rx }]; #IO_L19P_T3_16      ,Sch=UART_TXD_IN
 set_property -dict { PACKAGE_PIN A18  IOSTANDARD LVCMOS33 } [get_ports { tx }]; #IO_L19N_T3_VREF_16 ,Sch=UART_RXD_OUT
 
 

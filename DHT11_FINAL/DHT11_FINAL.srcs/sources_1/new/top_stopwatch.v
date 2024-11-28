@@ -28,6 +28,7 @@ module top_stopwatch (
     input        btn_clear,
     input  [7:0] u_command,
     input        rx_done,
+    output [3:0] led,
     output [6:0] msec,
     output [6:0] sec,
     output [6:0] min,
@@ -55,14 +56,14 @@ module top_stopwatch (
     );
 
     stopwatch_control_unit U_stopwatch_control_unit (
-        .clk(clk),
-        .reset(reset),
+        .clk         (clk),
+        .reset       (reset),
         .btn_run_stop(w_btn_run_stop),
-        .btn_clear(w_btn_clear),
-        .u_command(u_command),
-        .rx_done(rx_done),
-        .run(w_run),
-        .clear(w_clear)
+        .btn_clear   (w_btn_clear),
+        .u_command   (u_command),
+        .rx_done     (rx_done),
+        .run         (w_run),
+        .clear       (w_clear)
     );
 
 
@@ -78,15 +79,15 @@ module top_stopwatch (
     );
 
     fnd_controller U_fnd_controller (
-        .clk(clk),
-        .reset(reset),
-        .sw_mode(sw_mode),
+        .clk      (clk),
+        .reset    (reset),
+        .sw_mode  (sw_mode),
         .u_command(u_command),
-        .msec(w_msec),  // 0.01sec
-        .sec(w_sec),  // 1sec
-        .min(w_min),  // 1min
-        .hour(w_hour),
-        .fndcom(fndcom),
-        .fndfont(fndfont)
+        .msec     (w_msec),     // 0.01sec
+        .sec      (w_sec),      // 1sec
+        .min      (w_min),      // 1min
+        .hour     (w_hour),
+        .fndcom   (fndcom),
+        .fndfont  (fndfont)
     );
 endmodule

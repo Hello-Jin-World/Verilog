@@ -58,6 +58,7 @@ module uart (
         .tx_done(tx_done)
     );
 
+
     reciever U_reciever (
         .clk(clk),
         .reset(reset),

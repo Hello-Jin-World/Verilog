@@ -241,7 +241,6 @@ module mux_2x1 (
             command_state <= command_state_next;
             sw_state_reg <= sw_state_next;
             toggle_sw_signal <= toggle_sw_signal_next;
-            command_state <= command_state_next;
             command_sw_mode <= command_sw_mode_next;
         end
     end
