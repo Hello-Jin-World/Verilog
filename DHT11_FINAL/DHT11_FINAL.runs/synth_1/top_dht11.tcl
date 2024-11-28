@@ -70,6 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 4
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -88,8 +90,13 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v
+  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/button_detector.v
   D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v
+  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo_data.v
   D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v
+  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_control_unit.v
+  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v
+  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_stopwatch.v
   D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v
   D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v
 }

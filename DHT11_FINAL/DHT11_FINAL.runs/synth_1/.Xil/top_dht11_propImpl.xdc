@@ -3,6 +3,8 @@ set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ}
 set_property -dict { PACKAGE_PIN W5   IOSTANDARD LVCMOS33 } [get_ports { clk }]; #IO_L12P_T1_MRCC_34 ,Sch=CLK100MHZ
 set_property src_info {type:XDC file:1 line:14 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN V17  IOSTANDARD LVCMOS33 } [get_ports { sw_mode  }]; #IO_L19N_T3_A09_D25_VREF_14 ,Sch=SW0
+set_property src_info {type:XDC file:1 line:29 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN R2   IOSTANDARD LVCMOS33 } [get_ports { dht_sw_clock_sw}]; #IO_L1P_T0_34               ,Sch=SW15
 set_property src_info {type:XDC file:1 line:54 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN W7  IOSTANDARD LVCMOS33 } [get_ports { fndfont[0] }]; #IO_L13P_T2_MRCC_34 ,Sch=seg[0]
 set_property src_info {type:XDC file:1 line:55 export:INPUT save:INPUT read:READ} [current_design]
@@ -29,6 +31,10 @@ set_property src_info {type:XDC file:1 line:66 export:INPUT save:INPUT read:READ
 set_property -dict { PACKAGE_PIN W4  IOSTANDARD LVCMOS33 } [get_ports { fndcom[3]  }]; #IO_L12N_T1_MRCC_34 ,Sch=an[3]
 set_property src_info {type:XDC file:1 line:71 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN U18  IOSTANDARD LVCMOS33 } [get_ports { reset }]; #IO_L18N_T2_A11_D27_14 ,Sch=BTNC
+set_property src_info {type:XDC file:1 line:73 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN W19  IOSTANDARD LVCMOS33 } [get_ports { btn_clear }]; #IO_L16N_T2_A15_D31_14 ,Sch=BTNL
+set_property src_info {type:XDC file:1 line:74 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN T17  IOSTANDARD LVCMOS33 } [get_ports { btn_run_stop }]; #IO_L17P_T2_A14_D30_14 ,Sch=BTNR
 set_property src_info {type:XDC file:1 line:107 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN P18  IOSTANDARD LVCMOS33 } [get_ports { ioport }]; #IO_L14P_T2_SRCC_14 ,Sch=JC4
 set_property src_info {type:XDC file:1 line:147 export:INPUT save:INPUT read:READ} [current_design]

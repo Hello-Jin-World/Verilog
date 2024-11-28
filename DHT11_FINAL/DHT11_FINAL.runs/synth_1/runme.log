@@ -17,17 +17,17 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 1848
+INFO: [Synth 8-7075] Helper process launched with PID 14324
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1105.188 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1102.855 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top_dht11' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:23]
 INFO: [Synth 8-6157] synthesizing module 'DHT11_control' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:23]
-INFO: [Synth 8-6157] synthesizing module 'clock_divider' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:133]
-INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (1#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:133]
-INFO: [Synth 8-6157] synthesizing module 'count_5sec' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:93]
-INFO: [Synth 8-6155] done synthesizing module 'count_5sec' (2#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:93]
-INFO: [Synth 8-6157] synthesizing module 'start_signal' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:161]
+INFO: [Synth 8-6157] synthesizing module 'clock_divider' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:135]
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (1#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:135]
+INFO: [Synth 8-6157] synthesizing module 'count_5sec' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:95]
+INFO: [Synth 8-6155] done synthesizing module 'count_5sec' (2#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:95]
+INFO: [Synth 8-6157] synthesizing module 'start_signal' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:163]
 	Parameter IDLE bound to: 4'b0000 
 	Parameter START_L bound to: 4'b0001 
 	Parameter START_H bound to: 4'b0010 
@@ -36,23 +36,53 @@ INFO: [Synth 8-6157] synthesizing module 'start_signal' [D:/GitHub/harman_Verilo
 	Parameter READ_LOW bound to: 4'b0101 
 	Parameter READ_HIGH bound to: 4'b0110 
 	Parameter DATA_DIST bound to: 4'b0111 
-INFO: [Synth 8-6155] done synthesizing module 'start_signal' (3#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:161]
+WARNING: [Synth 8-6104] Input port 'wr_en' has an internal driver [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:206]
+INFO: [Synth 8-6155] done synthesizing module 'start_signal' (3#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:163]
 INFO: [Synth 8-6155] done synthesizing module 'DHT11_control' (4#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:23]
+WARNING: [Synth 8-7071] port 'checksum' of module 'DHT11_control' is unconnected for instance 'U_dht11_control' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:55]
+WARNING: [Synth 8-7023] instance 'U_dht11_control' of module 'DHT11_control' has 9 connections declared, but only 8 given [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:55]
+INFO: [Synth 8-6157] synthesizing module 'top_stopwatch' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_stopwatch.v:23]
+INFO: [Synth 8-6157] synthesizing module 'button_detector' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/button_detector.v:23]
+	Parameter N bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'button_detector' (5#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/button_detector.v:23]
+INFO: [Synth 8-6157] synthesizing module 'stopwatch_control_unit' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_control_unit.v:23]
+	Parameter STOP bound to: 2'b00 
+	Parameter RUN bound to: 2'b01 
+	Parameter CLEAR bound to: 2'b10 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_control_unit.v:49]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_control_unit.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'stopwatch_control_unit' (6#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_control_unit.v:23]
+INFO: [Synth 8-6157] synthesizing module 'stopwatch_datapath' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:23]
+INFO: [Synth 8-6157] synthesizing module 'clk_div_stopwatch' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:95]
+INFO: [Synth 8-6155] done synthesizing module 'clk_div_stopwatch' (7#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:95]
+INFO: [Synth 8-6157] synthesizing module 'time_clock_counter' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:137]
+	Parameter TIME_MAX bound to: 100 - type: integer 
+	Parameter BIT_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'time_clock_counter' (8#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:137]
+INFO: [Synth 8-6157] synthesizing module 'time_clock_counter__parameterized0' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:137]
+	Parameter TIME_MAX bound to: 60 - type: integer 
+	Parameter BIT_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'time_clock_counter__parameterized0' (8#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:137]
+INFO: [Synth 8-6157] synthesizing module 'time_clock_counter__parameterized1' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:137]
+	Parameter TIME_MAX bound to: 24 - type: integer 
+	Parameter BIT_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'time_clock_counter__parameterized1' (8#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:137]
+INFO: [Synth 8-6155] done synthesizing module 'stopwatch_datapath' (9#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:23]
 INFO: [Synth 8-6157] synthesizing module 'fnd_controller' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:23]
 INFO: [Synth 8-6157] synthesizing module 'clk_div' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:147]
-INFO: [Synth 8-6155] done synthesizing module 'clk_div' (5#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:147]
+INFO: [Synth 8-6155] done synthesizing module 'clk_div' (10#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:147]
 INFO: [Synth 8-6157] synthesizing module 'counter' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:133]
-INFO: [Synth 8-6155] done synthesizing module 'counter' (6#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:133]
+INFO: [Synth 8-6155] done synthesizing module 'counter' (11#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:133]
 INFO: [Synth 8-6157] synthesizing module 'decoder_3x8' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:284]
 INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:290]
-INFO: [Synth 8-6155] done synthesizing module 'decoder_3x8' (7#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:284]
+INFO: [Synth 8-6155] done synthesizing module 'decoder_3x8' (12#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:284]
 INFO: [Synth 8-6157] synthesizing module 'digit_splitter' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:174]
-INFO: [Synth 8-6155] done synthesizing module 'digit_splitter' (8#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:174]
+INFO: [Synth 8-6155] done synthesizing module 'digit_splitter' (13#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:174]
 INFO: [Synth 8-6157] synthesizing module 'comparator' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:333]
-INFO: [Synth 8-6155] done synthesizing module 'comparator' (9#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:333]
+INFO: [Synth 8-6155] done synthesizing module 'comparator' (14#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:333]
 INFO: [Synth 8-6157] synthesizing module 'mux_8x1' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:187]
 INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:200]
-INFO: [Synth 8-6155] done synthesizing module 'mux_8x1' (10#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:187]
+INFO: [Synth 8-6155] done synthesizing module 'mux_8x1' (15#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:187]
 INFO: [Synth 8-6157] synthesizing module 'mux_2x1' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:215]
 	Parameter STATE0 bound to: 0 - type: integer 
 	Parameter STATE1 bound to: 1 - type: integer 
@@ -60,47 +90,96 @@ INFO: [Synth 8-6157] synthesizing module 'mux_2x1' [D:/GitHub/harman_Verilog/DHT
 	Parameter STATE3 bound to: 3 - type: integer 
 INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:254]
 INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:275]
-INFO: [Synth 8-6155] done synthesizing module 'mux_2x1' (11#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:215]
+INFO: [Synth 8-6155] done synthesizing module 'mux_2x1' (16#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:215]
 INFO: [Synth 8-6157] synthesizing module 'BCDtoSEG_decoder' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:305]
 INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:311]
-INFO: [Synth 8-6155] done synthesizing module 'BCDtoSEG_decoder' (12#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:305]
-INFO: [Synth 8-6155] done synthesizing module 'fnd_controller' (13#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'BCDtoSEG_decoder' (17#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:305]
+INFO: [Synth 8-6155] done synthesizing module 'fnd_controller' (18#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:23]
+WARNING: [Synth 8-689] width (1) of port connection 'fndcom' does not match port width (4) of module 'fnd_controller' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_stopwatch.v:89]
+WARNING: [Synth 8-689] width (1) of port connection 'fndfont' does not match port width (8) of module 'fnd_controller' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_stopwatch.v:90]
+INFO: [Synth 8-6155] done synthesizing module 'top_stopwatch' (19#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_stopwatch.v:23]
+WARNING: [Synth 8-689] width (8) of port connection 'msec' does not match port width (7) of module 'top_stopwatch' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:74]
+WARNING: [Synth 8-689] width (8) of port connection 'sec' does not match port width (7) of module 'top_stopwatch' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:75]
+WARNING: [Synth 8-689] width (8) of port connection 'min' does not match port width (7) of module 'top_stopwatch' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:76]
+WARNING: [Synth 8-689] width (8) of port connection 'hour' does not match port width (7) of module 'top_stopwatch' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:77]
+INFO: [Synth 8-6157] synthesizing module 'dht_swclock_switch' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:147]
+INFO: [Synth 8-6155] done synthesizing module 'dht_swclock_switch' (20#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:147]
+INFO: [Synth 8-6157] synthesizing module 'fifo_data' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo_data.v:23]
+	Parameter IDLE bound to: 0 - type: integer 
+	Parameter DATA_1 bound to: 1 - type: integer 
+	Parameter DATA_2 bound to: 2 - type: integer 
+	Parameter DATA_3 bound to: 3 - type: integer 
+	Parameter DATA_4 bound to: 4 - type: integer 
+	Parameter DATA_5 bound to: 5 - type: integer 
+	Parameter DATA_6 bound to: 6 - type: integer 
+	Parameter DATA_7 bound to: 7 - type: integer 
+	Parameter DATA_8 bound to: 8 - type: integer 
+	Parameter POINT0 bound to: 9 - type: integer 
+	Parameter POINT1 bound to: 10 - type: integer 
+	Parameter HUM1 bound to: 11 - type: integer 
+	Parameter HUM2 bound to: 12 - type: integer 
+	Parameter HUM3 bound to: 13 - type: integer 
+	Parameter HUM4 bound to: 14 - type: integer 
+	Parameter HUM5 bound to: 15 - type: integer 
+	Parameter HUM6 bound to: 16 - type: integer 
+	Parameter HUM7 bound to: 17 - type: integer 
+	Parameter HUM8 bound to: 18 - type: integer 
+	Parameter TEM1 bound to: 19 - type: integer 
+	Parameter TEM2 bound to: 20 - type: integer 
+	Parameter TEM3 bound to: 21 - type: integer 
+	Parameter TEM4 bound to: 22 - type: integer 
+	Parameter TEM5 bound to: 23 - type: integer 
+	Parameter TEM6 bound to: 24 - type: integer 
+	Parameter TEM7 bound to: 25 - type: integer 
+	Parameter TEM8 bound to: 26 - type: integer 
+	Parameter TEM9 bound to: 27 - type: integer 
+	Parameter TEM10 bound to: 28 - type: integer 
+	Parameter TEM11 bound to: 29 - type: integer 
+	Parameter COLON1 bound to: 30 - type: integer 
+	Parameter COLON2 bound to: 31 - type: integer 
+	Parameter COMMA bound to: 32 - type: integer 
+	Parameter CEL1 bound to: 33 - type: integer 
+	Parameter CEL2 bound to: 34 - type: integer 
+	Parameter PER bound to: 35 - type: integer 
+	Parameter SPACE bound to: 36 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo_data.v:103]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_data' (21#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo_data.v:23]
 INFO: [Synth 8-6157] synthesizing module 'fifo' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:23]
-INFO: [Synth 8-6157] synthesizing module 'register_file' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:57]
-INFO: [Synth 8-6155] done synthesizing module 'register_file' (14#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:57]
-INFO: [Synth 8-6157] synthesizing module 'fifo_control_unit' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'fifo_control_unit' (15#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'fifo' (16#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:23]
+INFO: [Synth 8-6157] synthesizing module 'register_file' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'register_file' (22#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:56]
+INFO: [Synth 8-6157] synthesizing module 'fifo_control_unit' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:76]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_control_unit' (23#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:76]
+INFO: [Synth 8-6155] done synthesizing module 'fifo' (24#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:23]
 INFO: [Synth 8-6157] synthesizing module 'uart' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:23]
-INFO: [Synth 8-6157] synthesizing module 'baudrate_generator' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:71]
-INFO: [Synth 8-6155] done synthesizing module 'baudrate_generator' (17#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:71]
-INFO: [Synth 8-6157] synthesizing module 'transmitter' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:101]
+INFO: [Synth 8-6157] synthesizing module 'baudrate_generator' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'baudrate_generator' (25#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:72]
+INFO: [Synth 8-6157] synthesizing module 'transmitter' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:102]
 	Parameter IDLE bound to: 0 - type: integer 
 	Parameter START bound to: 1 - type: integer 
 	Parameter DATA bound to: 2 - type: integer 
 	Parameter STOP bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'transmitter' (18#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:101]
-INFO: [Synth 8-6157] synthesizing module 'reciever' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:291]
+INFO: [Synth 8-6155] done synthesizing module 'transmitter' (26#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:102]
+INFO: [Synth 8-6157] synthesizing module 'reciever' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:215]
 	Parameter IDLE bound to: 0 - type: integer 
 	Parameter START bound to: 1 - type: integer 
 	Parameter DATA bound to: 2 - type: integer 
 	Parameter STOP bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'reciever' (19#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:291]
-INFO: [Synth 8-6155] done synthesizing module 'uart' (20#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'top_dht11' (21#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'reciever' (27#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:215]
+INFO: [Synth 8-6155] done synthesizing module 'uart' (28#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top_dht11' (29#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1105.188 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1102.855 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1105.188 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1102.855 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1105.188 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1102.855 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1105.188 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1102.855 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -111,31 +190,33 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_dht11_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1174.246 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1183.305 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1174.246 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1183.305 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1174.246 ; gain = 69.059
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1183.305 ; gain = 80.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1174.246 ; gain = 69.059
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1183.305 ; gain = 80.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1174.246 ; gain = 69.059
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1183.305 ; gain = 80.449
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'start_signal'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'stopwatch_control_unit'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'fifo_data'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'transmitter'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'reciever'
-WARNING: [Synth 8-327] inferring latch for variable 'start_dht11_next_reg' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:118]
+WARNING: [Synth 8-327] inferring latch for variable 'start_dht11_next_reg' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:120]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -149,7 +230,57 @@ WARNING: [Synth 8-327] inferring latch for variable 'start_dht11_next_reg' [D:/G
                READ_HIGH |                              111 |                              110
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'start_signal'
-WARNING: [Synth 8-327] inferring latch for variable 'receive_dht11_data_reg' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:60]
+WARNING: [Synth 8-327] inferring latch for variable 'receive_dht11_data_reg' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:61]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    STOP |                              001 |                               00
+                     RUN |                              010 |                               01
+                   CLEAR |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'stopwatch_control_unit'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE | 0000000000000000000000000000000000001 |                           000000
+                    HUM1 | 0000000000000000000000000000000000010 |                           001011
+                    HUM2 | 0000000000000000000000000000000000100 |                           001100
+                    HUM3 | 0000000000000000000000000000000001000 |                           001101
+                    HUM4 | 0000000000000000000000000000000010000 |                           001110
+                    HUM5 | 0000000000000000000000000000000100000 |                           001111
+                    HUM6 | 0000000000000000000000000000001000000 |                           010000
+                    HUM7 | 0000000000000000000000000000010000000 |                           010001
+                    HUM8 | 0000000000000000000000000000100000000 |                           010010
+                  COLON1 | 0000000000000000000000000001000000000 |                           011110
+                  DATA_1 | 0000000000000000000000000010000000000 |                           000001
+                  DATA_2 | 0000000000000000000000000100000000000 |                           000010
+                  POINT0 | 0000000000000000000000001000000000000 |                           001001
+                  DATA_3 | 0000000000000000000000010000000000000 |                           000011
+                  DATA_4 | 0000000000000000000000100000000000000 |                           000100
+                     PER | 0000000000000000000001000000000000000 |                           100011
+                   COMMA | 0000000000000000000010000000000000000 |                           100000
+                   SPACE | 0000000000000000000100000000000000000 |                           100100
+                    TEM1 | 0000000000000000001000000000000000000 |                           010011
+                    TEM2 | 0000000000000000010000000000000000000 |                           010100
+                    TEM3 | 0000000000000000100000000000000000000 |                           010101
+                    TEM4 | 0000000000000001000000000000000000000 |                           010110
+                    TEM5 | 0000000000000010000000000000000000000 |                           010111
+                    TEM6 | 0000000000000100000000000000000000000 |                           011000
+                    TEM7 | 0000000000001000000000000000000000000 |                           011001
+                    TEM8 | 0000000000010000000000000000000000000 |                           011010
+                    TEM9 | 0000000000100000000000000000000000000 |                           011011
+                   TEM10 | 0000000001000000000000000000000000000 |                           011100
+                   TEM11 | 0000000010000000000000000000000000000 |                           011101
+                  COLON2 | 0000000100000000000000000000000000000 |                           011111
+                  DATA_5 | 0000001000000000000000000000000000000 |                           000101
+                  DATA_6 | 0000010000000000000000000000000000000 |                           000110
+                  POINT1 | 0000100000000000000000000000000000000 |                           001010
+                  DATA_7 | 0001000000000000000000000000000000000 |                           000111
+                  DATA_8 | 0010000000000000000000000000000000000 |                           001000
+                    CEL1 | 0100000000000000000000000000000000000 |                           100001
+                    CEL2 | 1000000000000000000000000000000000000 |                           100010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'one-hot' in module 'fifo_data'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -169,7 +300,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'reciever'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:10 . Memory (MB): peak = 1174.246 ; gain = 69.059
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1183.305 ; gain = 80.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -177,44 +308,58 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input   22 Bit       Adders := 1     
-	   2 Input   17 Bit       Adders := 1     
+	   2 Input   20 Bit       Adders := 1     
+	   2 Input   17 Bit       Adders := 4     
 	   2 Input   15 Bit       Adders := 1     
 	   2 Input   10 Bit       Adders := 1     
-	   2 Input    7 Bit       Adders := 1     
-	   2 Input    6 Bit       Adders := 1     
-	   2 Input    4 Bit       Adders := 6     
-	   2 Input    3 Bit       Adders := 3     
+	   4 Input    8 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 4     
+	   2 Input    7 Bit       Adders := 2     
+	   2 Input    6 Bit       Adders := 3     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 2     
+	   2 Input    3 Bit       Adders := 4     
 +---Registers : 
 	               40 Bit    Registers := 1     
 	               22 Bit    Registers := 1     
-	               17 Bit    Registers := 1     
+	               20 Bit    Registers := 1     
+	               17 Bit    Registers := 4     
 	               15 Bit    Registers := 1     
 	               10 Bit    Registers := 1     
-	                8 Bit    Registers := 7     
-	                7 Bit    Registers := 1     
-	                6 Bit    Registers := 1     
-	                4 Bit    Registers := 4     
-	                3 Bit    Registers := 3     
-	                1 Bit    Registers := 14    
+	                8 Bit    Registers := 14    
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 3     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 4     
+	                1 Bit    Registers := 28    
 +---Muxes : 
 	   2 Input   22 Bit        Muxes := 1     
-	   2 Input   17 Bit        Muxes := 1     
+	   2 Input   20 Bit        Muxes := 2     
+	   2 Input   17 Bit        Muxes := 4     
 	   2 Input   15 Bit        Muxes := 5     
 	   8 Input   15 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 8     
+	  37 Input    8 Bit        Muxes := 1     
 	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 1     
 	   8 Input    6 Bit        Muxes := 1     
-	   8 Input    4 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 5     
+	   2 Input    6 Bit        Muxes := 4     
+	   2 Input    5 Bit        Muxes := 2     
+	   8 Input    4 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 7     
 	   4 Input    4 Bit        Muxes := 2     
 	   8 Input    3 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 3     
+	   2 Input    3 Bit        Muxes := 4     
+	   3 Input    3 Bit        Muxes := 1     
 	   4 Input    3 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 10    
-	   8 Input    1 Bit        Muxes := 9     
+	   2 Input    1 Bit        Muxes := 21    
+	   8 Input    1 Bit        Muxes := 12    
+	   3 Input    1 Bit        Muxes := 4     
+	  37 Input    1 Bit        Muxes := 3     
 	   4 Input    1 Bit        Muxes := 19    
-	   3 Input    1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -231,25 +376,54 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:03 ; elapsed = 00:00:16 . Memory (MB): peak = 1174.246 ; gain = 69.059
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:21 . Memory (MB): peak = 1183.305 ; gain = 80.449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping	Report (see note below)
++------------+-------------------------+-----------+----------------------+--------------------------+
+|Module Name | RTL Object              | Inference | Size (Depth x Width) | Primitives               | 
++------------+-------------------------+-----------+----------------------+--------------------------+
+|U_Tx_fifo   | U_register_file/mem_reg | Implied   | 256 x 8              | RAM64X1D x 8	RAM64M x 8	 | 
++------------+-------------------------+-----------+----------------------+--------------------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:21 . Memory (MB): peak = 1174.246 ; gain = 69.059
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:25 . Memory (MB): peak = 1185.438 ; gain = 82.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:04 ; elapsed = 00:00:22 . Memory (MB): peak = 1180.938 ; gain = 75.750
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:27 . Memory (MB): peak = 1216.383 ; gain = 113.527
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping	Report
++------------+-------------------------+-----------+----------------------+--------------------------+
+|Module Name | RTL Object              | Inference | Size (Depth x Width) | Primitives               | 
++------------+-------------------------+-----------+----------------------+--------------------------+
+|U_Tx_fifo   | U_register_file/mem_reg | Implied   | 256 x 8              | RAM64X1D x 8	RAM64M x 8	 | 
++------------+-------------------------+-----------+----------------------+--------------------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:04 ; elapsed = 00:00:22 . Memory (MB): peak = 1183.492 ; gain = 78.305
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:27 . Memory (MB): peak = 1226.918 ; gain = 124.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -267,37 +441,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1199.262 ; gain = 94.074
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1241.688 ; gain = 138.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1199.262 ; gain = 94.074
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1241.688 ; gain = 138.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1199.262 ; gain = 94.074
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1241.688 ; gain = 138.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1199.262 ; gain = 94.074
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1241.688 ; gain = 138.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1199.262 ; gain = 94.074
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1241.688 ; gain = 138.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1199.262 ; gain = 94.074
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1241.688 ; gain = 138.832
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -310,48 +484,53 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     2|
-|2     |CARRY4 |    14|
-|3     |LUT1   |     9|
-|4     |LUT2   |    64|
-|5     |LUT3   |    16|
-|6     |LUT4   |    26|
-|7     |LUT5   |    33|
-|8     |LUT6   |    81|
-|9     |MUXF7  |     6|
-|10    |MUXF8  |     2|
-|11    |FDCE   |   172|
-|12    |FDPE   |     1|
-|13    |LD     |     2|
-|14    |IBUF   |     3|
-|15    |IOBUF  |     1|
-|16    |OBUF   |    13|
-+------+-------+------+
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     2|
+|2     |CARRY4   |    29|
+|3     |LUT1     |    15|
+|4     |LUT2     |   124|
+|5     |LUT3     |    86|
+|6     |LUT4     |    65|
+|7     |LUT5     |    73|
+|8     |LUT6     |   230|
+|9     |MUXF7    |     2|
+|10    |MUXF8    |     1|
+|11    |RAM64M   |     8|
+|12    |RAM64X1D |     4|
+|13    |FDCE     |   344|
+|14    |FDPE     |     4|
+|15    |FDRE     |     2|
+|16    |LD       |     2|
+|17    |IBUF     |     6|
+|18    |IOBUF    |     1|
+|19    |OBUF     |    13|
++------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1199.262 ; gain = 94.074
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1241.688 ; gain = 138.832
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:03 ; elapsed = 00:00:22 . Memory (MB): peak = 1199.262 ; gain = 25.016
-Synthesis Optimization Complete : Time (s): cpu = 00:00:05 ; elapsed = 00:00:24 . Memory (MB): peak = 1199.262 ; gain = 94.074
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:28 . Memory (MB): peak = 1241.688 ; gain = 58.383
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:30 . Memory (MB): peak = 1241.688 ; gain = 138.832
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1211.371 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 25 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1253.770 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 47 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 2 inverter(s) to 2 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1214.395 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1256.762 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 3 instances were transformed.
+  A total of 15 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
   LD => LDCE: 2 instances
+  RAM64M => RAM64M (RAMD64E(x4)): 8 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 4 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-68 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+95 Infos, 11 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:29 . Memory (MB): peak = 1214.395 ; gain = 109.207
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 1256.762 ; gain = 153.906
 INFO: [Common 17-1381] The checkpoint 'D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/top_dht11.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_dht11_utilization_synth.rpt -pb top_dht11_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Nov 27 10:05:14 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 28 21:45:29 2024...
