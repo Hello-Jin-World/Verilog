@@ -30,7 +30,7 @@ module fifo (
     output       full,
     output       empty
 );
-    wire [3:0] w_wr_ptr, w_rd_ptr;
+    wire [7:0] w_wr_ptr, w_rd_ptr;
 
     register_file U_register_file (
         .clk  (clk),
@@ -94,8 +94,8 @@ module fifo_control_unit (
 
     reg full_reg, full_next;
     reg empty_reg, empty_next;
-    reg [3:0] wr_ptr_reg, wr_ptr_next;
-    reg [3:0] rd_ptr_reg, rd_ptr_next;
+    reg [7:0] wr_ptr_reg, wr_ptr_next;
+    reg [7:0] rd_ptr_reg, rd_ptr_next;
 
     assign full   = full_reg;
     assign empty  = empty_reg;

@@ -83,11 +83,16 @@ module fifo_data (
             state_reg     <= 0;
             fifo_data_reg <= 0;
             fifo_en_reg   <= 0;
+            counter_reg   <= 0;
         end else begin
             state_reg     <= state_next;
             fifo_data_reg <= fifo_data_next;
             fifo_en_reg   <= fifo_en_next;
-
+            if (counter_reg == 200 - 1) begin
+                counter_reg <= 0;
+            end else begin
+                counter_reg <= counter_reg + 1;
+            end
         end
     end
 
@@ -163,16 +168,20 @@ module fifo_data (
                 fifo_data_next = hum_dec1 + "0";
             end
             PER: begin
-                state_next = COMMA;
+                state_next     = COMMA;
                 fifo_data_next = "%";
             end
             COMMA: begin
-                state_next = SPACE;
+                state_next     = SPACE;
                 fifo_data_next = ",";
             end
             SPACE: begin
+                // fifo_en_next = 1'b0;
+                // if (counter_reg == 100 - 1) begin
                 state_next = TEM1;
                 fifo_data_next = 8'h20;
+                // fifo_en_next = 1'b1;
+                // end
             end
 
             TEM1: begin

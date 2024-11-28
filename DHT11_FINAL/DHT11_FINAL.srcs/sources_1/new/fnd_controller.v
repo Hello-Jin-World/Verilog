@@ -95,7 +95,7 @@ module fnd_controller(
         .x3 (w_sec_digit_10),
         .x4 (4'hf),
         .x5 (4'hf),
-        .x6 (4'hf),
+        .x6 (4'he),
         .x7 (4'hf),
         .y  (w_sec_msec_bcd)
     );
@@ -108,7 +108,7 @@ module fnd_controller(
         .x3 (w_hour_digit_10),
         .x4 (4'hf),
         .x5 (4'hf),
-        .x6 (4'hf),
+        .x6 (4'he),
         .x7 (4'hf),
         .y  (w_min_hour_bcd)
     );
