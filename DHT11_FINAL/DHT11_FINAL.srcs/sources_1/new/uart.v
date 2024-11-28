@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module uart(
+module uart (
     input        clk,
     input        reset,
     // UART Tx
@@ -34,6 +34,7 @@ module uart(
     output [7:0] rx_data,
     output       rx_done
 );
+
 
     wire w_tick;
     wire [7:0] w_rx_data;
@@ -51,7 +52,7 @@ module uart(
         .reset(reset),
         .br_tick(w_tick),
         .tx_start(tx_start),
-        .tx_data(w_rx_data),
+        .tx_data(tx_data),
         .tx(tx),
         .tx_busy(tx_busy),
         .tx_done(tx_done)
@@ -193,84 +194,6 @@ module transmitter (
                     end
                 end
             end
-            /*
-            DATA1: begin
-                tx_next = tx_temp_data_reg[1];
-                if (br_tick == 1'b1) begin
-                    if (tick_count_reg == 15) begin
-                        state_next = DATA2;
-                        tick_count_next = 0;
-                    end else begin
-                        tick_count_next = tick_count_reg + 1;
-                    end
-                end
-            end
-            DATA2: begin
-                tx_next = tx_temp_data_reg[2];
-                if (br_tick == 1'b1) begin
-                    if (tick_count_reg == 15) begin
-                        state_next = DATA3;
-                        tick_count_next = 0;
-                    end else begin
-                        tick_count_next = tick_count_reg + 1;
-                    end
-                end
-            end
-            DATA3: begin
-                tx_next = tx_temp_data_reg[3];
-                if (br_tick == 1'b1) begin
-                    if (tick_count_reg == 15) begin
-                        state_next = DATA4;
-                        tick_count_next = 0;
-                    end else begin
-                        tick_count_next = tick_count_reg + 1;
-                    end
-                end
-            end
-            DATA4: begin
-                tx_next = tx_temp_data_reg[4];
-                if (br_tick == 1'b1) begin
-                    if (tick_count_reg == 15) begin
-                        state_next = DATA5;
-                        tick_count_next = 0;
-                    end else begin
-                        tick_count_next = tick_count_reg + 1;
-                    end
-                end
-            end
-            DATA5: begin
-                tx_next = tx_temp_data_reg[5];
-                if (br_tick == 1'b1) begin
-                    if (tick_count_reg == 15) begin
-                        state_next = DATA6;
-                        tick_count_next = 0;
-                    end else begin
-                        tick_count_next = tick_count_reg + 1;
-                    end
-                end
-            end
-            DATA6: begin
-                tx_next = tx_temp_data_reg[6];
-                if (br_tick == 1'b1) begin
-                    if (tick_count_reg == 15) begin
-                        state_next = DATA7;
-                        tick_count_next = 0;
-                    end else begin
-                        tick_count_next = tick_count_reg + 1;
-                    end
-                end
-            end
-            DATA7: begin
-                tx_next = tx_temp_data_reg[7];
-                if (br_tick == 1'b1) begin
-                    if (tick_count_reg == 15) begin
-                        state_next = STOP;
-                        tick_count_next = 0;
-                    end else begin
-                        tick_count_next = tick_count_reg + 1;
-                    end
-                end
-            end*/
             STOP: begin
                 tx_next = 1'b1;
                 if (br_tick == 1'b1) begin
@@ -278,6 +201,7 @@ module transmitter (
                         tx_done_next = 1'b1;
                         state_next = IDLE;
                         tick_count_next = 0;
+                        tx_busy_next = 0;
                     end else begin
                         tick_count_next = tick_count_reg + 1;
                     end
@@ -380,4 +304,3 @@ module reciever (
     end
 
 endmodule
-

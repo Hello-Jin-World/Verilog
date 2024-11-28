@@ -99,8 +99,8 @@ module count_5sec (
     output start_dht11
 );
 
-    // reg [$clog2(3_000_000) - 1:0] counter_reg, counter_next;
-    reg [$clog2(30_000) - 1:0] counter_reg, counter_next;
+    reg [$clog2(3_000_000) - 1:0] counter_reg, counter_next;
+    // reg [$clog2(30_000) - 1:0] counter_reg, counter_next;
     reg start_dht11_reg, start_dht11_next;
 
     assign start_dht11 = start_dht11_reg;
@@ -119,8 +119,8 @@ module count_5sec (
         counter_next     = counter_reg;
         start_dht11_next = start_dht11_next;
         if (tick) begin
-            // if (counter_reg == 3_000_000 - 1) begin
-            if (counter_reg == 30_000 - 1) begin
+            if (counter_reg == 3_000_000 - 1) begin
+            // if (counter_reg == 30_000 - 1) begin
                 counter_next     = 0;
                 start_dht11_next = 1;
             end else begin
@@ -184,6 +184,7 @@ module start_signal (
     reg [2:0] state_reg, state_next;
     reg [39:0] tem_hum_data_reg, tem_hum_data_next;
     reg [$clog2(40) - 1 : 0] i_reg, i_next;
+    reg wr_en_reg, wr_en_next;
 
     reg [7:0] hum_int_reg, hum_int_next;
     reg [7:0] hum_dec_reg, hum_dec_next;
@@ -202,6 +203,7 @@ module start_signal (
 
     assign signal = signal_reg;
     assign mode   = mode_reg;
+    assign wr_en  = wr_en_reg;
 
 
     always @(posedge clk, posedge reset) begin
@@ -217,6 +219,7 @@ module start_signal (
             tem_int_reg      <= 0;
             tem_dec_reg      <= 0;
             checksum_reg     <= 0;
+            wr_en_reg        <= 0;
         end else begin
             signal_reg       <= signal_next;
             counter_reg      <= counter_next;
@@ -229,6 +232,7 @@ module start_signal (
             tem_int_reg      <= tem_int_next;
             tem_dec_reg      <= tem_dec_next;
             checksum_reg     <= checksum_next;
+            wr_en_reg        <= wr_en_next;
         end
     end
 
@@ -257,12 +261,14 @@ module start_signal (
         tem_int_next      = tem_int_reg;
         tem_dec_next      = tem_dec_reg;
         checksum_next     = checksum_reg;
+        wr_en_next        = wr_en_reg;
         case (state_reg)
             IDLE: begin
                 if (start_dht11) begin
                     state_next   = START_L;
                     counter_next = 0;
                 end else begin
+                    wr_en_next  = 1'b0;
                     signal_next = 1'b1;
                     mode_next   = 1'b1;
                 end
@@ -358,14 +364,15 @@ module start_signal (
                     counter_next = counter_reg + 1;
                     if (counter_reg == 50 - 1) begin
                         // if (tem_hum_data_reg[7:0] == (tem_hum_data_reg[39:32] + tem_hum_data_reg[31:24] + tem_hum_data_reg[23:16] + tem_hum_data_reg[15:8])) begin
-                            hum_int_next  = tem_hum_data_reg[39:32];
-                            hum_dec_next  = tem_hum_data_reg[31:24];
-                            tem_int_next  = tem_hum_data_reg[23:16];
-                            tem_dec_next  = tem_hum_data_reg[15:8];
-                            checksum_next = tem_hum_data_reg[7:0];
-                            counter_next  = 0;
-                            i_next        = 0;
-                            state_next    = IDLE;
+                        hum_int_next  = tem_hum_data_reg[39:32];
+                        hum_dec_next  = tem_hum_data_reg[31:24];
+                        tem_int_next  = tem_hum_data_reg[23:16];
+                        tem_dec_next  = tem_hum_data_reg[15:8];
+                        checksum_next = tem_hum_data_reg[7:0];
+                        counter_next  = 0;
+                        i_next        = 0;
+                        wr_en_next    = 1'b1;
+                        state_next    = IDLE;
                         // end else begin
                         //     counter_next = 0;
                         //     i_next       = 0;

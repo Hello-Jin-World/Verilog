@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module fifo(
+module fifo (
     input        clk,
     input        reset,
     input  [7:0] wdata,
@@ -30,7 +30,6 @@ module fifo(
     output       full,
     output       empty
 );
-
     wire [3:0] w_wr_ptr, w_rd_ptr;
 
     register_file U_register_file (
@@ -56,14 +55,22 @@ endmodule
 
 module register_file (
     input        clk,
-    input  [3:0] waddr,
+    input  [7:0] waddr,
     input  [7:0] wdata,
     input        wr_en,
-    input  [3:0] raddr,
+    input  [7:0] raddr,
     output [7:0] rdata
 );
+    ila_1 U_ila_1 (
+        .clk(clk),
+        .probe0(waddr),
+        .probe1(wdata),
+        .probe2(wr_en),
+        .probe3(raddr),
+        .probe4(rdata)
+    );
 
-    reg [7:0] mem[0:15];
+    reg [7:0] mem[0:255];
 
     always @(posedge clk) begin
         if (wr_en) begin
@@ -79,9 +86,9 @@ module fifo_control_unit (
     input        reset,
     input        wr_en,
     input        rd_en,
-    output [3:0] wr_ptr,
+    output [7:0] wr_ptr,
     output       full,
-    output [3:0] rd_ptr,
+    output [7:0] rd_ptr,
     output       empty
 );
 
@@ -138,10 +145,10 @@ module fifo_control_unit (
             2'b11: begin  // write, read
                 if (empty_reg) begin
                     wr_ptr_next = wr_ptr_reg + 1;
-                    empty_next = 1'b0;
+                    empty_next  = 1'b0;
                 end else if (full_reg) begin
                     rd_ptr_next = rd_ptr_reg + 1;
-                    empty_next = 1'b0;
+                    full_next = 1'b0;
                 end else begin
                     wr_ptr_next = wr_ptr_reg + 1;
                     rd_ptr_next = rd_ptr_reg + 1;
@@ -152,4 +159,3 @@ module fifo_control_unit (
     end
 
 endmodule
-

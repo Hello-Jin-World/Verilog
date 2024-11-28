@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module top_dht11(
+module top_dht11 (
     input        clk,
     input        reset,
     inout        ioport,
@@ -30,12 +30,13 @@ module top_dht11(
     output [7:0] fndfont
 );
 
-    wire wr_en, tx_busy, tx_start;
+    wire wr_en, tx_busy, tx_start, fifo_en, tx_done;
     wire [7:0] r_data;
     wire [7:0] hum_int;
     wire [7:0] hum_dec;
     wire [7:0] tem_int;
     wire [7:0] tem_dec;
+    wire [7:0] fifo_data;
 
     DHT11_control U_dht11_control (
         .clk(clk),
@@ -61,25 +62,49 @@ module top_dht11(
         .fndfont  (fndfont)
     );
 
-    fifo U_fifo (
+    fifo_data U_fifo_data (
+        .clk(clk),
+        .reset(reset),
+        .wr_en(wr_en),
+        .hum_int(hum_int),
+        .hum_dec(hum_dec),
+        .tem_int(tem_int),
+        .tem_dec(tem_dec),
+        .fifo_en(fifo_en),
+        .fifo_data(fifo_data)
+    );
+
+
+    fifo U_Tx_fifo (
         .clk  (clk),
         .reset(reset),
-        .wdata(hum_int),
-        .wr_en(wr_en),
+        .wdata(fifo_data),
+        .wr_en(fifo_en),
         .rd_en(~tx_busy),
         .rdata(r_data),
         .full (),
         .empty(tx_start)
     );
 
+    ila_0 U_ilaV_0 (
+        .clk(clk),
+        .probe0(fifo_data),
+        .probe1(fifo_en),
+        .probe2(tx_busy),
+        .probe3(r_data),
+        .probe4(tx_start),
+        .probe5(tx)
+    );
+
+
     uart U_uart (
         .clk     (clk),
         .reset   (reset),
         .tx_start(~tx_start),
-        .tx_data (hum_int),
+        .tx_data (r_data),
         .tx      (tx),
         .tx_busy (tx_busy),
-        .tx_done (),
+        .tx_done (tx_done),
         .rx      (),
         .rx_data (),
         .rx_done ()
