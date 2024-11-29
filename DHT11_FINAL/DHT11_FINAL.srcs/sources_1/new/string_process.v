@@ -34,10 +34,15 @@ module string_process (
         .probe0(rx_done),
         .probe1(rx_data),
         .probe2(result),
-        .probe3(mem)
+        .probe3(a[counter_reg]),
+        .probe4(counter_reg)
     );
 
-    reg [7:0] mem[0:15];
+    integer i;
+
+    reg [7:0] a[0:15];
+    reg [7:0] b[0:5];
+
     reg [3:0] counter_reg, counter_next;
     reg result_reg, result_next;
 
@@ -57,10 +62,10 @@ module string_process (
         counter_next = counter_reg;
         result_next  = result_reg;
         if (rx_done) begin
-            mem[counter_reg] = rx_data;
-            counter_next     = counter_reg + 1;
+            a[counter_reg] = rx_data;
+            counter_next   = counter_reg + 1;
         end
-        if (mem == "abcdefghijklmnop") begin
+        if (a[0] == "a" && a[1] == "b" && a[2] == "c") begin
             result_next = 1;
         end else begin
             result_next = 0;

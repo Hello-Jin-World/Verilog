@@ -87,13 +87,12 @@ set_property parent.project_path D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.xpr 
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property board_part_repo_paths {C:/Users/danie/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
 set_property ip_output_repo d:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet d:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/ip/ila_0/ila_0.xci
+read_ip -quiet D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/ip/ila_0/ila_0.xci
 set_property used_in_synthesis false [get_files -all d:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all d:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all d:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]

@@ -127,7 +127,6 @@ set rc [catch {
   set_param xicom.use_bs_reader 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a35tcpg236-1
-  set_property board_part_repo_paths {C:/Users/danie/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store} [current_project]
   set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
@@ -141,7 +140,7 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/top_dht11.dcp
-  read_ip -quiet d:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/ip/ila_0/ila_0.xci
+  read_ip -quiet D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/ip/ila_0/ila_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc
 OPTRACE "read constraints: implementation" END { }

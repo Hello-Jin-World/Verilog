@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Fri Nov 29 02:20:43 2024
+| Date         : Fri Nov 29 12:35:10 2024
 | Host         : DESKTOP-PFRE25G running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_dht11_methodology_drc_routed.rpt -pb top_dht11_methodology_drc_routed.pb -rpx top_dht11_methodology_drc_routed.rpx
 | Design       : top_dht11
@@ -23,15 +23,15 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 65
+             Violations found: 186
 +-----------+------------------+-------------------------------------------------+------------+
 | Rule      | Severity         | Description                                     | Violations |
 +-----------+------------------+-------------------------------------------------+------------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell                     | 27         |
 | LUTAR-1   | Warning          | LUT drives async reset alert                    | 4          |
 | PDRC-190  | Warning          | Suboptimally placed synchronized register chain | 10         |
-| TIMING-18 | Warning          | Missing input or output delay                   | 14         |
-| TIMING-20 | Warning          | Non-clocked latch                               | 10         |
+| TIMING-18 | Warning          | Missing input or output delay                   | 15         |
+| TIMING-20 | Warning          | Non-clocked latch                               | 130        |
 +-----------+------------------+-------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -201,52 +201,52 @@ Related violations: <none>
 
 PDRC-190#1 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[0] in site SLICE_X29Y72 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[0] in site SLICE_X36Y50 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#2 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[1] in site SLICE_X28Y69 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[1] in site SLICE_X34Y50 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#3 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[2] in site SLICE_X28Y73 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[2] in site SLICE_X34Y48 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#4 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[3] in site SLICE_X28Y71 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[3] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_reg[3] in site SLICE_X35Y49 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD2/stat_reg_1_reg[3] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#5 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[0] in site SLICE_X29Y70 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[0] in site SLICE_X38Y51 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#6 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[1] in site SLICE_X30Y70 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[1] in site SLICE_X39Y50 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#7 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[2] in site SLICE_X31Y70 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_reg[2] in site SLICE_X37Y50 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD3/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#8 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[0] in site SLICE_X32Y69 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[0] in site SLICE_X39Y55 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[0] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#9 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[1] in site SLICE_X33Y71 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[1] in site SLICE_X41Y55 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[1] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 PDRC-190#10 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[2] in site SLICE_X32Y71 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
+The FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_reg[2] in site SLICE_X40Y55 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_STAT/stat_reg_1_reg[2] is not placed in the same (SLICE) site.
 Related violations: <none>
 
 TIMING-18#1 Warning
@@ -316,6 +316,11 @@ Related violations: <none>
 
 TIMING-18#14 Warning
 Missing input or output delay  
+An output delay is missing on result relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#15 Warning
+Missing input or output delay  
 An output delay is missing on tx relative to clock(s) sys_clk_pin
 Related violations: <none>
 
@@ -331,42 +336,642 @@ Related violations: <none>
 
 TIMING-20#3 Warning
 Non-clocked latch  
-The latch U_string_process/mem_reg[0] cannot be properly analyzed as its control pin U_string_process/mem_reg[0]/G is not reached by a timing clock
+The latch U_string_process/a_reg[0][0] cannot be properly analyzed as its control pin U_string_process/a_reg[0][0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#4 Warning
 Non-clocked latch  
-The latch U_string_process/mem_reg[1] cannot be properly analyzed as its control pin U_string_process/mem_reg[1]/G is not reached by a timing clock
+The latch U_string_process/a_reg[0][1] cannot be properly analyzed as its control pin U_string_process/a_reg[0][1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#5 Warning
 Non-clocked latch  
-The latch U_string_process/mem_reg[2] cannot be properly analyzed as its control pin U_string_process/mem_reg[2]/G is not reached by a timing clock
+The latch U_string_process/a_reg[0][2] cannot be properly analyzed as its control pin U_string_process/a_reg[0][2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#6 Warning
 Non-clocked latch  
-The latch U_string_process/mem_reg[3] cannot be properly analyzed as its control pin U_string_process/mem_reg[3]/G is not reached by a timing clock
+The latch U_string_process/a_reg[0][3] cannot be properly analyzed as its control pin U_string_process/a_reg[0][3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#7 Warning
 Non-clocked latch  
-The latch U_string_process/mem_reg[4] cannot be properly analyzed as its control pin U_string_process/mem_reg[4]/G is not reached by a timing clock
+The latch U_string_process/a_reg[0][4] cannot be properly analyzed as its control pin U_string_process/a_reg[0][4]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#8 Warning
 Non-clocked latch  
-The latch U_string_process/mem_reg[5] cannot be properly analyzed as its control pin U_string_process/mem_reg[5]/G is not reached by a timing clock
+The latch U_string_process/a_reg[0][5] cannot be properly analyzed as its control pin U_string_process/a_reg[0][5]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#9 Warning
 Non-clocked latch  
-The latch U_string_process/mem_reg[6] cannot be properly analyzed as its control pin U_string_process/mem_reg[6]/G is not reached by a timing clock
+The latch U_string_process/a_reg[0][6] cannot be properly analyzed as its control pin U_string_process/a_reg[0][6]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#10 Warning
 Non-clocked latch  
-The latch U_string_process/mem_reg[7] cannot be properly analyzed as its control pin U_string_process/mem_reg[7]/G is not reached by a timing clock
+The latch U_string_process/a_reg[0][7] cannot be properly analyzed as its control pin U_string_process/a_reg[0][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[10][0] cannot be properly analyzed as its control pin U_string_process/a_reg[10][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[10][1] cannot be properly analyzed as its control pin U_string_process/a_reg[10][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[10][2] cannot be properly analyzed as its control pin U_string_process/a_reg[10][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#14 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[10][3] cannot be properly analyzed as its control pin U_string_process/a_reg[10][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#15 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[10][4] cannot be properly analyzed as its control pin U_string_process/a_reg[10][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#16 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[10][5] cannot be properly analyzed as its control pin U_string_process/a_reg[10][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#17 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[10][6] cannot be properly analyzed as its control pin U_string_process/a_reg[10][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#18 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[10][7] cannot be properly analyzed as its control pin U_string_process/a_reg[10][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#19 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[11][0] cannot be properly analyzed as its control pin U_string_process/a_reg[11][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#20 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[11][1] cannot be properly analyzed as its control pin U_string_process/a_reg[11][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#21 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[11][2] cannot be properly analyzed as its control pin U_string_process/a_reg[11][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#22 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[11][3] cannot be properly analyzed as its control pin U_string_process/a_reg[11][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#23 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[11][4] cannot be properly analyzed as its control pin U_string_process/a_reg[11][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#24 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[11][5] cannot be properly analyzed as its control pin U_string_process/a_reg[11][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#25 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[11][6] cannot be properly analyzed as its control pin U_string_process/a_reg[11][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#26 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[11][7] cannot be properly analyzed as its control pin U_string_process/a_reg[11][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#27 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[12][0] cannot be properly analyzed as its control pin U_string_process/a_reg[12][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#28 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[12][1] cannot be properly analyzed as its control pin U_string_process/a_reg[12][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#29 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[12][2] cannot be properly analyzed as its control pin U_string_process/a_reg[12][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#30 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[12][3] cannot be properly analyzed as its control pin U_string_process/a_reg[12][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#31 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[12][4] cannot be properly analyzed as its control pin U_string_process/a_reg[12][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#32 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[12][5] cannot be properly analyzed as its control pin U_string_process/a_reg[12][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#33 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[12][6] cannot be properly analyzed as its control pin U_string_process/a_reg[12][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#34 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[12][7] cannot be properly analyzed as its control pin U_string_process/a_reg[12][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#35 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[13][0] cannot be properly analyzed as its control pin U_string_process/a_reg[13][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#36 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[13][1] cannot be properly analyzed as its control pin U_string_process/a_reg[13][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#37 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[13][2] cannot be properly analyzed as its control pin U_string_process/a_reg[13][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#38 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[13][3] cannot be properly analyzed as its control pin U_string_process/a_reg[13][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#39 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[13][4] cannot be properly analyzed as its control pin U_string_process/a_reg[13][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#40 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[13][5] cannot be properly analyzed as its control pin U_string_process/a_reg[13][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#41 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[13][6] cannot be properly analyzed as its control pin U_string_process/a_reg[13][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#42 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[13][7] cannot be properly analyzed as its control pin U_string_process/a_reg[13][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#43 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[14][0] cannot be properly analyzed as its control pin U_string_process/a_reg[14][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#44 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[14][1] cannot be properly analyzed as its control pin U_string_process/a_reg[14][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#45 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[14][2] cannot be properly analyzed as its control pin U_string_process/a_reg[14][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#46 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[14][3] cannot be properly analyzed as its control pin U_string_process/a_reg[14][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#47 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[14][4] cannot be properly analyzed as its control pin U_string_process/a_reg[14][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#48 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[14][5] cannot be properly analyzed as its control pin U_string_process/a_reg[14][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#49 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[14][6] cannot be properly analyzed as its control pin U_string_process/a_reg[14][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#50 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[14][7] cannot be properly analyzed as its control pin U_string_process/a_reg[14][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#51 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[15][0] cannot be properly analyzed as its control pin U_string_process/a_reg[15][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#52 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[15][1] cannot be properly analyzed as its control pin U_string_process/a_reg[15][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#53 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[15][2] cannot be properly analyzed as its control pin U_string_process/a_reg[15][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#54 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[15][3] cannot be properly analyzed as its control pin U_string_process/a_reg[15][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#55 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[15][4] cannot be properly analyzed as its control pin U_string_process/a_reg[15][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#56 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[15][5] cannot be properly analyzed as its control pin U_string_process/a_reg[15][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#57 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[15][6] cannot be properly analyzed as its control pin U_string_process/a_reg[15][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#58 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[15][7] cannot be properly analyzed as its control pin U_string_process/a_reg[15][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#59 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[1][0] cannot be properly analyzed as its control pin U_string_process/a_reg[1][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#60 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[1][1] cannot be properly analyzed as its control pin U_string_process/a_reg[1][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#61 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[1][2] cannot be properly analyzed as its control pin U_string_process/a_reg[1][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#62 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[1][3] cannot be properly analyzed as its control pin U_string_process/a_reg[1][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#63 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[1][4] cannot be properly analyzed as its control pin U_string_process/a_reg[1][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#64 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[1][5] cannot be properly analyzed as its control pin U_string_process/a_reg[1][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#65 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[1][6] cannot be properly analyzed as its control pin U_string_process/a_reg[1][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#66 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[1][7] cannot be properly analyzed as its control pin U_string_process/a_reg[1][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#67 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[2][0] cannot be properly analyzed as its control pin U_string_process/a_reg[2][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#68 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[2][1] cannot be properly analyzed as its control pin U_string_process/a_reg[2][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#69 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[2][2] cannot be properly analyzed as its control pin U_string_process/a_reg[2][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#70 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[2][3] cannot be properly analyzed as its control pin U_string_process/a_reg[2][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#71 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[2][4] cannot be properly analyzed as its control pin U_string_process/a_reg[2][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#72 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[2][5] cannot be properly analyzed as its control pin U_string_process/a_reg[2][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#73 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[2][6] cannot be properly analyzed as its control pin U_string_process/a_reg[2][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#74 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[2][7] cannot be properly analyzed as its control pin U_string_process/a_reg[2][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#75 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[3][0] cannot be properly analyzed as its control pin U_string_process/a_reg[3][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#76 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[3][1] cannot be properly analyzed as its control pin U_string_process/a_reg[3][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#77 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[3][2] cannot be properly analyzed as its control pin U_string_process/a_reg[3][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#78 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[3][3] cannot be properly analyzed as its control pin U_string_process/a_reg[3][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#79 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[3][4] cannot be properly analyzed as its control pin U_string_process/a_reg[3][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#80 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[3][5] cannot be properly analyzed as its control pin U_string_process/a_reg[3][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#81 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[3][6] cannot be properly analyzed as its control pin U_string_process/a_reg[3][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#82 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[3][7] cannot be properly analyzed as its control pin U_string_process/a_reg[3][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#83 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[4][0] cannot be properly analyzed as its control pin U_string_process/a_reg[4][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#84 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[4][1] cannot be properly analyzed as its control pin U_string_process/a_reg[4][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#85 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[4][2] cannot be properly analyzed as its control pin U_string_process/a_reg[4][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#86 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[4][3] cannot be properly analyzed as its control pin U_string_process/a_reg[4][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#87 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[4][4] cannot be properly analyzed as its control pin U_string_process/a_reg[4][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#88 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[4][5] cannot be properly analyzed as its control pin U_string_process/a_reg[4][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#89 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[4][6] cannot be properly analyzed as its control pin U_string_process/a_reg[4][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#90 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[4][7] cannot be properly analyzed as its control pin U_string_process/a_reg[4][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#91 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[5][0] cannot be properly analyzed as its control pin U_string_process/a_reg[5][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#92 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[5][1] cannot be properly analyzed as its control pin U_string_process/a_reg[5][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#93 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[5][2] cannot be properly analyzed as its control pin U_string_process/a_reg[5][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#94 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[5][3] cannot be properly analyzed as its control pin U_string_process/a_reg[5][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#95 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[5][4] cannot be properly analyzed as its control pin U_string_process/a_reg[5][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#96 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[5][5] cannot be properly analyzed as its control pin U_string_process/a_reg[5][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#97 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[5][6] cannot be properly analyzed as its control pin U_string_process/a_reg[5][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#98 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[5][7] cannot be properly analyzed as its control pin U_string_process/a_reg[5][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#99 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[6][0] cannot be properly analyzed as its control pin U_string_process/a_reg[6][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#100 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[6][1] cannot be properly analyzed as its control pin U_string_process/a_reg[6][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#101 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[6][2] cannot be properly analyzed as its control pin U_string_process/a_reg[6][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#102 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[6][3] cannot be properly analyzed as its control pin U_string_process/a_reg[6][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#103 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[6][4] cannot be properly analyzed as its control pin U_string_process/a_reg[6][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#104 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[6][5] cannot be properly analyzed as its control pin U_string_process/a_reg[6][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#105 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[6][6] cannot be properly analyzed as its control pin U_string_process/a_reg[6][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#106 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[6][7] cannot be properly analyzed as its control pin U_string_process/a_reg[6][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#107 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[7][0] cannot be properly analyzed as its control pin U_string_process/a_reg[7][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#108 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[7][1] cannot be properly analyzed as its control pin U_string_process/a_reg[7][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#109 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[7][2] cannot be properly analyzed as its control pin U_string_process/a_reg[7][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#110 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[7][3] cannot be properly analyzed as its control pin U_string_process/a_reg[7][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#111 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[7][4] cannot be properly analyzed as its control pin U_string_process/a_reg[7][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#112 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[7][5] cannot be properly analyzed as its control pin U_string_process/a_reg[7][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#113 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[7][6] cannot be properly analyzed as its control pin U_string_process/a_reg[7][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#114 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[7][7] cannot be properly analyzed as its control pin U_string_process/a_reg[7][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#115 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[8][0] cannot be properly analyzed as its control pin U_string_process/a_reg[8][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#116 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[8][1] cannot be properly analyzed as its control pin U_string_process/a_reg[8][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#117 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[8][2] cannot be properly analyzed as its control pin U_string_process/a_reg[8][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#118 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[8][3] cannot be properly analyzed as its control pin U_string_process/a_reg[8][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#119 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[8][4] cannot be properly analyzed as its control pin U_string_process/a_reg[8][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#120 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[8][5] cannot be properly analyzed as its control pin U_string_process/a_reg[8][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#121 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[8][6] cannot be properly analyzed as its control pin U_string_process/a_reg[8][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#122 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[8][7] cannot be properly analyzed as its control pin U_string_process/a_reg[8][7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#123 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[9][0] cannot be properly analyzed as its control pin U_string_process/a_reg[9][0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#124 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[9][1] cannot be properly analyzed as its control pin U_string_process/a_reg[9][1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#125 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[9][2] cannot be properly analyzed as its control pin U_string_process/a_reg[9][2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#126 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[9][3] cannot be properly analyzed as its control pin U_string_process/a_reg[9][3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#127 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[9][4] cannot be properly analyzed as its control pin U_string_process/a_reg[9][4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#128 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[9][5] cannot be properly analyzed as its control pin U_string_process/a_reg[9][5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#129 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[9][6] cannot be properly analyzed as its control pin U_string_process/a_reg[9][6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#130 Warning
+Non-clocked latch  
+The latch U_string_process/a_reg[9][7] cannot be properly analyzed as its control pin U_string_process/a_reg[9][7]/G is not reached by a timing clock
 Related violations: <none>
 
 
