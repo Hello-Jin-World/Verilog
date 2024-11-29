@@ -53,19 +53,19 @@ module string_process (
             counter_reg <= 0;
             result_reg  <= 0;
         end else begin
-            counter_reg <= counter_next;
-            result_reg  <= result_next;
+            result_reg <= result_next;
+            if (rx_done) begin
+                a[counter_reg] <= rx_data;
+                counter_next   <= counter_reg + 1;
+            end else begin
+                counter_reg <= counter_next;
+            end
         end
     end
 
     always @(*) begin
-        counter_next = counter_reg;
-        result_next  = result_reg;
-        if (rx_done) begin
-            a[counter_reg] = rx_data;
-            counter_next   = counter_reg + 1;
-        end
-        if (a[0] == "a" && a[1] == "b" && a[2] == "c") begin
+        result_next = result_reg;
+        if (a[0] == "r" && a[1] == "u" && a[2] == "n") begin
             result_next = 1;
         end else begin
             result_next = 0;

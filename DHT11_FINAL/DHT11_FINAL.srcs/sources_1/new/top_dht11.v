@@ -34,7 +34,7 @@ module top_dht11 (
     // input  [7:0] u_command,
     output       tx,
     output [3:0] led,
-    output       result,
+    output       string_command,
     output [3:0] fndcom,
     output [7:0] fndfont
 );
@@ -57,13 +57,15 @@ module top_dht11 (
     wire [7:0] data_b;
     wire [7:0] data_c;
     wire [7:0] data_d;
+    
+    wire string_command;
 
     string_process U_string_process (
         .clk    (clk),
         .reset  (reset),
         .rx_done(rx_done),
         .rx_data(rx_data),
-        .result (result)
+        .result (string_command)
     );
 
     DHT11_control U_dht11_control (
@@ -85,6 +87,9 @@ module top_dht11 (
         .button0           (button0),
         .button1           (button1),
         .button2           (button2),
+        .u_command         (rx_data),
+        .string_command    (string_command),
+        .rx_done           (rx_done),
         .led               (led),
         .seleted_msec      (selected_msec),
         .seleted_sec       (selected_sec),
@@ -92,19 +97,19 @@ module top_dht11 (
         .seleted_hour      (selected_hour)
     );
 
-    top_stopwatch U_top_stopwatch (
-        .clk         (clk),
-        .reset       (reset),
-        .sw_mode     (sw_mode),
-        .btn_run_stop(btn_run_stop),
-        .btn_clear   (btn_clear),
-        .u_command   (rx_data),
-        .rx_done     (rx_done),
-        .msec        (msec),
-        .sec         (sec),
-        .min         (min),
-        .hour        (hour)
-    );
+    // top_stopwatch U_top_stopwatch (
+    //     .clk         (clk),
+    //     .reset       (reset),
+    //     .sw_mode     (sw_mode),
+    //     .btn_run_stop(btn_run_stop),
+    //     .btn_clear   (btn_clear),
+    //     .u_command   (rx_data),
+    //     .rx_done     (rx_done),
+    //     .msec        (msec),
+    //     .sec         (sec),
+    //     .min         (min),
+    //     .hour        (hour)
+    // );
 
     dht_swclock_switch U_dht_swclock_switch (
         .dht_sw_clock_sw(dht_sw_clock_sw),

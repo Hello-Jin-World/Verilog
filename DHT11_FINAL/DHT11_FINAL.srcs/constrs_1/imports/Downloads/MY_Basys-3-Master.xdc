@@ -46,7 +46,7 @@ set_property -dict { PACKAGE_PIN V19  IOSTANDARD LVCMOS33 } [get_ports { led[3] 
 #set_property -dict { PACKAGE_PIN P3   IOSTANDARD LVCMOS33 } [get_ports { led[12] }]; #IO_L12N_T1_MRCC_35           ,Sch=LED12
 #set_property -dict { PACKAGE_PIN N3   IOSTANDARD LVCMOS33 } [get_ports { led[13] }]; #IO_L12P_T1_MRCC_35           ,Sch=LED13
 #set_property -dict { PACKAGE_PIN P1   IOSTANDARD LVCMOS33 } [get_ports { led[14] }]; #IO_L19N_T3_VREF_35           ,Sch=LED14
-set_property -dict { PACKAGE_PIN L1   IOSTANDARD LVCMOS33 } [get_ports { result }]; #IO_L6N_T0_VREF_35            ,Sch=LED15
+set_property -dict { PACKAGE_PIN L1   IOSTANDARD LVCMOS33 } [get_ports { string_command }]; #IO_L6N_T0_VREF_35            ,Sch=LED15
 
 
 ##7 segment display

@@ -102,7 +102,6 @@ read_verilog -library xil_defaultlib {
   D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_control_unit.v
   D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v
   D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/string_process.v
-  D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_stopwatch.v
   D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v
   D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v
 }

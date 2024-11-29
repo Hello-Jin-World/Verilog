@@ -29,6 +29,7 @@ module stopwatch_clock (
     input        button1,
     input        button2,
     input  [7:0] u_command,
+    input        string_command,
     input        rx_done,
     output [3:0] led,
     output [6:0] seleted_msec,
