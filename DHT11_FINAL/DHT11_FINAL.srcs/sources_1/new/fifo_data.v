@@ -33,6 +33,10 @@ module fifo_data (
     input  [7:0] set_min,
     input  [7:0] set_sec,
     input  [7:0] set_msec,
+    input  [3:0] ultrasonic_1,
+    input  [3:0] ultrasonic_10,
+    input  [3:0] ultrasonic_100,
+    input  [3:0] ultrasonic_1000,
     output       fifo_en,
     output [7:0] fifo_data
 );
@@ -152,7 +156,43 @@ module fifo_data (
            SET_MESSAGE4 = 76,
            NEW_LINE1 = 77,
            NEW_LINE2 = 78,
-           SET_TIME_ERROR1 = 100;
+           DISTANCE1 = 79, 
+           DISTANCE2 = 80, 
+           DISTANCE3 = 81, 
+           DISTANCE4 = 82, 
+           DISTANCE5 = 83, 
+           DISTANCE6 = 84, 
+           DISTANCE7 = 85, 
+           DISTANCE8 = 86, 
+           DISTANCE9 = 87, 
+           DISTANCE10 = 88, 
+           DISTANCE11 = 89, 
+           DISTANCE12 = 90, 
+           DISTANCE13 = 91, 
+           DISTANCE14 = 92, 
+           DISTANCE15 = 93, 
+           DISTANCE16 = 94,
+           SET_TIME_ERROR1 = 95, 
+           SET_TIME_ERROR2 = 96, 
+           SET_TIME_ERROR3 = 97, 
+           SET_TIME_ERROR4 = 98, 
+           SET_TIME_ERROR5 = 99, 
+           SET_TIME_ERROR6 = 100, 
+           SET_TIME_ERROR7 = 101, 
+           SET_TIME_ERROR8 = 102, 
+           SET_TIME_ERROR9 = 103, 
+           SET_TIME_ERROR10 = 104, 
+           SET_TIME_ERROR11 = 105, 
+           SET_TIME_ERROR12 = 106, 
+           SET_TIME_ERROR13 = 107, 
+           SET_TIME_ERROR14 = 108, 
+           SET_TIME_ERROR15 = 109, 
+           SET_TIME_ERROR16 = 110, 
+           SET_TIME_ERROR17 = 111, 
+           SET_TIME_ERROR18 = 112,
+           NEW_LINE3 = 113,
+           NEW_LINE4 = 114
+           ;
 
     assign fifo_en   = fifo_en_reg;
     assign fifo_data = fifo_data_reg;
@@ -183,6 +223,9 @@ module fifo_data (
                     state_next = SET_MESSAGE1;
                 end else if (string_command == 6) begin
                     state_next = SET_TIME_ERROR1;
+                end
+                if (string_command == 7) begin
+                    state_next = DISTANCE1;
                 end
             end
             HUM1: begin
@@ -509,7 +552,157 @@ module fifo_data (
                 state_next = IDLE;
                 fifo_data_next = "\n";
             end
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+            DISTANCE1: begin
+                state_next = DISTANCE2;
+                fifo_en_next = 1'b1;
+                fifo_data_next = "D";
+            end
+            DISTANCE2: begin
+                state_next = DISTANCE3;
+                fifo_data_next = "I";
+            end
+            DISTANCE3: begin
+                state_next = DISTANCE4;
+                fifo_data_next = "S";
+            end
+            DISTANCE4: begin
+                state_next = DISTANCE5;
+                fifo_data_next = "T";
+            end
+            DISTANCE5: begin
+                state_next = DISTANCE6;
+                fifo_data_next = "A";
+            end
+            DISTANCE6: begin
+                state_next = DISTANCE7;
+                fifo_data_next = "N";
+            end
+            DISTANCE7: begin
+                state_next = DISTANCE8;
+                fifo_data_next = "C";
+            end
+            DISTANCE8: begin
+                state_next = DISTANCE9;
+                fifo_data_next = "E";
+            end
+            DISTANCE9: begin
+                state_next = DISTANCE10;
+                fifo_data_next = ":";
+            end
+            DISTANCE10: begin
+                state_next = DISTANCE11;
+                fifo_data_next = " ";
+            end
+            DISTANCE11: begin
+                state_next = DISTANCE12;
+                fifo_data_next = ultrasonic_1000 + "0";
+            end
+            DISTANCE12: begin
+                state_next = DISTANCE13;
+                fifo_data_next = ultrasonic_100 + "0";
+            end
+            DISTANCE13: begin
+                state_next = DISTANCE14;
+                fifo_data_next = ultrasonic_10 + "0";
+            end
+            DISTANCE14: begin
+                state_next = DISTANCE15;
+                fifo_data_next = ultrasonic_1 + "0";
+            end
+            DISTANCE15: begin
+                state_next = DISTANCE16;
+                fifo_data_next = "c";
+            end
+            DISTANCE16: begin
+                state_next = NEW_LINE3;
+                fifo_data_next = "m";
+            end
+            NEW_LINE3: begin
+                state_next = IDLE;
+                fifo_data_next = "\n";
+            end
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            SET_TIME_ERROR1: begin
+                state_next = SET_TIME_ERROR2;
+                fifo_en_next = 1'b1;
+                fifo_data_next = "T";
+            end
+            SET_TIME_ERROR2: begin
+                state_next = SET_TIME_ERROR3;
+                fifo_data_next = "I";
+            end
+            SET_TIME_ERROR3: begin
+                state_next = SET_TIME_ERROR4;
+                fifo_data_next = "M";
+            end
+            SET_TIME_ERROR4: begin
+                state_next = SET_TIME_ERROR5;
+                fifo_data_next = "E";
+            end
+            SET_TIME_ERROR5: begin
+                state_next = SET_TIME_ERROR6;
+                fifo_data_next = " ";
+            end
+            SET_TIME_ERROR6: begin
+                state_next = SET_TIME_ERROR7;
+                fifo_data_next = "S";
+            end
+            SET_TIME_ERROR7: begin
+                state_next = SET_TIME_ERROR8;
+                fifo_data_next = "E";
+            end
+            SET_TIME_ERROR8: begin
+                state_next = SET_TIME_ERROR9;
+                fifo_data_next = "T";
+            end
+            SET_TIME_ERROR9: begin
+                state_next = SET_TIME_ERROR10;
+                fifo_data_next = "T";
+            end
+            SET_TIME_ERROR10: begin
+                state_next = SET_TIME_ERROR11;
+                fifo_data_next = "I";
+            end
+            SET_TIME_ERROR11: begin
+                state_next = SET_TIME_ERROR12;
+                fifo_data_next = "N";
+            end
+            SET_TIME_ERROR12: begin
+                state_next = SET_TIME_ERROR13;
+                fifo_data_next = "G";
+            end
+            SET_TIME_ERROR13: begin
+                state_next = SET_TIME_ERROR14;
+                fifo_data_next = " ";
+            end
+            SET_TIME_ERROR14: begin
+                state_next = SET_TIME_ERROR15;
+                fifo_data_next = "E";
+            end
+            SET_TIME_ERROR15: begin
+                state_next = SET_TIME_ERROR16;
+                fifo_data_next = "R";
+            end
+            SET_TIME_ERROR16: begin
+                state_next = SET_TIME_ERROR17;
+                fifo_data_next = "R";
+            end
+            SET_TIME_ERROR17: begin
+                state_next = SET_TIME_ERROR18;
+                fifo_data_next = "O";
+            end
+            SET_TIME_ERROR18: begin
+                state_next = NEW_LINE4;
+                fifo_data_next = "R";
+            end
+            NEW_LINE4: begin
+                state_next = IDLE;
+                fifo_data_next = "\n";
+            end
         endcase
     end
 

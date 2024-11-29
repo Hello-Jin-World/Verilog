@@ -27,49 +27,68 @@ module top_dht11 (
     input        sw_mode,
     input        sw_clock_stopwatch,
     input        dht_sw_clock_sw,
+    input        ultrasonic_active,
     input        button0,
     input        button1,
     input        button2,
+    input        button3,
+    input        echopulse,
     input        rx,
     // input  [7:0] u_command,
     output       tx,
+    output       trigger,
     output [3:0] led,
     // output       string_command,
     output [3:0] fndcom,
     output [7:0] fndfont
 );
 
-    wire wr_en, tx_busy, tx_start, fifo_en, tx_done, rx_done;
-    wire [7:0] r_data;
-    wire [7:0] hum_int;
-    wire [7:0] hum_dec;
-    wire [7:0] tem_int;
-    wire [7:0] tem_dec;
-    wire [7:0] fifo_data;
-    wire [7:0] rx_data;
+    wire wr_en, tx_busy, tx_start, fifo_en, tx_done, rx_done, w_button3;
+    wire [ 7:0] r_data;
+    wire [ 7:0] hum_int;
+    wire [ 7:0] hum_dec;
+    wire [ 7:0] tem_int;
+    wire [ 7:0] tem_dec;
+    wire [ 7:0] fifo_data;
+    wire [ 7:0] rx_data;
 
-    wire [7:0] selected_msec;
-    wire [7:0] selected_sec;
-    wire [7:0] selected_min;
-    wire [7:0] selected_hour;
+    wire [ 7:0] selected_msec;
+    wire [ 7:0] selected_sec;
+    wire [ 7:0] selected_min;
+    wire [ 7:0] selected_hour;
 
-    wire [7:0] data_a;
-    wire [7:0] data_b;
-    wire [7:0] data_c;
-    wire [7:0] data_d;
+    wire [ 7:0] data_a;
+    wire [ 7:0] data_b;
+    wire [ 7:0] data_c;
+    wire [ 7:0] data_d;
 
-    wire [7:0] set_hour;
-    wire [7:0] set_min;
-    wire [7:0] set_sec;
-    wire [7:0] set_msec;
+    wire [ 7:0] set_hour;
+    wire [ 7:0] set_min;
+    wire [ 7:0] set_sec;
+    wire [ 7:0] set_msec;
 
-    wire [3:0] string_command;
+    wire [ 7:0] ultrasonic_1;
+    wire [ 7:0] ultrasonic_10;
+    wire [ 7:0] ultrasonic_100;
+    wire [ 7:0] ultrasonic_1000;
+
+    wire [ 3:0] string_command;
+
+    wire [13:0] distance;
+
+    button_detector U_ultrasonic_button_detector (
+        .clk  (clk),
+        .reset(reset),
+        .i_btn(button3),
+        .o_btn(w_button3)
+    );
 
     string_process U_string_process (
         .clk     (clk),
         .reset   (reset),
         .rx_done (rx_done),
         .rx_data (rx_data),
+        .button3 (w_button3),
         .set_hour(set_hour),
         .set_min (set_min),
         .set_sec (set_sec),
@@ -86,6 +105,19 @@ module top_dht11 (
         .hum_dec(hum_dec),
         .tem_int(tem_int),
         .tem_dec(tem_dec)
+    );
+
+    ultrasonic_top U_ultrasonic_top (
+        .clk            (clk),
+        .reset          (reset),
+        .echopulse      (echopulse),
+        .btn_start      (w_button3),
+        .string_command (string_command),
+        .trigger        (trigger),
+        .ultrasonic_1   (ultrasonic_1),
+        .ultrasonic_10  (ultrasonic_10),
+        .ultrasonic_100 (ultrasonic_100),
+        .ultrasonic_1000(ultrasonic_1000)
     );
 
     stopwatch_clock U_stopwatch_clock (
@@ -125,50 +157,60 @@ module top_dht11 (
     // );
 
     dht_swclock_switch U_dht_swclock_switch (
-        .dht_sw_clock_sw(dht_sw_clock_sw),
+        .dht_sw_clock_sw  (dht_sw_clock_sw),
+        .ultrasonic_active(ultrasonic_active),
+        .hum_int          (hum_int),
+        .hum_dec          (hum_dec),
+        .tem_int          (tem_int),
+        .tem_dec          (tem_dec),
+        .msec             (selected_msec),
+        .sec              (selected_sec),
+        .min              (selected_min),
+        .hour             (selected_hour),
+        .ultrasonic_1     (ultrasonic_1),
+        .ultrasonic_10    (ultrasonic_10),
+        .ultrasonic_100   (ultrasonic_100),
+        .ultrasonic_1000  (ultrasonic_1000),
+        .data_a           (data_a),
+        .data_b           (data_b),
+        .data_c           (data_c),
+        .data_d           (data_d)
+    );
+
+    fnd_controller U_fnd_controller (
+        .clk              (clk),
+        .reset            (reset),
+        .sw_mode          (sw_mode),
+        .ultrasonic_active(ultrasonic_active),
+        .u_command        (rx_data),
+        .string_command   (string_command),
+        .msec             (data_a),
+        .sec              (data_b),
+        .min              (data_c),
+        .hour             (data_d),
+        .fndcom           (fndcom),
+        .fndfont          (fndfont)
+    );
+
+    fifo_data U_fifo_data (
+        .clk            (clk),
+        .reset          (reset),
+        .wr_en          (wr_en),
         .hum_int        (hum_int),
         .hum_dec        (hum_dec),
         .tem_int        (tem_int),
         .tem_dec        (tem_dec),
-        .msec           (selected_msec),
-        .sec            (selected_sec),
-        .min            (selected_min),
-        .hour           (selected_hour),
-        .data_a         (data_a),
-        .data_b         (data_b),
-        .data_c         (data_c),
-        .data_d         (data_d)
-    );
-
-    fnd_controller U_fnd_controller (
-        .clk           (clk),
-        .reset         (reset),
-        .sw_mode       (sw_mode),
-        .u_command     (rx_data),
-        .string_command(string_command),
-        .msec          (data_a),
-        .sec           (data_b),
-        .min           (data_c),
-        .hour          (data_d),
-        .fndcom        (fndcom),
-        .fndfont       (fndfont)
-    );
-
-    fifo_data U_fifo_data (
-        .clk           (clk),
-        .reset         (reset),
-        .wr_en         (wr_en),
-        .hum_int       (hum_int),
-        .hum_dec       (hum_dec),
-        .tem_int       (tem_int),
-        .tem_dec       (tem_dec),
-        .string_command(string_command),
-        .set_hour      (set_hour),
-        .set_min       (set_min),
-        .set_sec       (set_sec),
-        .set_msec      (set_msec),
-        .fifo_en       (fifo_en),
-        .fifo_data     (fifo_data)
+        .string_command (string_command),
+        .set_hour       (set_hour),
+        .set_min        (set_min),
+        .set_sec        (set_sec),
+        .set_msec       (set_msec),
+        .ultrasonic_1   (ultrasonic_1),
+        .ultrasonic_10  (ultrasonic_10),
+        .ultrasonic_100 (ultrasonic_100),
+        .ultrasonic_1000(ultrasonic_1000),
+        .fifo_en        (fifo_en),
+        .fifo_data      (fifo_data)
     );
 
     fifo U_Tx_fifo (
@@ -198,6 +240,7 @@ endmodule
 
 module dht_swclock_switch (
     input            dht_sw_clock_sw,
+    input            ultrasonic_active,
     input      [7:0] hum_int,
     input      [7:0] hum_dec,
     input      [7:0] tem_int,
@@ -206,6 +249,10 @@ module dht_swclock_switch (
     input      [7:0] sec,
     input      [7:0] min,
     input      [7:0] hour,
+    input      [3:0] ultrasonic_1,
+    input      [3:0] ultrasonic_10,
+    input      [3:0] ultrasonic_100,
+    input      [3:0] ultrasonic_1000,
     output reg [7:0] data_a,
     output reg [7:0] data_b,
     output reg [7:0] data_c,
@@ -213,19 +260,28 @@ module dht_swclock_switch (
 );
 
     always @(*) begin
-        case (dht_sw_clock_sw)
-            1'b0: begin
+        case ({
+            dht_sw_clock_sw, ultrasonic_active
+        })
+            2'b00: begin
                 data_a = msec;
                 data_b = sec;
                 data_c = min;
                 data_d = hour;
             end
-            1'b1: begin
+            2'b10: begin
                 data_a = hum_dec;
                 data_b = hum_int;
                 data_c = tem_dec;
                 data_d = tem_int;
             end
+            2'b01: begin
+                data_a = ultrasonic_10 * 10 + ultrasonic_1;
+                data_b = ultrasonic_1000 * 10 + ultrasonic_100;
+                data_c = 0;
+                data_d = 0;
+            end
+            2'b11: ;
         endcase
     end
 

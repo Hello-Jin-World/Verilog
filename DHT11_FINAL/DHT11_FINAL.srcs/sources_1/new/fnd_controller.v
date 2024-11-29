@@ -24,6 +24,7 @@ module fnd_controller (
     input        clk,
     input        reset,
     input        sw_mode,
+    input        ultrasonic_active,
     input  [7:0] u_command,
     input  [3:0] string_command,
     input  [7:0] msec,            // 0.1sec
@@ -96,7 +97,7 @@ module fnd_controller (
         .x3 (w_sec_digit_10),
         .x4 (4'hf),
         .x5 (4'hf),
-        .x6 (4'he),
+        .x6 ((ultrasonic_active) ? 4'he : 4'hf),
         .x7 (4'hf),
         .y  (w_sec_msec_bcd)
     );
@@ -109,7 +110,7 @@ module fnd_controller (
         .x3 (w_hour_digit_10),
         .x4 (4'hf),
         .x5 (4'hf),
-        .x6 (4'he),
+        .x6 ((ultrasonic_active) ? 4'he : 4'hf),
         .x7 (4'hf),
         .y  (w_min_hour_bcd)
     );
@@ -184,6 +185,21 @@ module digit_splitter (
 
     // assign digit_10  = digit[3:0];
     // assign digit_1 = digit[7:4];
+endmodule
+
+module digit_splitter_for_ultrasonic (
+    input  [13:0] digit,
+    output [ 3:0] digit_1,
+    output [ 3:0] digit_10,
+    output [ 3:0] digit_100,
+    output [ 3:0] digit_1000
+);
+
+    assign digit_1 = digit % 10;
+    assign digit_10 = digit / 10 % 10;
+    assign digit_100 = digit / 100 % 10;
+    assign digit_1000 = digit / 1000 % 10;
+
 endmodule
 
 module mux_8x1 (

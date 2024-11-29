@@ -24,6 +24,7 @@ module string_process (
     input        clk,
     input        reset,
     input        rx_done,
+    input        button3,
     input  [7:0] rx_data,
     output [7:0] set_hour,
     output [7:0] set_min,
@@ -32,16 +33,7 @@ module string_process (
     output [3:0] result
 );
 
-    ila_0 U_ila_0 (
-        .clk(clk),
-        .probe0(rx_done),
-        .probe1(rx_data),
-        .probe2(result),
-        .probe3(a[counter_reg]),
-        .probe4(counter_reg)
-    );
-
-    localparam IDLE = 0, RUN = 1, STOP = 2, CLEAR = 3, MODE = 4, SET_TIME = 5, TIME_SET_ERROR = 6;
+    localparam IDLE = 0, RUN = 1, STOP = 2, CLEAR = 3, MODE = 4, SET_TIME = 5, TIME_SET_ERROR = 6, MEASURE_DISTANCE = 7;
 
     integer i;
 
@@ -142,8 +134,14 @@ module string_process (
                 set_msec_next = (a[22] - "0") * 10 + (a[23] - "0");
                 result_next   = SET_TIME;
             end
+        end else if (a[0] == "m" && a[1] == "e" && a[2] == "a" && a[3] == "s" && a[4] == "u" && a[5] == "r" && a[6] == "e" && a[7] == "\n") begin
+            result_next = MEASURE_DISTANCE;
         end else begin
             result_next = IDLE;
+        end
+        
+        if (button3) begin
+            result_next = MEASURE_DISTANCE;
         end
     end
 

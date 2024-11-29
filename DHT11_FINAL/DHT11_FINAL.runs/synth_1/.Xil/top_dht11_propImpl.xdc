@@ -5,8 +5,10 @@ set_property src_info {type:XDC file:1 line:14 export:INPUT save:INPUT read:READ
 set_property -dict { PACKAGE_PIN V17  IOSTANDARD LVCMOS33 } [get_ports { sw_mode  }]; #IO_L19N_T3_A09_D25_VREF_14 ,Sch=SW0
 set_property src_info {type:XDC file:1 line:15 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN V16  IOSTANDARD LVCMOS33 } [get_ports { sw_clock_stopwatch  }]; #IO_L19P_T3_A10_D26_14      ,Sch=SW1
-set_property src_info {type:XDC file:1 line:29 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN R2   IOSTANDARD LVCMOS33 } [get_ports { dht_sw_clock_sw}]; #IO_L1P_T0_34               ,Sch=SW15
+set_property src_info {type:XDC file:1 line:16 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN W16  IOSTANDARD LVCMOS33 } [get_ports { ultrasonic_active  }]; #IO_L20P_T3_A08_D24_14      ,Sch=SW2
+set_property src_info {type:XDC file:1 line:17 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN W17  IOSTANDARD LVCMOS33 } [get_ports { dht_sw_clock_sw  }]; #IO_L20N_T3_A07_D23_14      ,Sch=SW3
 set_property src_info {type:XDC file:1 line:34 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN U16  IOSTANDARD LVCMOS33 } [get_ports { led[0]  }]; #IO_L23N_T3_A02_D18_14        ,Sch=LED0
 set_property src_info {type:XDC file:1 line:35 export:INPUT save:INPUT read:READ} [current_design]
@@ -47,6 +49,12 @@ set_property src_info {type:XDC file:1 line:73 export:INPUT save:INPUT read:READ
 set_property -dict { PACKAGE_PIN W19  IOSTANDARD LVCMOS33 } [get_ports { button2 }]; #IO_L16N_T2_A15_D31_14 ,Sch=BTNL
 set_property src_info {type:XDC file:1 line:74 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN T17  IOSTANDARD LVCMOS33 } [get_ports { button0 }]; #IO_L17P_T2_A14_D30_14 ,Sch=BTNR
+set_property src_info {type:XDC file:1 line:75 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN U17  IOSTANDARD LVCMOS33 } [get_ports { button3 }]; #IO_L18P_T2_A12_D28_14 ,Sch=BTND
+set_property src_info {type:XDC file:1 line:94 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN B15  IOSTANDARD LVCMOS33 } [get_ports { trigger }]; #IO_L11N_T1_SRCC_16 ,Sch=JB3
+set_property src_info {type:XDC file:1 line:95 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN B16  IOSTANDARD LVCMOS33 } [get_ports { echopulse }]; #IO_L13N_T2_MRCC_16 ,Sch=JB4
 set_property src_info {type:XDC file:1 line:107 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN P18  IOSTANDARD LVCMOS33 } [get_ports { ioport }]; #IO_L14P_T2_SRCC_14 ,Sch=JC4
 set_property src_info {type:XDC file:1 line:146 export:INPUT save:INPUT read:READ} [current_design]
