@@ -1,0 +1,146 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Fri Nov 29 21:55:34 2024
+| Host         : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_dht11_control_sets_placed.rpt
+| Design       : top_dht11
+| Device       : xc7a35t
+--------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    68 |
+|    Minimum number of control sets                        |    68 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   105 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    68 |
+| >= 0 to < 4        |     4 |
+| >= 4 to < 6        |     5 |
+| >= 6 to < 8        |     9 |
+| >= 8 to < 10       |    32 |
+| >= 10 to < 12      |     5 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     1 |
+| >= 16              |    12 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              89 |           40 |
+| No           | No                    | Yes                    |             206 |           67 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               8 |            4 |
+| Yes          | No                    | Yes                    |             440 |          141 |
+| Yes          | Yes                   | No                     |             176 |           52 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------------------------------------------------+-------------------------------------------------------------------------+-----------------------------------+------------------+----------------+--------------+
+|                         Clock Signal                        |                              Enable Signal                              |          Set/Reset Signal         | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------------------------------------------------+-------------------------------------------------------------------------+-----------------------------------+------------------+----------------+--------------+
+|  U_dht11_control/U_start_signal/ioport_TRI                  |                                                                         |                                   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                                              | U_ultrasonic_top/U_ultrasonic/trigger_i_1_n_1                           | reset_IBUF                        |                1 |              1 |         1.00 |
+|  tick                                                       |                                                                         |                                   |                1 |              1 |         1.00 |
+|  U_fnd_controller/U_clk_div/CLK                             |                                                                         | reset_IBUF                        |                2 |              3 |         1.50 |
+|  clk_IBUF_BUFG                                              | U_uart/U_transmitter/tick_count_reg[3]_i_1_n_1                          | reset_IBUF                        |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG                                              |                                                                         |                                   |                4 |              4 |         1.00 |
+|  clk_IBUF_BUFG                                              | U_uart/U_reciever/br_tick_count_reg[3]_i_1_n_1                          | reset_IBUF                        |                3 |              4 |         1.33 |
+|  clk_IBUF_BUFG                                              | U_stopwatch_clock/U_stopwatch_control_unit/FSM_onehot_state_reg[2]_3[0] | reset_IBUF                        |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG                                              | U_string_process/result_reg_reg[2]_4[0]                                 | reset_IBUF                        |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG                                              | U_string_process/result_reg_reg[2]_3[0]                                 | reset_IBUF                        |                3 |              6 |         2.00 |
+|  clk_IBUF_BUFG                                              | U_stopwatch_clock/U_stopwatch_control_unit/FSM_onehot_state_reg[2]_2[0] | reset_IBUF                        |                1 |              6 |         6.00 |
+|  clk_IBUF_BUFG                                              | U_stopwatch_clock/U_stopwatch_control_unit/FSM_onehot_state_reg[2]_1[0] | reset_IBUF                        |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG                                              | U_string_process/result_reg_reg[2]_7[0]                                 | reset_IBUF                        |                4 |              6 |         1.50 |
+|  clk_IBUF_BUFG                                              | U_dht11_control/U_start_signal/i_reg[5]_i_1_n_1                         | reset_IBUF                        |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG                                              | U_fifo_data/fifo_data_next                                              | reset_IBUF                        |                5 |              7 |         1.40 |
+|  clk_IBUF_BUFG                                              | U_uart/U_transmitter/tx_temp_data_reg[6]_i_1_n_1                        | reset_IBUF                        |                4 |              7 |         1.75 |
+|  clk_IBUF_BUFG                                              | U_stopwatch_clock/U_stopwatch_control_unit/FSM_onehot_state_reg[2]_0[0] | reset_IBUF                        |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG                                              | U_string_process/E[0]                                                   | reset_IBUF                        |                4 |              7 |         1.75 |
+|  U_ultrasonic_button_detector/r_clk_reg_n_1                 |                                                                         | reset_IBUF                        |                1 |              8 |         8.00 |
+|  U_stopwatch_clock/U_button0_detector/r_clk                 |                                                                         | reset_IBUF                        |                2 |              8 |         4.00 |
+|  U_stopwatch_clock/U_button1_detector/r_clk_reg_n_1         |                                                                         | reset_IBUF                        |                3 |              8 |         2.67 |
+|  U_stopwatch_clock/U_button2_detector/r_clk_reg_n_1         |                                                                         | reset_IBUF                        |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[7][7]_i_2_n_1                                        | U_string_process/a[7][7]_i_1_n_1  |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[8][7]_i_2_n_1                                        | U_string_process/a[8][7]_i_1_n_1  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[17][7]_i_2_n_1                                       | U_string_process/a[17][7]_i_1_n_1 |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[13][7]_i_2_n_1                                       | U_string_process/a[13][7]_i_1_n_1 |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[5][7]_i_2_n_1                                        | U_string_process/a[5][7]_i_1_n_1  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[20][7]_i_2_n_1                                       | U_string_process/a[20][7]_i_1_n_1 |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[24][7]_i_2_n_1                                       | U_string_process/a[24][7]_i_1_n_1 |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                              | U_Tx_fifo/U_fifo_control_unit/wr_ptr_reg[7]_i_1_n_1                     | reset_IBUF                        |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                              | U_string_process/counter_reg                                            | reset_IBUF                        |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                              | U_string_process/counter_next                                           |                                   |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[23][7]_i_2_n_1                                       | U_string_process/a[23][7]_i_1_n_1 |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                              | U_uart/U_transmitter/E[0]                                               | reset_IBUF                        |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[0][7]_i_2_n_1                                        | U_string_process/a[0][7]_i_1_n_1  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[10][7]_i_2_n_1                                       | U_string_process/a[10][7]_i_1_n_1 |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[19][7]_i_2_n_1                                       | U_string_process/a[19][7]_i_1_n_1 |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[4][7]_i_2_n_1                                        | U_string_process/a[4][7]_i_1_n_1  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[12][7]_i_2_n_1                                       | U_string_process/a[12][7]_i_1_n_1 |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[16][7]_i_2_n_1                                       | U_string_process/a[16][7]_i_1_n_1 |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[9][7]_i_2_n_1                                        | U_string_process/a[9][7]_i_1_n_1  |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[11][7]_i_2_n_1                                       | U_string_process/a[11][7]_i_1_n_1 |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[1][7]_i_2_n_1                                        | U_string_process/a[1][7]_i_1_n_1  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[22][7]_i_2_n_1                                       | U_string_process/a[22][7]_i_1_n_1 |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[14][7]_i_2_n_1                                       | U_string_process/a[14][7]_i_1_n_1 |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[2][7]_i_2_n_1                                        | U_string_process/a[2][7]_i_1_n_1  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[3][7]_i_2_n_1                                        | U_string_process/a[3][7]_i_1_n_1  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                                              | U_string_process/a[6][7]_i_2_n_1                                        | U_string_process/a[6][7]_i_1_n_1  |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                                              | U_ultrasonic_top/U_ultrasonic/distance_next_reg[8]_i_2_n_1              | reset_IBUF                        |                4 |              9 |         2.25 |
+|  U_ultrasonic_top/U_ultrasonic/distance_next_reg[8]_i_2_n_1 |                                                                         |                                   |                3 |              9 |         3.00 |
+|  clk_IBUF_BUFG                                              | U_Tx_fifo/U_fifo_control_unit/wr_ptr_reg_reg[6]_2                       |                                   |                3 |             10 |         3.33 |
+|  clk_IBUF_BUFG                                              | U_Tx_fifo/U_fifo_control_unit/wr_ptr_reg_reg[6]_1                       |                                   |                3 |             10 |         3.33 |
+|  clk_IBUF_BUFG                                              | U_Tx_fifo/U_fifo_control_unit/wr_ptr_reg_reg[7]_0                       |                                   |                3 |             10 |         3.33 |
+|  clk_IBUF_BUFG                                              | U_Tx_fifo/U_fifo_control_unit/wr_ptr_reg_reg[6]_0                       |                                   |                3 |             10 |         3.33 |
+|  clk_IBUF_BUFG                                              | U_uart/U_reciever/rx_data_next                                          | reset_IBUF                        |                3 |             11 |         3.67 |
+|  clk_IBUF_BUFG                                              | U_dht11_control/U_start_signal/counter_reg[14]_i_1_n_1                  | reset_IBUF                        |                5 |             15 |         3.00 |
+|  clk_IBUF_BUFG                                              | U_stopwatch_clock/U_stopwatch_control_unit/E[0]                         | reset_IBUF                        |                4 |             21 |         5.25 |
+|  clk_IBUF_BUFG                                              | U_ultrasonic_top/U_ultrasonic/clk_cnt_tr_reg_0                          | reset_IBUF                        |                7 |             21 |         3.00 |
+|  clk_IBUF_BUFG                                              | U_ultrasonic/state_next[0]                                              | reset_IBUF                        |                7 |             21 |         3.00 |
+|  U_ultrasonic/state_next[0]                                 |                                                                         |                                   |                8 |             21 |         2.62 |
+| ~U_ultrasonic_top/U_ultrasonic/measure_done_next            |                                                                         |                                   |                9 |             21 |         2.33 |
+|  clk_IBUF_BUFG                                              | tick                                                                    | reset_IBUF                        |                5 |             22 |         4.40 |
+|  clk_IBUF_BUFG                                              | U_dht11_control/U_start_signal/hum_int_next                             | reset_IBUF                        |                6 |             32 |         5.33 |
+|  clk_IBUF_BUFG                                              | U_string_process/set_hour_reg[7]_i_1_n_1                                | reset_IBUF                        |               13 |             32 |         2.46 |
+|  n_0_1550_BUFG                                              |                                                                         |                                   |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG                                              | U_dht11_control/U_start_signal/tem_hum_data_next                        | reset_IBUF                        |               10 |             40 |         4.00 |
+|  clk_IBUF_BUFG                                              | U_fifo_data/FSM_onehot_state_reg[114]_i_1_n_1                           | reset_IBUF                        |               32 |            115 |         3.59 |
+|  clk_IBUF_BUFG                                              |                                                                         | reset_IBUF                        |               57 |            171 |         3.00 |
++-------------------------------------------------------------+-------------------------------------------------------------------------+-----------------------------------+------------------+----------------+--------------+
+
+

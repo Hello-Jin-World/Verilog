@@ -37,6 +37,7 @@ module fifo_data (
     input  [3:0] ultrasonic_10,
     input  [3:0] ultrasonic_100,
     input  [3:0] ultrasonic_1000,
+    input        measure_done,
     output       fifo_en,
     output [7:0] fifo_data
 );
@@ -224,7 +225,7 @@ module fifo_data (
                 end else if (string_command == 6) begin
                     state_next = SET_TIME_ERROR1;
                 end
-                if (string_command == 7) begin
+                if (measure_done) begin
                     state_next = DISTANCE1;
                 end
             end

@@ -26,6 +26,7 @@ module ultrasonic_top (
     input        btn_start,
     input  [3:0] string_command,
     output       trigger,
+    output       measure_done,
     output [3:0] ultrasonic_1,
     output [3:0] ultrasonic_10,
     output [3:0] ultrasonic_100,
@@ -49,6 +50,7 @@ module ultrasonic_top (
         .echopulse     (echopulse),
         .string_command(string_command),
         .btn_start     (btn_start),
+        .measure_done  (measure_done),
         .trigger       (trigger),
         .distance      (w_distance)
     );
@@ -60,6 +62,7 @@ module ultrasonic (
     input             echopulse,
     input             btn_start,
     input      [ 3:0] string_command,
+    output            measure_done,
     output reg        trigger,
     output reg [13:0] distance
 );
@@ -70,6 +73,9 @@ module ultrasonic (
     reg [20:0] clk_cnt_echo_reg, clk_cnt_echo_next;
     reg [13:0] distance_next;
     reg trigger_next;
+    reg measure_done_reg, measure_done_next;
+
+    assign measure_done = measure_done_reg;
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
@@ -78,8 +84,10 @@ module ultrasonic (
             distance         <= 0;
             clk_cnt_tr_reg   <= 0;
             clk_cnt_echo_reg <= 0;
+            measure_done_reg <= 0;
         end else begin
-            state <= state_next;
+            state            <= state_next;
+            measure_done_reg <= measure_done_next;
             case (state)
                 IDLE: begin
                     clk_cnt_tr_reg   <= clk_cnt_tr_next;
@@ -104,11 +112,13 @@ module ultrasonic (
     end
 
     always @(*) begin
-        state_next = state;
+        state_next        = state;
+        measure_done_next = measure_done_reg;
         case (state)
             IDLE: begin
                 clk_cnt_tr_next   = 0;
                 clk_cnt_echo_next = 0;
+                measure_done_next = 1'b0;
                 if (btn_start || string_command == 7) begin
                     state_next = TRIGGER;
                 end
@@ -130,6 +140,7 @@ module ultrasonic (
             MEASURE: begin
                 distance_next = clk_cnt_echo_reg / 5800;
                 state_next = IDLE;
+                measure_done_next = 1'b1;
             end
         endcase
     end

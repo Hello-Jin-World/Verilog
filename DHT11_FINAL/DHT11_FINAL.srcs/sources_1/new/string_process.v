@@ -108,6 +108,12 @@ module string_process (
             end
         end
     end
+    
+
+    // localparam COMMAND_RUN = "run\n", COMMAND_;    
+
+    
+
 
     always @(*) begin
         result_next   = result_reg;
@@ -115,6 +121,7 @@ module string_process (
         set_min_next  = set_min_reg;
         set_sec_next  = set_sec_reg;
         set_msec_next = set_msec_reg;
+
 
         if (a[0] == "r" && a[1] == "u" && a[2] == "n" && a[3] == "\n") begin
             result_next = RUN;
@@ -125,7 +132,7 @@ module string_process (
         end else if (a[0] == "m" && a[1] == "o" && a[2] == "d" && a[3] == "e" && a[4] == "\n") begin
             result_next = MODE;
         end else if (a[0] == "t" && a[1] == "i" && a[2] == "m" && a[3] == "e" && a[4] == " " && a[5] == "s" && a[6] == "e" && a[7] == "t" && a[8] == "t" && a[9] == "i" && a[10] == "n" && a[11] == "g" && a[12] == " " && a[24] == "\n") begin
-            if (((a[13] - "0") * 10 + (a[14] - "0") > 24) || ((a[16] - "0") * 10 + (a[17] - "0") > 60) || ((a[19] - "0") * 10 + (a[20] - "0") > 60) || ((a[22] - "0") * 10 + (a[23] - "0") > 99)) begin
+            if (((a[13] - "0") * 10 + (a[14] - "0") > 23) || ((a[16] - "0") * 10 + (a[17] - "0") > 59) || ((a[19] - "0") * 10 + (a[20] - "0") > 59) || ((a[22] - "0") * 10 + (a[23] - "0") > 99)) begin
                 result_next = TIME_SET_ERROR;
             end else begin
                 set_hour_next = (a[13] - "0") * 10 + (a[14] - "0");

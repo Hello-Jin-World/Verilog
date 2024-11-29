@@ -44,37 +44,38 @@ module top_dht11 (
 );
 
     wire wr_en, tx_busy, tx_start, fifo_en, tx_done, rx_done, w_button3;
-    wire [ 7:0] r_data;
-    wire [ 7:0] hum_int;
-    wire [ 7:0] hum_dec;
-    wire [ 7:0] tem_int;
-    wire [ 7:0] tem_dec;
-    wire [ 7:0] fifo_data;
-    wire [ 7:0] rx_data;
+    wire [7:0] r_data;
+    wire [7:0] hum_int;
+    wire [7:0] hum_dec;
+    wire [7:0] tem_int;
+    wire [7:0] tem_dec;
+    wire [7:0] fifo_data;
+    wire [7:0] rx_data;
 
-    wire [ 7:0] selected_msec;
-    wire [ 7:0] selected_sec;
-    wire [ 7:0] selected_min;
-    wire [ 7:0] selected_hour;
+    wire [7:0] selected_msec;
+    wire [7:0] selected_sec;
+    wire [7:0] selected_min;
+    wire [7:0] selected_hour;
 
-    wire [ 7:0] data_a;
-    wire [ 7:0] data_b;
-    wire [ 7:0] data_c;
-    wire [ 7:0] data_d;
+    wire [7:0] data_a;
+    wire [7:0] data_b;
+    wire [7:0] data_c;
+    wire [7:0] data_d;
 
-    wire [ 7:0] set_hour;
-    wire [ 7:0] set_min;
-    wire [ 7:0] set_sec;
-    wire [ 7:0] set_msec;
+    wire [7:0] set_hour;
+    wire [7:0] set_min;
+    wire [7:0] set_sec;
+    wire [7:0] set_msec;
 
-    wire [ 7:0] ultrasonic_1;
-    wire [ 7:0] ultrasonic_10;
-    wire [ 7:0] ultrasonic_100;
-    wire [ 7:0] ultrasonic_1000;
+    wire [7:0] ultrasonic_1;
+    wire [7:0] ultrasonic_10;
+    wire [7:0] ultrasonic_100;
+    wire [7:0] ultrasonic_1000;
 
-    wire [ 3:0] string_command;
+    wire [3:0] string_command;
 
     wire [13:0] distance;
+    wire measure_done;
 
     button_detector U_ultrasonic_button_detector (
         .clk  (clk),
@@ -114,6 +115,7 @@ module top_dht11 (
         .btn_start      (w_button3),
         .string_command (string_command),
         .trigger        (trigger),
+        .measure_done   (measure_done),
         .ultrasonic_1   (ultrasonic_1),
         .ultrasonic_10  (ultrasonic_10),
         .ultrasonic_100 (ultrasonic_100),
@@ -209,6 +211,7 @@ module top_dht11 (
         .ultrasonic_10  (ultrasonic_10),
         .ultrasonic_100 (ultrasonic_100),
         .ultrasonic_1000(ultrasonic_1000),
+        .measure_done   (measure_done),
         .fifo_en        (fifo_en),
         .fifo_data      (fifo_data)
     );
