@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Fri Nov 29 13:50:17 2024
-| Host             : DESKTOP-PFRE25G running 64-bit major release  (build 9200)
+| Date             : Fri Nov 29 16:13:20 2024
+| Host             : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 | Command          : report_power -file top_dht11_power_routed.rpt -pb top_dht11_power_summary_routed.pb -rpx top_dht11_power_routed.rpx
 | Design           : top_dht11
 | Device           : xc7a35tcpg236-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.117        |
+| Total On-Chip Power (W)  | 0.119        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.045        |
+| Dynamic (W)              | 0.047        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.4         |
@@ -53,20 +53,20 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.011 |        4 |       --- |             --- |
-| Slice Logic              |     0.003 |     5378 |       --- |             --- |
-|   LUT as Logic           |     0.002 |     1697 |     20800 |            8.16 |
-|   Register               |    <0.001 |     2656 |     41600 |            6.38 |
+| Slice Logic              |     0.004 |     5646 |       --- |             --- |
+|   LUT as Logic           |     0.003 |     1828 |     20800 |            8.79 |
+|   Register               |    <0.001 |     2792 |     41600 |            6.71 |
 |   CARRY4                 |    <0.001 |       72 |      8150 |            0.88 |
-|   LUT as Shift Register  |    <0.001 |      100 |      9600 |            1.04 |
-|   F7/F8 Muxes            |    <0.001 |       41 |     32600 |            0.13 |
+|   LUT as Shift Register  |    <0.001 |      101 |      9600 |            1.05 |
+|   F7/F8 Muxes            |    <0.001 |       15 |     32600 |            0.05 |
 |   LUT as Distributed RAM |    <0.001 |       64 |      9600 |            0.67 |
 |   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
 |   Others                 |     0.000 |      279 |       --- |             --- |
-| Signals                  |     0.004 |     4057 |       --- |             --- |
+| Signals                  |     0.004 |     4369 |       --- |             --- |
 | Block RAM                |    <0.001 |        1 |        50 |            2.00 |
-| I/O                      |     0.027 |       28 |       106 |           26.42 |
+| I/O                      |     0.027 |       27 |       106 |           25.47 |
 | Static Power             |     0.072 |          |           |                 |
-| Total                    |     0.117 |          |           |                 |
+| Total                    |     0.119 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.028 |       0.018 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.029 |       0.020 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.014 |       0.001 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.009 |       0.008 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -146,10 +146,11 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| top_dht11                |     0.045 |
+| top_dht11                |     0.047 |
+|   U_dht11_control        |     0.001 |
 |   U_fnd_controller       |     0.001 |
 |   U_stopwatch_clock      |     0.002 |
-|   U_string_process       |     0.009 |
+|   U_string_process       |     0.011 |
 |     U_ila_0              |     0.008 |
 |       inst               |     0.008 |
 |   dbg_hub                |     0.003 |

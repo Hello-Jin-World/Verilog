@@ -88,14 +88,28 @@
                                 "id": 2,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": false,
+                                "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 0,
+                                "rightIndex": 3,
                                 "portIndex": 2,
                                 "nets": [
                                     {
                                         "name": "U_string_process/result",
-                                        "isBus": false
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U_string_process/result[3]"
+                                            },
+                                            {
+                                                "name": "U_string_process/result[2]"
+                                            },
+                                            {
+                                                "name": "U_string_process/result[1]"
+                                            },
+                                            {
+                                                "name": "U_string_process/result[0]"
+                                            }
+                                        ]
                                     }
                                 ]
                             },

@@ -26,6 +26,7 @@ module stopwatch_control_unit (
     input            btn_run_stop,
     input            btn_clear,
     input      [7:0] u_command,
+    input      [3:0] string_command,
     input            chipselect,
     input            rx_done,
     output reg       run,
@@ -49,14 +50,14 @@ module stopwatch_control_unit (
         state_next = state;
         case (state)
             STOP: begin
-                if (chipselect && (btn_run_stop == 1'b1 || (u_command == "r" && rx_done))) begin
+                if (chipselect && (btn_run_stop == 1'b1 || string_command == 1)) begin
                     state_next = RUN;
-                end else if (chipselect && (btn_clear == 1'b1 || (u_command == "c" && rx_done))) begin
+                end else if (chipselect && (btn_clear == 1'b1 || string_command == 3)) begin
                     state_next = CLEAR;
                 end
             end
             RUN: begin
-                if (chipselect && (btn_run_stop == 1'b1 || (u_command == "s" && rx_done))) begin
+                if (chipselect && (btn_run_stop == 1'b1 || string_command == 2)) begin
                     state_next = STOP;
                 end
             end

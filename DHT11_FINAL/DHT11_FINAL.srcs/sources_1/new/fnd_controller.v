@@ -20,15 +20,16 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module fnd_controller(
+module fnd_controller (
     input        clk,
     input        reset,
     input        sw_mode,
     input  [7:0] u_command,
-    input  [7:0] msec,       // 0.1sec
-    input  [7:0] sec,        // 1sec
-    input  [7:0] min,        // 1min
-    input  [7:0] hour,       // 1hour
+    input  [3:0] string_command,
+    input  [7:0] msec,            // 0.1sec
+    input  [7:0] sec,             // 1sec
+    input  [7:0] min,             // 1min
+    input  [7:0] hour,            // 1hour
     output [3:0] fndcom,
     output [7:0] fndfont
 );
@@ -114,13 +115,14 @@ module fnd_controller(
     );
 
     mux_2x1 U_mux_2x1 (
-        .clk(clk),
-        .reset(reset),
-        .u_command(u_command),
-        .sel(sw_mode),
-        .x0(w_sec_msec_bcd),
-        .x1(w_min_hour_bcd),
-        .y(w_bcd)
+        .clk           (clk),
+        .reset         (reset),
+        .u_command     (u_command),
+        .string_command(string_command),
+        .sel           (sw_mode),
+        .x0            (w_sec_msec_bcd),
+        .x1            (w_min_hour_bcd),
+        .y             (w_bcd)
     );
 
     BCDtoSEG_decoder U_BCDtoSEG (
@@ -216,6 +218,7 @@ module mux_2x1 (
     input            clk,
     input            reset,
     input      [7:0] u_command,
+    input      [3:0] string_command,
     input            sel,
     input      [3:0] x0,
     input      [3:0] x1,
@@ -224,46 +227,51 @@ module mux_2x1 (
 
     localparam STATE0 = 0, STATE1 = 1, STATE2 = 2, STATE3 = 3;
 
-    reg command_sw_mode, command_sw_mode_next;
-    reg [7:0] command_state, command_state_next;
+    reg command_sw_mode_reg, command_sw_mode_next;
+    reg [3:0] command_state, command_state_next;
     reg sw_state_reg, sw_state_next;
     reg toggle_sw_signal, toggle_sw_signal_next;
     reg [2:0] r_counter, r_counter_next;
 
     always @(posedge clk, posedge reset) begin
         if (reset) begin
-            command_state <= 0;
-            sw_state_reg <= 0;
-            toggle_sw_signal <= 0;
-            r_counter <= 0;
-            command_sw_mode <= 0;
+            command_state       <= 0;
+            sw_state_reg        <= 0;
+            toggle_sw_signal    <= 0;
+            r_counter           <= 0;
+            command_sw_mode_reg <= 0;
         end else begin
-            command_state <= command_state_next;
-            sw_state_reg <= sw_state_next;
-            toggle_sw_signal <= toggle_sw_signal_next;
-            command_sw_mode <= command_sw_mode_next;
+            command_state       <= command_state_next;
+            sw_state_reg        <= sw_state_next;
+            toggle_sw_signal    <= toggle_sw_signal_next;
+            command_sw_mode_reg <= command_sw_mode_next;
         end
     end
 
     always @(*) begin
-        command_state_next = command_state;
-        sw_state_next = sw_state_reg;
+        command_state_next    = string_command;
+        sw_state_next         = sw_state_reg;
         toggle_sw_signal_next = toggle_sw_signal;
-        r_counter_next = r_counter;
+        r_counter_next        = r_counter;
+        command_sw_mode_next  = command_sw_mode_reg;
         case (sel)
             1'b0: sw_state_next = 0;
             1'b1: sw_state_next = 1;
             default: y = 4'bx;  // unknown
         endcase
-        if (sw_state_reg != sw_state_next || command_sw_mode_next) begin
+        if ((sw_state_reg != sw_state_next) || command_sw_mode_reg) begin
             toggle_sw_signal_next = ~toggle_sw_signal;
         end else begin
             toggle_sw_signal_next = toggle_sw_signal;
         end
 
-        command_state_next = u_command;
+        // if (string_command == 4) begin
+        //     command_sw_mode_next = 1;
+        // end else begin
+        //     command_sw_mode_next = 0;
+        // end
 
-        if ((command_state != command_state_next) & command_state == "m") begin
+        if ((command_state != command_state_next) && command_state == 4) begin
             command_sw_mode_next = 1;
         end else begin
             command_sw_mode_next = 0;

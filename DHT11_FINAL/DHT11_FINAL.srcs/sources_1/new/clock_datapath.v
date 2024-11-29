@@ -20,12 +20,17 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module clock_datapath(
+module clock_datapath (
     input        sec_btn,
     input        min_btn,
     input        hour_btn,
     input        clk,
     input        reset,
+    input  [3:0] string_command,
+    input  [7:0] set_hour,
+    input  [7:0] set_min,
+    input  [7:0] set_sec,
+    input  [7:0] set_msec,
     output [6:0] msec,
     output [6:0] sec,
     output [6:0] min,
@@ -133,6 +138,8 @@ module clock_counter_time #(
     input                        reset,
     input                        i_tick,
     input                        button,
+    input  [                3:0] string_command,
+    input  [                7:0] set_time,
     output [CLOCK_BIT_WIDTH-1:0] o_clocktime,
     output                       o_tick
 );
@@ -148,18 +155,22 @@ module clock_counter_time #(
             r_tick <= 0;
             r_counter <= 0;
         end else begin
-            r_tick <= r_tick_next;
-            r_counter <= r_counter_next;
+            if (string_command == 5) begin
+                r_counter <= set_time;
+            end else begin
+                r_tick    <= r_tick_next;
+                r_counter <= r_counter_next;
+            end
         end
     end
 
     always @(*) begin
-        r_tick_next = 1'b0; 
+        r_tick_next    = 1'b0;
         r_counter_next = r_counter;
         if (i_tick) begin
             if (r_counter == CLOCK_TIME_MAX - 1) begin
                 r_counter_next = 0;
-                r_tick_next = 1'b1;
+                r_tick_next    = 1'b1;
             end else begin
                 r_tick_next = 1'b0;
                 r_counter_next = r_counter + 1;

@@ -34,7 +34,7 @@ module top_dht11 (
     // input  [7:0] u_command,
     output       tx,
     output [3:0] led,
-    output       string_command,
+    // output       string_command,
     output [3:0] fndcom,
     output [7:0] fndfont
 );
@@ -57,15 +57,24 @@ module top_dht11 (
     wire [7:0] data_b;
     wire [7:0] data_c;
     wire [7:0] data_d;
-    
-    wire string_command;
+
+    wire [7:0] set_hour;
+    wire [7:0] set_min;
+    wire [7:0] set_sec;
+    wire [7:0] set_msec;
+
+    wire [3:0] string_command;
 
     string_process U_string_process (
-        .clk    (clk),
-        .reset  (reset),
-        .rx_done(rx_done),
-        .rx_data(rx_data),
-        .result (string_command)
+        .clk     (clk),
+        .reset   (reset),
+        .rx_done (rx_done),
+        .rx_data (rx_data),
+        .set_hour(set_hour),
+        .set_min (set_min),
+        .set_sec (set_sec),
+        .set_msec(set_msec),
+        .result  (string_command)
     );
 
     DHT11_control U_dht11_control (
@@ -90,6 +99,10 @@ module top_dht11 (
         .u_command         (rx_data),
         .string_command    (string_command),
         .rx_done           (rx_done),
+        .set_hour          (set_hour),
+        .set_min           (set_min),
+        .set_sec           (set_sec),
+        .set_msec          (set_msec),
         .led               (led),
         .seleted_msec      (selected_msec),
         .seleted_sec       (selected_sec),
@@ -128,16 +141,17 @@ module top_dht11 (
     );
 
     fnd_controller U_fnd_controller (
-        .clk      (clk),
-        .reset    (reset),
-        .sw_mode  (sw_mode),
-        .u_command(rx_data),
-        .msec     (data_a),
-        .sec      (data_b),
-        .min      (data_c),
-        .hour     (data_d),
-        .fndcom   (fndcom),
-        .fndfont  (fndfont)
+        .clk           (clk),
+        .reset         (reset),
+        .sw_mode       (sw_mode),
+        .u_command     (rx_data),
+        .string_command(string_command),
+        .msec          (data_a),
+        .sec           (data_b),
+        .min           (data_c),
+        .hour          (data_d),
+        .fndcom        (fndcom),
+        .fndfont       (fndfont)
     );
 
     fifo_data U_fifo_data (

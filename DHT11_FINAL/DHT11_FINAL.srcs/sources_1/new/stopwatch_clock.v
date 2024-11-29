@@ -29,8 +29,12 @@ module stopwatch_clock (
     input        button1,
     input        button2,
     input  [7:0] u_command,
-    input        string_command,
+    input  [3:0] string_command,
     input        rx_done,
+    input  [7:0] set_hour,
+    input  [7:0] set_min,
+    input  [7:0] set_sec,
+    input  [7:0] set_msec,
     output [3:0] led,
     output [6:0] seleted_msec,
     output [6:0] seleted_sec,
@@ -82,27 +86,33 @@ module stopwatch_clock (
     );
 
     clock_datapath U_clock_datapath (
-        .sec_btn (w_sec_btn),
-        .min_btn (w_min_btn),
-        .hour_btn(w_hour_btn),
-        .clk     (clk),
-        .reset   (reset),
-        .msec    (w_clock_msec),
-        .sec     (w_clock_sec),
-        .min     (w_clock_min),
-        .hour    (w_clock_hour)
+        .sec_btn       (w_sec_btn),
+        .min_btn       (w_min_btn),
+        .hour_btn      (w_hour_btn),
+        .clk           (clk),
+        .reset         (reset),
+        .string_command(string_command),
+        .set_hour      (set_hour),
+        .set_min       (set_min),
+        .set_sec       (set_sec),
+        .set_msec      (set_msec),
+        .msec          (w_clock_msec),
+        .sec           (w_clock_sec),
+        .min           (w_clock_min),
+        .hour          (w_clock_hour)
     );
 
     stopwatch_control_unit U_stopwatch_control_unit (
-        .clk         (clk),
-        .reset       (reset),
-        .btn_run_stop(w_button0),
-        .btn_clear   (w_button2),
-        .u_command   (u_command),
-        .rx_done     (rx_done),
-        .chipselect  (sw_clock_stopwatch),
-        .run         (w_run),
-        .clear       (w_clear)
+        .clk           (clk),
+        .reset         (reset),
+        .btn_run_stop  (w_button0),
+        .btn_clear     (w_button2),
+        .u_command     (u_command),
+        .string_command(string_command),
+        .rx_done       (rx_done),
+        .chipselect    (sw_clock_stopwatch),
+        .run           (w_run),
+        .clear         (w_clear)
     );
 
 
