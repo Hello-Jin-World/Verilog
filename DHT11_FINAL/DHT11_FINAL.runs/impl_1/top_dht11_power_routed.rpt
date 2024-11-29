@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Fri Nov 29 17:31:35 2024
+| Date             : Fri Nov 29 18:35:53 2024
 | Host             : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 | Command          : report_power -file top_dht11_power_routed.rpt -pb top_dht11_power_summary_routed.pb -rpx top_dht11_power_routed.rpx
 | Design           : top_dht11
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.130        |
+| Total On-Chip Power (W)  | 0.131        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.058        |
+| Dynamic (W)              | 0.059        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.3         |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.014 |        4 |       --- |             --- |
-| Slice Logic              |     0.005 |     8837 |       --- |             --- |
-|   LUT as Logic           |     0.005 |     2724 |     20800 |           13.10 |
-|   Register               |    <0.001 |     4620 |     41600 |           11.11 |
-|   F7/F8 Muxes            |    <0.001 |      389 |     32600 |            1.19 |
-|   CARRY4                 |    <0.001 |      112 |      8150 |            1.37 |
-|   LUT as Shift Register  |    <0.001 |      101 |      9600 |            1.05 |
+| Clocks                   |     0.013 |        4 |       --- |             --- |
+| Slice Logic              |     0.007 |     8996 |       --- |             --- |
+|   LUT as Logic           |     0.006 |     2838 |     20800 |           13.64 |
+|   F7/F8 Muxes            |    <0.001 |      413 |     32600 |            1.27 |
 |   LUT as Distributed RAM |    <0.001 |       64 |      9600 |            0.67 |
+|   Register               |    <0.001 |     4598 |     41600 |           11.05 |
+|   CARRY4                 |    <0.001 |      116 |      8150 |            1.42 |
+|   LUT as Shift Register  |    <0.001 |      101 |      9600 |            1.05 |
 |   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
 |   Others                 |     0.000 |      279 |       --- |             --- |
-| Signals                  |     0.007 |     6751 |       --- |             --- |
+| Signals                  |     0.008 |     6845 |       --- |             --- |
 | Block RAM                |    <0.001 |        1 |        50 |            2.00 |
 | I/O                      |     0.031 |       27 |       106 |           25.47 |
 | Static Power             |     0.072 |          |           |                 |
-| Total                    |     0.130 |          |           |                 |
+| Total                    |     0.131 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.037 |       0.027 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.038 |       0.029 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.014 |       0.001 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.010 |       0.009 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -146,12 +146,14 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| top_dht11                |     0.058 |
+| top_dht11                |     0.059 |
+|   U_Tx_fifo              |     0.001 |
+|   U_fifo_data            |     0.002 |
 |   U_fnd_controller       |     0.001 |
 |   U_stopwatch_clock      |     0.002 |
 |   U_string_process       |     0.019 |
-|     U_ila_0              |     0.007 |
-|       inst               |     0.007 |
+|     U_ila_0              |     0.006 |
+|       inst               |     0.006 |
 |   dbg_hub                |     0.003 |
 |     inst                 |     0.003 |
 |       BSCANID.u_xsdbm_id |     0.003 |

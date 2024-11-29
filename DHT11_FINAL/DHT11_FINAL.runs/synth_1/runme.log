@@ -17,10 +17,10 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 2644
+INFO: [Synth 8-7075] Helper process launched with PID 9892
 WARNING: [Synth 8-992] counter_reg is already implicitly declared earlier [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/string_process.v:50]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1104.895 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1108.516 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top_dht11' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:23]
 INFO: [Synth 8-6157] synthesizing module 'string_process' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/string_process.v:23]
@@ -31,11 +31,9 @@ INFO: [Synth 8-6157] synthesizing module 'string_process' [D:/GitHub/harman_Veri
 	Parameter MODE bound to: 4 - type: integer 
 	Parameter SET_TIME bound to: 5 - type: integer 
 	Parameter TIME_SET_ERROR bound to: 6 - type: integer 
-	Parameter SETTING_WAIT bound to: 0 - type: integer 
-	Parameter START_SETTING bound to: 1 - type: integer 
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/string_process.v:35]
-INFO: [Synth 8-6157] synthesizing module 'ila_0' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/.Xil/Vivado-9396-DESKTOP-7CFQ9ND/realtime/ila_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_0' (1#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/.Xil/Vivado-9396-DESKTOP-7CFQ9ND/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ila_0' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/.Xil/Vivado-12928-DESKTOP-7CFQ9ND/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_0' (1#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/.Xil/Vivado-12928-DESKTOP-7CFQ9ND/realtime/ila_0_stub.v:6]
 WARNING: [Synth 8-689] width (8) of port connection 'probe4' does not match port width (4) of module 'ila_0' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/string_process.v:41]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'U_ila_0'. This will prevent further optimization [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/string_process.v:35]
 INFO: [Synth 8-6155] done synthesizing module 'string_process' (2#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/string_process.v:23]
@@ -115,8 +113,8 @@ WARNING: [Synth 8-689] width (8) of port connection 'seleted_msec' does not matc
 WARNING: [Synth 8-689] width (8) of port connection 'seleted_sec' does not match port width (7) of module 'stopwatch_clock' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:108]
 WARNING: [Synth 8-689] width (8) of port connection 'seleted_min' does not match port width (7) of module 'stopwatch_clock' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:109]
 WARNING: [Synth 8-689] width (8) of port connection 'seleted_hour' does not match port width (7) of module 'stopwatch_clock' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:110]
-INFO: [Synth 8-6157] synthesizing module 'dht_swclock_switch' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:195]
-INFO: [Synth 8-6155] done synthesizing module 'dht_swclock_switch' (19#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:195]
+INFO: [Synth 8-6157] synthesizing module 'dht_swclock_switch' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:199]
+INFO: [Synth 8-6155] done synthesizing module 'dht_swclock_switch' (19#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:199]
 INFO: [Synth 8-6157] synthesizing module 'fnd_controller' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:23]
 INFO: [Synth 8-6157] synthesizing module 'clk_div' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:149]
 INFO: [Synth 8-6155] done synthesizing module 'clk_div' (20#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:149]
@@ -182,7 +180,50 @@ INFO: [Synth 8-6157] synthesizing module 'fifo_data' [D:/GitHub/harman_Verilog/D
 	Parameter CEL2 bound to: 34 - type: integer 
 	Parameter PER bound to: 35 - type: integer 
 	Parameter SPACE bound to: 36 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo_data.v:103]
+	Parameter SET_TIME1 bound to: 37 - type: integer 
+	Parameter SET_TIME2 bound to: 38 - type: integer 
+	Parameter SET_TIME3 bound to: 39 - type: integer 
+	Parameter SET_TIME4 bound to: 40 - type: integer 
+	Parameter SET_TIME5 bound to: 41 - type: integer 
+	Parameter SET_TIME6 bound to: 42 - type: integer 
+	Parameter SET_TIME7 bound to: 43 - type: integer 
+	Parameter SET_TIME8 bound to: 44 - type: integer 
+	Parameter SET_TIME9 bound to: 45 - type: integer 
+	Parameter SET_TIME10 bound to: 46 - type: integer 
+	Parameter SET_TIME11 bound to: 47 - type: integer 
+	Parameter SET_TIME12 bound to: 48 - type: integer 
+	Parameter SET_TIME13 bound to: 49 - type: integer 
+	Parameter SET_TIME14 bound to: 50 - type: integer 
+	Parameter SET_TIME15 bound to: 51 - type: integer 
+	Parameter SET_TIME16 bound to: 52 - type: integer 
+	Parameter SET_TIME17 bound to: 53 - type: integer 
+	Parameter SET_TIME18 bound to: 54 - type: integer 
+	Parameter SET_TIME19 bound to: 55 - type: integer 
+	Parameter SET_TIME20 bound to: 56 - type: integer 
+	Parameter SET_TIME21 bound to: 57 - type: integer 
+	Parameter SET_TIME22 bound to: 58 - type: integer 
+	Parameter SET_TIME23 bound to: 59 - type: integer 
+	Parameter SET_TIME24 bound to: 60 - type: integer 
+	Parameter SET_TIME25 bound to: 61 - type: integer 
+	Parameter SET_TIME26 bound to: 62 - type: integer 
+	Parameter SET_TIME27 bound to: 63 - type: integer 
+	Parameter SET_TIME28 bound to: 64 - type: integer 
+	Parameter SET_TIME29 bound to: 65 - type: integer 
+	Parameter SET_TIME30 bound to: 66 - type: integer 
+	Parameter SET_TIME31 bound to: 67 - type: integer 
+	Parameter SET_TIME32 bound to: 68 - type: integer 
+	Parameter SET_TIME33 bound to: 69 - type: integer 
+	Parameter SET_TIME34 bound to: 70 - type: integer 
+	Parameter SET_TIME35 bound to: 71 - type: integer 
+	Parameter SET_TIME36 bound to: 72 - type: integer 
+	Parameter SET_MESSAGE1 bound to: 73 - type: integer 
+	Parameter SET_MESSAGE2 bound to: 74 - type: integer 
+	Parameter SET_MESSAGE3 bound to: 75 - type: integer 
+	Parameter SET_MESSAGE4 bound to: 76 - type: integer 
+	Parameter NEW_LINE1 bound to: 77 - type: integer 
+	Parameter NEW_LINE2 bound to: 78 - type: integer 
+	Parameter SET_TIME_ERROR1 bound to: 100 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo_data.v:176]
 INFO: [Synth 8-6155] done synthesizing module 'fifo_data' (29#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo_data.v:23]
 INFO: [Synth 8-6157] synthesizing module 'fifo' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:23]
 INFO: [Synth 8-6157] synthesizing module 'register_file' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:56]
@@ -208,18 +249,18 @@ INFO: [Synth 8-6155] done synthesizing module 'reciever' (35#1) [D:/GitHub/harma
 INFO: [Synth 8-6155] done synthesizing module 'uart' (36#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'top_dht11' (37#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1153.637 ; gain = 48.742
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1154.691 ; gain = 46.176
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1153.637 ; gain = 48.742
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1154.691 ; gain = 46.176
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1153.637 ; gain = 48.742
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1154.691 ; gain = 46.176
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 1153.637 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1154.691 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -232,27 +273,27 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_dht11_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1265.426 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1265.555 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1265.426 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1265.555 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:16 . Memory (MB): peak = 1265.426 ; gain = 160.531
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1265.555 ; gain = 157.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:16 . Memory (MB): peak = 1265.426 ; gain = 160.531
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1265.555 ; gain = 157.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for U_string_process/U_ila_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:16 . Memory (MB): peak = 1265.426 ; gain = 160.531
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1265.555 ; gain = 157.039
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'start_signal'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'stopwatch_control_unit'
@@ -285,45 +326,88 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                    IDLE | 0000000000000000000000000000000000001 |                           000000
-                    HUM1 | 0000000000000000000000000000000000010 |                           001011
-                    HUM2 | 0000000000000000000000000000000000100 |                           001100
-                    HUM3 | 0000000000000000000000000000000001000 |                           001101
-                    HUM4 | 0000000000000000000000000000000010000 |                           001110
-                    HUM5 | 0000000000000000000000000000000100000 |                           001111
-                    HUM6 | 0000000000000000000000000000001000000 |                           010000
-                    HUM7 | 0000000000000000000000000000010000000 |                           010001
-                    HUM8 | 0000000000000000000000000000100000000 |                           010010
-                  COLON1 | 0000000000000000000000000001000000000 |                           011110
-                  DATA_1 | 0000000000000000000000000010000000000 |                           000001
-                  DATA_2 | 0000000000000000000000000100000000000 |                           000010
-                  POINT0 | 0000000000000000000000001000000000000 |                           001001
-                  DATA_3 | 0000000000000000000000010000000000000 |                           000011
-                  DATA_4 | 0000000000000000000000100000000000000 |                           000100
-                     PER | 0000000000000000000001000000000000000 |                           100011
-                   COMMA | 0000000000000000000010000000000000000 |                           100000
-                   SPACE | 0000000000000000000100000000000000000 |                           100100
-                    TEM1 | 0000000000000000001000000000000000000 |                           010011
-                    TEM2 | 0000000000000000010000000000000000000 |                           010100
-                    TEM3 | 0000000000000000100000000000000000000 |                           010101
-                    TEM4 | 0000000000000001000000000000000000000 |                           010110
-                    TEM5 | 0000000000000010000000000000000000000 |                           010111
-                    TEM6 | 0000000000000100000000000000000000000 |                           011000
-                    TEM7 | 0000000000001000000000000000000000000 |                           011001
-                    TEM8 | 0000000000010000000000000000000000000 |                           011010
-                    TEM9 | 0000000000100000000000000000000000000 |                           011011
-                   TEM10 | 0000000001000000000000000000000000000 |                           011100
-                   TEM11 | 0000000010000000000000000000000000000 |                           011101
-                  COLON2 | 0000000100000000000000000000000000000 |                           011111
-                  DATA_5 | 0000001000000000000000000000000000000 |                           000101
-                  DATA_6 | 0000010000000000000000000000000000000 |                           000110
-                  POINT1 | 0000100000000000000000000000000000000 |                           001010
-                  DATA_7 | 0001000000000000000000000000000000000 |                           000111
-                  DATA_8 | 0010000000000000000000000000000000000 |                           001000
-                    CEL1 | 0100000000000000000000000000000000000 |                           100001
-                    CEL2 | 1000000000000000000000000000000000000 |                           100010
+                    IDLE |                          0000000 |                         00000000
+            SET_MESSAGE1 |                          0000001 |                         01001001
+            SET_MESSAGE2 |                          0000010 |                         01001010
+            SET_MESSAGE3 |                          0000011 |                         01001011
+            SET_MESSAGE4 |                          0000100 |                         01001100
+               SET_TIME1 |                          0000101 |                         00100101
+               SET_TIME2 |                          0000110 |                         00100110
+               SET_TIME3 |                          0000111 |                         00100111
+               SET_TIME4 |                          0001000 |                         00101000
+               SET_TIME5 |                          0001001 |                         00101001
+               SET_TIME6 |                          0001010 |                         00101010
+               SET_TIME7 |                          0001011 |                         00101011
+               SET_TIME8 |                          0001100 |                         00101100
+               SET_TIME9 |                          0001101 |                         00101101
+              SET_TIME10 |                          0001110 |                         00101110
+              SET_TIME11 |                          0001111 |                         00101111
+              SET_TIME12 |                          0010000 |                         00110000
+              SET_TIME13 |                          0010001 |                         00110001
+              SET_TIME14 |                          0010010 |                         00110010
+              SET_TIME15 |                          0010011 |                         00110011
+              SET_TIME16 |                          0010100 |                         00110100
+              SET_TIME17 |                          0010101 |                         00110101
+              SET_TIME18 |                          0010110 |                         00110110
+              SET_TIME19 |                          0010111 |                         00110111
+              SET_TIME20 |                          0011000 |                         00111000
+              SET_TIME21 |                          0011001 |                         00111001
+              SET_TIME22 |                          0011010 |                         00111010
+              SET_TIME23 |                          0011011 |                         00111011
+              SET_TIME24 |                          0011100 |                         00111100
+              SET_TIME25 |                          0011101 |                         00111101
+              SET_TIME26 |                          0011110 |                         00111110
+              SET_TIME27 |                          0011111 |                         00111111
+              SET_TIME28 |                          0100000 |                         01000000
+              SET_TIME29 |                          0100001 |                         01000001
+              SET_TIME30 |                          0100010 |                         01000010
+              SET_TIME31 |                          0100011 |                         01000011
+              SET_TIME32 |                          0100100 |                         01000100
+              SET_TIME33 |                          0100101 |                         01000101
+              SET_TIME34 |                          0100110 |                         01000110
+              SET_TIME35 |                          0100111 |                         01000111
+              SET_TIME36 |                          0101000 |                         01001000
+               NEW_LINE2 |                          0101001 |                         01001110
+                  iSTATE |                          0101010 |                         01100100
+                    HUM1 |                          0101011 |                         00001011
+                    HUM2 |                          0101100 |                         00001100
+                    HUM3 |                          0101101 |                         00001101
+                    HUM4 |                          0101110 |                         00001110
+                    HUM5 |                          0101111 |                         00001111
+                    HUM6 |                          0110000 |                         00010000
+                    HUM7 |                          0110001 |                         00010001
+                    HUM8 |                          0110010 |                         00010010
+                  COLON1 |                          0110011 |                         00011110
+                  DATA_1 |                          0110100 |                         00000001
+                  DATA_2 |                          0110101 |                         00000010
+                  POINT0 |                          0110110 |                         00001001
+                  DATA_3 |                          0110111 |                         00000011
+                  DATA_4 |                          0111000 |                         00000100
+                     PER |                          0111001 |                         00100011
+                   COMMA |                          0111010 |                         00100000
+                   SPACE |                          0111011 |                         00100100
+                    TEM1 |                          0111100 |                         00010011
+                    TEM2 |                          0111101 |                         00010100
+                    TEM3 |                          0111110 |                         00010101
+                    TEM4 |                          0111111 |                         00010110
+                    TEM5 |                          1000000 |                         00010111
+                    TEM6 |                          1000001 |                         00011000
+                    TEM7 |                          1000010 |                         00011001
+                    TEM8 |                          1000011 |                         00011010
+                    TEM9 |                          1000100 |                         00011011
+                   TEM10 |                          1000101 |                         00011100
+                   TEM11 |                          1000110 |                         00011101
+                  COLON2 |                          1000111 |                         00011111
+                  DATA_5 |                          1001000 |                         00000101
+                  DATA_6 |                          1001001 |                         00000110
+                  POINT1 |                          1001010 |                         00001010
+                  DATA_7 |                          1001011 |                         00000111
+                  DATA_8 |                          1001100 |                         00001000
+                    CEL1 |                          1001101 |                         00100001
+                    CEL2 |                          1001110 |                         00100010
+               NEW_LINE1 |                          1001111 |                         01001101
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'one-hot' in module 'fifo_data'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'fifo_data'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -343,7 +427,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'reciever'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:18 . Memory (MB): peak = 1265.426 ; gain = 160.531
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1265.555 ; gain = 157.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -387,9 +471,11 @@ Detailed RTL Component Info :
 	   2 Input   15 Bit        Muxes := 5     
 	   8 Input   15 Bit        Muxes := 1     
 	   2 Input    8 Bit        Muxes := 11    
-	  37 Input    8 Bit        Muxes := 1     
+	  80 Input    8 Bit        Muxes := 1     
 	   4 Input    8 Bit        Muxes := 1     
 	   2 Input    7 Bit        Muxes := 7     
+	  79 Input    7 Bit        Muxes := 1     
+	   3 Input    7 Bit        Muxes := 1     
 	   8 Input    6 Bit        Muxes := 1     
 	   2 Input    6 Bit        Muxes := 10    
 	   2 Input    5 Bit        Muxes := 5     
@@ -403,11 +489,11 @@ Detailed RTL Component Info :
 	   4 Input    3 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 3     
 	   4 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 41    
-	   3 Input    1 Bit        Muxes := 29    
+	   2 Input    1 Bit        Muxes := 42    
+	   3 Input    1 Bit        Muxes := 30    
 	   4 Input    1 Bit        Muxes := 250   
 	   8 Input    1 Bit        Muxes := 12    
-	  37 Input    1 Bit        Muxes := 3     
+	  80 Input    1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -424,7 +510,7 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:36 . Memory (MB): peak = 1265.426 ; gain = 160.531
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:33 . Memory (MB): peak = 1399.617 ; gain = 291.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -445,13 +531,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:40 . Memory (MB): peak = 1265.426 ; gain = 160.531
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:37 . Memory (MB): peak = 1399.617 ; gain = 291.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:43 . Memory (MB): peak = 1351.727 ; gain = 246.832
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:41 . Memory (MB): peak = 1403.125 ; gain = 294.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -471,7 +557,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:45 . Memory (MB): peak = 1352.785 ; gain = 247.891
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:42 . Memory (MB): peak = 1403.125 ; gain = 294.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -489,37 +575,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:47 . Memory (MB): peak = 1352.785 ; gain = 247.891
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:45 . Memory (MB): peak = 1403.125 ; gain = 294.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:47 . Memory (MB): peak = 1352.785 ; gain = 247.891
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:45 . Memory (MB): peak = 1403.125 ; gain = 294.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:47 . Memory (MB): peak = 1352.785 ; gain = 247.891
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:45 . Memory (MB): peak = 1403.125 ; gain = 294.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:47 . Memory (MB): peak = 1352.785 ; gain = 247.891
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:45 . Memory (MB): peak = 1403.125 ; gain = 294.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:47 . Memory (MB): peak = 1352.785 ; gain = 247.891
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:45 . Memory (MB): peak = 1403.125 ; gain = 294.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:47 . Memory (MB): peak = 1352.785 ; gain = 247.891
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:45 . Memory (MB): peak = 1403.125 ; gain = 294.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -538,19 +624,19 @@ Report Cell Usage:
 +------+---------+------+
 |1     |ila      |     1|
 |2     |BUFG     |     2|
-|3     |CARRY4   |    78|
-|4     |LUT1     |    22|
-|5     |LUT2     |   326|
-|6     |LUT3     |    95|
-|7     |LUT4     |   196|
-|8     |LUT5     |   145|
-|9     |LUT6     |  1102|
-|10    |MUXF7    |   254|
-|11    |MUXF8    |   126|
+|3     |CARRY4   |    82|
+|4     |LUT1     |    21|
+|5     |LUT2     |   348|
+|6     |LUT3     |   115|
+|7     |LUT4     |   209|
+|8     |LUT5     |   176|
+|9     |LUT6     |  1170|
+|10    |MUXF7    |   271|
+|11    |MUXF8    |   133|
 |12    |RAM64M   |     8|
 |13    |RAM64X1D |     4|
-|14    |FDCE     |   476|
-|15    |FDPE     |     4|
+|14    |FDCE     |   455|
+|15    |FDPE     |     3|
 |16    |FDRE     |  2059|
 |17    |LD       |     2|
 |18    |IBUF     |     9|
@@ -558,18 +644,18 @@ Report Cell Usage:
 |20    |OBUF     |    17|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:47 . Memory (MB): peak = 1352.785 ; gain = 247.891
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:45 . Memory (MB): peak = 1403.125 ; gain = 294.609
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:44 . Memory (MB): peak = 1352.785 ; gain = 136.102
-Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:47 . Memory (MB): peak = 1352.785 ; gain = 247.891
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:43 . Memory (MB): peak = 1403.125 ; gain = 183.746
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:45 . Memory (MB): peak = 1403.125 ; gain = 294.609
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1364.668 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 473 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1412.102 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 501 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 2 inverter(s) to 2 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1364.668 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1412.102 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 15 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
@@ -580,9 +666,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 117 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:53 . Memory (MB): peak = 1364.668 ; gain = 259.773
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:50 . Memory (MB): peak = 1412.102 ; gain = 303.586
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.collectionResultDisplayLimit
 INFO: [Common 17-1381] The checkpoint 'D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/top_dht11.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_dht11_utilization_synth.rpt -pb top_dht11_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Nov 29 17:30:11 2024...
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 29 18:34:36 2024...

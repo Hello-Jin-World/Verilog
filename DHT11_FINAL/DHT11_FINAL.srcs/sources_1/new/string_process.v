@@ -124,11 +124,11 @@ module string_process (
         set_sec_next  = set_sec_reg;
         set_msec_next = set_msec_reg;
 
-        if (a[0] == "r" && a[1] == "u" && a[2] == "n") begin
+        if (a[0] == "r" && a[1] == "u" && a[2] == "n" && a[3] == "\n") begin
             result_next = RUN;
         end else if (a[0] == "s" && a[1] == "t" && a[2] == "o" && a[3] == "p" && a[4] == "\n") begin
             result_next = STOP;
-        end else if (a[0] == "c" && a[1] == "l" && a[2] == "e" && a[3] == "a" && a[4] == "r" && a[4] == "\n") begin
+        end else if (a[0] == "c" && a[1] == "l" && a[2] == "e" && a[3] == "a" && a[4] == "r" && a[5] == "\n") begin
             result_next = CLEAR;
         end else if (a[0] == "m" && a[1] == "o" && a[2] == "d" && a[3] == "e" && a[4] == "\n") begin
             result_next = MODE;
@@ -147,78 +147,6 @@ module string_process (
         end
     end
 
-    localparam SETTING_WAIT = 0, START_SETTING = 1;
-
     // TIME SETTING MODE
 endmodule
 
-
-module time_set_massage (
-    input        clk,
-    input        reset,
-    input  [3:0] string_command,
-    input  [7:0] set_hour,
-    input  [7:0] set_min,
-    input  [7:0] set_sec,
-    input  [7:0] set_msec,
-    output       fifo_en,
-    output [7:0] message
-);
-
-    reg [5:0] state_reg, state_next;
-    reg [7:0] message_reg, message_next;
-    reg fifo_en_reg, fifo_en_next;
-
-    assign message = message_reg;
-    assign fifo_en = fifo_en_reg;
-
-    wire [3:0]
-        set_hour1,
-        set_hour10,
-        set_min1,
-        set_min10,
-        set_sec1,
-        set_sec10,
-        set_msec1,
-        set_msec10;
-
-    digit_splitter set_hour_spl (
-        .digit   (set_hour),
-        .digit_1 (set_hour1),
-        .digit_10(set_hour10)
-    );
-    digit_splitter set_min_spl (
-        .digit   (set_min),
-        .digit_1 (set_min1),
-        .digit_10(set_min10)
-    );
-    digit_splitter set_sec_spl (
-        .digit   (set_sec),
-        .digit_1 (set_sec1),
-        .digit_10(set_sec10)
-    );
-    digit_splitter set_msec_spl (
-        .digit   (set_msec),
-        .digit_1 (set_msec1),
-        .digit_10(set_msec10)
-    );
-
-    always @(posedge clk, posedge reset) begin
-        if (reset) begin
-            state_reg     <= 0;
-            message_reg <= 0;
-            fifo_en_reg   <= 0;
-        end else begin
-            state_reg     <= state_next;
-            message_reg <= message_next;
-            fifo_en_reg   <= fifo_en_next;
-        end
-    end
-
-    always @(*) begin
-        case (state_reg)
-            : 
-        endcase
-    end
-
-endmodule

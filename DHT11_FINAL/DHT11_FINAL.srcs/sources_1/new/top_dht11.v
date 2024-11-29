@@ -155,17 +155,21 @@ module top_dht11 (
     );
 
     fifo_data U_fifo_data (
-        .clk      (clk),
-        .reset    (reset),
-        .wr_en    (wr_en),
-        .hum_int  (hum_int),
-        .hum_dec  (hum_dec),
-        .tem_int  (tem_int),
-        .tem_dec  (tem_dec),
-        .fifo_en  (fifo_en),
-        .fifo_data(fifo_data)
+        .clk           (clk),
+        .reset         (reset),
+        .wr_en         (wr_en),
+        .hum_int       (hum_int),
+        .hum_dec       (hum_dec),
+        .tem_int       (tem_int),
+        .tem_dec       (tem_dec),
+        .string_command(string_command),
+        .set_hour      (set_hour),
+        .set_min       (set_min),
+        .set_sec       (set_sec),
+        .set_msec      (set_msec),
+        .fifo_en       (fifo_en),
+        .fifo_data     (fifo_data)
     );
-
 
     fifo U_Tx_fifo (
         .clk  (clk),

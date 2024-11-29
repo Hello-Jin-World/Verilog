@@ -28,6 +28,11 @@ module fifo_data (
     input  [7:0] hum_dec,
     input  [7:0] tem_int,
     input  [7:0] tem_dec,
+    input  [3:0] string_command,
+    input  [7:0] set_hour,
+    input  [7:0] set_min,
+    input  [7:0] set_sec,
+    input  [7:0] set_msec,
     output       fifo_en,
     output [7:0] fifo_data
 );
@@ -63,17 +68,91 @@ module fifo_data (
         .digit_10(tem_dec10)
     );
 
+    wire [3:0]
+        set_hour1,
+        set_hour10,
+        set_min1,
+        set_min10,
+        set_sec1,
+        set_sec10,
+        set_msec1,
+        set_msec10;
 
-    reg [5:0] state_reg, state_next;
+    digit_splitter set_hour_spl (
+        .digit   (set_hour),
+        .digit_1 (set_hour1),
+        .digit_10(set_hour10)
+    );
+    digit_splitter set_min_spl (
+        .digit   (set_min),
+        .digit_1 (set_min1),
+        .digit_10(set_min10)
+    );
+    digit_splitter set_sec_spl (
+        .digit   (set_sec),
+        .digit_1 (set_sec1),
+        .digit_10(set_sec10)
+    );
+    digit_splitter set_msec_spl (
+        .digit   (set_msec),
+        .digit_1 (set_msec1),
+        .digit_10(set_msec10)
+    );
+
+    reg [7:0] state_reg, state_next;
     reg [7:0] fifo_data_reg, fifo_data_next;
     reg fifo_en_reg, fifo_en_next;
-    reg [5:0] counter_reg, counter_next;
 
     localparam IDLE = 0, DATA_1 = 1, DATA_2 = 2, DATA_3 = 3, 
     DATA_4 = 4, DATA_5 = 5, DATA_6 = 6, DATA_7 = 7, DATA_8 = 8, 
     POINT0 = 9, POINT1 = 10, HUM1 = 11, HUM2 = 12, HUM3 = 13, HUM4 = 14, HUM5 = 15, HUM6 = 16, HUM7 = 17, HUM8 = 18,
     TEM1 = 19, TEM2 = 20, TEM3 = 21, TEM4 = 22, TEM5 = 23, TEM6 = 24, TEM7 = 25, TEM8 = 26, TEM9 = 27,
     TEM10 = 28, TEM11 = 29, COLON1 = 30, COLON2 = 31, COMMA = 32, CEL1 = 33, CEL2 = 34, PER = 35, SPACE = 36;
+
+    localparam 
+           SET_TIME1 = 37, 
+           SET_TIME2 = 38, 
+           SET_TIME3 = 39, 
+           SET_TIME4 = 40, 
+           SET_TIME5 = 41, 
+           SET_TIME6 = 42, 
+           SET_TIME7 = 43, 
+           SET_TIME8 = 44, 
+           SET_TIME9 = 45, 
+           SET_TIME10 = 46, 
+           SET_TIME11 = 47, 
+           SET_TIME12 = 48, 
+           SET_TIME13 = 49, 
+           SET_TIME14 = 50, 
+           SET_TIME15 = 51, 
+           SET_TIME16 = 52, 
+           SET_TIME17 = 53, 
+           SET_TIME18 = 54, 
+           SET_TIME19 = 55, 
+           SET_TIME20 = 56, 
+           SET_TIME21 = 57, 
+           SET_TIME22 = 58, 
+           SET_TIME23 = 59, 
+           SET_TIME24 = 60, 
+           SET_TIME25 = 61, 
+           SET_TIME26 = 62, 
+           SET_TIME27 = 63, 
+           SET_TIME28 = 64, 
+           SET_TIME29 = 65, 
+           SET_TIME30 = 66, 
+           SET_TIME31 = 67, 
+           SET_TIME32 = 68, 
+           SET_TIME33 = 69, 
+           SET_TIME34 = 70, 
+           SET_TIME35 = 71, 
+           SET_TIME36 = 72, 
+           SET_MESSAGE1 = 73,
+           SET_MESSAGE2 = 74,
+           SET_MESSAGE3 = 75,
+           SET_MESSAGE4 = 76,
+           NEW_LINE1 = 77,
+           NEW_LINE2 = 78,
+           SET_TIME_ERROR1 = 100;
 
     assign fifo_en   = fifo_en_reg;
     assign fifo_data = fifo_data_reg;
@@ -83,16 +162,10 @@ module fifo_data (
             state_reg     <= 0;
             fifo_data_reg <= 0;
             fifo_en_reg   <= 0;
-            counter_reg   <= 0;
         end else begin
             state_reg     <= state_next;
             fifo_data_reg <= fifo_data_next;
             fifo_en_reg   <= fifo_en_next;
-            if (counter_reg == 200 - 1) begin
-                counter_reg <= 0;
-            end else begin
-                counter_reg <= counter_reg + 1;
-            end
         end
     end
 
@@ -105,6 +178,11 @@ module fifo_data (
                 fifo_en_next = 1'b0;
                 if (wr_en) begin
                     state_next = HUM1;
+                end
+                if (string_command == 5) begin
+                    state_next = SET_MESSAGE1;
+                end else if (string_command == 6) begin
+                    state_next = SET_TIME_ERROR1;
                 end
             end
             HUM1: begin
@@ -176,12 +254,8 @@ module fifo_data (
                 fifo_data_next = ",";
             end
             SPACE: begin
-                // fifo_en_next = 1'b0;
-                // if (counter_reg == 100 - 1) begin
                 state_next = TEM1;
                 fifo_data_next = 8'h20;
-                // fifo_en_next = 1'b1;
-                // end
             end
 
             TEM1: begin
@@ -261,10 +335,183 @@ module fifo_data (
                 fifo_data_next = "'";
             end
             CEL2: begin
-                state_next     = IDLE;
+                state_next     = NEW_LINE1;
                 fifo_data_next = "C";
             end
+            NEW_LINE1: begin
+                state_next     = IDLE;
+                fifo_data_next = "\n";
+            end
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            SET_MESSAGE1: begin
+                state_next = SET_MESSAGE2;
+                fifo_en_next = 1'b1;
+                fifo_data_next = "S";
+            end
+            SET_MESSAGE2: begin
+                state_next = SET_MESSAGE3;
+                fifo_data_next = "E";
+            end
+            SET_MESSAGE3: begin
+                state_next = SET_MESSAGE4;
+                fifo_data_next = "T";
+            end
+            SET_MESSAGE4: begin
+                state_next = SET_TIME1;
+                fifo_data_next = " ";
+            end
+            SET_TIME1: begin
+                state_next = SET_TIME2;
+                fifo_data_next = "H";
+            end
+            SET_TIME2: begin
+                state_next = SET_TIME3;
+                fifo_data_next = "O";
+            end
+            SET_TIME3: begin
+                state_next = SET_TIME4;
+                fifo_data_next = "U";
+            end
+            SET_TIME4: begin
+                state_next = SET_TIME5;
+                fifo_data_next = "R";
+            end
+            SET_TIME5: begin
+                state_next = SET_TIME6;
+                fifo_data_next = ":";
+            end
+            SET_TIME6: begin
+                state_next = SET_TIME7;
+                fifo_data_next = set_hour10 + "0";
+            end
+            SET_TIME7: begin
+                state_next = SET_TIME8;
+                fifo_data_next = set_hour1 + "0";
+            end
+            SET_TIME8: begin
+                state_next = SET_TIME9;
+                fifo_data_next = " ";
+            end
+            SET_TIME9: begin
+                state_next = SET_TIME10;
+                fifo_data_next = "M";
+            end
+            SET_TIME10: begin
+                state_next = SET_TIME11;
+                fifo_data_next = "I";
+            end
+            SET_TIME11: begin
+                state_next = SET_TIME12;
+                fifo_data_next = "N";
+            end
+            SET_TIME12: begin
+                state_next = SET_TIME13;
+                fifo_data_next = "U";
+            end
+            SET_TIME13: begin
+                state_next = SET_TIME14;
+                fifo_data_next = "T";
+            end
+            SET_TIME14: begin
+                state_next = SET_TIME15;
+                fifo_data_next = "E";
+            end
+            SET_TIME15: begin
+                state_next = SET_TIME16;
+                fifo_data_next = ":";
+            end
+            SET_TIME16: begin
+                state_next = SET_TIME17;
+                fifo_data_next = set_min10 + "0";
+            end
+            SET_TIME17: begin
+                state_next = SET_TIME18;
+                fifo_data_next = set_min1 + "0";
+            end
+            SET_TIME18: begin
+                state_next = SET_TIME19;
+                fifo_data_next = " ";
+            end
+            SET_TIME19: begin
+                state_next = SET_TIME20;
+                fifo_data_next = "S";
+            end
+            SET_TIME20: begin
+                state_next = SET_TIME21;
+                fifo_data_next = "E";
+            end
+            SET_TIME21: begin
+                state_next = SET_TIME22;
+                fifo_data_next = "C";
+            end
+            SET_TIME22: begin
+                state_next = SET_TIME23;
+                fifo_data_next = "O";
+            end
+            SET_TIME23: begin
+                state_next = SET_TIME24;
+                fifo_data_next = "N";
+            end
+            SET_TIME24: begin
+                state_next = SET_TIME25;
+                fifo_data_next = "D";
+            end
+            SET_TIME25: begin
+                state_next = SET_TIME26;
+                fifo_data_next = ":";
+            end
+            SET_TIME26: begin
+                state_next = SET_TIME27;
+                fifo_data_next = set_sec10 + "0";
+            end
+            SET_TIME27: begin
+                state_next = SET_TIME28;
+                fifo_data_next = set_sec1 + "0";
+            end
+            SET_TIME28: begin
+                state_next = SET_TIME29;
+                fifo_data_next = " ";
+            end
+            SET_TIME29: begin
+                state_next = SET_TIME30;
+                fifo_data_next = "M";
+            end
+            SET_TIME30: begin
+                state_next = SET_TIME31;
+                fifo_data_next = "_";
+            end
+            SET_TIME31: begin
+                state_next = SET_TIME32;
+                fifo_data_next = "S";
+            end
+            SET_TIME32: begin
+                state_next = SET_TIME33;
+                fifo_data_next = "E";
+            end
+            SET_TIME33: begin
+                state_next = SET_TIME34;
+                fifo_data_next = "C";
+            end
+            SET_TIME34: begin
+                state_next = SET_TIME35;
+                fifo_data_next = ":";
+            end
+            SET_TIME35: begin
+                state_next = SET_TIME36;
+                fifo_data_next = set_msec10 + "0";
+            end
+            SET_TIME36: begin
+                state_next = NEW_LINE2;
+                fifo_data_next = set_msec1 + "0";
+            end
+            NEW_LINE2: begin
+                state_next = IDLE;
+                fifo_data_next = "\n";
+            end
+
         endcase
     end
+
 endmodule
 
