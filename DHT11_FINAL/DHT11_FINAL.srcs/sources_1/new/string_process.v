@@ -41,7 +41,7 @@ module string_process (
         .probe4(counter_reg)
     );
 
-    localparam IDLE = 0, RUN = 1, STOP = 2, CLEAR = 3, MODE = 4, SET_TIME = 5;
+    localparam IDLE = 0, RUN = 1, STOP = 2, CLEAR = 3, MODE = 4, SET_TIME = 5, TIME_SET_ERROR = 6;
 
     integer i;
 
@@ -86,6 +86,26 @@ module string_process (
                     a[2] <= 0;
                     a[3] <= 0;
                     a[4] <= 0;
+                    a[5] <= 0;
+                    a[6] <= 0;
+                    a[7] <= 0;
+                    a[8] <= 0;
+                    a[9] <= 0;
+                    a[10] <= 0;
+                    a[11] <= 0;
+                    a[12] <= 0;
+                    a[13] <= 0;
+                    a[14] <= 0;
+                    a[15] <= 0;
+                    a[16] <= 0;
+                    a[17] <= 0;
+                    a[18] <= 0;
+                    a[19] <= 0;
+                    a[20] <= 0;
+                    a[21] <= 0;
+                    a[22] <= 0;
+                    a[23] <= 0;
+                    a[24] <= 0;
                     // for (i = 0; i < 256; i = i + 1) begin
                     //     a[i] <= 0;
                     // end
@@ -106,18 +126,22 @@ module string_process (
 
         if (a[0] == "r" && a[1] == "u" && a[2] == "n") begin
             result_next = RUN;
-        end else if (a[0] == "s" && a[1] == "t" && a[2] == "o" && a[3] == "p") begin
+        end else if (a[0] == "s" && a[1] == "t" && a[2] == "o" && a[3] == "p" && a[4] == "\n") begin
             result_next = STOP;
-        end else if (a[0] == "c" && a[1] == "l" && a[2] == "e" && a[3] == "a" && a[4] == "r") begin
+        end else if (a[0] == "c" && a[1] == "l" && a[2] == "e" && a[3] == "a" && a[4] == "r" && a[4] == "\n") begin
             result_next = CLEAR;
-        end else if (a[0] == "m" && a[1] == "o" && a[2] == "d" && a[3] == "e") begin
+        end else if (a[0] == "m" && a[1] == "o" && a[2] == "d" && a[3] == "e" && a[4] == "\n") begin
             result_next = MODE;
-        end else if (a[0] == "t" && a[1] == "i" && a[2] == "m" && a[3] == "e" && a[4] == " " && a[5] == "s" && a[6] == "e" && a[7] == "t" && a[8] == "t" && a[9] == "i" && a[10] == "n" && a[11] == "g" && a[12] == " ") begin
-            result_next   = SET_TIME;
-            set_hour_next = (a[13] - "0") * 10 + (a[14] - "0");
-            set_min_next  = (a[16] - "0") * 10 + (a[17] - "0");
-            set_sec_next  = (a[19] - "0") * 10 + (a[20] - "0");
-            set_msec_next = (a[22] - "0") * 10 + (a[23] - "0");
+        end else if (a[0] == "t" && a[1] == "i" && a[2] == "m" && a[3] == "e" && a[4] == " " && a[5] == "s" && a[6] == "e" && a[7] == "t" && a[8] == "t" && a[9] == "i" && a[10] == "n" && a[11] == "g" && a[12] == " " && a[24] == "\n") begin
+            if (((a[13] - "0") * 10 + (a[14] - "0") > 24) || ((a[16] - "0") * 10 + (a[17] - "0") > 60) || ((a[19] - "0") * 10 + (a[20] - "0") > 60) || ((a[22] - "0") * 10 + (a[23] - "0") > 99)) begin
+                result_next = TIME_SET_ERROR;
+            end else begin
+                set_hour_next = (a[13] - "0") * 10 + (a[14] - "0");
+                set_min_next  = (a[16] - "0") * 10 + (a[17] - "0");
+                set_sec_next  = (a[19] - "0") * 10 + (a[20] - "0");
+                set_msec_next = (a[22] - "0") * 10 + (a[23] - "0");
+                result_next   = SET_TIME;
+            end
         end else begin
             result_next = IDLE;
         end
@@ -126,4 +150,75 @@ module string_process (
     localparam SETTING_WAIT = 0, START_SETTING = 1;
 
     // TIME SETTING MODE
+endmodule
+
+
+module time_set_massage (
+    input        clk,
+    input        reset,
+    input  [3:0] string_command,
+    input  [7:0] set_hour,
+    input  [7:0] set_min,
+    input  [7:0] set_sec,
+    input  [7:0] set_msec,
+    output       fifo_en,
+    output [7:0] message
+);
+
+    reg [5:0] state_reg, state_next;
+    reg [7:0] message_reg, message_next;
+    reg fifo_en_reg, fifo_en_next;
+
+    assign message = message_reg;
+    assign fifo_en = fifo_en_reg;
+
+    wire [3:0]
+        set_hour1,
+        set_hour10,
+        set_min1,
+        set_min10,
+        set_sec1,
+        set_sec10,
+        set_msec1,
+        set_msec10;
+
+    digit_splitter set_hour_spl (
+        .digit   (set_hour),
+        .digit_1 (set_hour1),
+        .digit_10(set_hour10)
+    );
+    digit_splitter set_min_spl (
+        .digit   (set_min),
+        .digit_1 (set_min1),
+        .digit_10(set_min10)
+    );
+    digit_splitter set_sec_spl (
+        .digit   (set_sec),
+        .digit_1 (set_sec1),
+        .digit_10(set_sec10)
+    );
+    digit_splitter set_msec_spl (
+        .digit   (set_msec),
+        .digit_1 (set_msec1),
+        .digit_10(set_msec10)
+    );
+
+    always @(posedge clk, posedge reset) begin
+        if (reset) begin
+            state_reg     <= 0;
+            message_reg <= 0;
+            fifo_en_reg   <= 0;
+        end else begin
+            state_reg     <= state_next;
+            message_reg <= message_next;
+            fifo_en_reg   <= fifo_en_next;
+        end
+    end
+
+    always @(*) begin
+        case (state_reg)
+            : 
+        endcase
+    end
+
 endmodule

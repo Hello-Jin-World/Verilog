@@ -104,7 +104,7 @@ module fnd_controller (
     mux_8x1 U_min_hour_mux_8x1 (
         .sel(w_fndsel),
         .x0 (w_min_digit_1),
-        .x1 (w_mmin_digit_10),
+        .x1 (w_min_digit_10),
         .x2 (w_hour_digit_1),
         .x3 (w_hour_digit_10),
         .x4 (4'hf),

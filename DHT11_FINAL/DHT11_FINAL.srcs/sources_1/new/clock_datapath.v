@@ -49,47 +49,55 @@ module clock_datapath (
         .CLOCK_TIME_MAX (100),
         .CLOCK_BIT_WIDTH(7)
     ) U_clock_counter_msec (
-        .clk(clk),
-        .reset(reset),
-        .i_tick(w_msec_tick),
-        .o_clocktime(msec),
-        .o_tick(w_tick_for_sec)
+        .clk           (clk),
+        .reset         (reset),
+        .i_tick        (w_msec_tick),
+        .string_command(string_command),
+        .set_time      (set_msec),
+        .o_clocktime   (msec),
+        .o_tick        (w_tick_for_sec)
     );
 
     clock_counter_time #(
         .CLOCK_TIME_MAX (60),
         .CLOCK_BIT_WIDTH(7)
     ) U_clock_counter_sec (
-        .clk(clk),
-        .reset(reset),
-        .button(sec_btn),
-        .i_tick(w_tick_for_sec),
-        .o_clocktime(sec),
-        .o_tick(w_tick_for_min)
+        .clk           (clk),
+        .reset         (reset),
+        .button        (sec_btn),
+        .i_tick        (w_tick_for_sec),
+        .string_command(string_command),
+        .set_time      (set_sec),
+        .o_clocktime   (sec),
+        .o_tick        (w_tick_for_min)
     );
 
     clock_counter_time #(
         .CLOCK_TIME_MAX (60),
         .CLOCK_BIT_WIDTH(7)
     ) U_clock_counter_min (
-        .clk(clk),
-        .reset(reset),
-        .button(min_btn),
-        .i_tick(w_tick_for_min),
-        .o_clocktime(min),
-        .o_tick(w_tick_for_hour)
+        .clk           (clk),
+        .reset         (reset),
+        .button        (min_btn),
+        .i_tick        (w_tick_for_min),
+        .string_command(string_command),
+        .set_time      (set_min),
+        .o_clocktime   (min),
+        .o_tick        (w_tick_for_hour)
     );
 
     clock_counter_time #(
         .CLOCK_TIME_MAX (24),
         .CLOCK_BIT_WIDTH(7)
     ) U_clock_counter_hour (
-        .clk(clk),
-        .reset(reset),
-        .button(hour_btn),
-        .i_tick(w_tick_for_hour),
-        .o_clocktime(hour),
-        .o_tick()
+        .clk           (clk),
+        .reset         (reset),
+        .button        (hour_btn),
+        .i_tick        (w_tick_for_hour),
+        .string_command(string_command),
+        .set_time      (set_hour),
+        .o_clocktime   (hour),
+        .o_tick        ()
     );
 
 endmodule

@@ -60,10 +60,10 @@
       <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
     </Object>
     <Object name="U_string_process/U_ila_0" gui_info="">
-      <Properties Property="CONTROL.DATA_DEPTH" value="128"/>
+      <Properties Property="CONTROL.DATA_DEPTH" value="32"/>
       <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
-      <Properties Property="CONTROL.TRIGGER_POSITION" value="64"/>
-      <Properties Property="CONTROL.WINDOW_COUNT" value="4"/>
+      <Properties Property="CONTROL.TRIGGER_POSITION" value="15"/>
+      <Properties Property="CONTROL.WINDOW_COUNT" value="25"/>
       <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
     </Object>
     <Object name="U_uart/U_ila_0" gui_info="">
