@@ -48,7 +48,7 @@ class transaction;
 
     constraint range {
         set_up_time dist {
-            27 :/ 50,
+            26 :/ 50,
             70 :/ 50
         };
     }
@@ -137,24 +137,151 @@ class driver;
         tick(60);
         dht11_intf.out_data = 1'b1;
         tick(75);
-        for (int i = 41; i > 0; i--) begin
+
+        ////////////////////////////////////////////////////////////
+        dht11_intf.out_data = 1'b0;
+        tick(50);
+        dht11_intf.out_data = 1'b1;
+        tick(26);
+        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
+
+        for (int i = 0; i < 7; i++) begin
             trans.randomize();
             dht11_intf.out_data = 1'b0;
             tick(50);
             dht11_intf.out_data = 1'b1;
             tick(trans.set_up_time);
-            #1;
-            if (i > 1) begin
-                if (trans.set_up_time > 40) begin
-                    trans.sw_40bit = {trans.sw_40bit[38:0], 1'b1};
-                end else begin
-                    trans.sw_40bit = {trans.sw_40bit[38:0], 1'b0};
-                end
-            end
             #2;
-            // dht11_intf.rand_hum_tem[i-2] = trans.set_up_time;
+            if (trans.set_up_time > 40) begin
+                trans.sw_40bit = {
+                    trans.sw_40bit[38:8], 1'b1, trans.sw_40bit[7:0]
+                };
+            end else begin
+                trans.sw_40bit = {
+                    trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]
+                };
+            end
+
             $display("%d", trans.set_up_time);
         end
+        ////////////////////////////////////////////////////////////
+        dht11_intf.out_data = 1'b0;
+        tick(50);
+        dht11_intf.out_data = 1'b1;
+        tick(26);
+        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
+
+        for (int i = 0; i < 7; i++) begin
+            trans.randomize();
+            dht11_intf.out_data = 1'b0;
+            tick(50);
+            dht11_intf.out_data = 1'b1;
+            tick(trans.set_up_time);
+            #2;
+            if (trans.set_up_time > 40) begin
+                trans.sw_40bit = {
+                    trans.sw_40bit[38:8], 1'b1, trans.sw_40bit[7:0]
+                };
+            end else begin
+                trans.sw_40bit = {
+                    trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]
+                };
+            end
+
+            $display("%d", trans.set_up_time);
+        end
+        ////////////////////////////////////////////////////////////
+        dht11_intf.out_data = 1'b0;
+        tick(50);
+        dht11_intf.out_data = 1'b1;
+        tick(26);
+        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
+
+        for (int i = 0; i < 7; i++) begin
+            trans.randomize();
+            dht11_intf.out_data = 1'b0;
+            tick(50);
+            dht11_intf.out_data = 1'b1;
+            tick(trans.set_up_time);
+            #2;
+            if (trans.set_up_time > 40) begin
+                trans.sw_40bit = {
+                    trans.sw_40bit[38:8], 1'b1, trans.sw_40bit[7:0]
+                };
+            end else begin
+                trans.sw_40bit = {
+                    trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]
+                };
+            end
+
+            $display("%d", trans.set_up_time);
+        end
+        ////////////////////////////////////////////////////////////
+        dht11_intf.out_data = 1'b0;
+        tick(50);
+        dht11_intf.out_data = 1'b1;
+        tick(26);
+        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
+
+        for (int i = 0; i < 7; i++) begin
+            trans.randomize();
+            dht11_intf.out_data = 1'b0;
+            tick(50);
+            dht11_intf.out_data = 1'b1;
+            tick(trans.set_up_time);
+            #2;
+            if (trans.set_up_time > 40) begin
+                trans.sw_40bit = {
+                    trans.sw_40bit[38:8], 1'b1, trans.sw_40bit[7:0]
+                };
+            end else begin
+                trans.sw_40bit = {
+                    trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]
+                };
+            end
+
+            $display("%d", trans.set_up_time);
+        end
+        ///////////////////////////////////////////////////////////
+        trans.sw_40bit[7:0] = trans.sw_40bit[39:32] + trans.sw_40bit[31:24] + trans.sw_40bit[23:16] + trans.sw_40bit[15:8];
+        for (int i = 0; i < 8; i++) begin
+            if (trans.sw_40bit[7-i] == 1) begin
+                dht11_intf.out_data = 1'b0;
+                tick(50);
+                dht11_intf.out_data = 1'b1;
+                tick(70);
+            end else begin
+                dht11_intf.out_data = 1'b0;
+                tick(50);
+                dht11_intf.out_data = 1'b1;
+                tick(27);
+            end
+        end
+
+
+        dht11_intf.out_data = 1'b0;
+        tick(50);
+        dht11_intf.out_data = 1'b1;
+        tick(27);
+
+        // for (int i = 41; i > 0; i--) begin
+        //     trans.randomize();
+        //     dht11_intf.out_data = 1'b0;
+        //     tick(50);
+        //     dht11_intf.out_data = 1'b1;
+        //     tick(trans.set_up_time);
+        //     #1;
+        //     if (i > 1) begin
+        //         if (trans.set_up_time > 40) begin
+        //             trans.sw_40bit = {trans.sw_40bit[38:0], 1'b1};
+        //         end else begin
+        //             trans.sw_40bit = {trans.sw_40bit[38:0], 1'b0};
+        //         end
+        //     end
+        //     #2;
+        //     // dht11_intf.rand_hum_tem[i-2] = trans.set_up_time;
+        //     $display("%d", trans.set_up_time);
+        // end
         // tick(60);
     endtask  //start_dht11
 

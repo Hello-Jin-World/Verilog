@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/top_dht11.tcl"
+  variable script "D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/top_dht11.tcl"
   variable category "vivado_synth"
 }
 
@@ -71,7 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param tcl.collectionResultDisplayLimit 0
-set_param chipscope.maxJobs 4
+set_param chipscope.maxJobs 1
 set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
@@ -79,32 +79,39 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.cache/wt [current_project]
-set_property parent.project_path D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.xpr [current_project]
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
+set_property webtalk.parent_dir D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.cache/wt [current_project]
+set_property parent.project_path D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.xpr [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property board_part_repo_paths {C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
-set_property ip_output_repo d:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.cache/ip [current_project]
+set_property ip_output_repo d:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v
-  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/button_detector.v
-  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_controlunit.v
-  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v
-  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v
-  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo_data.v
-  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v
-  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_clock.v
-  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_control_unit.v
-  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v
-  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/string_process.v
-  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v
-  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/ultrasonic.v
-  D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v
+  D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v
+  D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/button_detector.v
+  D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_controlunit.v
+  D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v
+  D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v
+  D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo_data.v
+  D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v
+  D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_clock.v
+  D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_control_unit.v
+  D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v
+  D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/string_process.v
+  D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v
+  D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/ultrasonic.v
+  D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v
 }
+read_ip -quiet d:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/ip/ila_0_1/ila_0.xci
+set_property used_in_synthesis false [get_files -all d:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.gen/sources_1/ip/ila_0_1/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all d:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.gen/sources_1/ip/ila_0_1/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all d:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.gen/sources_1/ip/ila_0_1/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all d:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.gen/sources_1/ip/ila_0_1/ila_0_ooc.xdc]
+
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -114,8 +121,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc
-set_property used_in_implementation false [get_files D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+read_xdc D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc
+set_property used_in_implementation false [get_files D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
