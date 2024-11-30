@@ -143,14 +143,14 @@ class driver;
         dht11_intf.out_data = 1'b1;
         tick(75);
 
-        ////////////////////////////////////////////////////////////
-        // dht11_intf.out_data = 1'b0;
-        // tick(50);
-        // dht11_intf.out_data = 1'b1;
-        // tick(26);
-        // trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
+        //////////////////////////////////////////////////////////// humidity int
+        dht11_intf.out_data = 1'b0;
+        tick(50);
+        dht11_intf.out_data = 1'b1;
+        tick(26);
+        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
 
-        for (int i = 0; i < 8; i++) begin
+        for (int i = 0; i < 7; i++) begin
             trans.randomize();
             dht11_intf.out_data = 1'b0;
             tick(50);
@@ -169,14 +169,14 @@ class driver;
 
             $display("%d", trans.set_up_time);
         end
-        ////////////////////////////////////////////////////////////
-        // dht11_intf.out_data = 1'b0;
-        // tick(50);
-        // dht11_intf.out_data = 1'b1;
-        // tick(26);
-        // trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
+        //////////////////////////////////////////////////////////// humidity dec
+        dht11_intf.out_data = 1'b0;
+        tick(50);
+        dht11_intf.out_data = 1'b1;
+        tick(26);
+        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
 
-        for (int i = 0; i < 8; i++) begin
+        for (int i = 0; i < 7; i++) begin
             trans.randomize();
             dht11_intf.out_data = 1'b0;
             tick(50);
@@ -195,14 +195,14 @@ class driver;
 
             $display("%d", trans.set_up_time);
         end
-        ////////////////////////////////////////////////////////////
-        // dht11_intf.out_data = 1'b0;
-        // tick(50);
-        // dht11_intf.out_data = 1'b1;
-        // tick(26);
-        // trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
+        //////////////////////////////////////////////////////////// temperature int
+        dht11_intf.out_data = 1'b0;
+        tick(50);
+        dht11_intf.out_data = 1'b1;
+        tick(26);
+        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
 
-        for (int i = 0; i < 8; i++) begin
+        for (int i = 0; i < 7; i++) begin
             trans.randomize();
             dht11_intf.out_data = 1'b0;
             tick(50);
@@ -221,14 +221,14 @@ class driver;
 
             $display("%d", trans.set_up_time);
         end
-        ////////////////////////////////////////////////////////////
-        // dht11_intf.out_data = 1'b0;
-        // tick(50);
-        // dht11_intf.out_data = 1'b1;
-        // tick(26);
-        // trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
+        //////////////////////////////////////////////////////////// temperature dec
+        dht11_intf.out_data = 1'b0;
+        tick(50);
+        dht11_intf.out_data = 1'b1;
+        tick(26);
+        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
 
-        for (int i = 0; i < 8; i++) begin
+        for (int i = 0; i < 7; i++) begin
             trans.randomize();
             dht11_intf.out_data = 1'b0;
             tick(50);
@@ -247,7 +247,7 @@ class driver;
 
             $display("%d", trans.set_up_time);
         end
-        ///////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////// check sum
         trans.sw_40bit[7:0] = trans.sw_40bit[39:32] + trans.sw_40bit[31:24] + trans.sw_40bit[23:16] + trans.sw_40bit[15:8];
         for (int i = 0; i < 8; i++) begin
             if (trans.sw_40bit[7-i] == 1) begin
@@ -363,6 +363,7 @@ class scoreboard;
     reg                    [7:0] sw_hum_dec;
     reg                    [7:0] sw_tem_int;
     reg                    [7:0] sw_tem_dec;
+    reg                    [7:0] sw_checksum;
 
     int                          total_cnt,      pass_cnt, fail_cnt;
 
@@ -404,7 +405,7 @@ class scoreboard;
             sw_checksum = trans.sw_40bit[7:0];
             // $display("PASS3");
             #5;
-            if (sw_hum_int == trans.hum_int && sw_hum_dec == trans.hum_dec && sw_tem_int == trans.tem_int && sw_tem_dec == trans.tem_dec) begin
+            if (sw_hum_int == trans.hum_int && sw_hum_dec == trans.hum_dec && sw_tem_int == trans.tem_int && sw_tem_dec == trans.tem_dec && sw_checksum == trans.checksum) begin
                 $display("PASS!!!!");
                 pass_cnt++;
             end else begin
@@ -472,7 +473,7 @@ class environment;
 
     task run();
         fork
-            gen.run(1000);
+            gen.run(10000);
             drv.run();
             mon.run();
             scb.run();
@@ -501,7 +502,7 @@ module DHT11_SV ();
         .hum_dec (dht11_intf.hum_dec),
         .tem_int (dht11_intf.tem_int),
         .tem_dec (dht11_intf.tem_dec),
-        .checksum(dht11_interface.checksum)
+        .checksum(dht11_intf.checksum)
     );
 
     always #5 dht11_intf.clk = ~dht11_intf.clk;

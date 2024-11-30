@@ -99,8 +99,8 @@ module count_5sec (
     output start_dht11
 );
 
-    // reg [$clog2(3_000_000) - 1:0] counter_reg, counter_next;
-    reg [$clog2(30_000) - 1:0] counter_reg, counter_next;
+    reg [$clog2(3_000_000) - 1:0] counter_reg, counter_next;
+    // reg [$clog2(30_000) - 1:0] counter_reg, counter_next;
     reg start_dht11_reg, start_dht11_next;
 
     assign start_dht11 = start_dht11_reg;
@@ -119,8 +119,8 @@ module count_5sec (
         counter_next     = counter_reg;
         start_dht11_next = start_dht11_next;
         if (tick) begin
-            // if (counter_reg == 3_000_000 - 1) begin
-            if (counter_reg == 30_000 - 1) begin
+            if (counter_reg == 3_000_000 - 1) begin
+            // if (counter_reg == 30_000 - 1) begin
                 counter_next     = 0;
                 start_dht11_next = 1;
             end else begin
@@ -275,12 +275,7 @@ module start_signal (
             end
             START_L: begin
                 if (tick) begin
-                    counter_next  = counter_reg + 1;
-                    hum_int_next  = 0;
-                    hum_dec_next  = 0;
-                    tem_int_next  = 0;
-                    tem_dec_next  = 0;
-                    checksum_next = 0;
+                    counter_next = counter_reg + 1;
                 end
                 if (counter_reg == 18000 - 1) begin
                     state_next   = START_H;
@@ -366,7 +361,12 @@ module start_signal (
             end
             DATA_DIST: begin
                 if (tick) begin
-                    counter_next = counter_reg + 1;
+                    hum_int_next  = 0;
+                    hum_dec_next  = 0;
+                    tem_int_next  = 0;
+                    tem_dec_next  = 0;
+                    checksum_next = 0;
+                    counter_next  = counter_reg + 1;
                     if (counter_reg == 50 - 1) begin
                         if (tem_hum_data_reg[7:0] == (tem_hum_data_reg[39:32] + tem_hum_data_reg[31:24] + tem_hum_data_reg[23:16] + tem_hum_data_reg[15:8])) begin
                             hum_int_next  = tem_hum_data_reg[39:32];

@@ -33,14 +33,14 @@ module string_process (
     output [3:0] result
 );
 
-    ila_0 U_ila_0 (
-        .clk   (clk),
-        .probe0(rx_done),
-        .probe1(counter_reg),
-        .probe2(a[counter_reg]),
-        .probe3(result),
-        .probe4(rx_data)
-    );
+    // ila_0 U_ila_0 (
+    //     .clk   (clk),
+    //     .probe0(rx_done),
+    //     .probe1(counter_reg),
+    //     .probe2(a[counter_reg]),
+    //     .probe3(result),
+    //     .probe4(rx_data)
+    // );
 
     localparam IDLE = 0, RUN = 1, STOP = 2, CLEAR = 3, MODE = 4, SET_TIME = 5, TIME_SET_ERROR = 6, MEASURE_DISTANCE = 7;
 
