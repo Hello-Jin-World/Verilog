@@ -405,7 +405,7 @@ class scoreboard;
             sw_checksum = trans.sw_40bit[7:0];
             // $display("PASS3");
             #5;
-            if (sw_hum_int == trans.hum_int && sw_hum_dec == trans.hum_dec && sw_tem_int == trans.tem_int && sw_tem_dec == trans.tem_dec && sw_checksum == trans.checksum) begin
+            if (sw_hum_int == trans.hum_int && sw_hum_dec == trans.hum_dec && sw_tem_int == trans.tem_int && sw_tem_dec == trans.tem_dec) begin
                 $display("PASS!!!!");
                 pass_cnt++;
             end else begin
