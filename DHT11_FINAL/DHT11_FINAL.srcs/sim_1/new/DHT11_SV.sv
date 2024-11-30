@@ -46,11 +46,15 @@ class transaction;
     // logic      [6:0] rand_hum_tem[0:39];
     logic      [39:0] sw_40bit;
 
-    constraint range {
-        set_up_time dist {
-            26 :/ 50,
-            70 :/ 50
-        };
+    // constraint range {
+        // set_up_time dist {
+            // 26 :/ 20,
+            // 70 :/ 20
+        // };
+    // }
+
+    constraint value_c {
+        set_up_time inside {26, 70};
     }
 
     task display(string name);
@@ -139,19 +143,19 @@ class driver;
         tick(75);
 
         ////////////////////////////////////////////////////////////
-        dht11_intf.out_data = 1'b0;
-        tick(50);
-        dht11_intf.out_data = 1'b1;
-        tick(26);
-        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
+        // dht11_intf.out_data = 1'b0;
+        // tick(50);
+        // dht11_intf.out_data = 1'b1;
+        // tick(26);
+        // trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
 
-        for (int i = 0; i < 7; i++) begin
+        for (int i = 0; i < 8; i++) begin
             trans.randomize();
             dht11_intf.out_data = 1'b0;
             tick(50);
             dht11_intf.out_data = 1'b1;
             tick(trans.set_up_time);
-            #2;
+            // #2;
             if (trans.set_up_time > 40) begin
                 trans.sw_40bit = {
                     trans.sw_40bit[38:8], 1'b1, trans.sw_40bit[7:0]
@@ -165,19 +169,19 @@ class driver;
             $display("%d", trans.set_up_time);
         end
         ////////////////////////////////////////////////////////////
-        dht11_intf.out_data = 1'b0;
-        tick(50);
-        dht11_intf.out_data = 1'b1;
-        tick(26);
-        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
+        // dht11_intf.out_data = 1'b0;
+        // tick(50);
+        // dht11_intf.out_data = 1'b1;
+        // tick(26);
+        // trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
 
-        for (int i = 0; i < 7; i++) begin
+        for (int i = 0; i < 8; i++) begin
             trans.randomize();
             dht11_intf.out_data = 1'b0;
             tick(50);
             dht11_intf.out_data = 1'b1;
             tick(trans.set_up_time);
-            #2;
+            // #2;
             if (trans.set_up_time > 40) begin
                 trans.sw_40bit = {
                     trans.sw_40bit[38:8], 1'b1, trans.sw_40bit[7:0]
@@ -191,19 +195,19 @@ class driver;
             $display("%d", trans.set_up_time);
         end
         ////////////////////////////////////////////////////////////
-        dht11_intf.out_data = 1'b0;
-        tick(50);
-        dht11_intf.out_data = 1'b1;
-        tick(26);
-        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
+        // dht11_intf.out_data = 1'b0;
+        // tick(50);
+        // dht11_intf.out_data = 1'b1;
+        // tick(26);
+        // trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
 
-        for (int i = 0; i < 7; i++) begin
+        for (int i = 0; i < 8; i++) begin
             trans.randomize();
             dht11_intf.out_data = 1'b0;
             tick(50);
             dht11_intf.out_data = 1'b1;
             tick(trans.set_up_time);
-            #2;
+            // #2;
             if (trans.set_up_time > 40) begin
                 trans.sw_40bit = {
                     trans.sw_40bit[38:8], 1'b1, trans.sw_40bit[7:0]
@@ -217,19 +221,19 @@ class driver;
             $display("%d", trans.set_up_time);
         end
         ////////////////////////////////////////////////////////////
-        dht11_intf.out_data = 1'b0;
-        tick(50);
-        dht11_intf.out_data = 1'b1;
-        tick(26);
-        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
+        // dht11_intf.out_data = 1'b0;
+        // tick(50);
+        // dht11_intf.out_data = 1'b1;
+        // tick(26);
+        // trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
 
-        for (int i = 0; i < 7; i++) begin
+        for (int i = 0; i < 8; i++) begin
             trans.randomize();
             dht11_intf.out_data = 1'b0;
             tick(50);
             dht11_intf.out_data = 1'b1;
             tick(trans.set_up_time);
-            #2;
+            // #2;
             if (trans.set_up_time > 40) begin
                 trans.sw_40bit = {
                     trans.sw_40bit[38:8], 1'b1, trans.sw_40bit[7:0]
@@ -457,7 +461,7 @@ class environment;
 
     task run();
         fork
-            gen.run(10);
+            gen.run(1000);
             drv.run();
             mon.run();
             scb.run();
