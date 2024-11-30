@@ -2,14 +2,16 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sat Nov 30 09:45:48 2024
-# Process ID: 2052
+# Start of session at: Sat Nov 30 09:44:23 2024
+# Process ID: 14960
 # Current directory: D:/Verilog/Verilog/DHT11_FINAL
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17780 D:\Verilog\Verilog\DHT11_FINAL\DHT11_FINAL.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9688 D:\Verilog\Verilog\DHT11_FINAL\DHT11_FINAL.xpr
 # Log file: D:/Verilog/Verilog/DHT11_FINAL/vivado.log
 # Journal file: D:/Verilog/Verilog/DHT11_FINAL\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.xpr
 update_compile_order -fileset sources_1
+launch_simulation
+reset_simulation -simset sim_1 -mode behavioral
 launch_simulation

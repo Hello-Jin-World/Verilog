@@ -46,16 +46,14 @@ class transaction;
     // logic      [6:0] rand_hum_tem[0:39];
     logic      [39:0] sw_40bit;
 
-    // constraint range {
-        // set_up_time dist {
-            // 26 :/ 20,
-            // 70 :/ 20
-        // };
-    // }
-
-    constraint value_c {
-        set_up_time inside {26, 70};
+    constraint range {
+    set_up_time dist {
+    26 :/ 70,
+    70 :/ 30
+    };
     }
+
+    // constraint value_c {set_up_time inside {26, 70};}
 
     task display(string name);
         $display("[%s] humidity : %d.%d,  temperature : %d.%d", name, hum_int,
@@ -107,6 +105,7 @@ class driver;
         dht11_intf.hum_dec  <= 0;
         dht11_intf.tem_int  <= 0;
         dht11_intf.tem_dec  <= 0;
+        dht11_intf.checksum <= 0;
         dht11_intf.out_data <= 0;
         dht11_intf.sw_40bit <= 0;
         // dht11_intf.tem <= 0;
@@ -143,13 +142,13 @@ class driver;
         tick(75);
 
         ////////////////////////////////////////////////////////////
-        // dht11_intf.out_data = 1'b0;
-        // tick(50);
-        // dht11_intf.out_data = 1'b1;
-        // tick(26);
-        // trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
+        dht11_intf.out_data = 1'b0;
+        tick(50);
+        dht11_intf.out_data = 1'b1;
+        tick(26);
+        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
 
-        for (int i = 0; i < 8; i++) begin
+        for (int i = 0; i < 7; i++) begin
             trans.randomize();
             dht11_intf.out_data = 1'b0;
             tick(50);
@@ -169,13 +168,13 @@ class driver;
             $display("%d", trans.set_up_time);
         end
         ////////////////////////////////////////////////////////////
-        // dht11_intf.out_data = 1'b0;
-        // tick(50);
-        // dht11_intf.out_data = 1'b1;
-        // tick(26);
-        // trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
+        dht11_intf.out_data = 1'b0;
+        tick(50);
+        dht11_intf.out_data = 1'b1;
+        tick(26);
+        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
 
-        for (int i = 0; i < 8; i++) begin
+        for (int i = 0; i < 7; i++) begin
             trans.randomize();
             dht11_intf.out_data = 1'b0;
             tick(50);
@@ -195,13 +194,13 @@ class driver;
             $display("%d", trans.set_up_time);
         end
         ////////////////////////////////////////////////////////////
-        // dht11_intf.out_data = 1'b0;
-        // tick(50);
-        // dht11_intf.out_data = 1'b1;
-        // tick(26);
-        // trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
+        dht11_intf.out_data = 1'b0;
+        tick(50);
+        dht11_intf.out_data = 1'b1;
+        tick(26);
+        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
 
-        for (int i = 0; i < 8; i++) begin
+        for (int i = 0; i < 7; i++) begin
             trans.randomize();
             dht11_intf.out_data = 1'b0;
             tick(50);
@@ -221,13 +220,13 @@ class driver;
             $display("%d", trans.set_up_time);
         end
         ////////////////////////////////////////////////////////////
-        // dht11_intf.out_data = 1'b0;
-        // tick(50);
-        // dht11_intf.out_data = 1'b1;
-        // tick(26);
-        // trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
+        dht11_intf.out_data = 1'b0;
+        tick(50);
+        dht11_intf.out_data = 1'b1;
+        tick(26);
+        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
 
-        for (int i = 0; i < 8; i++) begin
+        for (int i = 0; i < 7; i++) begin
             trans.randomize();
             dht11_intf.out_data = 1'b0;
             tick(50);
@@ -263,7 +262,7 @@ class driver;
         end
 
 
-        dht11_intf.out_data = 1'b0;
+        dht11_intf.out_data = 1'b0; // dummy
         tick(50);
         dht11_intf.out_data = 1'b1;
         tick(27);
@@ -292,10 +291,10 @@ class driver;
     task run();
         forever begin
             gen2drv_mbox.get(trans);
-            dht11_intf.hum_int = trans.hum_int;
-            dht11_intf.hum_dec = trans.hum_dec;
-            dht11_intf.tem_int = trans.tem_int;
-            dht11_intf.tem_dec = trans.tem_dec;
+            dht11_intf.hum_int  = trans.hum_int;
+            dht11_intf.hum_dec  = trans.hum_dec;
+            dht11_intf.tem_int  = trans.tem_int;
+            dht11_intf.tem_dec  = trans.tem_dec;
             #1;
             // dht11_intf.rand_hum_tem = trans.rand_hum_tem;
             trans.display("DRV");
@@ -393,10 +392,10 @@ class scoreboard;
             // end
             // $display("PASS2");
             // #10;
-            sw_hum_int = trans.sw_40bit[39:32];
-            sw_hum_dec = trans.sw_40bit[31:24];
-            sw_tem_int = trans.sw_40bit[23:16];
-            sw_tem_dec = trans.sw_40bit[15:8];
+            sw_hum_int  = trans.sw_40bit[39:32];
+            sw_hum_dec  = trans.sw_40bit[31:24];
+            sw_tem_int  = trans.sw_40bit[23:16];
+            sw_tem_dec  = trans.sw_40bit[15:8];
             // $display("PASS3");
             #5;
             if (sw_hum_int == trans.hum_int && sw_hum_dec == trans.hum_dec && sw_tem_int == trans.tem_int && sw_tem_dec == trans.tem_dec) begin
@@ -407,10 +406,14 @@ class scoreboard;
                 fail_cnt++;
             end
             total_cnt++;
-            $display("%d", trans.hum_int);
-            $display("%d", trans.hum_dec);
-            $display("%d", trans.tem_int);
-            $display("%d", trans.tem_dec);
+            $display("hardware : %d,    software : %d", trans.hum_int,
+                     sw_hum_int);
+            $display("hardware : %d,    software : %d", trans.hum_dec,
+                     sw_hum_dec);
+            $display("hardware : %d,    software : %d", trans.tem_int,
+                     sw_tem_int);
+            $display("hardware : %d,    software : %d", trans.tem_dec,
+                     sw_tem_dec);
             trans.display("SCB");
             ->gen_next_event;
         end

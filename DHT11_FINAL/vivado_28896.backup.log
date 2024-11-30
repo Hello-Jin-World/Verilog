@@ -1,0 +1,1331 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat Nov 30 02:35:32 2024
+# Process ID: 28896
+# Current directory: D:/Verilog/Verilog/DHT11_FINAL
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7368 D:\Verilog\Verilog\DHT11_FINAL\DHT11_FINAL.xpr
+# Log file: D:/Verilog/Verilog/DHT11_FINAL/vivado.log
+# Journal file: D:/Verilog/Verilog/DHT11_FINAL\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.xpr
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:08 . Memory (MB): peak = 1102.395 ; gain = 0.000
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'DHT11_SV' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj DHT11_SV_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DHT11_control
+INFO: [VRFC 10-311] analyzing module count_5sec
+INFO: [VRFC 10-311] analyzing module clock_divider
+INFO: [VRFC 10-311] analyzing module start_signal
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sim_1/new/DHT11_SV.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DHT11_SV
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+"xelab -wto d642fde468e5450d930132b6bee7363b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot DHT11_SV_behav xil_defaultlib.DHT11_SV xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto d642fde468e5450d930132b6bee7363b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot DHT11_SV_behav xil_defaultlib.DHT11_SV xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_DHT11_SV_sv
+Compiling package std.std
+Compiling module xil_defaultlib.dht11_interface
+Compiling module xil_defaultlib.clock_divider
+Compiling module xil_defaultlib.count_5sec
+Compiling module xil_defaultlib.start_signal
+Compiling module xil_defaultlib.DHT11_control
+Compiling module xil_defaultlib.DHT11_SV
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot DHT11_SV_behav
+
+****** Webtalk v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim/xsim.dir/DHT11_SV_behav/webtalk/xsim_webtalk.tcl -notrace
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:22 . Memory (MB): peak = 116.516 ; gain = 23.656
+INFO: [Common 17-206] Exiting Webtalk at Sat Nov 30 02:36:27 2024...
+run_program: Time (s): cpu = 00:00:03 ; elapsed = 00:00:26 . Memory (MB): peak = 1102.395 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '26' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "DHT11_SV_behav -key {Behavioral:sim_1:Functional:DHT11_SV} -tclbatch {DHT11_SV.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source DHT11_SV.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: Simulation object /DHT11_SV/env was not traceable in the design for the following reason:
+Vivado Simulator does not support tracing of System Verilog Dynamic Type object.
+INFO: [Wavedata 42-43] There are no traceable objects to add.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'DHT11_SV_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:13 ; elapsed = 00:00:33 . Memory (MB): peak = 1102.395 ; gain = 0.000
+run 1 s
+[DRV] DUT Reset Done!
+---------------------
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 70
+ 70
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 70
+ 70
+ 26
+ 26
+ 70
+ 26
+ 70
+ 26
+ 70
+ 26
+ 26
+ 70
+ 26
+[MON] humidity :   x.  x,  temperature :   x.  x
+PASS1
+FAIL....
+  x
+  x
+  x
+  x
+[SCB] humidity :   x.  x,  temperature :   x.  x
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+run: Time (s): cpu = 00:00:28 ; elapsed = 00:00:21 . Memory (MB): peak = 1110.434 ; gain = 8.039
+relaunch_sim
+suspend_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:25 . Memory (MB): peak = 1110.434 ; gain = 0.000
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'DHT11_SV' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj DHT11_SV_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sim_1/new/DHT11_SV.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DHT11_SV
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+"xelab -wto d642fde468e5450d930132b6bee7363b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot DHT11_SV_behav xil_defaultlib.DHT11_SV xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto d642fde468e5450d930132b6bee7363b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot DHT11_SV_behav xil_defaultlib.DHT11_SV xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_DHT11_SV_sv
+Compiling package std.std
+Compiling module xil_defaultlib.dht11_interface
+Compiling module xil_defaultlib.clock_divider
+Compiling module xil_defaultlib.count_5sec
+Compiling module xil_defaultlib.start_signal
+Compiling module xil_defaultlib.DHT11_control
+Compiling module xil_defaultlib.DHT11_SV
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot DHT11_SV_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+[DRV] DUT Reset Done!
+---------------------
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:31 . Memory (MB): peak = 1115.742 ; gain = 5.309
+run 1 s
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 70
+ 70
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 70
+ 70
+ 26
+ 26
+ 70
+ 26
+ 70
+ 26
+ 70
+ 26
+ 26
+ 70
+ 26
+[MON] humidity :   x.  x,  temperature :   x.  x
+PASS1
+FAIL....
+  x
+  x
+  x
+  x
+[SCB] humidity :   x.  x,  temperature :   x.  x
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+run: Time (s): cpu = 00:00:31 ; elapsed = 00:00:26 . Memory (MB): peak = 1117.273 ; gain = 1.531
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'DHT11_SV' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj DHT11_SV_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sim_1/new/DHT11_SV.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DHT11_SV
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+"xelab -wto d642fde468e5450d930132b6bee7363b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot DHT11_SV_behav xil_defaultlib.DHT11_SV xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto d642fde468e5450d930132b6bee7363b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot DHT11_SV_behav xil_defaultlib.DHT11_SV xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_DHT11_SV_sv
+Compiling package std.std
+Compiling module xil_defaultlib.dht11_interface
+Compiling module xil_defaultlib.clock_divider
+Compiling module xil_defaultlib.count_5sec
+Compiling module xil_defaultlib.start_signal
+Compiling module xil_defaultlib.DHT11_control
+Compiling module xil_defaultlib.DHT11_SV
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot DHT11_SV_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+[DRV] DUT Reset Done!
+---------------------
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1241.941 ; gain = 0.000
+run 1 s
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 70
+ 70
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 70
+ 70
+ 26
+ 26
+ 70
+ 26
+ 70
+ 26
+ 70
+ 26
+ 26
+ 70
+ 26
+[MON] humidity :   x.  x,  temperature :   x.  x
+PASS1
+FAIL....
+  x
+  x
+  x
+  x
+[SCB] humidity :   x.  x,  temperature :   x.  x
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 70
+ 70
+ 70
+ 26
+ 70
+ 70
+ 70
+ 70
+ 26
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 26
+ 70
+ 26
+ 26
+ 26
+ 70
+ 26
+ 26
+ 70
+ 70
+[MON] humidity :   x.  x,  temperature :   x.  x
+PASS1
+FAIL....
+  x
+  x
+  x
+  x
+[SCB] humidity :   x.  x,  temperature :   x.  x
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 26
+ 26
+ 70
+ 26
+ 26
+ 26
+ 70
+ 70
+ 26
+ 70
+ 26
+ 26
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 26
+ 70
+ 70
+ 26
+ 26
+ 26
+ 26
+[MON] humidity :   x.  x,  temperature :   x.  x
+PASS1
+FAIL....
+  x
+  x
+  x
+  x
+[SCB] humidity :   x.  x,  temperature :   x.  x
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 26
+ 70
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 26
+ 26
+run: Time (s): cpu = 00:00:47 ; elapsed = 00:00:45 . Memory (MB): peak = 1241.941 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'DHT11_SV' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj DHT11_SV_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sim_1/new/DHT11_SV.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DHT11_SV
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+"xelab -wto d642fde468e5450d930132b6bee7363b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot DHT11_SV_behav xil_defaultlib.DHT11_SV xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto d642fde468e5450d930132b6bee7363b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot DHT11_SV_behav xil_defaultlib.DHT11_SV xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_DHT11_SV_sv
+Compiling package std.std
+Compiling module xil_defaultlib.dht11_interface
+Compiling module xil_defaultlib.clock_divider
+Compiling module xil_defaultlib.count_5sec
+Compiling module xil_defaultlib.start_signal
+Compiling module xil_defaultlib.DHT11_control
+Compiling module xil_defaultlib.DHT11_SV
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot DHT11_SV_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+[DRV] DUT Reset Done!
+---------------------
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1241.941 ; gain = 0.000
+run 1 s
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 70
+ 70
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 70
+ 70
+ 26
+ 26
+ 70
+ 26
+ 70
+ 26
+ 70
+ 26
+ 26
+ 70
+ 26
+[MON] humidity :   x.  x,  temperature :   x.  x
+PASS1
+FAIL....
+  x
+  x
+  x
+  x
+[SCB] humidity :   x.  x,  temperature :   x.  x
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 70
+ 70
+ 70
+ 26
+ 70
+ 70
+ 70
+ 70
+ 26
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 26
+ 70
+ 26
+ 26
+ 26
+ 70
+ 26
+ 26
+ 70
+ 70
+[MON] humidity :   x.  x,  temperature :   x.  x
+PASS1
+FAIL....
+  x
+  x
+  x
+  x
+[SCB] humidity :   x.  x,  temperature :   x.  x
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 26
+ 26
+ 70
+ 26
+ 26
+ 26
+ 70
+ 70
+ 26
+ 70
+ 26
+ 26
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 26
+ 70
+ 70
+ 26
+ 26
+ 26
+ 26
+[MON] humidity :   x.  x,  temperature :   x.  x
+PASS1
+FAIL....
+  x
+  x
+  x
+  x
+[SCB] humidity :   x.  x,  temperature :   x.  x
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+run: Time (s): cpu = 00:00:39 ; elapsed = 00:00:36 . Memory (MB): peak = 1241.941 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'DHT11_SV' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj DHT11_SV_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sim_1/new/DHT11_SV.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DHT11_SV
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+"xelab -wto d642fde468e5450d930132b6bee7363b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot DHT11_SV_behav xil_defaultlib.DHT11_SV xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto d642fde468e5450d930132b6bee7363b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot DHT11_SV_behav xil_defaultlib.DHT11_SV xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_DHT11_SV_sv
+Compiling package std.std
+Compiling module xil_defaultlib.dht11_interface
+Compiling module xil_defaultlib.clock_divider
+Compiling module xil_defaultlib.count_5sec
+Compiling module xil_defaultlib.start_signal
+Compiling module xil_defaultlib.DHT11_control
+Compiling module xil_defaultlib.DHT11_SV
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot DHT11_SV_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+[DRV] DUT Reset Done!
+---------------------
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1241.941 ; gain = 0.000
+run 1 s
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 70
+ 70
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 70
+ 70
+ 26
+ 26
+ 70
+ 26
+ 70
+ 26
+ 70
+ 26
+ 26
+ 70
+ 26
+[MON] humidity :  86.118,  temperature :  50. 82
+PASS1
+PASS!!!!
+ 86
+118
+ 50
+ 82
+[SCB] humidity :  86.118,  temperature :  50. 82
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+run: Time (s): cpu = 00:00:24 ; elapsed = 00:00:22 . Memory (MB): peak = 1242.734 ; gain = 0.793
+run 1 s
+READ 20~40us HIGH
+ 70
+ 70
+ 70
+ 70
+ 26
+ 70
+ 70
+ 70
+ 70
+ 26
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 26
+ 70
+ 26
+ 26
+ 26
+ 70
+ 26
+ 26
+ 70
+ 70
+[MON] humidity : 123.106,  temperature :  98. 19
+PASS1
+PASS!!!!
+123
+106
+ 98
+ 19
+[SCB] humidity : 123.106,  temperature :  98. 19
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 26
+ 26
+ 70
+ 26
+ 26
+ 26
+ 70
+ 70
+ 26
+ 70
+ 26
+ 26
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 26
+ 70
+ 70
+ 26
+ 26
+ 26
+ 26
+[MON] humidity :  72.105,  temperature :  44. 48
+PASS1
+PASS!!!!
+ 72
+105
+ 44
+ 48
+[SCB] humidity :  72.105,  temperature :  44. 48
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 26
+ 70
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 26
+ 26
+ 70
+ 70
+ 70
+ 70
+ 26
+ 26
+ 26
+ 26
+ 26
+ 26
+ 26
+ 26
+ 70
+ 26
+ 70
+[MON] humidity :  90. 97,  temperature : 112.  5
+PASS1
+PASS!!!!
+ 90
+ 97
+112
+  5
+[SCB] humidity :  90. 97,  temperature : 112.  5
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+READ 20~40us HIGH
+ 26
+ 70
+ 26
+ 26
+ 26
+ 26
+ 70
+ 26
+ 70
+ 70
+ 70
+ 26
+ 26
+ 26
+ 70
+ 70
+ 70
+ 70
+ 26
+ 26
+ 26
+ 70
+ 70
+ 26
+ 26
+ 70
+ 26
+ 70
+[MON] humidity :  33. 56,  temperature : 120.101
+PASS1
+PASS!!!!
+ 33
+ 56
+120
+101
+[SCB] humidity :  33. 56,  temperature : 120.101
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+run: Time (s): cpu = 00:00:45 ; elapsed = 00:00:42 . Memory (MB): peak = 1243.203 ; gain = 0.469
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'DHT11_SV' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj DHT11_SV_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sim_1/new/DHT11_SV.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DHT11_SV
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.sim/sim_1/behav/xsim'
+"xelab -wto d642fde468e5450d930132b6bee7363b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot DHT11_SV_behav xil_defaultlib.DHT11_SV xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto d642fde468e5450d930132b6bee7363b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot DHT11_SV_behav xil_defaultlib.DHT11_SV xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_DHT11_SV_sv
+Compiling package std.std
+Compiling module xil_defaultlib.dht11_interface
+Compiling module xil_defaultlib.clock_divider
+Compiling module xil_defaultlib.count_5sec
+Compiling module xil_defaultlib.start_signal
+Compiling module xil_defaultlib.DHT11_control
+Compiling module xil_defaultlib.DHT11_SV
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot DHT11_SV_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+[DRV] DUT Reset Done!
+---------------------
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1243.203 ; gain = 0.000
+run 1 s
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 70
+ 70
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 70
+ 70
+ 26
+ 26
+ 70
+ 26
+ 70
+ 26
+ 70
+ 26
+ 26
+ 70
+ 26
+[MON] humidity :  86.118,  temperature :  50. 82
+PASS1
+PASS!!!!
+ 86
+118
+ 50
+ 82
+[SCB] humidity :  86.118,  temperature :  50. 82
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 70
+ 70
+ 70
+ 26
+ 70
+ 70
+ 70
+ 70
+ 26
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 26
+ 70
+ 26
+ 26
+ 26
+ 70
+ 26
+ 26
+ 70
+ 70
+[MON] humidity : 123.106,  temperature :  98. 19
+PASS1
+PASS!!!!
+123
+106
+ 98
+ 19
+[SCB] humidity : 123.106,  temperature :  98. 19
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 26
+ 26
+ 70
+ 26
+ 26
+ 26
+ 70
+ 70
+ 26
+ 70
+ 26
+ 26
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 26
+ 70
+ 70
+ 26
+ 26
+ 26
+ 26
+[MON] humidity :  72.105,  temperature :  44. 48
+PASS1
+PASS!!!!
+ 72
+105
+ 44
+ 48
+[SCB] humidity :  72.105,  temperature :  44. 48
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 26
+ 70
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 26
+ 26
+ 70
+ 70
+ 70
+ 70
+ 26
+ 26
+ 26
+ 26
+ 26
+ 26
+ 26
+ 26
+ 70
+ 26
+ 70
+[MON] humidity :  90. 97,  temperature : 112.  5
+PASS1
+PASS!!!!
+ 90
+ 97
+112
+  5
+[SCB] humidity :  90. 97,  temperature : 112.  5
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+READ 20~40us HIGH
+ 26
+ 70
+ 26
+ 26
+ 26
+ 26
+ 70
+ 26
+ 70
+ 70
+ 70
+ 26
+ 26
+ 26
+ 70
+ 70
+ 70
+ 70
+ 26
+ 26
+ 26
+ 70
+ 70
+ 26
+ 26
+ 70
+ 26
+ 70
+[MON] humidity :  33. 56,  temperature : 120.101
+PASS1
+PASS!!!!
+ 33
+ 56
+120
+101
+[SCB] humidity :  33. 56,  temperature : 120.101
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 70
+ 26
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 70
+ 26
+ 70
+ 26
+ 70
+ 26
+ 70
+ 26
+ 70
+ 26
+ 26
+ 70
+ 70
+[MON] humidity : 101. 86,  temperature :  42. 83
+PASS1
+PASS!!!!
+101
+ 86
+ 42
+ 83
+[SCB] humidity : 101. 86,  temperature :  42. 83
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 26
+ 26
+ 26
+ 26
+ 70
+ 70
+ 70
+ 26
+ 70
+ 26
+ 26
+ 26
+ 70
+ 26
+ 70
+ 26
+ 26
+ 70
+ 70
+ 26
+ 70
+ 26
+ 26
+ 26
+ 70
+ 26
+ 26
+[MON] humidity :  67. 81,  temperature :  38. 68
+PASS1
+PASS!!!!
+ 67
+ 81
+ 38
+ 68
+[SCB] humidity :  67. 81,  temperature :  38. 68
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 26
+ 70
+ 70
+ 26
+ 70
+ 26
+ 26
+ 70
+ 26
+ 70
+ 70
+ 70
+ 70
+ 26
+ 70
+ 70
+ 70
+ 26
+ 70
+ 70
+ 26
+ 70
+ 26
+ 26
+ 26
+ 70
+ 70
+[MON] humidity :  90. 47,  temperature :  59. 35
+PASS1
+PASS!!!!
+ 90
+ 47
+ 59
+ 35
+[SCB] humidity :  90. 47,  temperature :  59. 35
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+READ 20~40us HIGH
+ 26
+ 26
+ 70
+ 70
+ 70
+ 70
+ 70
+ 70
+ 70
+ 26
+ 70
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 70
+ 26
+ 70
+ 26
+ 26
+ 70
+ 70
+ 26
+ 70
+ 26
+ 70
+[MON] humidity :  31.109,  temperature :  58. 53
+PASS1
+PASS!!!!
+ 31
+109
+ 58
+ 53
+[SCB] humidity :  31.109,  temperature :  58. 53
+[GEN] humidity :   x.  x,  temperature :   x.  x
+[DRV] humidity :   x.  x,  temperature :   x.  x
+READ 18ms LOW
+READ 20~40us HIGH
+ 70
+ 70
+ 70
+ 70
+ 26
+ 26
+ 70
+ 70
+ 26
+ 26
+ 70
+ 26
+ 70
+ 26
+ 26
+ 70
+ 70
+ 26
+ 70
+ 26
+ 70
+ 70
+ 26
+ 26
+ 26
+ 70
+ 70
+ 70
+[MON] humidity : 121. 74,  temperature :  53. 71
+PASS1
+PASS!!!!
+121
+ 74
+ 53
+ 71
+[SCB] humidity : 121. 74,  temperature :  53. 71
+====================================
+========    Final Report    ========
+====================================
+Total Test :          10
+========     Read Result    ========
+ Pass Test :          10 
+ Fail Test :           0 
+====================================
+====   Test Bench is finished   ====
+====================================
+$finish called at time : 322246152 ns : File "D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sim_1/new/DHT11_SV.sv" Line 466
+run: Time (s): cpu = 00:01:41 ; elapsed = 00:01:41 . Memory (MB): peak = 1244.211 ; gain = 1.008
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 30 02:50:47 2024...
