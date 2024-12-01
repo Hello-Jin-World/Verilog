@@ -45,17 +45,16 @@ class transaction;
     logic             out_data;
     logic             mode;
     rand logic [ 6:0] set_up_time;
-    // logic      [6:0] rand_hum_tem[0:39];
     logic      [39:0] sw_40bit;
 
-    // constraint range {
-    // set_up_time dist {
-    // 26 :/ 20,
-    // 70 :/ 20
-    // };
-    // }
+    constraint range {
+    set_up_time dist {
+    26 :/ 80,
+    70 :/ 20
+    };
+    }
 
-    constraint value_c {set_up_time inside {26, 70};}
+    //constraint value_c {set_up_time inside {26, 70};}
 
     task display(string name);
         $display("[%s] humidity : %d.%d,  temperature : %d.%d", name, hum_int,
