@@ -35,7 +35,6 @@ module uart (
     output       rx_done
 );
 
-
     wire w_tick;
     wire [7:0] w_rx_data;
 

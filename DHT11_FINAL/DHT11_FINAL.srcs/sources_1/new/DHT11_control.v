@@ -69,21 +69,7 @@ module DHT11_control (
         .checksum   (checksum)
     );
 
-    // receive_data U_receive_data (
-    //     .clk                (clk),
-    //     .reset              (reset),
-    //     .tick               (tick),
-    //     .dht11_data         (receive_dht11_data),
-    //     .start_receive_data (start_receive_data),
-    //     .finish_receive_data(finish_receive_data),
-    //     .hum_int            (hum_int),
-    //     .hum_dec            (hum_dec),
-    //     .tem_int            (tem_int),
-    //     .tem_dec            (tem_dec)
-    // );
-
     assign ioport = io_mode ? signal : 1'bz;  // If you want to send(out) "HIGH"
-    // //    assign xxxx   = mode ? 1'bz : ioport;  // If you want to read(in) INPUT data
 
     always @(*) begin  // Read Data (INPUT MODE)
         if (!io_mode) begin
@@ -99,8 +85,8 @@ module count_5sec (
     output start_dht11
 );
 
-    // reg [$clog2(5_000_000) - 1:0] counter_reg, counter_next;
-    reg [$clog2(30_000) - 1:0] counter_reg, counter_next;
+    reg [$clog2(5_000_000) - 1:0] counter_reg, counter_next;
+    // reg [$clog2(30_000) - 1:0] counter_reg, counter_next;
     reg start_dht11_reg, start_dht11_next;
 
     assign start_dht11 = start_dht11_reg;
@@ -119,8 +105,8 @@ module count_5sec (
         counter_next     = counter_reg;
         start_dht11_next = start_dht11_next;
         if (tick) begin
-            // if (counter_reg == 5_000_000 - 1) begin
-                if (counter_reg == 30_000 - 1) begin
+            if (counter_reg == 5_000_000 - 1) begin
+                // if (counter_reg == 30_000 - 1) begin
                 counter_next     = 0;
                 start_dht11_next = 1;
             end else begin
@@ -157,7 +143,6 @@ module clock_divider (
             end
         end
     end
-
 endmodule
 
 module start_signal (
@@ -199,7 +184,6 @@ module start_signal (
     assign checksum = checksum_reg;
 
     localparam IDLE = 4'b0000, START_L = 4'b0001, START_H = 4'b0010, WAIT_H = 4'b0011, WAIT_L = 4'b0100, READ_LOW = 4'b0101, READ_HIGH = 4'b0110, DATA_DIST = 4'b0111;
-    //    localparam START = 1'b0, WAIT_RESPONSE = 1'b1;
 
     assign signal = signal_reg;
     assign mode   = mode_reg;
@@ -235,19 +219,6 @@ module start_signal (
             wr_en_reg        <= wr_en_next;
         end
     end
-
-    // ila_0 U_lia_0 (
-    //     .clk(clk),
-    //     .probe0(hum_int_reg),
-    //     .probe1(i_reg),
-    //     .probe2(tem_hum_data_reg),
-    //     .probe3(state_reg),
-    //     .probe4(counter_reg),
-    //     .probe5(tem_int_reg),
-    //     .probe6(dht11_data),
-    //     .probe7(mode)
-    // );
-
 
     always @(*) begin
         state_next        = state_reg;
@@ -296,24 +267,17 @@ module start_signal (
                 end
             end
             WAIT_H: begin
-                // signal_next = 1'b0;
                 if (tick) begin
-                    // counter_next = counter_reg + 1;
                     if (dht11_data) begin
-                        // if (counter_reg > 40) begin
                         state_next   = WAIT_L;
                         counter_next = 0;
-                        // end
                     end
                 end
             end
             WAIT_L: begin
                 if (tick) begin
-                    // counter_next = counter_reg + 1;
                     if (!dht11_data) begin
-                        // if (counter_reg > 80) begin
                         state_next = READ_LOW;
-                        // end
                         i_next = 0;
                     end
                 end
@@ -339,22 +303,12 @@ module start_signal (
                         counter_next = 0;
                         if (counter_reg > 40) begin
                             tem_hum_data_next = {tem_hum_data_reg[38:0], 1'b1};
-                            // if (i_next == 40) begin
-                            //     counter_next = 0;
-                            //     state_next   = DATA_DIST;
-                            // end else begin
                             state_next = READ_LOW;
                             i_next = i_reg + 1;
-                            // end
                         end else if (counter_reg > 10) begin
                             tem_hum_data_next = {tem_hum_data_reg[38:0], 1'b0};
-                            // if (i_next == 40) begin
-                            //     counter_next = 0;
-                            //     state_next   = DATA_DIST;
-                            // end else begin
                             state_next = READ_LOW;
                             i_next = i_reg + 1;
-                            // end
                         end
                     end
                 end
