@@ -99,8 +99,8 @@ module count_5sec (
     output start_dht11
 );
 
-    reg [$clog2(5_000_000) - 1:0] counter_reg, counter_next;
-    // reg [$clog2(30_000) - 1:0] counter_reg, counter_next;
+    // reg [$clog2(5_000_000) - 1:0] counter_reg, counter_next;
+    reg [$clog2(30_000) - 1:0] counter_reg, counter_next;
     reg start_dht11_reg, start_dht11_next;
 
     assign start_dht11 = start_dht11_reg;
@@ -119,8 +119,8 @@ module count_5sec (
         counter_next     = counter_reg;
         start_dht11_next = start_dht11_next;
         if (tick) begin
-            if (counter_reg == 5_000_000 - 1) begin
-                // if (counter_reg == 30_000 - 1) begin
+            // if (counter_reg == 5_000_000 - 1) begin
+                if (counter_reg == 30_000 - 1) begin
                 counter_next     = 0;
                 start_dht11_next = 1;
             end else begin

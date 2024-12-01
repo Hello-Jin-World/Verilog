@@ -125,19 +125,14 @@ class driver;
     endtask  //tick
 
     task start_dht11();
-        // dht11_intf.mode     = 1'b1;
-        // dht11_intf.out_data = 1'b0;
-        // @(posedge dht11_intf.clk);
         dht11_intf.mode = 1'b0;
         wait (dht11_intf.ioport == 0);  // 18ms    LOW
         $display("READ 18ms LOW");
         wait (dht11_intf.ioport == 1);  // 20~40us HIGH
         $display("READ 20~40us HIGH");
         tick(25);
-        // wait (dht11_intf.ioport == 0);  // start receive
         dht11_intf.mode = 1'b1;
 
-        // repeat (5) @(posedge dht11_intf.clk);
         dht11_intf.out_data = 1'b0;
         tick(60);
         dht11_intf.out_data = 1'b1;
