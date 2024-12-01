@@ -382,22 +382,11 @@ class scoreboard;
             @(scb_next_event);
             mon2scb_mbox.get(trans);
             $display("PASS1");
-            // #10;
-            // for (int i = 40; i > 1; i++) begin
-            //     if (trans.rand_hum_tem[i-1] > 50) begin
-            //         sw_result = {sw_result[38:0], 1'b1};
-            //     end else begin
-            //         sw_result = {sw_result[38:0], 1'b0};
-            //     end
-            // end
-            // $display("PASS2");
-            // #10;
             sw_hum_int  = trans.sw_40bit[39:32];
             sw_hum_dec  = trans.sw_40bit[31:24];
             sw_tem_int  = trans.sw_40bit[23:16];
             sw_tem_dec  = trans.sw_40bit[15:8];
             sw_checksum = trans.sw_40bit[7:0];
-            // $display("PASS3");
             #5;
             if (sw_hum_int == trans.hum_int && sw_hum_dec == trans.hum_dec && sw_tem_int == trans.tem_int && sw_tem_dec == trans.tem_dec) begin
                 $display("PASS!!!!");
