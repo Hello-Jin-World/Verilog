@@ -322,7 +322,8 @@ module start_signal (
                     checksum_next = 255;
                     counter_next  = counter_reg + 1;
                     if (counter_reg == 50 - 1) begin
-                        if (tem_hum_data_reg[7:0] == (tem_hum_data_reg[39:32] + tem_hum_data_reg[31:24] + tem_hum_data_reg[23:16] + tem_hum_data_reg[15:8])) begin
+                        if (tem_hum_data_reg[7:0] == (tem_hum_data_reg[39:32] + tem_hum_data_reg[31:24]
+                                                      + tem_hum_data_reg[23:16] + tem_hum_data_reg[15:8])) begin
                             hum_int_next  = tem_hum_data_reg[39:32];
                             hum_dec_next  = tem_hum_data_reg[31:24];
                             tem_int_next  = tem_hum_data_reg[23:16];
