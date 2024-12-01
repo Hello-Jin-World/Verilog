@@ -99,7 +99,7 @@ module count_5sec (
     output start_dht11
 );
 
-    reg [$clog2(3_000_000) - 1:0] counter_reg, counter_next;
+    reg [$clog2(5_000_000) - 1:0] counter_reg, counter_next;
     // reg [$clog2(30_000) - 1:0] counter_reg, counter_next;
     reg start_dht11_reg, start_dht11_next;
 
@@ -119,8 +119,8 @@ module count_5sec (
         counter_next     = counter_reg;
         start_dht11_next = start_dht11_next;
         if (tick) begin
-            if (counter_reg == 3_000_000 - 1) begin
-            // if (counter_reg == 30_000 - 1) begin
+            if (counter_reg == 5_000_000 - 1) begin
+                // if (counter_reg == 30_000 - 1) begin
                 counter_next     = 0;
                 start_dht11_next = 1;
             end else begin
@@ -198,7 +198,7 @@ module start_signal (
     assign tem_dec  = tem_dec_reg;
     assign checksum = checksum_reg;
 
-    localparam IDLE = 4'b0000, START_L = 4'b0001, START_H = 4'b0010, WAIT_0 = 4'b0011, WAIT_1 = 4'b0100, READ_LOW = 4'b0101, READ_HIGH = 4'b0110, DATA_DIST = 4'b0111;
+    localparam IDLE = 4'b0000, START_L = 4'b0001, START_H = 4'b0010, WAIT_H = 4'b0011, WAIT_L = 4'b0100, READ_LOW = 4'b0101, READ_HIGH = 4'b0110, DATA_DIST = 4'b0111;
     //    localparam START = 1'b0, WAIT_RESPONSE = 1'b1;
 
     assign signal = signal_reg;
@@ -290,26 +290,26 @@ module start_signal (
                     counter_next = counter_reg + 1;
                     if (counter_reg == 25 - 1) begin
                         mode_next = 1'b0;
-                        state_next = WAIT_0;
+                        state_next = WAIT_H;
                         counter_next = 0;
                     end
                 end
             end
-            WAIT_0: begin
+            WAIT_H: begin
                 // signal_next = 1'b0;
                 if (tick) begin
-                    counter_next = counter_reg + 1;
+                    // counter_next = counter_reg + 1;
                     if (dht11_data) begin
                         // if (counter_reg > 40) begin
-                        state_next   = WAIT_1;
+                        state_next   = WAIT_L;
                         counter_next = 0;
                         // end
                     end
                 end
             end
-            WAIT_1: begin
+            WAIT_L: begin
                 if (tick) begin
-                    counter_next = counter_reg + 1;
+                    // counter_next = counter_reg + 1;
                     if (!dht11_data) begin
                         // if (counter_reg > 80) begin
                         state_next = READ_LOW;
@@ -385,6 +385,7 @@ module start_signal (
                             tem_dec_next = 0;
                             counter_next = 0;
                             i_next       = 0;
+                            wr_en_next   = 1'b1;
                             state_next   = IDLE;
                         end
                     end
