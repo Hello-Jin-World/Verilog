@@ -54,7 +54,7 @@ module string_process (
     reg [7:0] set_sec_reg, set_sec_next;
     reg [7:0] set_msec_reg, set_msec_next;
 
-    reg state_reg, state_next;
+    reg [1:0] state_reg, state_next;
 
 
     assign result   = result_reg;
@@ -122,6 +122,8 @@ module string_process (
 
     localparam COMMAND_RUN = "run\n", COMMAND_STOP = "stop\n", COMMAND_CLEAR = "clear\n", COMMAND_MODE = "mode\n", COMMAND_MEASURE = "measure\n", COMMAND_TIME_SETTING = "time setting ";
 
+    localparam IDLE_STATE = 0, WAIT_STRING_RX_DONE = 1, VALUE_DECISION = 2;
+
     always @(*) begin
         result_next   = result_reg;
         set_hour_next = set_hour_reg;
@@ -130,38 +132,41 @@ module string_process (
         set_msec_next = set_msec_reg;
         state_next    = state_reg;
         case (state_reg)
-            0: begin
+            IDLE_STATE: begin
                 result_next = IDLE;
                 if (rx_done) begin
-                    state_next = 1;
+                    state_next = WAIT_STRING_RX_DONE;
                 end
             end
-            1: begin
-                if (rx_data == "\n") begin
-                    state_next = 0; 
-                    if ({a[0], a[1], a[2], a[3]} == COMMAND_RUN) begin
-                        result_next = RUN;
-                    end else if ({a[0], a[1], a[2], a[3], a[4]} == COMMAND_STOP) begin
-                        result_next = STOP;
-                    end else if ({a[0], a[1], a[2], a[3], a[4], a[5]} == COMMAND_CLEAR) begin
-                        result_next = CLEAR;
-                    end else if ({a[0], a[1], a[2], a[3], a[4]} == COMMAND_MODE) begin
-                        result_next = MODE;
-                    end else if ({a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8], a[9], a[10], a[11], a[12]} == COMMAND_TIME_SETTING && a[24] == "\n") begin
-                        if (((a[13] - "0") * 10 + (a[14] - "0") > 23) || ((a[16] - "0") * 10 + (a[17] - "0") > 59) || ((a[19] - "0") * 10 + (a[20] - "0") > 59) || ((a[22] - "0") * 10 + (a[23] - "0") > 99)) begin
-                            result_next = TIME_SET_ERROR;
-                        end else begin
-                            set_hour_next = (a[13] - "0") * 10 + (a[14] - "0");
-                            set_min_next  = (a[16] - "0") * 10 + (a[17] - "0");
-                            set_sec_next  = (a[19] - "0") * 10 + (a[20] - "0");
-                            set_msec_next = (a[22] - "0") * 10 + (a[23] - "0");
-                            result_next   = SET_TIME;
-                        end
-                    end else if ({a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7]} == COMMAND_MEASURE) begin
-                        result_next = MEASURE_DISTANCE;
+            WAIT_STRING_RX_DONE: begin
+                if (a[counter_reg] == "\n") begin
+                    state_next = VALUE_DECISION;
+                end
+            end
+            VALUE_DECISION: begin
+                state_next = IDLE_STATE;
+                if ({a[0], a[1], a[2], a[3]} == COMMAND_RUN) begin
+                    result_next = RUN;
+                end else if ({a[0], a[1], a[2], a[3], a[4]} == COMMAND_STOP) begin
+                    result_next = STOP;
+                end else if ({a[0], a[1], a[2], a[3], a[4], a[5]} == COMMAND_CLEAR) begin
+                    result_next = CLEAR;
+                end else if ({a[0], a[1], a[2], a[3], a[4]} == COMMAND_MODE) begin
+                    result_next = MODE;
+                end else if ({a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8], a[9], a[10], a[11], a[12]} == COMMAND_TIME_SETTING && a[24] == "\n") begin
+                    if (((a[13] - "0") * 10 + (a[14] - "0") > 23) || ((a[16] - "0") * 10 + (a[17] - "0") > 59) || ((a[19] - "0") * 10 + (a[20] - "0") > 59) || ((a[22] - "0") * 10 + (a[23] - "0") > 99)) begin
+                        result_next = TIME_SET_ERROR;
                     end else begin
-                        result_next = NONE;
+                        set_hour_next = (a[13] - "0") * 10 + (a[14] - "0");
+                        set_min_next  = (a[16] - "0") * 10 + (a[17] - "0");
+                        set_sec_next  = (a[19] - "0") * 10 + (a[20] - "0");
+                        set_msec_next = (a[22] - "0") * 10 + (a[23] - "0");
+                        result_next   = SET_TIME;
                     end
+                end else if ({a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7]} == COMMAND_MEASURE) begin
+                    result_next = MEASURE_DISTANCE;
+                end else begin
+                    result_next = NONE;
                 end
             end
         endcase
