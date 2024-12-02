@@ -2,12 +2,12 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sat Nov 30 02:00:40 2024
-# Process ID: 27272
-# Current directory: D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1
+# Start of session at: Mon Dec  2 13:37:14 2024
+# Process ID: 18244
+# Current directory: D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1
 # Command line: vivado.exe -log top_dht11.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_dht11.tcl
-# Log file: D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/top_dht11.vds
-# Journal file: D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1\vivado.jou
+# Log file: D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/top_dht11.vds
+# Journal file: D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source top_dht11.tcl -notrace
 Command: synth_design -top top_dht11 -part xc7a35tcpg236-1
@@ -17,16 +17,15 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 15872
-WARNING: [Synth 8-992] counter_reg is already implicitly declared earlier [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/string_process.v:49]
+INFO: [Synth 8-7075] Helper process launched with PID 2976
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1127.516 ; gain = 38.738
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1107.535 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top_dht11' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:23]
-INFO: [Synth 8-6157] synthesizing module 'button_detector' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/button_detector.v:23]
+INFO: [Synth 8-6157] synthesizing module 'top_dht11' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:23]
+INFO: [Synth 8-6157] synthesizing module 'button_detector' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/button_detector.v:23]
 	Parameter N bound to: 7 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'button_detector' (1#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/button_detector.v:23]
-INFO: [Synth 8-6157] synthesizing module 'string_process' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/string_process.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'button_detector' (1#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/button_detector.v:23]
+INFO: [Synth 8-6157] synthesizing module 'string_process' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/string_process.v:23]
 	Parameter IDLE bound to: 0 - type: integer 
 	Parameter RUN bound to: 1 - type: integer 
 	Parameter STOP bound to: 2 - type: integer 
@@ -35,6 +34,7 @@ INFO: [Synth 8-6157] synthesizing module 'string_process' [D:/Verilog/Verilog/DH
 	Parameter SET_TIME bound to: 5 - type: integer 
 	Parameter TIME_SET_ERROR bound to: 6 - type: integer 
 	Parameter MEASURE_DISTANCE bound to: 7 - type: integer 
+	Parameter NONE bound to: 8 - type: integer 
 	Parameter COMMAND_RUN bound to: run
  - type: string 
 	Parameter COMMAND_STOP bound to: stop
@@ -46,132 +46,132 @@ INFO: [Synth 8-6157] synthesizing module 'string_process' [D:/Verilog/Verilog/DH
 	Parameter COMMAND_MEASURE bound to: measure
  - type: string 
 	Parameter COMMAND_TIME_SETTING bound to: time setting  - type: string 
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/string_process.v:36]
-INFO: [Synth 8-6157] synthesizing module 'ila_0' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/.Xil/Vivado-27272-DESKTOP-PFRE25G/realtime/ila_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_0' (2#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/.Xil/Vivado-27272-DESKTOP-PFRE25G/realtime/ila_0_stub.v:6]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'U_ila_0'. This will prevent further optimization [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/string_process.v:36]
-INFO: [Synth 8-6155] done synthesizing module 'string_process' (3#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/string_process.v:23]
-INFO: [Synth 8-6157] synthesizing module 'DHT11_control' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:23]
-INFO: [Synth 8-6157] synthesizing module 'clock_divider' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:135]
-INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (4#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:135]
-INFO: [Synth 8-6157] synthesizing module 'count_5sec' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:95]
-INFO: [Synth 8-6155] done synthesizing module 'count_5sec' (5#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:95]
-INFO: [Synth 8-6157] synthesizing module 'start_signal' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:163]
+	Parameter IDLE_STATE bound to: 0 - type: integer 
+	Parameter WAIT_STRING_RX_DONE bound to: 1 - type: integer 
+	Parameter VALUE_DECISION bound to: 2 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/string_process.v:126]
+INFO: [Synth 8-6155] done synthesizing module 'string_process' (2#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/string_process.v:23]
+INFO: [Synth 8-6157] synthesizing module 'DHT11_control' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:23]
+INFO: [Synth 8-6157] synthesizing module 'clock_divider' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (3#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:121]
+INFO: [Synth 8-6157] synthesizing module 'count_5sec' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:81]
+INFO: [Synth 8-6155] done synthesizing module 'count_5sec' (4#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:81]
+INFO: [Synth 8-6157] synthesizing module 'start_signal' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:148]
 	Parameter IDLE bound to: 4'b0000 
 	Parameter START_L bound to: 4'b0001 
 	Parameter START_H bound to: 4'b0010 
-	Parameter WAIT_0 bound to: 4'b0011 
-	Parameter WAIT_1 bound to: 4'b0100 
+	Parameter WAIT_H bound to: 4'b0011 
+	Parameter WAIT_L bound to: 4'b0100 
 	Parameter READ_LOW bound to: 4'b0101 
 	Parameter READ_HIGH bound to: 4'b0110 
 	Parameter DATA_DIST bound to: 4'b0111 
-WARNING: [Synth 8-6104] Input port 'wr_en' has an internal driver [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:206]
-INFO: [Synth 8-6155] done synthesizing module 'start_signal' (6#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:163]
-INFO: [Synth 8-6155] done synthesizing module 'DHT11_control' (7#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:23]
-WARNING: [Synth 8-7071] port 'checksum' of module 'DHT11_control' is unconnected for instance 'U_dht11_control' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:100]
-WARNING: [Synth 8-7023] instance 'U_dht11_control' of module 'DHT11_control' has 9 connections declared, but only 8 given [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:100]
-INFO: [Synth 8-6157] synthesizing module 'ultrasonic_top' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/ultrasonic.v:22]
-INFO: [Synth 8-6157] synthesizing module 'digit_splitter_for_ultrasonic' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:190]
-INFO: [Synth 8-6155] done synthesizing module 'digit_splitter_for_ultrasonic' (8#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:190]
-INFO: [Synth 8-6157] synthesizing module 'ultrasonic' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/ultrasonic.v:59]
+WARNING: [Synth 8-6104] Input port 'wr_en' has an internal driver [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:190]
+INFO: [Synth 8-6155] done synthesizing module 'start_signal' (5#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:148]
+INFO: [Synth 8-6155] done synthesizing module 'DHT11_control' (6#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:23]
+WARNING: [Synth 8-7071] port 'checksum' of module 'DHT11_control' is unconnected for instance 'U_dht11_control' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:100]
+WARNING: [Synth 8-7023] instance 'U_dht11_control' of module 'DHT11_control' has 9 connections declared, but only 8 given [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:100]
+INFO: [Synth 8-6157] synthesizing module 'ultrasonic_top' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/ultrasonic.v:22]
+INFO: [Synth 8-6157] synthesizing module 'digit_splitter_for_ultrasonic' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:190]
+INFO: [Synth 8-6155] done synthesizing module 'digit_splitter_for_ultrasonic' (7#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:190]
+INFO: [Synth 8-6157] synthesizing module 'ultrasonic' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/ultrasonic.v:59]
 	Parameter IDLE bound to: 2'b00 
 	Parameter TRIGGER bound to: 2'b01 
 	Parameter ECHO bound to: 2'b10 
 	Parameter MEASURE bound to: 2'b11 
-INFO: [Synth 8-6155] done synthesizing module 'ultrasonic' (9#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/ultrasonic.v:59]
-INFO: [Synth 8-6155] done synthesizing module 'ultrasonic_top' (10#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/ultrasonic.v:22]
-WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_1' does not match port width (4) of module 'ultrasonic_top' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:119]
-WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_10' does not match port width (4) of module 'ultrasonic_top' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:120]
-WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_100' does not match port width (4) of module 'ultrasonic_top' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:121]
-WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_1000' does not match port width (4) of module 'ultrasonic_top' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:122]
-INFO: [Synth 8-6157] synthesizing module 'stopwatch_clock' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_clock.v:23]
-INFO: [Synth 8-6157] synthesizing module 'led_mode_state' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_clock.v:190]
-INFO: [Synth 8-6155] done synthesizing module 'led_mode_state' (11#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_clock.v:190]
-INFO: [Synth 8-6157] synthesizing module 'clock_controlunit' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_controlunit.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'clock_controlunit' (12#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_controlunit.v:23]
-INFO: [Synth 8-6157] synthesizing module 'clock_datapath' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:23]
-INFO: [Synth 8-6157] synthesizing module 'clock_clk_div' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:105]
-INFO: [Synth 8-6155] done synthesizing module 'clock_clk_div' (13#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:105]
-INFO: [Synth 8-6157] synthesizing module 'clock_counter_time' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:141]
+INFO: [Synth 8-6155] done synthesizing module 'ultrasonic' (8#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/ultrasonic.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'ultrasonic_top' (9#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/ultrasonic.v:22]
+WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_1' does not match port width (4) of module 'ultrasonic_top' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:119]
+WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_10' does not match port width (4) of module 'ultrasonic_top' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:120]
+WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_100' does not match port width (4) of module 'ultrasonic_top' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:121]
+WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_1000' does not match port width (4) of module 'ultrasonic_top' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:122]
+INFO: [Synth 8-6157] synthesizing module 'stopwatch_clock' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_clock.v:23]
+INFO: [Synth 8-6157] synthesizing module 'led_mode_state' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_clock.v:194]
+INFO: [Synth 8-6155] done synthesizing module 'led_mode_state' (10#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_clock.v:194]
+INFO: [Synth 8-6157] synthesizing module 'clock_controlunit' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_controlunit.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'clock_controlunit' (11#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_controlunit.v:23]
+INFO: [Synth 8-6157] synthesizing module 'clock_datapath' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:23]
+INFO: [Synth 8-6157] synthesizing module 'clock_clk_div' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:105]
+INFO: [Synth 8-6155] done synthesizing module 'clock_clk_div' (12#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:105]
+INFO: [Synth 8-6157] synthesizing module 'clock_counter_time' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:141]
 	Parameter CLOCK_TIME_MAX bound to: 100 - type: integer 
 	Parameter CLOCK_BIT_WIDTH bound to: 7 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'clock_counter_time' (14#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:141]
-WARNING: [Synth 8-7071] port 'button' of module 'clock_counter_time' is unconnected for instance 'U_clock_counter_msec' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:51]
-WARNING: [Synth 8-7023] instance 'U_clock_counter_msec' of module 'clock_counter_time' has 8 connections declared, but only 7 given [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:51]
-INFO: [Synth 8-6157] synthesizing module 'clock_counter_time__parameterized0' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:141]
+INFO: [Synth 8-6155] done synthesizing module 'clock_counter_time' (13#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:141]
+WARNING: [Synth 8-7071] port 'button' of module 'clock_counter_time' is unconnected for instance 'U_clock_counter_msec' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:51]
+WARNING: [Synth 8-7023] instance 'U_clock_counter_msec' of module 'clock_counter_time' has 8 connections declared, but only 7 given [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:51]
+INFO: [Synth 8-6157] synthesizing module 'clock_counter_time__parameterized0' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:141]
 	Parameter CLOCK_TIME_MAX bound to: 60 - type: integer 
 	Parameter CLOCK_BIT_WIDTH bound to: 7 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'clock_counter_time__parameterized0' (14#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:141]
-INFO: [Synth 8-6157] synthesizing module 'clock_counter_time__parameterized1' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:141]
+INFO: [Synth 8-6155] done synthesizing module 'clock_counter_time__parameterized0' (13#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:141]
+INFO: [Synth 8-6157] synthesizing module 'clock_counter_time__parameterized1' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:141]
 	Parameter CLOCK_TIME_MAX bound to: 24 - type: integer 
 	Parameter CLOCK_BIT_WIDTH bound to: 7 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'clock_counter_time__parameterized1' (14#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:141]
-INFO: [Synth 8-6155] done synthesizing module 'clock_datapath' (15#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:23]
-INFO: [Synth 8-6157] synthesizing module 'stopwatch_control_unit' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_control_unit.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'clock_counter_time__parameterized1' (13#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:141]
+INFO: [Synth 8-6155] done synthesizing module 'clock_datapath' (14#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/clock_datapath.v:23]
+INFO: [Synth 8-6157] synthesizing module 'stopwatch_control_unit' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_control_unit.v:23]
 	Parameter STOP bound to: 2'b00 
 	Parameter RUN bound to: 2'b01 
 	Parameter CLEAR bound to: 2'b10 
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_control_unit.v:51]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_control_unit.v:74]
-INFO: [Synth 8-6155] done synthesizing module 'stopwatch_control_unit' (16#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_control_unit.v:23]
-INFO: [Synth 8-6157] synthesizing module 'stopwatch_datapath' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:23]
-INFO: [Synth 8-6157] synthesizing module 'clk_div_stopwatch' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:95]
-INFO: [Synth 8-6155] done synthesizing module 'clk_div_stopwatch' (17#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:95]
-INFO: [Synth 8-6157] synthesizing module 'time_clock_counter' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:137]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_control_unit.v:51]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_control_unit.v:74]
+INFO: [Synth 8-6155] done synthesizing module 'stopwatch_control_unit' (15#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_control_unit.v:23]
+INFO: [Synth 8-6157] synthesizing module 'stopwatch_datapath' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:23]
+INFO: [Synth 8-6157] synthesizing module 'clk_div_stopwatch' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:95]
+INFO: [Synth 8-6155] done synthesizing module 'clk_div_stopwatch' (16#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:95]
+INFO: [Synth 8-6157] synthesizing module 'time_clock_counter' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:137]
 	Parameter TIME_MAX bound to: 100 - type: integer 
 	Parameter BIT_WIDTH bound to: 7 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'time_clock_counter' (18#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:137]
-INFO: [Synth 8-6157] synthesizing module 'time_clock_counter__parameterized0' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:137]
+INFO: [Synth 8-6155] done synthesizing module 'time_clock_counter' (17#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:137]
+INFO: [Synth 8-6157] synthesizing module 'time_clock_counter__parameterized0' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:137]
 	Parameter TIME_MAX bound to: 60 - type: integer 
 	Parameter BIT_WIDTH bound to: 7 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'time_clock_counter__parameterized0' (18#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:137]
-INFO: [Synth 8-6157] synthesizing module 'time_clock_counter__parameterized1' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:137]
+INFO: [Synth 8-6155] done synthesizing module 'time_clock_counter__parameterized0' (17#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:137]
+INFO: [Synth 8-6157] synthesizing module 'time_clock_counter__parameterized1' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:137]
 	Parameter TIME_MAX bound to: 24 - type: integer 
 	Parameter BIT_WIDTH bound to: 7 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'time_clock_counter__parameterized1' (18#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:137]
-INFO: [Synth 8-6155] done synthesizing module 'stopwatch_datapath' (19#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:23]
-INFO: [Synth 8-6157] synthesizing module 'select_clock_stopwatch' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_clock.v:148]
-INFO: [Synth 8-226] default block is never used [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_clock.v:166]
-INFO: [Synth 8-6155] done synthesizing module 'select_clock_stopwatch' (20#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_clock.v:148]
-INFO: [Synth 8-6155] done synthesizing module 'stopwatch_clock' (21#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_clock.v:23]
-WARNING: [Synth 8-689] width (8) of port connection 'seleted_msec' does not match port width (7) of module 'stopwatch_clock' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:141]
-WARNING: [Synth 8-689] width (8) of port connection 'seleted_sec' does not match port width (7) of module 'stopwatch_clock' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:142]
-WARNING: [Synth 8-689] width (8) of port connection 'seleted_min' does not match port width (7) of module 'stopwatch_clock' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:143]
-WARNING: [Synth 8-689] width (8) of port connection 'seleted_hour' does not match port width (7) of module 'stopwatch_clock' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:144]
-INFO: [Synth 8-6157] synthesizing module 'dht_swclock_switch' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:244]
-INFO: [Synth 8-6155] done synthesizing module 'dht_swclock_switch' (22#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:244]
-WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_1' does not match port width (4) of module 'dht_swclock_switch' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:172]
-WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_10' does not match port width (4) of module 'dht_swclock_switch' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:173]
-WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_100' does not match port width (4) of module 'dht_swclock_switch' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:174]
-WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_1000' does not match port width (4) of module 'dht_swclock_switch' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:175]
-INFO: [Synth 8-6157] synthesizing module 'fnd_controller' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:23]
-INFO: [Synth 8-6157] synthesizing module 'clk_div' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:150]
-INFO: [Synth 8-6155] done synthesizing module 'clk_div' (23#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:150]
-INFO: [Synth 8-6157] synthesizing module 'counter' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:136]
-INFO: [Synth 8-6155] done synthesizing module 'counter' (24#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:136]
-INFO: [Synth 8-6157] synthesizing module 'decoder_3x8' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:307]
-INFO: [Synth 8-226] default block is never used [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:313]
-INFO: [Synth 8-6155] done synthesizing module 'decoder_3x8' (25#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:307]
-INFO: [Synth 8-6157] synthesizing module 'digit_splitter' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:177]
-INFO: [Synth 8-6155] done synthesizing module 'digit_splitter' (26#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:177]
-INFO: [Synth 8-6157] synthesizing module 'comparator' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:356]
-INFO: [Synth 8-6155] done synthesizing module 'comparator' (27#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:356]
-INFO: [Synth 8-6157] synthesizing module 'mux_8x1' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:205]
-INFO: [Synth 8-226] default block is never used [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:218]
-INFO: [Synth 8-6155] done synthesizing module 'mux_8x1' (28#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:205]
-INFO: [Synth 8-6157] synthesizing module 'mux_2x1' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:233]
+INFO: [Synth 8-6155] done synthesizing module 'time_clock_counter__parameterized1' (17#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:137]
+INFO: [Synth 8-6155] done synthesizing module 'stopwatch_datapath' (18#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_datapath.v:23]
+INFO: [Synth 8-6157] synthesizing module 'select_clock_stopwatch' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_clock.v:152]
+INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_clock.v:170]
+INFO: [Synth 8-6155] done synthesizing module 'select_clock_stopwatch' (19#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_clock.v:152]
+INFO: [Synth 8-6155] done synthesizing module 'stopwatch_clock' (20#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/stopwatch_clock.v:23]
+WARNING: [Synth 8-689] width (8) of port connection 'seleted_msec' does not match port width (7) of module 'stopwatch_clock' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:143]
+WARNING: [Synth 8-689] width (8) of port connection 'seleted_sec' does not match port width (7) of module 'stopwatch_clock' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:144]
+WARNING: [Synth 8-689] width (8) of port connection 'seleted_min' does not match port width (7) of module 'stopwatch_clock' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:145]
+WARNING: [Synth 8-689] width (8) of port connection 'seleted_hour' does not match port width (7) of module 'stopwatch_clock' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:146]
+INFO: [Synth 8-6157] synthesizing module 'dht_swclock_switch' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:246]
+INFO: [Synth 8-6155] done synthesizing module 'dht_swclock_switch' (21#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:246]
+WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_1' does not match port width (4) of module 'dht_swclock_switch' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:174]
+WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_10' does not match port width (4) of module 'dht_swclock_switch' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:175]
+WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_100' does not match port width (4) of module 'dht_swclock_switch' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:176]
+WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_1000' does not match port width (4) of module 'dht_swclock_switch' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:177]
+INFO: [Synth 8-6157] synthesizing module 'fnd_controller' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:23]
+INFO: [Synth 8-6157] synthesizing module 'clk_div' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:150]
+INFO: [Synth 8-6155] done synthesizing module 'clk_div' (22#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:150]
+INFO: [Synth 8-6157] synthesizing module 'counter' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:136]
+INFO: [Synth 8-6155] done synthesizing module 'counter' (23#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:136]
+INFO: [Synth 8-6157] synthesizing module 'decoder_3x8' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:307]
+INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:313]
+INFO: [Synth 8-6155] done synthesizing module 'decoder_3x8' (24#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:307]
+INFO: [Synth 8-6157] synthesizing module 'digit_splitter' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:177]
+INFO: [Synth 8-6155] done synthesizing module 'digit_splitter' (25#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:177]
+INFO: [Synth 8-6157] synthesizing module 'comparator' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:356]
+INFO: [Synth 8-6155] done synthesizing module 'comparator' (26#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:356]
+INFO: [Synth 8-6157] synthesizing module 'mux_8x1' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:205]
+INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:218]
+INFO: [Synth 8-6155] done synthesizing module 'mux_8x1' (27#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:205]
+INFO: [Synth 8-6157] synthesizing module 'mux_2x1' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:233]
 	Parameter STATE0 bound to: 0 - type: integer 
 	Parameter STATE1 bound to: 1 - type: integer 
 	Parameter STATE2 bound to: 2 - type: integer 
 	Parameter STATE3 bound to: 3 - type: integer 
-INFO: [Synth 8-226] default block is never used [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:273]
-INFO: [Synth 8-226] default block is never used [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:298]
-INFO: [Synth 8-6155] done synthesizing module 'mux_2x1' (29#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:233]
-INFO: [Synth 8-6157] synthesizing module 'BCDtoSEG_decoder' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:328]
-INFO: [Synth 8-226] default block is never used [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:334]
-INFO: [Synth 8-6155] done synthesizing module 'BCDtoSEG_decoder' (30#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:328]
-INFO: [Synth 8-6155] done synthesizing module 'fnd_controller' (31#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:23]
-INFO: [Synth 8-6157] synthesizing module 'fifo_data' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo_data.v:23]
+INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:273]
+INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:298]
+INFO: [Synth 8-6155] done synthesizing module 'mux_2x1' (28#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:233]
+INFO: [Synth 8-6157] synthesizing module 'BCDtoSEG_decoder' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:328]
+INFO: [Synth 8-226] default block is never used [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:334]
+INFO: [Synth 8-6155] done synthesizing module 'BCDtoSEG_decoder' (29#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:328]
+INFO: [Synth 8-6155] done synthesizing module 'fnd_controller' (30#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fnd_controller.v:23]
+INFO: [Synth 8-6157] synthesizing module 'fifo_data' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo_data.v:23]
 	Parameter IDLE bound to: 0 - type: integer 
 	Parameter DATA_1 bound to: 1 - type: integer 
 	Parameter DATA_2 bound to: 2 - type: integer 
@@ -287,103 +287,116 @@ INFO: [Synth 8-6157] synthesizing module 'fifo_data' [D:/Verilog/Verilog/DHT11_F
 	Parameter SET_TIME_ERROR18 bound to: 112 - type: integer 
 	Parameter NEW_LINE3 bound to: 113 - type: integer 
 	Parameter NEW_LINE4 bound to: 114 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo_data.v:217]
-INFO: [Synth 8-6155] done synthesizing module 'fifo_data' (32#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo_data.v:23]
-WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_1' does not match port width (4) of module 'fifo_data' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:210]
-WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_10' does not match port width (4) of module 'fifo_data' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:211]
-WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_100' does not match port width (4) of module 'fifo_data' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:212]
-WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_1000' does not match port width (4) of module 'fifo_data' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:213]
-INFO: [Synth 8-6157] synthesizing module 'fifo' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:23]
-INFO: [Synth 8-6157] synthesizing module 'register_file' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:56]
-INFO: [Synth 8-6155] done synthesizing module 'register_file' (33#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:56]
-INFO: [Synth 8-6157] synthesizing module 'fifo_control_unit' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:76]
-INFO: [Synth 8-6155] done synthesizing module 'fifo_control_unit' (34#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:76]
-INFO: [Synth 8-6155] done synthesizing module 'fifo' (35#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:23]
-INFO: [Synth 8-6157] synthesizing module 'uart' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:23]
-INFO: [Synth 8-6157] synthesizing module 'baudrate_generator' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:73]
-INFO: [Synth 8-6155] done synthesizing module 'baudrate_generator' (36#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:73]
-INFO: [Synth 8-6157] synthesizing module 'transmitter' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:103]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo_data.v:201]
+INFO: [Synth 8-6157] synthesizing module 'ila_0' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/.Xil/Vivado-18244-DESKTOP-7CFQ9ND/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_0' (31#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/.Xil/Vivado-18244-DESKTOP-7CFQ9ND/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo_data.v:224]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'U_ila_0'. This will prevent further optimization [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo_data.v:201]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_data' (32#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo_data.v:23]
+WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_1' does not match port width (4) of module 'fifo_data' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:212]
+WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_10' does not match port width (4) of module 'fifo_data' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:213]
+WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_100' does not match port width (4) of module 'fifo_data' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:214]
+WARNING: [Synth 8-689] width (8) of port connection 'ultrasonic_1000' does not match port width (4) of module 'fifo_data' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:215]
+INFO: [Synth 8-6157] synthesizing module 'fifo' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:23]
+INFO: [Synth 8-6157] synthesizing module 'register_file' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'register_file' (33#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:56]
+INFO: [Synth 8-6157] synthesizing module 'fifo_control_unit' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:76]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_control_unit' (34#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:76]
+INFO: [Synth 8-6155] done synthesizing module 'fifo' (35#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/fifo.v:23]
+INFO: [Synth 8-6157] synthesizing module 'uart' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:23]
+INFO: [Synth 8-6157] synthesizing module 'baudrate_generator' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'baudrate_generator' (36#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:72]
+INFO: [Synth 8-6157] synthesizing module 'transmitter' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:102]
 	Parameter IDLE bound to: 0 - type: integer 
 	Parameter START bound to: 1 - type: integer 
 	Parameter DATA bound to: 2 - type: integer 
 	Parameter STOP bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'transmitter' (37#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:103]
-INFO: [Synth 8-6157] synthesizing module 'reciever' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:216]
+INFO: [Synth 8-6155] done synthesizing module 'transmitter' (37#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:102]
+INFO: [Synth 8-6157] synthesizing module 'reciever' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:215]
 	Parameter IDLE bound to: 0 - type: integer 
 	Parameter START bound to: 1 - type: integer 
 	Parameter DATA bound to: 2 - type: integer 
 	Parameter STOP bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'reciever' (38#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:216]
-INFO: [Synth 8-6155] done synthesizing module 'uart' (39#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'top_dht11' (40#1) [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'reciever' (38#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:215]
+INFO: [Synth 8-6155] done synthesizing module 'uart' (39#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/uart.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top_dht11' (40#1) [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1252.863 ; gain = 164.086
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1155.324 ; gain = 47.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1252.863 ; gain = 164.086
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1155.324 ; gain = 47.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1252.863 ; gain = 164.086
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1155.324 ; gain = 47.789
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.067 . Memory (MB): peak = 1252.863 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1155.324 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [d:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.gen/sources_1/ip/ila_0_1/ila_0/ila_0_in_context.xdc] for cell 'U_string_process/U_ila_0'
-Finished Parsing XDC File [d:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.gen/sources_1/ip/ila_0_1/ila_0/ila_0_in_context.xdc] for cell 'U_string_process/U_ila_0'
-Parsing XDC File [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
-Finished Parsing XDC File [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_dht11_propImpl.xdc].
+Parsing XDC File [d:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.gen/sources_1/ip/ila_0_1/ila_0/ila_0_in_context.xdc] for cell 'U_fifo_data/U_ila_0'
+Finished Parsing XDC File [d:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.gen/sources_1/ip/ila_0_1/ila_0/ila_0_in_context.xdc] for cell 'U_fifo_data/U_ila_0'
+Parsing XDC File [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+Finished Parsing XDC File [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_dht11_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_dht11_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1363.863 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1275.980 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1363.863 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1275.980 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1363.863 ; gain = 275.086
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1275.980 ; gain = 168.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1363.863 ; gain = 275.086
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1275.980 ; gain = 168.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for U_string_process/U_ila_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_fifo_data/U_ila_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1363.863 ; gain = 275.086
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1275.980 ; gain = 168.445
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'string_process'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'start_signal'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ultrasonic'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'stopwatch_control_unit'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'fifo_data'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'transmitter'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'reciever'
-WARNING: [Synth 8-327] inferring latch for variable 'start_dht11_next_reg' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:120]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              IDLE_STATE |                              001 |                               00
+     WAIT_STRING_RX_DONE |                              010 |                               01
+          VALUE_DECISION |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'one-hot' in module 'string_process'
+WARNING: [Synth 8-327] inferring latch for variable 'start_dht11_next_reg' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:106]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
                     IDLE |                              000 |                              000
                  START_L |                              001 |                              001
                  START_H |                              010 |                              010
-                  WAIT_0 |                              011 |                              011
-                  WAIT_1 |                              100 |                              100
+                  WAIT_H |                              011 |                              011
+                  WAIT_L |                              100 |                              100
                 READ_LOW |                              101 |                              101
                DATA_DIST |                              110 |                              111
                READ_HIGH |                              111 |                              110
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'start_signal'
-WARNING: [Synth 8-327] inferring latch for variable 'receive_dht11_data_reg' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:61]
+WARNING: [Synth 8-327] inferring latch for variable 'receive_dht11_data_reg' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/DHT11_control.v:61]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -393,9 +406,9 @@ WARNING: [Synth 8-327] inferring latch for variable 'receive_dht11_data_reg' [D:
                  MEASURE |                               11 |                               11
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'ultrasonic'
-WARNING: [Synth 8-327] inferring latch for variable 'clk_cnt_tr_next_reg' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/ultrasonic.v:119]
-WARNING: [Synth 8-327] inferring latch for variable 'clk_cnt_echo_next_reg' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/ultrasonic.v:120]
-WARNING: [Synth 8-327] inferring latch for variable 'distance_next_reg' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/ultrasonic.v:141]
+WARNING: [Synth 8-327] inferring latch for variable 'clk_cnt_tr_next_reg' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/ultrasonic.v:119]
+WARNING: [Synth 8-327] inferring latch for variable 'clk_cnt_echo_next_reg' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/ultrasonic.v:120]
+WARNING: [Synth 8-327] inferring latch for variable 'distance_next_reg' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/ultrasonic.v:141]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -404,130 +417,130 @@ WARNING: [Synth 8-327] inferring latch for variable 'distance_next_reg' [D:/Veri
                    CLEAR |                              100 |                               10
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'stopwatch_control_unit'
-WARNING: [Synth 8-327] inferring latch for variable 'data_a_reg' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:270]
-WARNING: [Synth 8-327] inferring latch for variable 'data_b_reg' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:271]
-WARNING: [Synth 8-327] inferring latch for variable 'data_c_reg' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:272]
-WARNING: [Synth 8-327] inferring latch for variable 'data_d_reg' [D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:273]
+WARNING: [Synth 8-327] inferring latch for variable 'data_a_reg' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:272]
+WARNING: [Synth 8-327] inferring latch for variable 'data_b_reg' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:273]
+WARNING: [Synth 8-327] inferring latch for variable 'data_c_reg' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:274]
+WARNING: [Synth 8-327] inferring latch for variable 'data_d_reg' [D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.srcs/sources_1/new/top_dht11.v:275]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                    IDLE | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001 |                         00000000
-               DISTANCE1 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010 |                         01001111
-               DISTANCE2 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100 |                         01010000
-               DISTANCE3 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000 |                         01010001
-               DISTANCE4 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000 |                         01010010
-               DISTANCE5 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000 |                         01010011
-               DISTANCE6 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000 |                         01010100
-               DISTANCE7 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000 |                         01010101
-               DISTANCE8 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000 |                         01010110
-               DISTANCE9 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000 |                         01010111
-              DISTANCE10 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000 |                         01011000
-              DISTANCE11 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000 |                         01011001
-              DISTANCE12 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000 |                         01011010
-              DISTANCE13 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000 |                         01011011
-              DISTANCE14 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000 |                         01011100
-              DISTANCE15 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000 |                         01011101
-              DISTANCE16 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000 |                         01011110
-               NEW_LINE3 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000 |                         01110001
-            SET_MESSAGE1 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000 |                         01001001
-            SET_MESSAGE2 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000 |                         01001010
-            SET_MESSAGE3 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000 |                         01001011
-            SET_MESSAGE4 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000 |                         01001100
-               SET_TIME1 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000 |                         00100101
-               SET_TIME2 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000 |                         00100110
-               SET_TIME3 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000 |                         00100111
-               SET_TIME4 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000 |                         00101000
-               SET_TIME5 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000 |                         00101001
-               SET_TIME6 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000 |                         00101010
-               SET_TIME7 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000 |                         00101011
-               SET_TIME8 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000 |                         00101100
-               SET_TIME9 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000 |                         00101101
-              SET_TIME10 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000 |                         00101110
-              SET_TIME11 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000 |                         00101111
-              SET_TIME12 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000 |                         00110000
-              SET_TIME13 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000 |                         00110001
-              SET_TIME14 | 0000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000 |                         00110010
-              SET_TIME15 | 0000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000 |                         00110011
-              SET_TIME16 | 0000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000 |                         00110100
-              SET_TIME17 | 0000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000 |                         00110101
-              SET_TIME18 | 0000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000 |                         00110110
-              SET_TIME19 | 0000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000 |                         00110111
-              SET_TIME20 | 0000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000 |                         00111000
-              SET_TIME21 | 0000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000 |                         00111001
-              SET_TIME22 | 0000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000 |                         00111010
-              SET_TIME23 | 0000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000 |                         00111011
-              SET_TIME24 | 0000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000 |                         00111100
-              SET_TIME25 | 0000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000 |                         00111101
-              SET_TIME26 | 0000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000 |                         00111110
-              SET_TIME27 | 0000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000 |                         00111111
-              SET_TIME28 | 0000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000 |                         01000000
-              SET_TIME29 | 0000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000 |                         01000001
-              SET_TIME30 | 0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000 |                         01000010
-              SET_TIME31 | 0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000 |                         01000011
-              SET_TIME32 | 0000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000 |                         01000100
-              SET_TIME33 | 0000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000 |                         01000101
-              SET_TIME34 | 0000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000 |                         01000110
-              SET_TIME35 | 0000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000 |                         01000111
-              SET_TIME36 | 0000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000 |                         01001000
-               NEW_LINE2 | 0000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000 |                         01001110
-         SET_TIME_ERROR1 | 0000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000 |                         01011111
-         SET_TIME_ERROR2 | 0000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000 |                         01100000
-         SET_TIME_ERROR3 | 0000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000 |                         01100001
-         SET_TIME_ERROR4 | 0000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000 |                         01100010
-         SET_TIME_ERROR5 | 0000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000 |                         01100011
-         SET_TIME_ERROR6 | 0000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000 |                         01100100
-         SET_TIME_ERROR7 | 0000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000 |                         01100101
-         SET_TIME_ERROR8 | 0000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000 |                         01100110
-         SET_TIME_ERROR9 | 0000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000 |                         01100111
-        SET_TIME_ERROR10 | 0000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000 |                         01101000
-        SET_TIME_ERROR11 | 0000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000 |                         01101001
-        SET_TIME_ERROR12 | 0000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000 |                         01101010
-        SET_TIME_ERROR13 | 0000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000 |                         01101011
-        SET_TIME_ERROR14 | 0000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000 |                         01101100
-        SET_TIME_ERROR15 | 0000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000 |                         01101101
-        SET_TIME_ERROR16 | 0000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000 |                         01101110
-        SET_TIME_ERROR17 | 0000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000 |                         01101111
-        SET_TIME_ERROR18 | 0000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000 |                         01110000
-               NEW_LINE4 | 0000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000 |                         01110010
-                    HUM1 | 0000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00001011
-                    HUM2 | 0000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00001100
-                    HUM3 | 0000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00001101
-                    HUM4 | 0000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00001110
-                    HUM5 | 0000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00001111
-                    HUM6 | 0000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00010000
-                    HUM7 | 0000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00010001
-                    HUM8 | 0000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00010010
-                  COLON1 | 0000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00011110
-                  DATA_1 | 0000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00000001
-                  DATA_2 | 0000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00000010
-                  POINT0 | 0000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00001001
-                  DATA_3 | 0000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00000011
-                  DATA_4 | 0000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00000100
-                     PER | 0000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00100011
-                   COMMA | 0000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00100000
-                   SPACE | 0000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00100100
-                    TEM1 | 0000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00010011
-                    TEM2 | 0000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00010100
-                    TEM3 | 0000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00010101
-                    TEM4 | 0000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00010110
-                    TEM5 | 0000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00010111
-                    TEM6 | 0000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00011000
-                    TEM7 | 0000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00011001
-                    TEM8 | 0000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00011010
-                    TEM9 | 0000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00011011
-                   TEM10 | 0000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00011100
-                   TEM11 | 0000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00011101
-                  COLON2 | 0000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00011111
-                  DATA_5 | 0000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00000101
-                  DATA_6 | 0000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00000110
-                  POINT1 | 0000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00001010
-                  DATA_7 | 0000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00000111
-                  DATA_8 | 0001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00001000
-                    CEL1 | 0010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00100001
-                    CEL2 | 0100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         00100010
-               NEW_LINE1 | 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |                         01001101
+                    IDLE |                          0000000 |                         00000000
+               DISTANCE1 |                          0000001 |                         01001111
+               DISTANCE2 |                          0000010 |                         01010000
+               DISTANCE3 |                          0000011 |                         01010001
+               DISTANCE4 |                          0000100 |                         01010010
+               DISTANCE5 |                          0000101 |                         01010011
+               DISTANCE6 |                          0000110 |                         01010100
+               DISTANCE7 |                          0000111 |                         01010101
+               DISTANCE8 |                          0001000 |                         01010110
+               DISTANCE9 |                          0001001 |                         01010111
+              DISTANCE10 |                          0001010 |                         01011000
+              DISTANCE11 |                          0001011 |                         01011001
+              DISTANCE12 |                          0001100 |                         01011010
+              DISTANCE13 |                          0001101 |                         01011011
+              DISTANCE14 |                          0001110 |                         01011100
+              DISTANCE15 |                          0001111 |                         01011101
+              DISTANCE16 |                          0010000 |                         01011110
+               NEW_LINE3 |                          0010001 |                         01110001
+            SET_MESSAGE1 |                          0010010 |                         01001001
+            SET_MESSAGE2 |                          0010011 |                         01001010
+            SET_MESSAGE3 |                          0010100 |                         01001011
+            SET_MESSAGE4 |                          0010101 |                         01001100
+               SET_TIME1 |                          0010110 |                         00100101
+               SET_TIME2 |                          0010111 |                         00100110
+               SET_TIME3 |                          0011000 |                         00100111
+               SET_TIME4 |                          0011001 |                         00101000
+               SET_TIME5 |                          0011010 |                         00101001
+               SET_TIME6 |                          0011011 |                         00101010
+               SET_TIME7 |                          0011100 |                         00101011
+               SET_TIME8 |                          0011101 |                         00101100
+               SET_TIME9 |                          0011110 |                         00101101
+              SET_TIME10 |                          0011111 |                         00101110
+              SET_TIME11 |                          0100000 |                         00101111
+              SET_TIME12 |                          0100001 |                         00110000
+              SET_TIME13 |                          0100010 |                         00110001
+              SET_TIME14 |                          0100011 |                         00110010
+              SET_TIME15 |                          0100100 |                         00110011
+              SET_TIME16 |                          0100101 |                         00110100
+              SET_TIME17 |                          0100110 |                         00110101
+              SET_TIME18 |                          0100111 |                         00110110
+              SET_TIME19 |                          0101000 |                         00110111
+              SET_TIME20 |                          0101001 |                         00111000
+              SET_TIME21 |                          0101010 |                         00111001
+              SET_TIME22 |                          0101011 |                         00111010
+              SET_TIME23 |                          0101100 |                         00111011
+              SET_TIME24 |                          0101101 |                         00111100
+              SET_TIME25 |                          0101110 |                         00111101
+              SET_TIME26 |                          0101111 |                         00111110
+              SET_TIME27 |                          0110000 |                         00111111
+              SET_TIME28 |                          0110001 |                         01000000
+              SET_TIME29 |                          0110010 |                         01000001
+              SET_TIME30 |                          0110011 |                         01000010
+              SET_TIME31 |                          0110100 |                         01000011
+              SET_TIME32 |                          0110101 |                         01000100
+              SET_TIME33 |                          0110110 |                         01000101
+              SET_TIME34 |                          0110111 |                         01000110
+              SET_TIME35 |                          0111000 |                         01000111
+              SET_TIME36 |                          0111001 |                         01001000
+               NEW_LINE2 |                          0111010 |                         01001110
+         SET_TIME_ERROR1 |                          0111011 |                         01011111
+         SET_TIME_ERROR2 |                          0111100 |                         01100000
+         SET_TIME_ERROR3 |                          0111101 |                         01100001
+         SET_TIME_ERROR4 |                          0111110 |                         01100010
+         SET_TIME_ERROR5 |                          0111111 |                         01100011
+         SET_TIME_ERROR6 |                          1000000 |                         01100100
+         SET_TIME_ERROR7 |                          1000001 |                         01100101
+         SET_TIME_ERROR8 |                          1000010 |                         01100110
+         SET_TIME_ERROR9 |                          1000011 |                         01100111
+        SET_TIME_ERROR10 |                          1000100 |                         01101000
+        SET_TIME_ERROR11 |                          1000101 |                         01101001
+        SET_TIME_ERROR12 |                          1000110 |                         01101010
+        SET_TIME_ERROR13 |                          1000111 |                         01101011
+        SET_TIME_ERROR14 |                          1001000 |                         01101100
+        SET_TIME_ERROR15 |                          1001001 |                         01101101
+        SET_TIME_ERROR16 |                          1001010 |                         01101110
+        SET_TIME_ERROR17 |                          1001011 |                         01101111
+        SET_TIME_ERROR18 |                          1001100 |                         01110000
+               NEW_LINE4 |                          1001101 |                         01110010
+                    HUM1 |                          1001110 |                         00001011
+                    HUM2 |                          1001111 |                         00001100
+                    HUM3 |                          1010000 |                         00001101
+                    HUM4 |                          1010001 |                         00001110
+                    HUM5 |                          1010010 |                         00001111
+                    HUM6 |                          1010011 |                         00010000
+                    HUM7 |                          1010100 |                         00010001
+                    HUM8 |                          1010101 |                         00010010
+                  COLON1 |                          1010110 |                         00011110
+                  DATA_1 |                          1010111 |                         00000001
+                  DATA_2 |                          1011000 |                         00000010
+                  POINT0 |                          1011001 |                         00001001
+                  DATA_3 |                          1011010 |                         00000011
+                  DATA_4 |                          1011011 |                         00000100
+                     PER |                          1011100 |                         00100011
+                   COMMA |                          1011101 |                         00100000
+                   SPACE |                          1011110 |                         00100100
+                    TEM1 |                          1011111 |                         00010011
+                    TEM2 |                          1100000 |                         00010100
+                    TEM3 |                          1100001 |                         00010101
+                    TEM4 |                          1100010 |                         00010110
+                    TEM5 |                          1100011 |                         00010111
+                    TEM6 |                          1100100 |                         00011000
+                    TEM7 |                          1100101 |                         00011001
+                    TEM8 |                          1100110 |                         00011010
+                    TEM9 |                          1100111 |                         00011011
+                   TEM10 |                          1101000 |                         00011100
+                   TEM11 |                          1101001 |                         00011101
+                  COLON2 |                          1101010 |                         00011111
+                  DATA_5 |                          1101011 |                         00000101
+                  DATA_6 |                          1101100 |                         00000110
+                  POINT1 |                          1101101 |                         00001010
+                  DATA_7 |                          1101110 |                         00000111
+                  DATA_8 |                          1101111 |                         00001000
+                    CEL1 |                          1110000 |                         00100001
+                    CEL2 |                          1110001 |                         00100010
+               NEW_LINE1 |                          1110010 |                         01001101
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'one-hot' in module 'fifo_data'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'fifo_data'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -547,7 +560,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'reciever'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1363.863 ; gain = 275.086
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1275.980 ; gain = 168.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -556,7 +569,7 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input   32 Bit       Adders := 4     
 	   3 Input   32 Bit       Adders := 4     
-	   2 Input   22 Bit       Adders := 1     
+	   2 Input   23 Bit       Adders := 1     
 	   2 Input   21 Bit       Adders := 2     
 	   2 Input   20 Bit       Adders := 2     
 	   2 Input   17 Bit       Adders := 5     
@@ -571,55 +584,57 @@ Detailed RTL Component Info :
 	   2 Input    3 Bit       Adders := 3     
 +---Registers : 
 	               40 Bit    Registers := 1     
-	               22 Bit    Registers := 1     
+	               23 Bit    Registers := 1     
 	               21 Bit    Registers := 2     
 	               20 Bit    Registers := 2     
 	               17 Bit    Registers := 5     
 	               15 Bit    Registers := 1     
 	               14 Bit    Registers := 1     
 	               10 Bit    Registers := 1     
-	                8 Bit    Registers := 276   
+	                8 Bit    Registers := 275   
 	                7 Bit    Registers := 3     
 	                6 Bit    Registers := 5     
 	                5 Bit    Registers := 2     
 	                4 Bit    Registers := 4     
 	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 37    
 +---Multipliers : 
 	               4x32  Multipliers := 4     
 +---Muxes : 
-	 115 Input  115 Bit        Muxes := 1     
-	   2 Input  115 Bit        Muxes := 1     
-	   3 Input  115 Bit        Muxes := 1     
-	   2 Input   22 Bit        Muxes := 1     
+	   2 Input   23 Bit        Muxes := 1     
 	   4 Input   21 Bit        Muxes := 2     
 	   2 Input   20 Bit        Muxes := 3     
 	   2 Input   17 Bit        Muxes := 5     
-	   2 Input   15 Bit        Muxes := 5     
+	   2 Input   15 Bit        Muxes := 4     
 	   8 Input   15 Bit        Muxes := 1     
 	   2 Input    8 Bit        Muxes := 7     
 	   4 Input    8 Bit        Muxes := 5     
 	 115 Input    8 Bit        Muxes := 1     
-	   2 Input    7 Bit        Muxes := 7     
+	 116 Input    8 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 9     
+	 115 Input    7 Bit        Muxes := 1     
+	   3 Input    7 Bit        Muxes := 1     
 	   8 Input    6 Bit        Muxes := 1     
 	   2 Input    6 Bit        Muxes := 10    
 	   2 Input    5 Bit        Muxes := 5     
 	   2 Input    4 Bit        Muxes := 6     
+	   3 Input    4 Bit        Muxes := 2     
+	   5 Input    4 Bit        Muxes := 1     
 	   8 Input    4 Bit        Muxes := 1     
 	   4 Input    4 Bit        Muxes := 2     
-	   6 Input    3 Bit        Muxes := 1     
-	   3 Input    3 Bit        Muxes := 2     
-	   8 Input    3 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 5     
+	   8 Input    3 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 1     
 	   4 Input    3 Bit        Muxes := 1     
-	   4 Input    2 Bit        Muxes := 3     
-	   2 Input    2 Bit        Muxes := 3     
-	   2 Input    1 Bit        Muxes := 43    
-	   3 Input    1 Bit        Muxes := 30    
-	   5 Input    1 Bit        Muxes := 1     
-	   4 Input    1 Bit        Muxes := 258   
-	   8 Input    1 Bit        Muxes := 12    
-	 115 Input    1 Bit        Muxes := 4     
+	   4 Input    2 Bit        Muxes := 4     
+	 116 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 2     
+	   3 Input    1 Bit        Muxes := 31    
+	   5 Input    1 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 270   
+	   8 Input    1 Bit        Muxes := 11    
+	   4 Input    1 Bit        Muxes := 27    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -636,11 +651,19 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 1511.598 ; gain = 422.820
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:42 . Memory (MB): peak = 1408.973 ; gain = 301.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping	Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|fifo_data   | p_0_out    | 128x7         | LUT            | 
++------------+------------+---------------+----------------+
+
 
 Distributed RAM: Preliminary Mapping	Report (see note below)
 +------------+-------------------------+-----------+----------------------+--------------------------+
@@ -657,13 +680,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:06 ; elapsed = 00:01:10 . Memory (MB): peak = 1511.598 ; gain = 422.820
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:46 . Memory (MB): peak = 1408.973 ; gain = 301.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:17 ; elapsed = 00:01:21 . Memory (MB): peak = 1511.598 ; gain = 422.820
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:49 . Memory (MB): peak = 1408.973 ; gain = 301.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -683,7 +706,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:19 ; elapsed = 00:01:24 . Memory (MB): peak = 1511.598 ; gain = 422.820
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:50 . Memory (MB): peak = 1408.973 ; gain = 301.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -701,37 +724,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:23 ; elapsed = 00:01:28 . Memory (MB): peak = 1511.598 ; gain = 422.820
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:53 . Memory (MB): peak = 1408.973 ; gain = 301.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:23 ; elapsed = 00:01:28 . Memory (MB): peak = 1511.598 ; gain = 422.820
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:53 . Memory (MB): peak = 1408.973 ; gain = 301.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:24 ; elapsed = 00:01:28 . Memory (MB): peak = 1511.598 ; gain = 422.820
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:53 . Memory (MB): peak = 1408.973 ; gain = 301.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:24 ; elapsed = 00:01:28 . Memory (MB): peak = 1511.598 ; gain = 422.820
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:53 . Memory (MB): peak = 1408.973 ; gain = 301.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:24 ; elapsed = 00:01:28 . Memory (MB): peak = 1511.598 ; gain = 422.820
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:53 . Memory (MB): peak = 1408.973 ; gain = 301.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:24 ; elapsed = 00:01:28 . Memory (MB): peak = 1511.598 ; gain = 422.820
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:53 . Memory (MB): peak = 1408.973 ; gain = 301.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -751,51 +774,51 @@ Report Cell Usage:
 |1     |ila      |     1|
 |2     |BUFG     |     4|
 |3     |CARRY4   |   142|
-|4     |LUT1     |    29|
-|5     |LUT2     |   440|
-|6     |LUT3     |   244|
-|7     |LUT4     |   325|
-|8     |LUT5     |   214|
-|9     |LUT6     |  1224|
-|10    |MUXF7    |   284|
-|11    |MUXF8    |   138|
+|4     |LUT1     |    30|
+|5     |LUT2     |   423|
+|6     |LUT3     |   306|
+|7     |LUT4     |   289|
+|8     |LUT5     |   198|
+|9     |LUT6     |  1256|
+|10    |MUXF7    |   324|
+|11    |MUXF8    |   137|
 |12    |RAM64M   |     8|
-|13    |RAM64X1D |     4|
-|14    |FDCE     |   642|
+|13    |RAM64X1D |     8|
+|14    |FDCE     |   583|
 |15    |FDPE     |     5|
 |16    |FDRE     |  2060|
 |17    |LD       |    85|
 |18    |IBUF     |    12|
 |19    |IOBUF    |     1|
-|20    |OBUF     |    18|
+|20    |OBUF     |    21|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:24 ; elapsed = 00:01:28 . Memory (MB): peak = 1511.598 ; gain = 422.820
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:53 . Memory (MB): peak = 1408.973 ; gain = 301.438
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:14 ; elapsed = 00:01:26 . Memory (MB): peak = 1511.598 ; gain = 311.820
-Synthesis Optimization Complete : Time (s): cpu = 00:01:24 ; elapsed = 00:01:29 . Memory (MB): peak = 1511.598 ; gain = 422.820
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:51 . Memory (MB): peak = 1408.973 ; gain = 180.781
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:53 . Memory (MB): peak = 1408.973 ; gain = 301.438
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.069 . Memory (MB): peak = 1516.371 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 662 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 1408.973 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 705 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 3 inverter(s) to 23 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1516.371 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1408.973 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 98 instances were transformed.
+  A total of 102 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
   LD => LDCE: 64 instances
   LD => LDCE (inverted pins: G): 21 instances
   RAM64M => RAM64M (RAMD64E(x4)): 8 instances
-  RAM64X1D => RAM64X1D (RAMD64E(x2)): 4 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 8 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-125 Infos, 32 Warnings, 0 Critical Warnings and 0 Errors encountered.
+128 Infos, 31 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:32 ; elapsed = 00:01:37 . Memory (MB): peak = 1516.371 ; gain = 427.594
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 1408.973 ; gain = 301.438
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.collectionResultDisplayLimit
-INFO: [Common 17-1381] The checkpoint 'D:/Verilog/Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/top_dht11.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'D:/GitHub/harman_Verilog/DHT11_FINAL/DHT11_FINAL.runs/synth_1/top_dht11.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_dht11_utilization_synth.rpt -pb top_dht11_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Nov 30 02:02:28 2024...
+INFO: [Common 17-206] Exiting Vivado at Mon Dec  2 13:38:17 2024...

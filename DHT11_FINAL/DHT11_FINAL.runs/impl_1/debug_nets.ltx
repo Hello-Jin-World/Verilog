@@ -15,7 +15,7 @@
                     },
                     {
                         "type": "ILA_V3",
-                        "name": "U_string_process/U_ila_0",
+                        "name": "U_fifo_data/U_ila_0",
                         "spec": "labtools_ila_v6",
                         "ipName": "ila",
                         "core_location": {
@@ -23,21 +23,47 @@
                             "slave_index": 0,
                             "bscan_switch_index": 0
                         },
-                        "uuid": "D62C2394629655A4B4633DDA72610A30",
+                        "uuid": "B614A2CBD3EB579691AA3EA6D9BD77B1",
                         "pins": [
                             {
                                 "name": "probe0",
                                 "id": 0,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": false,
+                                "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 0,
+                                "rightIndex": 7,
                                 "portIndex": 0,
                                 "nets": [
                                     {
-                                        "name": "U_string_process/rx_done",
-                                        "isBus": false
+                                        "name": "U_fifo_data/fifo_data_reg",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "U_fifo_data/fifo_data_reg[7]"
+                                            },
+                                            {
+                                                "name": "U_fifo_data/fifo_data_reg[6]"
+                                            },
+                                            {
+                                                "name": "U_fifo_data/fifo_data_reg[5]"
+                                            },
+                                            {
+                                                "name": "U_fifo_data/fifo_data_reg[4]"
+                                            },
+                                            {
+                                                "name": "U_fifo_data/fifo_data_reg[3]"
+                                            },
+                                            {
+                                                "name": "U_fifo_data/fifo_data_reg[2]"
+                                            },
+                                            {
+                                                "name": "U_fifo_data/fifo_data_reg[1]"
+                                            },
+                                            {
+                                                "name": "U_fifo_data/fifo_data_reg[0]"
+                                            }
+                                        ]
                                     }
                                 ]
                             },
@@ -46,40 +72,14 @@
                                 "id": 1,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": true,
+                                "isVector": false,
                                 "leftIndex": 0,
-                                "rightIndex": 7,
+                                "rightIndex": 0,
                                 "portIndex": 1,
                                 "nets": [
                                     {
-                                        "name": "U_string_process/counter_reg",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "U_string_process/counter_reg[7]"
-                                            },
-                                            {
-                                                "name": "U_string_process/counter_reg[6]"
-                                            },
-                                            {
-                                                "name": "U_string_process/counter_reg[5]"
-                                            },
-                                            {
-                                                "name": "U_string_process/counter_reg[4]"
-                                            },
-                                            {
-                                                "name": "U_string_process/counter_reg[3]"
-                                            },
-                                            {
-                                                "name": "U_string_process/counter_reg[2]"
-                                            },
-                                            {
-                                                "name": "U_string_process/counter_reg[1]"
-                                            },
-                                            {
-                                                "name": "U_string_process/counter_reg[0]"
-                                            }
-                                        ]
+                                        "name": "U_fifo_data/fifo_en_reg",
+                                        "isBus": false
                                     }
                                 ]
                             },
@@ -94,104 +94,32 @@
                                 "portIndex": 2,
                                 "nets": [
                                     {
-                                        "name": "U_string_process/a",
+                                        "name": "U_fifo_data/state_reg",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "U_string_process/a[7]"
+                                                "name": "U_fifo_data/state_reg[7]"
                                             },
                                             {
-                                                "name": "U_string_process/a[6]"
+                                                "name": "U_fifo_data/state_reg[6]"
                                             },
                                             {
-                                                "name": "U_string_process/a[5]"
+                                                "name": "U_fifo_data/state_reg[5]"
                                             },
                                             {
-                                                "name": "U_string_process/a[4]"
+                                                "name": "U_fifo_data/state_reg[4]"
                                             },
                                             {
-                                                "name": "U_string_process/a[3]"
+                                                "name": "U_fifo_data/state_reg[3]"
                                             },
                                             {
-                                                "name": "U_string_process/a[2]"
+                                                "name": "U_fifo_data/state_reg[2]"
                                             },
                                             {
-                                                "name": "U_string_process/a[1]"
+                                                "name": "U_fifo_data/state_reg[1]"
                                             },
                                             {
-                                                "name": "U_string_process/a[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe3",
-                                "id": 3,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 3,
-                                "portIndex": 3,
-                                "nets": [
-                                    {
-                                        "name": "U_string_process/result",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "U_string_process/result[3]"
-                                            },
-                                            {
-                                                "name": "U_string_process/result[2]"
-                                            },
-                                            {
-                                                "name": "U_string_process/result[1]"
-                                            },
-                                            {
-                                                "name": "U_string_process/result[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe4",
-                                "id": 4,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 7,
-                                "portIndex": 4,
-                                "nets": [
-                                    {
-                                        "name": "U_string_process/rx_data",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "U_string_process/rx_data[7]"
-                                            },
-                                            {
-                                                "name": "U_string_process/rx_data[6]"
-                                            },
-                                            {
-                                                "name": "U_string_process/rx_data[5]"
-                                            },
-                                            {
-                                                "name": "U_string_process/rx_data[4]"
-                                            },
-                                            {
-                                                "name": "U_string_process/rx_data[3]"
-                                            },
-                                            {
-                                                "name": "U_string_process/rx_data[2]"
-                                            },
-                                            {
-                                                "name": "U_string_process/rx_data[1]"
-                                            },
-                                            {
-                                                "name": "U_string_process/rx_data[0]"
+                                                "name": "U_fifo_data/state_reg[0]"
                                             }
                                         ]
                                     }

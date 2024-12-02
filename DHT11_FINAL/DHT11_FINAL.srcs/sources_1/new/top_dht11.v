@@ -37,7 +37,7 @@ module top_dht11 (
     // input  [7:0] u_command,
     output       tx,
     output       trigger,
-    output [3:0] led,
+    output [6:0] led,
     // output       string_command,
     output [3:0] fndcom,
     output [7:0] fndfont
@@ -127,6 +127,8 @@ module top_dht11 (
         .reset             (reset),
         .sw_mode           (sw_mode),
         .sw_clock_stopwatch(sw_clock_stopwatch),
+        .dht_sw_clock_sw   (dht_sw_clock_sw),
+        .ultrasonic_active (ultrasonic_active),
         .button0           (button0),
         .button1           (button1),
         .button2           (button2),

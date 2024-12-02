@@ -25,6 +25,8 @@ module stopwatch_clock (
     input        reset,
     input        sw_mode,
     input        sw_clock_stopwatch,
+    input        dht_sw_clock_sw,
+    input        ultrasonic_active,
     input        button0,
     input        button1,
     input        button2,
@@ -35,7 +37,7 @@ module stopwatch_clock (
     input  [7:0] set_min,
     input  [7:0] set_sec,
     input  [7:0] set_msec,
-    output [3:0] led,
+    output [6:0] led,
     output [6:0] seleted_msec,
     output [6:0] seleted_sec,
     output [6:0] seleted_min,
@@ -51,6 +53,8 @@ module stopwatch_clock (
     led_mode_state U_led_mode_state (
         .sw_mode           (sw_mode),
         .sw_clock_stopwatch(sw_clock_stopwatch),
+        .dht_sw_clock_sw   (dht_sw_clock_sw),
+        .ultrasonic_active (ultrasonic_active),
         .led               (led)
     );
 
@@ -190,22 +194,33 @@ endmodule
 module led_mode_state (
     input            sw_mode,
     input            sw_clock_stopwatch,
-    output reg [3:0] led
+    input            dht_sw_clock_sw,
+    input            ultrasonic_active,
+    output reg [6:0] led
 );
 
     always @(*) begin
-        led = 4'b0000;
+        led = 7'b0000000;
         if (!sw_clock_stopwatch && !sw_mode) begin
-            led = 4'b0001;
+            led = 7'b0000001;
         end
         if (!sw_clock_stopwatch && sw_mode) begin
-            led = 4'b0010;
+            led = 7'b0000010;
         end
         if (sw_clock_stopwatch && !sw_mode) begin
-            led = 4'b0100;
+            led = 7'b0000100;
         end
         if (sw_clock_stopwatch && sw_mode) begin
-            led = 4'b1000;
+            led = 7'b0001000;
+        end
+        if (dht_sw_clock_sw && !sw_mode) begin
+            led = 7'b0010000;
+        end
+        if (dht_sw_clock_sw && sw_mode) begin
+            led = 7'b0100000;
+        end
+        if (ultrasonic_active) begin
+            led = 7'b1000000;
         end
     end
 

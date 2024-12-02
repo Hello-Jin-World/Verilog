@@ -33,15 +33,6 @@ module string_process (
     output [3:0] result
 );
 
-    // ila_0 U_ila_0 (
-    //     .clk   (clk),
-    //     .probe0(rx_done),
-    //     .probe1(counter_reg),
-    //     .probe2(a[counter_reg]),
-    //     .probe3(result),
-    //     .probe4(rx_data)
-    // );
-
     localparam IDLE = 0, RUN = 1, STOP = 2, CLEAR = 3, MODE = 4, SET_TIME = 5, TIME_SET_ERROR = 6, MEASURE_DISTANCE = 7, NONE = 8;
 
     reg [7:0] a[0:255];
@@ -62,6 +53,7 @@ module string_process (
     assign set_min  = set_min_reg;
     assign set_sec  = set_sec_reg;
     assign set_msec = set_msec_reg;
+
 
     always @(posedge clk, posedge reset) begin
         if (reset) begin

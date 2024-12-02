@@ -198,6 +198,13 @@ module fifo_data (
     assign fifo_en   = fifo_en_reg;
     assign fifo_data = fifo_data_reg;
 
+    ila_0 U_ila_0 (
+        .clk(clk),
+        .probe0(fifo_data_reg),
+        .probe1(fifo_en_reg),
+        .probe2(state_reg)
+    );
+
     always @(posedge clk, posedge reset) begin
         if (reset) begin
             state_reg     <= 0;
