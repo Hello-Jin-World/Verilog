@@ -29,17 +29,9 @@ module adder (
 
     wire [12:0] w_a, w_b, w_result_sum, w_final_sum;
 
-    // button_detector U_button_detector (
-    //     .clk  (clk),
-    //     .reset(reset),
-    //     .i_btn(button),
-    //     .o_btn(w_button)
-    // );
-
     storage U_storage (
         .clk       (clk),
         .reset     (reset),
-        // .button    (w_button),
         .result_sum(w_result_sum),
         .a         (w_a),
         .b         (w_b),
@@ -63,31 +55,6 @@ module adder (
     );
 endmodule
 
-module clk_div_100ms (
-    input clk,
-    input reset,
-    output [13:0] digit
-);
-
-    reg [23:0] r_counter;
-    reg [13:0] r_digit;
-
-    assign digit = r_digit;  // enable 'output reg o_clk'
-
-    always @(posedge clk, posedge reset) begin
-        if (reset) begin
-            r_counter <= 0;
-            r_digit   <= 14'b0;
-        end else begin
-            if (r_counter == 10_000_000 - 1) begin
-                r_counter <= 0;
-                r_digit   <= (r_digit + 1) % 10_000;
-            end else begin
-                r_counter <= r_counter + 1;
-            end
-        end
-    end
-endmodule
 
 module storage (
     input             clk,
@@ -113,7 +80,6 @@ module storage (
             a_reg       <= 0;
             b_reg       <= 1;
             now_sum_reg <= 0;
-            final_sum   <= 0;
         end else begin
             a_reg       <= a_next;
             b_reg       <= b_next;
@@ -123,21 +89,18 @@ module storage (
 
     always @(*) begin
         now_sum_next = now_sum_reg;
-        a_next = a_reg;
-        b_next = b_reg;
+        a_next       = a_reg;
+        b_next       = b_reg;
+        final_sum    = now_sum_reg;
         // if ((now_sum_reg != result_sum) && button) begin
         // if (button) begin
-        if (now_sum_reg != result_sum) begin
+        if (now_sum_reg != result_sum && b_reg <= 100) begin
             now_sum_next = result_sum;
-            a_next = result_sum;
-            b_next = b_reg + 1;
+            a_next       = result_sum;
+            b_next       = b_reg + 1;
             // final_sum = 0;
-        end
-        if (b_reg == 101) begin
-            final_sum = now_sum_reg;
-            a_next = 0;
-            b_next = 1;
-            now_sum_next = 0;
+        end else begin
+            b_next = 0;
         end
     end
 endmodule

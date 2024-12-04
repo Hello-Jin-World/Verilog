@@ -39,8 +39,8 @@ module fnd_controller (
     );
 
     counter U_counter (
-        .clk(w_clk),
-        .reset(reset),
+        .clk    (w_clk),
+        .reset  (reset),
         .counter(w_fndsel)
     );
 
@@ -101,14 +101,14 @@ module clk_div (
     always @(posedge clk, posedge reset) begin
         if (reset) begin
             r_counter <= 0;
-            r_clk <= 1'b0;
+            r_clk     <= 1'b0;
         end else begin
             if (r_counter == 100_000 - 1) begin
                 r_counter <= 0;
-                r_clk <= 1'b1;
+                r_clk     <= 1'b1;
             end else begin
                 r_counter <= r_counter + 1;
-                r_clk <= 1'b0;
+                r_clk     <= 1'b0;
             end
         end
     end
@@ -122,9 +122,9 @@ module digit_splitter (
     output [ 3:0] digit_1000
 );
 
-    assign digit_1 = digit % 10;
-    assign digit_10 = digit / 10 % 10;
-    assign digit_100 = digit / 100 % 10;
+    assign digit_1    = digit % 10;
+    assign digit_10   = digit / 10 % 10;
+    assign digit_100  = digit / 100 % 10;
     assign digit_1000 = digit / 1000 % 10;
 
 endmodule
@@ -150,7 +150,7 @@ module mux_4x1 (
 endmodule
 
 module decoder_2x4 (
-    input [1:0] switch_in,
+    input      [1:0] switch_in,
     output reg [3:0] switch_out
 );
 
