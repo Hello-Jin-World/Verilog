@@ -141,7 +141,7 @@ module fifo_control_unit (
                     empty_next = 1'b0;
                 end else if (full_reg) begin
                     rd_ptr_next = rd_ptr_reg + 1;
-                    empty_next = 1'b0;
+                    full_next = 1'b0;
                 end else begin
                     wr_ptr_next = wr_ptr_reg + 1;
                     rd_ptr_next = rd_ptr_reg + 1;
