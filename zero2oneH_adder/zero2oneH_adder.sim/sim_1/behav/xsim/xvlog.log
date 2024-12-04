@@ -1,0 +1,24 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/GitHub/harman_Verilog/zero2oneH_adder/zero2oneH_adder.srcs/sources_1/new/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2458] undeclared symbol carry, assumed default net type wire [D:/GitHub/harman_Verilog/zero2oneH_adder/zero2oneH_adder.srcs/sources_1/new/adder.v:59]
+INFO: [VRFC 10-311] analyzing module clk_div_100ms
+INFO: [VRFC 10-311] analyzing module storage
+INFO: [VRFC 10-311] analyzing module adder_13bit
+INFO: [VRFC 10-311] analyzing module adder_8bit
+INFO: [VRFC 10-311] analyzing module adder_4bit
+INFO: [VRFC 10-311] analyzing module full_adder
+INFO: [VRFC 10-311] analyzing module half_adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/GitHub/harman_Verilog/zero2oneH_adder/zero2oneH_adder.srcs/sources_1/new/fnd_controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fnd_controller
+INFO: [VRFC 10-2458] undeclared symbol w_digit_1, assumed default net type wire [D:/GitHub/harman_Verilog/zero2oneH_adder/zero2oneH_adder.srcs/sources_1/new/fnd_controller.v:54]
+INFO: [VRFC 10-2458] undeclared symbol w_digit_10, assumed default net type wire [D:/GitHub/harman_Verilog/zero2oneH_adder/zero2oneH_adder.srcs/sources_1/new/fnd_controller.v:55]
+INFO: [VRFC 10-2458] undeclared symbol w_digit_100, assumed default net type wire [D:/GitHub/harman_Verilog/zero2oneH_adder/zero2oneH_adder.srcs/sources_1/new/fnd_controller.v:56]
+INFO: [VRFC 10-2458] undeclared symbol w_digit_1000, assumed default net type wire [D:/GitHub/harman_Verilog/zero2oneH_adder/zero2oneH_adder.srcs/sources_1/new/fnd_controller.v:57]
+INFO: [VRFC 10-311] analyzing module counter
+INFO: [VRFC 10-311] analyzing module clk_div
+INFO: [VRFC 10-311] analyzing module digit_splitter
+INFO: [VRFC 10-311] analyzing module mux_4x1
+INFO: [VRFC 10-311] analyzing module decoder_2x4
+INFO: [VRFC 10-311] analyzing module BCDtoSEG_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/GitHub/harman_Verilog/zero2oneH_adder/zero2oneH_adder.srcs/sim_1/new/tb_adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_adder
