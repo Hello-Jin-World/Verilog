@@ -57,13 +57,13 @@ endmodule
 
 
 module storage (
-    input             clk,
-    input             reset,
+    input         clk,
+    input         reset,
     // input         button,
-    input      [12:0] result_sum,
-    output     [12:0] a,
-    output     [12:0] b,
-    output reg [12:0] final_sum
+    input  [12:0] result_sum,
+    output [12:0] a,
+    output [12:0] b,
+    output [12:0] final_sum
 );
 
     reg [12:0] a_reg, a_next, b_reg, b_next;
@@ -73,7 +73,7 @@ module storage (
 
     reg [12:0] now_sum_reg, now_sum_next;
 
-    // assign final_sum = now_sum_reg;
+    assign final_sum = now_sum_reg;
 
     always @(posedge clk, posedge reset) begin
         if (reset) begin
@@ -91,7 +91,7 @@ module storage (
         now_sum_next = now_sum_reg;
         a_next       = a_reg;
         b_next       = b_reg;
-        final_sum    = now_sum_reg;
+        // final_sum    = now_sum_reg;
         // if ((now_sum_reg != result_sum) && button) begin
         // if (button) begin
         if (now_sum_reg != result_sum && b_reg <= 100) begin
@@ -267,5 +267,4 @@ module half_adder (
     //xor(sum, a, b);
     //and(carry, a, b);
 endmodule
-
 

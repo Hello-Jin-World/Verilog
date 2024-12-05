@@ -4,5 +4,5 @@ Nov 18 2020
 09:47:47
 D:/GitHub/harman_Verilog/zero2oneH_adder/zero2oneH_adder.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,,,,,,,
 D:/GitHub/harman_Verilog/zero2oneH_adder/zero2oneH_adder.srcs/sim_1/new/tb_adder.v,1733276434,verilog,,,,tb_adder,,,,,,,,
-D:/GitHub/harman_Verilog/zero2oneH_adder/zero2oneH_adder.srcs/sources_1/new/adder.v,1733301556,verilog,,D:/GitHub/harman_Verilog/zero2oneH_adder/zero2oneH_adder.srcs/sources_1/new/fnd_controller.v,,adder;adder_13bit;adder_4bit;adder_8bit;full_adder;half_adder;storage,,,,,,,,
-D:/GitHub/harman_Verilog/zero2oneH_adder/zero2oneH_adder.srcs/sources_1/new/fnd_controller.v,1733300862,verilog,,D:/GitHub/harman_Verilog/zero2oneH_adder/zero2oneH_adder.srcs/sim_1/new/tb_adder.v,,BCDtoSEG_decoder;clk_div;counter;decoder_2x4;digit_splitter;fnd_controller;mux_4x1,,,,,,,,
+D:/GitHub/harman_Verilog/zero2oneH_adder/zero2oneH_adder.srcs/sources_1/new/adder.v,1733357988,verilog,,D:/GitHub/harman_Verilog/zero2oneH_adder/zero2oneH_adder.srcs/sources_1/new/fnd_controller.v,,adder;adder_13bit;adder_4bit;adder_8bit;full_adder;half_adder;storage,,,,,,,,
+D:/GitHub/harman_Verilog/zero2oneH_adder/zero2oneH_adder.srcs/sources_1/new/fnd_controller.v,1733301431,verilog,,D:/GitHub/harman_Verilog/zero2oneH_adder/zero2oneH_adder.srcs/sim_1/new/tb_adder.v,,BCDtoSEG_decoder;clk_div;counter;decoder_2x4;digit_splitter;fnd_controller;mux_4x1,,,,,,,,
