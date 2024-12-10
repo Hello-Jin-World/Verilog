@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../1210RV32I_2nd_step.srcs/sources_1/new/MCU.sv" \
+"../../../../1210RV32I_2nd_step.srcs/sources_1/new/RAM.sv" \
+"../../../../1210RV32I_2nd_step.srcs/sources_1/new/ROM.sv" \
+"../../../../1210RV32I_2nd_step.srcs/sources_1/new/RV32I_core.sv" \
+"../../../../1210RV32I_2nd_step.srcs/sim_1/new/tb_MCU.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

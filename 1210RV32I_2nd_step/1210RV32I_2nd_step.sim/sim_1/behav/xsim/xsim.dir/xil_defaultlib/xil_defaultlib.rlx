@@ -1,0 +1,11 @@
+0.7
+2020.2
+Nov 18 2020
+09:20:35
+/home/project/Verilog/1210RV32I_2nd_step/1210RV32I_2nd_step.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,uvm,,,,,,
+/home/project/Verilog/1210RV32I_2nd_step/1210RV32I_2nd_step.srcs/sim_1/new/tb_MCU.sv,1733810748,systemVerilog,,,,tb_MCU,,uvm,,,,,,
+/home/project/Verilog/1210RV32I_2nd_step/1210RV32I_2nd_step.srcs/sources_1/new/MCU.sv,1733808855,systemVerilog,,/home/project/Verilog/1210RV32I_2nd_step/1210RV32I_2nd_step.srcs/sources_1/new/RAM.sv,,MCU,,uvm,,,,,,
+/home/project/Verilog/1210RV32I_2nd_step/1210RV32I_2nd_step.srcs/sources_1/new/RAM.sv,1733824947,systemVerilog,,/home/project/Verilog/1210RV32I_2nd_step/1210RV32I_2nd_step.srcs/sources_1/new/ROM.sv,,RAM,,uvm,,,,,,
+/home/project/Verilog/1210RV32I_2nd_step/1210RV32I_2nd_step.srcs/sources_1/new/ROM.sv,1733834338,systemVerilog,,/home/project/Verilog/1210RV32I_2nd_step/1210RV32I_2nd_step.srcs/sources_1/new/RV32I_core.sv,/home/project/Verilog/1210RV32I_2nd_step/1210RV32I_2nd_step.srcs/sources_1/new/defines.sv,ROM,,uvm,,,,,,
+/home/project/Verilog/1210RV32I_2nd_step/1210RV32I_2nd_step.srcs/sources_1/new/RV32I_core.sv,1733833250,systemVerilog,,/home/project/Verilog/1210RV32I_2nd_step/1210RV32I_2nd_step.srcs/sim_1/new/tb_MCU.sv,/home/project/Verilog/1210RV32I_2nd_step/1210RV32I_2nd_step.srcs/sources_1/new/defines.sv,ControlUnit;DataPath;DataSelector;RV32I_core;RegisterFile;adder;alu;extend;mux_2x1;register,,uvm,,,,,,
+/home/project/Verilog/1210RV32I_2nd_step/1210RV32I_2nd_step.srcs/sources_1/new/defines.sv,1733826373,verilog,,,,,,,,,,,,
