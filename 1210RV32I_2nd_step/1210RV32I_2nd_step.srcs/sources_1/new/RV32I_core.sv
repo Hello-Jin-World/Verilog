@@ -165,8 +165,10 @@ module DataPath (
     input  logic [31:0] readData,
     output logic [31:0] writeData
 );
-    logic [31:0] w_immExt, w_ALUSrcMuxOut, w_RFWDSrcMuxOut;
     logic [31:0]
+        w_immExt,
+        w_ALUSrcMuxOut,
+        w_RFWDSrcMuxOut,
         w_PC_Data,
         w_AluResult,
         w_RegFileRData1,
@@ -213,7 +215,7 @@ module DataPath (
         .sel(ALUSrcMuxSel),
         .x0 (w_RegFileRData2),
         .x1 (w_immExt),
-        .y  (w_ALUSrcMuxOut)
+        .y  (w_ALUSrcMuxOutu)
     );
 
     alu U_ALU (
