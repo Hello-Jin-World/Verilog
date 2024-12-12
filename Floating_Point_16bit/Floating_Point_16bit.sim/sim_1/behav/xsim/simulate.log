@@ -1,0 +1,6 @@
+Time resolution is 1 ps
+Test Case 1: 2100 + 2080 = 2200 (Overflow: 0, Underflow: 0)
+Test Case 2: 2100 + a100 = a000 (Overflow: 0, Underflow: 0)
+Test Case 3: 7bff + 2100 = 7bff (Overflow: 0, Underflow: 0)
+$finish called at time : 30 ns : File "/home/user/project/Verilog/Floating_Point_16bit/Floating_Point_16bit.srcs/sim_1/new/tb_floating_point.sv" Line 60
+INFO: xsimkernel Simulation Memory Usage: 549040 KB (Peak: 606388 KB), Simulation CPU Usage: 70 ms
