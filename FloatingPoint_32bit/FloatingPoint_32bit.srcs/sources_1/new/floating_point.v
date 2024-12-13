@@ -44,7 +44,7 @@ module floating_point_adder (
         b_exp        = b[30:23];
         a_man        = {1'b1, a[22:0]};
         b_man        = {1'b1, b[22:0]};
-        
+
         if (a_exp < b_exp) begin
             a_exp    = a_exp >> 1'b1;
             temp_exp = a_exp;

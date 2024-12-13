@@ -67,6 +67,9 @@ interface fp_interface;
     logic [31:0] result;
     logic        overflow;
     logic        underflow;
+    logic [31:0] sw_result;
+    logic        sw_overflow;
+    logic        sw_underflow;
 endinterface  //fp_interface
 
 class transaction;
@@ -75,6 +78,9 @@ class transaction;
     logic      [31:0] result;
     logic             overflow;
     logic             underflow;
+    logic      [31:0] sw_result;
+    logic             sw_overflow;
+    logic             sw_underflow;
 
     // constraint range {
     //     set_up_time dist {
@@ -86,8 +92,7 @@ class transaction;
     //constraint value_c {set_up_time inside {26, 70};}
 
     task display(string name);
-        $display("[%s] humidity : %d.%d,  temperature : %d.%d", name, hum_int,
-                 hum_dec, tem_int, tem_dec);
+        $display("[%s] random a : %b,  random b : %b", name, a, b);
     endtask  //display
 endclass  //transaction
 
@@ -119,6 +124,14 @@ class driver;
     mailbox #(transaction) gen2drv_mbox;
     event                  mon_next_event;
     virtual fp_interface   fp_intf;
+    
+        logic a_signed_bit, b_signed_bit;
+        logic [7:0] a_exp, b_exp;
+        logic [7:0] temp_exp;
+        logic [23:0] a_man, b_man;
+        logic [23:0] sum_man;
+        logic result_sign;
+        logic [22:0] result_man;
 
     function new(mailbox#(transaction) gen2drv_mbox, event mon_next_event,
                  virtual fp_interface fp_intf);
@@ -128,191 +141,85 @@ class driver;
     endfunction  //new()
 
     task reset();
-        fp_intf.reset    <= 1'b1;
-        fp_intf.clk      <= 1'b0;
-        fp_intf.mode     <= 1'b1;
-        fp_intf.hum_int  <= 0;
-        fp_intf.hum_dec  <= 0;
-        fp_intf.tem_int  <= 0;
-        fp_intf.tem_dec  <= 0;
-        fp_intf.checksum <= 0;
-        fp_intf.out_data <= 0;
-        fp_intf.sw_40bit <= 0;
+        fp_intf.a            <= 0;
+        fp_intf.b            <= 0;
+        fp_intf.result       <= 0;
+        fp_intf.overflow     <= 0;
+        fp_intf.underflow    <= 0;
+        fp_intf.sw_result    <= 0;
+        fp_intf.sw_overflow  <= 0;
+        fp_intf.sw_underflow <= 0;
         // fp_intf.tem <= 0;
-        repeat (5) @(posedge fp_intf.clk);
-        fp_intf.reset <= 1'b0;
-        repeat (5) @(posedge fp_intf.clk);
         $display("[DRV] DUT Reset Done!");
         $display("---------------------");
     endtask
 
-    task tick(int count);  // count * 1us tick
-        repeat (count) begin
-            repeat (100) @(posedge fp_intf.clk);
-        end
-    endtask  //tick
+    task add_run();
 
-    task start_dht11();
-        fp_intf.mode = 1'b0;
-        wait (fp_intf.ioport == 0);  // 18ms    LOW
-        $display("READ 18ms LOW");
-        wait (fp_intf.ioport == 1);  // 20~40us HIGH
-        $display("READ 20~40us HIGH");
-        tick(25);
-        fp_intf.mode = 1'b1;
+        a_signed_bit       = trans.a[31];
+        b_signed_bit       = trans.b[31];
+        a_exp              = trans.a[30:23];
+        b_exp              = trans.b[30:23];
+        a_man              = {1'b1, trans.a[22:0]};
+        b_man              = {1'b1, trans.b[22:0]};
 
-        fp_intf.out_data = 1'b0;
-        tick(60);
-        fp_intf.out_data = 1'b1;
-        tick(75);
-
-        //////////////////////////////////////////////////////////// humidity int
-        fp_intf.out_data = 1'b0;
-        tick(50);
-        fp_intf.out_data = 1'b1;
-        tick(26);
-        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
-
-        for (int i = 0; i < 7; i++) begin
-            trans.randomize();
-            fp_intf.out_data = 1'b0;
-            tick(50);
-            fp_intf.out_data = 1'b1;
-            tick(trans.set_up_time);
-            // #2;
-            if (trans.set_up_time > 40) begin
-                trans.sw_40bit = {
-                    trans.sw_40bit[38:8], 1'b1, trans.sw_40bit[7:0]
-                };
+        if (a_exp < b_exp) begin
+            a_exp    = a_exp >> 1'b1;
+            temp_exp = a_exp;
+        end else if (a_exp > b_exp) begin
+            b_exp    = b_exp >> 1'b1;
+            temp_exp = b_exp;
+        end else begin
+            if (a_signed_bit == b_signed_bit) begin
+                sum_man     = a_man + b_man;
+                result_sign = a_signed_bit;
             end else begin
-                trans.sw_40bit = {
-                    trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]
-                };
-            end
-
-            $display("%d", trans.set_up_time);
-        end
-        //////////////////////////////////////////////////////////// humidity dec
-        fp_intf.out_data = 1'b0;
-        tick(50);
-        fp_intf.out_data = 1'b1;
-        tick(26);
-        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
-
-        for (int i = 0; i < 7; i++) begin
-            trans.randomize();
-            fp_intf.out_data = 1'b0;
-            tick(50);
-            fp_intf.out_data = 1'b1;
-            tick(trans.set_up_time);
-            // #2;
-            if (trans.set_up_time > 40) begin
-                trans.sw_40bit = {
-                    trans.sw_40bit[38:8], 1'b1, trans.sw_40bit[7:0]
-                };
-            end else begin
-                trans.sw_40bit = {
-                    trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]
-                };
-            end
-
-            $display("%d", trans.set_up_time);
-        end
-        //////////////////////////////////////////////////////////// temperature int
-        fp_intf.out_data = 1'b0;
-        tick(50);
-        fp_intf.out_data = 1'b1;
-        tick(26);
-        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
-
-        for (int i = 0; i < 7; i++) begin
-            trans.randomize();
-            fp_intf.out_data = 1'b0;
-            tick(50);
-            fp_intf.out_data = 1'b1;
-            tick(trans.set_up_time);
-            // #2;
-            if (trans.set_up_time > 40) begin
-                trans.sw_40bit = {
-                    trans.sw_40bit[38:8], 1'b1, trans.sw_40bit[7:0]
-                };
-            end else begin
-                trans.sw_40bit = {
-                    trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]
-                };
-            end
-
-            $display("%d", trans.set_up_time);
-        end
-        //////////////////////////////////////////////////////////// temperature dec
-        fp_intf.out_data = 1'b0;
-        tick(50);
-        fp_intf.out_data = 1'b1;
-        tick(26);
-        trans.sw_40bit = {trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]};
-
-        for (int i = 0; i < 7; i++) begin
-            trans.randomize();
-            fp_intf.out_data = 1'b0;
-            tick(50);
-            fp_intf.out_data = 1'b1;
-            tick(trans.set_up_time);
-            // #2;
-            if (trans.set_up_time > 40) begin
-                trans.sw_40bit = {
-                    trans.sw_40bit[38:8], 1'b1, trans.sw_40bit[7:0]
-                };
-            end else begin
-                trans.sw_40bit = {
-                    trans.sw_40bit[38:8], 1'b0, trans.sw_40bit[7:0]
-                };
-            end
-
-            $display("%d", trans.set_up_time);
-        end
-        /////////////////////////////////////////////////////////// check sum
-        trans.sw_40bit[7:0] = trans.sw_40bit[39:32] + trans.sw_40bit[31:24] + trans.sw_40bit[23:16] + trans.sw_40bit[15:8];
-        for (int i = 0; i < 8; i++) begin
-            if (trans.sw_40bit[7-i] == 1) begin
-                fp_intf.out_data = 1'b0;
-                tick(50);
-                fp_intf.out_data = 1'b1;
-                tick(70);
-            end else begin
-                fp_intf.out_data = 1'b0;
-                tick(50);
-                fp_intf.out_data = 1'b1;
-                tick(27);
+                if (a_man > b_man) begin
+                    sum_man     = a_man - b_man;
+                    result_sign = a_signed_bit;
+                end else begin
+                    sum_man     = b_man - a_man;
+                    result_sign = b_signed_bit;
+                end
             end
         end
 
+        if (sum_man[24]) begin
+            sum_man  = sum_man >> 1'b1;
+            temp_exp = temp_exp + 1;
+        end else begin
+            while (sum_man[23] == 0 && temp_exp > 0) begin
+                sum_man  = sum_man << 1'b1;
+                temp_exp = temp_exp - 1;
+            end
+        end
 
-        fp_intf.out_data = 1'b0;
-        tick(50);
-        fp_intf.out_data = 1'b1;
-        tick(27);
+        result_man = sum_man[22:0];
+        trans.sw_result = {result_sign, temp_exp, result_man};
 
-    endtask  //start_dht11
+        if (temp_exp == 8'hff) begin
+            trans.sw_overflow = 1;
+        end
+        if (temp_exp == 0 && result_man == 0) begin
+            trans.sw_underflow = 0;
+        end
+    endtask  //add_run
 
     task run();
         forever begin
             gen2drv_mbox.get(trans);
-            fp_intf.hum_int  = trans.hum_int;
-            fp_intf.hum_dec  = trans.hum_dec;
-            fp_intf.tem_int  = trans.tem_int;
-            fp_intf.tem_dec  = trans.tem_dec;
-            fp_intf.checksum = trans.checksum;
-            #1;
-            // fp_intf.rand_hum_tem = trans.rand_hum_tem;
+            add_run();
+            #5;
+            fp_intf.a         = trans.a;
+            fp_intf.b         = trans.b;
+            fp_intf.result    = trans.result;
+            fp_intf.overflow  = trans.overflow;
+            fp_intf.underflow = trans.underflow;
+            fp_intf.sw_result = trans.sw_result;
+            fp_intf.sw_overflow = trans.sw_overflow;
+            fp_intf.sw_underflow = trans.sw_underflow;
             trans.display("DRV");
-            // dht11_trigger();
-            // send_start_signal_high();
-            start_dht11();
-            #1;
-            fp_intf.sw_40bit = trans.sw_40bit;
-            #1;
             ->mon_next_event;
-            @(posedge fp_intf.clk);
         end
     endtask  //run
 endclass  //driver
@@ -338,15 +245,14 @@ class monitor;
         forever begin
             trans = new();
             @(mon_next_event);
-            repeat (5) @(posedge fp_intf.clk);
-            trans.hum_int  = fp_intf.hum_int;
-            trans.hum_dec  = fp_intf.hum_dec;
-            trans.tem_int  = fp_intf.tem_int;
-            trans.tem_dec  = fp_intf.tem_dec;
-            trans.checksum = fp_intf.checksum;
-            trans.sw_40bit = fp_intf.sw_40bit;
-            // trans.rand_hum_tem = fp_intf.rand_hum_tem;
-            @(posedge fp_intf.clk);
+            trans.a            = fp_intf.a;
+            trans.b            = fp_intf.b;
+            trans.result       = fp_intf.result;
+            trans.overflow     = fp_intf.overflow;
+            trans.underflow    = fp_intf.underflow;
+            trans.sw_result    = fp_intf.sw_result;
+            trans.sw_overflow  = fp_intf.sw_overflow;
+            trans.sw_underflow = fp_intf.sw_underflow;
             mon2scb_mbox.put(trans);
             trans.display("MON");
             #2;
@@ -356,32 +262,19 @@ class monitor;
 endclass  //monitor
 
 class scoreboard;
-    transaction                  trans;
+    transaction            trans;
 
-    mailbox #(transaction)       mon2scb_mbox;
-    event                        gen_next_event;
-    event                        scb_next_event;
+    mailbox #(transaction) mon2scb_mbox;
+    event                  gen_next_event;
+    event                  scb_next_event;
 
-    // reg                    [39:0] sw_result;
-    reg                    [7:0] sw_hum_int;
-    reg                    [7:0] sw_hum_dec;
-    reg                    [7:0] sw_tem_int;
-    reg                    [7:0] sw_tem_dec;
-    reg                    [7:0] sw_checksum;
-
-    int                          total_cnt,      pass_cnt, fail_cnt;
+    int                    total_cnt,      pass_cnt, fail_cnt;
 
     function new(mailbox#(transaction) mon2scb_mbox, event gen_next_event,
                  event scb_next_event);
         this.mon2scb_mbox   = mon2scb_mbox;
         this.gen_next_event = gen_next_event;
         this.scb_next_event = scb_next_event;
-        // sw_result           = 0;
-        sw_hum_int          = 0;
-        sw_hum_dec          = 0;
-        sw_tem_int          = 0;
-        sw_tem_dec          = 0;
-        sw_checksum         = 0;
         total_cnt           = 0;
         pass_cnt            = 0;
         fail_cnt            = 0;
@@ -391,14 +284,8 @@ class scoreboard;
         forever begin
             @(scb_next_event);
             mon2scb_mbox.get(trans);
-            $display("PASS1");
-            sw_hum_int  = trans.sw_40bit[39:32];
-            sw_hum_dec  = trans.sw_40bit[31:24];
-            sw_tem_int  = trans.sw_40bit[23:16];
-            sw_tem_dec  = trans.sw_40bit[15:8];
-            sw_checksum = trans.sw_40bit[7:0];
             #5;
-            if (sw_hum_int == trans.hum_int && sw_hum_dec == trans.hum_dec && sw_tem_int == trans.tem_int && sw_tem_dec == trans.tem_dec) begin
+            if (trans.sw_result == trans.result) begin
                 $display("PASS!!!!");
                 pass_cnt++;
             end else begin
@@ -406,16 +293,8 @@ class scoreboard;
                 fail_cnt++;
             end
             total_cnt++;
-            $display("hardware : %d,    software : %d", trans.hum_int,
-                     sw_hum_int);
-            $display("hardware : %d,    software : %d", trans.hum_dec,
-                     sw_hum_dec);
-            $display("hardware : %d,    software : %d", trans.tem_int,
-                     sw_tem_int);
-            $display("hardware : %d,    software : %d", trans.tem_dec,
-                     sw_tem_dec);
-            $display("hardware : %d,    software : %d", trans.checksum,
-                     sw_checksum);
+            $display("hardware : %b,    software : %b", trans.result,
+                     trans.sw_result);
             trans.display("SCB");
             ->gen_next_event;
         end
