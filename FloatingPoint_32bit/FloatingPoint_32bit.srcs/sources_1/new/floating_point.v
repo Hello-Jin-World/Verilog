@@ -46,34 +46,34 @@ module floating_point_adder (
         b_man        = {1'b1, b[22:0]};
 
         if (a_exp < b_exp) begin
-            a_exp    = a_exp >> 1'b1;
+            b_man = b_man >> (a_exp - b_exp);  // b의 가수를 오른쪽으로 시프트
             temp_exp = a_exp;
         end else if (a_exp > b_exp) begin
-            b_exp    = b_exp >> 1'b1;
+            a_man = a_man >> (b_exp - a_exp);  // a의 가수를 오른쪽으로 시프트
             temp_exp = b_exp;
         end else begin
-            if (a_signed_bit == b_signed_bit) begin
-                sum_man     = a_man + b_man;
+            temp_exp = a_exp;
+        end
+
+        if (a_signed_bit == b_signed_bit) begin
+            sum_man = a_man + b_man;
+            result_sign = a_signed_bit;
+        end else begin
+            if (a_man > b_man) begin
+                sum_man = a_man - b_man;
                 result_sign = a_signed_bit;
             end else begin
-                if (a_man > b_man) begin
-                    sum_man     = a_man - b_man;
-                    result_sign = a_signed_bit;
-                end else begin
-                    sum_man     = b_man - a_man;
-                    result_sign = b_signed_bit;
-                end
+                sum_man = b_man - a_man;
+                result_sign = b_signed_bit;
             end
         end
 
         if (sum_man[24]) begin
-            sum_man  = sum_man >> 1'b1;
+            sum_man = sum_man >> 1'b1;
             temp_exp = temp_exp + 1;
-        end else begin
-            while (sum_man[23] == 0 && temp_exp > 0) begin
-                sum_man  = sum_man << 1'b1;
-                temp_exp = temp_exp - 1;
-            end
+        end else if (sum_man[23] == 0 && temp_exp > 0) begin
+            sum_man = sum_man << 1'b1;
+            temp_exp = temp_exp - 1;
         end
 
         result_man = sum_man[22:0];
@@ -83,7 +83,7 @@ module floating_point_adder (
             overflow = 1;
         end
         if (temp_exp == 0 && result_man == 0) begin
-            underflow = 0;
+            underflow = 1;  // 언더플로우
         end
     end
 endmodule
