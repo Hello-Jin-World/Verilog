@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Dec 15 18:12:35 2024
+# Process ID: 4232
+# Current directory: D:/Verilog/Verilog/Floating_Point_IEEE754/Floating_Point_IEEE754.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source D:/Verilog/Verilog/Floating_Point_IEEE754/Floating_Point_IEEE754.sim/sim_1/behav/xsim/xsim.dir/tb_floating_point_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/Verilog/Verilog/Floating_Point_IEEE754/Floating_Point_IEEE754.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: D:/Verilog/Verilog/Floating_Point_IEEE754/Floating_Point_IEEE754.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source D:/Verilog/Verilog/Floating_Point_IEEE754/Floating_Point_IEEE754.sim/sim_1/behav/xsim/xsim.dir/tb_floating_point_behav/webtalk/xsim_webtalk.tcl -notrace
