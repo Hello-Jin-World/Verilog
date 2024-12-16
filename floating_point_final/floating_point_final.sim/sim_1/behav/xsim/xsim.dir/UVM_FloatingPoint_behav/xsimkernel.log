@@ -1,0 +1,4 @@
+Running: xsim.dir/UVM_FloatingPoint_behav/xsimk -simmode gui -wdb UVM_FloatingPoint_behav.wdb -simrunnum 0 -socket 55269
+Design successfully loaded
+Design Loading Memory Usage: 47080 KB (Peak: 47080 KB)
+Design Loading CPU Usage: 20 ms

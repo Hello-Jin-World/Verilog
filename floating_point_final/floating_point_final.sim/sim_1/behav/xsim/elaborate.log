@@ -1,17 +1,21 @@
 Vivado Simulator 2020.2
 Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
-Running: /home/tools/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto 3db750882a5446b882088f9636420e88 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_FPU_behav xil_defaultlib.tb_FPU xil_defaultlib.glbl -log elaborate.log 
+Running: /home/tools/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto 3db750882a5446b882088f9636420e88 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot UVM_FloatingPoint_behav xil_defaultlib.UVM_FloatingPoint xil_defaultlib.glbl -log elaborate.log -L uvm 
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
 Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/proj/xbuilds/SWIP/2020.2_0711_1805/installs/lin64/Vivado/2020.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 4356. Module uvm_pkg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/proj/xbuilds/SWIP/2020.2_0711_1805/installs/lin64/Vivado/2020.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 4356. Module uvm_pkg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4468] File : /proj/xbuilds/SWIP/2020.2_0711_1805/installs/lin64/Vivado/2020.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv, Line : 25994, RANDC variable size more than 8 bits. This will be treated as a RAND variable instead.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling package xil_defaultlib.$unit_tb_FPU_sv
+Compiling package uvm.uvm_pkg
 Compiling package std.std
 Compiling module xil_defaultlib.fp_interface
 Compiling module xil_defaultlib.FPU
-Compiling module xil_defaultlib.tb_FPU
+Compiling module xil_defaultlib.UVM_FloatingPoint
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_FPU_behav
+Built simulation snapshot UVM_FloatingPoint_behav

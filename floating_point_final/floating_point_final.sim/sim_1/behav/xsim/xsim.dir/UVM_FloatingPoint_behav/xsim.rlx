@@ -1,0 +1,12 @@
+
+{ 
+    crc :  15349512272543275752  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 3db750882a5446b882088f9636420e88 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot UVM_FloatingPoint_behav xil_defaultlib.UVM_FloatingPoint xil_defaultlib.glbl -L uvm" , 
+    buildDate : "Nov 18 2020" , 
+    buildTime : "09:20:35" , 
+    linkCmd : "/usr/bin/gcc -Wa,-W  -O -fPIC  -m64  -Wl,--no-as-needed  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/UVM_FloatingPoint_behav/xsimk\"   \"xsim.dir/UVM_FloatingPoint_behav/obj/xsim_0.lnx64.o\" \"xsim.dir/UVM_FloatingPoint_behav/obj/xsim_1.lnx64.o\" \"xsim.dir/UVM_FloatingPoint_behav/obj/xsim_2.lnx64.o\" \"xsim.dir/UVM_FloatingPoint_behav/obj/xsim_3.lnx64.o\" \"xsim.dir/UVM_FloatingPoint_behav/obj/xsim_4.lnx64.o\" \"xsim.dir/UVM_FloatingPoint_behav/obj/xsim_5.lnx64.o\" \"xsim.dir/UVM_FloatingPoint_behav/obj/xsim_6.lnx64.o\" \"xsim.dir/UVM_FloatingPoint_behav/obj/xsim_7.lnx64.o\" \"xsim.dir/UVM_FloatingPoint_behav/obj/xsim_8.lnx64.o\" \"xsim.dir/UVM_FloatingPoint_behav/obj/xsim_9.lnx64.o\" \"xsim.dir/UVM_FloatingPoint_behav/obj/xsim_10.lnx64.o\" \"xsim.dir/UVM_FloatingPoint_behav/obj/xsim_11.lnx64.o\" -L\"/home/tools/Vivado/2020.2/lib/lnx64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 
