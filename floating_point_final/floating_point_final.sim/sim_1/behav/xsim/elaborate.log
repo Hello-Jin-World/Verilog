@@ -1,0 +1,8 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/tools/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto 3db750882a5446b882088f9636420e88 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_FPU_behav xil_defaultlib.tb_FPU xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+ERROR: [XSIM 43-4286] "/home/project/Verilog/floating_point_final/floating_point_final.srcs/sim_1/new/tb_FPU.sv" Line 51. Undefined system function '$shortreal'
