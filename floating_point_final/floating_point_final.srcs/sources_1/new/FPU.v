@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module FPU(
+module FPU (
     input         clk,
     input         reset,
     input  [31:0] a_in,
@@ -47,10 +47,12 @@ module FPU(
     reg [31:0] a_reg, a_next;
     reg [31:0] b_reg, b_next;
     reg overflow_reg, overflow_next;
+    reg underflow_reg, underflow_next;
 
     assign y = result_reg;
-    assign overflow = overflow_reg;  // overflow: 지수가 최대값
-    assign underflow = (result_exp_reg == 8'b00000000 && result_man_reg != 0); // underflow: 지수가 0일 때 가수가 0이 아니면 underflow
+    assign overflow = overflow_reg;
+    assign underflow = underflow_reg;
+    // assign underflow = (result_exp_reg == 8'b00000000 && result_man_reg != 0);
     assign busy = busy_reg;
 
 
@@ -72,6 +74,7 @@ module FPU(
             a_reg             <= 0;
             b_reg             <= 0;
             overflow_reg      <= 0;
+            underflow_reg     <= 0;
         end else begin
             state_reg         <= state_next;
             busy_reg          <= busy_next;
@@ -89,6 +92,7 @@ module FPU(
             a_reg             <= a_next;
             b_reg             <= b_next;
             overflow_reg      <= overflow_next;
+            underflow_reg     <= underflow_next;
         end
     end
 
@@ -111,6 +115,7 @@ module FPU(
         a_next             = a_reg;
         b_next             = b_reg;
         overflow_next      = overflow_reg;
+        underflow_next     = underflow_reg;
         case (state_reg)
             IDLE: begin
                 // if (!busy_reg) begin
@@ -144,7 +149,13 @@ module FPU(
             end
             MAN_SHIFT: begin
                 if (a_exp_reg == b_exp_reg) begin
-                    result_signed_next = a_signed_reg;
+                    if (a_man_reg > b_man_reg) begin
+                        result_signed_next = a_signed_reg;
+                    end else if (a_man_reg < b_man_reg) begin
+                        result_signed_next = b_signed_reg;
+                    end else begin
+                        result_signed_next = a_signed_reg;
+                    end
                     result_exp_next    = a_exp_reg;
                     state_next         = OPER;
                 end else begin
@@ -171,28 +182,33 @@ module FPU(
                         result_man_next = b_man_reg[23:0] - a_man_reg[23:0];
                     end
                 end
-                state_next = RESULT_MAN_SHIFT;
+                state_next     = RESULT_MAN_SHIFT;
+                overflow_next  = 0;
+                underflow_next = 0;
             end
             RESULT_MAN_SHIFT: begin
-                if (result_exp_reg + 1 == 8'b00000000) begin
+                if (result_exp_reg == 8'b11111111 && result_man_reg != 0) begin
                     overflow_next = 1;
-                    reuslt_next = {
-                        result_signed_reg, result_exp_reg, result_man_reg[22:0]
-                    };
-                    busy_next = 0;
-                    state_next = IDLE;
-                    // state_next    = DONE;
+                    state_next    = DONE;
+                    // reuslt_next = {
+                    //     result_signed_reg, result_exp_reg, result_man_reg[22:0]
+                    // };
+                    // busy_next = 0;
+                    // state_next = IDLE;
+                end else if (result_exp_reg == 8'b00000000 && result_man_reg != 0) begin
+                    underflow_next = 1;
+                    state_next = DONE;
                 end else begin
                     if (result_man_reg[24] == 0 && result_man_reg[23] == 1  || result_man_reg == 0) begin
-                        // state_next = DONE;         
-                        reuslt_next = {
-                            result_signed_reg,
-                            result_exp_reg,
-                            result_man_reg[22:0]
-                        };
-                        overflow_next = 0;
-                        busy_next = 0;
-                        state_next = IDLE;
+                        state_next = DONE;
+                        // reuslt_next = {
+                        //     result_signed_reg,
+                        //     result_exp_reg,
+                        //     result_man_reg[22:0]
+                        // };
+                        // overflow_next = 0;
+                        // busy_next = 0;
+                        // state_next = IDLE;
                     end else begin
                         if (result_man_reg[24] == 1) begin
                             result_man_next = {1'b0, result_man_reg[24:1]};
@@ -208,7 +224,6 @@ module FPU(
                 reuslt_next = {
                     result_signed_reg, result_exp_reg, result_man_reg[22:0]
                 };
-                overflow_next = 0;
                 busy_next = 0;
                 state_next = IDLE;
             end

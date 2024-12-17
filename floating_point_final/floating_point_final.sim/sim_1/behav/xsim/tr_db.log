@@ -2,3 +2,18 @@
   CREATE_STREAM @0 {NAME:SEQ T:Transactions SCOPE:32bit Register UVM Verification.ENV.AGENT.SQR STREAM:609}
   CREATE_STREAM @0 {NAME:SEQ T:Transactions SCOPE:32bit Register UVM Verification.ENV.AGENT.SQR STREAM:609}
   CREATE_STREAM @0 {NAME:SEQ T:Transactions SCOPE:32bit Register UVM Verification.ENV.AGENT.SQR STREAM:609}
+  CREATE_STREAM @0 {NAME:SEQ T:Transactions SCOPE:32bit Register UVM Verification.ENV.AGENT.SQR STREAM:609}
+  CREATE_STREAM @0 {NAME:SEQ T:Transactions SCOPE:32bit Register UVM Verification.ENV.AGENT.SQR STREAM:609}
+  CREATE_STREAM @0 {NAME:SEQ T:Transactions SCOPE:32bit Register UVM Verification.ENV.AGENT.SQR STREAM:609}
+  CREATE_STREAM @0 {NAME:SEQ T:Transactions SCOPE:32bit Register UVM Verification.ENV.AGENT.SQR STREAM:609}
+  CREATE_STREAM @0 {NAME:SEQ T:Transactions SCOPE:32bit Register UVM Verification.ENV.AGENT.SQR STREAM:609}
+  CREATE_STREAM @0 {NAME:SEQ T:Transactions SCOPE:32bit Register UVM Verification.ENV.AGENT.SQR STREAM:609}
+  CREATE_STREAM @0 {NAME:SEQ T:Transactions SCOPE:32bit Register UVM Verification.ENV.AGENT.SQR STREAM:609}
+  CREATE_STREAM @0 {NAME:SEQ T:Transactions SCOPE:32bit Register UVM Verification.ENV.AGENT.SQR STREAM:609}
+  CREATE_STREAM @0 {NAME:SEQ T:Transactions SCOPE:32bit Register UVM Verification.ENV.AGENT.SQR STREAM:609}
+  CREATE_STREAM @0 {NAME:SEQ T:Transactions SCOPE:32bit Register UVM Verification.ENV.AGENT.SQR STREAM:609}
+  CREATE_STREAM @0 {NAME:SEQ T:Transactions SCOPE:32bit Register UVM Verification.ENV.AGENT.SQR STREAM:609}
+  CREATE_STREAM @0 {NAME:SEQ T:Transactions SCOPE:32bit Register UVM Verification.ENV.AGENT.SQR STREAM:609}
+  CREATE_STREAM @0 {NAME:SEQ T:Transactions SCOPE:32bit Register UVM Verification.ENV.AGENT.SQR STREAM:609}
+  CREATE_STREAM @0 {NAME:SEQ T:Transactions SCOPE:32bit Register UVM Verification.ENV.AGENT.SQR STREAM:628}
+  CREATE_STREAM @0 {NAME:SEQ T:Transactions SCOPE:32bit Register UVM Verification.ENV.AGENT.SQR STREAM:628}
