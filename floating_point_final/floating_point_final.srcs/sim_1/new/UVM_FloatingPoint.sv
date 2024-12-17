@@ -72,7 +72,7 @@ class fp_sequence extends uvm_sequence;
     virtual task body();
         reg_seq_item =
             seq_item::type_id::create("SEQ_ITEM");  // create instance
-        repeat (100) begin
+        repeat (500) begin
             start_item(reg_seq_item);
             reg_seq_item.randomize();
             `uvm_info("SEQ", "Data send to Driver", UVM_NONE);
@@ -157,6 +157,7 @@ class fp_monitor extends uvm_monitor;
             reg_seq_item.result    = fpIntf.result;
             reg_seq_item.overflow  = fpIntf.overflow;
             reg_seq_item.underflow = fpIntf.underflow;
+
             `uvm_info("MON", "Send data to Scoreboard", UVM_NONE);
             send.write(reg_seq_item);
         end
@@ -222,19 +223,6 @@ class fp_scoreboard extends uvm_scoreboard;
                 fail_cnt++;
             end
         end
-        // if (y_real - result_real <= diff && y_real - result_real >= 0 || 
-        //         result_real - y_real <= diff && result_real - y_real >= 0 ||
-        //         data.result - sw_result <= 32'd2 && data.result - sw_result >= 32'd0 ||
-        //         sw_result - data.result <= 32'd2 && sw_result - data.result >= 32'd0 ||
-        //         data.result == sw_result) begin
-        //     `uvm_info("SCB", $sformatf("PASS!!!, sw: %b == hw: %b", sw_result,
-        //                                data.result), UVM_NONE);
-        //     pass_cnt++;
-        // end else begin
-        //     `uvm_info("SCB", $sformatf("FAIL..., sw: %b != hw: %b", sw_result,
-        //                                data.result), UVM_NONE);
-        //     fail_cnt++;
-        // end
         total_cnt++;
 
         data.print(uvm_default_line_printer);
@@ -277,83 +265,32 @@ class fp_agent extends uvm_agent;
     endfunction
 endclass  //fp_agent extends uvm_agent
 
-class fp_coverage extends uvm_subscriber #(seq_item);
-    `uvm_component_utils(fp_coverage)
+covergroup pkt_cg with function sample (seq_item reg_seq_item);
+    coverpoint reg_seq_item.a;
+    coverpoint reg_seq_item.b;
+endgroup
 
-    seq_item seq_item_coverage;
+class packet_coverage extends uvm_subscriber #(seq_item);
+    `uvm_component_utils(packet_coverage)
 
-    covergroup cg_inputs;
-        coverpoint seq_item_coverage.a {
-            bins zero     = {32'h00000000};        // +0
-            bins denormal = {[32'h00000001:32'h007fffff]};
-            bins normal_pos = {[32'h00800000:32'h7f7fffff]};
-            bins normal_neg = {[32'h80800000:32'hff7fffff]};
-            bins inf_pos    = {32'h7f800000};      // +Infinity
-            bins inf_neg    = {32'hff800000};      // -Infinity
-            bins nan        = {[32'h7f800001:32'h7fffffff], 
-                               [32'hff800001:32'hffffffff]};
-        }
+    pkt_cg tr_cov;
+    bit coverage_enable = 1;
 
-        coverpoint seq_item_coverage.b {
-            bins zero     = {32'h00000000};
-            bins denormal = {[32'h00000001:32'h007fffff]};
-            bins normal_pos = {[32'h00800000:32'h7f7fffff]};
-            bins normal_neg = {[32'h80800000:32'hff7fffff]};
-            bins inf_pos    = {32'h7f800000};
-            bins inf_neg    = {32'hff800000};
-            bins nan        = {[32'h7f800001:32'h7fffffff], 
-                               [32'hff800001:32'hffffffff]};
-        }
+    function new(input string name = "packet_coverage", uvm_component c);
+        super.new(name, c);
+    endfunction  //new()
 
-        cross seq_item_coverage.a, seq_item_coverage.b {
-            bins zero_add      = binsof(seq_item_coverage.a.zero) && binsof(seq_item_coverage.b.zero);
-            bins inf_add       = binsof(seq_item_coverage.a.inf_pos) || binsof(seq_item_coverage.b.inf_pos);
-            bins nan_propagate = binsof(seq_item_coverage.a.nan) || binsof(seq_item_coverage.b.nan);
-        }
-    endgroup
-
-    covergroup cg_results;
-        coverpoint seq_item_coverage.result {
-            bins zero        = {32'h00000000};
-            bins normal_pos  = {[32'h00000001:32'h7f7fffff]};
-            bins normal_neg  = {[32'h80000001:32'hff7fffff]};
-            bins special_pos = {32'h7f800000, 32'h7f800001};  // +Inf, +NaN
-            bins special_neg = {32'hff800000, 32'hff800001};  // -Inf, -NaN
-        }
-
-        coverpoint seq_item_coverage.overflow {
-            bins no_overflow = {0};
-            bins overflow    = {1};
-        }
-
-        coverpoint seq_item_coverage.underflow {
-            bins no_underflow = {0};
-            bins underflow    = {1};
-        }
-
-        cross seq_item_coverage.result, seq_item_coverage.overflow, seq_item_coverage.underflow;
-    endgroup
-
-    function new(string name = "fp_coverage", uvm_component parent);
-        super.new(name, parent);
-        cg_inputs = new();
-        cg_results = new();
+    virtual function void build_phase(uvm_phase phase);
+        if (coverage_enable) begin
+            tr_cov = new();
+        end
     endfunction
 
-    virtual function void write(seq_item item);
-        cg_inputs.sample();
-        cg_results.sample();
-    endfunction
-
-    // Changed from task to function
-    virtual function void report_phase(uvm_phase phase);
-        super.report_phase(phase);
-        $display("====================================");
-        $display("Coverage Report");
-        $display("====================================");
-        $display("Input Coverage:  %0.2f%%", cg_inputs.get_coverage());
-        $display("Result Coverage: %0.2f%%", cg_results.get_coverage());
-        $display("====================================");
+    virtual function void write(seq_item data);
+        if (coverage_enable) begin
+            tr_cov.sample(data);
+            $display ("Coverage = %0.2f %%", tr_cov.get_inst_coverage());
+        end
     endfunction
 endclass
 
@@ -362,7 +299,7 @@ class fp_env extends uvm_env;
 
     fp_scoreboard regScoreboard;
     fp_agent regAgent;
-    fp_coverage regCoverage;
+    packet_coverage cov_comp;
 
     function new(input string name = "fp_env", uvm_component c);
         super.new(name, c);
@@ -372,14 +309,20 @@ class fp_env extends uvm_env;
         super.build_phase(phase);
         regScoreboard = fp_scoreboard::type_id::create("SCB", this);
         regAgent      = fp_agent::type_id::create("AGENT", this);
-        regCoverage   = fp_coverage::type_id::create("COV", this);
+        cov_comp      = packet_coverage::type_id::create("cov_comp", this);
     endfunction
 
     virtual function void connect_phase(uvm_phase phase);
         super.connect_phase(phase);
         regAgent.regMonitor.send.connect(regScoreboard.recv);
-        regAgent.regMonitor.send.connect(regCoverage.analysis_export);
+        regAgent.regMonitor.send.connect(cov_comp.analysis_export);
+        // $display("=================================");
+        // $display("======= Coverage : %f %% =======", cov_comp.write.data);
+        // $display("=================================");
     endfunction
+
+
+
 endclass  //fp_env extendsuvm_env;
 
 class fp_test extends uvm_test;
