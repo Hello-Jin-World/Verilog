@@ -19,7 +19,6 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
 interface fp_interface;
     logic        clk;
     logic        reset;
@@ -29,9 +28,6 @@ interface fp_interface;
     logic        overflow;
     logic        underflow;
     logic        busy;
-    // logic [31:0] sw_result;
-    // logic        sw_overflow;
-    // logic        sw_underflow;
 endinterface  //fp_interface
 
 class transaction;
@@ -43,45 +39,11 @@ class transaction;
     logic             busy;
 
     constraint fix {
-            a[30:23] > 8'b00000000;
-            a[30:23] < 8'b11111111;
-            b[30:23] > 8'b00000000;
-            b[30:23] < 8'b11111111;
-        //     // a + b <= 32'b0_11111110_11111111111111111111111;
-        //     // a + b >= 32'b0_00000001_00000000000000000000000;
-        //     // a + b <= 32'b1_11111110_11111111111111111111111;
-        //     // a + b >= 32'b1_00000001_00000000000000000000000;
-
-        //     (a + b) inside {
-        //     [32'b0_00000001_00000000000000000000000 : 32'b0_11111110_11111111111111111111111],
-        //     [32'b1_00000001_00000000000000000000000 : 32'b1_11111110_11111111111111111111111]
-        // };
-        // a[30:23] - b[30:23] <= 10;
-        // a[30:23] - b[30:23] >= 0;
-
-        // b[30:23] - a[30:23] <= 10;
-        // b[30:23] - a[30:23] >= 0;
+        a[30:23] > 8'b00000000;
+        a[30:23] < 8'b11111111;
+        b[30:23] > 8'b00000000;
+        b[30:23] < 8'b11111111;
     }
-    // constraint exp_diff {
-    //     abs(a[30:23] - b[30:23]) <= 5;  // 지수 차이를 5 이하로 제한
-    // }
-
-    // function int abs(input int value);
-    //     return (value < 0) ? -value : value;
-    // endfunction
-
-    // logic      [31:0] sw_result;
-    // logic             sw_overflow;
-    // logic             sw_underflow;
-
-    // constraint range {
-    //     set_up_time dist {
-    //         26 :/ 80,
-    //         70 :/ 20
-    //     };
-    // }
-
-    //constraint value_c {set_up_time inside {26, 70};}
 
     task display(string name);
         $display("[%s] random a : %b,  random b : %b", name, a, b);
@@ -118,7 +80,6 @@ class driver;
     event                  mon_next_event;
     virtual fp_interface   fp_intf;
 
-
     function new(mailbox#(transaction) gen2drv_mbox, event mon_next_event,
                  virtual fp_interface fp_intf);
         this.gen2drv_mbox   = gen2drv_mbox;
@@ -138,24 +99,15 @@ class driver;
         repeat (5) @(posedge fp_intf.clk);
         fp_intf.reset <= 1'b1;
         repeat (5) @(posedge fp_intf.clk);
-        // $monitor("Time: %0t, clk: %b", $time, fp_intf.clk);
-        // fp_intf.sw_result    <= 0;
-        // fp_intf.sw_overflow  <= 0;
-        // fp_intf.sw_underflow <= 0;
-        // fp_intf.tem <= 0;
         $display("[DRV] DUT Reset Done!");
         $display("---------------------");
     endtask
 
-
     task run();
         forever begin
             gen2drv_mbox.get(trans);
-            $display("1");
             fp_intf.a = trans.a;
             fp_intf.b = trans.b;
-            // fp_intf.overflow  = trans.overflow;
-            // fp_intf.underflow = trans.underflow;
             wait (fp_intf.busy == 1);
             trans.display("DRV");
             ->mon_next_event;
@@ -192,8 +144,6 @@ class monitor;
             trans.result    = fp_intf.result;
             trans.overflow  = fp_intf.overflow;
             trans.underflow = fp_intf.underflow;
-            // trans.busy      = fp_intf.busy;
-            // @(posedge fp_intf.clk);
             mon2scb_mbox.put(trans);
             trans.display("MON");
             #2;
@@ -204,30 +154,17 @@ endclass  //monitor
 
 class scoreboard;
     transaction                   trans;
-
     mailbox #(transaction)        mon2scb_mbox;
     event                         gen_next_event;
     event                         scb_next_event;
 
     int                           total_cnt,                pass_cnt, fail_cnt;
-
     shortreal                     a_real;
     shortreal                     b_real;
     shortreal                     y_real;
     shortreal                     result_real;
     logic                  [31:0] sw_result;
     shortreal                     diff            = 0.0001;
-
-    // logic                         a_signed_bit,   b_signed_bit;
-    // logic                  [ 7:0] a_exp,          b_exp;
-    // logic                  [ 7:0] temp_exp;
-    // logic                  [23:0] a_man,          b_man;
-    // logic                  [23:0] sum_man;
-    // logic                         result_sign;
-    // logic                  [22:0] result_man;
-    // logic                  [31:0] sw_result;
-    // logic                         sw_overflow;
-    // logic                         sw_underflow;
 
     function new(mailbox#(transaction) mon2scb_mbox, event gen_next_event,
                  event scb_next_event);
@@ -241,18 +178,7 @@ class scoreboard;
         b_real              = 0;
         y_real              = 0;
         result_real         = 0;
-        // a_signed_bit        = 0;
-        // a_exp               = 0;
-        // temp_exp            = 0;
-        // a_man               = 0;
-        // sum_man             = 0;
-        // result_sign         = 0;
-        // result_man          = 0;
-        // b_signed_bit        = 0;
-        // b_exp               = 0;
-        // b_man               = 0;
     endfunction  //new()
-
 
     task run();
         forever begin
@@ -260,30 +186,12 @@ class scoreboard;
             $display("Time: %0t, Event: scb_next_event triggered", $time);
             mon2scb_mbox.get(trans);
 
-
             a_real = $bitstoshortreal(trans.a);
             b_real = $bitstoshortreal(trans.b);
-            //a_real = trans.a;
-            //b_real = trans.b;
             #2;
             y_real = a_real + b_real;
             result_real = $bitstoshortreal(trans.result);
             sw_result = $shortrealtobits(y_real);
-            $display("trans.a : %b", trans.a);
-            $display("trans.b : %b", trans.b);
-            $display("trans.result : %b", trans.result);
-            $display("sw_result : %b", sw_result);
-            $display("a_real : %f", a_real);
-            $display("b_real : %f", b_real);
-            $display("y_real : %f", y_real);
-            $display("result_real : %f", result_real);
-
-            // $display("hardware : %b,  software : %b", result_real,
-            //          a_real + b_real);
-            // $display("hardware : %f,  software : %f", result_real, y_real);
-            // $display("a : %b,  b : %b", a_real, b_real);
-            // $display("a : %f,  b : %f", a_real, b_real);
-
 
             if (y_real - result_real <= diff && y_real - result_real >= 0 || 
                 result_real - y_real <= diff && result_real - y_real >= 0 ||
@@ -306,16 +214,10 @@ class scoreboard;
                 end
             end
             total_cnt++;
-            // $display("hardware : %b,  software : %b", trans.overflow,
-            //          sw_overflow);
-            // $display("hardware : %b,  software : %b", trans.underflow,
-            //          sw_underflow);
-            // #100;
             trans.display("SCB");
             ->gen_next_event;
         end
     endtask  //run
-
 endclass  //scoreboard
 
 class environment;
@@ -392,7 +294,6 @@ module tb_FPU ();
         .underflow(fp_intf.underflow),
         .busy     (fp_intf.busy)
     );
-
 
     always #5 fp_intf.clk = ~fp_intf.clk;
 

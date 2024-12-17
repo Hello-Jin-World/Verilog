@@ -72,7 +72,7 @@ class fp_sequence extends uvm_sequence;
     virtual task body();
         reg_seq_item =
             seq_item::type_id::create("SEQ_ITEM");  // create instance
-        repeat (500) begin
+        repeat (1000) begin
             start_item(reg_seq_item);
             reg_seq_item.randomize();
             `uvm_info("SEQ", "Data send to Driver", UVM_NONE);
@@ -112,9 +112,7 @@ class fp_driver extends uvm_driver #(seq_item);  // receive seq_time
             fpIntf.a = reg_seq_item.a;
             fpIntf.b = reg_seq_item.b;
             wait (fpIntf.busy == 1);
-            // @(posedge fpIntf.clk);
             `uvm_info("DRV", "Send data to DUT", UVM_NONE);
-            // #5;
             seq_item_port.item_done();
             wait (fpIntf.busy == 0);
         end
@@ -146,9 +144,7 @@ class fp_monitor extends uvm_monitor;
 
     virtual task run_phase(uvm_phase phase);
         forever begin
-            // @(posedge fpIntf.clk);
             wait (fpIntf.busy == 1);
-            //When detect Clock Rising Edge 
             #2;
             // Never be changed input data from interface.
             wait (fpIntf.busy == 0);
@@ -174,7 +170,6 @@ class fp_scoreboard extends uvm_scoreboard;
     int              total_cnt,             pass_cnt, fail_cnt;
 
     `uvm_component_utils(fp_scoreboard)
-
     uvm_analysis_imp #(seq_item, fp_scoreboard) recv;
 
     function new(input string name = "fp_scoreboard", uvm_component c);
@@ -191,8 +186,6 @@ class fp_scoreboard extends uvm_scoreboard;
     endfunction  //new()
 
     virtual function void write(seq_item data);
-        // `uvm_info("SCB", "Data received from Monitor", UVM_NONE);
-
         a_real = $bitstoshortreal(data.a);
         b_real = $bitstoshortreal(data.b);
         y_real = a_real + b_real;
@@ -224,18 +217,13 @@ class fp_scoreboard extends uvm_scoreboard;
             end
         end
         total_cnt++;
-
         data.print(uvm_default_line_printer);
 
         $display("====================================");
-        $display("========    Final Report    ========");
-        $display("====================================");
         $display("Total Test : %d ", total_cnt);
-        $display("========     Read Result    ========");
+        $display("========     Oper Result    ========");
         $display(" Pass Test : %d ", pass_cnt);
         $display(" Fail Test : %d ", fail_cnt);
-        $display("====================================");
-        $display("====   Test Bench is finished   ====");
         $display("====================================");
     endfunction
 endclass  //fp_scoreboard extends uvm_scoreboard;
@@ -289,7 +277,9 @@ class packet_coverage extends uvm_subscriber #(seq_item);
     virtual function void write(seq_item data);
         if (coverage_enable) begin
             tr_cov.sample(data);
-            $display ("Coverage = %0.2f %%", tr_cov.get_inst_coverage());
+            $display("====================================");
+            $display("Coverage = %0.2f %%", tr_cov.get_inst_coverage());
+            $display("====================================");
         end
     endfunction
 endclass
@@ -316,13 +306,7 @@ class fp_env extends uvm_env;
         super.connect_phase(phase);
         regAgent.regMonitor.send.connect(regScoreboard.recv);
         regAgent.regMonitor.send.connect(cov_comp.analysis_export);
-        // $display("=================================");
-        // $display("======= Coverage : %f %% =======", cov_comp.write.data);
-        // $display("=================================");
     endfunction
-
-
-
 endclass  //fp_env extendsuvm_env;
 
 class fp_test extends uvm_test;
@@ -367,9 +351,6 @@ module UVM_FloatingPoint ();
     always #5 fpIntf.clk = ~fpIntf.clk;
 
     initial begin
-        // `uvm_info("Test 1", "Hello World", UVM_NONE);
-        // uvm_report_info("Test 2", "This is Reporting", UVM_MEDIUM);
-        // uvm_report_info("Test 3", "This is Reporting", UVM_FULL);
         fpIntf.clk = 0;
         fpIntf.resetn = 0;
         #10;
