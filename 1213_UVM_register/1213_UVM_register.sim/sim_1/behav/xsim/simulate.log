@@ -1,0 +1,598 @@
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+UVM_INFO /proj/xbuilds/SWIP/2020.2_0711_1805/installs/lin64/Vivado/2020.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+----------------------------------------------------------------
+(C) 2013-2014 NVIDIA Corporation
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2007-2014 Mentor Graphics Corporation
+
+
+----------------------------------------------------------------
+
+UVM_INFO @ 0: reporter [RNTST] Running test ...
+UVM_INFO /proj/xbuilds/SWIP/2020.2_0711_1805/installs/lin64/Vivado/2020.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+display start of simulation phase!
+display run phase!
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 0: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 5000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 7000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 7000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(171) @ 7000: 32bit Register UVM Verification.ENV.SCB [SCB] FAIL!!!, d: 3804226597 != q:          0
+SEQ_ITEM: (seq_item@586) { d: 'he2bfe425  q: 'h0  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 10000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 15000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 17000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 17000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hc9c48106  q: 'h0  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 20000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 25000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 27000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 27000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 27000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d:  399358685 == q:  399358685
+SEQ_ITEM: (seq_item@586) { d: 'h17cdbadd  q: 'h17cdbadd  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 30000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 35000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 37000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 37000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hcdb9163  q: 'h17cdbadd  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 40000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 45000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 47000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 47000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 47000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d:  686687466 == q:  686687466
+SEQ_ITEM: (seq_item@586) { d: 'h28ee04ea  q: 'h28ee04ea  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 50000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 55000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 57000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 57000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 57000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 2886014292 == q: 2886014292
+SEQ_ITEM: (seq_item@586) { d: 'hac051554  q: 'hac051554  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 60000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 65000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 67000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 67000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'h9620c28e  q: 'hac051554  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 70000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 75000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 77000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 77000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 77000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3879799996 == q: 3879799996
+SEQ_ITEM: (seq_item@586) { d: 'he7410cbc  q: 'he7410cbc  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 80000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 85000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 87000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 87000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 87000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3748000683 == q: 3748000683
+SEQ_ITEM: (seq_item@586) { d: 'hdf65f3ab  q: 'hdf65f3ab  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 90000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 95000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 97000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 97000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 97000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3197073304 == q: 3197073304
+SEQ_ITEM: (seq_item@586) { d: 'hbe8f7798  q: 'hbe8f7798  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 100000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 105000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 107000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 107000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hc4bd984a  q: 'hbe8f7798  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 110000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 115000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 117000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 117000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 117000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d:  837834260 == q:  837834260
+SEQ_ITEM: (seq_item@586) { d: 'h31f05614  q: 'h31f05614  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 120000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 125000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 127000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 127000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hc627b073  q: 'h31f05614  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 130000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 135000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 137000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 137000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hc163a7d0  q: 'h31f05614  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 140000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 145000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 147000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 147000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 147000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d:  597965855 == q:  597965855
+SEQ_ITEM: (seq_item@586) { d: 'h23a43c1f  q: 'h23a43c1f  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 150000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 155000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 157000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 157000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hece96d4e  q: 'h23a43c1f  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 160000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 165000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 167000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 167000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 167000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3711122248 == q: 3711122248
+SEQ_ITEM: (seq_item@586) { d: 'hdd333b48  q: 'hdd333b48  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 170000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 175000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 177000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 177000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 177000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 4102137399 == q: 4102137399
+SEQ_ITEM: (seq_item@586) { d: 'hf481a637  q: 'hf481a637  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 180000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 185000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 187000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 187000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hf2d4ae0d  q: 'hf481a637  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 190000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 195000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 197000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 197000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 197000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d:  405557906 == q:  405557906
+SEQ_ITEM: (seq_item@586) { d: 'h182c5292  q: 'h182c5292  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 200000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 205000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 207000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 207000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'he4889418  q: 'h182c5292  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 210000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 215000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 217000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 217000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hd7e97294  q: 'h182c5292  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 220000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 225000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 227000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 227000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 227000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 4065258988 == q: 4065258988
+SEQ_ITEM: (seq_item@586) { d: 'hf24eedec  q: 'hf24eedec  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 230000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 235000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 237000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 237000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'h33b905f9  q: 'hf24eedec  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 240000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 245000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 247000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 247000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 247000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3693591299 == q: 3693591299
+SEQ_ITEM: (seq_item@586) { d: 'hdc27bb03  q: 'hdc27bb03  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 250000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 255000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 257000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 257000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 257000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d:  731581666 == q:  731581666
+SEQ_ITEM: (seq_item@586) { d: 'h2b9b0ce2  q: 'h2b9b0ce2  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 260000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 265000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 267000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 267000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'h2212fbb0  q: 'h2b9b0ce2  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 270000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 275000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 277000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 277000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hff8f8755  q: 'h2b9b0ce2  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 280000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 285000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 287000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 287000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'h410afec  q: 'h2b9b0ce2  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 290000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 295000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 297000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 297000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hef967540  q: 'h2b9b0ce2  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 300000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 305000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 307000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 307000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 307000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3256932232 == q: 3256932232
+SEQ_ITEM: (seq_item@586) { d: 'hc220d788  q: 'hc220d788  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 310000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 315000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 317000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 317000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 317000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 1001379493 == q: 1001379493
+SEQ_ITEM: (seq_item@586) { d: 'h3bafd6a5  q: 'h3bafd6a5  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 320000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 325000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 327000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 327000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 327000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d:  474182371 == q:  474182371
+SEQ_ITEM: (seq_item@586) { d: 'h1c4372e3  q: 'h1c4372e3  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 330000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 335000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 337000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 337000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'he3dbabbf  q: 'h1c4372e3  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 340000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 345000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 347000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 347000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 347000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3531112842 == q: 3531112842
+SEQ_ITEM: (seq_item@586) { d: 'hd278818a  q: 'hd278818a  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 350000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 355000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 357000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 357000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 357000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d:  672789555 == q:  672789555
+SEQ_ITEM: (seq_item@586) { d: 'h2819f433  q: 'h2819f433  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 360000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 365000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 367000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 367000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 367000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d:  616563641 == q:  616563641
+SEQ_ITEM: (seq_item@586) { d: 'h24c003b9  q: 'h24c003b9  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 370000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 375000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 377000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 377000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 377000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 2288693294 == q: 2288693294
+SEQ_ITEM: (seq_item@586) { d: 'h886ab02e  q: 'h886ab02e  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 380000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 385000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 387000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 387000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 387000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d:  320469387 == q:  320469387
+SEQ_ITEM: (seq_item@586) { d: 'h1319f98b  q: 'h1319f98b  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 390000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 395000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 397000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 397000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 397000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3301826449 == q: 3301826449
+SEQ_ITEM: (seq_item@586) { d: 'hc4cddf91  q: 'hc4cddf91  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 400000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 405000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 407000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 407000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 407000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3716571807 == q: 3716571807
+SEQ_ITEM: (seq_item@586) { d: 'hdd86629f  q: 'hdd86629f  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 410000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 415000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 417000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 417000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'h9d43828a  q: 'hdd86629f  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 420000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 425000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 427000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 427000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hc4053f5d  q: 'hdd86629f  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 430000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 435000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 437000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 437000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hd1cb991f  q: 'hdd86629f  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 440000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 445000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 447000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 447000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hc6968f9c  q: 'hdd86629f  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 450000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 455000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 457000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 457000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'ha2662301  q: 'hdd86629f  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 460000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 465000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 467000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 467000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 467000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 2772063049 == q: 2772063049
+SEQ_ITEM: (seq_item@586) { d: 'ha53a5349  q: 'ha53a5349  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 470000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 475000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 477000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 477000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 477000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3474137225 == q: 3474137225
+SEQ_ITEM: (seq_item@586) { d: 'hcf132089  q: 'hcf132089  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 480000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 485000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 487000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 487000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'h9ff08a93  q: 'hcf132089  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 490000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 495000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 497000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 497000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'h97d29180  q: 'hcf132089  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 500000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 505000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 507000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 507000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 507000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3065591088 == q: 3065591088
+SEQ_ITEM: (seq_item@586) { d: 'hb6b93530  q: 'hb6b93530  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 510000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 515000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 517000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 517000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 517000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 1017411105 == q: 1017411105
+SEQ_ITEM: (seq_item@586) { d: 'h3ca47621  q: 'h3ca47621  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 520000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 525000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 527000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 527000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'h29945382  q: 'h3ca47621  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 530000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 535000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 537000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 537000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 537000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 4253601283 == q: 4253601283
+SEQ_ITEM: (seq_item@586) { d: 'hfd88ce03  q: 'hfd88ce03  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 540000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 545000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 547000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 547000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hb881e552  q: 'hfd88ce03  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 550000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 555000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 557000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 557000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 557000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 2592053641 == q: 2592053641
+SEQ_ITEM: (seq_item@586) { d: 'h9a7f9989  q: 'h9a7f9989  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 560000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 565000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 567000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 567000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 567000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3816942254 == q: 3816942254
+SEQ_ITEM: (seq_item@586) { d: 'he381eaae  q: 'he381eaae  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 570000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 575000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 577000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 577000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hd388d88f  q: 'he381eaae  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 580000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 585000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 587000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 587000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 587000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3935593303 == q: 3935593303
+SEQ_ITEM: (seq_item@586) { d: 'hea946357  q: 'hea946357  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 590000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 595000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 597000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 597000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 597000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3903097596 == q: 3903097596
+SEQ_ITEM: (seq_item@586) { d: 'he8a48afc  q: 'he8a48afc  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 600000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 605000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 607000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 607000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hcdb94f90  q: 'he8a48afc  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 610000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 615000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 617000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 617000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'h99d2b110  q: 'he8a48afc  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 620000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 625000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 627000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 627000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hccf0af48  q: 'he8a48afc  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 630000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 635000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 637000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 637000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'he7134a7f  q: 'he8a48afc  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 640000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 645000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 647000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 647000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'h283a82a0  q: 'he8a48afc  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 650000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 655000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 657000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 657000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hd0665774  q: 'he8a48afc  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 660000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 665000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 667000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 667000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hdf96c955  q: 'he8a48afc  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 670000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 675000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 677000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 677000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 677000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3586906145 == q: 3586906145
+SEQ_ITEM: (seq_item@586) { d: 'hd5cbd821  q: 'hd5cbd821  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 680000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 685000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 687000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 687000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 687000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 4077224887 == q: 4077224887
+SEQ_ITEM: (seq_item@586) { d: 'hf30583b7  q: 'hf30583b7  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 690000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 695000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 697000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 697000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hf743cc18  q: 'hf30583b7  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 700000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 705000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 707000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 707000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'ha286b15c  q: 'hf30583b7  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 710000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 715000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 717000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 717000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 717000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d:  885928880 == q:  885928880
+SEQ_ITEM: (seq_item@586) { d: 'h34ce33b0  q: 'h34ce33b0  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 720000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 725000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 727000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 727000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hee1a52c0  q: 'h34ce33b0  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 730000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 735000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 737000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 737000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 737000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 2389380824 == q: 2389380824
+SEQ_ITEM: (seq_item@586) { d: 'h8e6b0ed8  q: 'h8e6b0ed8  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 740000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 745000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 747000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 747000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 747000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3586156446 == q: 3586156446
+SEQ_ITEM: (seq_item@586) { d: 'hd5c0679e  q: 'hd5c0679e  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 750000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 755000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 757000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 757000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'h41a5d50  q: 'hd5c0679e  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 760000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 765000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 767000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 767000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 767000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3648581618 == q: 3648581618
+SEQ_ITEM: (seq_item@586) { d: 'hd978eff2  q: 'hd978eff2  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 770000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 775000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 777000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 777000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'h95dc1f63  q: 'hd978eff2  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 780000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 785000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 787000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 787000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 787000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d:  960752589 == q:  960752589
+SEQ_ITEM: (seq_item@586) { d: 'h3943ebcd  q: 'h3943ebcd  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 790000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 795000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 797000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 797000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 797000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 2209371361 == q: 2209371361
+SEQ_ITEM: (seq_item@586) { d: 'h83b054e1  q: 'h83b054e1  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 800000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 805000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 807000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 807000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 807000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3038862087 == q: 3038862087
+SEQ_ITEM: (seq_item@586) { d: 'hb5215b07  q: 'hb5215b07  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 810000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 815000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 817000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 817000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'h8d96fdff  q: 'hb5215b07  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 820000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 825000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 827000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 827000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 827000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 2366717389 == q: 2366717389
+SEQ_ITEM: (seq_item@586) { d: 'h8d113dcd  q: 'h8d113dcd  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 830000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 835000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 837000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 837000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hb3901aa1  q: 'h8d113dcd  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 840000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 845000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 847000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 847000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'h8113941f  q: 'h8d113dcd  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 850000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 855000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 857000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 857000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hf59baa92  q: 'h8d113dcd  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 860000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 865000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 867000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 867000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 867000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 2435341776 == q: 2435341776
+SEQ_ITEM: (seq_item@586) { d: 'h91285dd0  q: 'h91285dd0  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 870000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 875000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 877000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 877000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'h13b9ae35  q: 'h91285dd0  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 880000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 885000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 887000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 887000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 887000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3176110953 == q: 3176110953
+SEQ_ITEM: (seq_item@586) { d: 'hbd4f9b69  q: 'hbd4f9b69  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 890000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 895000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 897000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 897000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hdea2557  q: 'hbd4f9b69  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 900000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 905000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 907000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 907000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'h85894c33  q: 'hbd4f9b69  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 910000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 915000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 917000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 917000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'h242d0ff3  q: 'hbd4f9b69  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 920000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 925000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 927000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 927000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 927000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d:  701853825 == q:  701853825
+SEQ_ITEM: (seq_item@586) { d: 'h29d57081  q: 'h29d57081  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 930000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 935000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 937000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 937000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 937000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3598872030 == q: 3598872030
+SEQ_ITEM: (seq_item@586) { d: 'hd6826dde  q: 'hd6826dde  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 940000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 945000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 947000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 947000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 947000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 3929278567 == q: 3929278567
+SEQ_ITEM: (seq_item@586) { d: 'hea340867  q: 'hea340867  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 950000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 955000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 957000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 957000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'he4ea3f96  q: 'hea340867  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 960000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 965000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 967000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 967000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 967000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 2258965453 == q: 2258965453
+SEQ_ITEM: (seq_item@586) { d: 'h86a513cd  q: 'h86a513cd  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 970000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 975000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 977000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 977000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+SEQ_ITEM: (seq_item@586) { d: 'hf6484a6  q: 'h86a513cd  en: 'h0  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 980000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 985000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 987000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 987000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 987000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d: 4280849037 == q: 4280849037
+SEQ_ITEM: (seq_item@586) { d: 'hff28928d  q: 'hff28928d  en: 'h1  } 
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(68) @ 990000: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(105) @ 995000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(144) @ 997000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(163) @ 997000: 32bit Register UVM Verification.ENV.SCB [SCB] Data received from Monitor
+UVM_INFO /home/project/Verilog/1213_UVM_register/1213_UVM_register.srcs/sim_1/new/tb_uvm_register.sv(168) @ 997000: 32bit Register UVM Verification.ENV.SCB [SCB] PASS!!!, d:  368131388 == q:  368131388
+SEQ_ITEM: (seq_item@586) { d: 'h15f13d3c  q: 'h15f13d3c  en: 'h1  } 
+UVM_INFO /proj/xbuilds/SWIP/2020.2_0711_1805/installs/lin64/Vivado/2020.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 1000000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /proj/xbuilds/SWIP/2020.2_0711_1805/installs/lin64/Vivado/2020.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 1000000: reporter [UVM/REPORT/SERVER] [UVM/RELNOTES]     1
+[UVM/COMP/NAMECHECK]     1
+[TEST_DONE]     1
+[SEQ]   100
+[SCB]   152
+[RNTST]     1
+[MON]   100
+[DRV]   100
+** Report counts by id
+UVM_FATAL :    0
+UVM_ERROR :    0
+UVM_WARNING :    0
+UVM_INFO :  456
+** Report counts by severity
+
+--- UVM Report Summary ---
+
+
+$finish called at time : 1 us : File "/home/tools/Vivado/2020.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699

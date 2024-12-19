@@ -1,0 +1,140 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Dec 17 16:20:56 2024
+# Process ID: 11236
+# Current directory: D:/GitHub/harman_Verilog/floating_point_final
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17940 D:\GitHub\harman_Verilog\floating_point_final\floating_point_final.xpr
+# Log file: D:/GitHub/harman_Verilog/floating_point_final/vivado.log
+# Journal file: D:/GitHub/harman_Verilog/floating_point_final\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.xpr
+INFO: [Project 1-313] Project file moved from '/home/project/Verilog/floating_point_final' since last save.
+WARNING: [filemgmt 56-2] Board Part Repository Path: Could not find the directory 'D:/../root/.Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store', nor could it be found using path 'D:/root/.Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store'.
+WARNING: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.gen/sources_1', nor could it be found using path 'D:/home/project/Verilog/floating_point_final/floating_point_final.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+CRITICAL WARNING: [Board 49-67] The board_part definition was not found for digilentinc.com:basys3:part0:1.2. This can happen sometimes when you use custom board part. You can resolve this issue by setting 'board.repoPaths' parameter, pointing to the location of custom board files. Valid board_part values can be retrieved with the 'get_board_parts' Tcl command.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1084.719 ; gain = 0.000
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'UVM_FloatingPoint' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -L uvm -prj UVM_FloatingPoint_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.srcs/sources_1/new/FPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FPU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.srcs/sim_1/new/tb_FPU.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_FPU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.srcs/sim_1/new/UVM_FloatingPoint.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'fp_interface' [D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.srcs/sim_1/new/UVM_FloatingPoint.sv:25]
+WARNING: [VRFC 10-753] hierarchical name in identifier list violates IEEE 1800 syntax [D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.srcs/sim_1/new/UVM_FloatingPoint.sv:308]
+WARNING: [VRFC 10-753] hierarchical name in identifier list violates IEEE 1800 syntax [D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.srcs/sim_1/new/UVM_FloatingPoint.sv:334]
+INFO: [VRFC 10-311] analyzing module UVM_FloatingPoint
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.sim/sim_1/behav/xsim'
+"xelab -wto 3db750882a5446b882088f9636420e88 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot UVM_FloatingPoint_behav xil_defaultlib.UVM_FloatingPoint xil_defaultlib.glbl -log elaborate.log -L uvm"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 3db750882a5446b882088f9636420e88 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot UVM_FloatingPoint_behav xil_defaultlib.UVM_FloatingPoint xil_defaultlib.glbl -log elaborate.log -L uvm 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3119] argument name 'item' for virtual method 'write' does not match the argument name 't' in superclass [D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.srcs/sim_1/new/UVM_FloatingPoint.sv:343]
+WARNING: [VRFC 10-3120] argument name 'item' for virtual method 'write' in subclass 'fp_coverage' does not match the argument name 't' in superclass [D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.srcs/sim_1/new/UVM_FloatingPoint.sv:343]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/proj/xbuilds/SWIP/2020.2_0711_1805/installs/lin64/Vivado/2020.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 4356. Module uvm_pkg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/proj/xbuilds/SWIP/2020.2_0711_1805/installs/lin64/Vivado/2020.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 4356. Module uvm_pkg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4468] File : /proj/xbuilds/SWIP/2020.2_0711_1805/installs/lin64/Vivado/2020.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv, Line : 25994, RANDC variable size more than 8 bits. This will be treated as a RAND variable instead.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_tb_FPU_sv
+Compiling package uvm.uvm_pkg
+Compiling package std.std
+Compiling module xil_defaultlib.fp_interface
+Compiling module xil_defaultlib.FPU
+Compiling module xil_defaultlib.UVM_FloatingPoint
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot UVM_FloatingPoint_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:55 . Memory (MB): peak = 1084.719 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '55' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "UVM_FloatingPoint_behav -key {Behavioral:sim_1:Functional:UVM_FloatingPoint} -tclbatch {UVM_FloatingPoint.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source UVM_FloatingPoint.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+WARNING: Simulation object /UVM_FloatingPoint/fpTest was not traceable in the design for the following reason:
+Vivado Simulator does not support tracing of System Verilog Dynamic Type object.
+INFO: [Wavedata 42-43] There are no traceable objects to add.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'UVM_FloatingPoint_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:01:00 . Memory (MB): peak = 1084.719 ; gain = 0.000
+run 6 s
+UVM_INFO /proj/xbuilds/SWIP/2020.2_0711_1805/installs/lin64/Vivado/2020.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+----------------------------------------------------------------
+(C) 2013-2014 NVIDIA Corporation
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2007-2014 Mentor Graphics Corporation
+
+
+----------------------------------------------------------------
+
+UVM_INFO @ 0: reporter [RNTST] Running test ...
+WARNING: On evaluating the expression 'binsof(expr) intersect{ value_list }' inside the select expression of Bin of Cross 'axb', no matching bins were found. The binsof expression will result in an empty set.
+WARNING: On evaluating the expression 'binsof(expr) intersect{ value_list }' inside the select expression of Bin of Cross 'axb', no matching bins were found. The binsof expression will result in an empty set.
+WARNING: On evaluating the expression 'binsof(expr) intersect{ value_list }' inside the select expression of Bin of Cross 'axb', no matching bins were found. The binsof expression will result in an empty set.
+WARNING: On evaluating the expression 'binsof(expr) intersect{ value_list }' inside the select expression of Bin of Cross 'axb', no matching bins were found. The binsof expression will result in an empty set.
+WARNING: On evaluating the expression 'binsof(expr) intersect{ value_list }' inside the select expression of Bin of Cross 'axb', no matching bins were found. The binsof expression will result in an empty set.
+WARNING: On evaluating the expression 'binsof(expr) intersect{ value_list }' inside the select expression of Bin of Cross 'axb', no matching bins were found. The binsof expression will result in an empty set.
+WARNING: On evaluating the select/set expression of Cross bin 'axb.zero_add', the bin is found to be empty since no cross products are selected.
+WARNING: On evaluating the select/set expression of Cross bin 'axb.inf_add', the bin is found to be empty since no cross products are selected.
+WARNING: On evaluating the select/set expression of Cross bin 'axb.nan_propagate', the bin is found to be empty since no cross products are selected.
+UVM_INFO /proj/xbuilds/SWIP/2020.2_0711_1805/installs/lin64/Vivado/2020.2/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+display start of simulation phase!
+display run phase!
+UVM_INFO D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.srcs/sim_1/new/UVM_FloatingPoint.sv(78) @ 0: 32bit Register UVM Verification.ENV.AGENT.SQR@@SEQ [SEQ] Data send to Driver
+UVM_INFO D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.srcs/sim_1/new/UVM_FloatingPoint.sv(116) @ 15000: 32bit Register UVM Verification.ENV.AGENT.DRV [DRV] Send data to DUT
+UVM_INFO D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.srcs/sim_1/new/UVM_FloatingPoint.sv(160) @ 65000: 32bit Register UVM Verification.ENV.AGENT.MON [MON] Send data to Scoreboard
+ERROR: File: D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.srcs/sim_1/new/UVM_FloatingPoint.sv Line: 286 : Accessing non-static members of a null object is not allowed.
+Time: 65 ns  Iteration: 1  Process: /$unit_tb_FPU_sv/xlnx_isim_covergroup_fp_coveragecg_inputs::new/Forked285_0/Block285_1
+  File: D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.srcs/sim_1/new/UVM_FloatingPoint.sv
+
+HDL Line: D:/GitHub/harman_Verilog/floating_point_final/floating_point_final.srcs/sim_1/new/UVM_FloatingPoint.sv:285

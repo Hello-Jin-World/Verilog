@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Dec 13 13:10:13 2024
+# Process ID: 275065
+# Current directory: /home/project/Verilog/1213_UVM_register/1213_UVM_register.sim/sim_1/behav/xsim
+# Command line: wbtcv -mode batch -source /home/project/Verilog/1213_UVM_register/1213_UVM_register.sim/sim_1/behav/xsim/xsim.dir/tb_uvm_register_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/project/Verilog/1213_UVM_register/1213_UVM_register.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: /home/project/Verilog/1213_UVM_register/1213_UVM_register.sim/sim_1/behav/xsim/webtalk.jou
+#-----------------------------------------------------------
+source /home/project/Verilog/1213_UVM_register/1213_UVM_register.sim/sim_1/behav/xsim/xsim.dir/tb_uvm_register_behav/webtalk/xsim_webtalk.tcl -notrace

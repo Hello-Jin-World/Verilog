@@ -1,0 +1,12 @@
+
+{ 
+    crc :  3565378766167806798  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 5ba04a6971bd4edb9704cd07eba91c4b --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_uvm_register_behav xil_defaultlib.tb_uvm_register xil_defaultlib.glbl -L uvm" , 
+    buildDate : "Nov 18 2020" , 
+    buildTime : "09:20:35" , 
+    linkCmd : "/usr/bin/gcc -Wa,-W  -O -fPIC  -m64  -Wl,--no-as-needed  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/tb_uvm_register_behav/xsimk\"   \"xsim.dir/tb_uvm_register_behav/obj/xsim_0.lnx64.o\" \"xsim.dir/tb_uvm_register_behav/obj/xsim_1.lnx64.o\" \"xsim.dir/tb_uvm_register_behav/obj/xsim_2.lnx64.o\" \"xsim.dir/tb_uvm_register_behav/obj/xsim_3.lnx64.o\" \"xsim.dir/tb_uvm_register_behav/obj/xsim_4.lnx64.o\" \"xsim.dir/tb_uvm_register_behav/obj/xsim_5.lnx64.o\" \"xsim.dir/tb_uvm_register_behav/obj/xsim_6.lnx64.o\" \"xsim.dir/tb_uvm_register_behav/obj/xsim_7.lnx64.o\" \"xsim.dir/tb_uvm_register_behav/obj/xsim_8.lnx64.o\" \"xsim.dir/tb_uvm_register_behav/obj/xsim_9.lnx64.o\" \"xsim.dir/tb_uvm_register_behav/obj/xsim_10.lnx64.o\" \"xsim.dir/tb_uvm_register_behav/obj/xsim_11.lnx64.o\" -L\"/home/tools/Vivado/2020.2/lib/lnx64.o\" -lrdi_simulator_kernel   -lrdi_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 

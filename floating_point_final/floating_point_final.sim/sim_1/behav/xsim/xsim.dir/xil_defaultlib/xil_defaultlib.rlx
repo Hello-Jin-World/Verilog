@@ -1,9 +1,0 @@
-0.7
-2020.2
-Nov 18 2020
-09:20:35
-/home/project/Verilog/floating_point_final/floating_point_final.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,uvm,,,,,,
-/home/project/Verilog/floating_point_final/floating_point_final.srcs/sim_1/new/UVM_FloatingPoint.sv,1734427068,systemVerilog,,,/home/tools/Vivado/2020.2/data/xsim/system_verilog/uvm_include/uvm_macros.svh,UVM_FloatingPoint;fp_interface,,uvm,,,,,,
-/home/project/Verilog/floating_point_final/floating_point_final.srcs/sim_1/new/tb_FPU.sv,1734404340,systemVerilog,/home/project/Verilog/floating_point_final/floating_point_final.srcs/sim_1/new/UVM_FloatingPoint.sv,/home/project/Verilog/floating_point_final/floating_point_final.srcs/sim_1/new/UVM_FloatingPoint.sv,,$unit_tb_FPU_sv;tb_FPU,,uvm,,,,,,
-/home/project/Verilog/floating_point_final/floating_point_final.srcs/sources_1/new/FPU.v,1734398021,verilog,,,,FPU,,uvm,,,,,,
-/home/tools/Vivado/2020.2/data/xsim/system_verilog/uvm_include/uvm_macros.svh,1605673879,verilog,,,,,,,,,,,,
