@@ -20,31 +20,58 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-// module I2C_Master (
-//     input  logic       clk,
-//     input  logic       reset,
-//     input  logic [7:0] wData,
-//     input  logic [7:0] addrwe,
-//     input  logic       start,
-//     output logic       write,
-//     inout  logic       SDA,
-//     output logic       SCL
-// );
+module I2C_Master (
+    input  logic clk,
+    input  logic reset,
+    inout  logic SDA,
+    output logic SCL
+);
 
-//     assign SDA = write ? SDA_out : 1'bz;
+    logic manual_clk;
 
-//     MASTER U_MASTER (
-//         .clk    (clk),
-//         .reset  (reset),
-//         .addrwe (addrwe),
-//         .wData  (wData),
-//         .start  (start),
-//         .write  (write),
-//         .SDA_in (SDA),
-//         .SDA_out(SDA_out),
-//         .SCL    (SCL)
-//     );
-// endmodule
+    manual_clk U_manual_clk (
+        .clk       (clk),
+        .reset     (reset),
+        .manual_clk(manual_clk)
+    );
+
+    MASTER U_MASTER (
+        .clk   (clk  ),
+        .reset (reset),
+        .wData (8'h55),
+        .addrwe(8'b01001111),
+        .start (manual_clk),
+        // .write (1'b1),
+        .SDA   (SDA  ),
+        .SCL   (SCL  )
+    );
+endmodule
+
+module manual_clk (
+    input  logic clk,
+    input  logic reset,
+    output logic manual_clk
+);
+
+    reg [$clog2(100_000_000) - 1 : 0] counter;
+
+    always_ff @(posedge clk, posedge reset) begin
+        if (reset) begin
+            manual_clk <= 0;
+            counter    <= 0;
+        end else begin
+            if (counter == 100_000_000 - 1) begin
+                manual_clk <= 1;
+                counter    <= 0;
+            end else begin
+                manual_clk <= 0;
+                counter <= counter + 1;
+            end
+        end
+    end
+
+endmodule
+
 
 module MASTER (
     input  logic       clk,
@@ -59,6 +86,7 @@ module MASTER (
     output logic       SCL
 );
     logic SDA_in, SDA_out;
+    logic [7:0] rData;
 
     always @(*) begin  // Read Data (INPUT MODE)
         if (!write) begin
@@ -66,36 +94,6 @@ module MASTER (
         end
     end
 
-    assign SDA = write ? SDA_out : 1'bz;
-
-    reg [$clog2(50_000) - 1 : 0] counter;
-    logic manual_clk;
-
-    always_ff @(posedge clk, posedge reset) begin
-        if (reset) begin
-            manual_clk <= 0;
-            counter    <= 0;
-        end else begin
-            if (counter == 50_000 - 1) begin
-                manual_clk <= 1;
-                counter    <= 0;
-            end else begin
-                manual_clk <= 0;
-                counter <= counter + 1;
-            end
-        end
-    end
-
-    logic [3:0] state_reg, state_next;
-    logic [10:0] counter_reg, counter_next;
-    logic SDA_out_reg, SDA_out_next;
-    logic SCL_reg, SCL_next;
-    logic [3:0] i_reg, i_next;
-    logic write_reg, write_next;
-
-    assign SDA_out = SDA_out_reg;
-    assign SCL = SCL_reg;
-    assign write = write_reg;
 
     localparam 
     IDLE   = 0,
@@ -109,6 +107,36 @@ module MASTER (
     READ_DATA0 = 8,
     READ_DATA1 = 9
     ;
+    assign SDA = write ? SDA_out : 1'bz;
+
+    reg [$clog2(500) - 1 : 0] counter;
+    logic manual_clk;
+
+    logic [3:0] state_reg, state_next;
+    logic [10:0] counter_reg, counter_next;
+    logic SDA_out_reg, SDA_out_next;
+    logic SCL_reg, SCL_next;
+    logic [3:0] i_reg, i_next;
+    logic write_reg, write_next;
+
+    always_ff @(posedge clk, posedge reset) begin
+        if (reset) begin
+            manual_clk <= 0;
+            counter    <= 0;
+        end else begin
+            if (counter == 500 - 1) begin
+                manual_clk <= 1;
+                counter    <= 0;
+            end else begin
+                manual_clk <= 0;
+                counter <= counter + 1;
+            end
+        end
+    end
+
+    assign SDA_out = SDA_out_reg;
+    assign SCL = SCL_reg;
+    assign write = write_reg;
 
     localparam LOW = 0, HIGH = 1, ACK = 0;
     localparam READ = 0, WRITE = 1;
@@ -121,6 +149,7 @@ module MASTER (
             SCL_reg     <= HIGH;
             i_reg       <= 0;
             write_reg   <= WRITE;
+            rData       <= 0;
         end else begin
             state_reg   <= state_next;
             counter_reg <= counter_next;
@@ -140,7 +169,7 @@ module MASTER (
         write_next   = write_reg;
         case (state_reg)
             IDLE: begin
-                if (counter == 25_000 - 1) begin
+                if (counter == 250 - 1) begin
                     SDA_out_next = HIGH;
                     SCL_next = HIGH;
                 end
@@ -152,7 +181,7 @@ module MASTER (
             end
             STAY_4us: begin
                 //stay SDA_out LOW for 4us
-                if (counter_reg == 400 - 1) begin
+                if (counter_reg == 500 - 1) begin
                     state_next   = ADDR_RW0;
                     counter_next = 0;
                     SCL_next     = LOW;
@@ -166,7 +195,7 @@ module MASTER (
                     SCL_next = ~SCL_reg;
                     i_next   = i_reg + 1;
                 end
-                if (counter == 25_000 - 1) begin
+                if (counter == 250 - 1) begin
                     if (i_reg == 8) begin
                         state_next = SLAVE_ACK;
                         write_next = READ;
@@ -182,7 +211,7 @@ module MASTER (
                 if (manual_clk) begin
                     SCL_next = ~SCL_reg;
                 end
-                if (counter == 25_000 - 1) begin
+                if (counter == 250 - 1) begin
                     state_next = ADDR_RW0;
                 end
             end
@@ -212,7 +241,7 @@ module MASTER (
                     SCL_next = ~SCL_reg;
                     i_next   = i_reg + 1;
                 end
-                if (counter == 25_000 - 1) begin
+                if (counter == 250 - 1) begin
                     if (i_reg == 8) begin
                         SDA_out_next = LOW;
                         state_next   = MASTER_ACK;
@@ -228,8 +257,31 @@ module MASTER (
                 if (manual_clk) begin
                     SCL_next = ~SCL_reg;
                 end
-                if (counter == 25_000 - 1) begin
+                if (counter == 250 - 1) begin
                     state_next = WRITE_DATA0;
+                end
+            end
+            READ_DATA0: begin
+                if (manual_clk) begin
+                    SCL_next = ~SCL_reg;
+                    i_next   = i_reg + 1;
+                end
+                if (counter == 250 - 1) begin
+                    if (i_reg == 8) begin
+                        i_next     = 0;
+                        state_next = MASTER_ACK;
+                    end else begin
+                        state_next     = READ_DATA1;
+                        rData[7-i_reg] = SDA_in;
+                    end
+                end
+            end
+            READ_DATA1: begin
+                if (manual_clk) begin
+                    SCL_next = ~SCL_reg;
+                end
+                if (counter == 250 - 1) begin
+                    state_next = READ_DATA0;
                 end
             end
             MASTER_ACK: begin
@@ -267,27 +319,3 @@ module edge_detector (
     assign nEdge = (ff_cur == 0 && ff_past == 1) ? 1 : 0; // detect falling edge
 endmodule
 
-module manual_clk (
-    input  logic clk,
-    input  logic reset,
-    output logic manual_clk
-);
-
-    reg [$clog2(100_000) - 1 : 0] counter;
-
-    always_ff @(posedge clk, posedge reset) begin
-        if (reset) begin
-            manual_clk <= 0;
-            counter    <= 0;
-        end else begin
-            if (counter == 100_000 - 1) begin
-                manual_clk <= 1;
-                counter    <= 0;
-            end else begin
-                manual_clk <= 0;
-                counter <= counter + 1;
-            end
-        end
-    end
-
-endmodule

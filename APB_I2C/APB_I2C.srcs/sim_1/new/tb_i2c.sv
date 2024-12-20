@@ -61,6 +61,5 @@ module tb_i2c ();
         start = 0;
         wait (write == 0);
         #5;
-        SDA_in = 0;
     end
 endmodule
