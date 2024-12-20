@@ -21,14 +21,14 @@
 
 
 module I2C (
-    input  logic clk,
-    input  logic reset,
-    input  logic start,
-    input  logic addrwe,
-    inout  logic SDA,
-    output logic SCL
+    input  logic       clk,
+    input  logic       reset,
+    input  logic       start,
+    input  logic [7:0] addrwe,
+    inout  logic       SDA,
+    output logic       SCL
 );
-    logic manual_clk;
+    wire manual_clk;
 
     MASTER U_MASTER (
         .clk       (clk),
@@ -88,7 +88,7 @@ module MASTER (
             i_reg       <= 0;
         end else begin
             state_reg   <= state_next;
-            counter_reg <= counter_reg + 1;
+            counter_reg <= counter_next;
             SDA_reg     <= SDA_next;
             SCL_reg     <= SCL_next;
             i_reg       <= i_next;
@@ -96,24 +96,28 @@ module MASTER (
     end
 
     always_comb begin
-        state_next = state_reg;
-        SDA_next   = SDA_reg;
-        SCL_next   = SCL_reg;
-        i_next     = i_reg;
+        state_next   = state_reg;
+        SDA_next     = SDA_reg;
+        SCL_next     = SCL_reg;
+        i_next       = i_reg;
+        counter_next = counter_reg;
         case (state_reg)
             IDLE: begin
                 SDA_next = HIGH;
                 SCL_next = HIGH;
                 if (start) begin
-                    state_next  = STATE1;
-                    SDA_next    = LOW;
-                    counter_reg = 0;
+                    state_next   = STATE1;
+                    SDA_next     = LOW;
+                    counter_next = 0;
                 end
             end
             STATE1: begin
                 //stay SDA LOW for 4us
                 if (counter_reg == 400 - 1) begin
-                    state_next = STATE2;
+                    state_next   = STATE2;
+                    counter_next = 0;
+                end else begin
+                    counter_next = counter_reg + 1;
                 end
             end
             STATE2: begin
@@ -132,10 +136,10 @@ module MASTER (
             end
             STATE3: begin
                 // SCL = HIGH
-                if (i == 8) begin
+                if (i_reg == 8) begin
                     SDA_next = LOW;
                 end else begin
-                    SDA_next = addr[i_reg];
+                    SDA_next = addrwe[i_reg];
                 end
                 i_next = i_reg + 1;
                 if (manual_clk) begin
@@ -195,6 +199,7 @@ module manual_clk (
                 manual_clk <= 1;
                 counter    <= 0;
             end else begin
+                manual_clk <= 0;
                 counter <= counter + 1;
             end
         end
