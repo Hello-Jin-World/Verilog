@@ -136,6 +136,20 @@ module MCU (
         .fndCom (fndCom),
         .fndFont(fndFont)
     );
+
+I2C_Master U_I2C_Master(
+   .PCLK    (PCLK    ),
+   .PRESET  (PRESET  ),
+   .PADDR   (PADDR   ),
+   .PWRITE  (PWRITE  ),
+   .PSEL    (PSEL    ),
+   .PENABLE (PENABLE ),
+   .PWDATA  (PWDATA  ),
+   .PRDATA  (PRDATA  ),
+   .PREADY  (PREADY  ),
+   .SDA     (SDA     ),
+   .SCL     (SCL     )
+);
 endmodule
 
 module decoder_mem_map (

@@ -21,30 +21,139 @@
 
 
 module I2C_Master (
-    input  logic clk,
-    input  logic reset,
-    inout  logic SDA,
-    output logic SCL
+    input  logic        PCLK,
+    input  logic        PRESET,
+    input  logic [ 3:0] PADDR,
+    input  logic        PWRITE,
+    input  logic        PSEL,
+    input  logic        PENABLE,
+    input  logic [31:0] PWDATA,
+    output logic [31:0] PRDATA,
+    output logic        PREADY,
+    inout  logic       SDA,
+    output logic       SCL
 );
 
-    logic manual_clk;
+    logic       Fast1_Standard0;
+    logic [8:0] ccr;
+    logic [7:0] wData;
+    logic [7:0] addrwe;
+    logic       start;
+    logic [7:0] rData;
 
-    manual_clk U_manual_clk (
-        .clk       (clk),
-        .reset     (reset),
-        .manual_clk(manual_clk)
+    APB_Intf_i2c U_APB_Intf_i2c (
+        .pclk           (PCLK   ),
+        .preset         (PRESET ),
+        .paddr          (PADDR  ),
+        .pwrite         (PWRITE ),
+        .psel           (PSEL   ),
+        .penable        (PENABLE),
+        .pwdata         (PWDATA ),
+        .prdata         (PRDATA ),
+        .pready         (PREADY ),
+        .start_bit      (start_bit      ),
+        .Fast1_Standard0(Fast1_Standard0),
+        .rwmode         (rwmode         ),
+        .addr           (addr           ),
+        .ccr            (ccr            ),
+        .rData          (rData          ),
+        .wData          (wData          )
     );
 
-    MASTER U_MASTER (
-        .clk   (clk  ),
-        .reset (reset),
-        .wData (8'h55),
-        .addrwe(8'b01001111),
-        .start (manual_clk),
-        // .write (1'b1),
-        .SDA   (SDA  ),
-        .SCL   (SCL  )
+    MASTER_ip U_MASTER_ip (
+        .clk            (PCLK),
+        .reset          (PRESET),
+        .Fast1_Standard0(Fast1_Standard0),
+        .ccr            (ccr ),
+        .wData          (wData),
+        .addrwe         (addr),
+        .start          (start_bit),
+        .rData          (rData),
+        .SDA            (SDA),
+        .SCL            (SCL)
     );
+endmodule
+
+module APB_Intf_i2c (
+    input logic       pclk,
+    input logic       preset,
+    input logic [3:0] paddr,
+    input logic       pwrite,
+    input logic       psel,
+    input logic       penable,
+
+    input  logic [31:0] pwdata,
+    output logic [31:0] prdata,
+    output logic        pready,
+
+    output logic       start_bit,
+    output logic       Fast1_Standard0,
+    output logic       rwmode,
+    output logic [7:0] addr,
+    output logic [8:0] ccr,
+    input  logic [7:0] rData,
+    output logic [7:0] wData
+);
+
+    logic [31:0] STATUS, IDR, ODR, ADDR;
+
+    assign Fast1_Standard0 = STATUS[0];
+    assign ccr = STATUS[9:1];
+    assign start_bit = STATUS[10];
+    assign IDR = {24'b0, rData};  //  When seleted READ mode, read data 8bit 
+    assign wData = ODR[7:0];  //  When seleted WRITE mode, write data 8bit
+    assign addr_wr = ADDR[7:0];
+
+    always_ff @(posedge pclk, posedge preset) begin
+        if (preset) begin
+            STATUS <= 0;
+            ODR <= 0;
+            ADDR <= 0;
+        end else begin
+            if (psel && pwrite && penable) begin
+                case (paddr[3:2])
+                    2'b00: STATUS <= pwdata;
+                    2'b10: ODR <= pwdata;
+                    2'b11: ADDR <= pwdata;
+                    default: begin
+                        STATUS <= STATUS;
+                        ODR <= ODR;
+                        ADDR <= ADDR;
+                    end
+                endcase
+            end
+        end
+    end
+
+    always_ff @(posedge pclk, posedge preset) begin
+        if (preset) begin
+            prdata <= 0;
+        end else begin
+            if (psel && ~pwrite && penable) begin
+                case (paddr[3:2])
+                    2'b00:   prdata <= STATUS;
+                    2'b01:   prdata <= IDR;
+                    2'b10:   prdata <= ODR;
+                    2'b11:   prdata <= ADDR;
+                    default: prdata <= 32'b0;
+                endcase
+            end
+        end
+    end
+
+    //APB Ready Process
+    always_ff @(posedge pclk, posedge preset) begin
+        if (preset) begin
+            pready <= 0;
+        end else begin
+            if (psel && penable) begin
+                pready <= 1;
+            end else begin
+                pready <= 0;
+            end
+        end
+    end
+
 endmodule
 
 module manual_clk (
@@ -73,28 +182,47 @@ module manual_clk (
 endmodule
 
 
-module MASTER (
+module MASTER_ip (
     input  logic       clk,
     input  logic       reset,
+    input  logic       Fast1_Standard0,
+    input  logic [8:0] ccr,
     input  logic [7:0] wData,
     input  logic [7:0] addrwe,
     input  logic       start,
-    output logic       write,
+    output logic [7:0] rData,
     inout  logic       SDA,
-    // input  logic       SDA_in,
-    // output logic       SDA_out,
     output logic       SCL
 );
     logic SDA_in, SDA_out;
-    logic [7:0] rData;
+    logic [ 7:0] rData_reg;
+    logic [11:0] freq;
+    logic [3 : 0] state_reg, state_next;
+    logic [3:0] i_reg, i_next;
+    logic [10:0] counter_reg, counter_next;
+    logic [$clog2(500) - 1 : 0] counter;
+    logic manual_clk;
+    logic SDA_out_reg, SDA_out_next;
+    logic SCL_reg, SCL_next;
+    logic write_reg, write_next;
+
+    assign SDA_out = SDA_out_reg;
+    assign SCL = SCL_reg;
+    assign half_freq = (Fast1_Standard0) ? ccr * 5 : 500;
+    assign rData = rData_reg;
+
+    /////////////////////// inout mode /////////////////////////
+    assign SDA = write_reg ? SDA_out : 1'bz;
 
     always @(*) begin  // Read Data (INPUT MODE)
-        if (!write) begin
+        if (!write_reg) begin
             SDA_in <= SDA;
         end
     end
+    ///////////////////////////////////////////////////////////
 
-
+    localparam LOW = 0, HIGH = 1, ACK = 0;
+    localparam READ = 0, WRITE = 1;
     localparam 
     IDLE   = 0,
     STAY_4us = 1,
@@ -107,24 +235,14 @@ module MASTER (
     READ_DATA0 = 8,
     READ_DATA1 = 9
     ;
-    assign SDA = write ? SDA_out : 1'bz;
 
-    reg [$clog2(500) - 1 : 0] counter;
-    logic manual_clk;
-
-    logic [3:0] state_reg, state_next;
-    logic [10:0] counter_reg, counter_next;
-    logic SDA_out_reg, SDA_out_next;
-    logic SCL_reg, SCL_next;
-    logic [3:0] i_reg, i_next;
-    logic write_reg, write_next;
-
+    //////////////////// clock generator /////////////////////
     always_ff @(posedge clk, posedge reset) begin
         if (reset) begin
             manual_clk <= 0;
             counter    <= 0;
         end else begin
-            if (counter == 500 - 1) begin
+            if (counter == half_freq - 1) begin
                 manual_clk <= 1;
                 counter    <= 0;
             end else begin
@@ -133,13 +251,8 @@ module MASTER (
             end
         end
     end
+    //////////////////////////////////////////////////////////
 
-    assign SDA_out = SDA_out_reg;
-    assign SCL = SCL_reg;
-    assign write = write_reg;
-
-    localparam LOW = 0, HIGH = 1, ACK = 0;
-    localparam READ = 0, WRITE = 1;
 
     always_ff @(posedge clk, posedge reset) begin
         if (reset) begin
@@ -169,7 +282,7 @@ module MASTER (
         write_next   = write_reg;
         case (state_reg)
             IDLE: begin
-                if (counter == 250 - 1) begin
+                if (counter == half_freq / 2 - 1) begin
                     SDA_out_next = HIGH;
                     SCL_next = HIGH;
                 end
@@ -195,7 +308,7 @@ module MASTER (
                     SCL_next = ~SCL_reg;
                     i_next   = i_reg + 1;
                 end
-                if (counter == 250 - 1) begin
+                if (counter == half_freq / 2 - 1) begin
                     if (i_reg == 8) begin
                         state_next = SLAVE_ACK;
                         write_next = READ;
@@ -211,7 +324,7 @@ module MASTER (
                 if (manual_clk) begin
                     SCL_next = ~SCL_reg;
                 end
-                if (counter == 250 - 1) begin
+                if (counter == half_freq / 2 - 1) begin
                     state_next = ADDR_RW0;
                 end
             end
@@ -241,7 +354,7 @@ module MASTER (
                     SCL_next = ~SCL_reg;
                     i_next   = i_reg + 1;
                 end
-                if (counter == 250 - 1) begin
+                if (counter == half_freq / 2 - 1) begin
                     if (i_reg == 8) begin
                         SDA_out_next = LOW;
                         state_next   = MASTER_ACK;
@@ -257,7 +370,7 @@ module MASTER (
                 if (manual_clk) begin
                     SCL_next = ~SCL_reg;
                 end
-                if (counter == 250 - 1) begin
+                if (counter == half_freq / 2 - 1) begin
                     state_next = WRITE_DATA0;
                 end
             end
@@ -266,7 +379,7 @@ module MASTER (
                     SCL_next = ~SCL_reg;
                     i_next   = i_reg + 1;
                 end
-                if (counter == 250 - 1) begin
+                if (counter == half_freq / 2 - 1) begin
                     if (i_reg == 8) begin
                         i_next     = 0;
                         state_next = MASTER_ACK;
@@ -280,7 +393,7 @@ module MASTER (
                 if (manual_clk) begin
                     SCL_next = ~SCL_reg;
                 end
-                if (counter == 250 - 1) begin
+                if (counter == half_freq / 2 - 1) begin
                     state_next = READ_DATA0;
                 end
             end
@@ -288,7 +401,7 @@ module MASTER (
                 if (manual_clk) begin
                     SCL_next = ~SCL_reg;
                 end
-                if (SCL_reg == 1 && SCL_next == 0) begin
+                if (counter == half_freq / 2 - 1) begin
                     state_next = IDLE;
                 end
             end
