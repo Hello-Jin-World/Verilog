@@ -7,7 +7,9 @@ module MCU (
     inout  wire  [3:0] GPIO_A,
     inout  wire  [3:0] GPIO_B,
     output logic [3:0] fndCom,
-    output logic [7:0] fndFont  
+    output logic [7:0] fndFont,
+    inout  wire        SDA,
+    output logic       SCL
 );
     logic [31:0] instrCode, instrMemAddr;
     logic [31:0]
@@ -19,8 +21,9 @@ module MCU (
         gpo_rData,
         gpioa_rData,
         gpiob_rData,
-        fnd_rData;
-    logic [4:0] sel;
+        fnd_rData,
+        i2c_rData;
+    logic [5:0] sel;
     logic
         write,
         ready,
@@ -29,7 +32,8 @@ module MCU (
         gpo_ready,
         gpioa_ready,
         gpiob_ready,
-        fnd_ready;
+        fnd_ready,
+        i2c_ready;
 
 
 
@@ -38,7 +42,7 @@ module MCU (
         .reset       (reset),
         .instrCode   (instrCode),
         .instrMemAddr(instrMemAddr),
-        .dataAddr    (dataAddr),
+        .dataAddr    (dataAddr), 
         .readData    (rData),
         .writeData   (writeData),
         .ready       (ready),
@@ -58,11 +62,13 @@ module MCU (
         .ready2(gpioa_ready),
         .ready3(gpiob_ready),
         .ready4(fnd_ready),
+        .ready5(i2c_ready),
         .rData0(ram_rData),
         .rData1(gpo_rData),
         .rData2(gpioa_rData),
         .rData3(gpiob_rData),
         .rData4(fnd_rData),
+        .rData5(i2c_rData),
         .ready (ready),
         .rData (rData)
     );
@@ -128,7 +134,7 @@ module MCU (
         .PRESET (reset),
         .PADDR  (dataAddr),
         .PWRITE (write),
-        .PSEL   (sel[4]),
+        .PSEL   (sel[4]), 
         .PENABLE(enable),
         .PWDATA (writeData),
         .PRDATA (fnd_rData),
@@ -137,33 +143,34 @@ module MCU (
         .fndFont(fndFont)
     );
 
-I2C_Master U_I2C_Master(
-   .PCLK    (PCLK    ),
-   .PRESET  (PRESET  ),
-   .PADDR   (PADDR   ),
-   .PWRITE  (PWRITE  ),
-   .PSEL    (PSEL    ),
-   .PENABLE (PENABLE ),
-   .PWDATA  (PWDATA  ),
-   .PRDATA  (PRDATA  ),
-   .PREADY  (PREADY  ),
-   .SDA     (SDA     ),
-   .SCL     (SCL     )
-);
+    I2C_Master U_I2C_Master (
+        .PCLK   (clk),
+        .PRESET (reset),
+        .PADDR  (dataAddr),
+        .PWRITE (write),
+        .PSEL   (sel[5]),
+        .PENABLE(enable),
+        .PWDATA (writeData),
+        .PRDATA (i2c_rData),
+        .PREADY (i2c_ready), 
+        .SDA    (SDA),
+        .SCL    (SCL)
+    );
 endmodule
 
 module decoder_mem_map (
     input  logic [31:0] addr,
-    output logic [ 4:0] sel
+    output logic [ 5:0] sel
 );
     always_comb begin
         casex (addr)
-            32'h0001_0xxx: sel = 5'b00001;  // ram
-            32'h0002_00xx: sel = 5'b00010;  // gpo
-            32'h0002_01xx: sel = 5'b00100;  // gpio_a
-            32'h0002_02xx: sel = 5'b01000;  // gpio_b
-            32'h0002_03xx: sel = 5'b10000;  // fnd_gpo
-            default: sel = 5'bxxxxx;
+            32'h0001_0xxx: sel = 6'b000001;  // ram
+            32'h0002_00xx: sel = 6'b000010;  // gpo
+            32'h0002_01xx: sel = 6'b000100;  // gpio_a
+            32'h0002_02xx: sel = 6'b001000;  // gpio_b
+            32'h0002_03xx: sel = 6'b010000;  // fnd_gpo
+            32'h0002_04xx: sel = 6'b100000;  // i2c_master 
+            default: sel = 6'bxxxxxx;
         endcase
     end
 endmodule
@@ -175,12 +182,14 @@ module mux_mem_map (
     input  logic        ready2,
     input  logic        ready3,
     input  logic        ready4,
+    input  logic        ready5,
     input  logic [31:0] addr,
     input  logic [31:0] rData0,
     input  logic [31:0] rData1,
     input  logic [31:0] rData2,
     input  logic [31:0] rData3,
     input  logic [31:0] rData4,
+    input  logic [31:0] rData5,
     output logic        ready,
     output logic [31:0] rData
 );
@@ -206,6 +215,10 @@ module mux_mem_map (
             32'h0002_03xx: begin
                 ready = ready4;
                 rData = rData4;  // fnd_out 
+            end
+            32'h0002_04xx: begin
+                ready = ready5;
+                rData = rData5;  // fnd_out 
             end
             default: begin
                 rData = 32'bx;

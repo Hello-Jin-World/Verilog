@@ -99,8 +99,8 @@ module APB_Intf_gpio (
                 endcase
             end
         end
-    end
-
+    end 
+    
     always_ff @(posedge pclk, posedge preset) begin
         if (preset) begin
             prdata <= 0;
@@ -128,7 +128,6 @@ module APB_Intf_gpio (
             end
         end
     end
-
 endmodule
 
 module gpio_ip (

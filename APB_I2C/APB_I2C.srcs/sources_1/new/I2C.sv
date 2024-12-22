@@ -30,41 +30,40 @@ module I2C_Master (
     input  logic [31:0] PWDATA,
     output logic [31:0] PRDATA,
     output logic        PREADY,
-    inout  logic       SDA,
-    output logic       SCL
+    inout  wire         SDA,
+    output logic        SCL
 );
 
+    logic       start_bit;
     logic       Fast1_Standard0;
     logic [8:0] ccr;
     logic [7:0] wData;
-    logic [7:0] addrwe;
-    logic       start;
+    logic [7:0] addr;
     logic [7:0] rData;
 
     APB_Intf_i2c U_APB_Intf_i2c (
-        .pclk           (PCLK   ),
-        .preset         (PRESET ),
-        .paddr          (PADDR  ),
-        .pwrite         (PWRITE ),
-        .psel           (PSEL   ),
+        .pclk           (PCLK),
+        .preset         (PRESET),
+        .paddr          (PADDR),
+        .pwrite         (PWRITE),
+        .psel           (PSEL),
         .penable        (PENABLE),
-        .pwdata         (PWDATA ),
-        .prdata         (PRDATA ),
-        .pready         (PREADY ),
-        .start_bit      (start_bit      ),
+        .pwdata         (PWDATA),
+        .prdata         (PRDATA),
+        .pready         (PREADY),
+        .start_bit      (start_bit),
         .Fast1_Standard0(Fast1_Standard0),
-        .rwmode         (rwmode         ),
-        .addr           (addr           ),
-        .ccr            (ccr            ),
-        .rData          (rData          ),
-        .wData          (wData          )
+        .addr           (addr),
+        .ccr            (ccr),
+        .rData          (rData),
+        .wData          (wData)
     );
 
     MASTER_ip U_MASTER_ip (
         .clk            (PCLK),
         .reset          (PRESET),
         .Fast1_Standard0(Fast1_Standard0),
-        .ccr            (ccr ),
+        .ccr            (ccr),
         .wData          (wData),
         .addrwe         (addr),
         .start          (start_bit),
@@ -88,7 +87,6 @@ module APB_Intf_i2c (
 
     output logic       start_bit,
     output logic       Fast1_Standard0,
-    output logic       rwmode,
     output logic [7:0] addr,
     output logic [8:0] ccr,
     input  logic [7:0] rData,
@@ -102,7 +100,7 @@ module APB_Intf_i2c (
     assign start_bit = STATUS[10];
     assign IDR = {24'b0, rData};  //  When seleted READ mode, read data 8bit 
     assign wData = ODR[7:0];  //  When seleted WRITE mode, write data 8bit
-    assign addr_wr = ADDR[7:0];
+    assign addr = ADDR[7:0];
 
     always_ff @(posedge pclk, posedge preset) begin
         if (preset) begin
@@ -156,30 +154,6 @@ module APB_Intf_i2c (
 
 endmodule
 
-module manual_clk (
-    input  logic clk,
-    input  logic reset,
-    output logic manual_clk
-);
-
-    reg [$clog2(100_000_000) - 1 : 0] counter;
-
-    always_ff @(posedge clk, posedge reset) begin
-        if (reset) begin
-            manual_clk <= 0;
-            counter    <= 0;
-        end else begin
-            if (counter == 100_000_000 - 1) begin
-                manual_clk <= 1;
-                counter    <= 0;
-            end else begin
-                manual_clk <= 0;
-                counter <= counter + 1;
-            end
-        end
-    end
-
-endmodule
 
 
 module MASTER_ip (
@@ -191,12 +165,12 @@ module MASTER_ip (
     input  logic [7:0] addrwe,
     input  logic       start,
     output logic [7:0] rData,
-    inout  logic       SDA,
+    inout  wire        SDA,
     output logic       SCL
 );
     logic SDA_in, SDA_out;
     logic [ 7:0] rData_reg;
-    logic [11:0] freq;
+    logic [11:0] half_freq;
     logic [3 : 0] state_reg, state_next;
     logic [3:0] i_reg, i_next;
     logic [10:0] counter_reg, counter_next;
@@ -233,7 +207,8 @@ module MASTER_ip (
     WRITE_DATA1 = 6,
     MASTER_ACK = 7,
     READ_DATA0 = 8,
-    READ_DATA1 = 9
+    READ_DATA1 = 9,
+    WAIT = 10
     ;
 
     //////////////////// clock generator /////////////////////
@@ -262,7 +237,7 @@ module MASTER_ip (
             SCL_reg     <= HIGH;
             i_reg       <= 0;
             write_reg   <= WRITE;
-            rData       <= 0;
+            rData_reg   <= 0;
         end else begin
             state_reg   <= state_next;
             counter_reg <= counter_next;
@@ -384,8 +359,8 @@ module MASTER_ip (
                         i_next     = 0;
                         state_next = MASTER_ACK;
                     end else begin
-                        state_next     = READ_DATA1;
-                        rData[7-i_reg] = SDA_in;
+                        state_next         = READ_DATA1;
+                        rData_reg[7-i_reg] = SDA_in;
                     end
                 end
             end
@@ -401,6 +376,13 @@ module MASTER_ip (
                 if (manual_clk) begin
                     SCL_next = ~SCL_reg;
                 end
+                if (counter == half_freq / 2 - 1) begin
+                    state_next = WAIT;
+                end
+            end
+            WAIT: begin
+                SDA_out_next = HIGH;
+                SCL_next = HIGH;
                 if (counter == half_freq / 2 - 1) begin
                     state_next = IDLE;
                 end
@@ -432,3 +414,27 @@ module edge_detector (
     assign nEdge = (ff_cur == 0 && ff_past == 1) ? 1 : 0; // detect falling edge
 endmodule
 
+module manual_clk (
+    input  logic clk,
+    input  logic reset,
+    output logic manual_clk
+);
+
+    reg [$clog2(100_000_000) - 1 : 0] counter;
+
+    always_ff @(posedge clk, posedge reset) begin
+        if (reset) begin
+            manual_clk <= 0;
+            counter    <= 0;
+        end else begin
+            if (counter == 100_000_000 - 1) begin
+                manual_clk <= 1;
+                counter    <= 0;
+            end else begin
+                manual_clk <= 0;
+                counter <= counter + 1;
+            end
+        end
+    end
+
+endmodule
