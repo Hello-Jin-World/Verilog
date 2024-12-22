@@ -97,6 +97,7 @@ module APB_Intf_i2c (
 
     assign Fast1_Standard0 = STATUS[0];
     assign ccr = STATUS[9:1];
+    // assign start_bit = (paddr[3:2] == 2'b00) ? STATUS[10] : 0;
     assign start_bit = STATUS[10];
     assign IDR = {24'b0, rData};  //  When seleted READ mode, read data 8bit 
     assign wData = ODR[7:0];  //  When seleted WRITE mode, write data 8bit
@@ -185,7 +186,7 @@ module MASTER_ip (
     assign half_freq = (Fast1_Standard0) ? ccr * 5 : 500;
     assign rData = rData_reg;
 
-    /////////////////////// inout mode /////////////////////////
+    /////////////////       inout mode       ///////////////////
     assign SDA = write_reg ? SDA_out : 1'bz;
 
     always @(*) begin  // Read Data (INPUT MODE)
@@ -211,7 +212,7 @@ module MASTER_ip (
     WAIT = 10
     ;
 
-    //////////////////// clock generator /////////////////////
+    ///////////////////      clock generator      ////////////////////
     always_ff @(posedge clk, posedge reset) begin
         if (reset) begin
             manual_clk <= 0;
@@ -226,7 +227,7 @@ module MASTER_ip (
             end
         end
     end
-    //////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////
 
 
     always_ff @(posedge clk, posedge reset) begin
@@ -256,12 +257,13 @@ module MASTER_ip (
         counter_next = counter_reg;
         write_next   = write_reg;
         case (state_reg)
+    /////////////////////////////////////////////////////////////////
             IDLE: begin
                 if (counter == half_freq / 2 - 1) begin
                     SDA_out_next = HIGH;
                     SCL_next = HIGH;
                 end
-                if (start) begin
+                if (counter == half_freq / 2 - 1 && start) begin
                     state_next   = STAY_4us;
                     counter_next = 0;
                     SDA_out_next = LOW;
@@ -279,11 +281,13 @@ module MASTER_ip (
             end
             ADDR_RW0: begin
                 // SCL = LOW
-                if (manual_clk) begin
+                // if (manual_clk) begin
+                if (counter == half_freq / 2 - 1) begin
                     SCL_next = ~SCL_reg;
                     i_next   = i_reg + 1;
                 end
-                if (counter == half_freq / 2 - 1) begin
+                if (manual_clk) begin
+                // if (counter == half_freq / 2 - 1) begin
                     if (i_reg == 8) begin
                         state_next = SLAVE_ACK;
                         write_next = READ;
@@ -296,16 +300,19 @@ module MASTER_ip (
             end
             ADDR_RW1: begin
                 // SCL = HIGH
-                if (manual_clk) begin
+                // if (manual_clk) begin
+                if (counter == half_freq / 2 - 1) begin
                     SCL_next = ~SCL_reg;
                 end
-                if (counter == half_freq / 2 - 1) begin
+                // if (counter == half_freq / 2 - 1) begin
+                if (manual_clk) begin
                     state_next = ADDR_RW0;
                 end
             end
             SLAVE_ACK: begin
                 // wait SLAVE ACK
-                if (manual_clk) begin
+                // if (manual_clk) begin
+                if (counter == half_freq / 2 - 1) begin
                     SCL_next = ~SCL_reg;
                 end
                 if (SCL_reg == 1 && SCL_next == 0) begin
@@ -325,11 +332,13 @@ module MASTER_ip (
             end
             WRITE_DATA0: begin
                 // SCL = LOW
-                if (manual_clk) begin
+                // if (manual_clk) begin
+                if (counter == half_freq / 2 - 1) begin
                     SCL_next = ~SCL_reg;
                     i_next   = i_reg + 1;
                 end
-                if (counter == half_freq / 2 - 1) begin
+                if (manual_clk) begin
+                // if (counter == half_freq / 2 - 1) begin
                     if (i_reg == 8) begin
                         SDA_out_next = LOW;
                         state_next   = MASTER_ACK;
@@ -342,19 +351,23 @@ module MASTER_ip (
             end
             WRITE_DATA1: begin
                 // SCL = HIGH
-                if (manual_clk) begin
+                // if (manual_clk) begin
+                if (counter == half_freq / 2 - 1) begin
                     SCL_next = ~SCL_reg;
                 end
-                if (counter == half_freq / 2 - 1) begin
+                // if (counter == half_freq / 2 - 1) begin
+                if (manual_clk) begin
                     state_next = WRITE_DATA0;
                 end
             end
             READ_DATA0: begin
-                if (manual_clk) begin
+                // if (manual_clk) begin
+                if (counter == half_freq / 2 - 1) begin
                     SCL_next = ~SCL_reg;
                     i_next   = i_reg + 1;
                 end
-                if (counter == half_freq / 2 - 1) begin
+                // if (counter == half_freq / 2 - 1) begin
+                if (manual_clk) begin
                     if (i_reg == 8) begin
                         i_next     = 0;
                         state_next = MASTER_ACK;
@@ -365,25 +378,31 @@ module MASTER_ip (
                 end
             end
             READ_DATA1: begin
-                if (manual_clk) begin
+                // if (manual_clk) begin
+                if (counter == half_freq / 2 - 1) begin
                     SCL_next = ~SCL_reg;
                 end
-                if (counter == half_freq / 2 - 1) begin
+                if (manual_clk) begin
+                // if (counter == half_freq / 2 - 1) begin
                     state_next = READ_DATA0;
                 end
             end
             MASTER_ACK: begin
-                if (manual_clk) begin
+                SDA_out_next = LOW;
+                if (counter == half_freq / 2 - 1) begin
+                // if (manual_clk) begin
                     SCL_next = ~SCL_reg;
                 end
-                if (counter == half_freq / 2 - 1) begin
+                // if (counter == half_freq / 2 - 1) begin
+                if (manual_clk) begin
                     state_next = WAIT;
                 end
             end
             WAIT: begin
                 SDA_out_next = HIGH;
                 SCL_next = HIGH;
-                if (counter == half_freq / 2 - 1) begin
+                if (manual_clk) begin
+                // if (counter == half_freq / 2 - 1) begin
                     state_next = IDLE;
                 end
             end

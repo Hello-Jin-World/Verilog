@@ -188,7 +188,12 @@ module DataPath (
     input  logic [31:0] readData,
     output logic [31:0] writeData
 );
-    logic [31:0] w_PC_Imm_Data, w_PC_4_Data, w_AluResult, w_RegFileRData1, w_RegFileRData2;
+    logic [31:0]
+        w_PC_Imm_Data,
+        w_PC_4_Data,
+        w_AluResult,
+        w_RegFileRData1,
+        w_RegFileRData2;
     logic [31:0] w_ImmExt, w_ALUSrcMuxOut, w_RFWDSrcMuxOut, w_PCAdderSrcMuxOut;
     logic [31:0] w_PCImmAdderSrcMuxOut;
     logic w_PCAdderSrcMuxSel, w_btaken;
@@ -320,7 +325,7 @@ module DataPath (
 
     extend U_Extend (
         .instrCode(instrCode),
-        .immExt(w_ImmExt)
+        .immExt   (w_ImmExt)
     );
 
     register U_DecReg3 (
@@ -443,11 +448,26 @@ module extend (
                     end
                 endcase
             end
-            `OP_TYPE_S: immExt = {{20{instrCode[31]}}, instrCode[31:25], instrCode[11:7]};
-            `OP_TYPE_B: immExt = {{20{instrCode[31]}}, instrCode[7], instrCode[30:25], instrCode[11:8], 1'b0};
+            `OP_TYPE_S:
+            immExt = {{20{instrCode[31]}}, instrCode[31:25], instrCode[11:7]};
+            `OP_TYPE_B:
+            immExt = {
+                {20{instrCode[31]}},
+                instrCode[7],
+                instrCode[30:25],
+                instrCode[11:8],
+                1'b0
+            };
             `OP_TYPE_U: immExt = {instrCode[31:12], 12'b0};
             `OP_TYPE_UA: immExt = {instrCode[31:12], 12'b0};
-            `OP_TYPE_J: immExt = {{12{instrCode[31]}}, instrCode[19:12], instrCode[20], instrCode[30:21], 1'b0};
+            `OP_TYPE_J:
+            immExt = {
+                {12{instrCode[31]}},
+                instrCode[19:12],
+                instrCode[20],
+                instrCode[30:21],
+                1'b0
+            };
             `OP_TYPE_JI: immExt = {{20{instrCode[31]}}, instrCode[31:20]};
             default: immExt = 32'bx;
         endcase

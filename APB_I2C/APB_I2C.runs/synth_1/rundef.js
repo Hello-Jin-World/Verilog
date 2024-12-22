@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log I2C_Master.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source I2C_Master.tcl" );
+         "-log MCU.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MCU.tcl" );
 
 
 

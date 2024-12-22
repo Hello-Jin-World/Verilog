@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log I2C_Master.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source I2C_Master.tcl
+EAStep vivado -log MCU.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MCU.tcl

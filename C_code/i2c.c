@@ -32,7 +32,7 @@ DDRB = 0x0f; // output mode
     while (1)
     {
 
-        *(unsigned int *)0x00020004 = 0x01;
+        *(unsigned int *)0x00020004 = 0x01; 
 if (PINA & 0x01) PORTB = 0x01;
 delay(1000);
 *(unsigned int *)0x00020004 = 0x02;

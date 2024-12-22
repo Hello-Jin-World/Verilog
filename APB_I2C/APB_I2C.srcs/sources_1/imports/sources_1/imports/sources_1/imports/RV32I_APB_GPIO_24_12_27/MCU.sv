@@ -3,11 +3,11 @@
 module MCU (
     input  logic       clk,
     input  logic       reset,
-    output logic [3:0] GPO_A,
-    inout  wire  [3:0] GPIO_A,
-    inout  wire  [3:0] GPIO_B,
-    output logic [3:0] fndCom,
-    output logic [7:0] fndFont,
+    // output logic [3:0] GPO_A,
+    // inout  wire  [3:0] GPIO_A,
+    // inout  wire  [3:0] GPIO_B,
+    // output logic [3:0] fndCom,
+    // output logic [7:0] fndFont,
     inout  wire        SDA,
     output logic       SCL
 );
@@ -218,7 +218,7 @@ module mux_mem_map (
             end
             32'h0002_04xx: begin
                 ready = ready5;
-                rData = rData5;  // fnd_out 
+                rData = rData5;  // i2c 
             end
             default: begin
                 rData = 32'bx;

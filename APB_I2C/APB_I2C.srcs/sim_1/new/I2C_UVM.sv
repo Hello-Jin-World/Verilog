@@ -45,13 +45,13 @@ class seq_item extends uvm_sequence_item;
     logic      [ 3:0] addr_i2c_wData;
     rand logic [ 7:0] i2c_addr;
     rand logic [ 7:0] i2c_wData;
-    // logic      [31:0] wData;
-    // logic      [ 7:0] random_i2c_addr;
-    // logic      [ 7:0] random_i2c_wData;
     logic      [31:0] rData;
     logic             write;
     logic      [ 7:0] got_addr;
     logic      [ 7:0] got_wData;
+    // logic      [31:0] wData;
+    // logic      [ 7:0] random_i2c_addr;
+    // logic      [ 7:0] random_i2c_wData;
     // logic             SDA;
     // logic             SCL;
 
@@ -94,8 +94,6 @@ class seq_item extends uvm_sequence_item;
         `uvm_field_int(write, UVM_DEFAULT)
         `uvm_field_int(got_addr, UVM_DEFAULT)
         `uvm_field_int(got_wData, UVM_DEFAULT)
-    // `uvm_field_int(SDA, UVM_DEFAULT)
-    // `uvm_field_int(SCL, UVM_DEFAULT)
     `uvm_object_utils_end
 
 
@@ -113,7 +111,7 @@ class i2c_sequence extends uvm_sequence;
     virtual task body();
         i2c_seq_item =
             seq_item::type_id::create("SEQ_ITEM");  // create instance
-        repeat (100) begin
+        repeat (10000) begin
             start_item(i2c_seq_item);
             i2c_seq_item.randomize();
             `uvm_info("SEQ", "Data send to Driver", UVM_NONE);
@@ -161,44 +159,57 @@ class i2c_driver extends uvm_driver #(seq_item);  // receive seq_time
         forever begin
             seq_item_port.get_next_item(i2c_seq_item);
             `uvm_info("DRV", "Send data to DUT", UVM_NONE);
-            wait (i2cIntf.SCL == 1);
-            wait (i2cIntf.SDA == 1);
+            // wait (i2cIntf.SCL == 1);
+            // wait (i2cIntf.SDA == 1);
+            //////////////////////////      RANDOM ADDRESS       //////////////////////////// 
             i2cIntf.PSEL    = 1'b1;
             i2cIntf.PENABLE = 1'b1;
             i2cIntf.PWRITE  = 1'b1;
             i2cIntf.PADDR   = 8'h0c;
             i2cIntf.PWDATA  = {23'b0, i2c_seq_item.i2c_addr[6:0], 1'b1};
-            // i2cIntf.i2c_addr = i2c_seq_item.i2c_addr;
             #20;
             i2cIntf.PENABLE = 1'b0;
             i2cIntf.PWRITE  = 1'b0;
             #20;
+            ////////////////////////////////////////////////////////////////////////////////
 
+            //////////////////////////    RANDOM WRITE DATA     //////////////////////////// 
             i2cIntf.PENABLE = 1'b1;
             i2cIntf.PWRITE  = 1'b1;
             i2cIntf.PADDR   = 8'h08;
             i2cIntf.PWDATA  = {24'b0, i2c_seq_item.i2c_wData};
-            // i2cIntf.i2c_wData = i2c_seq_item.i2c_wData;
             #20;
             i2cIntf.PENABLE = 1'b0;
             i2cIntf.PWRITE  = 1'b0;
             #20;
+            ////////////////////////////////////////////////////////////////////////////////
 
+            ////////////////////////    CCR DATA, START BIT     //////////////////////////// 
             i2cIntf.PENABLE = 1'b1;
             i2cIntf.PWRITE  = 1'b1;
             i2cIntf.PADDR   = 8'h00;
-            i2cIntf.PWDATA  = {21'b0, 1'b1, 10'b0};
+            i2cIntf.PWDATA  = {21'b0, 1'b1, 10'b0};  // START BIT 1
             #20;
             i2cIntf.PENABLE = 1'b0;
             i2cIntf.PWRITE  = 1'b0;
             #5;
+            // i2cIntf.PADDR   = 8'h04;
+            ////////////////////////////////////////////////////////////////////////////////
 
+            /////////////////////////    WAIT DUT RESPONSE     /////////////////////////////
             i2cIntf.PSEL = 1'b0;
             repeat (9) @(posedge i2cIntf.SCL);
+            // i2cIntf.PADDR   = 8'h04;
             i2cIntf.write = 0;
             @(negedge i2cIntf.SCL);
             i2cIntf.write = 1;
-            repeat (8) @(posedge i2cIntf.SCL);
+            repeat (9) @(posedge i2cIntf.SCL);
+            ////////////////////////////////////////////////////////////////////////////////
+
+            /////////////////////////    FOR DUT STABILITY      ////////////////////////////
+            wait (i2cIntf.SCL == 1);
+            wait (i2cIntf.SDA == 1);
+            ////////////////////////////////////////////////////////////////////////////////
             seq_item_port.item_done();
         end
     endtask  //run_phase
@@ -232,11 +243,14 @@ class i2c_monitor extends uvm_monitor;
 
     virtual task run_phase(uvm_phase phase);
         forever begin
+            ///////////////////     GETTING SOFTWARE RANDOM DATA      ///////////////////
             @(posedge i2cIntf.PWRITE);
             random_i2c_addr = i2cIntf.PWDATA[7:0];
             @(posedge i2cIntf.PWRITE);
             random_i2c_wData = i2cIntf.PWDATA[7:0];
+            /////////////////////////////////////////////////////////////////////////////
 
+            ///////////////////      STORE DUT SDA DATA AS 0 OR 1       //////////////////
             for (int i = 0; i < 8; i++) begin
                 @(posedge i2cIntf.SCL);
                 if (i2cIntf.SDA) begin
@@ -256,20 +270,19 @@ class i2c_monitor extends uvm_monitor;
                     read_i2c_wData[7-i] = 1'b0;
                 end
             end
-
-            // @(posedge i2cIntf.SCL);
-
-            i2c_seq_item.addr      = i2cIntf.PADDR;
-            // i2c_seq_item.write     = i2cIntf.write;
-            // i2c_seq_item.wData     = i2cIntf.PWDATA;
+            /////////////////////////////////////////////////////////////////////////////
             i2c_seq_item.rData     = i2cIntf.PRDATA;
-            // i2c_seq_item.SCL       = i2cIntf.SCL;
-            // i2c_seq_item.SDA       = i2cIntf.SDA;
+            i2c_seq_item.addr      = i2cIntf.PADDR;
+
+            ///////////////     TRANSMIT SOFTWARE GOLDEN DATA TO SCB     ////////////////
             i2c_seq_item.i2c_addr  = random_i2c_addr;
             i2c_seq_item.i2c_wData = random_i2c_wData;
+            /////////////////////////////////////////////////////////////////////////////
+
+            ///////////////     TRANSMIT HARDWARE RESULT DATA TO SCB     ////////////////
             i2c_seq_item.got_addr  = read_i2c_addr;
             i2c_seq_item.got_wData = read_i2c_wData;
-
+            /////////////////////////////////////////////////////////////////////////////
             `uvm_info("MON", "Send data to Scoreboard", UVM_NONE);
             send.write(i2c_seq_item);
         end
@@ -349,11 +362,43 @@ class i2c_agent extends uvm_agent;
     endfunction
 endclass  //i2c_agent extends uvm_agent
 
+covergroup pkt_cg with function sample (seq_item i2c_seq_item);
+    coverpoint i2c_seq_item.i2c_addr;
+    coverpoint i2c_seq_item.i2c_wData;
+endgroup
+
+class packet_coverage extends uvm_subscriber #(seq_item);
+    `uvm_component_utils(packet_coverage)
+
+    pkt_cg tr_cov;
+    bit coverage_enable = 1;
+
+    function new(input string name = "packet_coverage", uvm_component c);
+        super.new(name, c);
+    endfunction  //new()
+
+    virtual function void build_phase(uvm_phase phase);
+        if (coverage_enable) begin
+            tr_cov = new();
+        end
+    endfunction
+
+    virtual function void write(seq_item data);
+        if (coverage_enable) begin
+            tr_cov.sample(data);
+            $display("====================================");
+            $display("Coverage = %0.2f %%", tr_cov.get_inst_coverage());
+            $display("====================================");
+        end
+    endfunction
+endclass
+
 class i2c_env extends uvm_env;
     `uvm_component_utils(i2c_env)
 
     i2c_scoreboard i2cScoreboard;
     i2c_agent i2cAgent;
+    packet_coverage cov_comp;
 
     function new(input string name = "i2c_env", uvm_component c);
         super.new(name, c);
@@ -363,11 +408,13 @@ class i2c_env extends uvm_env;
         super.build_phase(phase);
         i2cScoreboard = i2c_scoreboard::type_id::create("SCB", this);
         i2cAgent      = i2c_agent::type_id::create("AGENT", this);
+        cov_comp      = packet_coverage::type_id::create("cov_comp", this);
     endfunction
 
     virtual function void connect_phase(uvm_phase phase);
         super.connect_phase(phase);
         i2cAgent.i2cMonitor.send.connect(i2cScoreboard.recv);
+        i2cAgent.i2cMonitor.send.connect(cov_comp.analysis_export);
     endfunction
 endclass  //i2c_env extendsuvm_env;
 

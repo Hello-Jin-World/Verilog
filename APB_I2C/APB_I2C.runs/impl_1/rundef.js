@@ -25,7 +25,7 @@ eval( EAInclude(ISEJScriptLib) );
 // pre-commands:
 ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log I2C_Master.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source I2C_Master.tcl -notrace" );
+         "-log MCU.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source MCU.tcl -notrace" );
 
 
 

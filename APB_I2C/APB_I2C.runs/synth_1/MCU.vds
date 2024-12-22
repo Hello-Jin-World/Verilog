@@ -1,0 +1,444 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Dec 22 17:42:52 2024
+# Process ID: 14688
+# Current directory: D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.runs/synth_1
+# Command line: vivado.exe -log MCU.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MCU.tcl
+# Log file: D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.runs/synth_1/MCU.vds
+# Journal file: D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source MCU.tcl -notrace
+Command: synth_design -top MCU -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 2876
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1104.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'MCU' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/MCU.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'RV32I_Core' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'ControlUnit' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:28]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:130]
+INFO: [Synth 8-6155] done synthesizing module 'ControlUnit' (1#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:28]
+INFO: [Synth 8-6157] synthesizing module 'DataPath' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:167]
+INFO: [Synth 8-6157] synthesizing module 'register' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:341]
+INFO: [Synth 8-6155] done synthesizing module 'register' (2#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:341]
+INFO: [Synth 8-6157] synthesizing module 'mux_2x1' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:477]
+INFO: [Synth 8-226] default block is never used [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:484]
+INFO: [Synth 8-6155] done synthesizing module 'mux_2x1' (3#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:477]
+INFO: [Synth 8-6157] synthesizing module 'adder' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:418]
+INFO: [Synth 8-6155] done synthesizing module 'adder' (4#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:418]
+INFO: [Synth 8-6157] synthesizing module 'RegisterFile' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:354]
+INFO: [Synth 8-6155] done synthesizing module 'RegisterFile' (5#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:354]
+INFO: [Synth 8-6157] synthesizing module 'alu' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:380]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (6#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:380]
+INFO: [Synth 8-6157] synthesizing module 'mux_5x1' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:492]
+INFO: [Synth 8-6155] done synthesizing module 'mux_5x1' (7#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:492]
+INFO: [Synth 8-6157] synthesizing module 'extend' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:426]
+INFO: [Synth 8-6155] done synthesizing module 'extend' (8#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:426]
+INFO: [Synth 8-6155] done synthesizing module 'DataPath' (9#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:167]
+INFO: [Synth 8-6155] done synthesizing module 'RV32I_Core' (10#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/RV32I_Core.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'decoder_mem_map' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/MCU.sv:161]
+INFO: [Synth 8-6155] done synthesizing module 'decoder_mem_map' (11#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/MCU.sv:161]
+INFO: [Synth 8-6157] synthesizing module 'mux_mem_map' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/MCU.sv:178]
+INFO: [Synth 8-6155] done synthesizing module 'mux_mem_map' (12#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/MCU.sv:178]
+INFO: [Synth 8-6157] synthesizing module 'ROM' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/ROM.sv:3]
+INFO: [Synth 8-3876] $readmem data file 'code.mem' is read successfully [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/ROM.sv:21]
+INFO: [Synth 8-6155] done synthesizing module 'ROM' (13#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/ROM.sv:3]
+WARNING: [Synth 8-689] width (32) of port connection 'addr' does not match port width (13) of module 'ROM' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/MCU.sv:77]
+INFO: [Synth 8-6157] synthesizing module 'ram' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/ram.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'ram' (14#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/ram.sv:3]
+WARNING: [Synth 8-689] width (32) of port connection 'addr' does not match port width (13) of module 'ram' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/MCU.sv:87]
+INFO: [Synth 8-6157] synthesizing module 'gpo' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/gpo.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'APB_Intf' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/gpo.sv:152]
+INFO: [Synth 8-6155] done synthesizing module 'APB_Intf' (15#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/gpo.sv:152]
+INFO: [Synth 8-6157] synthesizing module 'gpo_ip' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/gpo.sv:199]
+INFO: [Synth 8-6155] done synthesizing module 'gpo_ip' (16#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/gpo.sv:199]
+INFO: [Synth 8-6155] done synthesizing module 'gpo' (17#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/gpo.sv:3]
+WARNING: [Synth 8-689] width (32) of port connection 'PADDR' does not match port width (3) of module 'gpo' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/MCU.sv:96]
+WARNING: [Synth 8-689] width (1) of port connection 'outPort' does not match port width (4) of module 'gpo' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/MCU.sv:103]
+INFO: [Synth 8-6157] synthesizing module 'gpio' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/gpio.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'APB_Intf_gpio' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/gpio.sv:63]
+INFO: [Synth 8-6155] done synthesizing module 'APB_Intf_gpio' (18#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/gpio.sv:63]
+INFO: [Synth 8-6157] synthesizing module 'gpio_ip' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/gpio.sv:133]
+INFO: [Synth 8-6155] done synthesizing module 'gpio_ip' (19#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/gpio.sv:133]
+INFO: [Synth 8-6155] done synthesizing module 'gpio' (20#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/gpio.sv:23]
+WARNING: [Synth 8-689] width (32) of port connection 'PADDR' does not match port width (4) of module 'gpio' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/MCU.sv:109]
+WARNING: [Synth 8-689] width (32) of port connection 'PADDR' does not match port width (4) of module 'gpio' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/MCU.sv:122]
+INFO: [Synth 8-6157] synthesizing module 'FND' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/new/FND.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'APB_Intf_fnd' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/new/FND.sv:62]
+INFO: [Synth 8-226] default block is never used [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/new/FND.sv:89]
+INFO: [Synth 8-226] default block is never used [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/new/FND.sv:106]
+INFO: [Synth 8-6155] done synthesizing module 'APB_Intf_fnd' (21#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/new/FND.sv:62]
+INFO: [Synth 8-6157] synthesizing module 'fnd_ip' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/new/FND.sv:130]
+INFO: [Synth 8-226] default block is never used [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/new/FND.sv:138]
+INFO: [Synth 8-226] default block is never used [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/new/FND.sv:146]
+INFO: [Synth 8-6155] done synthesizing module 'fnd_ip' (22#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/new/FND.sv:130]
+INFO: [Synth 8-6155] done synthesizing module 'FND' (23#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/new/FND.sv:23]
+WARNING: [Synth 8-689] width (32) of port connection 'PADDR' does not match port width (4) of module 'FND' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/MCU.sv:135]
+WARNING: [Synth 8-689] width (1) of port connection 'fndCom' does not match port width (4) of module 'FND' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/MCU.sv:142]
+WARNING: [Synth 8-689] width (1) of port connection 'fndFont' does not match port width (8) of module 'FND' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/MCU.sv:143]
+INFO: [Synth 8-6157] synthesizing module 'I2C_Master' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'APB_Intf_i2c' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:76]
+INFO: [Synth 8-226] default block is never used [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:132]
+INFO: [Synth 8-6155] done synthesizing module 'APB_Intf_i2c' (24#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:76]
+INFO: [Synth 8-6157] synthesizing module 'MASTER_ip' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:160]
+	Parameter LOW bound to: 0 - type: integer 
+	Parameter HIGH bound to: 1 - type: integer 
+	Parameter ACK bound to: 0 - type: integer 
+	Parameter READ bound to: 0 - type: integer 
+	Parameter WRITE bound to: 1 - type: integer 
+	Parameter IDLE bound to: 0 - type: integer 
+	Parameter STAY_4us bound to: 1 - type: integer 
+	Parameter ADDR_RW0 bound to: 2 - type: integer 
+	Parameter ADDR_RW1 bound to: 3 - type: integer 
+	Parameter SLAVE_ACK bound to: 4 - type: integer 
+	Parameter WRITE_DATA0 bound to: 5 - type: integer 
+	Parameter WRITE_DATA1 bound to: 6 - type: integer 
+	Parameter MASTER_ACK bound to: 7 - type: integer 
+	Parameter READ_DATA0 bound to: 8 - type: integer 
+	Parameter READ_DATA1 bound to: 9 - type: integer 
+	Parameter WAIT bound to: 10 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:259]
+INFO: [Synth 8-6155] done synthesizing module 'MASTER_ip' (25#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:160]
+INFO: [Synth 8-6155] done synthesizing module 'I2C_Master' (26#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:23]
+WARNING: [Synth 8-689] width (32) of port connection 'PADDR' does not match port width (4) of module 'I2C_Master' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/MCU.sv:149]
+INFO: [Synth 8-6155] done synthesizing module 'MCU' (27#1) [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/MCU.sv:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1104.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1104.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1104.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1104.551 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+Finished Parsing XDC File [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/MCU_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/MCU_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1182.082 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1182.082 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1182.082 ; gain = 77.531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1182.082 ; gain = 77.531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 1182.082 ; gain = 77.531
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ControlUnit'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   FETCH |                             0000 | 00000000000000000000000000000000
+                  DECODE |                             0001 | 00000000000000000000000000000001
+                   R_EXE |                             0010 | 00000000000000000000000000000010
+                  IL_EXE |                             0011 | 00000000000000000000000000000011
+            IL_MEM_SETUP |                             0100 | 00000000000000000000000000000100
+           IL_MEM_ACCESS |                             0101 | 00000000000000000000000000000101
+                   IL_WB |                             0110 | 00000000000000000000000000000110
+                   I_EXE |                             0111 | 00000000000000000000000000000111
+                   S_EXE |                             1000 | 00000000000000000000000000001000
+             S_MEM_SETUP |                             1001 | 00000000000000000000000000001001
+            S_MEM_ACCESS |                             1010 | 00000000000000000000000000001010
+                   B_EXE |                             1011 | 00000000000000000000000000001011
+                   U_EXE |                             1100 | 00000000000000000000000000001100
+                  UA_EXE |                             1101 | 00000000000000000000000000001101
+                   J_EXE |                             1110 | 00000000000000000000000000001110
+                  JI_EXE |                             1111 | 00000000000000000000000000001111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'ControlUnit'
+WARNING: [Synth 8-327] inferring latch for variable 'ready_reg' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/imports/sources_1/imports/sources_1/imports/RV32I_APB_GPIO_24_12_27/MCU.sv:200]
+WARNING: [Synth 8-327] inferring latch for variable 'rData_reg_reg' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:375]
+WARNING: [Synth 8-327] inferring latch for variable 'SDA_in_reg' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:194]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 1182.082 ; gain = 77.531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 6     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input   11 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 2     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 25    
+	               11 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 10    
++---RAMs : 
+	              32K Bit	(1024 X 32 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 8     
+	   4 Input   32 Bit        Muxes := 4     
+	  10 Input   32 Bit        Muxes := 1     
+	   7 Input   32 Bit        Muxes := 1     
+	 114 Input   32 Bit        Muxes := 1     
+	  16 Input   15 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 1     
+	  12 Input   11 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 1     
+	  12 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 2     
+	   7 Input    6 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 6     
+	  16 Input    4 Bit        Muxes := 2     
+	  10 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	  12 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 9     
+	   7 Input    1 Bit        Muxes := 2     
+	   3 Input    1 Bit        Muxes := 4     
+	   4 Input    1 Bit        Muxes := 3     
+	  12 Input    1 Bit        Muxes := 6     
+	   5 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_I2C_Master/U_MASTER_ip/rData_reg_reg[7]__0/Q' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_I2C_Master/U_MASTER_ip/rData_reg_reg[6]__0/Q' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_I2C_Master/U_MASTER_ip/rData_reg_reg[5]__0/Q' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_I2C_Master/U_MASTER_ip/rData_reg_reg[4]__0/Q' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_I2C_Master/U_MASTER_ip/rData_reg_reg[3]__0/Q' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_I2C_Master/U_MASTER_ip/rData_reg_reg[2]__0/Q' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_I2C_Master/U_MASTER_ip/rData_reg_reg[1]__0/Q' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_I2C_Master/U_MASTER_ip/rData_reg_reg[0]__0/Q' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.srcs/sources_1/new/I2C.sv:187]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 1182.082 ; gain = 77.531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping	Report (see note below)
++------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object           | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|MCU         | U_DataMemory/mem_reg | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
++------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping	Report (see note below)
++------------+----------------------------------------------------+-----------+----------------------+--------------+
+|Module Name | RTL Object                                         | Inference | Size (Depth x Width) | Primitives   | 
++------------+----------------------------------------------------+-----------+----------------------+--------------+
+|MCU         | U_RV32I_CORE/U_DataPath/U_RegisterFile/RegFile_reg | Implied   | 32 x 32              | RAM32M x 12	 | 
++------------+----------------------------------------------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:21 . Memory (MB): peak = 1182.082 ; gain = 77.531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:26 . Memory (MB): peak = 1313.645 ; gain = 209.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping	Report
++------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object           | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|MCU         | U_DataMemory/mem_reg | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
++------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping	Report
++------------+----------------------------------------------------+-----------+----------------------+--------------+
+|Module Name | RTL Object                                         | Inference | Size (Depth x Width) | Primitives   | 
++------------+----------------------------------------------------+-----------+----------------------+--------------+
+|MCU         | U_RV32I_CORE/U_DataPath/U_RegisterFile/RegFile_reg | Implied   | 32 x 32              | RAM32M x 12	 | 
++------------+----------------------------------------------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance U_DataMemory/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:27 . Memory (MB): peak = 1314.676 ; gain = 210.125
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1314.676 ; gain = 210.125
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1314.676 ; gain = 210.125
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1314.676 ; gain = 210.125
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1314.676 ; gain = 210.125
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1314.676 ; gain = 210.125
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1314.676 ; gain = 210.125
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    62|
+|3     |LUT1     |    10|
+|4     |LUT2     |    71|
+|5     |LUT3     |   122|
+|6     |LUT4     |   234|
+|7     |LUT5     |   276|
+|8     |LUT6     |   625|
+|9     |MUXF7    |    27|
+|10    |RAM32M   |    12|
+|11    |RAMB36E1 |     1|
+|12    |FDCE     |   708|
+|13    |FDPE     |     2|
+|14    |FDRE     |    98|
+|15    |LD       |     1|
+|16    |IBUF     |     2|
+|17    |OBUF     |     1|
+|18    |OBUFT    |     1|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1314.676 ; gain = 210.125
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 24 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:27 . Memory (MB): peak = 1314.676 ; gain = 132.594
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 1314.676 ; gain = 210.125
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1326.543 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 103 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1326.543 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 13 instances were transformed.
+  LD => LDCE: 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 12 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+81 Infos, 13 Warnings, 24 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 1326.543 ; gain = 221.992
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint 'D:/GitHub/verilog/Verilog/APB_I2C/APB_I2C.runs/synth_1/MCU.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file MCU_utilization_synth.rpt -pb MCU_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Dec 22 17:43:31 2024...
