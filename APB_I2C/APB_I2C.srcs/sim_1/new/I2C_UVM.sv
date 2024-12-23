@@ -49,36 +49,11 @@ class seq_item extends uvm_sequence_item;
     logic             write;
     logic      [ 7:0] got_addr;
     logic      [ 7:0] got_wData;
-    // logic      [31:0] wData;
-    // logic      [ 7:0] random_i2c_addr;
-    // logic      [ 7:0] random_i2c_wData;
-    // logic             SDA;
-    // logic             SCL;
 
     constraint addr_C {
         addr_i2c_addr == 4'h0c;
         addr_i2c_wData == 4'h08;
     }
-
-    // constraint  i2c_addr_const {
-    //     i2c_addr[0] == 1;
-    // }
-
-    // constraint addr_c {addr inside {4'b1000, 4'b1100, 4'b0000};}
-
-    // constraint addr_write {
-    //     if (addr == 4'b0000) {
-    //         wData[10] == 1'b1;
-    //         wData[31:11] == 21'b0;
-    //     } else
-    //     if (addr == 4'b1000) {
-    //         wData[31:8] == 24'b0;
-    //     } else
-    //     if (addr == 4'b1100) {
-    //         wData[0] == 0;
-    //         wData[31:8] == 24'b0;
-    //     }
-    // }
 
     function new(input string name = "seq_item");
         super.new(name);
