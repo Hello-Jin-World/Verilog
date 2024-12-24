@@ -29,9 +29,10 @@ module vga_controller (
     output logic [9:0] y_pixel,
     output logic       display_enable
 );
-    logic       pclk;
-    logic [9:0] h_counter;
-    logic [9:0] v_counter;
+    logic        pclk;
+    logic [ 9:0] h_counter;
+    logic [ 9:0] v_counter;
+    logic [15:0] lenna_data;
 
     pixel_clk_gen U_pixel_clk_gen (
         .clk  (clk),
@@ -54,7 +55,9 @@ module vga_controller (
         .y_pixel       (y_pixel),
         .display_enable(display_enable)
     );
+
 endmodule
+
 
 module vga_decoder (
     input  logic [9:0] h_counter,

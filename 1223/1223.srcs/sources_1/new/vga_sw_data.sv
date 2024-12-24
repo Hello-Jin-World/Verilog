@@ -34,3 +34,4 @@ module vga_sw_data (
     assign green_port = display_enable ? sw_green : 0;
     assign blue_port  = display_enable ? sw_blue : 0;
 endmodule
+

@@ -1,6 +1,20 @@
 set_property SRC_FILE_INFO {cfile:D:/GitHub/verilog/Verilog/1223/1223.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc rfile:../../../1223.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN W5   IOSTANDARD LVCMOS33 } [get_ports { clk }]; #IO_L12P_T1_MRCC_34 ,Sch=CLK100MHZ
+set_property src_info {type:XDC file:1 line:14 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN V17  IOSTANDARD LVCMOS33 } [get_ports {bright_dark[0] }]; #IO_L19N_T3_A09_D25_VREF_14 ,Sch=SW0
+set_property src_info {type:XDC file:1 line:15 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN V16  IOSTANDARD LVCMOS33 } [get_ports {bright_dark[1] }]; #IO_L19P_T3_A10_D26_14      ,Sch=SW1
+set_property src_info {type:XDC file:1 line:16 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN W16  IOSTANDARD LVCMOS33 } [get_ports {bright_dark[2] }]; #IO_L20P_T3_A08_D24_14      ,Sch=SW2
+set_property src_info {type:XDC file:1 line:17 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN W17  IOSTANDARD LVCMOS33 } [get_ports {bright_dark[3] }]; #IO_L20N_T3_A07_D23_14      ,Sch=SW3
+set_property src_info {type:XDC file:1 line:27 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN U1   IOSTANDARD LVCMOS33 } [get_ports { vga_out_sel[0] }]; #IO_L3N_T0_DQS_34           ,Sch=SW13
+set_property src_info {type:XDC file:1 line:28 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN T1   IOSTANDARD LVCMOS33 } [get_ports { vga_out_sel[1] }]; #IO_L3P_T0_DQS_34           ,Sch=SW14
+set_property src_info {type:XDC file:1 line:29 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN R2   IOSTANDARD LVCMOS33 } [get_ports { vga_out_sel[2] }]; #IO_L1P_T0_34               ,Sch=SW15
 set_property src_info {type:XDC file:1 line:71 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN U18  IOSTANDARD LVCMOS33 } [get_ports { reset }]; #IO_L18N_T2_A11_D27_14 ,Sch=BTNC
 set_property src_info {type:XDC file:1 line:128 export:INPUT save:INPUT read:READ} [current_design]

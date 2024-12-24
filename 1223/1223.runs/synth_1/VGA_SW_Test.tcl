@@ -92,9 +92,14 @@ set_property ip_output_repo d:/GitHub/verilog/Verilog/1223/1223.cache/ip [curren
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
+read_mem {
+  D:/GitHub/verilog/Verilog/1223/1223.srcs/sources_1/new/lenna.mem
+  D:/GitHub/verilog/Verilog/1223/1223.srcs/sources_1/new/phaka.mem
+}
 read_verilog -library xil_defaultlib -sv {
   D:/GitHub/verilog/Verilog/1223/1223.srcs/sources_1/new/VGA_Color_load_display.sv
   D:/GitHub/verilog/Verilog/1223/1223.srcs/sources_1/new/vga_controller.sv
+  D:/GitHub/verilog/Verilog/1223/1223.srcs/sources_1/new/vga_sw_data.sv
   D:/GitHub/verilog/Verilog/1223/1223.srcs/sources_1/new/VGA_SW_Test.sv
 }
 OPTRACE "Adding files" END { }
