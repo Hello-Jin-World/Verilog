@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Dec 27 09:30:57 2024
+# Process ID: 2008
+# Current directory: D:/GitHub/verilog/Verilog/20241226_VGA_OV7670_RGB565/20241226_VGA_OV7670_RGB565.runs/synth_1
+# Command line: vivado.exe -log VGA_OV7670_Test.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source VGA_OV7670_Test.tcl
+# Log file: D:/GitHub/verilog/Verilog/20241226_VGA_OV7670_RGB565/20241226_VGA_OV7670_RGB565.runs/synth_1/VGA_OV7670_Test.vds
+# Journal file: D:/GitHub/verilog/Verilog/20241226_VGA_OV7670_RGB565/20241226_VGA_OV7670_RGB565.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source VGA_OV7670_Test.tcl -notrace
