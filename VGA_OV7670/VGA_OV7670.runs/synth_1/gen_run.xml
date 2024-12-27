@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1735284500" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_VGA_OV7670.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1735285497" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_VGA_OV7670.dcp">
   <File Type="PA-TCL" Name="VGA_OV7670_Test.tcl"/>
   <File Type="REPORTS-TCL" Name="VGA_OV7670_Test_reports.tcl"/>
   <File Type="RDS-RDS" Name="VGA_OV7670_Test.vds"/>

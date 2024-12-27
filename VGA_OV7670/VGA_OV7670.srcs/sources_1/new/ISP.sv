@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module ISP (
+module ISP_P (
     input  logic        clk,
     input  logic        reset,
     input  logic [ 9:0] x,

@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Fri Dec 27 15:25:57 2024
-# Process ID         : 7072
+# Start of session at: Fri Dec 27 16:43:39 2024
+# Process ID         : 11924
 # Current directory  : D:/GitHub/verilog/Verilog/VGA_OV7670/VGA_OV7670.runs/clk_wiz_0_synth_1
 # Command line       : vivado.exe -log clk_wiz_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_wiz_0.tcl
 # Log file           : D:/GitHub/verilog/Verilog/VGA_OV7670/VGA_OV7670.runs/clk_wiz_0_synth_1/clk_wiz_0.vds
@@ -19,6 +19,6 @@
 # Host memory        : 16847 MB
 # Swap memory        : 51539 MB
 # Total Virtual      : 68386 MB
-# Available Virtual  : 53503 MB
+# Available Virtual  : 55689 MB
 #-----------------------------------------------------------
 source clk_wiz_0.tcl -notrace

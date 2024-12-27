@@ -61,7 +61,7 @@ module VGA_OV7670_Test (
         .disp_enable(disp_enable)
     );
 
-    ISP U_ISPPP (
+    ISP_P U_ISPPP (
         .clk    (clk),
         .reset  (reset),
         .x      (x_pixel),
