@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sat Dec 28 05:18:07 2024
+# Process ID: 33511
+# Current directory: /home/user/project/Verilog/VGA_CAMERA/VGA_CAMERA.runs/impl_1
+# Command line: vivado -log VGA_OV7670_Test.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source VGA_OV7670_Test.tcl -notrace
+# Log file: /home/user/project/Verilog/VGA_CAMERA/VGA_CAMERA.runs/impl_1/VGA_OV7670_Test.vdi
+# Journal file: /home/user/project/Verilog/VGA_CAMERA/VGA_CAMERA.runs/impl_1/vivado.jou
+# Running On        :406b1f2fd194
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 22.04.5 LTS
+# Processor Detail  :
+# CPU Frequency     :
+# CPU Physical cores:10
+# CPU Logical cores :10
+# Host memory       :16748 MB
+# Swap memory       :2147 MB
+# Total Virtual     :18896 MB
+# Available Virtual :15630 MB
+#-----------------------------------------------------------
+source VGA_OV7670_Test.tcl -notrace
