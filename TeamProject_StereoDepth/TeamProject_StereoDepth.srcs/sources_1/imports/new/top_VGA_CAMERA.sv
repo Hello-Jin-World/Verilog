@@ -30,10 +30,15 @@ module top_VGA_CAMERA (
     logic [9:0] y_pixel;
     logic we1, we2;
     logic [14:0] wAddr1, wAddr2;
-    logic [15:0] wData1, wData2, buffer1, buffer2, buffer;
-    logic qvga_en1, qvga_en2;
-    logic [14:0] qvga_addr1, qvga_addr2;
+    logic [15:0] wData1, wData2, buffer1, buffer2, buffer3, buffer;
+    logic qvga_en1, qvga_en2, qvga_en3;
+    logic [14:0] qvga_addr1, qvga_addr2, qvga_addr3;
     logic vga_clk;
+
+    logic [15:0] rData_for_SAD1;
+    logic [15:0] rData_for_SAD2;
+    logic [11:0] gray_for_SAD1;
+    logic [11:0] gray_for_SAD2;
 
     clk_wiz_0 U_clk_wiz_0 (
         .vga_clk    (vga_clk),
@@ -53,6 +58,7 @@ module top_VGA_CAMERA (
     display_mux_2x1 U_display_mux_2x1 (
         .Left_Data (buffer1),
         .Right_Data(buffer2),
+        .Gray_Data (buffer3),
         .x         (x_pixel),
         .y         (y_pixel),
         .Out_Data  (buffer)
@@ -91,6 +97,7 @@ module top_VGA_CAMERA (
         .oe   (qvga_en1),
         .rAddr(qvga_addr1),
         .rData(buffer1)
+        // .rData_for_SAD(rData_for_SAD1)
     );
 
     frameBuffer U_FrameBufferRight (
@@ -103,7 +110,18 @@ module top_VGA_CAMERA (
         .oe   (qvga_en2),
         .rAddr(qvga_addr2),
         .rData(buffer2)
+        // .rData_for_SAD(rData_for_SAD2)
     );
+    // window_sad_processor U_window_sad_processor (
+    //     .clk        (clk),
+    //     .reset      (reset),
+    //     .left_pixel (gray_for_SAD1),
+    //     .right_pixel(gray_for_SAD2),
+    //     .rclk       (vga_clk),
+    //     .oe         (qvga_en3),
+    //     .rAddr      (qvga_addr3),
+    //     .rData      (buffer3)
+    // );
 
     qvga_addr_decoder U_qvga_addr_decoder (
         .x         (x_pixel),
@@ -123,8 +141,40 @@ module top_VGA_CAMERA (
         .y_pixel    (y_pixel),
         .disp_enable(disp_enable)
     );
-
 endmodule
+
+// module line_buffer (
+//     input  logic        clk,
+//     input  logic        reset,
+//     input  logic        we_left,
+//     input  logic [14:0] wAddr_left,
+//     input  logic [15:0] wData_left,
+//     input  logic        we_right,
+//     input  logic [14:0] wAddr_right,
+//     input  logic [15:0] wData_right,
+//     input  logic        rclk,
+//     input  logic        oe,
+//     input  logic [14:0] rAddr,
+//     output logic [15:0] rData
+// );
+
+//     logic [15:0] mem[0:160*120-1];
+
+//     always_ff @(posedge wclk) begin
+//         if (we) begin
+//             mem[wAddr] <= wData;
+//         end
+//     end
+
+//     localparam RW = 8'h4c, GW = 8'h96, BW = 8'h1e;
+
+
+//     assign gray_left = wData_left[15:11]*RW + wData_left[10:5]*GW + wData_left[4:0]*BW;
+//     assign gray_right = wData_right[15:11]*RW + wData_right[10:5]*GW + wData_right[4:0]*BW;
+
+//     assign gray_rgb = {gray[15:12], gray[15:12], gray[15:12]};
+// endmodule
+
 
 module qvga_addr_decoder (
     input  logic [ 9:0] x,
@@ -132,7 +182,9 @@ module qvga_addr_decoder (
     output logic        qvga_en1,
     output logic [14:0] qvga_addr1,
     output logic        qvga_en2,
-    output logic [14:0] qvga_addr2
+    output logic [14:0] qvga_addr2,
+    output logic        qvga_en3,
+    output logic [14:0] qvga_addr3
 );
 
     always_comb begin
@@ -140,23 +192,39 @@ module qvga_addr_decoder (
         qvga_en1   = 1'b0;
         qvga_addr2 = 0;
         qvga_en2   = 1'b0;
+        qvga_addr3 = 0;
+        qvga_en3   = 1'b0;
         if (y < 240) begin
             if (x < 320) begin
                 qvga_addr1 = y[9:1] * 160 + x[9:1];
                 qvga_en1   = 1'b1;
                 qvga_addr2 = 0;
                 qvga_en2   = 1'b0;
+                qvga_addr3 = 0;
+                qvga_en3   = 1'b0;
             end else begin
                 qvga_addr1 = 0;
                 qvga_en1   = 1'b0;
                 qvga_addr2 = y[9:1] * 160 + x[9:1];
                 qvga_en2   = 1'b1;
+                qvga_addr3 = 0;
+                qvga_en3   = 1'b0;
             end
         end else begin
+            if (x < 320) begin
+                qvga_addr1 = 0;
+                qvga_en1   = 1'b0;
+                qvga_addr2 = 0;
+                qvga_en2   = 1'b0;
+                qvga_addr3 = y[9:1] * 160 + x[9:1];
+                qvga_en3   = 1'b1;
+            end
             qvga_addr1 = 0;
             qvga_en1   = 1'b0;
             qvga_addr2 = 0;
             qvga_en2   = 1'b0;
+            qvga_addr3 = 0;
+            qvga_en3   = 1'b0;
         end
     end
 endmodule
@@ -164,6 +232,7 @@ endmodule
 module display_mux_2x1 (
     input  logic [15:0] Left_Data,
     input  logic [15:0] Right_Data,
+    input  logic [15:0] Gray_Data,
     input  logic [ 9:0] x,
     input  logic [ 9:0] y,
     output logic [15:0] Out_Data
@@ -176,6 +245,9 @@ module display_mux_2x1 (
         end else if (x >= 320 && y < 240) begin
             // Out_Data = {Right_Data[15:11], Right_Data[10:7], Right_Data[4:1]};
             Out_Data = Right_Data;
+        end else if (x < 320 && y >= 240) begin
+            // Out_Data = {Right_Data[15:11], Right_Data[10:7], Right_Data[4:1]};
+            Out_Data = Gray_Data;
         end else begin
             Out_Data = 15'd0;
         end
@@ -199,3 +271,5 @@ module rbt2gray (
 
     assign gray_rgb = (disp_enable) ? ((gray_sw) ? {gray[11:8], gray[11:8], gray[11:8]} : color_rgb) : 12'd0;
 endmodule
+
+
