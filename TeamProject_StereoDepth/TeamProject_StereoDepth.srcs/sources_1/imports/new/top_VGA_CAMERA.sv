@@ -1,0 +1,201 @@
+`timescale 1ns / 1ps
+
+module top_VGA_CAMERA (
+    input  logic       clk,
+    input  logic       reset,
+    input  logic       gray_sw,
+    // ov7670 camera input signal
+    output logic       ov7670_xclk1,
+    input  logic       ov7670_pclk1,
+    input  logic       ov7670_href1,
+    input  logic       ov7670_v_sync1,
+    input  logic [7:0] ov7670_data1,
+
+    output logic       ov7670_xclk2,
+    input  logic       ov7670_pclk2,
+    input  logic       ov7670_href2,
+    input  logic       ov7670_v_sync2,
+    input  logic [7:0] ov7670_data2,
+
+    // vga display port
+    output logic       Hsync,
+    output logic       Vsync,
+    output logic [3:0] vgaRed,
+    output logic [3:0] vgaGreen,
+    output logic [3:0] vgaBlue
+);
+
+    logic disp_enable;
+    logic [9:0] x_pixel;
+    logic [9:0] y_pixel;
+    logic we1, we2;
+    logic [14:0] wAddr1, wAddr2;
+    logic [15:0] wData1, wData2, buffer1, buffer2, buffer;
+    logic qvga_en1, qvga_en2;
+    logic [14:0] qvga_addr1, qvga_addr2;
+    logic vga_clk;
+
+    clk_wiz_0 U_clk_wiz_0 (
+        .vga_clk    (vga_clk),
+        .ov7670_clk1(ov7670_xclk1),
+        .ov7670_clk2(ov7670_xclk2),
+        .reset      (reset),
+        .clk        (clk)
+    );
+
+    rbt2gray U_rbt2gray (
+        .color_rgb  ({buffer[15:12], buffer[10:7], buffer[4:1]}),
+        .gray_sw    (gray_sw),
+        .disp_enable(disp_enable),
+        .gray_rgb   ({vgaRed, vgaGreen, vgaBlue})
+    );
+
+    display_mux_2x1 U_display_mux_2x1 (
+        .Left_Data (buffer1),
+        .Right_Data(buffer2),
+        .x         (x_pixel),
+        .y         (y_pixel),
+        .Out_Data  (buffer)
+    );
+
+    ov7670_SetData U_OV7670_SetDataLeft (
+        .pclk       (ov7670_pclk1),
+        .reset      (reset),
+        .href       (ov7670_href1),
+        .v_sync     (ov7670_v_sync1),
+        .ov7670_data(ov7670_data1),
+        .we         (we1),
+        .wAddr      (wAddr1),
+        .wData      (wData1)
+    );
+
+    ov7670_SetData U_OV7670_SetDataRight (
+        .pclk       (ov7670_pclk2),
+        .reset      (reset),
+        .href       (ov7670_href2),
+        .v_sync     (ov7670_v_sync2),
+        .ov7670_data(ov7670_data2),
+        .we         (we2),
+        .wAddr      (wAddr2),
+        .wData      (wData2)
+    );
+
+
+    frameBuffer U_FrameBufferLeft (
+        // write side ov7670
+        .wclk (ov7670_pclk1),
+        .we   (we1),
+        .wAddr(wAddr1),
+        .wData(wData1),
+        .rclk (vga_clk),
+        .oe   (qvga_en1),
+        .rAddr(qvga_addr1),
+        .rData(buffer1)
+    );
+
+    frameBuffer U_FrameBufferRight (
+        // write side ov7670
+        .wclk (ov7670_pclk2),
+        .we   (we2),
+        .wAddr(wAddr2),
+        .wData(wData2),
+        .rclk (vga_clk),
+        .oe   (qvga_en2),
+        .rAddr(qvga_addr2),
+        .rData(buffer2)
+    );
+
+    qvga_addr_decoder U_qvga_addr_decoder (
+        .x         (x_pixel),
+        .y         (y_pixel),
+        .qvga_en1  (qvga_en1),
+        .qvga_addr1(qvga_addr1),
+        .qvga_en2  (qvga_en2),
+        .qvga_addr2(qvga_addr2)
+    );
+
+    vga_controller U_vga_controller (
+        .clk        (vga_clk),
+        .reset      (reset),
+        .h_sync     (Hsync),
+        .v_sync     (Vsync),
+        .x_pixel    (x_pixel),
+        .y_pixel    (y_pixel),
+        .disp_enable(disp_enable)
+    );
+
+endmodule
+
+module qvga_addr_decoder (
+    input  logic [ 9:0] x,
+    input  logic [ 9:0] y,
+    output logic        qvga_en1,
+    output logic [14:0] qvga_addr1,
+    output logic        qvga_en2,
+    output logic [14:0] qvga_addr2
+);
+
+    always_comb begin
+        qvga_addr1 = 0;
+        qvga_en1   = 1'b0;
+        qvga_addr2 = 0;
+        qvga_en2   = 1'b0;
+        if (y < 240) begin
+            if (x < 320) begin
+                qvga_addr1 = y[9:1] * 160 + x[9:1];
+                qvga_en1   = 1'b1;
+                qvga_addr2 = 0;
+                qvga_en2   = 1'b0;
+            end else begin
+                qvga_addr1 = 0;
+                qvga_en1   = 1'b0;
+                qvga_addr2 = y[9:1] * 160 + x[9:1];
+                qvga_en2   = 1'b1;
+            end
+        end else begin
+            qvga_addr1 = 0;
+            qvga_en1   = 1'b0;
+            qvga_addr2 = 0;
+            qvga_en2   = 1'b0;
+        end
+    end
+endmodule
+
+module display_mux_2x1 (
+    input  logic [15:0] Left_Data,
+    input  logic [15:0] Right_Data,
+    input  logic [ 9:0] x,
+    input  logic [ 9:0] y,
+    output logic [15:0] Out_Data
+);
+
+    always_comb begin
+        if (x < 320 && y < 240) begin
+            // Out_Data = {Left_Data[15:11], Left_Data[10:7], Left_Data[4:1]};
+            Out_Data = Left_Data;
+        end else if (x >= 320 && y < 240) begin
+            // Out_Data = {Right_Data[15:11], Right_Data[10:7], Right_Data[4:1]};
+            Out_Data = Right_Data;
+        end else begin
+            Out_Data = 15'd0;
+        end
+    end
+
+endmodule
+
+module rbt2gray (
+    input  logic [11:0] color_rgb,
+    input  logic        gray_sw,
+    input  logic        disp_enable,
+    output logic [11:0] gray_rgb
+);
+
+    localparam RW = 8'h4c, GW = 8'h96, BW = 8'h1e;
+
+    logic [11:0] gray;
+
+    assign gray = color_rgb[11:8]*RW + color_rgb[7:4]*GW + color_rgb[3:0]*BW;
+    // assign gray = (76*color_rgb[11:8] + 150*color_rgb[7:4] + 30*color_rgb[3:0]) / 256;
+
+    assign gray_rgb = (disp_enable) ? ((gray_sw) ? {gray[11:8], gray[11:8], gray[11:8]} : color_rgb) : 12'd0;
+endmodule
