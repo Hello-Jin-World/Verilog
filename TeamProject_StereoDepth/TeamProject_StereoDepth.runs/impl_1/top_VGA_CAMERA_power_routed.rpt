@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Tue Dec 31 18:14:45 2024
+| Date             : Tue Dec 31 21:34:12 2024
 | Host             : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 | Command          : report_power -file top_VGA_CAMERA_power_routed.rpt -pb top_VGA_CAMERA_power_summary_routed.pb -rpx top_VGA_CAMERA_power_routed.rpx
 | Design           : top_VGA_CAMERA
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.180        |
+| Total On-Chip Power (W)  | 0.194        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.107        |
+| Dynamic (W)              | 0.120        |
 | Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.1         |
-| Junction Temperature (C) | 25.9         |
+| Max Ambient (C)          | 84.0         |
+| Junction Temperature (C) | 26.0         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,19 +52,20 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.002 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |      568 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      285 |     20800 |            1.37 |
-|   CARRY4       |    <0.001 |       32 |      8150 |            0.39 |
-|   Register     |    <0.001 |      132 |     41600 |            0.32 |
+| Clocks         |     0.003 |        8 |       --- |             --- |
+| Slice Logic    |     0.002 |      940 |       --- |             --- |
+|   LUT as Logic |     0.001 |      461 |     20800 |            2.22 |
+|   CARRY4       |    <0.001 |       81 |      8150 |            0.99 |
+|   Register     |    <0.001 |      224 |     41600 |            0.54 |
 |   BUFG         |    <0.001 |        2 |        32 |            6.25 |
-|   Others       |     0.000 |       18 |       --- |             --- |
-| Signals        |     0.001 |      493 |       --- |             --- |
-| Block RAM      |     0.011 |       24 |        50 |           48.00 |
+|   Others       |     0.000 |       25 |       --- |             --- |
+| Signals        |     0.002 |      809 |       --- |             --- |
+| Block RAM      |     0.019 |       28 |        50 |           56.00 |
 | MMCM           |     0.085 |        1 |         5 |           20.00 |
+| DSPs           |     0.001 |        1 |        90 |            1.11 |
 | I/O            |     0.008 |       43 |       106 |           40.57 |
 | Static Power   |     0.073 |          |           |                 |
-| Total          |     0.180 |          |           |                 |
+| Total          |     0.194 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.025 |       0.014 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.037 |       0.026 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.060 |       0.047 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -83,7 +84,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
@@ -145,15 +146,17 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+----------------------+-----------+
-| Name                 | Power (W) |
-+----------------------+-----------+
-| top_VGA_CAMERA       |     0.107 |
-|   U_FrameBufferLeft  |     0.006 |
-|   U_FrameBufferRight |     0.006 |
-|   U_SCCB             |     0.001 |
-|   U_clk_wiz_0        |     0.085 |
-|     inst             |     0.085 |
-+----------------------+-----------+
++--------------------------+-----------+
+| Name                     | Power (W) |
++--------------------------+-----------+
+| top_VGA_CAMERA           |     0.120 |
+|   U_Disparity            |     0.005 |
+|   U_FrameBufferDisparity |     0.008 |
+|   U_FrameBufferLeft      |     0.006 |
+|   U_FrameBufferRight     |     0.006 |
+|   U_SCCB                 |     0.001 |
+|   U_clk_wiz_0            |     0.085 |
+|     inst                 |     0.085 |
++--------------------------+-----------+
 
 

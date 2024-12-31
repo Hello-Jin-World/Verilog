@@ -31,22 +31,33 @@ module top_VGA_CAMERA (
     logic [9:0] x_pixel;
     logic [9:0] y_pixel;
     logic we1, we2;
-    logic [14:0] wAddr1, wAddr2;
-    logic [15:0] wData1, wData2, buffer1, buffer2, buffer3, buffer;
+    logic [14:0] wAddr1, wAddr2, Dis_rAddr;
+    logic [15:0] wData1, wData2, buffer1, buffer2, buffer3, buffer, ssd_data;
     logic qvga_en1, qvga_en2, qvga_en3;
     logic [14:0] qvga_addr1, qvga_addr2, qvga_addr3;
     logic vga_clk;
 
-    logic [15:0] rData_for_SAD1;
-    logic [15:0] rData_for_SAD2;
-    logic [11:0] gray_for_SAD1;
-    logic [11:0] gray_for_SAD2;
+    // logic [15:0] rData_for_SAD1;
+    // logic [15:0] rData_for_SAD2;
+    // logic [11:0] gray_for_SAD1;
+    // logic [11:0] gray_for_SAD2;
 
-    SCCB U_SCCB (
-        .clk  (clk),
-        .reset(reset),
-        .SDA  (SDA),
-        .SCL  (SCL)
+    // SCCB U_SCCB (
+    //     .clk  (clk),
+    //     .reset(reset),
+    //     .SDA  (SDA),
+    //     .SCL  (SCL)
+    // );
+camera_configure U_camera_configure
+    #(
+    parameter CLK_FREQ=25000000
+    )
+    (
+    input wire clk,
+    input wire start,
+    output wire sioc,
+    output wire siod,
+    output wire done
     );
 
     clk_wiz_0 U_clk_wiz_0 (
@@ -121,6 +132,28 @@ module top_VGA_CAMERA (
         .rData(buffer2)
         // .rData_for_SAD(rData_for_SAD2)
     );
+
+    Disparity U_Disparity (
+        .clk        (clk),
+        .reset      (reset),
+        .rAddr      (Dis_rAddr),
+        .data1      (wData1),
+        .data2      (wData2),
+        .displayData(ssd_data)
+    );
+
+    frameBuffer U_FrameBufferDisparity (
+        // write side ov7670
+        .wclk (clk),
+        .we   (1),
+        .wAddr(Dis_rAddr),
+        .wData(ssd_data),
+        .rclk (vga_clk),
+        .oe   (qvga_en3),
+        .rAddr(qvga_addr3),
+        .rData(buffer3)
+    );
+
     // window_sad_processor U_window_sad_processor (
     //     .clk        (clk),
     //     .reset      (reset),
@@ -138,7 +171,9 @@ module top_VGA_CAMERA (
         .qvga_en1  (qvga_en1),
         .qvga_addr1(qvga_addr1),
         .qvga_en2  (qvga_en2),
-        .qvga_addr2(qvga_addr2)
+        .qvga_addr2(qvga_addr2),
+        .qvga_en3  (qvga_en3),
+        .qvga_addr3(qvga_addr3)
     );
 
     vga_controller U_vga_controller (
@@ -227,13 +262,14 @@ module qvga_addr_decoder (
                 qvga_en2   = 1'b0;
                 qvga_addr3 = y[9:1] * 160 + x[9:1];
                 qvga_en3   = 1'b1;
+            end else begin
+                qvga_addr1 = 0;
+                qvga_en1   = 1'b0;
+                qvga_addr2 = 0;
+                qvga_en2   = 1'b0;
+                qvga_addr3 = 0;
+                qvga_en3   = 1'b0;
             end
-            qvga_addr1 = 0;
-            qvga_en1   = 1'b0;
-            qvga_addr2 = 0;
-            qvga_en2   = 1'b0;
-            qvga_addr3 = 0;
-            qvga_en3   = 1'b0;
         end
     end
 endmodule
@@ -251,12 +287,14 @@ module display_mux_2x1 (
         if (x < 320 && y < 240) begin
             // Out_Data = {Left_Data[15:11], Left_Data[10:7], Left_Data[4:1]};
             Out_Data = Left_Data;
+            // Out_Data = Gray_Data;
         end else if (x >= 320 && y < 240) begin
             // Out_Data = {Right_Data[15:11], Right_Data[10:7], Right_Data[4:1]};
             Out_Data = Right_Data;
         end else if (x < 320 && y >= 240) begin
             // Out_Data = {Right_Data[15:11], Right_Data[10:7], Right_Data[4:1]};
             Out_Data = Gray_Data;
+            // Out_Data = Left_Data;
         end else begin
             Out_Data = 15'd0;
         end

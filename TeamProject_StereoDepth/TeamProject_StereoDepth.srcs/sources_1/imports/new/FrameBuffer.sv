@@ -15,7 +15,7 @@ module frameBuffer (
     output logic [15:0] rData
     // read side for SAD
     // input logic clk,
-    // output logic [15:0] rData_for_SAD[2:0][2:0]
+    // output logic [15:0] rData_for_SAD
 );
     logic [15:0] mem[0:160*120-1];
 
