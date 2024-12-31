@@ -71,10 +71,8 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
-set_param synth.incrementalSynthesisCache C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-20088-DESKTOP-7CFQ9ND/incrSyn
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -95,6 +93,7 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
   D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/FrameBuffer.sv
+  D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/new/SCCB.sv
   D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/ov7670_SetData.sv
   D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv
   D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv

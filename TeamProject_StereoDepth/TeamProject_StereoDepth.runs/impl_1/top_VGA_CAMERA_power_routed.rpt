@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Mon Dec 30 16:52:32 2024
+| Date             : Tue Dec 31 18:14:45 2024
 | Host             : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 | Command          : report_power -file top_VGA_CAMERA_power_routed.rpt -pb top_VGA_CAMERA_power_summary_routed.pb -rpx top_VGA_CAMERA_power_routed.rpx
 | Design           : top_VGA_CAMERA
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.179        |
+| Total On-Chip Power (W)  | 0.180        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.106        |
+| Dynamic (W)              | 0.107        |
 | Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.1         |
@@ -52,19 +52,19 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |    <0.001 |       12 |       --- |             --- |
-| Slice Logic    |    <0.001 |      380 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      196 |     20800 |            0.94 |
-|   CARRY4       |    <0.001 |       31 |      8150 |            0.38 |
-|   Register     |    <0.001 |       84 |     41600 |            0.20 |
+| Clocks         |     0.002 |        8 |       --- |             --- |
+| Slice Logic    |    <0.001 |      568 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      285 |     20800 |            1.37 |
+|   CARRY4       |    <0.001 |       32 |      8150 |            0.39 |
+|   Register     |    <0.001 |      132 |     41600 |            0.32 |
 |   BUFG         |    <0.001 |        2 |        32 |            6.25 |
-|   Others       |     0.000 |       16 |       --- |             --- |
-| Signals        |    <0.001 |      350 |       --- |             --- |
+|   Others       |     0.000 |       18 |       --- |             --- |
+| Signals        |     0.001 |      493 |       --- |             --- |
 | Block RAM      |     0.011 |       24 |        50 |           48.00 |
 | MMCM           |     0.085 |        1 |         5 |           20.00 |
-| I/O            |     0.007 |       41 |       106 |           38.68 |
+| I/O            |     0.008 |       43 |       106 |           40.57 |
 | Static Power   |     0.073 |          |           |                 |
-| Total          |     0.179 |          |           |                 |
+| Total          |     0.180 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.023 |       0.013 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.025 |       0.014 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.060 |       0.047 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -127,20 +127,16 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+-------------------------+----------------------------------------+-----------------+
-| Clock                   | Domain                                 | Constraint (ns) |
-+-------------------------+----------------------------------------+-----------------+
-| clk                     | clk                                    |            10.0 |
-| clkfbout_clk_wiz_0      | U_clk_wiz_0/inst/clkfbout_clk_wiz_0    |            10.0 |
-| clkfbout_clk_wiz_0_1    | U_clk_wiz_0/inst/clkfbout_clk_wiz_0    |            10.0 |
-| ov7670_clk1_clk_wiz_0   | U_clk_wiz_0/inst/ov7670_clk1_clk_wiz_0 |            41.7 |
-| ov7670_clk1_clk_wiz_0_1 | U_clk_wiz_0/inst/ov7670_clk1_clk_wiz_0 |            41.7 |
-| ov7670_clk2_clk_wiz_0   | U_clk_wiz_0/inst/ov7670_clk2_clk_wiz_0 |            41.7 |
-| ov7670_clk2_clk_wiz_0_1 | U_clk_wiz_0/inst/ov7670_clk2_clk_wiz_0 |            41.7 |
-| sys_clk_pin             | clk                                    |            10.0 |
-| vga_clk_clk_wiz_0       | U_clk_wiz_0/inst/vga_clk_clk_wiz_0     |            40.0 |
-| vga_clk_clk_wiz_0_1     | U_clk_wiz_0/inst/vga_clk_clk_wiz_0     |            40.0 |
-+-------------------------+----------------------------------------+-----------------+
++-----------------------+----------------------------------------+-----------------+
+| Clock                 | Domain                                 | Constraint (ns) |
++-----------------------+----------------------------------------+-----------------+
+| clkfbout_clk_wiz_0    | U_clk_wiz_0/inst/clkfbout_clk_wiz_0    |            10.0 |
+| ov7670_clk1_clk_wiz_0 | U_clk_wiz_0/inst/ov7670_clk1_clk_wiz_0 |            41.7 |
+| ov7670_clk2_clk_wiz_0 | U_clk_wiz_0/inst/ov7670_clk2_clk_wiz_0 |            41.7 |
+| sys_clk_pin           | clk                                    |            10.0 |
+| sys_clk_pin           | clk_IBUF_BUFG                          |            10.0 |
+| vga_clk_clk_wiz_0     | U_clk_wiz_0/inst/vga_clk_clk_wiz_0     |            40.0 |
++-----------------------+----------------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -152,9 +148,10 @@ Table of Contents
 +----------------------+-----------+
 | Name                 | Power (W) |
 +----------------------+-----------+
-| top_VGA_CAMERA       |     0.106 |
+| top_VGA_CAMERA       |     0.107 |
 |   U_FrameBufferLeft  |     0.006 |
 |   U_FrameBufferRight |     0.006 |
+|   U_SCCB             |     0.001 |
 |   U_clk_wiz_0        |     0.085 |
 |     inst             |     0.085 |
 +----------------------+-----------+

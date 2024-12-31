@@ -80,20 +80,20 @@ set_property -dict { PACKAGE_PIN U18  IOSTANDARD LVCMOS33 } [get_ports { reset }
 set_property -dict { PACKAGE_PIN J1  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data2[6] }]; #IO_L3N_T0_DQS_AD5N_35 ,Sch=JA1
 set_property -dict { PACKAGE_PIN L2  IOSTANDARD LVCMOS33 } [get_ports { ov7670_xclk2 }]; #IO_L5N_T0_AD13N_35    ,Sch=JA2
 set_property -dict { PACKAGE_PIN J2  IOSTANDARD LVCMOS33 } [get_ports { ov7670_href2 }]; #IO_L2N_T0_AD12N_35    ,Sch=JA3
-#set_property -dict { PACKAGE_PIN G2  IOSTANDARD LVCMOS33 } [get_ports { JA[3] }]; #IO_L1N_T0_AD4N_35     ,Sch=JA4
+set_property -dict { PACKAGE_PIN G2  IOSTANDARD LVCMOS33 } [get_ports { SCL }]; #IO_L1N_T0_AD4N_35     ,Sch=JA4
 set_property -dict { PACKAGE_PIN H1  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data2[7] }]; #IO_L3P_T0_DQS_AD5P_35 ,Sch=JA7
 set_property -dict { PACKAGE_PIN K2  IOSTANDARD LVCMOS33 } [get_ports { ov7670_href1 }]; #IO_L5P_T0_AD13P_35    ,Sch=JA8
 set_property -dict { PACKAGE_PIN H2  IOSTANDARD LVCMOS33 } [get_ports { ov7670_v_sync2 }]; #IO_L2P_T0_AD12P_35    ,Sch=JA9
-#set_property -dict { PACKAGE_PIN G3  IOSTANDARD LVCMOS33 } [get_ports { JA[7] }]; #IO_L1P_T0_AD4P_35     ,Sch=JA10
+set_property -dict { PACKAGE_PIN G3  IOSTANDARD LVCMOS33 } [get_ports { SDA }]; #IO_L1P_T0_AD4P_35     ,Sch=JA10
 
 
 ##Pmod Header JB
 
-#set_property -dict { PACKAGE_PIN A14  IOSTANDARD LVCMOS33 } [get_ports { JB[0] }]; #IO_L6P_T0_16       ,Sch=JB1
+set_property -dict { PACKAGE_PIN A14  IOSTANDARD LVCMOS33 } [get_ports { SCL }]; #IO_L6P_T0_16       ,Sch=JB1
 set_property -dict { PACKAGE_PIN A16  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[0] }]; #IO_L12P_T1_MRCC_16 ,Sch=JB2
 set_property -dict { PACKAGE_PIN B15  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[2] }]; #IO_L11N_T1_SRCC_16 ,Sch=JB3
 set_property -dict { PACKAGE_PIN B16  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[4] }]; #IO_L13N_T2_MRCC_16 ,Sch=JB4
-#set_property -dict { PACKAGE_PIN A15  IOSTANDARD LVCMOS33 } [get_ports { JB[4] }]; #IO_L6N_T0_VREF_16  ,Sch=JB7
+set_property -dict { PACKAGE_PIN A15  IOSTANDARD LVCMOS33 } [get_ports { SDA }]; #IO_L6N_T0_VREF_16  ,Sch=JB7
 set_property -dict { PACKAGE_PIN A17  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[1] }]; #IO_L12N_T1_MRCC_16 ,Sch=JB8
 set_property -dict { PACKAGE_PIN C15  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[3] }]; #IO_L11P_T1_SRCC_16 ,Sch=JB9
 set_property -dict { PACKAGE_PIN C16  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[5] }]; #IO_L13P_T2_MRCC_16 ,Sch=JB10
@@ -168,3 +168,4 @@ set_property -dict { PACKAGE_PIN R19  IOSTANDARD LVCMOS33 } [get_ports { Vsync  
 ## Configuration options, can be used for all designs
 set_property CONFIG_VOLTAGE 3.3 [current_design]
 set_property CFGBVS VCCO [current_design]
+# set_property PULLUP TRUE [get_ports SDA]

@@ -4,6 +4,8 @@ module top_VGA_CAMERA (
     input  logic       clk,
     input  logic       reset,
     input  logic       gray_sw,
+    inout  wire        SDA,
+    output logic       SCL,
     // ov7670 camera input signal
     output logic       ov7670_xclk1,
     input  logic       ov7670_pclk1,
@@ -39,6 +41,13 @@ module top_VGA_CAMERA (
     logic [15:0] rData_for_SAD2;
     logic [11:0] gray_for_SAD1;
     logic [11:0] gray_for_SAD2;
+
+    SCCB U_SCCB (
+        .clk  (clk),
+        .reset(reset),
+        .SDA  (SDA),
+        .SCL  (SCL)
+    );
 
     clk_wiz_0 U_clk_wiz_0 (
         .vga_clk    (vga_clk),

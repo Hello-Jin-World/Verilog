@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date                      : Mon Dec 30 16:52:16 2024
+| Date                      : Tue Dec 31 18:14:28 2024
 | Host                      : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 | Command                   : report_io -file top_VGA_CAMERA_io_placed.rpt
 | Design                    : top_VGA_CAMERA
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            41 |
+|            43 |
 +---------------+
 
 
@@ -48,8 +48,8 @@ Table of Contents
 | A11        |                 | Dedicated  | DXP_0                        | Temp Sensor   |             |       0 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | A12        |                 | Dedicated  | VP_0                         | XADC          |             |       0 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | A13        |                 | Dedicated  | VREFN_0                      | XADC          |             |       0 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| A14        |                 | High Range | IO_L6P_T0_16                 | User IO       |             |      16 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| A15        |                 | High Range | IO_L6N_T0_VREF_16            | User IO       |             |      16 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| A14        | SCL             | High Range | IO_L6P_T0_16                 | OUTPUT        | LVCMOS33    |      16 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| A15        | SDA             | High Range | IO_L6N_T0_VREF_16            | BIDIR         | LVCMOS33    |      16 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | A16        | ov7670_data1[0] | High Range | IO_L12P_T1_MRCC_16           | INPUT         | LVCMOS33    |      16 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | A17        | ov7670_data1[1] | High Range | IO_L12N_T1_MRCC_16           | INPUT         | LVCMOS33    |      16 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | A18        |                 | High Range | IO_L19N_T3_VREF_16           | User IO       |             |      16 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |

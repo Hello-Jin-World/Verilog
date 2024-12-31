@@ -17,33 +17,58 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 19544
+INFO: [Synth 8-7075] Helper process launched with PID 19964
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1106.648 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:03 . Memory (MB): peak = 1108.883 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top_VGA_CAMERA' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:3]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.runs/synth_1/.Xil/Vivado-7384-DESKTOP-7CFQ9ND/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.runs/synth_1/.Xil/Vivado-7384-DESKTOP-7CFQ9ND/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'rbt2gray' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:186]
+INFO: [Synth 8-6157] synthesizing module 'SCCB' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/new/SCCB.sv:3]
+	Parameter HALF_FREQ bound to: 500 - type: integer 
+	Parameter LOW bound to: 0 - type: integer 
+	Parameter HIGH bound to: 1 - type: integer 
+	Parameter ACK bound to: 0 - type: integer 
+	Parameter READ bound to: 0 - type: integer 
+	Parameter WRITE bound to: 1 - type: integer 
+	Parameter IDLE bound to: 0 - type: integer 
+	Parameter STAY_4us bound to: 1 - type: integer 
+	Parameter ADDR_RW0 bound to: 2 - type: integer 
+	Parameter ADDR_RW1 bound to: 3 - type: integer 
+	Parameter SLAVE_ACK bound to: 4 - type: integer 
+	Parameter R_ADDR0 bound to: 5 - type: integer 
+	Parameter R_ADDR1 bound to: 6 - type: integer 
+	Parameter MASTER_ACK bound to: 7 - type: integer 
+	Parameter R_DATA0 bound to: 8 - type: integer 
+	Parameter R_DATA1 bound to: 9 - type: integer 
+	Parameter WAIT bound to: 10 - type: integer 
+	Parameter HALF_CLK0 bound to: 11 - type: integer 
+	Parameter HALF_CLK1 bound to: 12 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/new/SCCB.sv:149]
+INFO: [Synth 8-6155] done synthesizing module 'SCCB' (1#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/new/SCCB.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.runs/synth_1/.Xil/Vivado-4680-DESKTOP-7CFQ9ND/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (2#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.runs/synth_1/.Xil/Vivado-4680-DESKTOP-7CFQ9ND/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'rbt2gray' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:267]
 	Parameter RW bound to: 8'b01001100 
 	Parameter GW bound to: 8'b10010110 
 	Parameter BW bound to: 8'b00011110 
-INFO: [Synth 8-6155] done synthesizing module 'rbt2gray' (2#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:186]
-INFO: [Synth 8-6157] synthesizing module 'display_mux_2x1' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:164]
-INFO: [Synth 8-6155] done synthesizing module 'display_mux_2x1' (3#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:164]
+INFO: [Synth 8-6155] done synthesizing module 'rbt2gray' (3#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:267]
+INFO: [Synth 8-6157] synthesizing module 'display_mux_2x1' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:241]
+INFO: [Synth 8-6155] done synthesizing module 'display_mux_2x1' (4#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:241]
 INFO: [Synth 8-6157] synthesizing module 'ov7670_SetData' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/ov7670_SetData.sv:3]
-INFO: [Synth 8-6155] done synthesizing module 'ov7670_SetData' (4#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/ov7670_SetData.sv:3]
-WARNING: [Synth 8-689] width (15) of port connection 'wAddr' does not match port width (17) of module 'ov7670_SetData' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:68]
-WARNING: [Synth 8-689] width (15) of port connection 'wAddr' does not match port width (17) of module 'ov7670_SetData' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:79]
+INFO: [Synth 8-6155] done synthesizing module 'ov7670_SetData' (5#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/ov7670_SetData.sv:3]
+WARNING: [Synth 8-689] width (15) of port connection 'wAddr' does not match port width (17) of module 'ov7670_SetData' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:83]
+WARNING: [Synth 8-689] width (15) of port connection 'wAddr' does not match port width (17) of module 'ov7670_SetData' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:94]
 INFO: [Synth 8-6157] synthesizing module 'frameBuffer' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/FrameBuffer.sv:5]
-INFO: [Synth 8-6155] done synthesizing module 'frameBuffer' (5#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/FrameBuffer.sv:5]
-INFO: [Synth 8-6157] synthesizing module 'qvga_addr_decoder' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:129]
-INFO: [Synth 8-6155] done synthesizing module 'qvga_addr_decoder' (6#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:129]
+INFO: [Synth 8-6155] done synthesizing module 'frameBuffer' (6#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/FrameBuffer.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'qvga_addr_decoder' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:188]
+INFO: [Synth 8-6155] done synthesizing module 'qvga_addr_decoder' (7#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:188]
+WARNING: [Synth 8-7071] port 'qvga_en3' of module 'qvga_addr_decoder' is unconnected for instance 'U_qvga_addr_decoder' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:135]
+WARNING: [Synth 8-7071] port 'qvga_addr3' of module 'qvga_addr_decoder' is unconnected for instance 'U_qvga_addr_decoder' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:135]
+WARNING: [Synth 8-7023] instance 'U_qvga_addr_decoder' of module 'qvga_addr_decoder' has 8 connections declared, but only 6 given [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:135]
 INFO: [Synth 8-6157] synthesizing module 'vga_controller' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'pixel_counter' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:62]
 	Parameter H_PIX_MAX bound to: 800 - type: integer 
 	Parameter V_LINE_MAX bound to: 525 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'pixel_counter' (7#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:62]
+INFO: [Synth 8-6155] done synthesizing module 'pixel_counter' (8#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:62]
 INFO: [Synth 8-6157] synthesizing module 'vga_decoder' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:34]
 	Parameter H_Visible_area bound to: 640 - type: integer 
 	Parameter H_Front_porch bound to: 16 - type: integer 
@@ -55,22 +80,22 @@ INFO: [Synth 8-6157] synthesizing module 'vga_decoder' [D:/GitHub/verilog/Verilo
 	Parameter V_Sync_pulse bound to: 2 - type: integer 
 	Parameter V_Back_porch bound to: 33 - type: integer 
 	Parameter V_Whole_frame bound to: 525 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'vga_decoder' (8#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:34]
-INFO: [Synth 8-6155] done synthesizing module 'vga_controller' (9#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:3]
-INFO: [Synth 8-6155] done synthesizing module 'top_VGA_CAMERA' (10#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'vga_decoder' (9#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:34]
+INFO: [Synth 8-6155] done synthesizing module 'vga_controller' (10#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'top_VGA_CAMERA' (11#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:3]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1106.648 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1108.883 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1106.648 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1108.883 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1106.648 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1108.883 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1106.648 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1108.883 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -83,20 +108,20 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_VGA_CAMERA_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1188.781 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1187.719 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1188.781 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1187.719 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1188.781 ; gain = 82.133
+Finished Constraint Validation : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1187.719 ; gain = 78.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1188.781 ; gain = 82.133
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1187.719 ; gain = 78.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -105,33 +130,70 @@ Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  d:/GitHub/
 Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  d:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 6).
 Applied set_property KEEP_HIERARCHY = SOFT for U_clk_wiz_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1188.781 ; gain = 82.133
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1187.719 ; gain = 78.836
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'SCCB'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                    0000000000001 |                             0000
+                STAY_4us |                    0000000000010 |                             0001
+                ADDR_RW0 |                    0000000000100 |                             0010
+               SLAVE_ACK |                    0000000001000 |                             0100
+                 R_ADDR0 |                    0000000010000 |                             0101
+              MASTER_ACK |                    0000000100000 |                             0111
+                    WAIT |                    0000001000000 |                             1010
+               HALF_CLK0 |                    0000010000000 |                             1011
+                 R_DATA0 |                    0000100000000 |                             1000
+               HALF_CLK1 |                    0001000000000 |                             1100
+                 R_DATA1 |                    0010000000000 |                             1001
+                 R_ADDR1 |                    0100000000000 |                             0110
+                ADDR_RW1 |                    1000000000000 |                             0011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'one-hot' in module 'SCCB'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1188.781 ; gain = 82.133
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1187.719 ; gain = 78.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input   11 Bit       Adders := 1     
 	   2 Input   10 Bit       Adders := 4     
+	   2 Input    9 Bit       Adders := 1     
 	   2 Input    8 Bit       Adders := 2     
+	   2 Input    7 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 1     
 +---Registers : 
 	               16 Bit    Registers := 4     
+	               11 Bit    Registers := 1     
 	               10 Bit    Registers := 4     
+	                9 Bit    Registers := 1     
 	                8 Bit    Registers := 2     
-	                1 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
 +---RAMs : 
 	             300K Bit	(19200 X 16 bit)          RAMs := 2     
 +---Muxes : 
-	   2 Input   16 Bit        Muxes := 6     
+	   2 Input   16 Bit        Muxes := 7     
 	   3 Input   16 Bit        Muxes := 2     
 	   2 Input   15 Bit        Muxes := 4     
+	  13 Input   13 Bit        Muxes := 1     
+	   2 Input   13 Bit        Muxes := 4     
 	   2 Input   12 Bit        Muxes := 2     
+	   2 Input   11 Bit        Muxes := 1     
+	  13 Input   11 Bit        Muxes := 1     
 	   2 Input   10 Bit        Muxes := 4     
+	   2 Input    9 Bit        Muxes := 1     
 	   2 Input    8 Bit        Muxes := 2     
-	   3 Input    1 Bit        Muxes := 2     
+	  13 Input    7 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 2     
+	  13 Input    4 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 9     
+	   3 Input    1 Bit        Muxes := 3     
+	  13 Input    1 Bit        Muxes := 9     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -148,7 +210,7 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1188.781 ; gain = 82.133
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 1187.719 ; gain = 78.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -170,13 +232,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:15 . Memory (MB): peak = 1188.781 ; gain = 82.133
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 1187.719 ; gain = 78.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:15 . Memory (MB): peak = 1199.066 ; gain = 92.418
+Finished Timing Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 1199.238 ; gain = 90.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -221,7 +283,7 @@ INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_13
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:05 ; elapsed = 00:00:15 . Memory (MB): peak = 1204.621 ; gain = 97.973
+Finished Technology Mapping : Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 1201.203 ; gain = 92.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -239,37 +301,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 1212.387 ; gain = 105.738
+Finished IO Insertion : Time (s): cpu = 00:00:05 ; elapsed = 00:00:19 . Memory (MB): peak = 1208.883 ; gain = 100.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 1212.387 ; gain = 105.738
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:05 ; elapsed = 00:00:19 . Memory (MB): peak = 1208.883 ; gain = 100.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 1212.387 ; gain = 105.738
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:05 ; elapsed = 00:00:19 . Memory (MB): peak = 1208.883 ; gain = 100.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 1212.387 ; gain = 105.738
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:05 ; elapsed = 00:00:19 . Memory (MB): peak = 1208.883 ; gain = 100.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 1212.422 ; gain = 105.773
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:19 . Memory (MB): peak = 1208.898 ; gain = 100.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 1212.422 ; gain = 105.773
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:05 ; elapsed = 00:00:19 . Memory (MB): peak = 1208.898 ; gain = 100.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -288,38 +350,41 @@ Report Cell Usage:
 +------+---------+------+
 |1     |clk_wiz  |     1|
 |2     |BUFG     |     2|
-|3     |CARRY4   |    31|
+|3     |CARRY4   |    32|
 |4     |LUT1     |     4|
-|5     |LUT2     |    92|
-|6     |LUT3     |    24|
-|7     |LUT4     |    40|
-|8     |LUT5     |    49|
-|9     |LUT6     |    48|
+|5     |LUT2     |   110|
+|6     |LUT3     |    37|
+|7     |LUT4     |    80|
+|8     |LUT5     |    67|
+|9     |LUT6     |    94|
 |10    |RAMB36E1 |    24|
-|11    |FDCE     |    90|
-|12    |IBUF     |    24|
-|13    |OBUF     |    16|
+|11    |FDCE     |   135|
+|12    |FDPE     |     3|
+|13    |IBUF     |    24|
+|14    |OBUF     |    17|
+|15    |OBUFT    |     1|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 1212.422 ; gain = 105.773
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:05 ; elapsed = 00:00:19 . Memory (MB): peak = 1208.898 ; gain = 100.016
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:04 ; elapsed = 00:00:16 . Memory (MB): peak = 1212.422 ; gain = 23.641
-Synthesis Optimization Complete : Time (s): cpu = 00:00:06 ; elapsed = 00:00:17 . Memory (MB): peak = 1212.422 ; gain = 105.773
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:04 ; elapsed = 00:00:18 . Memory (MB): peak = 1208.898 ; gain = 21.180
+Synthesis Optimization Complete : Time (s): cpu = 00:00:05 ; elapsed = 00:00:19 . Memory (MB): peak = 1208.898 ; gain = 100.016
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1222.613 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 55 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1220.910 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 56 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1222.613 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1220.910 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-59 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+65 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:22 . Memory (MB): peak = 1222.613 ; gain = 115.965
+synth_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:24 . Memory (MB): peak = 1220.910 ; gain = 112.027
 INFO: [Common 17-1381] The checkpoint 'D:/GitHub/verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.runs/synth_1/top_VGA_CAMERA.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_VGA_CAMERA_utilization_synth.rpt -pb top_VGA_CAMERA_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Dec 30 16:51:47 2024...
+INFO: [Common 17-206] Exiting Vivado at Tue Dec 31 18:13:58 2024...

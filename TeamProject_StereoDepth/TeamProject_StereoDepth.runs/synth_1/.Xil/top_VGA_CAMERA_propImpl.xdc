@@ -11,18 +11,26 @@ set_property src_info {type:XDC file:1 line:81 export:INPUT save:INPUT read:READ
 set_property -dict { PACKAGE_PIN L2  IOSTANDARD LVCMOS33 } [get_ports { ov7670_xclk2 }]; #IO_L5N_T0_AD13N_35    ,Sch=JA2
 set_property src_info {type:XDC file:1 line:82 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN J2  IOSTANDARD LVCMOS33 } [get_ports { ov7670_href2 }]; #IO_L2N_T0_AD12N_35    ,Sch=JA3
+set_property src_info {type:XDC file:1 line:83 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN G2  IOSTANDARD LVCMOS33 } [get_ports { SCL }]; #IO_L1N_T0_AD4N_35     ,Sch=JA4
 set_property src_info {type:XDC file:1 line:84 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN H1  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data2[7] }]; #IO_L3P_T0_DQS_AD5P_35 ,Sch=JA7
 set_property src_info {type:XDC file:1 line:85 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN K2  IOSTANDARD LVCMOS33 } [get_ports { ov7670_href1 }]; #IO_L5P_T0_AD13P_35    ,Sch=JA8
 set_property src_info {type:XDC file:1 line:86 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN H2  IOSTANDARD LVCMOS33 } [get_ports { ov7670_v_sync2 }]; #IO_L2P_T0_AD12P_35    ,Sch=JA9
+set_property src_info {type:XDC file:1 line:87 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN G3  IOSTANDARD LVCMOS33 } [get_ports { SDA }]; #IO_L1P_T0_AD4P_35     ,Sch=JA10
+set_property src_info {type:XDC file:1 line:92 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN A14  IOSTANDARD LVCMOS33 } [get_ports { SCL }]; #IO_L6P_T0_16       ,Sch=JB1
 set_property src_info {type:XDC file:1 line:93 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN A16  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[0] }]; #IO_L12P_T1_MRCC_16 ,Sch=JB2
 set_property src_info {type:XDC file:1 line:94 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN B15  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[2] }]; #IO_L11N_T1_SRCC_16 ,Sch=JB3
 set_property src_info {type:XDC file:1 line:95 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN B16  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[4] }]; #IO_L13N_T2_MRCC_16 ,Sch=JB4
+set_property src_info {type:XDC file:1 line:96 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN A15  IOSTANDARD LVCMOS33 } [get_ports { SDA }]; #IO_L6N_T0_VREF_16  ,Sch=JB7
 set_property src_info {type:XDC file:1 line:97 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN A17  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[1] }]; #IO_L12N_T1_MRCC_16 ,Sch=JB8
 set_property src_info {type:XDC file:1 line:98 export:INPUT save:INPUT read:READ} [current_design]
