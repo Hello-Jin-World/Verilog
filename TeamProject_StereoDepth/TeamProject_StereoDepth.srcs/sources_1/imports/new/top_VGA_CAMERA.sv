@@ -4,10 +4,14 @@ module top_VGA_CAMERA (
     input  logic       clk,
     input  logic       reset,
     input  logic       gray_sw,
+    // output logic [7:0] DATA_0_L,
     // inout  wire        SDA,
     // output logic       SCL,
-    output wire        SCL,
-    output wire        SDA,
+    input  logic       start,
+    output wire        SCL_L,
+    output wire        SDA_L,
+    output wire        SCL_R,
+    output wire        SDA_R,
     // ov7670 camera input signal
     output logic       ov7670_xclk1,
     input  logic       ov7670_pclk1,
@@ -34,15 +38,13 @@ module top_VGA_CAMERA (
     logic [9:0] y_pixel;
     logic we1, we2;
     logic [14:0] wAddr1, wAddr2, Dis_rAddr;
-    logic [15:0] wData1, wData2, buffer1, buffer2, buffer3, buffer, ssd_data;
+    logic [15:0] wData1, wData2, buffer1, buffer2, buffer, ssd_data;
     logic qvga_en1, qvga_en2, qvga_en3;
     logic [14:0] qvga_addr1, qvga_addr2, qvga_addr3;
-    logic vga_clk, sccb_clk;
-
-    // logic [15:0] rData_for_SAD1;
-    // logic [15:0] rData_for_SAD2;
-    // logic [11:0] gray_for_SAD1;
-    // logic [11:0] gray_for_SAD2;
+    logic vga_clk;
+    logic sccb_L_clk;
+    logic sccb_R_clk;
+    logic [7:0] buffer3;
 
     // SCCB U_SCCB (
     //     .clk  (clk),
@@ -50,13 +52,38 @@ module top_VGA_CAMERA (
     //     .SDA  (SDA),
     //     .SCL  (SCL)
     // );
-    camera_configure #(
-        .CLK_FREQ(25000000)
-    ) U_SCCB_Config (
-        .clk  (sccb_clk),
-        .start(),
-        .sioc (SCL),
-        .siod (SDA),
+
+    // image_read U_image_read (
+    //     .clk      (clk),
+    //     .reset    (reset),
+    //     .wclk1    (ov7670_pclk1),
+    //     .we1      (we1),
+    //     .wAddr1   (wAddr1),
+    //     .wData1   (wData1),
+    //     .wclk2    (ov7670_pclk2),
+    //     .we2      (we2),
+    //     .wAddr2   (wAddr2),
+    //     .wData2   (wData2),
+    //     .VSYNC    (),
+    //     .HSYNC    (),
+    //     .DATA_0_L (DATA_0_L),
+    //     .DATA_1_L (),
+    //     .ctrl_done()
+    // );
+
+    camera_configure U_SCCB_Config_Left (
+        .clk  (sccb_L_clk),
+        .start(start),
+        .sioc (SCL_L),
+        .siod (SDA_L),
+        .done ()
+    );
+
+    camera_configure U_SCCB_Config_Right (
+        .clk  (sccb_R_clk),
+        .start(start),
+        .sioc (SCL_R),
+        .siod (SDA_R),
         .done ()
     );
 
@@ -64,10 +91,12 @@ module top_VGA_CAMERA (
         .vga_clk    (vga_clk),
         .ov7670_clk1(ov7670_xclk1),
         .ov7670_clk2(ov7670_xclk2),
-        .sccb_clk   (sccb_clk),      // output sccb_clk
+        .sccb_L_clk (sccb_L_clk),    // output sccb_L_clk
+        .sccb_R_clk (sccb_R_clk),    // output sccb_R_clk
         .reset      (reset),
         .clk        (clk)
     );
+
 
     rbt2gray U_rbt2gray (
         .color_rgb  ({buffer[15:12], buffer[10:7], buffer[4:1]}),
@@ -79,7 +108,7 @@ module top_VGA_CAMERA (
     display_mux_2x1 U_display_mux_2x1 (
         .Left_Data (buffer1),
         .Right_Data(buffer2),
-        .Gray_Data (buffer3),
+        .Gray_Data ({buffer3[7:3], buffer3[7:2], buffer3[7:3]}),
         .x         (x_pixel),
         .y         (y_pixel),
         .Out_Data  (buffer)
@@ -107,53 +136,69 @@ module top_VGA_CAMERA (
         .wData      (wData2)
     );
 
-
-    frameBuffer U_FrameBufferLeft (
-        // write side ov7670
-        .wclk (ov7670_pclk1),
-        .we   (we1),
-        .wAddr(wAddr1),
-        .wData(wData1),
-        .rclk (vga_clk),
-        .oe   (qvga_en1),
-        .rAddr(qvga_addr1),
-        .rData(buffer1)
-        // .rData_for_SAD(rData_for_SAD1)
+    Disparity_Map U_Disparity_Map (
+        .clk   (clk),
+        .reset (reset),
+        .wclk1 (ov7670_pclk1),
+        .we1   (we1),
+        .wAddr1(wAddr1),
+        .wData1(wData1),
+        .wclk2 (ov7670_pclk2),
+        .we2   (we2),
+        .wAddr2(wAddr2),
+        .wData2(wData2),
+        .rclk  (vga_clk),
+        .oe    (qvga_en3),
+        .rAddr (qvga_addr3),
+        .rData (buffer3)
     );
 
-    frameBuffer U_FrameBufferRight (
-        // write side ov7670
-        .wclk (ov7670_pclk2),
-        .we   (we2),
-        .wAddr(wAddr2),
-        .wData(wData2),
-        .rclk (vga_clk),
-        .oe   (qvga_en2),
-        .rAddr(qvga_addr2),
-        .rData(buffer2)
-        // .rData_for_SAD(rData_for_SAD2)
-    );
+    // frameBuffer U_FrameBufferLeft (
+    //     // write side ov7670
+    //     .wclk (ov7670_pclk1),
+    //     .we   (we1),
+    //     .wAddr(wAddr1),
+    //     .wData(wData1),
+    //     .rclk (vga_clk),
+    //     .oe   (qvga_en1),
+    //     .rAddr(qvga_addr1),
+    //     .rData(buffer1)
+    //     // .rData_for_SAD(rData_for_SAD1)
+    // );
 
-    Disparity U_Disparity (
-        .clk        (clk),
-        .reset      (reset),
-        .rAddr      (Dis_rAddr),
-        .data1      (wData1),
-        .data2      (wData2),
-        .displayData(ssd_data)
-    );
+    // frameBuffer U_FrameBufferRight (
+    //     // write side ov7670
+    //     .wclk (ov7670_pclk2),
+    //     .we   (we2),
+    //     .wAddr(wAddr2),
+    //     .wData(wData2),
+    //     .rclk (vga_clk),
+    //     .oe   (qvga_en2),
+    //     .rAddr(qvga_addr2),
+    //     .rData(buffer2)
+    //     // .rData_for_SAD(rData_for_SAD2)
+    // );
 
-    frameBuffer U_FrameBufferDisparity (
-        // write side ov7670
-        .wclk (clk),
-        .we   (1),
-        .wAddr(Dis_rAddr),
-        .wData(ssd_data),
-        .rclk (vga_clk),
-        .oe   (qvga_en3),
-        .rAddr(qvga_addr3),
-        .rData(buffer3)
-    );
+    // Disparity U_Disparity (
+    //     .clk        (clk),
+    //     .reset      (reset),
+    //     .rAddr      (Dis_rAddr),
+    //     .data1      (wData1),
+    //     .data2      (wData2),
+    //     .displayData(ssd_data)
+    // );
+
+    // frameBuffer U_FrameBufferDisparity (
+    //     // write side ov7670
+    //     .wclk (clk),
+    //     .we   (1),
+    //     .wAddr(Dis_rAddr),
+    //     .wData(ssd_data),
+    //     .rclk (vga_clk),
+    //     .oe   (qvga_en3),
+    //     .rAddr(qvga_addr3),
+    //     .rData(buffer3)
+    // );
 
     // window_sad_processor U_window_sad_processor (
     //     .clk        (clk),
@@ -256,23 +301,23 @@ module qvga_addr_decoder (
                 qvga_en3   = 1'b0;
             end
         end else begin
-            if (x < 320) begin
-                qvga_addr1 = 0;
-                qvga_en1   = 1'b0;
-                qvga_addr2 = 0;
-                qvga_en2   = 1'b0;
-                qvga_addr3 = y[9:1] * 160 + x[9:1];
-                qvga_en3   = 1'b1;
-            end else begin
-                qvga_addr1 = 0;
-                qvga_en1   = 1'b0;
-                qvga_addr2 = 0;
-                qvga_en2   = 1'b0;
-                qvga_addr3 = 0;
-                qvga_en3   = 1'b0;
-            end
+            // if (x < 320) begin
+            //     qvga_addr1 = 0;
+            //     qvga_en1   = 1'b0;
+            //     qvga_addr2 = 0;
+            //     qvga_en2   = 1'b0;
+            //     qvga_addr3 = y[9:1] * 160 + x[9:1];
+            //     qvga_en3   = 1'b1;
+            // end else begin
+            qvga_addr1 = 0;
+            qvga_en1   = 1'b0;
+            qvga_addr2 = 0;
+            qvga_en2   = 1'b0;
+            qvga_addr3 = 0;
+            qvga_en3   = 1'b0;
         end
     end
+    // end
 endmodule
 
 module display_mux_2x1 (

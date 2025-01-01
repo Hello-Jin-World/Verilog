@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
--- Date        : Wed Jan  1 12:23:59 2025
--- Host        : DESKTOP-PFRE25G running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               d:/Verilog/Verilog/TeamProject_StereoDepth/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl
+-- Date        : Wed Jan  1 14:08:23 2025
+-- Host        : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim -rename_top clk_wiz_0 -prefix
+--               clk_wiz_0_ clk_wiz_0_sim_netlist.vhdl
 -- Design      : clk_wiz_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -19,12 +19,11 @@ entity clk_wiz_0_clk_wiz_0_clk_wiz is
     vga_clk : out STD_LOGIC;
     ov7670_clk1 : out STD_LOGIC;
     ov7670_clk2 : out STD_LOGIC;
-    sccb_clk : out STD_LOGIC;
+    sccb_L_clk : out STD_LOGIC;
+    sccb_R_clk : out STD_LOGIC;
     reset : in STD_LOGIC;
     clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of clk_wiz_0_clk_wiz_0_clk_wiz : entity is "clk_wiz_0_clk_wiz";
 end clk_wiz_0_clk_wiz_0_clk_wiz;
 
 architecture STRUCTURE of clk_wiz_0_clk_wiz_0_clk_wiz is
@@ -33,7 +32,8 @@ architecture STRUCTURE of clk_wiz_0_clk_wiz_0_clk_wiz is
   signal clkfbout_clk_wiz_0 : STD_LOGIC;
   signal ov7670_clk1_clk_wiz_0 : STD_LOGIC;
   signal ov7670_clk2_clk_wiz_0 : STD_LOGIC;
-  signal sccb_clk_clk_wiz_0 : STD_LOGIC;
+  signal sccb_L_clk_clk_wiz_0 : STD_LOGIC;
+  signal sccb_R_clk_clk_wiz_0 : STD_LOGIC;
   signal vga_clk_clk_wiz_0 : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED : STD_LOGIC;
@@ -42,7 +42,6 @@ architecture STRUCTURE of clk_wiz_0_clk_wiz_0_clk_wiz is
   signal NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED : STD_LOGIC;
-  signal NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT6_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_DRDY_UNCONNECTED : STD_LOGIC;
@@ -62,6 +61,7 @@ architecture STRUCTURE of clk_wiz_0_clk_wiz_0_clk_wiz is
   attribute BOX_TYPE of clkout2_buf : label is "PRIMITIVE";
   attribute BOX_TYPE of clkout3_buf : label is "PRIMITIVE";
   attribute BOX_TYPE of clkout4_buf : label is "PRIMITIVE";
+  attribute BOX_TYPE of clkout5_buf : label is "PRIMITIVE";
   attribute BOX_TYPE of mmcm_adv_inst : label is "PRIMITIVE";
 begin
 clkf_buf: unisim.vcomponents.BUFG
@@ -94,8 +94,13 @@ clkout3_buf: unisim.vcomponents.BUFG
     );
 clkout4_buf: unisim.vcomponents.BUFG
      port map (
-      I => sccb_clk_clk_wiz_0,
-      O => sccb_clk
+      I => sccb_L_clk_clk_wiz_0,
+      O => sccb_L_clk
+    );
+clkout5_buf: unisim.vcomponents.BUFG
+     port map (
+      I => sccb_R_clk_clk_wiz_0,
+      O => sccb_R_clk
     );
 mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
     generic map(
@@ -122,7 +127,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKOUT3_PHASE => 0.000000,
       CLKOUT3_USE_FINE_PS => false,
       CLKOUT4_CASCADE => false,
-      CLKOUT4_DIVIDE => 1,
+      CLKOUT4_DIVIDE => 24,
       CLKOUT4_DUTY_CYCLE => 0.500000,
       CLKOUT4_PHASE => 0.000000,
       CLKOUT4_USE_FINE_PS => false,
@@ -163,9 +168,9 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKOUT1B => NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED,
       CLKOUT2 => ov7670_clk2_clk_wiz_0,
       CLKOUT2B => NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED,
-      CLKOUT3 => sccb_clk_clk_wiz_0,
+      CLKOUT3 => sccb_L_clk_clk_wiz_0,
       CLKOUT3B => NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED,
-      CLKOUT4 => NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED,
+      CLKOUT4 => sccb_R_clk_clk_wiz_0,
       CLKOUT5 => NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED,
       CLKOUT6 => NLW_mmcm_adv_inst_CLKOUT6_UNCONNECTED,
       DADDR(6 downto 0) => B"0000000",
@@ -193,7 +198,8 @@ entity clk_wiz_0 is
     vga_clk : out STD_LOGIC;
     ov7670_clk1 : out STD_LOGIC;
     ov7670_clk2 : out STD_LOGIC;
-    sccb_clk : out STD_LOGIC;
+    sccb_L_clk : out STD_LOGIC;
+    sccb_R_clk : out STD_LOGIC;
     reset : in STD_LOGIC;
     clk : in STD_LOGIC
   );
@@ -209,7 +215,8 @@ inst: entity work.clk_wiz_0_clk_wiz_0_clk_wiz
       ov7670_clk1 => ov7670_clk1,
       ov7670_clk2 => ov7670_clk2,
       reset => reset,
-      sccb_clk => sccb_clk,
+      sccb_L_clk => sccb_L_clk,
+      sccb_R_clk => sccb_R_clk,
       vga_clk => vga_clk
     );
 end STRUCTURE;

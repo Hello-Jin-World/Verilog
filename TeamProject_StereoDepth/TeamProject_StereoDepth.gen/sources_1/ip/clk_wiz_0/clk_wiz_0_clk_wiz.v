@@ -59,7 +59,8 @@
 // _vga_clk__25.00000______0.000______50.0______200.470____132.063
 // ov7670_clk1__24.00000______0.000______50.0______202.114____132.063
 // ov7670_clk2__24.00000______0.000______50.0______202.114____132.063
-// sccb_clk__25.00000______0.000______50.0______200.470____132.063
+// sccb_L_clk__25.00000______0.000______50.0______200.470____132.063
+// sccb_R_clk__25.00000______0.000______50.0______200.470____132.063
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -75,7 +76,8 @@ module clk_wiz_0_clk_wiz
   output        vga_clk,
   output        ov7670_clk1,
   output        ov7670_clk2,
-  output        sccb_clk,
+  output        sccb_L_clk,
+  output        sccb_R_clk,
   // Status and control signals
   input         reset,
   input         clk
@@ -101,8 +103,8 @@ wire clk_in2_clk_wiz_0;
   wire        vga_clk_clk_wiz_0;
   wire        ov7670_clk1_clk_wiz_0;
   wire        ov7670_clk2_clk_wiz_0;
-  wire        sccb_clk_clk_wiz_0;
-  wire        clk_out5_clk_wiz_0;
+  wire        sccb_L_clk_clk_wiz_0;
+  wire        sccb_R_clk_clk_wiz_0;
   wire        clk_out6_clk_wiz_0;
   wire        clk_out7_clk_wiz_0;
 
@@ -117,7 +119,6 @@ wire clk_in2_clk_wiz_0;
    wire clkout1b_unused;
    wire clkout2b_unused;
    wire clkout3b_unused;
-   wire clkout4_unused;
   wire        clkout5_unused;
   wire        clkout6_unused;
   wire        clkfbstopped_unused;
@@ -149,6 +150,10 @@ wire clk_in2_clk_wiz_0;
     .CLKOUT3_PHASE        (0.000),
     .CLKOUT3_DUTY_CYCLE   (0.500),
     .CLKOUT3_USE_FINE_PS  ("FALSE"),
+    .CLKOUT4_DIVIDE       (24),
+    .CLKOUT4_PHASE        (0.000),
+    .CLKOUT4_DUTY_CYCLE   (0.500),
+    .CLKOUT4_USE_FINE_PS  ("FALSE"),
     .CLKIN1_PERIOD        (10.0))
   mmcm_adv_inst
     // Output clocks
@@ -161,9 +166,9 @@ wire clk_in2_clk_wiz_0;
     .CLKOUT1B            (clkout1b_unused),
     .CLKOUT2             (ov7670_clk2_clk_wiz_0),
     .CLKOUT2B            (clkout2b_unused),
-    .CLKOUT3             (sccb_clk_clk_wiz_0),
+    .CLKOUT3             (sccb_L_clk_clk_wiz_0),
     .CLKOUT3B            (clkout3b_unused),
-    .CLKOUT4             (clkout4_unused),
+    .CLKOUT4             (sccb_R_clk_clk_wiz_0),
     .CLKOUT5             (clkout5_unused),
     .CLKOUT6             (clkout6_unused),
      // Input clock control
@@ -221,8 +226,12 @@ wire clk_in2_clk_wiz_0;
     .I   (ov7670_clk2_clk_wiz_0));
 
   BUFG clkout4_buf
-   (.O   (sccb_clk),
-    .I   (sccb_clk_clk_wiz_0));
+   (.O   (sccb_L_clk),
+    .I   (sccb_L_clk_clk_wiz_0));
+
+  BUFG clkout5_buf
+   (.O   (sccb_R_clk),
+    .I   (sccb_R_clk_clk_wiz_0));
 
 
 

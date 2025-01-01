@@ -50,9 +50,11 @@ module Disparity (
     localparam RW = 8'h4c, GW = 8'h96, BW = 8'h1e;
 
     always_comb begin
-        rAddr_next = rAddr_reg;
-        data_next  = data_reg;
-        state_next = state_reg;
+        rAddr_next    = rAddr_reg;
+        data_next     = data_reg;
+        state_next    = state_reg;
+        current_data1 = prv_data1;
+        current_data2 = prv_data2;
         case (state_reg)
             0: begin
                 if (current_data1 != prv_data1 || current_data2 != prv_data2) begin
