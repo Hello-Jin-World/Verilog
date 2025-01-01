@@ -89,11 +89,11 @@ set_property -dict { PACKAGE_PIN G3  IOSTANDARD LVCMOS33 } [get_ports { SDA }]; 
 
 ##Pmod Header JB
 
-set_property -dict { PACKAGE_PIN A14  IOSTANDARD LVCMOS33 } [get_ports { SCL }]; #IO_L6P_T0_16       ,Sch=JB1
+# set_property -dict { PACKAGE_PIN A14  IOSTANDARD LVCMOS33 } [get_ports { SCL }]; #IO_L6P_T0_16       ,Sch=JB1
 set_property -dict { PACKAGE_PIN A16  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[0] }]; #IO_L12P_T1_MRCC_16 ,Sch=JB2
 set_property -dict { PACKAGE_PIN B15  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[2] }]; #IO_L11N_T1_SRCC_16 ,Sch=JB3
 set_property -dict { PACKAGE_PIN B16  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[4] }]; #IO_L13N_T2_MRCC_16 ,Sch=JB4
-set_property -dict { PACKAGE_PIN A15  IOSTANDARD LVCMOS33 } [get_ports { SDA }]; #IO_L6N_T0_VREF_16  ,Sch=JB7
+# set_property -dict { PACKAGE_PIN A15  IOSTANDARD LVCMOS33 } [get_ports { SDA }]; #IO_L9N_T0_VREF_16  ,Sch=JB7
 set_property -dict { PACKAGE_PIN A17  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[1] }]; #IO_L12N_T1_MRCC_16 ,Sch=JB8
 set_property -dict { PACKAGE_PIN C15  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[3] }]; #IO_L11P_T1_SRCC_16 ,Sch=JB9
 set_property -dict { PACKAGE_PIN C16  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[5] }]; #IO_L13P_T2_MRCC_16 ,Sch=JB10

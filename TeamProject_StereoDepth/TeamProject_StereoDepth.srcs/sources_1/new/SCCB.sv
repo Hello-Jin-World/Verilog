@@ -15,7 +15,7 @@ module SCCB (
     logic SDA_out_reg, SDA_out_next;
     logic SCL_reg, SCL_next;
     logic write_reg, write_next;
-    logic [6:0] j_reg, j_next;
+    logic [5:0] j_reg, j_next;
 
     assign SDA_out = SDA_out_reg;
     assign SCL = SCL_reg;
@@ -50,8 +50,8 @@ module SCCB (
     ;
 
     // Register arrays for configuration
-    logic [7:0] reg_addr[73:0];
-    logic [7:0] reg_data[73:0];
+    logic [7:0] reg_addr[42:0];
+    logic [7:0] reg_data[42:0];
     logic [7:0] slave_address = 8'b100_0010_0;
 
 
@@ -224,17 +224,14 @@ module SCCB (
                 end
                 if (manual_clk) begin
                     if (i_reg == 8) begin
-                        if (j_reg == 40) begin
-                            state_next   = MASTER_ACK;
-                            SDA_out_next = LOW;
-                            // state_next = R_DATA0;
-                            // i_next     = 0;
-                            // j_next     = 0;
-                        end else begin
-                            SDA_out_next = LOW;
-                            state_next   = HALF_CLK0;
-                            i_next       = 0;
-                        end
+                        // if (j_reg == 40) begin
+                        //     state_next   = MASTER_ACK;
+                        //     SDA_out_next = LOW;
+                        // end else begin
+                        SDA_out_next = LOW;
+                        state_next   = HALF_CLK0;
+                        i_next       = 0;
+                        // end
                     end else begin
                         state_next   = R_ADDR1;
                         SDA_out_next = reg_addr[j_reg][7-i_reg];
@@ -294,9 +291,8 @@ module SCCB (
                     SCL_next = ~SCL_reg;
                 end
                 if (manual_clk) begin
-                    j_next = j_reg + 1;
                     i_next = 0;
-                    state_next = R_ADDR0;
+                    state_next = MASTER_ACK;
                 end
             end
 
@@ -307,138 +303,22 @@ module SCCB (
                 end
                 if (manual_clk) begin
                     state_next = WAIT;
+                    j_next     = j_reg + 1;
                 end
             end
             WAIT: begin
                 SDA_out_next = HIGH;
                 SCL_next     = HIGH;
                 state_next   = WAIT;
-                // if (manual_clk) begin
-                //     state_next = IDLE;
-                // end
+                if (manual_clk && j_reg < 43) begin
+                    state_next = IDLE;
+                end
             end
 
         endcase
     end
 
     always_comb begin
-    reg_addr[0] = 8'h3A;  reg_data[0] = 8'h04;  // REG_TSLB
-    reg_addr[1] = 8'h12;  reg_data[1] = 8'h00;  // REG_COM7
-    reg_addr[2] = 8'h13;  reg_data[2] = 8'hE7;  // REG_COM8
-    reg_addr[3] = 8'h6A;  reg_data[3] = 8'h9F;  // REG_AWBCTR0
-    reg_addr[4] = 8'hB0;  reg_data[4] = 8'h84;  // REG_RESERVED
-    reg_addr[5] = 8'h70;  reg_data[5] = 8'h3A;  // REG_HSTART
-    reg_addr[6] = 8'h71;  reg_data[6] = 8'h35;  // REG_HSTOP
-    reg_addr[7] = 8'h72;  reg_data[7] = 8'h11;  // REG_VSTART
-    reg_addr[8] = 8'h73;  reg_data[8] = 8'hF0;  // REG_VSTOP
-    reg_addr[9] = 8'h32;  reg_data[9] = 8'h80;  // REG_HREF
-    reg_addr[10] = 8'h3C; reg_data[10] = 8'h78; // REG_COM12
-    reg_addr[11] = 8'h3D; reg_data[11] = 8'hC0; // REG_COM13
-    reg_addr[12] = 8'h4F; reg_data[12] = 8'hB3; // REG_MTX1
-    reg_addr[13] = 8'h50; reg_data[13] = 8'hB3; // REG_MTX2
-    reg_addr[14] = 8'h51; reg_data[14] = 8'h00; // REG_MTX3
-    reg_addr[15] = 8'h52; reg_data[15] = 8'h3D; // REG_MTX4
-    reg_addr[16] = 8'h53; reg_data[16] = 8'hA7; // REG_MTX5
-    reg_addr[17] = 8'h54; reg_data[17] = 8'hE4; // REG_MTX6
-    reg_addr[18] = 8'h58; reg_data[18] = 8'h9E; // REG_MTXS
-    reg_addr[19] = 8'h17; reg_data[19] = 8'h14; // REG_HSTART
-    reg_addr[20] = 8'h18; reg_data[20] = 8'h02; // REG_HSTOP
-    reg_addr[21] = 8'h32; reg_data[21] = 8'h80; // REG_HREF
-    reg_addr[22] = 8'h19; reg_data[22] = 8'h03; // REG_VSTART
-    reg_addr[23] = 8'h1A; reg_data[23] = 8'h7B; // REG_VSTOP
-    reg_addr[24] = 8'h0F; reg_data[24] = 8'h41; // REG_COM6
-    reg_addr[25] = 8'h1E; reg_data[25] = 8'h00; // REG_MVFP
-    reg_addr[26] = 8'h33; reg_data[26] = 8'h0B; // REG_CHLF
-    reg_addr[27] = 8'h69; reg_data[27] = 8'h00; // REG_GFIX
-    reg_addr[28] = 8'h74; reg_data[28] = 8'h00; // REG_REG74
-    reg_addr[29] = 8'hB0; reg_data[29] = 8'h84; // REG_RESERVED
-    reg_addr[30] = 8'hB1; reg_data[30] = 8'h0C; // REG_ABLC1
-    reg_addr[31] = 8'hB2; reg_data[31] = 8'h0E; // REG_RESERVED
-    reg_addr[32] = 8'hB3; reg_data[32] = 8'h80; // REG_THL_ST
-    reg_addr[33] = 8'h70; reg_data[33] = 8'h3A; // Mystery Scaling
-    reg_addr[34] = 8'h71; reg_data[34] = 8'h35; // Mystery Scaling
-    reg_addr[35] = 8'h72; reg_data[35] = 8'h11; // Mystery Scaling
-    reg_addr[36] = 8'h73; reg_data[36] = 8'hF0; // Mystery Scaling
-    reg_addr[37] = 8'hA2; reg_data[37] = 8'h02; // Mystery Scaling
-    reg_addr[38] = 8'h7A; reg_data[38] = 8'h20; // Gamma Curve
-    reg_addr[39] = 8'h7B; reg_data[39] = 8'h10; // Gamma Curve
-
-// reg_addr[0]  = 8'h12;  reg_data[0]  = 8'h80;  // reset
-// reg_addr[1]  = 8'hFF;  reg_data[1]  = 8'hF0;  // delay
-// reg_addr[2]  = 8'h12;  reg_data[2]  = 8'h04;  // REG_COM7, set RGB color output
-// reg_addr[3]  = 8'h11;  reg_data[3]  = 8'h80;  // REG_CLKRC, internal PLL matches input clock
-// reg_addr[4]  = 8'h0C;  reg_data[4]  = 8'h00;  // REG_COM3, default settings
-// reg_addr[5]  = 8'h3E;  reg_data[5]  = 8'h00;  // REG_COM14, no scaling, normal pclock
-// reg_addr[6]  = 8'h04;  reg_data[6]  = 8'h00;  // REG_COM1, disable CCIR656
-// reg_addr[7]  = 8'h40;  reg_data[7]  = 8'hD0;  // REG_COM15, RGB565, full output range
-// reg_addr[8]  = 8'h3A;  reg_data[8]  = 8'h04;  // REG_TSLB, set correct output data sequence
-// reg_addr[9]  = 8'h14;  reg_data[9]  = 8'h18;  // REG_COM9, MAX AGC value x4
-// reg_addr[10] = 8'h4F;  reg_data[10] = 8'hB3;  // REG_MTX1, matrix coefficient
-// reg_addr[11] = 8'h50;  reg_data[11] = 8'hB3;  // REG_MTX2, matrix coefficient
-// reg_addr[12] = 8'h51;  reg_data[12] = 8'h00;  // REG_MTX3, matrix coefficient
-// reg_addr[13] = 8'h52;  reg_data[13] = 8'h3D;  // REG_MTX4, matrix coefficient
-// reg_addr[14] = 8'h53;  reg_data[14] = 8'hA7;  // REG_MTX5, matrix coefficient
-// reg_addr[15] = 8'h54;  reg_data[15] = 8'hE4;  // REG_MTX6, matrix coefficient
-// reg_addr[16] = 8'h58;  reg_data[16] = 8'h9E;  // REG_MTXS, matrix coefficient
-// reg_addr[17] = 8'h3D;  reg_data[17] = 8'hC0;  // REG_COM13, gamma enable
-// reg_addr[18] = 8'h17;  reg_data[18] = 8'h14;  // REG_HSTART, start high 8 bits
-// reg_addr[19] = 8'h18;  reg_data[19] = 8'h02;  // REG_HSTOP, stop high 8 bits
-// reg_addr[20] = 8'h32;  reg_data[20] = 8'h80;  // REG_HREF, edge offset
-// reg_addr[21] = 8'h19;  reg_data[21] = 8'h03;  // REG_VSTART, start high 8 bits
-// reg_addr[22] = 8'h1A;  reg_data[22] = 8'h7B;  // REG_VSTOP, stop high 8 bits
-// reg_addr[23] = 8'h03;  reg_data[23] = 8'h0A;  // REG_VREF, vsync edge offset
-// reg_addr[24] = 8'h0F;  reg_data[24] = 8'h41;  // REG_COM6, reset timings
-// reg_addr[25] = 8'h1E;  reg_data[25] = 8'h00;  // REG_MVFP, disable mirror/flip
-// reg_addr[26] = 8'h33;  reg_data[26] = 8'h0B;  // REG_CHLF, magic value
-// reg_addr[27] = 8'h3C;  reg_data[27] = 8'h78;  // REG_COM12, no HREF when VSYNC low
-// reg_addr[28] = 8'h69;  reg_data[28] = 8'h00;  // REG_GFIX, fix gain control
-// reg_addr[29] = 8'h74;  reg_data[29] = 8'h00;  // REG_REG74, digital gain control
-// reg_addr[30] = 8'hB0;  reg_data[30] = 8'h84;  // REG_RSVD, magic value
-// reg_addr[31] = 8'hB1;  reg_data[31] = 8'h0C;  // REG_ABLC1, magic value
-// reg_addr[32] = 8'hB2;  reg_data[32] = 8'h0E;  // REG_RSVD, magic value
-// reg_addr[33] = 8'hB3;  reg_data[33] = 8'h80;  // REG_THL_ST, magic value
-// reg_addr[34] = 8'h70;  reg_data[34] = 8'h3A;  // mystery scaling
-// reg_addr[35] = 8'h71;  reg_data[35] = 8'h35;  // mystery scaling
-// reg_addr[36] = 8'h72;  reg_data[36] = 8'h11;  // mystery scaling
-// reg_addr[37] = 8'h73;  reg_data[37] = 8'hF0;  // mystery scaling
-// reg_addr[38] = 8'hA2;  reg_data[38] = 8'h02;  // gamma curve
-// reg_addr[39] = 8'h7A;  reg_data[39] = 8'h20;  // gamma curve
-// reg_addr[40] = 8'h7B;  reg_data[40] = 8'h10;  // gamma curve
-// reg_addr[41] = 8'h7C;  reg_data[41] = 8'h1E;  // gamma curve
-// reg_addr[42] = 8'h7D;  reg_data[42] = 8'h35;  // gamma curve
-// reg_addr[43] = 8'h7E;  reg_data[43] = 8'h5A;  // gamma curve
-// reg_addr[44] = 8'h7F;  reg_data[44] = 8'h69;  // gamma curve
-// reg_addr[45] = 8'h80;  reg_data[45] = 8'h76;  // gamma curve
-// reg_addr[46] = 8'h81;  reg_data[46] = 8'h80;  // gamma curve
-// reg_addr[47] = 8'h82;  reg_data[47] = 8'h88;  // gamma curve
-// reg_addr[48] = 8'h83;  reg_data[48] = 8'h8F;  // gamma curve
-// reg_addr[49] = 8'h84;  reg_data[49] = 8'h96;  // gamma curve
-// reg_addr[50] = 8'h85;  reg_data[50] = 8'hA3;  // gamma curve
-// reg_addr[51] = 8'h86;  reg_data[51] = 8'hAF;  // gamma curve
-// reg_addr[52] = 8'h87;  reg_data[52] = 8'hC4;  // gamma curve
-// reg_addr[53] = 8'h88;  reg_data[53] = 8'hD7;  // gamma curve
-// reg_addr[54] = 8'h89;  reg_data[54] = 8'hE8;  // gamma curve
-// reg_addr[55] = 8'h13;  reg_data[55] = 8'hE0;  // REG_COM8, disable AGC / AEC
-// reg_addr[56] = 8'h00;  reg_data[56] = 8'h00;  // set gain reg to 0 for AGC
-// reg_addr[57] = 8'h10;  reg_data[57] = 8'h00;  // set ARCJ reg to 0
-// reg_addr[58] = 8'h0D;  reg_data[58] = 8'h40;  // magic reserved bit for COM4
-// reg_addr[59] = 8'h14;  reg_data[59] = 8'h18;  // REG_COM9, 4x gain + magic bit
-// reg_addr[60] = 8'hA5;  reg_data[60] = 8'h05;  // REG_BD50MAX
-// reg_addr[61] = 8'hAB;  reg_data[61] = 8'h07;  // REG_DB60MAX
-// reg_addr[62] = 8'h24;  reg_data[62] = 8'h95;  // REG_AGC upper limit
-// reg_addr[63] = 8'h25;  reg_data[63] = 8'h33;  // REG_AGC lower limit
-// reg_addr[64] = 8'h26;  reg_data[64] = 8'hE3;  // REG_AGC/AEC fast mode op region
-// reg_addr[65] = 8'h9F;  reg_data[65] = 8'h78;  // REG_HAECC1
-// reg_addr[66] = 8'hA0;  reg_data[66] = 8'h68;  // REG_HAECC2
-// reg_addr[67] = 8'hA1;  reg_data[67] = 8'h03;  // magic
-// reg_addr[68] = 8'hA6;  reg_data[68] = 8'hD8;  // REG_HAECC3
-// reg_addr[69] = 8'hA7;  reg_data[69] = 8'hD8;  // REG_HAECC4
-// reg_addr[70] = 8'hA8;  reg_data[70] = 8'hF0;  // REG_HAECC5
-// reg_addr[71] = 8'hA9;  reg_data[71] = 8'h90;  // REG_HAECC6
-// reg_addr[72] = 8'hAA;  reg_data[72] = 8'h94;  // REG_HAECC7
-// reg_addr[73] = 8'h13;  reg_data[73] = 8'hE5;  // REG_COM8, enable AGC / AEC
-
-
         // reg_addr[0]  = 8'h3A;
         // reg_data[0]  = 8'h04;  // REG_TSLB
         // reg_addr[1]  = 8'h12;
@@ -448,102 +328,259 @@ module SCCB (
         // reg_addr[3]  = 8'h6A;
         // reg_data[3]  = 8'h9F;  // REG_AWBCTR0
         // reg_addr[4]  = 8'hB0;
-        // reg_data[4]  = 8'h84;
+        // reg_data[4]  = 8'h84;  // REG_RESERVED
         // reg_addr[5]  = 8'h70;
-        // reg_data[5]  = 8'h3A;
+        // reg_data[5]  = 8'h3A;  // REG_HSTART
         // reg_addr[6]  = 8'h71;
-        // reg_data[6]  = 8'h35;
+        // reg_data[6]  = 8'h35;  // REG_HSTOP
         // reg_addr[7]  = 8'h72;
-        // reg_data[7]  = 8'h11;
+        // reg_data[7]  = 8'h11;  // REG_VSTART
         // reg_addr[8]  = 8'h73;
-        // reg_data[8]  = 8'hF0;
-        // reg_addr[9]  = 8'h7A;
-        // reg_data[9]  = 8'h20;
-        // reg_addr[10] = 8'h7B;
-        // reg_data[10] = 8'h10;
-        // reg_addr[11] = 8'h7C;
-        // reg_data[11] = 8'h1E;
-        // reg_addr[12] = 8'h7D;
-        // reg_data[12] = 8'h35;
-        // reg_addr[13] = 8'h7E;
-        // reg_data[13] = 8'h5A;
-        // reg_addr[14] = 8'h7F;
-        // reg_data[14] = 8'h69;
-        // reg_addr[15] = 8'h80;
-        // reg_data[15] = 8'h76;
-        // reg_addr[16] = 8'h81;
-        // reg_data[16] = 8'h80;
-        // reg_addr[17] = 8'h82;
-        // reg_data[17] = 8'h88;
-        // reg_addr[18] = 8'h83;
-        // reg_data[18] = 8'h8F;
-        // reg_addr[19] = 8'h84;
-        // reg_data[19] = 8'h96;
-        // reg_addr[20] = 8'h85;
-        // reg_data[20] = 8'hA3;
-        // reg_addr[21] = 8'h86;
-        // reg_data[21] = 8'hAF;
-        // reg_addr[22] = 8'h87;
-        // reg_data[22] = 8'hC4;
-        // reg_addr[23] = 8'h88;
-        // reg_data[23] = 8'hD7;
-        // reg_addr[24] = 8'h89;
-        // reg_data[24] = 8'hE8;
-        // reg_addr[25] = 8'h00;
-        // reg_data[25] = 8'hFF;  // End of configuration
+        // reg_data[8]  = 8'hF0;  // REG_VSTOP
+        // reg_addr[9]  = 8'h32;
+        // reg_data[9]  = 8'h80;  // REG_HREF
+        // reg_addr[10] = 8'h3C;
+        // reg_data[10] = 8'h78;  // REG_COM12
+        // reg_addr[11] = 8'h3D;
+        // reg_data[11] = 8'hC0;  // REG_COM13
+        // reg_addr[12] = 8'h4F;
+        // reg_data[12] = 8'hB3;  // REG_MTX1
+        // reg_addr[13] = 8'h50;
+        // reg_data[13] = 8'hB3;  // REG_MTX2
+        // reg_addr[14] = 8'h51;
+        // reg_data[14] = 8'h00;  // REG_MTX3
+        // reg_addr[15] = 8'h52;
+        // reg_data[15] = 8'h3D;  // REG_MTX4
+        // reg_addr[16] = 8'h53;
+        // reg_data[16] = 8'hA7;  // REG_MTX5
+        // reg_addr[17] = 8'h54;
+        // reg_data[17] = 8'hE4;  // REG_MTX6
+        // reg_addr[18] = 8'h58;
+        // reg_data[18] = 8'h9E;  // REG_MTXS
+        // reg_addr[19] = 8'h17;
+        // reg_data[19] = 8'h14;  // REG_HSTART
+        // reg_addr[20] = 8'h18;
+        // reg_data[20] = 8'h02;  // REG_HSTOP
+        // reg_addr[21] = 8'h32;
+        // reg_data[21] = 8'h80;  // REG_HREF
+        // reg_addr[22] = 8'h19;
+        // reg_data[22] = 8'h03;  // REG_VSTART
+        // reg_addr[23] = 8'h1A;
+        // reg_data[23] = 8'h7B;  // REG_VSTOP
+        // reg_addr[24] = 8'h0F;
+        // reg_data[24] = 8'h41;  // REG_COM6
+        // reg_addr[25] = 8'h1E;
+        // reg_data[25] = 8'h00;  // REG_MVFP
+        // reg_addr[26] = 8'h33;
+        // reg_data[26] = 8'h0B;  // REG_CHLF
+        // reg_addr[27] = 8'h69;
+        // reg_data[27] = 8'h00;  // REG_GFIX
+        // reg_addr[28] = 8'h74;
+        // reg_data[28] = 8'h00;  // REG_REG74
+        // reg_addr[29] = 8'hB0;
+        // reg_data[29] = 8'h84;  // REG_RESERVED
+        // reg_addr[30] = 8'hB1;
+        // reg_data[30] = 8'h0C;  // REG_ABLC1
+        // reg_addr[31] = 8'hB2;
+        // reg_data[31] = 8'h0E;  // REG_RESERVED
+        // reg_addr[32] = 8'hB3;
+        // reg_data[32] = 8'h80;  // REG_THL_ST
+        // reg_addr[33] = 8'h70;
+        // reg_data[33] = 8'h3A;  // Mystery Scaling
+        // reg_addr[34] = 8'h71;
+        // reg_data[34] = 8'h35;  // Mystery Scaling
+        // reg_addr[35] = 8'h72;
+        // reg_data[35] = 8'h11;  // Mystery Scaling
+        // reg_addr[36] = 8'h73;
+        // reg_data[36] = 8'hF0;  // Mystery Scaling
+        // reg_addr[37] = 8'hA2;
+        // reg_data[37] = 8'h02;  // Mystery Scaling
+        // reg_addr[38] = 8'h7A;
+        // reg_data[38] = 8'h20;  // Gamma Curve
+        // reg_addr[39] = 8'h7B;
+        // reg_data[39] = 8'h10;  // Gamma Curve
 
-        // // Reset and Basic Settings
-        // reg_addr[26] = 8'h12;
-        // reg_data[26] = 8'h80;  // COM7: Reset
-        // reg_addr[27] = 8'h12;
-        // reg_data[27] = 8'h10;  // COM7: RGB mode
+        // reg_addr[0]  = 8'h12;  reg_data[0]  = 8'h80;  // reset
+        // reg_addr[1]  = 8'hFF;  reg_data[1]  = 8'hF0;  // delay
+        // reg_addr[2]  = 8'h12;  reg_data[2]  = 8'h04;  // REG_COM7, set RGB color output
+        // reg_addr[3]  = 8'h11;  reg_data[3]  = 8'h80;  // REG_CLKRC, internal PLL matches input clock
+        // reg_addr[4]  = 8'h0C;  reg_data[4]  = 8'h00;  // REG_COM3, default settings
+        // reg_addr[5]  = 8'h3E;  reg_data[5]  = 8'h00;  // REG_COM14, no scaling, normal pclock
+        // reg_addr[6]  = 8'h04;  reg_data[6]  = 8'h00;  // REG_COM1, disable CCIR656
+        // reg_addr[7]  = 8'h40;  reg_data[7]  = 8'hD0;  // REG_COM15, RGB565, full output range
+        // reg_addr[8]  = 8'h3A;  reg_data[8]  = 8'h04;  // REG_TSLB, set correct output data sequence
+        // reg_addr[9]  = 8'h14;  reg_data[9]  = 8'h18;  // REG_COM9, MAX AGC value x4
+        // reg_addr[10] = 8'h4F;  reg_data[10] = 8'hB3;  // REG_MTX1, matrix coefficient
+        // reg_addr[11] = 8'h50;  reg_data[11] = 8'hB3;  // REG_MTX2, matrix coefficient
+        // reg_addr[12] = 8'h51;  reg_data[12] = 8'h00;  // REG_MTX3, matrix coefficient
+        // reg_addr[13] = 8'h52;  reg_data[13] = 8'h3D;  // REG_MTX4, matrix coefficient
+        // reg_addr[14] = 8'h53;  reg_data[14] = 8'hA7;  // REG_MTX5, matrix coefficient
+        // reg_addr[15] = 8'h54;  reg_data[15] = 8'hE4;  // REG_MTX6, matrix coefficient
+        // reg_addr[16] = 8'h58;  reg_data[16] = 8'h9E;  // REG_MTXS, matrix coefficient
+        // reg_addr[17] = 8'h3D;  reg_data[17] = 8'hC0;  // REG_COM13, gamma enable
+        // reg_addr[18] = 8'h17;  reg_data[18] = 8'h14;  // REG_HSTART, start high 8 bits
+        // reg_addr[19] = 8'h18;  reg_data[19] = 8'h02;  // REG_HSTOP, stop high 8 bits
+        // reg_addr[20] = 8'h32;  reg_data[20] = 8'h80;  // REG_HREF, edge offset
+        // reg_addr[21] = 8'h19;  reg_data[21] = 8'h03;  // REG_VSTART, start high 8 bits
+        // reg_addr[22] = 8'h1A;  reg_data[22] = 8'h7B;  // REG_VSTOP, stop high 8 bits
+        // reg_addr[23] = 8'h03;  reg_data[23] = 8'h0A;  // REG_VREF, vsync edge offset
+        // reg_addr[24] = 8'h0F;  reg_data[24] = 8'h41;  // REG_COM6, reset timings
+        // reg_addr[25] = 8'h1E;  reg_data[25] = 8'h00;  // REG_MVFP, disable mirror/flip
+        // reg_addr[26] = 8'h33;  reg_data[26] = 8'h0B;  // REG_CHLF, magic value
+        // reg_addr[27] = 8'h3C;  reg_data[27] = 8'h78;  // REG_COM12, no HREF when VSYNC low
+        // reg_addr[28] = 8'h69;  reg_data[28] = 8'h00;  // REG_GFIX, fix gain control
+        // reg_addr[29] = 8'h74;  reg_data[29] = 8'h00;  // REG_REG74, digital gain control
+        // reg_addr[30] = 8'hB0;  reg_data[30] = 8'h84;  // REG_RSVD, magic value
+        // reg_addr[31] = 8'hB1;  reg_data[31] = 8'h0C;  // REG_ABLC1, magic value
+        // reg_addr[32] = 8'hB2;  reg_data[32] = 8'h0E;  // REG_RSVD, magic value
+        // reg_addr[33] = 8'hB3;  reg_data[33] = 8'h80;  // REG_THL_ST, magic value
+        // reg_addr[34] = 8'h70;  reg_data[34] = 8'h3A;  // mystery scaling
+        // reg_addr[35] = 8'h71;  reg_data[35] = 8'h35;  // mystery scaling
+        // reg_addr[36] = 8'h72;  reg_data[36] = 8'h11;  // mystery scaling
+        // reg_addr[37] = 8'h73;  reg_data[37] = 8'hF0;  // mystery scaling
+        // reg_addr[38] = 8'hA2;  reg_data[38] = 8'h02;  // gamma curve
+        // reg_addr[39] = 8'h7A;  reg_data[39] = 8'h20;  // gamma curve
+        // reg_addr[40] = 8'h7B;  reg_data[40] = 8'h10;  // gamma curve
+        // reg_addr[41] = 8'h7C;  reg_data[41] = 8'h1E;  // gamma curve
+        // reg_addr[42] = 8'h7D;  reg_data[42] = 8'h35;  // gamma curve
+        // reg_addr[43] = 8'h7E;  reg_data[43] = 8'h5A;  // gamma curve
+        // reg_addr[44] = 8'h7F;  reg_data[44] = 8'h69;  // gamma curve
+        // reg_addr[45] = 8'h80;  reg_data[45] = 8'h76;  // gamma curve
+        // reg_addr[46] = 8'h81;  reg_data[46] = 8'h80;  // gamma curve
+        // reg_addr[47] = 8'h82;  reg_data[47] = 8'h88;  // gamma curve
+        // reg_addr[48] = 8'h83;  reg_data[48] = 8'h8F;  // gamma curve
+        // reg_addr[49] = 8'h84;  reg_data[49] = 8'h96;  // gamma curve
+        // reg_addr[50] = 8'h85;  reg_data[50] = 8'hA3;  // gamma curve
+        // reg_addr[51] = 8'h86;  reg_data[51] = 8'hAF;  // gamma curve
+        // reg_addr[52] = 8'h87;  reg_data[52] = 8'hC4;  // gamma curve
+        // reg_addr[53] = 8'h88;  reg_data[53] = 8'hD7;  // gamma curve
+        // reg_addr[54] = 8'h89;  reg_data[54] = 8'hE8;  // gamma curve
+        // reg_addr[55] = 8'h13;  reg_data[55] = 8'hE0;  // REG_COM8, disable AGC / AEC
+        // reg_addr[56] = 8'h00;  reg_data[56] = 8'h00;  // set gain reg to 0 for AGC
+        // reg_addr[57] = 8'h10;  reg_data[57] = 8'h00;  // set ARCJ reg to 0
+        // reg_addr[58] = 8'h0D;  reg_data[58] = 8'h40;  // magic reserved bit for COM4
+        // reg_addr[59] = 8'h14;  reg_data[59] = 8'h18;  // REG_COM9, 4x gain + magic bit
+        // reg_addr[60] = 8'hA5;  reg_data[60] = 8'h05;  // REG_BD50MAX
+        // reg_addr[61] = 8'hAB;  reg_data[61] = 8'h07;  // REG_DB60MAX
+        // reg_addr[62] = 8'h24;  reg_data[62] = 8'h95;  // REG_AGC upper limit
+        // reg_addr[63] = 8'h25;  reg_data[63] = 8'h33;  // REG_AGC lower limit
+        // reg_addr[64] = 8'h26;  reg_data[64] = 8'hE3;  // REG_AGC/AEC fast mode op region
+        // reg_addr[65] = 8'h9F;  reg_data[65] = 8'h78;  // REG_HAECC1
+        // reg_addr[66] = 8'hA0;  reg_data[66] = 8'h68;  // REG_HAECC2
+        // reg_addr[67] = 8'hA1;  reg_data[67] = 8'h03;  // magic
+        // reg_addr[68] = 8'hA6;  reg_data[68] = 8'hD8;  // REG_HAECC3
+        // reg_addr[69] = 8'hA7;  reg_data[69] = 8'hD8;  // REG_HAECC4
+        // reg_addr[70] = 8'hA8;  reg_data[70] = 8'hF0;  // REG_HAECC5
+        // reg_addr[71] = 8'hA9;  reg_data[71] = 8'h90;  // REG_HAECC6
+        // reg_addr[72] = 8'hAA;  reg_data[72] = 8'h94;  // REG_HAECC7
+        // reg_addr[73] = 8'h13;  reg_data[73] = 8'hE5;  // REG_COM8, enable AGC / AEC
 
-        // // Scaling and Resolution Settings
-        // reg_addr[28] = 8'h0C;
-        // reg_data[28] = 8'h04;
 
-        // reg_addr[29] = 8'h3E;
-        // reg_data[29] = 8'h1A;
+        reg_addr[0]  = 8'h3A;
+        reg_data[0]  = 8'h04;  // REG_TSLB
+        reg_addr[1]  = 8'h12;
+        reg_data[1]  = 8'h00;  // REG_COM7
+        reg_addr[2]  = 8'h13;
+        reg_data[2]  = 8'hE7;  // REG_COM8
+        reg_addr[3]  = 8'h6A;
+        reg_data[3]  = 8'h9F;  // REG_AWBCTR0
+        reg_addr[4]  = 8'hB0;
+        reg_data[4]  = 8'h84;
+        reg_addr[5]  = 8'h70;
+        reg_data[5]  = 8'h3A;
+        reg_addr[6]  = 8'h71;
+        reg_data[6]  = 8'h35;
+        reg_addr[7]  = 8'h72;
+        reg_data[7]  = 8'h11;
+        reg_addr[8]  = 8'h73;
+        reg_data[8]  = 8'hF0;
+        reg_addr[9]  = 8'h7A;
+        reg_data[9]  = 8'h20;
+        reg_addr[10] = 8'h7B;
+        reg_data[10] = 8'h10;
+        reg_addr[11] = 8'h7C;
+        reg_data[11] = 8'h1E;
+        reg_addr[12] = 8'h7D;
+        reg_data[12] = 8'h35;
+        reg_addr[13] = 8'h7E;
+        reg_data[13] = 8'h5A;
+        reg_addr[14] = 8'h7F;
+        reg_data[14] = 8'h69;
+        reg_addr[15] = 8'h80;
+        reg_data[15] = 8'h76;
+        reg_addr[16] = 8'h81;
+        reg_data[16] = 8'h80;
+        reg_addr[17] = 8'h82;
+        reg_data[17] = 8'h88;
+        reg_addr[18] = 8'h83;
+        reg_data[18] = 8'h8F;
+        reg_addr[19] = 8'h84;
+        reg_data[19] = 8'h96;
+        reg_addr[20] = 8'h85;
+        reg_data[20] = 8'hA3;
+        reg_addr[21] = 8'h86;
+        reg_data[21] = 8'hAF;
+        reg_addr[22] = 8'h87;
+        reg_data[22] = 8'hC4;
+        reg_addr[23] = 8'h88;
+        reg_data[23] = 8'hD7;
+        reg_addr[24] = 8'h89;
+        reg_data[24] = 8'hE8;
+        reg_addr[25] = 8'h00;
+        reg_data[25] = 8'hFF;  // End of configuration
 
-        // reg_addr[30] = 8'h70;
-        // reg_data[30] = 8'h3A;
+        // Reset and Basic Settings
+        reg_addr[26] = 8'h12;
+        reg_data[26] = 8'h80;  // COM7: Reset
+        reg_addr[27] = 8'h12;
+        reg_data[27] = 8'h10;  // COM7: RGB mode
 
-        // reg_addr[31] = 8'h71;
-        // reg_data[31] = 8'h35;
+        // Scaling and Resolution Settings
+        reg_addr[28] = 8'h0C;
+        reg_data[28] = 8'h04;
 
-        // reg_addr[32] = 8'h72;
-        // reg_data[32] = 8'h22;
+        reg_addr[29] = 8'h3E;
+        reg_data[29] = 8'h1A;
 
-        // reg_addr[33] = 8'h73;
-        // reg_data[33] = 8'hF2;
+        reg_addr[30] = 8'h70;
+        reg_data[30] = 8'h3A;
 
-        // reg_addr[34] = 8'hA2;
-        // reg_data[34] = 8'h02;
+        reg_addr[31] = 8'h71;
+        reg_data[31] = 8'h35;
 
-        // reg_addr[35] = 8'hA2;
-        // reg_data[35] = 8'h02;
-        // // Set Frame QQVGA
-        // reg_addr[36] = 8'h17;
-        // reg_data[36] = 8'h15;
+        reg_addr[32] = 8'h72;
+        reg_data[32] = 8'h22;
 
-        // reg_addr[37] = 8'h18;
-        // reg_data[37] = 8'h03;
+        reg_addr[33] = 8'h73;
+        reg_data[33] = 8'hF2;
 
-        // reg_addr[38] = 8'h32;
-        // reg_data[38] = 8'h16;
+        reg_addr[34] = 8'hA2;
+        reg_data[34] = 8'h02;
 
-        // reg_addr[39] = 8'h19;
-        // reg_data[39] = 8'h03;
+        reg_addr[35] = 8'hA2;
+        reg_data[35] = 8'h02;
+        // Set Frame QQVGA
+        reg_addr[36] = 8'h17;
+        reg_data[36] = 8'h15;
 
-        // reg_addr[40] = 8'h1A;
-        // reg_data[40] = 8'h7B;
+        reg_addr[37] = 8'h18;
+        reg_data[37] = 8'h03;
 
-        // reg_addr[41] = 8'h03;
-        // reg_data[41] = 8'h00;
+        reg_addr[38] = 8'h32;
+        reg_data[38] = 8'h16;
 
-        // // Set Color Format RGB565
-        // reg_addr[42] = 8'h40;
-        // reg_data[42] = 8'hD0;
+        reg_addr[39] = 8'h19;
+        reg_data[39] = 8'h03;
+
+        reg_addr[40] = 8'h1A;
+        reg_data[40] = 8'h7B;
+
+        reg_addr[41] = 8'h03;
+        reg_data[41] = 8'h00;
+
+        // Set Color Format RGB565
+        reg_addr[42] = 8'h40;
+        reg_data[42] = 8'hD0;
 
 
         // reg_addr[15]  = 8'h03;

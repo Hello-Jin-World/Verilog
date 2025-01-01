@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Tue Dec 31 21:34:12 2024
-| Host             : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
+| Date             : Wed Jan  1 12:26:16 2025
+| Host             : DESKTOP-PFRE25G running 64-bit major release  (build 9200)
 | Command          : report_power -file top_VGA_CAMERA_power_routed.rpt -pb top_VGA_CAMERA_power_summary_routed.pb -rpx top_VGA_CAMERA_power_routed.rpx
 | Design           : top_VGA_CAMERA
 | Device           : xc7a35tcpg236-1
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.194        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.120        |
+| Dynamic (W)              | 0.121        |
 | Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.0         |
@@ -52,15 +52,15 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.003 |        8 |       --- |             --- |
-| Slice Logic    |     0.002 |      940 |       --- |             --- |
-|   LUT as Logic |     0.001 |      461 |     20800 |            2.22 |
-|   CARRY4       |    <0.001 |       81 |      8150 |            0.99 |
-|   Register     |    <0.001 |      224 |     41600 |            0.54 |
+| Clocks         |     0.003 |        9 |       --- |             --- |
+| Slice Logic    |     0.002 |     1094 |       --- |             --- |
+|   LUT as Logic |     0.001 |      521 |     20800 |            2.50 |
+|   CARRY4       |    <0.001 |       97 |      8150 |            1.19 |
+|   Register     |    <0.001 |      308 |     41600 |            0.74 |
 |   BUFG         |    <0.001 |        2 |        32 |            6.25 |
-|   Others       |     0.000 |       25 |       --- |             --- |
-| Signals        |     0.002 |      809 |       --- |             --- |
-| Block RAM      |     0.019 |       28 |        50 |           56.00 |
+|   Others       |     0.000 |       30 |       --- |             --- |
+| Signals        |     0.003 |      913 |       --- |             --- |
+| Block RAM      |     0.020 |     28.5 |        50 |           57.00 |
 | MMCM           |     0.085 |        1 |         5 |           20.00 |
 | DSPs           |     0.001 |        1 |        90 |            1.11 |
 | I/O            |     0.008 |       43 |       106 |           40.57 |
@@ -134,6 +134,7 @@ Table of Contents
 | clkfbout_clk_wiz_0    | U_clk_wiz_0/inst/clkfbout_clk_wiz_0    |            10.0 |
 | ov7670_clk1_clk_wiz_0 | U_clk_wiz_0/inst/ov7670_clk1_clk_wiz_0 |            41.7 |
 | ov7670_clk2_clk_wiz_0 | U_clk_wiz_0/inst/ov7670_clk2_clk_wiz_0 |            41.7 |
+| sccb_clk_clk_wiz_0    | U_clk_wiz_0/inst/sccb_clk_clk_wiz_0    |            40.0 |
 | sys_clk_pin           | clk                                    |            10.0 |
 | sys_clk_pin           | clk_IBUF_BUFG                          |            10.0 |
 | vga_clk_clk_wiz_0     | U_clk_wiz_0/inst/vga_clk_clk_wiz_0     |            40.0 |
@@ -149,12 +150,11 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| top_VGA_CAMERA           |     0.120 |
+| top_VGA_CAMERA           |     0.121 |
 |   U_Disparity            |     0.005 |
 |   U_FrameBufferDisparity |     0.008 |
 |   U_FrameBufferLeft      |     0.006 |
 |   U_FrameBufferRight     |     0.006 |
-|   U_SCCB                 |     0.001 |
 |   U_clk_wiz_0            |     0.085 |
 |     inst                 |     0.085 |
 +--------------------------+-----------+

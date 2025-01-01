@@ -4,8 +4,10 @@ module top_VGA_CAMERA (
     input  logic       clk,
     input  logic       reset,
     input  logic       gray_sw,
-    inout  wire        SDA,
-    output logic       SCL,
+    // inout  wire        SDA,
+    // output logic       SCL,
+    output wire        SCL,
+    output wire        SDA,
     // ov7670 camera input signal
     output logic       ov7670_xclk1,
     input  logic       ov7670_pclk1,
@@ -35,7 +37,7 @@ module top_VGA_CAMERA (
     logic [15:0] wData1, wData2, buffer1, buffer2, buffer3, buffer, ssd_data;
     logic qvga_en1, qvga_en2, qvga_en3;
     logic [14:0] qvga_addr1, qvga_addr2, qvga_addr3;
-    logic vga_clk;
+    logic vga_clk, sccb_clk;
 
     // logic [15:0] rData_for_SAD1;
     // logic [15:0] rData_for_SAD2;
@@ -48,22 +50,21 @@ module top_VGA_CAMERA (
     //     .SDA  (SDA),
     //     .SCL  (SCL)
     // );
-camera_configure U_camera_configure
-    #(
-    parameter CLK_FREQ=25000000
-    )
-    (
-    input wire clk,
-    input wire start,
-    output wire sioc,
-    output wire siod,
-    output wire done
+    camera_configure #(
+        .CLK_FREQ(25000000)
+    ) U_SCCB_Config (
+        .clk  (sccb_clk),
+        .start(),
+        .sioc (SCL),
+        .siod (SDA),
+        .done ()
     );
 
     clk_wiz_0 U_clk_wiz_0 (
         .vga_clk    (vga_clk),
         .ov7670_clk1(ov7670_xclk1),
         .ov7670_clk2(ov7670_xclk2),
+        .sccb_clk   (sccb_clk),      // output sccb_clk
         .reset      (reset),
         .clk        (clk)
     );

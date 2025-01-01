@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Tue Dec 31 21:34:11 2024
-| Host         : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
+| Date         : Wed Jan  1 12:26:15 2025
+| Host         : DESKTOP-PFRE25G running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_VGA_CAMERA_methodology_drc_routed.rpt -pb top_VGA_CAMERA_methodology_drc_routed.pb -rpx top_VGA_CAMERA_methodology_drc_routed.rpx
 | Design       : top_VGA_CAMERA
 | Device       : xc7a35tcpg236-1
@@ -23,17 +23,16 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 131
+             Violations found: 128
 +-----------+------------------+----------------------------------------------------+------------+
 | Rule      | Severity         | Description                                        | Violations |
 +-----------+------------------+----------------------------------------------------+------------+
 | TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree | 1          |
 | TIMING-17 | Critical Warning | Non-clocked sequential cell                        | 96         |
 | TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 1          |
-| HPDR-1    | Warning          | Port pin direction inconsistency                   | 1          |
 | SYNTH-12  | Warning          | DSP input not registered                           | 1          |
 | TIMING-16 | Warning          | Large setup violation                              | 28         |
-| TIMING-18 | Warning          | Missing input or output delay                      | 3          |
+| TIMING-18 | Warning          | Missing input or output delay                      | 1          |
 +-----------+------------------+----------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -528,11 +527,6 @@ Invalid primary clock on hierarchical pin
 A primary clock U_clk_wiz_0/inst/clk is created on an inappropriate internal pin U_clk_wiz_0/inst/clk. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
 Related violations: <none>
 
-HPDR-1#1 Warning
-Port pin direction inconsistency  
-Hierarchical port(pin) SDA direction INOUT is not consistent with the directions of the cell pins/ports found at that level of the netlist hierarchy. Please review the design and consider changing the port(pin) direction. Both drivers and loads were expected for the net (SDA) connected to this Port, but both were not found.
-Related violations: <none>
-
 SYNTH-12#1 Warning
 DSP input not registered  
 DSP instance U_Disparity/data_reg0 is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
@@ -540,157 +534,147 @@ Related violations: <none>
 
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -2.695 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[2] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.457 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[2] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#2 Warning
 Large setup violation  
-There is a large setup violation of -2.696 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[3] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.582 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[3] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#3 Warning
 Large setup violation  
-There is a large setup violation of -2.823 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[4] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.672 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[8] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#4 Warning
 Large setup violation  
-There is a large setup violation of -2.844 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[6] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.689 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[4] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#5 Warning
 Large setup violation  
-There is a large setup violation of -2.881 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[2] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.691 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[2] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#6 Warning
 Large setup violation  
-There is a large setup violation of -2.882 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[3] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.708 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[6] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#7 Warning
 Large setup violation  
-There is a large setup violation of -2.920 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[7] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.711 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[3] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#8 Warning
 Large setup violation  
-There is a large setup violation of -2.943 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[8] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.804 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[5] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#9 Warning
 Large setup violation  
-There is a large setup violation of -2.951 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[5] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.815 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[14] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#10 Warning
 Large setup violation  
-There is a large setup violation of -2.958 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[10] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.827 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[10] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#11 Warning
 Large setup violation  
-There is a large setup violation of -3.009 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[4] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.846 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[7] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#12 Warning
 Large setup violation  
-There is a large setup violation of -3.029 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[15] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.875 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[4] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#13 Warning
 Large setup violation  
-There is a large setup violation of -3.030 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[6] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.923 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[9] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#14 Warning
 Large setup violation  
-There is a large setup violation of -3.034 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[11] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.955 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[6] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#15 Warning
 Large setup violation  
-There is a large setup violation of -3.057 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[12] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.958 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[11] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#16 Warning
 Large setup violation  
-There is a large setup violation of -3.062 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[9] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.969 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[12] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#17 Warning
 Large setup violation  
-There is a large setup violation of -3.079 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[14] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.972 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[12] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#18 Warning
 Large setup violation  
-There is a large setup violation of -3.106 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[7] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.975 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[7] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#19 Warning
 Large setup violation  
-There is a large setup violation of -3.121 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[14] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -2.994 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[8] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#20 Warning
 Large setup violation  
-There is a large setup violation of -3.129 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[8] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.039 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[5] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#21 Warning
 Large setup violation  
-There is a large setup violation of -3.144 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[10] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.047 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[13] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#22 Warning
 Large setup violation  
-There is a large setup violation of -3.195 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[5] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.072 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[15] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#23 Warning
 Large setup violation  
-There is a large setup violation of -3.220 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[11] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.074 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[10] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#24 Warning
 Large setup violation  
-There is a large setup violation of -3.227 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[13] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.076 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[15] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#25 Warning
 Large setup violation  
-There is a large setup violation of -3.231 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/B[13] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.130 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[14] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#26 Warning
 Large setup violation  
-There is a large setup violation of -3.243 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[12] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.144 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[11] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#27 Warning
 Large setup violation  
-There is a large setup violation of -3.309 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[9] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.158 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[9] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#28 Warning
 Large setup violation  
-There is a large setup violation of -3.341 ns between U_Disparity/current_data2_reg[0]_replica/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[15] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.219 ns between U_Disparity/current_data1_reg[2]/C (clocked by sys_clk_pin) and U_Disparity/data_reg0/A[13] (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-18#1 Warning
 Missing input or output delay  
-An input delay is missing on SDA relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#2 Warning
-Missing input or output delay  
 An input delay is missing on reset relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#3 Warning
-Missing input or output delay  
-An output delay is missing on SCL relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 
