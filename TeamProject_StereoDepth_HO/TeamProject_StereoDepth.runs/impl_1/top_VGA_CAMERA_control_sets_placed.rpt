@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Thu Jan  2 21:42:33 2025
-| Host         : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
+| Date         : Fri Jan  3 01:35:44 2025
+| Host         : DESKTOP-PFRE25G running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_VGA_CAMERA_control_sets_placed.rpt
 | Design       : top_VGA_CAMERA
 | Device       : xc7a35t
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |   358 |
-|    Minimum number of control sets                        |   358 |
+| Total control sets                                       |   346 |
+|    Minimum number of control sets                        |   346 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |  1058 |
+| Unused register locations in slices containing registers |  1009 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |   358 |
-| >= 0 to < 4        |     1 |
-| >= 4 to < 6        |   327 |
-| >= 6 to < 8        |     2 |
-| >= 8 to < 10       |    14 |
-| >= 10 to < 12      |     2 |
+| Total control sets |   346 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |   325 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     8 |
+| >= 10 to < 12      |     4 |
 | >= 12 to < 14      |     0 |
-| >= 14 to < 16      |     0 |
-| >= 16              |    12 |
+| >= 14 to < 16      |     2 |
+| >= 16              |     7 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,379 +58,367 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |            2252 |         1115 |
-| No           | No                    | Yes                    |              46 |           24 |
-| No           | Yes                   | No                     |               4 |            1 |
-| Yes          | No                    | No                     |            1722 |          837 |
-| Yes          | No                    | Yes                    |              58 |           22 |
-| Yes          | Yes                   | No                     |             124 |           37 |
+| No           | No                    | No                     |            2077 |         1094 |
+| No           | No                    | Yes                    |              82 |           37 |
+| No           | Yes                   | No                     |               4 |            2 |
+| Yes          | No                    | No                     |            1600 |          913 |
+| Yes          | No                    | Yes                    |             172 |           81 |
+| Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+-----------------------------+----------------------------------------------------------+-----------------------------------------------------+------------------+----------------+--------------+
-|         Clock Signal        |                       Enable Signal                      |                   Set/Reset Signal                  | Slice Load Count | Bel Load Count | Bels / Slice |
-+-----------------------------+----------------------------------------------------------+-----------------------------------------------------+------------------+----------------+--------------+
-|  clk_IBUF                   |                                                          | reset_IBUF                                          |                2 |              2 |         1.00 |
-|  U_clk_gene/inst/sccb_L_clk | U_SCCB_Config_Left/SCCB1/FSM_return_state[3]_i_1_n_0     |                                                     |                2 |              4 |         2.00 |
-|  U_clk_gene/inst/sccb_R_clk | U_SCCB_Config_Right/SCCB1/FSM_return_state[3]_i_1__0_n_0 |                                                     |                1 |              4 |         4.00 |
-|  U_clk_gene/inst/sccb_R_clk | U_SCCB_Config_Right/SCCB1/FSM_state[3]_i_1__0_n_0        |                                                     |                1 |              4 |         4.00 |
-|  U_clk_gene/inst/sccb_R_clk | U_SCCB_Config_Right/SCCB1/byte_index[3]_i_1__0_n_0       |                                                     |                2 |              4 |         2.00 |
-|  U_clk_gene/inst/sccb_L_clk | U_SCCB_Config_Left/SCCB1/FSM_state[3]_i_1_n_0            |                                                     |                1 |              4 |         4.00 |
-|  U_clk_gene/inst/sccb_L_clk | U_SCCB_Config_Left/SCCB1/byte_index[3]_i_1_n_0           |                                                     |                1 |              4 |         4.00 |
-|  U_clk_gene/inst/vga_clk    |                                                          | U_vga_controller/U_Pixel_Counter/SR[0]              |                1 |              4 |         4.00 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_27[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_13[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_29[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_39[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_22[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_21[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_23[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_31[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_36[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_6[0]             |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_49[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_34[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_47[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_4[0]             |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_37[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_51[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_53[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_35[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_42[0]            |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_5[0]             |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_7[0]             |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/E[0]                               |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_38[0]       |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_4[0]        |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_5[0]        |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_32[0]       |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_2[0]        |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_35[0]       |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_3[0]        |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_36[0]       |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_6[0]        |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_28[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_41[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_34[0]       |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_39[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_37[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_41[0]               |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_11[0]       |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_10[0]       |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_12[0]       |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_30[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_31[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_29[0]       |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_1[0]        |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_0[0]        |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_26[0]       |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_33[0]       |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_40[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_9[0]        |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_8[0]        |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_7[0]        |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_18[0]                   |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_12[0]                   |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_16[0]                   |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_24[0]                   |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_20[0]                   |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_32[0]                   |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_38[0]                   |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_14[0]                   |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_4[0]                    |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_40[0]                   |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_42[0]                   |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_44[0]                   |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_36[0]                   |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_22[0]                   |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_2[0]                    |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_26[0]                   |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_34[0]                   |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_0[0]                    |                                                     |                1 |              5 |         5.00 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_30[0]                   |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_10[0]                   |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_28[0]                   |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_6[0]                    |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_1[0]                |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_50[0]                   |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_25[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_46[0]                   |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_8[0]                    |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_35[0]               |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_0[0]                |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_46[0]            |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_39[0]               |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_3[0]                |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_43[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_23[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_45[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_16[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_47[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_5[0]                |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_27[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_31[0]               |                                                     |                5 |              5 |         1.00 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_15[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_37[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_4[0]                |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_49[0]               |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_2[0]                |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_6[0]                |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_17[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_30[0]               |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_48[0]                   |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_29[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_21[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_14[0]            |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_5[0]             |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_1[0]             |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_30[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_41[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_14[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_16[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_33[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_12[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_18[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_7[0]             |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_18[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_37[0]            |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_10[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_15[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_45[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_42[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_47[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_25[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_20[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_49[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_50[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_16[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_22[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_35[0]            |                                                     |                1 |              5 |         5.00 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_39[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_13[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_27[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_6[0]             |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_29[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_11[0]            |                                                     |                1 |              5 |         5.00 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_3[0]             |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_28[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_48[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_1[0]             |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_46[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_6[0]             |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_15[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_2[0]             |                                                     |                1 |              5 |         5.00 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_22[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_10[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_38[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_35[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_0[0]             |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_3[0]             |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_36[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_23[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_40[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_9[0]             |                                                     |                1 |              5 |         5.00 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_24[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_27[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_44[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_50[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_25[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_16[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_3[0]             |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_18[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_42[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_30[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_33[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_30[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_4[0]             |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_20[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_24[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_38[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_45[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_52[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_32[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_31[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_39[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_41[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_48[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_8[0]             |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_43[0]            |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_40[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_9[0]             |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_50[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_33[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_44[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_22[0]       |                                                     |                5 |              5 |         1.00 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_17[0]       |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_19[0]       |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_45[0]       |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_23[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_43[0]       |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_50[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_51[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_55[0]       |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_56[0]       |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_57[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_42[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_46[0]       |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_14[0]       |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_53[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_13[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_16[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_47[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_52[0]       |                                                     |                1 |              5 |         5.00 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_25[0]       |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_54[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_18[0]       |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_20[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_24[0]       |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_48[0]       |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_49[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_44[0]       |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_21[0]       |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_15[0]       |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_1[0]                    |                                                     |                1 |              5 |         5.00 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_15[0]                   |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_23[0]                   |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_25[0]                   |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_27[0]                   |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_19[0]                   |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_29[0]                   |                                                     |                1 |              5 |         5.00 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_3[0]                    |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_37[0]                   |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_13[0]                   |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_31[0]                   |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_21[0]                   |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_41[0]                   |                                                     |                1 |              5 |         5.00 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_43[0]                   |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_35[0]                   |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_11[0]                   |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_17[0]                   |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_33[0]                   |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_39[0]                   |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_19[0]               |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_20[0]               |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_32[0]               |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_10[0]               |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_5[0]                    |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_22[0]               |                                                     |                1 |              5 |         5.00 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_18[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_42[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_36[0]               |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_44[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_33[0]               |                                                     |                1 |              5 |         5.00 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_46[0]               |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_48[0]               |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_50[0]               |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_7[0]                |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_45[0]                   |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_26[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_13[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_38[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_8[0]                |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_9[0]                |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_14[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_49[0]                   |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_24[0]               |                                                     |                1 |              5 |         5.00 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_51[0]                   |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_11[0]               |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_9[0]                    |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_47[0]                   |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_34[0]               |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_40[0]               |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_0[0]             |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_7[0]                    |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_28[0]               |                                                     |                1 |              5 |         5.00 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep_12[0]               |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_4[0]             |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_46[0]            |                                                     |                1 |              5 |         5.00 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_23[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_44[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_48[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_17[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_24[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_36[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_38[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_11[0]            |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_13[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_28[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_17[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_31[0]            |                                                     |                5 |              5 |         1.00 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_15[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_43[0]            |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_51[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_19[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_2[0]             |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_2[0]             |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_40[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_34[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_1[0]             |                                                     |                1 |              5 |         5.00 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_32[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_12[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_8[0]             |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_10[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_21[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_9[0]             |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_0[0]             |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_19[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__0_26[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_47[0]            |                                                     |                5 |              5 |         1.00 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_34[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_37[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_45[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_5[0]             |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_51[0]            |                                                     |                1 |              5 |         5.00 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_8[0]             |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_25[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_14[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_17[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_32[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_43[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_26[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_11[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_41[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_19[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_49[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_20[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_21[0]            |                                                     |                2 |              5 |         2.50 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_29[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__1_7[0]             |                                                     |                4 |              5 |         1.25 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_12[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_26[0]            |                                                     |                3 |              5 |         1.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_27[0]            |                                                     |                1 |              5 |         5.00 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/we_reg_reg_rep__2_28[0]            |                                                     |                2 |              5 |         2.50 |
-|  U_clk_gene/inst/sccb_L_clk | U_SCCB_Config_Left/rom1/ready_reg                        | U_SCCB_Config_Left/config_1/timer[17]_i_1_n_0       |                2 |              7 |         3.50 |
-|  U_clk_gene/inst/sccb_R_clk | U_SCCB_Config_Right/config_1/timer[31]_i_2__0_n_0        | U_SCCB_Config_Right/config_1/timer[17]_i_1_n_0      |                3 |              7 |         2.33 |
-|  U_clk_gene/inst/sccb_L_clk | U_SCCB_Config_Left/rom1/ready_reg_0                      | U_SCCB_Config_Left/config_1/rom_addr[7]_i_1_n_0     |                2 |              8 |         4.00 |
-|  U_clk_gene/inst/sccb_L_clk | U_SCCB_Config_Left/SCCB1/tx_byte[7]_i_1_n_0              |                                                     |                2 |              8 |         4.00 |
-|  U_clk_gene/inst/sccb_R_clk | U_SCCB_Config_Right/SCCB1/tx_byte[7]_i_1__0_n_0          |                                                     |                2 |              8 |         4.00 |
-|  U_clk_gene/inst/sccb_R_clk | U_SCCB_Config_Right/config_1/rom_addr[7]_i_2__0_n_0      | U_SCCB_Config_Right/config_1/rom_addr[7]_i_1__0_n_0 |                2 |              8 |         4.00 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/temp_reg[15]_i_1__0_n_0            | reset_IBUF                                          |                5 |              8 |         1.60 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/temp_reg[7]_i_1__0_n_0             | reset_IBUF                                          |                3 |              8 |         2.67 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataLeft/v_counter_reg0                      | reset_IBUF                                          |                2 |              8 |         4.00 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataLeft/temp_next[10]                       | reset_IBUF                                          |                2 |              8 |         4.00 |
-|  ov7670_pclk1_IBUF_BUFG     | U_OV7670_SetDataLeft/temp_next[7]                        | reset_IBUF                                          |                3 |              8 |         2.67 |
-|  ov7670_pclk2_IBUF_BUFG     | U_OV7670_SetDataRight/v_counter_reg[7]_i_1__0_n_0        | reset_IBUF                                          |                3 |              8 |         2.67 |
-|  U_clk_gene/inst/sccb_L_clk | U_SCCB_Config_Left/SCCB1/timer[8]_i_1_n_0                |                                                     |                4 |              9 |         2.25 |
-|  U_clk_gene/inst/sccb_R_clk |                                                          |                                                     |                6 |              9 |         1.50 |
-|  U_clk_gene/inst/sccb_R_clk | U_SCCB_Config_Right/SCCB1/timer[8]_i_1__0_n_0            |                                                     |                3 |              9 |         3.00 |
-|  U_clk_gene/inst/sccb_L_clk |                                                          |                                                     |                5 |              9 |         1.80 |
-|  U_clk_gene/inst/vga_clk    |                                                          | reset_IBUF                                          |                5 |             10 |         2.00 |
-|  U_clk_gene/inst/vga_clk    | U_vga_controller/U_Pixel_Counter/v_counter_0             | reset_IBUF                                          |                4 |             10 |         2.50 |
-|  U_clk_gene/inst/sccb_L_clk | U_SCCB_Config_Left/rom1/E[0]                             |                                                     |                4 |             16 |         4.00 |
-|  U_clk_gene/inst/sccb_L_clk | U_SCCB_Config_Left/SCCB1/latched_data_1                  |                                                     |                2 |             16 |         8.00 |
-|  U_clk_gene/inst/sccb_R_clk | U_SCCB_Config_Right/SCCB1/latched_data                   |                                                     |                3 |             16 |         5.33 |
-|  U_clk_gene/inst/sccb_R_clk | U_SCCB_Config_Left/rom1/dout_reg_4[0]                    |                                                     |                3 |             16 |         5.33 |
-|  ov7670_pclk1_IBUF_BUFG     |                                                          | reset_IBUF                                          |               10 |             17 |         1.70 |
-|  ov7670_pclk2_IBUF_BUFG     |                                                          | reset_IBUF                                          |                7 |             17 |         2.43 |
-|  U_clk_gene/inst/sccb_L_clk | U_SCCB_Config_Left/SCCB1/timer[8]_i_1_n_0                | U_SCCB_Config_Left/SCCB1/timer[31]_i_1__1_n_0       |                6 |             23 |         3.83 |
-|  U_clk_gene/inst/sccb_R_clk | U_SCCB_Config_Right/SCCB1/timer[8]_i_1__0_n_0            | U_SCCB_Config_Right/SCCB1/timer[31]_i_1__2_n_0      |                6 |             23 |         3.83 |
-|  U_clk_gene/inst/sccb_L_clk | U_SCCB_Config_Left/rom1/ready_reg                        | U_SCCB_Config_Left/rom1/FSM_state_reg[0]            |                8 |             24 |         3.00 |
-|  U_clk_gene/inst/sccb_R_clk | U_SCCB_Config_Right/config_1/timer[31]_i_2__0_n_0        | U_SCCB_Config_Left/rom1/FSM_state_reg[0]_0          |                8 |             24 |         3.00 |
-|  temp_mem                   |                                                          |                                                     |              352 |            634 |         1.80 |
-| ~temp_mem                   |                                                          |                                                     |              752 |           1600 |         2.13 |
-+-----------------------------+----------------------------------------------------------+-----------------------------------------------------+------------------+----------------+--------------+
++--------------------------+--------------------------------------------------------------+----------------------------------------+------------------+----------------+--------------+
+|       Clock Signal       |                         Enable Signal                        |            Set/Reset Signal            | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------------------+--------------------------------------------------------------+----------------------------------------+------------------+----------------+--------------+
+|  U_clk_gene/inst/vga_clk |                                                              | U_vga_controller/U_Pixel_Counter/SR[0] |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG           | U_SCCB_final_R/U_SCCB/bit_cnt_next                           | reset_IBUF                             |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG           | U_SCCB_final_L/U_SCCB/bit_cnt_next                           | reset_IBUF                             |                2 |              4 |         2.00 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_8[0]                 |                                        |                5 |              5 |         1.00 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_1[0]                 |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_36[0]                |                                        |                1 |              5 |         5.00 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_32[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_4[0]                 |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_2[0]                 |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/E[0]                                   |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_21[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_24[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_25[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_28[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_32[0]           |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_18[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_17[0]           |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_36[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_38[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_22[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_19[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_31[0]           |                                        |                5 |              5 |         1.00 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_20[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_23[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_29[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_26[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_30[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_27[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_34[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_40[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_42[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_48[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_52[0]           |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_79[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_85[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_44[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_63[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_67[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_46[0]           |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_53[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_71[0]           |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_73[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_55[0]           |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_83[0]           |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_57[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_77[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_81[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[5]_3[0]            |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[5]_2[0]            |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_50[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_65[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_87[0]           |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_61[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_75[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_69[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_59[0]           |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_22[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_33[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_16[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_12[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_14[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_24[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_0[0]                        |                                        |                5 |              5 |         1.00 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_31[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_10[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_26[0]                       |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_20[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_2[0]                        |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_32[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_18[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_40[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_59[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_38[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_39[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_8[0]                        |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_68[0]                       |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_22[0]                   |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_43[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_50[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_64[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_58[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_23[0]                   |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_1[0]                    |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_25[0]                   |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_27[0]                   |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_41[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_66[0]                       |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_45[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_6[0]                        |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_10[0]                   |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_14[0]                   |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_51[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_18[0]                   |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_13[0]                   |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_42[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_20[0]                   |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_53[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_62[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_4[0]                        |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_44[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_52[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_36[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_14[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_10[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_31[0]                   |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_20[0]                |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_30[0]                   |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_5[0]                    |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_50[0]                   |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_12[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_22[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_3[0]                 |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_39[0]                   |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_9[0]                    |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_24[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_48[0]                   |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_30[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_34[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_43[0]                   |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_33[0]                   |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_18[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_3[0]                    |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_16[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_1[0]                 |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_26[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_41[0]                   |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_28[0]                |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_7[0]                    |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_37[0]                   |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_35[0]                   |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_45[0]                   |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_31[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_32[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_52[0]                   |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_33[0]                |                                        |                5 |              5 |         1.00 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_17[0]                |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_19[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_23[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_35[0]                |                                        |                5 |              5 |         1.00 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_45[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_21[0]                |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_5[0]                 |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_27[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_51[0]                |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_11[0]                |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_43[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_45[0]                |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_47[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_13[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_49[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_33[0]                |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_0[0]                 |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_37[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_39[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_3[0]                 |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_39[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_41[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_25[0]                |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_48[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_31[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_9[0]                 |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_15[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_29[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_42[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_7[0]                 |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_7[0]                 |                                        |                1 |              5 |         5.00 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_9[0]                 |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_5[0]                 |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_51[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_6[0]                 |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_50[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_8[0]                 |                                        |                4 |              5 |         1.25 |
+|  clk_IBUF_BUFG           | U_SCCB_final_R/U_SCCB/FSM_sequential_state[4]_i_1__0_n_0     | reset_IBUF                             |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_56[0]           |                                        |                3 |              5 |         1.67 |
+|  clk_IBUF_BUFG           | U_SCCB_final_L/U_SCCB/FSM_sequential_state[4]_i_1_n_0        | reset_IBUF                             |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_10[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_11[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_2[0]            |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_37[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_41[0]           |                                        |                1 |              5 |         5.00 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_3[0]            |                                        |                5 |              5 |         1.00 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_33[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_14[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_16[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_13[0]           |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_1[0]            |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_15[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_35[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_39[0]           |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_4[0]            |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_12[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_45[0]           |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_62[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_78[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_58[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_7[0]            |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_43[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_66[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_5[0]            |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_54[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_84[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_8[0]            |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[5]_4[0]            |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_60[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_86[0]           |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_51[0]           |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_9[0]            |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_49[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_70[0]           |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[5]_1[0]            |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_80[0]           |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_82[0]           |                                        |                5 |              5 |         1.00 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_68[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_6[0]            |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_72[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_76[0]           |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_74[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_88[0]           |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_64[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/pix_counter_reg_reg[4]_47[0]           |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_11[0]                       |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_17[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_25[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_1[0]                        |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_13[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_23[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_29[0]                       |                                        |                1 |              5 |         5.00 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_30[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_28[0]                       |                                        |                1 |              5 |         5.00 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_21[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_3[0]                        |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_27[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_15[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_19[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_16[0]                   |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_60[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_48[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_57[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_17[0]                   |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_34[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_47[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_2[0]                    |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_24[0]                   |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_26[0]                   |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_28[0]                   |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_55[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_63[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_67[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_7[0]                        |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_9[0]                        |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_5[0]                        |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_61[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_49[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_69[0]                       |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_37[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_46[0]                       |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_11[0]                   |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_15[0]                   |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_35[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_19[0]                   |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_21[0]                   |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_12[0]                   |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_56[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_0[0]                    |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_36[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_54[0]                       |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_65[0]                       |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_32[0]                   |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_36[0]                   |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_34[0]                   |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_47[0]                   |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_40[0]                   |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_42[0]                   |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_8[0]                    |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_11[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_17[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_49[0]                   |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_25[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_37[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_38[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_51[0]                   |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_29[0]                   |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_0[0]                 |                                        |                5 |              5 |         1.00 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_46[0]                   |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_27[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_21[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_4[0]                    |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_6[0]                    |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_15[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_38[0]                   |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_13[0]                |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_19[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_2[0]                 |                                        |                5 |              5 |         1.00 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_23[0]                |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_29[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep_44[0]                   |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_35[0]                |                                        |                5 |              5 |         1.00 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_30[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_10[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_24[0]                |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_12[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_47[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_18[0]                |                                        |                5 |              5 |         1.00 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_14[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_20[0]                |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_42[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_40[0]                |                                        |                5 |              5 |         1.00 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_43[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_26[0]                |                                        |                5 |              5 |         1.00 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_38[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_4[0]                 |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_44[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_22[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_46[0]                |                                        |                5 |              5 |         1.00 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_48[0]                |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_44[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_6[0]                 |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_28[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_50[0]                |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_34[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_40[0]                |                                        |                1 |              5 |         5.00 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_41[0]                |                                        |                4 |              5 |         1.25 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__1_16[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_46[0]                |                                        |                2 |              5 |         2.50 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/we_reg_reg_rep__0_49[0]                |                                        |                3 |              5 |         1.67 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataLeft/v_counter_reg0                          | reset_IBUF                             |                2 |              8 |         4.00 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataLeft/temp_next[10]                           | reset_IBUF                             |                4 |              8 |         2.00 |
+|  ov7670_pclk1_IBUF_BUFG  | U_OV7670_SetDataLeft/temp_next[7]                            | reset_IBUF                             |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG           | U_SCCB_final_L/U_SCCB/shift_reg_next                         | reset_IBUF                             |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG           | U_SCCB_final_R/U_SCCB/shift_reg_next                         | reset_IBUF                             |                3 |              8 |         2.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/v_counter_reg0                         | reset_IBUF                             |                3 |              8 |         2.67 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/temp_next[10]                          | reset_IBUF                             |                4 |              8 |         2.00 |
+|  ov7670_pclk2_IBUF_BUFG  | U_OV7670_SetDataRight/temp_next[7]                           | reset_IBUF                             |                4 |              8 |         2.00 |
+|  U_clk_gene/inst/vga_clk |                                                              | reset_IBUF                             |                4 |             10 |         2.50 |
+|  U_clk_gene/inst/vga_clk | U_vga_controller/U_Pixel_Counter/v_counter_0                 | reset_IBUF                             |                4 |             10 |         2.50 |
+|  clk_IBUF_BUFG           | U_SCCB_final_L/U_SCCB/clk_cnt_next                           | reset_IBUF                             |                4 |             10 |         2.50 |
+|  clk_IBUF_BUFG           | U_SCCB_final_R/U_SCCB/clk_cnt_next                           | reset_IBUF                             |                6 |             10 |         1.67 |
+|  clk_IBUF_BUFG           | U_SCCB_final_R/U_SCCB_CONTROLUNIT/bit_cnt_reg0               | reset_IBUF                             |                6 |             14 |         2.33 |
+|  clk_IBUF_BUFG           | U_SCCB_final_L/U_SCCB_CONTROLUNIT/bit_cnt_reg0               | reset_IBUF                             |                5 |             14 |         2.80 |
+|  ov7670_pclk1_IBUF_BUFG  |                                                              | reset_IBUF                             |                8 |             16 |         2.00 |
+|  clk_IBUF_BUFG           | U_SCCB_final_R/U_SCCB_CONTROLUNIT/reg_addr_reg[7]_i_1__0_n_0 | reset_IBUF                             |               10 |             16 |         1.60 |
+|  ov7670_pclk2_IBUF_BUFG  |                                                              | reset_IBUF                             |               10 |             16 |         1.60 |
+|  clk_IBUF_BUFG           | U_SCCB_final_L/U_SCCB_CONTROLUNIT/reg_addr_reg[7]_i_1_n_0    | reset_IBUF                             |               10 |             16 |         1.60 |
+|  clk_IBUF_BUFG           |                                                              | reset_IBUF                             |               15 |             40 |         2.67 |
+|  temp_mem                |                                                              |                                        |              278 |            477 |         1.72 |
+| ~temp_mem                |                                                              |                                        |              816 |           1600 |         1.96 |
++--------------------------+--------------------------------------------------------------+----------------------------------------+------------------+----------------+--------------+
 
 

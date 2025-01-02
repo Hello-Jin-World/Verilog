@@ -412,7 +412,7 @@ module SCCB_ControlUnit (
 
         addr_dat[0] = 16'h12_80;  // COM7 Reset all registers to default values 
         addr_dat[1] = 16'hFF_F0;  // DELAY
-        addr_dat[2] = 16'h12_11;  // COM7 QVGA Selection, RGB Select
+        addr_dat[2] = 16'h12_14;  // COM7 QVGA Selection, RGB Select
         addr_dat[3] = 16'h11_80;  // CLK Internal Clk = inputCLK / 1 [5:0] = 0
         addr_dat[4] = 16'h0C_00;  // COM3 Default
         addr_dat[5] = 16'h3E_00;  // COM14 Default
@@ -428,11 +428,11 @@ module SCCB_ControlUnit (
         addr_dat[15] = 16'h54_E4;  // MATRIX 6 Default 
         addr_dat[16] = 16'h58_9E; // MTXS AUTO CONTRAS-CENTER [11110] 0 PLUS, 1 MINUS
         addr_dat[17] = 16'h3D_C0;  // COM13 Gamma Enable, UV auto Adjestment, 0
-        addr_dat[18] = 16'h17_16; // HSTART Horizontal Frame (HREF column) START HIGH 8bit : 0001_0101 : 0x14 : 168
-        addr_dat[19] = 16'h18_04; // HSTOP Horizontal Frame (HREF column) END HIGH 8-bit : 0000_0010 : 02 : 24
+        addr_dat[18] = 16'h17_15; // HSTART Horizontal Frame (HREF column) START HIGH 8bit : 0001_0101 : 0x14 : 168
+        addr_dat[19] = 16'h18_03; // HSTOP Horizontal Frame (HREF column) END HIGH 8-bit : 0000_0010 : 02 : 24
         addr_dat[20] = 16'h32_91; // HREF Control , HREF Edge Offset : 10 , HSTOP:001, HSTART LSB 3bit : 000
-        addr_dat[21] = 16'h19_02; // VSTART Vertical Frame (row) START HIGH 8-bit : 0000_0011   : 12
-        addr_dat[22] = 16'h1A_3C; // VSTOP Vertical Frame (row) END HIGH 8-bit : 0111_1011  : 492
+        addr_dat[21] = 16'h19_03; // VSTART Vertical Frame (row) START HIGH 8-bit : 0000_0011   : 12
+        addr_dat[22] = 16'h1A_7B; // VSTOP Vertical Frame (row) END HIGH 8-bit : 0111_1011  : 492
         addr_dat[23] = 16'h03_00; // VREF AGC[9:8] = 00, 11VSTART : 00, VSTOP LOW 2-bit : 10
         addr_dat[24] = 16'h0F_41; // COM6 Disable HREF at optical black, NO reset timing when format changes 
         addr_dat[25] = 16'h1E_00; // MVFP NORMAL Imange, BLACK sun disenable        
@@ -496,6 +496,7 @@ module SCCB_ControlUnit (
         // addr_dat[85] = 16'h4f_80; // 색상 보정 행렬 1
         // addr_dat[86] = 16'h50_90; // 색상 보정 행렬 2
     end
+
 
     assign Mux_sel  = Mux_sel_reg;
     assign reg_addr = reg_addr_reg;

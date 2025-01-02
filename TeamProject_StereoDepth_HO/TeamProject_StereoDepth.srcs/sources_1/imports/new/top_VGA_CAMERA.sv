@@ -6,15 +6,15 @@ module top_VGA_CAMERA (
     input  logic       clk,
     input  logic       reset,
     input  logic       gray_sw,
-    input  logic       start,
-    output wire        SCL_L,
-    output wire        SDA_L,
-    output wire        SCL_R,
-    output wire        SDA_R,
-    // output logic       SCL_L,
-    // inout  wire        SDA_L,
-    // output logic       SCL_R,
-    // inout  wire        SDA_R,
+    // input  logic       start,
+    // output wire        SCL_L,
+    // output wire        SDA_L,
+    // output wire        SCL_R,
+    // output wire        SDA_R,
+    output logic       SCL_L,
+    inout  wire        SDA_L,
+    output logic       SCL_R,
+    inout  wire        SDA_R,
     // ov7670 camera input signals
     output logic       ov7670_xclk1,
     input  logic       ov7670_pclk1,
@@ -80,34 +80,34 @@ module top_VGA_CAMERA (
     //        .disp_enable(disp_enable),
     //        .gray_rgb   ({vgaRed, vgaGreen, vgaBlue})
     //    );
-    // SCCB_final U_SCCB_final_L (
-    //     .clk  (clk),
-    //     .reset(reset),
-    //     .scl  (SCL_L),
-    //     .sda  (SDA_L)
-    // );
-    // SCCB_final U_SCCB_final_R (
-    //     .clk  (clk),
-    //     .reset(reset),
-    //     .scl  (SCL_R),
-    //     .sda  (SDA_R)
-    // );
-
-    camera_configure U_SCCB_Config_Left (
-        .clk  (sccb_L_clk),
-        .start(start),
-        .sioc (SCL_L),
-        .siod (SDA_L),
-        .done ()
+    SCCB_final U_SCCB_final_L (
+        .clk  (clk),
+        .reset(reset),
+        .scl  (SCL_L),
+        .sda  (SDA_L)
+    );
+    SCCB_final U_SCCB_final_R (
+        .clk  (clk),
+        .reset(reset),
+        .scl  (SCL_R),
+        .sda  (SDA_R)
     );
 
-    camera_configure U_SCCB_Config_Right (
-        .clk  (sccb_R_clk),
-        .start(start),
-        .sioc (SCL_R),
-        .siod (SDA_R),
-        .done ()
-    );
+    // camera_configure U_SCCB_Config_Left (
+    //     .clk  (sccb_L_clk),
+    //     .start(start),
+    //     .sioc (SCL_L),
+    //     .siod (SDA_L),
+    //     .done ()
+    // );
+
+    // camera_configure U_SCCB_Config_Right (
+    //     .clk  (sccb_R_clk),
+    //     .start(start),
+    //     .sioc (SCL_R),
+    //     .siod (SDA_R),
+    //     .done ()
+    // );
 
     display_mux_2x1 U_display_mux_2x1 (
         .Left_Data(buffer1),

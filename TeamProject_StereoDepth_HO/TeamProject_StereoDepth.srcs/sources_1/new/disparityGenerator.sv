@@ -710,16 +710,15 @@ module disparity_generator (
 
     always_ff @(posedge wclk1) begin
         if (we1) begin
-            mem_L[wAddr2%160] <= wData1[15:10];
+            mem_L[wAddr2%160] <= wData1[12:7];
         end
     end
 
     always_ff @(posedge wclk2) begin
         if (we2) begin
-            mem_R[wAddr2%160] <= wData2[15:10];
+            mem_R[wAddr2%160] <= wData2[12:7];
         end
     end
-
 
     always_comb begin
         state_next   = state_reg;
@@ -743,6 +742,7 @@ module disparity_generator (
                     temp3 = (prv_mem_L[j] > prv_mem_R[j+2]) ? (prv_mem_L[j] - prv_mem_R[j+2]) : (prv_mem_R[j+2] - prv_mem_L[j]);       // i
                     temp4 = (prv_mem_L[j] > prv_mem_R[j+3]) ? (prv_mem_L[j] - prv_mem_R[j+3]) : (prv_mem_R[j+3] - prv_mem_L[j]);       // i
                     temp5 = (prv_mem_L[j] > prv_mem_R[j+4]) ? (prv_mem_L[j] - prv_mem_R[j+4]) : (prv_mem_R[j+4] - prv_mem_L[j]);       // i
+
                     if (temp1 < temp2) begin
                         if (temp1 < temp3) begin
                             if (temp1 < temp4) begin
@@ -806,8 +806,10 @@ module disparity_generator (
                     end
                 end
                 // j_next = j_reg + 1;
-                read_en_next = 1;
-                state_next   = IDLE;
+                // if (!Hsync) begin
+                    state_next   = IDLE;
+                    read_en_next = 1;
+                // end
             end
         endcase
     end
