@@ -288,7 +288,7 @@ module top_VGA_CAMERA (
     //    );
 
     disparity_generator U_disparity_generator (
-        .clk(vga_clk),
+        .clk(clk),
         .reset(reset),
         .left_in  ((buffer1[15:11]*299 + buffer1[10:5]*587 + buffer1[4:0]*114) / 1000),
         .right_in ((buffer2[15:11]*299 + buffer2[10:5]*587 + buffer2[4:0]*114) / 1000),

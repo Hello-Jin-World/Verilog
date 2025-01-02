@@ -333,6 +333,85 @@
 //endmodule
 
 
+// module disparity_generator (
+//     input logic        clk,
+//     input logic        reset,
+//     input logic [15:0] left_in,
+//     input logic [15:0] right_in,
+
+//     output logic [15:0] depth_out,
+//     output logic        done
+// );
+
+//     localparam MAX_DISPARITY = 10;
+//     localparam IMGWIDTH = 160;
+//     localparam FOCAL_LENGTH = 700;
+//     localparam BASELINE = 1;
+
+//     logic [15:0] best_disp, best_score;
+//     logic [15:0] disparity_score[0:MAX_DISPARITY-1];
+//     logic [15:0] right_buffer[0:IMGWIDTH-1];
+//     logic [7:0] x;
+
+//     always_ff @(posedge clk, posedge reset) begin
+//         if (reset) begin
+//             best_disp <= 0;
+//             best_score <= 16'hFFFF;
+//             depth_out <= 0;
+//             done <= 0;
+//             x <= 0;
+//             // Clear right_buffer when reset
+//             for (int i = 0; i < IMGWIDTH; i++) begin
+//                 right_buffer[i] <= 16'd0;
+//             end
+//         end else begin
+//             // Shift the right_buffer contents
+//             for (int i = 0; i < IMGWIDTH - 1; i++) begin
+//                 right_buffer[i] <= right_buffer[i+1];
+//             end
+//             right_buffer[IMGWIDTH-1] <= right_in;
+
+//             best_score <= 16'hFFFF;
+//             // Compute disparity score for each disparity value
+//             for (int d = 0; d < MAX_DISPARITY; d++) begin
+//                 if (x - d >= 0) begin
+//                     disparity_score[d] <= abs(left_in - right_buffer[x-d]);
+//                 end else begin
+//                     disparity_score[d] <= 16'hFFFF;
+//                 end
+
+//                 // Update best score and best disparity
+//                 if (disparity_score[d] < best_score) begin
+//                     best_score <= disparity_score[d];
+//                     best_disp  <= d;
+//                 end
+//             end
+
+//             // Calculate depth based on best disparity
+//             if (best_disp != 0) begin
+//                 depth_out <= (FOCAL_LENGTH * BASELINE) / best_disp;
+//             end else begin
+//                 depth_out <= 16'd0;
+//             end
+
+//             // Signal done when processing is complete
+//             done <= (x == IMGWIDTH - 1);
+//             if (x == IMGWIDTH - 1) begin
+//                 x <= 0;
+//             end else begin
+//                 x <= x + 1;
+//             end
+//         end
+//     end
+
+//     function automatic [15:0] abs(input signed [15:0] x);
+//         begin
+//             abs = (x < 0) ? -x : x;
+//         end
+//     endfunction
+
+// endmodule
+
 module disparity_generator (
     input logic        clk,
     input logic        reset,
@@ -343,67 +422,87 @@ module disparity_generator (
     output logic        done
 );
 
+    // Parameters
     localparam MAX_DISPARITY = 10;
     localparam IMGWIDTH = 160;
     localparam FOCAL_LENGTH = 700;
     localparam BASELINE = 1;
 
+    // Internal signals
     logic [15:0] best_disp, best_score;
     logic [15:0] disparity_score[0:MAX_DISPARITY-1];
-    logic [15:0] right_buffer[0:IMGWIDTH-1];
-    logic [7:0] x;
+    logic [15:0] left_frame[0:IMGWIDTH-1];
+    logic [15:0] right_frame[0:IMGWIDTH-1];
+    logic [7:0]  x; // Pixel index
+    logic frame_ready;
 
+    // Frame buffer: Store a complete frame of input
+    always_ff @(posedge clk, posedge reset) begin
+        if (reset) begin
+            x <= 0;
+            frame_ready <= 0;
+        end else if (x < IMGWIDTH) begin
+            left_frame[x] <= left_in;
+            right_frame[x] <= right_in;
+            x <= x + 1;
+            frame_ready <= 0; // Make sure frame_ready is low during the frame capture
+        end else begin
+            frame_ready <= 1; // Frame buffer is full
+            x <= 0; // Reset x for next frame
+        end
+    end
+
+    // Disparity calculation
+    logic [7:0] current_x; // Copy of x to prevent race conditions
     always_ff @(posedge clk, posedge reset) begin
         if (reset) begin
             best_disp <= 0;
             best_score <= 16'hFFFF;
             depth_out <= 0;
             done <= 0;
-            x <= 0;
-            // Clear right_buffer when reset
-            for (int i = 0; i < IMGWIDTH; i++) begin
-                right_buffer[i] <= 16'd0;
-            end
-        end else begin
-            // Shift the right_buffer contents
-            for (int i = 0; i < IMGWIDTH - 1; i++) begin
-                right_buffer[i] <= right_buffer[i+1];
-            end
-            right_buffer[IMGWIDTH-1] <= right_in;
-
+            current_x <= 0;
+        end else if (frame_ready) begin
+            current_x <= x; // Use the copy of x
+            // Initialize for new row
             best_score <= 16'hFFFF;
-            // Compute disparity score for each disparity value
+            
+            // Compute disparity scores for the current pixel
             for (int d = 0; d < MAX_DISPARITY; d++) begin
-                if (x - d >= 0) begin
-                    disparity_score[d] <= abs(left_in - right_buffer[x-d]);
+                if (current_x >= d) begin
+                    disparity_score[d] <= abs(left_frame[current_x] - right_frame[current_x-d]);
                 end else begin
-                    disparity_score[d] <= 16'hFFFF;
+                    disparity_score[d] <= 16'hFFFF; // Out of bounds penalty
                 end
+            end
 
-                // Update best score and best disparity
+            // Find the best disparity
+            for (int d = 0; d < MAX_DISPARITY; d++) begin
                 if (disparity_score[d] < best_score) begin
                     best_score <= disparity_score[d];
-                    best_disp  <= d;
+                    best_disp <= d;
                 end
             end
 
-            // Calculate depth based on best disparity
-            if (best_disp != 0) begin
+            // Compute depth
+            if (best_disp > 0) begin
                 depth_out <= (FOCAL_LENGTH * BASELINE) / best_disp;
             end else begin
-                depth_out <= 16'd0;
+                depth_out <= 16'd0; // Handle zero disparity case
             end
 
-            // Signal done when processing is complete
-            done <= (x == IMGWIDTH - 1);
-            if (x == IMGWIDTH - 1) begin
-                x <= 0;
+            // Signal completion of processing
+            if (current_x == IMGWIDTH - 1) begin
+                done <= 1;
+                frame_ready <= 0; // Reset frame ready for the next frame
+                current_x <= 0;
             end else begin
-                x <= x + 1;
+                done <= 0;
+                current_x <= current_x + 1;
             end
         end
     end
 
+    // Absolute value function
     function automatic [15:0] abs(input signed [15:0] x);
         begin
             abs = (x < 0) ? -x : x;
