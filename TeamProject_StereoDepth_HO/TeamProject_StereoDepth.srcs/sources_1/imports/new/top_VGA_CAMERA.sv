@@ -2,115 +2,6 @@
 
 
 
-
-module qvga_addr_decoder (
-    input  logic [ 9:0] x,
-    input  logic [ 9:0] y,
-    output logic        qvga_en1,
-    output logic [14:0] qvga_addr1,
-    output logic        qvga_en2,
-    output logic [14:0] qvga_addr2,
-    output logic        qvga_en3,
-    output logic [14:0] qvga_addr3
-);
-
-    always_comb begin
-        qvga_addr1 = 0;
-        qvga_en1   = 1'b0;
-        qvga_addr2 = 0;
-        qvga_en2   = 1'b0;
-        qvga_addr3 = 0;
-        qvga_en3   = 1'b0;
-
-        if (y < 240) begin
-            if (x < 320) begin
-                qvga_addr1 = y[9:1] * 160 + x[9:1];
-                qvga_en1   = 1'b1;
-                qvga_addr2 = 0;
-                qvga_en2   = 1'b0;
-                qvga_addr3 = 0;
-                qvga_en3   = 1'b0;
-            end else begin
-                qvga_addr1 = 0;
-                qvga_en1   = 1'b0;
-                qvga_addr2 = y[9:1] * 160 + x[9:1];
-                qvga_en2   = 1'b1;
-                qvga_addr3 = 0;
-                qvga_en3   = 1'b0;
-            end
-        end else begin
-            if (x < 320) begin
-                qvga_addr1 = y[9:1] * 160 + x[9:1];
-                qvga_en1   = 1'b1;
-                qvga_addr2 = y[9:1] * 160 + x[9:1];
-                qvga_en2   = 1'b1;
-                qvga_addr3 = y[9:1] * 160 + x[9:1];
-                qvga_en3   = 1'b1;
-            end
-            qvga_addr1 = 0;
-            qvga_en1   = 1'b0;
-            qvga_addr2 = 0;
-            qvga_en2   = 1'b0;
-            qvga_addr3 = 0;
-            qvga_en3   = 1'b0;
-        end
-    end
-endmodule
-
-
-
-module display_mux_2x1 (
-    input logic [15:0] Left_Data,
-    input logic [15:0] Right_Data,
-    input logic [15:0] Gray_Data,
-    input logic [15:0] Disparity_Data,  // Added for disparity output
-    input logic [9:0] x,
-    input logic [9:0] y,
-    input logic qvga_en3,  // Added input for enabling disparity region
-    output logic [15:0] Out_Data
-);
-
-    always_comb begin
-        if (x < 320 && y < 240) begin
-            // Left camera region
-            Out_Data = Left_Data;
-        end else if (x >= 320 && y < 240) begin
-            //             Right camera region
-            Out_Data = Right_Data;
-        end //else if (x < 320 && y >= 240) begin
-//            Out_Data = Disparity_Data; 
-
-        else if (x < 320 && y >= 240) begin
-            // Left camera region
-            Out_Data = Disparity_Data;
-        end else begin
-            Out_Data = 16'd0;
-        end
-    end
-
-endmodule
-
-
-module rbt2gray (
-    input  logic [11:0] color_rgb,
-    input  logic        gray_sw,
-    input  logic        disp_enable,
-    output logic [11:0] gray_rgb
-);
-
-    localparam RW = 8'h4c, GW = 8'h96, BW = 8'h1e;
-
-    logic [11:0] gray;
-
-    assign gray = color_rgb[11:8]*RW + color_rgb[7:4]*GW + color_rgb[3:0]*BW;
-    // assign gray = (76*color_rgb[11:8] + 150*color_rgb[7:4] + 30*color_rgb[3:0]) / 256;
-
-    assign gray_rgb = (disp_enable) ? ((gray_sw) ? {gray[11:8], gray[11:8], gray[11:8]} : color_rgb) : 12'd0;
-endmodule
-
-
-
-
 module top_VGA_CAMERA (
     input  logic       clk,
     input  logic       reset,
@@ -120,6 +11,10 @@ module top_VGA_CAMERA (
     output wire        SDA_L,
     output wire        SCL_R,
     output wire        SDA_R,
+    // output logic       SCL_L,
+    // inout  wire        SDA_L,
+    // output logic       SCL_R,
+    // inout  wire        SDA_R,
     // ov7670 camera input signals
     output logic       ov7670_xclk1,
     input  logic       ov7670_pclk1,
@@ -147,15 +42,17 @@ module top_VGA_CAMERA (
     logic [9:0] y_pixel;
     logic we1, we2;
     logic [14:0] wAddr1, wAddr2;
-    logic [15:0] wData1, wData2, buffer1, buffer2, buffer3, buffer;
+    logic [15:0] wData1, wData2, buffer1, buffer2, buffer;
     logic qvga_en1, qvga_en2, qvga_en3;
     logic [14:0] qvga_addr1, qvga_addr2, qvga_addr3;
     logic vga_clk, sccb_L_clk, sccb_R_clk;
+    logic [5:0] buffer3;
 
-    logic [15:0] rData_for_SAD1;
-    logic [15:0] rData_for_SAD2;
-    logic [11:0] gray_for_SAD1;
-    logic [11:0] gray_for_SAD2;
+    // logic [15:0] rData_for_SAD1;
+    // logic [15:0] rData_for_SAD2;
+    // logic [11:0] gray_for_SAD1;
+    // logic [11:0] gray_for_SAD2;
+    logic [15:0] gray_rgb_L, gray_rgb_R;
 
     // Disparity signal
     logic [15:0] depth_out, w_depth_out;
@@ -164,17 +61,17 @@ module top_VGA_CAMERA (
     assign vgaBlue  = (disp_enable) ? depth_out[4:1] : 0;
 
 
-    clk_wiz_0 U_CL (
+    clk_wiz_0 U_clk_gene (
         // Clock out ports
-        .vga_clk     (vga_clk),       // output vga_clk
-        .ov7670_xclk1(ov7670_xclk1),  // output ov7670_xclk1
-        .ov7670_xclk2(ov7670_xclk2),  // output ov7670_xclk2
-        .sccb_L_clk  (sccb_L_clk),    // output sccb_L_clk
-        .sccb_R_clk  (sccb_R_clk),    // output sccb_R_clk
+        .vga_clk(vga_clk),     // output vga_clk
+        .ov7670_xclk1(ov7670_xclk1),     // output ov7670_xclk1
+        .ov7670_xclk2(ov7670_xclk2),     // output ov7670_xclk2
+        .sccb_L_clk(sccb_L_clk),     // output sccb_L_clk
+        .sccb_R_clk(sccb_R_clk),     // output sccb_R_clk
         // Status and control signals
-        .reset       (reset),         // input reset
+        .reset(reset), // input reset
         // Clock in ports
-        .clk_in1     (clk)
+        .clk_in1(clk)
     );  // input clk_in1
 
     //    rbt2gray U_rbt2gray (
@@ -183,6 +80,18 @@ module top_VGA_CAMERA (
     //        .disp_enable(disp_enable),
     //        .gray_rgb   ({vgaRed, vgaGreen, vgaBlue})
     //    );
+    // SCCB_final U_SCCB_final_L (
+    //     .clk  (clk),
+    //     .reset(reset),
+    //     .scl  (SCL_L),
+    //     .sda  (SDA_L)
+    // );
+    // SCCB_final U_SCCB_final_R (
+    //     .clk  (clk),
+    //     .reset(reset),
+    //     .scl  (SCL_R),
+    //     .sda  (SDA_R)
+    // );
 
     camera_configure U_SCCB_Config_Left (
         .clk  (sccb_L_clk),
@@ -201,12 +110,12 @@ module top_VGA_CAMERA (
     );
 
     display_mux_2x1 U_display_mux_2x1 (
-        .Left_Data     (buffer1),      //buffer1),ity output
-        .Right_Data    (buffer2),
-        .Disparity_Data(w_depth_out),
-        .x             (x_pixel),
-        .y             (y_pixel),
-        .Out_Data      (depth_out)
+        .Left_Data(buffer1),
+        .Right_Data(buffer2),
+        .Disparity_Data({buffer3[5:1], buffer3, buffer3[5:1]}),
+        .x(x_pixel),
+        .y(y_pixel),
+        .Out_Data(depth_out)
     );
 
     ov7670_SetData U_OV7670_SetDataLeft (
@@ -287,14 +196,165 @@ module top_VGA_CAMERA (
     //        .done       ()
     //    );
 
+    // disparity_generator U_disparity_generator (
+    //     .clk(clk),
+    //     .reset(reset),
+    //     .left_in  ((buffer1[15:11]*299 + buffer1[10:5]*587 + buffer1[4:0]*114) / 1000),
+    //     .right_in ((buffer2[15:11]*299 + buffer2[10:5]*587 + buffer2[4:0]*114) / 1000),
+    //     .depth_out(w_depth_out),
+    //     .done()
+    // );
+
+    rgb2gray U_rgb2gray_L (
+        .color_rgb(wData1),
+        .gray_rgb (gray_rgb_L)
+    );
+    rgb2gray U_rgb2gray_R (
+        .color_rgb(wData2),
+        .gray_rgb (gray_rgb_R)
+    );
+
     disparity_generator U_disparity_generator (
-        .clk(clk),
-        .reset(reset),
-        .left_in  ((buffer1[15:11]*299 + buffer1[10:5]*587 + buffer1[4:0]*114) / 1000),
-        .right_in ((buffer2[15:11]*299 + buffer2[10:5]*587 + buffer2[4:0]*114) / 1000),
-        .depth_out(w_depth_out),
-        .done()
+        .clk   (clk),
+        .reset (reset),
+        // .Hsync (Hsync),
+        .wclk1 (ov7670_pclk1),
+        .we1   (we1),
+        .wAddr1(wAddr1),
+        .wData1(gray_rgb_L),
+        .wclk2 (ov7670_pclk2),
+        .we2   (we2),
+        .wAddr2(wAddr2),
+        .wData2(gray_rgb_R),
+        .rclk  (vga_clk),
+        .oe    (qvga_en3),
+        .rAddr (qvga_addr3),
+        .rData (buffer3)
     );
 
 
 endmodule
+
+module qvga_addr_decoder (
+    input  logic [ 9:0] x,
+    input  logic [ 9:0] y,
+    output logic        qvga_en1,
+    output logic [14:0] qvga_addr1,
+    output logic        qvga_en2,
+    output logic [14:0] qvga_addr2,
+    output logic        qvga_en3,
+    output logic [14:0] qvga_addr3
+);
+
+    always_comb begin
+        qvga_addr1 = 0;
+        qvga_en1   = 1'b0;
+        qvga_addr2 = 0;
+        qvga_en2   = 1'b0;
+        qvga_addr3 = 0;
+        qvga_en3   = 1'b0;
+
+        if (y < 240) begin
+            if (x >= 320) begin
+                qvga_addr1 = y[9:1] * 160 + x[9:1];
+                qvga_en1   = 1'b1;
+                qvga_addr2 = 0;
+                qvga_en2   = 1'b0;
+                qvga_addr3 = 0;
+                qvga_en3   = 1'b0;
+            end else begin
+                qvga_addr1 = 0;
+                qvga_en1   = 1'b0;
+                qvga_addr2 = y[9:1] * 160 + x[9:1];
+                qvga_en2   = 1'b1;
+                qvga_addr3 = 0;
+                qvga_en3   = 1'b0;
+            end
+        end else begin
+            if (x < 320) begin
+                // qvga_addr1 = y[9:1] * 160 + x[9:1];
+                // qvga_en1   = 1'b1;
+                // qvga_addr2 = y[9:1] * 160 + x[9:1];
+                // qvga_en2   = 1'b1;
+                qvga_addr1 = 0;
+                qvga_en1   = 1'b0;
+                qvga_addr2 = 0;
+                qvga_en2   = 1'b0;
+                qvga_addr3 = x[9:1];
+                // qvga_addr3 = y[9:1] * 160 + x[9:1];
+                qvga_en3   = 1'b1;
+            end else begin
+                qvga_addr1 = 0;
+                qvga_en1   = 1'b0;
+                qvga_addr2 = 0;
+                qvga_en2   = 1'b0;
+                qvga_addr3 = 0;
+                qvga_en3   = 1'b0;
+            end
+        end
+    end
+endmodule
+
+
+
+module display_mux_2x1 (
+    input logic [15:0] Left_Data,
+    input logic [15:0] Right_Data,
+    input logic [15:0] Gray_Data,
+    input logic [15:0] Disparity_Data,  // Added for disparity output
+    input logic [9:0] x,
+    input logic [9:0] y,
+    input logic qvga_en3,  // Added input for enabling disparity region
+    output logic [15:0] Out_Data
+);
+
+    always_comb begin
+        if (x < 320 && y < 240) begin
+            Out_Data = Right_Data;
+        end else if (x >= 320 && y < 240) begin
+            Out_Data = Left_Data;
+        end else if (x < 320 && y >= 240) begin
+            Out_Data = Disparity_Data;
+        end else begin
+            Out_Data = 16'd0;
+        end
+    end
+
+endmodule
+
+
+module rbt2gray (
+    input  logic [11:0] color_rgb,
+    input  logic        gray_sw,
+    input  logic        disp_enable,
+    output logic [11:0] gray_rgb
+);
+
+    localparam RW = 8'h4c, GW = 8'h96, BW = 8'h1e;
+
+    logic [11:0] gray;
+
+    assign gray = color_rgb[11:8]*RW + color_rgb[7:4]*GW + color_rgb[3:0]*BW;
+    // assign gray = (76*color_rgb[11:8] + 150*color_rgb[7:4] + 30*color_rgb[3:0]) / 256;
+
+    assign gray_rgb = (disp_enable) ? ((gray_sw) ? {gray[11:8], gray[11:8], gray[11:8]} : color_rgb) : 12'd0;
+endmodule
+
+module rgb2gray (
+    input  logic [15:0] color_rgb,
+    output logic [15:0] gray_rgb
+);
+
+    localparam RW = 8'h4c, GW = 8'h96, BW = 8'h1e;
+
+    logic [14:0] gray;
+
+    assign gray = color_rgb[15:11]*RW + color_rgb[10:5]*GW + color_rgb[4:0]*BW;
+    // assign gray = (76*color_rgb[11:8] + 150*color_rgb[7:4] + 30*color_rgb[3:0]) / 256;
+
+    assign gray_rgb = {gray[14:10], gray[14:9], gray[14:10]};
+endmodule
+
+
+
+
