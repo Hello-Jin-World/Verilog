@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/top_VGA_CAMERA.tcl"
+  variable script "D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/top_VGA_CAMERA.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,8 +70,10 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 1
+set_param tcl.collectionResultDisplayLimit 0
+set_param chipscope.maxJobs 4
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -79,27 +81,32 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.cache/wt [current_project]
-set_property parent.project_path D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.xpr [current_project]
+set_property webtalk.parent_dir D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.cache/wt [current_project]
+set_property parent.project_path D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.xpr [current_project]
 set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo d:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.cache/ip [current_project]
+set_property ip_output_repo d:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
-  D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/FrameBuffer.sv
-  D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/SCCB_final.sv
-  D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv
-  D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/ov7670_SetData.sv
-  D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv
-  D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv
+  D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/FrameBuffer.sv
+  D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv
+  D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/ov7670_SetData.sv
+  D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv
+  D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv
 }
-read_ip -quiet D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all d:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all d:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all d:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+read_verilog -library xil_defaultlib {
+  D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/OV7670_config.v
+  D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/OV7670_config_rom.v
+  D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/SCCB_interface.v
+  D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/camera_configure.v
+}
+read_ip -quiet D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all d:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all d:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all d:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -110,8 +117,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc
-set_property used_in_implementation false [get_files D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+read_xdc D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc
+set_property used_in_implementation false [get_files D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

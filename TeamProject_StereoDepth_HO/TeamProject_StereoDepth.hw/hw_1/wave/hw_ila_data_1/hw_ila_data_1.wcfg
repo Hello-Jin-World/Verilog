@@ -10,91 +10,20 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="15fs"></ZoomEndTime>
+      <ZoomEndTime time="1024fs"></ZoomEndTime>
       <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="288"></NameColumnWidth>
-      <ValueColumnWidth column_width="93"></ValueColumnWidth>
+      <NameColumnWidth column_width="287"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="18" />
-   <wvobject fp_name="U_disparity_generator/wclk1" type="logic">
+   <WVObjectSize size="11" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject fp_name="U_disparity_generator/Hsync" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_disparity_generator/wclk1</obj_property>
-      <obj_property name="ObjectShortName">wclk1</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_disparity_generator/wAddr1" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_disparity_generator/wAddr1[14:0]</obj_property>
-      <obj_property name="ObjectShortName">wAddr1[14:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_disparity_generator/wData1" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_disparity_generator/wData1[15:11]</obj_property>
-      <obj_property name="ObjectShortName">wData1[15:11]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_disparity_generator/wclk2" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_disparity_generator/wclk2</obj_property>
-      <obj_property name="ObjectShortName">wclk2</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_disparity_generator/wAddr2" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_disparity_generator/wAddr2[14:0]</obj_property>
-      <obj_property name="ObjectShortName">wAddr2[14:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_disparity_generator/wData2" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_disparity_generator/wData2[15:11]</obj_property>
-      <obj_property name="ObjectShortName">wData2[15:11]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_disparity_generator/rclk" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_disparity_generator/rclk</obj_property>
-      <obj_property name="ObjectShortName">rclk</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_disparity_generator/oe" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_disparity_generator/oe</obj_property>
-      <obj_property name="ObjectShortName">oe</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_disparity_generator/rAddr" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_disparity_generator/rAddr[7:0]</obj_property>
-      <obj_property name="ObjectShortName">rAddr[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_disparity_generator/rData" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_disparity_generator/rData[5:0]</obj_property>
-      <obj_property name="ObjectShortName">rData[5:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="ElementShortName">U_disparity_generator/Hsync</obj_property>
+      <obj_property name="ObjectShortName">Hsync</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -102,7 +31,7 @@
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">U_disparity_generator/mem_L[5:0]</obj_property>
       <obj_property name="ObjectShortName">mem_L[5:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -110,14 +39,14 @@
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">U_disparity_generator/mem_R[5:0]</obj_property>
       <obj_property name="ObjectShortName">mem_R[5:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_disparity_generator/prv_mem_L" type="array">
+   <wvobject fp_name="U_disparity_generator/rData" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_disparity_generator/prv_mem_L[5:0]</obj_property>
-      <obj_property name="ObjectShortName">prv_mem_L[5:0]</obj_property>
+      <obj_property name="ElementShortName">U_disparity_generator/rData[5:5]</obj_property>
+      <obj_property name="ObjectShortName">rData[5:5]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
@@ -130,34 +59,51 @@
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_disparity_generator/read_en_reg" type="logic">
+   <wvobject fp_name="U_disparity_generator/temp1" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_disparity_generator/read_en_reg</obj_property>
-      <obj_property name="ObjectShortName">read_en_reg</obj_property>
+      <obj_property name="ElementShortName">U_disparity_generator/temp1[5:0]</obj_property>
+      <obj_property name="ObjectShortName">temp1[5:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_disparity_generator/rAddr" type="array">
+   <wvobject fp_name="U_disparity_generator/temp2" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_disparity_generator/rAddr[7:0]</obj_property>
-      <obj_property name="ObjectShortName">rAddr[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="ElementShortName">U_disparity_generator/temp2[5:0]</obj_property>
+      <obj_property name="ObjectShortName">temp2[5:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_disparity_generator/rAddr" type="array">
+   <wvobject fp_name="U_disparity_generator/temp3" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_disparity_generator/rAddr[7:0]</obj_property>
-      <obj_property name="ObjectShortName">rAddr[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="ElementShortName">U_disparity_generator/temp3[5:0]</obj_property>
+      <obj_property name="ObjectShortName">temp3[5:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_disparity_generator/Hsync" type="logic">
+   <wvobject fp_name="U_disparity_generator/temp4" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_disparity_generator/Hsync</obj_property>
-      <obj_property name="ObjectShortName">Hsync</obj_property>
+      <obj_property name="ElementShortName">U_disparity_generator/temp4[5:0]</obj_property>
+      <obj_property name="ObjectShortName">temp4[5:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_disparity_generator/temp5" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_disparity_generator/temp5[5:0]</obj_property>
+      <obj_property name="ObjectShortName">temp5[5:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_disparity_generator/x_pixel" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_disparity_generator/x_pixel[9:0]</obj_property>
+      <obj_property name="ObjectShortName">x_pixel[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

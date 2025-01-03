@@ -6,15 +6,15 @@ module top_VGA_CAMERA (
     input  logic       clk,
     input  logic       reset,
     input  logic       gray_sw,
-    // input  logic       start,
-    // output wire        SCL_L,
-    // output wire        SDA_L,
-    // output wire        SCL_R,
-    // output wire        SDA_R,
-    output logic       SCL_L,
-    inout  wire        SDA_L,
-    output logic       SCL_R,
-    inout  wire        SDA_R,
+    input  logic       start,
+    output wire        SCL_L,
+    output wire        SDA_L,
+    output wire        SCL_R,
+    output wire        SDA_R,
+    // output logic       SCL_L,
+    // inout  wire        SDA_L,
+    // output logic       SCL_R,
+    // inout  wire        SDA_R,
     // ov7670 camera input signals
     output logic       ov7670_xclk1,
     input  logic       ov7670_pclk1,
@@ -56,9 +56,9 @@ module top_VGA_CAMERA (
 
     // Disparity signal
     logic [15:0] depth_out, w_depth_out;
-    assign vgaRed   = (disp_enable) ? depth_out[15:12] : 0;
-    assign vgaGreen = (disp_enable) ? depth_out[10:7] : 0;
-    assign vgaBlue  = (disp_enable) ? depth_out[4:1] : 0;
+    // assign vgaRed   = (disp_enable) ? depth_out[15:12] : 0;
+    // assign vgaGreen = (disp_enable) ? depth_out[10:7] : 0;
+    // assign vgaBlue  = (disp_enable) ? depth_out[4:1] : 0;
 
 
     clk_wiz_0 U_clk_gene (
@@ -74,40 +74,40 @@ module top_VGA_CAMERA (
         .clk_in1(clk)
     );  // input clk_in1
 
-    //    rbt2gray U_rbt2gray (
-    //        .color_rgb  ({buffer[15:12], buffer[10:7], buffer[4:1]}),
-    //        .gray_sw    (gray_sw),
-    //        .disp_enable(disp_enable),
-    //        .gray_rgb   ({vgaRed, vgaGreen, vgaBlue})
-    //    );
-    SCCB_final U_SCCB_final_L (
-        .clk  (clk),
-        .reset(reset),
-        .scl  (SCL_L),
-        .sda  (SDA_L)
+    rbt2gray U_rbt2gray (
+        .color_rgb  ({depth_out[15:12], depth_out[10:7], depth_out[4:1]}),
+        .gray_sw    (gray_sw),
+        .disp_enable(disp_enable),
+        .gray_rgb   ({vgaRed, vgaGreen, vgaBlue})
     );
-    SCCB_final U_SCCB_final_R (
-        .clk  (clk),
-        .reset(reset),
-        .scl  (SCL_R),
-        .sda  (SDA_R)
-    );
-
-    // camera_configure U_SCCB_Config_Left (
-    //     .clk  (sccb_L_clk),
-    //     .start(start),
-    //     .sioc (SCL_L),
-    //     .siod (SDA_L),
-    //     .done ()
+    // SCCB_final U_SCCB_final_L (
+    //     .clk  (clk),
+    //     .reset(reset),
+    //     .scl  (SCL_L),
+    //     .sda  (SDA_L)
+    // );
+    // SCCB_final U_SCCB_final_R (
+    //     .clk  (clk),
+    //     .reset(reset),
+    //     .scl  (SCL_R),
+    //     .sda  (SDA_R)
     // );
 
-    // camera_configure U_SCCB_Config_Right (
-    //     .clk  (sccb_R_clk),
-    //     .start(start),
-    //     .sioc (SCL_R),
-    //     .siod (SDA_R),
-    //     .done ()
-    // );
+    camera_configure U_SCCB_Config_Left (
+        .clk  (sccb_L_clk),
+        .start(start),
+        .sioc (SCL_L),
+        .siod (SDA_L),
+        .done ()
+    );
+
+    camera_configure U_SCCB_Config_Right (
+        .clk  (sccb_R_clk),
+        .start(start),
+        .sioc (SCL_R),
+        .siod (SDA_R),
+        .done ()
+    );
 
     display_mux_2x1 U_display_mux_2x1 (
         .Left_Data(buffer1),
@@ -171,9 +171,9 @@ module top_VGA_CAMERA (
         .qvga_en1  (qvga_en1),
         .qvga_addr1(qvga_addr1),
         .qvga_en2  (qvga_en2),
-        .qvga_addr2(qvga_addr2),
-        .qvga_en3  (qvga_en3),
-        .qvga_addr3(qvga_addr3)
+        .qvga_addr2(qvga_addr2)
+        // .qvga_en3  (qvga_en3),
+        // .qvga_addr3(qvga_addr3)
     );
 
     vga_controller U_vga_controller (
@@ -186,51 +186,51 @@ module top_VGA_CAMERA (
         .disp_enable(disp_enable)
     );
 
-    //    disparity_generator U_disparity_generator (
-    //        .clk_internal(hclk),
-    //        .clk_vga        (vga_clk),
-    //        .reset      (reset),
-    //        .left_in    (buffer1),
-    //        .right_in   (buffer2),
-    //        .depth_out   (w_depth_out),
-    //        .done       ()
-    //    );
-
-    // disparity_generator U_disparity_generator (
-    //     .clk(clk),
-    //     .reset(reset),
-    //     .left_in  ((buffer1[15:11]*299 + buffer1[10:5]*587 + buffer1[4:0]*114) / 1000),
-    //     .right_in ((buffer2[15:11]*299 + buffer2[10:5]*587 + buffer2[4:0]*114) / 1000),
-    //     .depth_out(w_depth_out),
-    //     .done()
-    // );
-
     rgb2gray U_rgb2gray_L (
-        .color_rgb(wData1),
+        .color_rgb(buffer1),
         .gray_rgb (gray_rgb_L)
     );
     rgb2gray U_rgb2gray_R (
-        .color_rgb(wData2),
+        .color_rgb(buffer2),
         .gray_rgb (gray_rgb_R)
     );
 
+    // disparity_pipeline U_disparity_pipeline (
+    //     .clk    (clk),
+    //     .reset  (reset),
+    //     .Hsync  (Hsync),
+    //     .in_L   (gray_rgb_L),
+    //     .in_R   (gray_rgb_R),
+    //     .x_pixel(x_pixel),
+    //     .rData  (buffer3)
+    // );
+
     disparity_generator U_disparity_generator (
-        .clk   (clk),
-        .reset (reset),
-        // .Hsync (Hsync),
-        .wclk1 (ov7670_pclk1),
-        .we1   (we1),
-        .wAddr1(wAddr1),
-        .wData1(gray_rgb_L),
-        .wclk2 (ov7670_pclk2),
-        .we2   (we2),
-        .wAddr2(wAddr2),
-        .wData2(gray_rgb_R),
-        .rclk  (vga_clk),
-        .oe    (qvga_en3),
-        .rAddr (qvga_addr3),
-        .rData (buffer3)
+        .clk    (clk),
+        .reset  (reset),
+        .Hsync  (Hsync),
+        .x_pixel(x_pixel),
+        .y_pixel(y_pixel),
+        .in_L   (gray_rgb_L),
+        .in_R   (gray_rgb_R),
+        .rData  (buffer3)
     );
+    // disparity_generator U_disparity_generator_hahahah (
+    //     .clk   (clk),
+    //     .reset (reset),
+    //     .wclk1 (ov7670_pclk1),
+    //     .we1   (we1),
+    //     .wAddr1(wAddr1),
+    //     .wData1(wData1),
+    //     .wclk2 (ov7670_pclk2),
+    //     .we2   (we2),
+    //     .wAddr2(wAddr2),
+    //     .wData2(wData2),
+    //     .rclk (vga_clk),
+    //     .oe   (qvga_en3),
+    //     .rAddr(qvga_addr3),
+    //     .rData(buffer3)
+    // );
 
 
 endmodule
@@ -241,55 +241,86 @@ module qvga_addr_decoder (
     output logic        qvga_en1,
     output logic [14:0] qvga_addr1,
     output logic        qvga_en2,
-    output logic [14:0] qvga_addr2,
-    output logic        qvga_en3,
-    output logic [14:0] qvga_addr3
+    output logic [14:0] qvga_addr2
+    // output logic        qvga_en3,
+    // output logic [14:0] qvga_addr3
 );
 
-    always_comb begin
-        qvga_addr1 = 0;
-        qvga_en1   = 1'b0;
-        qvga_addr2 = 0;
-        qvga_en2   = 1'b0;
-        qvga_addr3 = 0;
-        qvga_en3   = 1'b0;
 
+    //     qvga_addr1 = 0;
+    //     qvga_en1   = 1'b0;
+    //     qvga_addr2 = 0;
+    //     qvga_en2   = 1'b0;
+    //     qvga_addr3 = 0;
+    //     qvga_en3   = 1'b0;
+    //     if (x < 640 && y < 480) begin
+    //         qvga_addr1 = 0;
+    //         qvga_en1   = 1'b0;
+    //         qvga_addr2 = 0;
+    //         qvga_en2   = 1'b0;
+    //         qvga_addr3 = y[9:2] * 160 + x[9:2];
+    //         qvga_en3   = 1'b1;
+    //     end else begin
+    //         qvga_addr1 = 0;
+    //         qvga_en1   = 1'b0;
+    //         qvga_addr2 = 0;
+    //         qvga_en2   = 1'b0;
+    //         qvga_addr3 = 0;
+    //         qvga_en3   = 1'b0;
+    //     end
+    always_comb begin
         if (y < 240) begin
             if (x >= 320) begin
                 qvga_addr1 = y[9:1] * 160 + x[9:1];
                 qvga_en1   = 1'b1;
-                qvga_addr2 = 0;
-                qvga_en2   = 1'b0;
-                qvga_addr3 = 0;
-                qvga_en3   = 1'b0;
-            end else begin
-                qvga_addr1 = 0;
-                qvga_en1   = 1'b0;
                 qvga_addr2 = y[9:1] * 160 + x[9:1];
                 qvga_en2   = 1'b1;
-                qvga_addr3 = 0;
-                qvga_en3   = 1'b0;
+                // qvga_addr1 = y[9:1] * 160 + x[9:1];
+                // qvga_en1   = 1'b1;
+                // qvga_addr2 = 0;
+                // qvga_en2   = 1'b0;
+                // qvga_addr3 = 0;
+                // qvga_en3   = 1'b0;
+            end else begin
+                qvga_addr1 = y[9:1] * 160 + x[9:1];
+                qvga_en1   = 1'b1;
+                qvga_addr2 = y[9:1] * 160 + x[9:1];
+                qvga_en2   = 1'b1;
+                // qvga_addr1 = 0;
+                // qvga_en1   = 1'b0;
+                // qvga_addr2 = y[9:1] * 160 + x[9:1];
+                // qvga_en2   = 1'b1;
+                // qvga_addr3 = 0;
+                // qvga_en3   = 1'b0;
             end
         end else begin
             if (x < 320) begin
-                // qvga_addr1 = y[9:1] * 160 + x[9:1];
+                // qvga_addr1 = x[9:1];
                 // qvga_en1   = 1'b1;
-                // qvga_addr2 = y[9:1] * 160 + x[9:1];
+                // qvga_addr2 = x[9:1];
                 // qvga_en2   = 1'b1;
-                qvga_addr1 = 0;
-                qvga_en1   = 1'b0;
-                qvga_addr2 = 0;
-                qvga_en2   = 1'b0;
-                qvga_addr3 = x[9:1];
+                qvga_addr1 = y[9:1] * 160 + x[9:1];
+                qvga_en1   = 1'b1;
+                qvga_addr2 = y[9:1] * 160 + x[9:1];
+                qvga_en2   = 1'b1;
+                // qvga_addr1 = 0;
+                // qvga_en1   = 1'b0;
+                // qvga_addr2 = 0;
+                // qvga_en2   = 1'b0;
+                // qvga_addr3 = x[9:1];
                 // qvga_addr3 = y[9:1] * 160 + x[9:1];
-                qvga_en3   = 1'b1;
+                // qvga_en3   = 1'b1;
+                // qvga_addr1 = 0;
+                // qvga_en1   = 1'b0;
+                // qvga_addr2 = 0;
+                // qvga_en2   = 1'b0;
             end else begin
                 qvga_addr1 = 0;
                 qvga_en1   = 1'b0;
                 qvga_addr2 = 0;
                 qvga_en2   = 1'b0;
-                qvga_addr3 = 0;
-                qvga_en3   = 1'b0;
+                // qvga_addr3 = 0;
+                // qvga_en3   = 1'b0;
             end
         end
     end
@@ -300,13 +331,20 @@ endmodule
 module display_mux_2x1 (
     input logic [15:0] Left_Data,
     input logic [15:0] Right_Data,
-    input logic [15:0] Gray_Data,
     input logic [15:0] Disparity_Data,  // Added for disparity output
     input logic [9:0] x,
     input logic [9:0] y,
     input logic qvga_en3,  // Added input for enabling disparity region
     output logic [15:0] Out_Data
 );
+
+    // always_comb begin
+    //     if (x < 640 && y < 480) begin
+    //         Out_Data = Disparity_Data;
+    //     end else begin
+    //         Out_Data = 16'd0;
+    //     end
+    // end
 
     always_comb begin
         if (x < 320 && y < 240) begin

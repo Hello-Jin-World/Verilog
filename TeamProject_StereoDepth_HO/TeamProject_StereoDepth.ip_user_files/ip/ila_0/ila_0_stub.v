@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Thu Jan  2 18:13:11 2025
+// Date        : Fri Jan  3 16:32:17 2025
 // Host        : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               d:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/ila_0/ila_0_stub.v
@@ -16,7 +16,7 @@
 (* X_CORE_INFO = "ila,Vivado 2020.2" *)
 module ila_0(clk, probe0, probe1, probe2, probe3, probe4, probe5, 
   probe6, probe7, probe8, probe9, probe10, probe11, probe12, probe13, probe14, probe15, probe16)
-/* synthesis syn_black_box black_box_pad_pin="clk,probe0[0:0],probe1[14:0],probe2[15:0],probe3[0:0],probe4[14:0],probe5[15:0],probe6[0:0],probe7[0:0],probe8[14:0],probe9[5:0],probe10[5:0],probe11[5:0],probe12[5:0],probe13[5:0],probe14[1:0],probe15[0:0],probe16[0:0]" */;
+/* synthesis syn_black_box black_box_pad_pin="clk,probe0[0:0],probe1[14:0],probe2[15:0],probe3[0:0],probe4[14:0],probe5[15:0],probe6[0:0],probe7[0:0],probe8[14:0],probe9[5:0],probe10[5:0],probe11[5:0],probe12[5:0],probe13[5:0],probe14[1:0],probe15[0:0],probe16[5:0]" */;
   input clk;
   input [0:0]probe0;
   input [14:0]probe1;
@@ -34,5 +34,5 @@ module ila_0(clk, probe0, probe1, probe2, probe3, probe4, probe5,
   input [5:0]probe13;
   input [1:0]probe14;
   input [0:0]probe15;
-  input [0:0]probe16;
+  input [5:0]probe16;
 endmodule

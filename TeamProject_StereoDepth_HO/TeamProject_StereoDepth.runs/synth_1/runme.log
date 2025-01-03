@@ -17,42 +17,66 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 11740
+INFO: [Synth 8-7075] Helper process launched with PID 9540
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1110.227 ; gain = 21.324
+Starting RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:03 . Memory (MB): peak = 1105.668 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top_VGA_CAMERA' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:5]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/.Xil/Vivado-424-DESKTOP-PFRE25G/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/.Xil/Vivado-424-DESKTOP-PFRE25G/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'SCCB_final' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/SCCB_final.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'SCCB_intf' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/SCCB_final.sv:58]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/SCCB_final.sv:170]
-INFO: [Synth 8-6155] done synthesizing module 'SCCB_intf' (2#1) [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/SCCB_final.sv:58]
-INFO: [Synth 8-6157] synthesizing module 'SCCB_ControlUnit' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/SCCB_final.sv:389]
-	Parameter RESET bound to: 0 - type: integer 
-	Parameter WAIT bound to: 1 - type: integer 
-	Parameter RUN bound to: 2 - type: integer 
-	Parameter DATA bound to: 3 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/SCCB_final.sv:531]
-INFO: [Synth 8-6155] done synthesizing module 'SCCB_ControlUnit' (3#1) [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/SCCB_final.sv:389]
-INFO: [Synth 8-6155] done synthesizing module 'SCCB_final' (4#1) [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/SCCB_final.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'display_mux_2x1' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:300]
-INFO: [Synth 8-6155] done synthesizing module 'display_mux_2x1' (5#1) [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:300]
-WARNING: [Synth 8-7071] port 'Gray_Data' of module 'display_mux_2x1' is unconnected for instance 'U_display_mux_2x1' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:112]
-WARNING: [Synth 8-7071] port 'qvga_en3' of module 'display_mux_2x1' is unconnected for instance 'U_display_mux_2x1' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:112]
-WARNING: [Synth 8-7023] instance 'U_display_mux_2x1' of module 'display_mux_2x1' has 8 connections declared, but only 6 given [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:112]
-INFO: [Synth 8-6157] synthesizing module 'ov7670_SetData' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/ov7670_SetData.sv:3]
-INFO: [Synth 8-6155] done synthesizing module 'ov7670_SetData' (6#1) [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/ov7670_SetData.sv:3]
-INFO: [Synth 8-6157] synthesizing module 'frameBuffer' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/FrameBuffer.sv:5]
-INFO: [Synth 8-6155] done synthesizing module 'frameBuffer' (7#1) [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/FrameBuffer.sv:5]
-INFO: [Synth 8-6157] synthesizing module 'qvga_addr_decoder' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:238]
-INFO: [Synth 8-6155] done synthesizing module 'qvga_addr_decoder' (8#1) [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:238]
-INFO: [Synth 8-6157] synthesizing module 'vga_controller' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:3]
-INFO: [Synth 8-6157] synthesizing module 'pixel_counter' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:62]
+INFO: [Synth 8-6157] synthesizing module 'top_VGA_CAMERA' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/.Xil/Vivado-21800-DESKTOP-7CFQ9ND/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/.Xil/Vivado-21800-DESKTOP-7CFQ9ND/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'rbt2gray' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:364]
+	Parameter RW bound to: 8'b01001100 
+	Parameter GW bound to: 8'b10010110 
+	Parameter BW bound to: 8'b00011110 
+INFO: [Synth 8-6155] done synthesizing module 'rbt2gray' (2#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:364]
+INFO: [Synth 8-6157] synthesizing module 'camera_configure' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/camera_configure.v:23]
+	Parameter CLK_FREQ bound to: 25000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'OV7670_config_rom' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/OV7670_config_rom.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'OV7670_config_rom' (3#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/OV7670_config_rom.v:3]
+INFO: [Synth 8-6157] synthesizing module 'OV7670_config' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/OV7670_config.v:23]
+	Parameter CLK_FREQ bound to: 25000000 - type: integer 
+	Parameter FSM_IDLE bound to: 0 - type: integer 
+	Parameter FSM_SEND_CMD bound to: 1 - type: integer 
+	Parameter FSM_DONE bound to: 2 - type: integer 
+	Parameter FSM_TIMER bound to: 3 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/OV7670_config.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'OV7670_config' (4#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/OV7670_config.v:23]
+INFO: [Synth 8-6157] synthesizing module 'SCCB_interface' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/SCCB_interface.v:23]
+	Parameter CLK_FREQ bound to: 25000000 - type: integer 
+	Parameter SCCB_FREQ bound to: 100000 - type: integer 
+	Parameter CAMERA_ADDR bound to: 8'b01000010 
+	Parameter FSM_IDLE bound to: 0 - type: integer 
+	Parameter FSM_START_SIGNAL bound to: 1 - type: integer 
+	Parameter FSM_LOAD_BYTE bound to: 2 - type: integer 
+	Parameter FSM_TX_BYTE_1 bound to: 3 - type: integer 
+	Parameter FSM_TX_BYTE_2 bound to: 4 - type: integer 
+	Parameter FSM_TX_BYTE_3 bound to: 5 - type: integer 
+	Parameter FSM_TX_BYTE_4 bound to: 6 - type: integer 
+	Parameter FSM_END_SIGNAL_1 bound to: 7 - type: integer 
+	Parameter FSM_END_SIGNAL_2 bound to: 8 - type: integer 
+	Parameter FSM_END_SIGNAL_3 bound to: 9 - type: integer 
+	Parameter FSM_END_SIGNAL_4 bound to: 10 - type: integer 
+	Parameter FSM_DONE bound to: 11 - type: integer 
+	Parameter FSM_TIMER bound to: 12 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/SCCB_interface.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'SCCB_interface' (5#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/SCCB_interface.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'camera_configure' (6#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/camera_configure.v:23]
+INFO: [Synth 8-6157] synthesizing module 'display_mux_2x1' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:331]
+INFO: [Synth 8-6155] done synthesizing module 'display_mux_2x1' (7#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:331]
+WARNING: [Synth 8-7071] port 'qvga_en3' of module 'display_mux_2x1' is unconnected for instance 'U_display_mux_2x1' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:112]
+WARNING: [Synth 8-7023] instance 'U_display_mux_2x1' of module 'display_mux_2x1' has 7 connections declared, but only 6 given [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:112]
+INFO: [Synth 8-6157] synthesizing module 'ov7670_SetData' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/ov7670_SetData.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'ov7670_SetData' (8#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/ov7670_SetData.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'frameBuffer' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/FrameBuffer.sv:5]
+INFO: [Synth 8-6155] done synthesizing module 'frameBuffer' (9#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/FrameBuffer.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'qvga_addr_decoder' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:238]
+INFO: [Synth 8-6155] done synthesizing module 'qvga_addr_decoder' (10#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:238]
+INFO: [Synth 8-6157] synthesizing module 'vga_controller' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'pixel_counter' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:62]
 	Parameter H_PIX_MAX bound to: 800 - type: integer 
 	Parameter V_LINE_MAX bound to: 525 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'pixel_counter' (9#1) [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:62]
-INFO: [Synth 8-6157] synthesizing module 'vga_decoder' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:34]
+INFO: [Synth 8-6155] done synthesizing module 'pixel_counter' (11#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:62]
+INFO: [Synth 8-6157] synthesizing module 'vga_decoder' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:34]
 	Parameter H_Visible_area bound to: 640 - type: integer 
 	Parameter H_Front_porch bound to: 16 - type: integer 
 	Parameter H_Sync_pulse bound to: 96 - type: integer 
@@ -63,291 +87,627 @@ INFO: [Synth 8-6157] synthesizing module 'vga_decoder' [D:/Verilog/Verilog/TeamP
 	Parameter V_Sync_pulse bound to: 2 - type: integer 
 	Parameter V_Back_porch bound to: 33 - type: integer 
 	Parameter V_Whole_frame bound to: 525 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'vga_decoder' (10#1) [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:34]
-INFO: [Synth 8-6155] done synthesizing module 'vga_controller' (11#1) [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:3]
-INFO: [Synth 8-6157] synthesizing module 'rgb2gray' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:343]
+INFO: [Synth 8-6155] done synthesizing module 'vga_decoder' (12#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:34]
+INFO: [Synth 8-6155] done synthesizing module 'vga_controller' (13#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'rgb2gray' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:381]
 	Parameter RW bound to: 8'b01001100 
 	Parameter GW bound to: 8'b10010110 
 	Parameter BW bound to: 8'b00011110 
-INFO: [Synth 8-6155] done synthesizing module 'rgb2gray' (12#1) [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:343]
-INFO: [Synth 8-6157] synthesizing module 'disparity_generator' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:647]
+INFO: [Synth 8-6155] done synthesizing module 'rgb2gray' (14#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:381]
+INFO: [Synth 8-6157] synthesizing module 'disparity_generator' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:71]
 	Parameter IDLE bound to: 0 - type: integer 
-	Parameter STATE0 bound to: 1 - type: integer 
-	Parameter STATE1 bound to: 2 - type: integer 
-	Parameter STATE2 bound to: 3 - type: integer 
-WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:744]
-WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:744]
-WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:744]
-WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:743]
-WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:743]
-WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:743]
-WARNING: [Synth 8-324] index 161 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:744]
-WARNING: [Synth 8-324] index 161 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:744]
-WARNING: [Synth 8-324] index 161 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:744]
-WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:742]
-WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:742]
-WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:742]
-WARNING: [Synth 8-324] index 161 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:743]
-WARNING: [Synth 8-324] index 161 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:743]
-WARNING: [Synth 8-324] index 161 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:743]
-WARNING: [Synth 8-324] index 162 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:744]
-WARNING: [Synth 8-324] index 162 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:744]
-WARNING: [Synth 8-324] index 162 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:744]
-WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:741]
-WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:741]
-WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:741]
-WARNING: [Synth 8-324] index 161 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:742]
-WARNING: [Synth 8-324] index 161 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:742]
-WARNING: [Synth 8-324] index 161 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:742]
-WARNING: [Synth 8-324] index 162 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:743]
-WARNING: [Synth 8-324] index 162 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:743]
-WARNING: [Synth 8-324] index 162 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:743]
-WARNING: [Synth 8-324] index 163 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:744]
-WARNING: [Synth 8-324] index 163 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:744]
-WARNING: [Synth 8-324] index 163 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:744]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:727]
-INFO: [Synth 8-6155] done synthesizing module 'disparity_generator' (13#1) [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:647]
-INFO: [Synth 8-6155] done synthesizing module 'top_VGA_CAMERA' (14#1) [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:5]
+	Parameter COMP bound to: 1 - type: integer 
+	Parameter WAIT bound to: 2 - type: integer 
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:153]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:153]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:153]
+WARNING: [Synth 8-324] index 161 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 161 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 161 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:152]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:152]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:152]
+WARNING: [Synth 8-324] index 161 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:153]
+WARNING: [Synth 8-324] index 161 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:153]
+WARNING: [Synth 8-324] index 161 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:153]
+WARNING: [Synth 8-324] index 162 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 162 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 162 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:151]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:151]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:151]
+WARNING: [Synth 8-324] index 161 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:152]
+WARNING: [Synth 8-324] index 161 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:152]
+WARNING: [Synth 8-324] index 161 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:152]
+WARNING: [Synth 8-324] index 162 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:153]
+WARNING: [Synth 8-324] index 162 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:153]
+WARNING: [Synth 8-324] index 162 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:153]
+WARNING: [Synth 8-324] index 163 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 163 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 163 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:141]
+INFO: [Synth 8-6155] done synthesizing module 'disparity_generator' (15#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:71]
+INFO: [Synth 8-6155] done synthesizing module 'top_VGA_CAMERA' (16#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:5]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1398.469 ; gain = 309.566
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1281.457 ; gain = 175.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1398.469 ; gain = 309.566
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1281.457 ; gain = 175.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1398.469 ; gain = 309.566
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1281.457 ; gain = 175.789
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.349 . Memory (MB): peak = 1398.469 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.172 . Memory (MB): peak = 1281.457 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [d:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'U_clk_gene'
-Finished Parsing XDC File [d:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'U_clk_gene'
-Parsing XDC File [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
-Finished Parsing XDC File [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_VGA_CAMERA_propImpl.xdc].
+Parsing XDC File [d:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'U_clk_gene'
+Finished Parsing XDC File [d:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'U_clk_gene'
+Parsing XDC File [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+Finished Parsing XDC File [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_VGA_CAMERA_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_VGA_CAMERA_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/dont_touch.xdc]
+Parsing XDC File [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1469.020 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1355.930 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.116 . Memory (MB): peak = 1469.020 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 1355.930 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1469.020 ; gain = 380.117
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:15 . Memory (MB): peak = 1355.930 ; gain = 250.262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1469.020 ; gain = 380.117
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:15 . Memory (MB): peak = 1355.930 ; gain = 250.262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  d:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 7).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  d:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 8).
+Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  d:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 7).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  d:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 8).
 Applied set_property KEEP_HIERARCHY = SOFT for U_clk_gene. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1469.020 ; gain = 380.117
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:15 . Memory (MB): peak = 1355.930 ; gain = 250.262
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'SCCB_intf'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'disparity_generator'
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[0]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                    IDLE |                            00000 | 00000000000000000000000000000000
-                 START_1 |                            00001 | 00000000000000000000000000000001
-               START_1_1 |                            00010 | 00000000000000000000000000000010
-                 START_2 |                            00011 | 00000000000000000000000000000011
-             TRANSFER_ID |                            00100 | 00000000000000000000000000000100
-          WAIT_FINAL_1_1 |                            00101 | 00000000000000000000000000000110
-          WAIT_FINAL_1_2 |                            00110 | 00000000000000000000000000000111
-              WAIT_ACK_1 |                            00111 | 00000000000000000000000000001000
-            TRANSFER_REG |                            01000 | 00000000000000000000000000001001
-          WAIT_FINAL_2_1 |                            01001 | 00000000000000000000000000001011
-          WAIT_FINAL_2_2 |                            01010 | 00000000000000000000000000001100
-              WAIT_ACK_2 |                            01011 | 00000000000000000000000000001101
-           TRANSFER_DATA |                            01100 | 00000000000000000000000000001110
-          WAIT_FINAL_3_1 |                            01101 | 00000000000000000000000000010000
-          WAIT_FINAL_3_2 |                            01110 | 00000000000000000000000000010001
-              WAIT_ACK_3 |                            01111 | 00000000000000000000000000010010
-                  STOP_1 |                            10000 | 00000000000000000000000000010011
-                  STOP_2 |                            10001 | 00000000000000000000000000010100
-                    DONE |                            10010 | 00000000000000000000000000010101
-             WAIT_HIGH_3 |                            10011 | 00000000000000000000000000001111
-             WAIT_HIGH_2 |                            10100 | 00000000000000000000000000001010
-             WAIT_HIGH_1 |                            10101 | 00000000000000000000000000000101
+                    IDLE |                             0001 |                               00
+                    COMP |                             0010 |                               01
+                    WAIT |                             0100 |                               10
+                  iSTATE |                             1000 |                               11
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'SCCB_intf'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                    IDLE |                                0 |                               00
-                  STATE0 |                                1 |                               01
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'disparity_generator'
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[0]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[1]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[2]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[3]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[4]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[5]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[6]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[7]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[8]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[9]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[10]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[11]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[12]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[13]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[14]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[15]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[16]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[17]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[18]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[19]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[20]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[21]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[22]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[23]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[24]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[25]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[26]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[27]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[28]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[29]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[30]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[31]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[32]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[33]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[34]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[35]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[36]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[37]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[38]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[39]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[40]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[41]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[42]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[43]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[44]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[45]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[46]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[47]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[48]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[49]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[50]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[51]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[52]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[53]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[54]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[55]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[56]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[57]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[58]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[59]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[60]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[61]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[62]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[63]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[64]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[65]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[66]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[67]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[68]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[69]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[70]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[71]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[72]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[73]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[74]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[75]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[76]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[77]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[78]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[79]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[80]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[81]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[82]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[83]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[84]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[85]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[86]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[87]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[88]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[89]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[90]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[91]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[92]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[93]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[94]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[95]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[96]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[97]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[98]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
-WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[99]' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:750]
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'one-hot' in module 'disparity_generator'
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[1]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[2]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[3]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[4]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[5]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[6]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[7]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[8]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[9]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[10]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[11]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[12]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[13]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[14]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[15]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[16]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[17]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[18]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[19]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[20]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[21]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[22]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[23]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[24]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[25]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[26]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[27]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[28]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[29]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[30]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[31]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[32]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[33]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[34]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[35]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[36]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[37]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[38]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[39]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[40]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[41]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[42]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[43]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[44]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[45]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[46]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[47]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[48]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[49]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[50]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[51]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[52]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[53]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[54]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[55]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[56]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[57]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[58]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[59]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[60]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[61]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[62]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[63]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[64]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[65]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[66]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[67]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[68]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[69]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[70]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[71]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[72]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[73]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[74]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[75]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[76]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[77]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[78]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[79]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[80]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[81]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[82]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[83]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[84]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[85]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[86]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[87]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[88]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[89]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[90]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[91]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[92]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[93]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[94]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[95]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[96]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[97]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[98]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[99]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
 INFO: [Common 17-14] Message 'Synth 8-327' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:41 ; elapsed = 00:01:00 . Memory (MB): peak = 1469.020 ; gain = 380.117
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:23 . Memory (MB): peak = 1355.930 ; gain = 250.262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   10 Bit       Adders := 6     
-	   2 Input    9 Bit       Adders := 2     
-	   2 Input    8 Bit       Adders := 6     
+	   2 Input   32 Bit       Adders := 4     
+	   2 Input   10 Bit       Adders := 4     
+	   2 Input    8 Bit       Adders := 4     
 	   3 Input    6 Bit       Adders := 790   
 	   2 Input    6 Bit       Adders := 4     
 	   2 Input    4 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 2     
 +---Registers : 
-	               16 Bit    Registers := 4     
-	               10 Bit    Registers := 6     
-	                9 Bit    Registers := 2     
-	                8 Bit    Registers := 12    
-	                6 Bit    Registers := 321   
-	                4 Bit    Registers := 2     
-	                3 Bit    Registers := 2     
+	               32 Bit    Registers := 4     
+	               16 Bit    Registers := 326   
+	               10 Bit    Registers := 4     
+	                8 Bit    Registers := 14    
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 4     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 19    
+	                1 Bit    Registers := 12    
 +---RAMs : 
 	             300K Bit	(19200 X 16 bit)          RAMs := 2     
++---ROMs : 
+	                    ROMs := 2     
 +---Muxes : 
+	   2 Input   32 Bit        Muxes := 4     
+	   7 Input   32 Bit        Muxes := 2     
+	  14 Input   32 Bit        Muxes := 2     
 	   2 Input   16 Bit        Muxes := 7     
 	   3 Input   16 Bit        Muxes := 2     
-	   2 Input   15 Bit        Muxes := 4     
-	  22 Input   10 Bit        Muxes := 2     
+	   2 Input   15 Bit        Muxes := 2     
+	   2 Input   12 Bit        Muxes := 2     
 	   2 Input   10 Bit        Muxes := 4     
-	   2 Input    9 Bit        Muxes := 4     
-	  22 Input    8 Bit        Muxes := 2     
-	   2 Input    8 Bit        Muxes := 6     
-	   4 Input    8 Bit        Muxes := 4     
-	   2 Input    6 Bit        Muxes := 1904  
-	   3 Input    6 Bit        Muxes := 157   
-	   2 Input    5 Bit        Muxes := 485   
-	   3 Input    5 Bit        Muxes := 157   
-	  22 Input    5 Bit        Muxes := 2     
-	  22 Input    4 Bit        Muxes := 2     
-	   2 Input    4 Bit        Muxes := 3     
-	   2 Input    3 Bit        Muxes := 2     
+	  14 Input    8 Bit        Muxes := 2     
+	   4 Input    8 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 2     
+	   3 Input    6 Bit        Muxes := 472   
+	   2 Input    6 Bit        Muxes := 2223  
+	   3 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	  14 Input    4 Bit        Muxes := 4     
 	   4 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 4     
-	   4 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 182   
-	  22 Input    1 Bit        Muxes := 32    
-	   4 Input    1 Bit        Muxes := 10    
-	   6 Input    1 Bit        Muxes := 2     
-	   3 Input    1 Bit        Muxes := 2     
+	   3 Input    2 Bit        Muxes := 2     
+	  14 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 39    
+	   4 Input    1 Bit        Muxes := 16    
+	   3 Input    1 Bit        Muxes := 10    
+	  14 Input    1 Bit        Muxes := 22    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+
+*** Running vivado
+    with args -log top_VGA_CAMERA.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_VGA_CAMERA.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source top_VGA_CAMERA.tcl -notrace
+Command: synth_design -top top_VGA_CAMERA -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 14920
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1104.930 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_VGA_CAMERA' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/.Xil/Vivado-8744-DESKTOP-7CFQ9ND/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/.Xil/Vivado-8744-DESKTOP-7CFQ9ND/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'rbt2gray' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:364]
+	Parameter RW bound to: 8'b01001100 
+	Parameter GW bound to: 8'b10010110 
+	Parameter BW bound to: 8'b00011110 
+INFO: [Synth 8-6155] done synthesizing module 'rbt2gray' (2#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:364]
+INFO: [Synth 8-6157] synthesizing module 'camera_configure' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/camera_configure.v:23]
+	Parameter CLK_FREQ bound to: 25000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'OV7670_config_rom' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/OV7670_config_rom.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'OV7670_config_rom' (3#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/OV7670_config_rom.v:3]
+INFO: [Synth 8-6157] synthesizing module 'OV7670_config' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/OV7670_config.v:23]
+	Parameter CLK_FREQ bound to: 25000000 - type: integer 
+	Parameter FSM_IDLE bound to: 0 - type: integer 
+	Parameter FSM_SEND_CMD bound to: 1 - type: integer 
+	Parameter FSM_DONE bound to: 2 - type: integer 
+	Parameter FSM_TIMER bound to: 3 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/OV7670_config.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'OV7670_config' (4#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/OV7670_config.v:23]
+INFO: [Synth 8-6157] synthesizing module 'SCCB_interface' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/SCCB_interface.v:23]
+	Parameter CLK_FREQ bound to: 25000000 - type: integer 
+	Parameter SCCB_FREQ bound to: 100000 - type: integer 
+	Parameter CAMERA_ADDR bound to: 8'b01000010 
+	Parameter FSM_IDLE bound to: 0 - type: integer 
+	Parameter FSM_START_SIGNAL bound to: 1 - type: integer 
+	Parameter FSM_LOAD_BYTE bound to: 2 - type: integer 
+	Parameter FSM_TX_BYTE_1 bound to: 3 - type: integer 
+	Parameter FSM_TX_BYTE_2 bound to: 4 - type: integer 
+	Parameter FSM_TX_BYTE_3 bound to: 5 - type: integer 
+	Parameter FSM_TX_BYTE_4 bound to: 6 - type: integer 
+	Parameter FSM_END_SIGNAL_1 bound to: 7 - type: integer 
+	Parameter FSM_END_SIGNAL_2 bound to: 8 - type: integer 
+	Parameter FSM_END_SIGNAL_3 bound to: 9 - type: integer 
+	Parameter FSM_END_SIGNAL_4 bound to: 10 - type: integer 
+	Parameter FSM_DONE bound to: 11 - type: integer 
+	Parameter FSM_TIMER bound to: 12 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/SCCB_interface.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'SCCB_interface' (5#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/SCCB_interface.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'camera_configure' (6#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/Downloads/camera_configure.v:23]
+INFO: [Synth 8-6157] synthesizing module 'display_mux_2x1' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:331]
+INFO: [Synth 8-6155] done synthesizing module 'display_mux_2x1' (7#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:331]
+WARNING: [Synth 8-7071] port 'qvga_en3' of module 'display_mux_2x1' is unconnected for instance 'U_display_mux_2x1' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:112]
+WARNING: [Synth 8-7023] instance 'U_display_mux_2x1' of module 'display_mux_2x1' has 7 connections declared, but only 6 given [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:112]
+INFO: [Synth 8-6157] synthesizing module 'ov7670_SetData' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/ov7670_SetData.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'ov7670_SetData' (8#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/ov7670_SetData.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'frameBuffer' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/FrameBuffer.sv:5]
+INFO: [Synth 8-6155] done synthesizing module 'frameBuffer' (9#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/FrameBuffer.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'qvga_addr_decoder' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:238]
+INFO: [Synth 8-6155] done synthesizing module 'qvga_addr_decoder' (10#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:238]
+INFO: [Synth 8-6157] synthesizing module 'vga_controller' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'pixel_counter' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:62]
+	Parameter H_PIX_MAX bound to: 800 - type: integer 
+	Parameter V_LINE_MAX bound to: 525 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pixel_counter' (11#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:62]
+INFO: [Synth 8-6157] synthesizing module 'vga_decoder' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:34]
+	Parameter H_Visible_area bound to: 640 - type: integer 
+	Parameter H_Front_porch bound to: 16 - type: integer 
+	Parameter H_Sync_pulse bound to: 96 - type: integer 
+	Parameter H_Back_porch bound to: 48 - type: integer 
+	Parameter H_Whole_line bound to: 800 - type: integer 
+	Parameter V_Visible_area bound to: 480 - type: integer 
+	Parameter V_Front_porch bound to: 10 - type: integer 
+	Parameter V_Sync_pulse bound to: 2 - type: integer 
+	Parameter V_Back_porch bound to: 33 - type: integer 
+	Parameter V_Whole_frame bound to: 525 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'vga_decoder' (12#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:34]
+INFO: [Synth 8-6155] done synthesizing module 'vga_controller' (13#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/vga_controller.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'rgb2gray' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:381]
+	Parameter RW bound to: 8'b01001100 
+	Parameter GW bound to: 8'b10010110 
+	Parameter BW bound to: 8'b00011110 
+INFO: [Synth 8-6155] done synthesizing module 'rgb2gray' (14#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:381]
+INFO: [Synth 8-6157] synthesizing module 'disparity_generator' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:71]
+	Parameter IDLE bound to: 0 - type: integer 
+	Parameter COMP bound to: 1 - type: integer 
+	Parameter WAIT bound to: 2 - type: integer 
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:153]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:153]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:153]
+WARNING: [Synth 8-324] index 161 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 161 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 161 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:152]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:152]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:152]
+WARNING: [Synth 8-324] index 161 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:153]
+WARNING: [Synth 8-324] index 161 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:153]
+WARNING: [Synth 8-324] index 161 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:153]
+WARNING: [Synth 8-324] index 162 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 162 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 162 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:151]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:151]
+WARNING: [Synth 8-324] index 160 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:151]
+WARNING: [Synth 8-324] index 161 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:152]
+WARNING: [Synth 8-324] index 161 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:152]
+WARNING: [Synth 8-324] index 161 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:152]
+WARNING: [Synth 8-324] index 162 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:153]
+WARNING: [Synth 8-324] index 162 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:153]
+WARNING: [Synth 8-324] index 162 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:153]
+WARNING: [Synth 8-324] index 163 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 163 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+WARNING: [Synth 8-324] index 163 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:154]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:141]
+INFO: [Synth 8-6155] done synthesizing module 'disparity_generator' (15#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:71]
+INFO: [Synth 8-6155] done synthesizing module 'top_VGA_CAMERA' (16#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:5]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1281.980 ; gain = 177.051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1281.980 ; gain = 177.051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1281.980 ; gain = 177.051
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.170 . Memory (MB): peak = 1281.980 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'U_clk_gene'
+Finished Parsing XDC File [d:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'U_clk_gene'
+Parsing XDC File [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+Finished Parsing XDC File [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_VGA_CAMERA_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_VGA_CAMERA_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1360.570 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 1360.570 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:15 . Memory (MB): peak = 1360.570 ; gain = 255.641
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:15 . Memory (MB): peak = 1360.570 ; gain = 255.641
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  d:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 7).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  d:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 8).
+Applied set_property KEEP_HIERARCHY = SOFT for U_clk_gene. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:15 . Memory (MB): peak = 1360.570 ; gain = 255.641
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'disparity_generator'
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[0]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                             0001 |                               00
+                    COMP |                             0010 |                               01
+                    WAIT |                             0100 |                               10
+                  iSTATE |                             1000 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'one-hot' in module 'disparity_generator'
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[1]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[2]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[3]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[4]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[5]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[6]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[7]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[8]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[9]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[10]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[11]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[12]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[13]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[14]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[15]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[16]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[17]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[18]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[19]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[20]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[21]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[22]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[23]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[24]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[25]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[26]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[27]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[28]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[29]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[30]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[31]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[32]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[33]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[34]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[35]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[36]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[37]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[38]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[39]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[40]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[41]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[42]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[43]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[44]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[45]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[46]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[47]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[48]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[49]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[50]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[51]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[52]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[53]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[54]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[55]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[56]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[57]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[58]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[59]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[60]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[61]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[62]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[63]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[64]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[65]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[66]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[67]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[68]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[69]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[70]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[71]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[72]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[73]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[74]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[75]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[76]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[77]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[78]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[79]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[80]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[81]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[82]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[83]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[84]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[85]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[86]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[87]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[88]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[89]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[90]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[91]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[92]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[93]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[94]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[95]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[96]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[97]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[98]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+WARNING: [Synth 8-327] inferring latch for variable 'temp_mem_reg[99]' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:96]
+INFO: [Common 17-14] Message 'Synth 8-327' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:23 . Memory (MB): peak = 1360.570 ; gain = 255.641
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 4     
+	   2 Input   10 Bit       Adders := 4     
+	   2 Input    8 Bit       Adders := 4     
+	   3 Input    6 Bit       Adders := 790   
+	   2 Input    6 Bit       Adders := 4     
+	   2 Input    4 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 4     
+	               16 Bit    Registers := 326   
+	               10 Bit    Registers := 4     
+	                8 Bit    Registers := 14    
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 4     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 12    
++---RAMs : 
+	             300K Bit	(19200 X 16 bit)          RAMs := 2     
++---ROMs : 
+	                    ROMs := 2     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 4     
+	   7 Input   32 Bit        Muxes := 2     
+	  14 Input   32 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 7     
+	   3 Input   16 Bit        Muxes := 2     
+	   2 Input   15 Bit        Muxes := 2     
+	   2 Input   12 Bit        Muxes := 2     
+	   2 Input   10 Bit        Muxes := 4     
+	  14 Input    8 Bit        Muxes := 2     
+	   4 Input    8 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 2     
+	   3 Input    6 Bit        Muxes := 472   
+	   2 Input    6 Bit        Muxes := 2223  
+	   3 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	  14 Input    4 Bit        Muxes := 4     
+	   4 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 4     
+	   3 Input    2 Bit        Muxes := 2     
+	  14 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 39    
+	   4 Input    1 Bit        Muxes := 16    
+	   3 Input    1 Bit        Muxes := 10    
+	  14 Input    1 Bit        Muxes := 22    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -363,125 +723,226 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[159][0]' (LD) to 'temp_mem_reg[158][0]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[158][0]' (LD) to 'temp_mem_reg[159][1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\temp_mem_reg[159][1] )
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[159][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[158][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[157][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[156][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[155][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[154][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[153][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[152][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[151][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[150][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[149][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[148][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[147][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[146][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[145][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[144][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[143][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[142][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[141][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[140][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[139][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[138][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[137][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[136][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[135][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[134][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[133][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[132][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[131][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[130][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[129][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[128][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[127][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[126][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[125][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[124][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[123][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[122][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[121][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[120][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[119][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[118][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[117][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[116][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[115][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[114][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[113][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[112][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[111][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[110][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[109][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[108][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[107][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[106][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[105][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[104][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[103][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[102][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[101][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[100][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[99][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[98][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[97][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[96][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[95][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[94][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[93][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[92][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[91][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[90][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[89][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[88][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[87][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[86][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[85][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[84][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[83][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[82][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[81][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[80][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[79][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[78][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[77][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[76][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[75][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[74][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[73][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[72][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[71][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[70][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[69][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[68][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[67][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[66][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[65][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[64][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[63][2]' (LD) to 'temp_mem_reg[0][2]'
-INFO: [Synth 8-3886] merging instance 'temp_mem_reg[62][2]' (LD) to 'temp_mem_reg[0][2]'
+WARNING: [Synth 8-6040] Register U_SCCB_Config_Left/config_1/rom_addr_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register U_SCCB_Config_Right/config_1/rom_addr_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[159][6]' (FDE) to 'mem_L_reg[159][7]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[159][7]' (FDE) to 'mem_L_reg[159][8]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[159][8]' (FDE) to 'mem_L_reg[159][9]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[159][9]' (FDE) to 'mem_L_reg[159][10]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[159][10]' (FDE) to 'mem_L_reg[159][11]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[159][11]' (FDE) to 'mem_L_reg[159][12]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[159][12]' (FDE) to 'mem_L_reg[159][13]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[159][13]' (FDE) to 'mem_L_reg[159][14]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[159][14]' (FDE) to 'mem_L_reg[159][15]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[159][15]' (FDE) to 'mem_R_reg[159][15]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[158][6]' (FDE) to 'mem_L_reg[158][7]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[158][7]' (FDE) to 'mem_L_reg[158][8]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[158][8]' (FDE) to 'mem_L_reg[158][9]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[158][9]' (FDE) to 'mem_L_reg[158][10]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[158][10]' (FDE) to 'mem_L_reg[158][11]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[158][11]' (FDE) to 'mem_L_reg[158][12]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[158][12]' (FDE) to 'mem_L_reg[158][13]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[158][13]' (FDE) to 'mem_L_reg[158][14]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[158][14]' (FDE) to 'mem_L_reg[158][15]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[158][15]' (FDE) to 'mem_R_reg[158][15]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[157][6]' (FDE) to 'mem_L_reg[157][7]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[157][7]' (FDE) to 'mem_L_reg[157][8]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[157][8]' (FDE) to 'mem_L_reg[157][9]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[157][9]' (FDE) to 'mem_L_reg[157][10]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[157][10]' (FDE) to 'mem_L_reg[157][11]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[157][11]' (FDE) to 'mem_L_reg[157][12]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[157][12]' (FDE) to 'mem_L_reg[157][13]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[157][13]' (FDE) to 'mem_L_reg[157][14]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[157][14]' (FDE) to 'mem_L_reg[157][15]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[157][15]' (FDE) to 'mem_R_reg[157][15]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[156][6]' (FDE) to 'mem_L_reg[156][7]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[156][7]' (FDE) to 'mem_L_reg[156][8]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[156][8]' (FDE) to 'mem_L_reg[156][9]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[156][9]' (FDE) to 'mem_L_reg[156][10]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[156][10]' (FDE) to 'mem_L_reg[156][11]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[156][11]' (FDE) to 'mem_L_reg[156][12]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[156][12]' (FDE) to 'mem_L_reg[156][13]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[156][13]' (FDE) to 'mem_L_reg[156][14]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[156][14]' (FDE) to 'mem_L_reg[156][15]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[156][15]' (FDE) to 'mem_R_reg[156][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[159][6]' (FDE) to 'mem_R_reg[159][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[159][7]' (FDE) to 'mem_R_reg[159][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[159][8]' (FDE) to 'mem_R_reg[159][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[159][9]' (FDE) to 'mem_R_reg[159][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[159][10]' (FDE) to 'mem_R_reg[159][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[159][11]' (FDE) to 'mem_R_reg[159][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[159][12]' (FDE) to 'mem_R_reg[159][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[159][13]' (FDE) to 'mem_R_reg[159][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[159][14]' (FDE) to 'mem_R_reg[159][15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[159][15] )
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[155][6]' (FDE) to 'mem_L_reg[155][7]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[155][7]' (FDE) to 'mem_L_reg[155][8]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[155][8]' (FDE) to 'mem_L_reg[155][9]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[155][9]' (FDE) to 'mem_L_reg[155][10]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[155][10]' (FDE) to 'mem_L_reg[155][11]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[155][11]' (FDE) to 'mem_L_reg[155][12]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[155][12]' (FDE) to 'mem_L_reg[155][13]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[155][13]' (FDE) to 'mem_L_reg[155][14]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[155][14]' (FDE) to 'mem_L_reg[155][15]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[155][15]' (FDE) to 'mem_R_reg[155][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[158][6]' (FDE) to 'mem_R_reg[158][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[158][7]' (FDE) to 'mem_R_reg[158][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[158][8]' (FDE) to 'mem_R_reg[158][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[158][9]' (FDE) to 'mem_R_reg[158][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[158][10]' (FDE) to 'mem_R_reg[158][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[158][11]' (FDE) to 'mem_R_reg[158][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[158][12]' (FDE) to 'mem_R_reg[158][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[158][13]' (FDE) to 'mem_R_reg[158][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[158][14]' (FDE) to 'mem_R_reg[158][15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[158][15] )
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[154][6]' (FDE) to 'mem_L_reg[154][7]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[154][7]' (FDE) to 'mem_L_reg[154][8]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[154][8]' (FDE) to 'mem_L_reg[154][9]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[154][9]' (FDE) to 'mem_L_reg[154][10]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[154][10]' (FDE) to 'mem_L_reg[154][11]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[154][11]' (FDE) to 'mem_L_reg[154][12]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[154][12]' (FDE) to 'mem_L_reg[154][13]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[154][13]' (FDE) to 'mem_L_reg[154][14]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[154][14]' (FDE) to 'mem_L_reg[154][15]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[154][15]' (FDE) to 'mem_R_reg[154][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[157][6]' (FDE) to 'mem_R_reg[157][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[157][7]' (FDE) to 'mem_R_reg[157][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[157][8]' (FDE) to 'mem_R_reg[157][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[157][9]' (FDE) to 'mem_R_reg[157][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[157][10]' (FDE) to 'mem_R_reg[157][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[157][11]' (FDE) to 'mem_R_reg[157][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[157][12]' (FDE) to 'mem_R_reg[157][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[157][13]' (FDE) to 'mem_R_reg[157][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[157][14]' (FDE) to 'mem_R_reg[157][15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[157][15] )
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[153][6]' (FDE) to 'mem_L_reg[153][7]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[153][7]' (FDE) to 'mem_L_reg[153][8]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[153][8]' (FDE) to 'mem_L_reg[153][9]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[153][9]' (FDE) to 'mem_L_reg[153][10]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[153][10]' (FDE) to 'mem_L_reg[153][11]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[153][11]' (FDE) to 'mem_L_reg[153][12]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[153][12]' (FDE) to 'mem_L_reg[153][13]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[153][13]' (FDE) to 'mem_L_reg[153][14]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[153][14]' (FDE) to 'mem_L_reg[153][15]'
+INFO: [Synth 8-3886] merging instance 'mem_L_reg[153][15]' (FDE) to 'mem_R_reg[153][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[156][6]' (FDE) to 'mem_R_reg[156][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[156][7]' (FDE) to 'mem_R_reg[156][15]'
+INFO: [Synth 8-3886] merging instance 'mem_R_reg[156][8]' (FDE) to 'mem_R_reg[156][15]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\temp_mem_reg[159][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[156][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[155][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[154][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[153][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[152][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[151][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[150][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[149][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[148][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[147][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[146][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[145][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[144][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[143][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[142][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[141][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[140][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[139][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[138][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[137][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[136][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[135][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[131][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[132][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[134][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[133][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[124][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[123][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[122][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[130][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[129][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[128][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[127][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[126][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[125][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[121][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[108][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[109][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[110][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[111][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[120][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[112][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[113][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[114][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[119][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[118][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[117][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[116][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[115][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[45][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[46][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[47][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[48][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[49][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[50][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[51][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[61][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[60][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[59][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[58][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[57][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[56][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[55][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[54][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[53][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[52][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[84][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[83][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[82][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[81][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[80][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[79][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[78][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[9][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[77][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[8][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[76][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[7][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[75][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[6][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[5][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[4][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[3][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[2][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[1][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[0][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[70][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[71][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[72][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[73][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[74][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[69][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[68][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_L_reg[62][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[67][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[66][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_R_reg[65][15] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:32 ; elapsed = 00:02:33 . Memory (MB): peak = 1469.020 ; gain = 380.117
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:01:13 . Memory (MB): peak = 1360.570 ; gain = 255.641
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 ROM: Preliminary Mapping	Report
-+-----------------+------------+---------------+----------------+
-|Module Name      | RTL Object | Depth x Width | Implemented As | 
-+-----------------+------------+---------------+----------------+
-|SCCB_ControlUnit | p_0_out    | 128x16        | LUT            | 
-|SCCB_ControlUnit | p_0_out    | 128x16        | LUT            | 
-|SCCB_ControlUnit | p_0_out    | 128x16        | LUT            | 
-+-----------------+------------+---------------+----------------+
++---------------+-----------------------------------+---------------+----------------+
+|Module Name    | RTL Object                        | Depth x Width | Implemented As | 
++---------------+-----------------------------------+---------------+----------------+
+|top_VGA_CAMERA | U_SCCB_Config_Left/rom1/dout_reg  | 256x16        | Block RAM      | 
+|top_VGA_CAMERA | U_SCCB_Config_Right/rom1/dout_reg | 256x16        | Block RAM      | 
++---------------+-----------------------------------+---------------+----------------+
 
 
 Block RAM: Preliminary Mapping	Report (see note below)
@@ -500,13 +961,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:40 ; elapsed = 00:02:42 . Memory (MB): peak = 1469.020 ; gain = 380.117
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:01:18 . Memory (MB): peak = 1360.570 ; gain = 255.641
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:48 ; elapsed = 00:02:53 . Memory (MB): peak = 1469.020 ; gain = 380.117
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:01:36 . Memory (MB): peak = 1365.168 ; gain = 260.238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -526,32 +987,42 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferLeft/mem_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferLeft/mem_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferLeft/mem_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferLeft/mem_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferLeft/mem_reg_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferLeft/mem_reg_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferLeft/mem_reg_0_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferLeft/mem_reg_0_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferLeft/mem_reg_0_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferLeft/mem_reg_0_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferLeft/mem_reg_0_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferLeft/mem_reg_0_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferLeft/mem_reg_0_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferLeft/mem_reg_0_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferLeft/mem_reg_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferLeft/mem_reg_0_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferRight/mem_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferRight/mem_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferRight/mem_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferRight/mem_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferRight/mem_reg_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferRight/mem_reg_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferRight/mem_reg_0_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferRight/mem_reg_0_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferRight/mem_reg_0_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferRight/mem_reg_0_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferRight/mem_reg_0_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferRight/mem_reg_0_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferRight/mem_reg_0_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferRight/mem_reg_0_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferRight/mem_reg_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance i_0/U_FrameBufferRight/mem_reg_0_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/U_SCCB_Config_Left/rom1/dout_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance i_0/U_SCCB_Config_Left/rom1/dout_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:55 ; elapsed = 00:03:14 . Memory (MB): peak = 1469.020 ; gain = 380.117
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:01:47 . Memory (MB): peak = 1375.512 ; gain = 270.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -565,65 +1036,75 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance U_FrameBufferLeft/mem_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferLeft/mem_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferLeft/mem_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferLeft/mem_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferLeft/mem_reg_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U_FrameBufferLeft/mem_reg_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U_FrameBufferLeft/mem_reg_0_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferLeft/mem_reg_0_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferLeft/mem_reg_0_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferLeft/mem_reg_0_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferLeft/mem_reg_0_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U_FrameBufferLeft/mem_reg_0_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferLeft/mem_reg_0_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferLeft/mem_reg_0_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferLeft/mem_reg_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferLeft/mem_reg_0_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance U_FrameBufferRight/mem_reg_0_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U_SCCB_Config_Left/rom1/dout_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance U_SCCB_Config_Left/rom1/dout_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:01 ; elapsed = 00:03:22 . Memory (MB): peak = 1470.219 ; gain = 381.316
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:01:51 . Memory (MB): peak = 1375.512 ; gain = 270.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:01 ; elapsed = 00:03:22 . Memory (MB): peak = 1470.219 ; gain = 381.316
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:01:51 . Memory (MB): peak = 1375.512 ; gain = 270.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:03 ; elapsed = 00:03:23 . Memory (MB): peak = 1470.219 ; gain = 381.316
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:01:53 . Memory (MB): peak = 1375.512 ; gain = 270.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:03 ; elapsed = 00:03:23 . Memory (MB): peak = 1470.219 ; gain = 381.316
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:01:53 . Memory (MB): peak = 1375.512 ; gain = 270.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:03 ; elapsed = 00:03:24 . Memory (MB): peak = 1470.219 ; gain = 381.316
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:01:54 . Memory (MB): peak = 1375.512 ; gain = 270.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:03 ; elapsed = 00:03:24 . Memory (MB): peak = 1470.219 ; gain = 381.316
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:01:54 . Memory (MB): peak = 1375.512 ; gain = 270.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -642,49 +1123,51 @@ Report Cell Usage:
 +------+---------+------+
 |1     |clk_wiz  |     1|
 |2     |BUFG     |     3|
-|3     |CARRY4   |  1669|
-|4     |LUT1     |    38|
-|5     |LUT2     |  5744|
-|6     |LUT3     |   813|
-|7     |LUT4     |   393|
-|8     |LUT5     |  6234|
-|9     |LUT6     |  2839|
-|10    |MUXF7    |    59|
-|11    |MUXF8    |    29|
-|12    |RAMB36E1 |    24|
-|13    |FDCE     |   240|
-|14    |FDPE     |    20|
-|15    |FDRE     |  1604|
-|16    |LD       |  2077|
-|17    |IBUF     |    23|
-|18    |IOBUF    |     2|
-|19    |OBUF     |    18|
+|3     |CARRY4   |  2558|
+|4     |LUT1     |   149|
+|5     |LUT2     |  5241|
+|6     |LUT3     |  4613|
+|7     |LUT4     |  7484|
+|8     |LUT5     |  1279|
+|9     |LUT6     |  3494|
+|10    |MUXF7    |   141|
+|11    |MUXF8    |    40|
+|12    |RAMB18E1 |     1|
+|13    |RAMB36E1 |    32|
+|14    |FDCE     |   104|
+|15    |FDPE     |     2|
+|16    |FDRE     |  1850|
+|17    |FDSE     |    14|
+|18    |LD       |   634|
+|19    |IBUF     |    25|
+|20    |OBUF     |    16|
+|21    |OBUFT    |     4|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:03 ; elapsed = 00:03:24 . Memory (MB): peak = 1470.219 ; gain = 381.316
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:01:54 . Memory (MB): peak = 1375.512 ; gain = 270.582
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 480 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:44 ; elapsed = 00:03:17 . Memory (MB): peak = 1470.219 ; gain = 310.766
-Synthesis Optimization Complete : Time (s): cpu = 00:02:03 ; elapsed = 00:03:25 . Memory (MB): peak = 1470.219 ; gain = 381.316
+Synthesis finished with 0 errors, 0 critical warnings and 162 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:01:51 . Memory (MB): peak = 1375.512 ; gain = 191.992
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:01:54 . Memory (MB): peak = 1375.512 ; gain = 270.582
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.318 . Memory (MB): peak = 1482.270 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 3860 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.271 . Memory (MB): peak = 1385.082 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 3406 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'top_VGA_CAMERA' is not ideal for floorplanning, since the cellview 'disparity_generator' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
-INFO: [Opt 31-138] Pushed 1 inverter(s) to 1600 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.237 . Memory (MB): peak = 1482.270 ; gain = 0.000
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1385.082 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 2079 instances were transformed.
-  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
-  LD => LDCE: 477 instances
-  LD => LDCE (inverted pins: G): 1600 instances
+  A total of 634 instances were transformed.
+  LD => LDCE: 634 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-204 Infos, 134 Warnings, 0 Critical Warnings and 0 Errors encountered.
+326 Infos, 135 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:15 ; elapsed = 00:03:40 . Memory (MB): peak = 1482.270 ; gain = 393.367
-INFO: [Common 17-1381] The checkpoint 'D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/top_VGA_CAMERA.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:02:04 . Memory (MB): peak = 1385.082 ; gain = 280.152
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
+INFO: [Common 17-1381] The checkpoint 'D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/top_VGA_CAMERA.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_VGA_CAMERA_utilization_synth.rpt -pb top_VGA_CAMERA_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jan  3 01:34:19 2025...
+INFO: [Common 17-206] Exiting Vivado at Fri Jan  3 22:00:58 2025...

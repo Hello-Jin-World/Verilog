@@ -30,14 +30,4 @@ module frameBuffer (
         end
     end
 
-    // always_ff @( posedge clk ) begin
-    //     if (wAddr % 160*3 == 0) begin
-            
-    //     end
-    // end
-    // always_comb begin
-    //     if (wAddr < 160 * 3) begin
-    //         rData_for_SAD = wData;
-    //     end
-    // end
 endmodule
