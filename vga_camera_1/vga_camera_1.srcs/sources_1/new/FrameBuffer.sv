@@ -14,8 +14,8 @@ module frameBuffer (
     input  logic [16:0] rAddr,
     output logic [15:0] rData
 );
-    // logic [15:0] mem[0:160*120-1];
-    logic [15:0] mem[0:320*240-1];
+    logic [15:0] mem[0:160*120-1];
+    // logic [15:0] mem[0:320*240-1];
     // logic [15:0] mem[0:320-1];
 
     always_ff @(posedge wclk) begin
@@ -25,12 +25,12 @@ module frameBuffer (
     end
 
     always_ff @(posedge rclk) begin
-        rData <= mem[rAddr];
-        // if (oe) begin
-        //     rData <= mem[rAddr];
-        // end else begin
-        //     rData <= 0;
-        // end
+        // rData <= mem[rAddr];
+        if (oe) begin
+            rData <= mem[rAddr];
+        end else begin
+            rData <= 0;
+        end
     end
 
     // always_ff @(posedge clk) begin

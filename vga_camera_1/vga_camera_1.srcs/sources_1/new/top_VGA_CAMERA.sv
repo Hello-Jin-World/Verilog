@@ -21,14 +21,14 @@ module top_VGA_CAMERA (
     logic disp_enable;
     logic [9:0] x_pixel;
     logic [9:0] y_pixel;
-    // logic we;
-    // logic [16:0] wAddr;
-    // logic [15:0] wData, buffer;
-    logic we, before_upscale_we;
-    logic [16:0] wAddr, before_upscale_addr;
-    logic [15:0] wData, buffer, before_upscale;
-    // logic qvga_en;
-    // logic [16:0] qvga_addr;
+    logic we;
+    logic [16:0] wAddr;
+    logic [15:0] wData, buffer;
+    // logic we, before_upscale_we;
+    // logic [16:0] wAddr, before_upscale_addr;
+    // logic [15:0] wData, buffer, before_upscale;
+    logic qvga_en;
+    logic [16:0] qvga_addr;
     logic vga_clk;
 
 
@@ -48,12 +48,12 @@ module top_VGA_CAMERA (
 
     clk_wiz_0 U_CLK_WIZ (
         // Clock out ports
-        .vga_clk(vga_clk),     // output vga_clk
-        .ov7670_clk(ov7670_xclk),     // output ov7670_clk
+        .vga_clk   (vga_clk),      // output vga_clk
+        .ov7670_clk(ov7670_xclk),  // output ov7670_clk
         // Status and control signals
-        .reset(reset), // input reset
+        .reset     (reset),        // input reset
         // Clock in ports
-        .clk_in1(clk)
+        .clk_in1   (clk)
     );  // input clk_in1
 
     vga_controller U_VGA_Controller (
@@ -66,18 +66,18 @@ module top_VGA_CAMERA (
         .disp_enable(disp_enable)
     );
 
-    ISP U_ISP (
-        .clk    (clk),
-        .reset  (reset),
-        .x      (x_pixel),
-        .y      (y_pixel),
-        .h_sync (h_sync),
-        .addr   (before_upscale_addr),
-        .en     (before_upscale_we),
-        .RGBdata(before_upscale),
-        .rclk   (vga_clk),
-        .rData  (buffer)
-    );
+    // ISP U_ISP (
+    //     .clk    (clk),
+    //     .reset  (reset),
+    //     .x      (x_pixel),
+    //     .y      (y_pixel),
+    //     .h_sync (h_sync),
+    //     .addr   (before_upscale_addr),
+    //     .en     (before_upscale_we),
+    //     .RGBdata(before_upscale),
+    //     .rclk   (vga_clk),
+    //     .rData  (buffer)
+    // );
     // ISP_line_buf U_ISP_line_buf (
     //     .clk        (clk),
     //     .reset      (reset),
@@ -94,35 +94,35 @@ module top_VGA_CAMERA (
     //     .rData      (buffer)
     // );
 
-    // qvga_addr_decoder U_QVGA_Decoder (
-    //     .x        (x_pixel),
-    //     .y        (y_pixel),
-    //     .qvga_en  (qvga_en),
-    //     .qvga_addr(qvga_addr)
-    // );
-
-    frameBuffer U_FrameBuffer (
-        // write side ov7670
-        .wclk (ov7670_pclk),
-        .we   (we),
-        .wAddr(wAddr),
-        .wData(wData),
-        .rclk (clk),
-        .oe   (before_upscale_we),
-        .rAddr(before_upscale_addr),
-        .rData(before_upscale)
+    qvga_addr_decoder U_QVGA_Decoder (
+        .x        (x_pixel),
+        .y        (y_pixel),
+        .qvga_en  (qvga_en),
+        .qvga_addr(qvga_addr)
     );
+
     // frameBuffer U_FrameBuffer (
     //     // write side ov7670
     //     .wclk (ov7670_pclk),
     //     .we   (we),
     //     .wAddr(wAddr),
     //     .wData(wData),
-    //     .rclk (vga_clk),
-    //     .oe   (qvga_en),
-    //     .rAddr(qvga_addr),
-    //     .rData(buffer)
+    //     .rclk (clk),
+    //     .oe   (before_upscale_we),
+    //     .rAddr(before_upscale_addr),
+    //     .rData(before_upscale)
     // );
+    frameBuffer U_FrameBuffer (
+        // write side ov7670
+        .wclk (ov7670_pclk),
+        .we   (we),
+        .wAddr(wAddr),
+        .wData(wData),
+        .rclk (vga_clk),
+        .oe   (qvga_en),
+        .rAddr(qvga_addr),
+        .rData(buffer)
+    );
 
     ov7670_SetData U_OV7670_SetData (
         .pclk       (ov7670_pclk),
@@ -164,10 +164,7 @@ module qvga_addr_decoder (
 
     always_comb begin
         if (x < 640 && y < 480) begin
-            // qvga_addr = y[9:2] * 160 + x[9:2];
-            qvga_addr = y[9:1] * 320 + x[9:1];
-            // qvga_addr = y * 640 + x;
-            // qvga_addr = x;
+            qvga_addr = y[9:2] * 160 + x[9:2];
             qvga_en   = 1'b1;
         end else begin
             qvga_addr = 0;
