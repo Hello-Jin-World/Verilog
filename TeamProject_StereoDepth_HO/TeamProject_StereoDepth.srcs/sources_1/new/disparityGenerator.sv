@@ -76,12 +76,13 @@ module disparity_generator (
     input  logic [ 9:0] y_pixel,
     input  logic [15:0] in_L,
     input  logic [15:0] in_R,
-    output logic [ 5:0] rData
+    output logic [15:0] rData
 );
     localparam IDLE = 0, COMP = 1;
 
-    logic [15:0] mem_L[0:160-1];
-    logic [15:0] mem_R[0:160-1];
+    logic [5:0] mem_L[0:160-1];
+    logic [5:0] mem_R[0:160-1];
+
 
     logic state_reg, state_next;
     logic read_en_reg, read_en_next;
@@ -90,8 +91,8 @@ module disparity_generator (
     logic [5:0] temp3;
     logic [5:0] temp4;
     logic [5:0] temp5;
-    logic [5:0] min_value;
-    logic [5:0] temp_mem  [0:160-1];
+    logic [5:0] min_temp;
+    logic [5:0] temp_mem [0:160-1];
 
     assign rData = temp_mem[x_pixel[9:2]];
 
@@ -132,67 +133,14 @@ module disparity_generator (
                     temp4 = (mem_L[j] > mem_R[j+3]) ? (mem_L[j] - mem_R[j+3]) : (mem_R[j+3] - mem_L[j]);       // i
                     temp5 = (mem_L[j] > mem_R[j+4]) ? (mem_L[j] - mem_R[j+4]) : (mem_R[j+4] - mem_L[j]);       // i
 
-                    if (temp1 < temp2) begin
-                        if (temp1 < temp3) begin
-                            if (temp1 < temp4) begin
-                                if (temp1 < temp5) begin
-                                    temp_mem[j] = 0;
-                                end else begin
-                                    temp_mem[j] = 63;
-                                end
-                            end else begin
-                                if (temp4 < temp5) begin
-                                    temp_mem[j] = 40;
-                                end else begin
-                                    temp_mem[j] = 63;
-                                end
-                            end
-                        end else begin
-                            if (temp3 < temp4) begin
-                                if (temp3 < temp5) begin
-                                    temp_mem[j] = 25;
-                                end else begin
-                                    temp_mem[j] = 63;
-                                end
-                            end else begin
-                                if (temp4 < temp5) begin
-                                    temp_mem[j] = 40;
-                                end else begin
-                                    temp_mem[j] = 63;
-                                end
-                            end
-                        end
-                    end else begin
-                        if (temp2 < temp3) begin
-                            if (temp2 < temp4) begin
-                                if (temp2 < temp5) begin
-                                    temp_mem[j] = 10;
-                                end else begin
-                                    temp_mem[j] = 63;
-                                end
-                            end else begin
-                                if (temp4 < temp5) begin
-                                    temp_mem[j] = 40;
-                                end else begin
-                                    temp_mem[j] = 63;
-                                end
-                            end
-                        end else begin
-                            if (temp3 < temp4) begin
-                                if (temp3 < temp5) begin
-                                    temp_mem[j] = 25;
-                                end else begin
-                                    temp_mem[j] = 63;
-                                end
-                            end else begin
-                                if (temp4 < temp5) begin
-                                    temp_mem[j] = 40;
-                                end else begin
-                                    temp_mem[j] = 63;
-                                end
-                            end
-                        end
-                    end
+                    min_temp = temp1;  // 초기값 설정
+                    if (temp2 < min_temp) min_temp = temp2;
+                    if (temp3 < min_temp) min_temp = temp3;
+                    if (temp4 < min_temp) min_temp = temp4;
+                    if (temp5 < min_temp) min_temp = temp5;
+
+                    
+                    temp_mem[j] = min_temp;
                 end
                 state_next   = IDLE;
                 read_en_next = 1;
