@@ -1,0 +1,93 @@
+
+////  main.c ///// 	
+    OV7670_Init(&hi2c1);
+	OV7670_ResetSW();
+	OV7670_SetResolution(QVGA);
+	OV7670_SetColorFormat(RGB565);
+
+//////////////////
+void OV7670_Init(I2C_HandleTypeDef *p_hi2c)
+{
+	sp_hi2c=p_hi2c;
+}
+//////////////////
+void OV7670_ResetSW(void)
+{
+	OV7670_WriteSCCB(REG_COM7, 0x80);
+	HAL_Delay(30);
+	OV7670_Config(defaults);
+	HAL_Delay(10);
+	//OV7670_SetResolution(QVGA);
+	//OV7670_SetColorFormat(RGB565);
+}
+
+void OV7670_WriteSCCB(uint8_t regAddr, uint8_t val)
+{
+	uint8_t	txbuf[2]={regAddr, val};
+	HAL_I2C_Master_Transmit(sp_hi2c, OV7670_ADDR, (uint8_t *)txbuf, 2, OV7670_TIMEOUT);
+}
+
+void OV7670_Config(const uint8_t params[][2])
+{
+	for(int i = 0; params[i][0] != 0xFF; i++)
+	{
+		OV7670_WriteSCCB(params[i][0], params[i][1]);
+		HAL_Delay(1);
+	}
+}
+
+///////////////////
+void OV7670_SetResolution(Camera_resolution resolution)
+{
+
+		case QVGA:	//OK
+			OV7670_Config(RES_QVGA);
+			OV7670_SetFrameControl(168,24,12,492);
+			img_width=320;
+			img_height=240;
+			break;
+}
+
+void OV7670_SetFrameControl(uint16_t hstart, uint16_t hstop, uint16_t vstart, uint16_t vstop)
+{
+	OV7670_WriteSCCB(REG_HSTART, (hstart >> 3) & 0xff);
+	OV7670_WriteSCCB(REG_HSTOP, (hstop >> 3) & 0xff);
+	OV7670_WriteSCCB(REG_HREF, ((hstop & 0x7) << 3) | (hstart & 0x7));
+
+	OV7670_WriteSCCB(REG_VSTART, (vstart >> 2) & 0xff);
+	OV7670_WriteSCCB(REG_VSTOP, (vstop >> 2) & 0xff);
+	OV7670_WriteSCCB(REG_VREF,((vstop & 0x3) << 2) | (vstart & 0x3));
+}
+
+//////////////////////////
+void OV7670_SetColorFormat(Camera_format format)
+{
+	uint8_t temp[2];
+
+	OV7670_ReadSCCB(REG_COM7, &temp[0]);
+	temp[0]&=0b11111010;
+	OV7670_ReadSCCB(REG_COM15, &temp[1]);
+	temp[1]&=0b00001111;
+	HAL_Delay(10);
+	switch(format)
+	{
+	//According to OV7670/7171 implementation guide v1.0 - Table 2-1
+		case YUV422:
+			OV7670_WriteSCCB(REG_COM7, temp[0] | 0x00);
+			OV7670_WriteSCCB(REG_COM15, temp[1] | 0x00);
+			img_format=YUV422;
+			break;
+		case RGB565: //Poor (greenish) image - ???
+			OV7670_WriteSCCB(REG_COM7, temp[0] | 0x04);//RGB
+			OV7670_WriteSCCB(REG_COM15, temp[1] | 0x10);//RGB565
+			//???
+			img_format=RGB565;
+			break;
+	}
+}
+
+void OV7670_ReadSCCB(uint8_t regAddr, uint8_t *data)
+{
+	HAL_I2C_Master_Transmit(sp_hi2c, OV7670_ADDR, &regAddr, 1, OV7670_TIMEOUT);
+	HAL_I2C_Master_Receive(sp_hi2c, OV7670_ADDR, data, 1, OV7670_TIMEOUT);
+}
