@@ -17,6 +17,7 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+<<<<<<< HEAD
 INFO: [Synth 8-7075] Helper process launched with PID 19656
 ---------------------------------------------------------------------------------
 Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1103.586 ; gain = 0.000
@@ -48,6 +49,16 @@ INFO: [Synth 8-6157] synthesizing module 'top_VGA_CAMERA' [D:/GitHub/verilog/Ver
 INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/.Xil/Vivado-28076-DESKTOP-7CFQ9ND/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/.Xil/Vivado-28076-DESKTOP-7CFQ9ND/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'rbt2gray' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:365]
+=======
+INFO: [Synth 8-7075] Helper process launched with PID 11392
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1111.086 ; gain = 21.906
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_VGA_CAMERA' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/.Xil/Vivado-3892-DESKTOP-PFRE25G/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/.Xil/Vivado-3892-DESKTOP-PFRE25G/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'rbt2gray' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:364]
+>>>>>>> 07dd6ebf72a68ba4445964cc9560b280c2ecf09e
 	Parameter RW bound to: 8'b01001100 
 	Parameter GW bound to: 8'b10010110 
 	Parameter BW bound to: 8'b00011110 
@@ -100,6 +111,7 @@ INFO: [Synth 8-6155] done synthesizing module 'rgb2gray' (13#1) [D:/GitHub/veril
 INFO: [Synth 8-6157] synthesizing module 'disparity_generator' [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:190]
 	Parameter IDLE bound to: 0 - type: integer 
 	Parameter COMP bound to: 1 - type: integer 
+<<<<<<< HEAD
 WARNING: [Synth 8-324] index 3 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:264]
 WARNING: [Synth 8-324] index 3 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:264]
 WARNING: [Synth 8-324] index 3 out of range [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:264]
@@ -205,11 +217,49 @@ INFO: [Synth 8-6155] done synthesizing module 'disparity_generator' (14#1) [D:/G
 INFO: [Synth 8-6155] done synthesizing module 'top_VGA_CAMERA' (15#1) [D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:5]
 ---------------------------------------------------------------------------------
 Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1104.414 ; gain = 0.000
+=======
+WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:134]
+WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:134]
+WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:134]
+WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:133]
+WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:133]
+WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:133]
+WARNING: [Synth 8-324] index 161 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:134]
+WARNING: [Synth 8-324] index 161 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:134]
+WARNING: [Synth 8-324] index 161 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:134]
+WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:132]
+WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:132]
+WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:132]
+WARNING: [Synth 8-324] index 161 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:133]
+WARNING: [Synth 8-324] index 161 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:133]
+WARNING: [Synth 8-324] index 161 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:133]
+WARNING: [Synth 8-324] index 162 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:134]
+WARNING: [Synth 8-324] index 162 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:134]
+WARNING: [Synth 8-324] index 162 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:134]
+WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:131]
+WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:131]
+WARNING: [Synth 8-324] index 160 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:131]
+WARNING: [Synth 8-324] index 161 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:132]
+WARNING: [Synth 8-324] index 161 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:132]
+WARNING: [Synth 8-324] index 161 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:132]
+WARNING: [Synth 8-324] index 162 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:133]
+WARNING: [Synth 8-324] index 162 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:133]
+WARNING: [Synth 8-324] index 162 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:133]
+WARNING: [Synth 8-324] index 163 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:134]
+WARNING: [Synth 8-324] index 163 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:134]
+WARNING: [Synth 8-324] index 163 out of range [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:134]
+INFO: [Synth 8-6155] done synthesizing module 'disparity_generator' (15#1) [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/new/disparityGenerator.sv:71]
+WARNING: [Synth 8-689] width (6) of port connection 'rData' does not match port width (16) of module 'disparity_generator' [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:216]
+INFO: [Synth 8-6155] done synthesizing module 'top_VGA_CAMERA' (16#1) [D:/Verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.srcs/sources_1/imports/new/top_VGA_CAMERA.sv:5]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1353.785 ; gain = 264.605
+>>>>>>> 07dd6ebf72a68ba4445964cc9560b280c2ecf09e
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
+<<<<<<< HEAD
 Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1104.414 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
@@ -573,3 +623,11 @@ synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:35 . Memory (MB): peak 
 INFO: [Common 17-1381] The checkpoint 'D:/GitHub/verilog/Verilog/TeamProject_StereoDepth_HO/TeamProject_StereoDepth.runs/synth_1/top_VGA_CAMERA.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_VGA_CAMERA_utilization_synth.rpt -pb top_VGA_CAMERA_utilization_synth.pb
 INFO: [Common 17-206] Exiting Vivado at Sat Jan  4 21:48:12 2025...
+=======
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1353.785 ; gain = 264.605
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1353.785 ; gain = 264.605
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.158 . Memory (MB): peak = 1353.785 ; gain = 0.000
+>>>>>>> 07dd6ebf72a68ba4445964cc9560b280c2ecf09e

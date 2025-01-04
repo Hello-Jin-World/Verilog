@@ -18,9 +18,9 @@ module ov7670_SetData (
     logic we_reg, we_next;
 
     assign we = we_reg;
-    // assign wAddr = v_counter_reg * 160 + pix_counter_reg[9:1];
-    assign wAddr = v_counter_reg * 320 + pix_counter_reg[9:1];
-    // assign wAddr = pix_counter_reg[9:1];
+    assign wAddr = v_counter_reg * 160 + pix_counter_reg[9:1];
+    // assign wAddr = v_counter_reg * 320 + pix_counter_reg[9:1];
+    // assign wAddr = pix_counter_reg[9:1]; 
     assign wData = temp_reg;
 
     always_ff @(posedge pclk, posedge reset) begin
@@ -52,23 +52,37 @@ module ov7670_SetData (
                 we_next        = 1;
             end
         end else begin
-            we_next = 0;
-            temp_next = 0;
+            we_next          = 0;
+            temp_next        = 0;
             pix_counter_next = 0;
         end
     end
 
-
     always_comb begin
         v_counter_next = v_counter_reg;
         if (!v_sync) begin
-            if (pix_counter_reg == 640 - 1) begin
+            if (pix_counter_reg == 320 - 1) begin  // QQVGA width
                 v_counter_next = v_counter_reg + 1;
             end
         end else begin
             v_counter_next = 0;
         end
     end
+
+
+
+    // always_comb begin
+    //     v_counter_next = v_counter_reg;
+    //     if (!v_sync) begin
+    //         if (pix_counter_reg == 640 - 1) begin
+    //             v_counter_next = v_counter_reg + 1;
+    //         end
+    //     end else begin
+    //         v_counter_next = 0;
+    //     end
+    // end
+
+
 
 
 endmodule

@@ -2,11 +2,11 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Mon Dec 30 03:02:29 2024
-# Process ID: 9996
-# Current directory: D:/Verilog/Verilog/vga_camera_1/vga_camera_1.runs/impl_1
+# Start of session at: Mon Dec 30 11:33:28 2024
+# Process ID: 20244
+# Current directory: D:/GitHub/verilog/Verilog/vga_camera_1/vga_camera_1.runs/impl_1
 # Command line: vivado.exe -log top_VGA_CAMERA.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_VGA_CAMERA.tcl -notrace
-# Log file: D:/Verilog/Verilog/vga_camera_1/vga_camera_1.runs/impl_1/top_VGA_CAMERA.vdi
-# Journal file: D:/Verilog/Verilog/vga_camera_1/vga_camera_1.runs/impl_1\vivado.jou
+# Log file: D:/GitHub/verilog/Verilog/vga_camera_1/vga_camera_1.runs/impl_1/top_VGA_CAMERA.vdi
+# Journal file: D:/GitHub/verilog/Verilog/vga_camera_1/vga_camera_1.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
 source top_VGA_CAMERA.tcl -notrace
