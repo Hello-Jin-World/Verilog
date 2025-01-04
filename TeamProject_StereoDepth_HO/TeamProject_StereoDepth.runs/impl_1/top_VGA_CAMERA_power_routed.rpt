@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Sat Jan  4 10:39:38 2025
-| Host             : DESKTOP-PFRE25G running 64-bit major release  (build 9200)
+| Date             : Sat Jan  4 21:49:13 2025
+| Host             : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 | Command          : report_power -file top_VGA_CAMERA_power_routed.rpt -pb top_VGA_CAMERA_power_summary_routed.pb -rpx top_VGA_CAMERA_power_routed.rpx
 | Design           : top_VGA_CAMERA
 | Device           : xc7a35tcpg236-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.196        |
+| Total On-Chip Power (W)  | 0.191        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.123        |
+| Dynamic (W)              | 0.117        |
 | Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.0         |
@@ -52,21 +52,20 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.008 |       10 |       --- |             --- |
-| Slice Logic    |     0.002 |    26791 |       --- |             --- |
-|   LUT as Logic |     0.001 |    14659 |     20800 |           70.48 |
-|   CARRY4       |    <0.001 |     2575 |      8150 |           31.60 |
-|   Register     |    <0.001 |     2594 |     41600 |            6.24 |
-|   BUFG         |    <0.001 |        3 |        32 |            9.38 |
-|   F7/F8 Muxes  |    <0.001 |      240 |     32600 |            0.74 |
-|   Others       |     0.000 |       37 |       --- |             --- |
-| Signals        |     0.005 |    16440 |       --- |             --- |
-| Block RAM      |     0.015 |     32.5 |        50 |           65.00 |
+| Clocks         |     0.004 |        8 |       --- |             --- |
+| Slice Logic    |     0.003 |     1910 |       --- |             --- |
+|   LUT as Logic |     0.002 |     1020 |     20800 |            4.90 |
+|   CARRY4       |    <0.001 |      171 |      8150 |            2.10 |
+|   Register     |    <0.001 |      344 |     41600 |            0.83 |
+|   BUFG         |    <0.001 |        2 |        32 |            6.25 |
+|   Others       |     0.000 |       34 |       --- |             --- |
+| Signals        |     0.003 |     1496 |       --- |             --- |
+| Block RAM      |     0.015 |       32 |        50 |           64.00 |
 | MMCM           |     0.085 |        1 |         5 |           20.00 |
 | DSPs           |    <0.001 |        1 |        90 |            1.11 |
-| I/O            |     0.008 |       46 |       106 |           43.40 |
+| I/O            |     0.008 |       45 |       106 |           42.45 |
 | Static Power   |     0.073 |          |           |                 |
-| Total          |     0.196 |          |           |                 |
+| Total          |     0.191 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.040 |       0.029 |      0.011 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.034 |       0.024 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.060 |       0.047 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -135,8 +134,6 @@ Table of Contents
 | clkfbout_clk_wiz_0     | U_clk_gene/inst/clkfbout_clk_wiz_0     |            10.0 |
 | ov7670_xclk1_clk_wiz_0 | U_clk_gene/inst/ov7670_xclk1_clk_wiz_0 |            41.7 |
 | ov7670_xclk2_clk_wiz_0 | U_clk_gene/inst/ov7670_xclk2_clk_wiz_0 |            41.7 |
-| sccb_L_clk_clk_wiz_0   | U_clk_gene/inst/sccb_L_clk_clk_wiz_0   |            40.0 |
-| sccb_R_clk_clk_wiz_0   | U_clk_gene/inst/sccb_R_clk_clk_wiz_0   |            40.0 |
 | sys_clk_pin            | clk                                    |            10.0 |
 | sys_clk_pin            | clk_IBUF_BUFG                          |            10.0 |
 | vga_clk_clk_wiz_0      | U_clk_gene/inst/vga_clk_clk_wiz_0      |            40.0 |
@@ -152,15 +149,16 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| top_VGA_CAMERA          |     0.123 |
+| top_VGA_CAMERA          |     0.117 |
 |   U_FrameBufferLeft     |     0.008 |
 |   U_FrameBufferRight    |     0.008 |
-|   U_SCCB_Config_Left    |     0.001 |
+|   U_SCCB_final_L        |     0.002 |
+|     U_SCCB_CONTROLUNIT  |     0.001 |
+|   U_SCCB_final_R        |     0.002 |
+|     U_SCCB_CONTROLUNIT  |     0.001 |
 |   U_clk_gene            |     0.085 |
 |     inst                |     0.085 |
-|   U_disparity_generator |     0.007 |
-|   U_rgb2gray_L          |     0.001 |
-|   U_rgb2gray_R          |     0.001 |
+|   U_disparity_generator |     0.001 |
 +-------------------------+-----------+
 
 

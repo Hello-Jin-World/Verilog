@@ -14,7 +14,7 @@ module frameBuffer (
     input  logic [14:0] rAddr,
     output logic [15:0] rData
 );
-    logic [15:0] mem[0:160*120-1];
+    logic [15:0] mem[0:160*120-2];
 
     always_ff @(posedge wclk) begin
         if (we) begin
