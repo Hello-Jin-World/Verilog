@@ -299,9 +299,9 @@ module qvga_addr_decoder (
                 // qvga_en1   = 1'b1;
                 // qvga_addr2 = x[9:1];
                 // qvga_en2   = 1'b1;
-                qvga_addr1 = y[9:1] * 160 + x[9:1];
+                qvga_addr1 = (y[9:1] - 120) * 160 + x[9:1];
                 qvga_en1   = 1'b1;
-                qvga_addr2 = y[9:1] * 160 + x[9:1];
+                qvga_addr2 = (y[9:1] - 120) * 160 + x[9:1];
                 qvga_en2   = 1'b1;
                 // qvga_addr1 = 0;
                 // qvga_en1   = 1'b0;

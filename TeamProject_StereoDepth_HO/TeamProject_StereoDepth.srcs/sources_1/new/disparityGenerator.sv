@@ -78,12 +78,12 @@ module disparity_generator (
     input  logic [15:0] in_R,
     output logic [ 5:0] rData
 );
-    localparam IDLE = 0, COMP = 1, WAIT = 2;
+    localparam IDLE = 0, COMP = 1;
 
     logic [15:0] mem_L[0:160-1];
     logic [15:0] mem_R[0:160-1];
 
-    logic [1:0] state_reg, state_next;
+    logic state_reg, state_next;
     logic read_en_reg, read_en_next;
     logic [5:0] temp1;
     logic [5:0] temp2;
@@ -94,27 +94,6 @@ module disparity_generator (
     logic [5:0] temp_mem  [0:160-1];
 
     assign rData = temp_mem[x_pixel[9:2]];
-
-    // ila_1 your_instance_name (
-    //     .clk    (clk),                // input wire clk
-    //     .probe0 (Hsync),              // input wire [0:0]  probe0  
-    //     .probe1 (x_pixel),            // input wire [9:0]  probe1 
-    //     .probe2 (in_L),               // input wire [15:0]  probe2 
-    //     .probe3 (in_R),               // input wire [15:0]  probe3 
-    //     .probe4 (rData),              // input wire [5:0]  probe4 
-    //     .probe5 (mem_L[x_pixel]),     // input wire [15:0]  probe5 
-    //     .probe6 (mem_R[x_pixel]),     // input wire [15:0]  probe6 
-    //     .probe7 (state_reg),          // input wire [0:0]  probe7 
-    //     .probe8 (read_en_reg),        // input wire [0:0]  probe8 
-    //     .probe9 (temp1),              // input wire [5:0]  probe9 
-    //     .probe10(temp2),              // input wire [5:0]  probe10 
-    //     .probe11(temp3),              // input wire [5:0]  probe11 
-    //     .probe12(temp4),              // input wire [5:0]  probe12 
-    //     .probe13(temp5),              // input wire [5:0]  probe13 
-    //     .probe14(temp_mem[x_pixel]),  // input wire [5:0]  probe14
-    //     .probe15(min_value)
-    // );
-
 
     always_ff @(posedge clk, posedge reset) begin
         if (reset) begin
@@ -129,8 +108,8 @@ module disparity_generator (
             state_reg   <= state_next;
             read_en_reg <= read_en_next;
             if (read_en_reg == 1'b1) begin
-                mem_L[x_pixel] <= in_L[14:9];
-                mem_R[x_pixel] <= in_R[14:9];
+                mem_L[x_pixel[9:2]] <= in_L[15:10];
+                mem_R[x_pixel[9:2]] <= in_R[15:10];
             end
         end
     end
@@ -140,7 +119,7 @@ module disparity_generator (
         read_en_next = read_en_reg;
         case (state_reg)
             IDLE: begin
-                if (x_pixel >= 159) begin
+                if (x_pixel[9:1] > 158) begin
                     state_next   = COMP;
                     read_en_next = 0;
                 end
@@ -215,16 +194,32 @@ module disparity_generator (
                         end
                     end
                 end
-                state_next   = WAIT;
+                state_next   = IDLE;
                 read_en_next = 1;
-            end
-            WAIT: begin
-                if (!Hsync) begin
-                    state_next = IDLE;
-                end
             end
         endcase
     end
+
+    // ila_1 your_instance_name (
+    //     .clk    (clk),                // input wire clk
+    //     .probe0 (Hsync),              // input wire [0:0]  probe0  
+    //     .probe1 (x_pixel),            // input wire [9:0]  probe1 
+    //     .probe2 (in_L),               // input wire [15:0]  probe2 
+    //     .probe3 (in_R),               // input wire [15:0]  probe3 
+    //     .probe4 (rData),              // input wire [5:0]  probe4 
+    //     .probe5 (mem_L[x_pixel]),     // input wire [15:0]  probe5 
+    //     .probe6 (mem_R[x_pixel]),     // input wire [15:0]  probe6 
+    //     .probe7 (state_reg),          // input wire [0:0]  probe7 
+    //     .probe8 (read_en_reg),        // input wire [0:0]  probe8 
+    //     .probe9 (temp1),              // input wire [5:0]  probe9 
+    //     .probe10(temp2),              // input wire [5:0]  probe10 
+    //     .probe11(temp3),              // input wire [5:0]  probe11 
+    //     .probe12(temp4),              // input wire [5:0]  probe12 
+    //     .probe13(temp5),              // input wire [5:0]  probe13 
+    //     .probe14(temp_mem[x_pixel]),  // input wire [5:0]  probe14
+    //     .probe15(min_value)
+    // );
+
 endmodule
 
 // module disparity_generator (

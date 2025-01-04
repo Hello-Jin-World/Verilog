@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Fri Jan  3 22:03:04 2025
-| Host             : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
+| Date             : Sat Jan  4 10:39:38 2025
+| Host             : DESKTOP-PFRE25G running 64-bit major release  (build 9200)
 | Command          : report_power -file top_VGA_CAMERA_power_routed.rpt -pb top_VGA_CAMERA_power_summary_routed.pb -rpx top_VGA_CAMERA_power_routed.rpx
 | Design           : top_VGA_CAMERA
 | Device           : xc7a35tcpg236-1
@@ -53,16 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.008 |       10 |       --- |             --- |
-| Slice Logic    |     0.001 |    27613 |       --- |             --- |
-|   LUT as Logic |     0.001 |    15425 |     20800 |           74.16 |
-|   CARRY4       |    <0.001 |     2558 |      8150 |           31.39 |
-|   Register     |    <0.001 |     2596 |     41600 |            6.24 |
+| Slice Logic    |     0.002 |    26791 |       --- |             --- |
+|   LUT as Logic |     0.001 |    14659 |     20800 |           70.48 |
+|   CARRY4       |    <0.001 |     2575 |      8150 |           31.60 |
+|   Register     |    <0.001 |     2594 |     41600 |            6.24 |
 |   BUFG         |    <0.001 |        3 |        32 |            9.38 |
-|   F7/F8 Muxes  |    <0.001 |      181 |     32600 |            0.56 |
-|   Others       |     0.000 |       35 |       --- |             --- |
-| Signals        |     0.005 |    17442 |       --- |             --- |
+|   F7/F8 Muxes  |    <0.001 |      240 |     32600 |            0.74 |
+|   Others       |     0.000 |       37 |       --- |             --- |
+| Signals        |     0.005 |    16440 |       --- |             --- |
 | Block RAM      |     0.015 |     32.5 |        50 |           65.00 |
 | MMCM           |     0.085 |        1 |         5 |           20.00 |
+| DSPs           |    <0.001 |        1 |        90 |            1.11 |
 | I/O            |     0.008 |       46 |       106 |           43.40 |
 | Static Power   |     0.073 |          |           |                 |
 | Total          |     0.196 |          |           |                 |
@@ -75,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.040 |       0.030 |      0.011 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.040 |       0.029 |      0.011 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.060 |       0.047 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
