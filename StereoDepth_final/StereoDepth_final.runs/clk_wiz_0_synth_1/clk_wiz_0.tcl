@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/clk_wiz_0_synth_1/clk_wiz_0.tcl"
+  variable script "D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/clk_wiz_0_synth_1/clk_wiz_0.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,11 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "clk_wiz_0_synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 1
-set_param synth.incrementalSynthesisCache C:/Users/danie/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-22420-DESKTOP-PFRE25G/incrSyn
+set_param chipscope.maxJobs 4
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -84,20 +81,21 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.cache/wt [current_project]
-set_property parent.project_path D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.xpr [current_project]
+set_property webtalk.parent_dir D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.cache/wt [current_project]
+set_property parent.project_path D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.xpr [current_project]
 set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
+set_property board_part_repo_paths {C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
-set_property ip_output_repo d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.cache/ip [current_project]
+set_property ip_output_repo d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+read_ip -quiet D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -113,7 +111,7 @@ set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 OPTRACE "Configure IP Cache" START { }
 
-set cached_ip [config_ip_cache -export -no_bom  -dir D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/clk_wiz_0_synth_1 -new_name clk_wiz_0 -ip [get_ips clk_wiz_0]]
+set cached_ip [config_ip_cache -export -no_bom  -dir D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/clk_wiz_0_synth_1 -new_name clk_wiz_0 -ip [get_ips clk_wiz_0]]
 
 OPTRACE "Configure IP Cache" END { }
 if { $cached_ip eq {} } {
@@ -168,32 +166,32 @@ create_report "clk_wiz_0_synth_1_synth_report_utilization_0" "report_utilization
 OPTRACE "synth reports" END { }
 
 if { [catch {
-  file copy -force D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/clk_wiz_0_synth_1/clk_wiz_0.dcp d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp
+  file copy -force D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/clk_wiz_0_synth_1/clk_wiz_0.dcp d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.v
+  write_verilog -force -mode synth_stub d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.vhdl
+  write_vhdl -force -mode synth_stub d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
+  write_verilog -force -mode funcsim d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -203,47 +201,47 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/clk_wiz_0_synth_1/clk_wiz_0.dcp d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp
+  file copy -force D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/clk_wiz_0_synth_1/clk_wiz_0.dcp d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/clk_wiz_0_synth_1/clk_wiz_0_stub.v d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.v
+  file rename -force D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/clk_wiz_0_synth_1/clk_wiz_0_stub.v d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/clk_wiz_0_synth_1/clk_wiz_0_stub.vhdl d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.vhdl
+  file rename -force D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/clk_wiz_0_synth_1/clk_wiz_0_stub.vhdl d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/clk_wiz_0_synth_1/clk_wiz_0_sim_netlist.v d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
+  file rename -force D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/clk_wiz_0_synth_1/clk_wiz_0_sim_netlist.v d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/clk_wiz_0_synth_1/clk_wiz_0_sim_netlist.vhdl d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl
+  file rename -force D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/clk_wiz_0_synth_1/clk_wiz_0_sim_netlist.vhdl d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 }; # end if cached_ip 
 
-if {[file isdir D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.ip_user_files/ip/clk_wiz_0]} {
+if {[file isdir D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.ip_user_files/ip/clk_wiz_0]} {
   catch { 
-    file copy -force d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.v D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.ip_user_files/ip/clk_wiz_0
+    file copy -force d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.v D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.ip_user_files/ip/clk_wiz_0
   }
 }
 
-if {[file isdir D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.ip_user_files/ip/clk_wiz_0]} {
+if {[file isdir D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.ip_user_files/ip/clk_wiz_0]} {
   catch { 
-    file copy -force d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.vhdl D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.ip_user_files/ip/clk_wiz_0
+    file copy -force d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.vhdl D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.ip_user_files/ip/clk_wiz_0
   }
 }
 file delete __synthesis_is_running__

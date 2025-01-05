@@ -1,193 +1,189 @@
 `timescale 1ns / 1ps
 
-// module disparity_pipeline (
-//     input  logic        clk,
-//     input  logic        reset,
-//     input  logic        Hsync,
-//     input  logic [15:0] in_L,
-//     input  logic [15:0] in_R,
-//     input  logic [9:0]  x_pixel,
-//     output logic [5:0]  rData
-// );
+module disparity_generator_1x1 (
+    input  logic        clk,
+    input  logic        reset,
+    input  logic        Hsync,
+    input  logic [ 9:0] x_pixel,
+    input  logic [ 9:0] y_pixel,
+    input  logic [15:0] in_L,
+    input  logic [15:0] in_R,
+    output logic [ 5:0] rData
+);
+    localparam IDLE = 0, COMP = 1;
 
-//     logic [15:0] mem_L[0:160-1];
-//     logic [15:0] mem_R[0:160-1];
-//     logic [5:0] temp1_stage1, temp2_stage1, temp3_stage1, temp4_stage1, temp5_stage1;
-//     logic [5:0] min_value_stage2;
-//     logic [5:0] temp_mem[0:160-1];
+    logic [5:0] mem_L[0:159];
+    logic [5:0] mem_R[0:159];
 
-//     // Stage 1: Difference Calculation
-//     always_ff @(posedge clk or posedge reset) begin
-//         if (reset) begin
-//             temp1_stage1 <= 0;
-//             temp2_stage1 <= 0;
-//             temp3_stage1 <= 0;
-//             temp4_stage1 <= 0;
-//             temp5_stage1 <= 0;
-//         end else begin
-//             temp1_stage1 <= (mem_L[x_pixel] > mem_R[x_pixel])   ? (mem_L[x_pixel] - mem_R[x_pixel])     : (mem_R[x_pixel] - mem_L[x_pixel]);
-//             temp2_stage1 <= (mem_L[x_pixel] > mem_R[x_pixel+1]) ? (mem_L[x_pixel] - mem_R[x_pixel+1])   : (mem_R[x_pixel+1] - mem_L[x_pixel]);
-//             temp3_stage1 <= (mem_L[x_pixel] > mem_R[x_pixel+2]) ? (mem_L[x_pixel] - mem_R[x_pixel+2])   : (mem_R[x_pixel+2] - mem_L[x_pixel]);
-//             temp4_stage1 <= (mem_L[x_pixel] > mem_R[x_pixel+3]) ? (mem_L[x_pixel] - mem_R[x_pixel+3])   : (mem_R[x_pixel+3] - mem_L[x_pixel]);
-//             temp5_stage1 <= (mem_L[x_pixel] > mem_R[x_pixel+4]) ? (mem_L[x_pixel] - mem_R[x_pixel+4])   : (mem_R[x_pixel+4] - mem_L[x_pixel]);
-//         end
-//     end
+    logic [1:0] state_reg, state_next;
+    logic read_en_reg, read_en_next;
+    logic [5:0] temp1, temp2, temp3, temp4, temp5, temp_min;
+    logic [5:0] temp_mem[0:160-1];
 
-//     // Stage 2: Minimum Value Calculation
-//     always_ff @(posedge clk or posedge reset) begin
-//         if (reset) begin
-//             min_value_stage2 <= 0;
-//         end else begin
-//             min_value_stage2 <= temp1_stage1;
-//             if (temp2_stage1 < min_value_stage2) min_value_stage2 <= temp2_stage1;
-//             if (temp3_stage1 < min_value_stage2) min_value_stage2 <= temp3_stage1;
-//             if (temp4_stage1 < min_value_stage2) min_value_stage2 <= temp4_stage1;
-//             if (temp5_stage1 < min_value_stage2) min_value_stage2 <= temp5_stage1;
-//         end
-//     end
+    // logic [6:0]  min_temp, min_index, i, temp;
 
-//     // Stage 3: Update temp_mem based on minimum value
-//     always_ff @(posedge clk or posedge reset) begin
-//         if (reset) begin
-//             temp_mem[x_pixel] <= 0;
-//         end else begin
-//             case (min_value_stage2)
-//                 temp1_stage1: temp_mem[x_pixel] <= 0;
-//                 temp2_stage1: temp_mem[x_pixel] <= 10;
-//                 temp3_stage1: temp_mem[x_pixel] <= 25;
-//                 temp4_stage1: temp_mem[x_pixel] <= 40;
-//                 temp5_stage1: temp_mem[x_pixel] <= 63;
-//                 default:       temp_mem[x_pixel] <= 63;
-//             endcase
-//         end
-//     end
+    assign rData = temp_mem[x_pixel[9:2]];
 
-//     // Output
-//     assign rData = temp_mem[x_pixel];
+    always_ff @(posedge clk, posedge reset) begin
+        if (reset) begin
+            state_reg   <= 0;
+            read_en_reg <= 1;
+        end else begin
+            state_reg   <= state_next;
+            read_en_reg <= read_en_next;
+            if (read_en_reg == 1'b1) begin
+                mem_L[x_pixel[9:2]] <= in_L[15:10];
+                mem_R[x_pixel[9:2]] <= in_R[15:10];
+            end
+        end
+    end
 
-// endmodule
+    always_comb begin
+        state_next   = state_reg;
+        read_en_next = read_en_reg;
+        case (state_reg)
+            IDLE: begin
+                if (x_pixel >= 159) begin
+                    state_next   = COMP;
+                    read_en_next = 0;
+                end
+            end
+            COMP: begin
 
+                // for (int j = 0; j < 160; j++) begin
+                //     min_temp = 127;
+                //     min_index = 0;
 
-// module disparity_generator (
-//     input  logic        clk,
-//     input  logic        reset,
-//     input  logic        Hsync,
-//     input  logic [ 9:0] x_pixel,
-//     input  logic [ 9:0] y_pixel,
-//     input  logic [15:0] in_L,
-//     input  logic [15:0] in_R,
-//     output logic [ 5:0] rData
-// );
-//     localparam IDLE = 0, COMP = 1;
+                //     for (i = 0; i < 7; i++) begin
+                //         temp = (mem_L[j] > mem_R[j+i]) ? (mem_L[j] - mem_R[j+i]) : (mem_R[j+i] - mem_L[j]);
+                //         if (temp < min_temp) begin
+                //             min_temp  = temp;
+                //             min_index = i;
+                //         end
+                //     end
 
-//     logic [15:0] mem_L[0:160-1];
-//     logic [15:0] mem_R[0:160-1];
+                //     case (min_index)
+                //         0: temp_mem[j] = 0;
+                //         1: temp_mem[j] = 10;
+                //         2: temp_mem[j] = 25;
+                //         3: temp_mem[j] = 40;
+                //         4: temp_mem[j] = 63;
+                //         default: temp_mem[j] = 63;
+                //     endcase
+                // end
 
-//     logic state_reg, state_next;
-//     logic read_en_reg, read_en_next;
-//     logic [5:0] temp1;
-//     logic [5:0] temp2;
-//     logic [5:0] temp3;
-//     logic [5:0] temp4;
-//     logic [5:0] temp5;
-//     logic [5:0] min_temp;
-//     logic [5:0] temp_mem [0:160-1];
-//     logic done_reg, done_next;
+                for (int j = 0; j < 160; j++) begin
+                    temp1 = (mem_L[j] > mem_R[j])   ? (mem_L[j] - mem_R[j])   : (mem_R[j] - mem_L[j]);
+                    temp2 = (mem_L[j] > mem_R[j+1]) ? (mem_L[j] - mem_R[j+1]) : (mem_R[j+1] - mem_L[j]);
+                    temp3 = (mem_L[j] > mem_R[j+2]) ? (mem_L[j] - mem_R[j+2]) : (mem_R[j+2] - mem_L[j]);
+                    temp4 = (mem_L[j] > mem_R[j+3]) ? (mem_L[j] - mem_R[j+3]) : (mem_R[j+3] - mem_L[j]);
+                    temp5 = (mem_L[j] > mem_R[j+4]) ? (mem_L[j] - mem_R[j+4]) : (mem_R[j+4] - mem_L[j]);
 
-//     // Pipeline registers
-//     logic [5:0] temp1_pipe;
-//     logic [5:0] temp2_pipe;
-//     logic [5:0] temp3_pipe;
-//     logic [5:0] temp4_pipe;
-//     logic [5:0] temp5_pipe;
-//     logic [5:0] min_temp_pipe;
+                    temp_min = temp1;
 
-//     assign rData = temp_mem[x_pixel[9:2]];
+                    if (temp2 < temp_min) temp_min = temp2;
+                    if (temp3 < temp_min) temp_min = temp3;
+                    if (temp4 < temp_min) temp_min = temp4;
+                    if (temp5 < temp_min) temp_min = temp5;
 
-//     always_ff @(posedge clk, posedge reset) begin
-//         if (reset) begin
-//             state_reg     <= IDLE;
-//             read_en_reg   <= 1;
-//             temp1         <= 0;
-//             temp2         <= 0;
-//             temp3         <= 0;
-//             temp4         <= 0;
-//             temp5         <= 0;
-//             temp1_pipe    <= 0;
-//             temp2_pipe    <= 0;
-//             temp3_pipe    <= 0;
-//             temp4_pipe    <= 0;
-//             temp5_pipe    <= 0;
-//             min_temp_pipe <= 0;
-//             done_reg      <= 0;
-//         end else begin
-//             state_reg   <= state_next;
-//             read_en_reg <= read_en_next;
-//             done_reg    <= done_next;
-//             if (read_en_reg == 1'b1) begin
-//                 mem_L[x_pixel[9:2]] <= in_L[15:10];
-//                 mem_R[x_pixel[9:2]] <= in_R[15:10];
-//             end
-//         end
-//     end
-
-//     always_ff @(posedge clk) begin
-//         if (state_reg == COMP) begin
-//             for (int j = 0; j < 160; j++) begin
-//                 temp1_pipe <= (mem_L[j] > mem_R[j]) ? (mem_L[j] - mem_R[j]) : (mem_R[j] - mem_L[j]);
-//                 temp2_pipe <= (mem_L[j] > mem_R[j+1]) ? (mem_L[j] - mem_R[j+1]) : (mem_R[j+1] - mem_L[j]);
-//                 temp3_pipe <= (mem_L[j] > mem_R[j+2]) ? (mem_L[j] - mem_R[j+2]) : (mem_R[j+2] - mem_L[j]);
-//                 temp4_pipe <= (mem_L[j] > mem_R[j+3]) ? (mem_L[j] - mem_R[j+3]) : (mem_R[j+3] - mem_L[j]);
-//                 temp5_pipe <= (mem_L[j] > mem_R[j+4]) ? (mem_L[j] - mem_R[j+4]) : (mem_R[j+4] - mem_L[j]);
-//             end
-//         end
-//     end
-
-//     always_ff @(posedge clk) begin
-//         if (state_reg == COMP) begin
-//             for (int j = 0; j < 160; j++) begin
-//                 min_temp_pipe <= temp1_pipe;
-//                 if (temp2_pipe < min_temp_pipe) min_temp_pipe <= temp2_pipe;
-//                 if (temp3_pipe < min_temp_pipe) min_temp_pipe <= temp3_pipe;
-//                 if (temp4_pipe < min_temp_pipe) min_temp_pipe <= temp4_pipe;
-//                 if (temp5_pipe < min_temp_pipe) min_temp_pipe <= temp5_pipe;
-
-//                 if (min_temp_pipe == temp1_pipe) temp_mem[j] <= 0;
-//                 else if (min_temp_pipe == temp2_pipe) temp_mem[j] <= 10;
-//                 else if (min_temp_pipe == temp3_pipe) temp_mem[j] <= 25;
-//                 else if (min_temp_pipe == temp4_pipe) temp_mem[j] <= 40;
-//                 else temp_mem[j] <= 63;
-
-//                 if (j == 159) begin
-//                     done_next <= 1'b1;
-//                 end
-//             end
-//         end
-//     end
-
-//     always_comb begin
-//         state_next   = state_reg;
-//         read_en_next = read_en_reg;
-//         done_next    = done_reg;
-//         case (state_reg)
-//             IDLE: begin
-//                 if (x_pixel[9:1] > 158) begin
-//                     state_next   = COMP;
-//                     read_en_next = 0;
-//                 end
-//             end
-//             COMP: begin
-//                 if (done_reg == 1'b1) begin
-//                     state_next   = IDLE;
-//                     read_en_next = 1;
-//                 end
-//             end
-//         endcase
-//     end
-// endmodule
+                    if (temp_min == temp1) begin
+                        // temp_mem[j] = 630 * 0.1 / 1;
+                        temp_mem[j] = 63;
+                    end else if (temp_min == temp2) begin
+                        // temp_mem[j] = 630 * 0.1 / 2;
+                        temp_mem[j] = 40;
+                    end else if (temp_min == temp3) begin
+                        // temp_mem[j] = 630 * 0.1 / 3;
+                        temp_mem[j] = 25;
+                    end else if (temp_min == temp4) begin
+                        // temp_mem[j] = 630 * 0.1 / 4;
+                        temp_mem[j] = 10;
+                    end else begin
+                        // temp_mem[j] = 630 * 0.1 / 5;
+                        temp_mem[j] = 0;
+                    end
+                end
 
 
-module disparity_generator (
+                // for (int j = 0; j < 160; j++) begin
+                //     temp1 = (mem_L[j] > mem_R[j]) ? (mem_L[j] - mem_R[j]) : (mem_R[j] - mem_L[j]); // Right data' 1st data. 
+                //     temp2 = (mem_L[j] > mem_R[j+1]) ? (mem_L[j] - mem_R[j+1]) : (mem_R[j+1] - mem_L[j]);       // i
+                //     temp3 = (mem_L[j] > mem_R[j+2]) ? (mem_L[j] - mem_R[j+2]) : (mem_R[j+2] - mem_L[j]);       // i
+                //     temp4 = (mem_L[j] > mem_R[j+3]) ? (mem_L[j] - mem_R[j+3]) : (mem_R[j+3] - mem_L[j]);       // i
+                //     temp5 = (mem_L[j] > mem_R[j+4]) ? (mem_L[j] - mem_R[j+4]) : (mem_R[j+4] - mem_L[j]);       // i
+
+                //     if (temp1 < temp2) begin
+                //         if (temp1 < temp3) begin
+                //             if (temp1 < temp4) begin
+                //                 if (temp1 < temp5) begin
+                //                     temp_mem[j] = 0;
+                //                 end else begin
+                //                     temp_mem[j] = 63;
+                //                 end
+                //             end else begin
+                //                 if (temp4 < temp5) begin
+                //                     temp_mem[j] = 40;
+                //                 end else begin
+                //                     temp_mem[j] = 63;
+                //                 end
+                //             end
+                //         end else begin
+                //             if (temp3 < temp4) begin
+                //                 if (temp3 < temp5) begin
+                //                     temp_mem[j] = 25;
+                //                 end else begin
+                //                     temp_mem[j] = 63;
+                //                 end
+                //             end else begin
+                //                 if (temp4 < temp5) begin
+                //                     temp_mem[j] = 40;
+                //                 end else begin
+                //                     temp_mem[j] = 63;
+                //                 end
+                //             end
+                //         end
+                //     end else begin
+                //         if (temp2 < temp3) begin
+                //             if (temp2 < temp4) begin
+                //                 if (temp2 < temp5) begin
+                //                     temp_mem[j] = 10;
+                //                 end else begin
+                //                     temp_mem[j] = 63;
+                //                 end
+                //             end else begin
+                //                 if (temp4 < temp5) begin
+                //                     temp_mem[j] = 40;
+                //                 end else begin
+                //                     temp_mem[j] = 63;
+                //                 end
+                //             end
+                //         end else begin
+                //             if (temp3 < temp4) begin
+                //                 if (temp3 < temp5) begin
+                //                     temp_mem[j] = 25;
+                //                 end else begin
+                //                     temp_mem[j] = 63;
+                //                 end
+                //             end else begin
+                //                 if (temp4 < temp5) begin
+                //                     temp_mem[j] = 40;
+                //                 end else begin
+                //                     temp_mem[j] = 63;
+                //                 end
+                //             end
+                //         end
+                //     end
+                // end
+                state_next   = IDLE;
+                read_en_next = 1;
+            end
+        endcase
+    end
+
+
+endmodule
+
+module disparity_generator_3x3 (
     input  logic        clk,
     input  logic        reset,
     input  logic        Hsync,

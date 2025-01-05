@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Sun Jan  5 03:52:34 2025
-// Host        : DESKTOP-PFRE25G running 64-bit major release  (build 9200)
+// Date        : Sun Jan  5 16:02:49 2025
+// Host        : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
+//               d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
 // Design      : clk_wiz_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -17,17 +17,14 @@ module clk_wiz_0
    (vga_clk,
     ov7670_xclk1,
     ov7670_xclk2,
-    clk_200,
     reset,
     clk_in1);
   output vga_clk;
   output ov7670_xclk1;
   output ov7670_xclk2;
-  output clk_200;
   input reset;
   input clk_in1;
 
-  wire clk_200;
   (* IBUF_LOW_PWR *) wire clk_in1;
   wire ov7670_xclk1;
   wire ov7670_xclk2;
@@ -35,8 +32,7 @@ module clk_wiz_0
   wire vga_clk;
 
   clk_wiz_0_clk_wiz_0_clk_wiz inst
-       (.clk_200(clk_200),
-        .clk_in1(clk_in1),
+       (.clk_in1(clk_in1),
         .ov7670_xclk1(ov7670_xclk1),
         .ov7670_xclk2(ov7670_xclk2),
         .reset(reset),
@@ -48,18 +44,14 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
    (vga_clk,
     ov7670_xclk1,
     ov7670_xclk2,
-    clk_200,
     reset,
     clk_in1);
   output vga_clk;
   output ov7670_xclk1;
   output ov7670_xclk2;
-  output clk_200;
   input reset;
   input clk_in1;
 
-  wire clk_200;
-  wire clk_200_clk_wiz_0;
   wire clk_in1;
   wire clk_in1_clk_wiz_0;
   wire clkfbout_buf_clk_wiz_0;
@@ -77,6 +69,7 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
   wire NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED;
+  wire NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED;
@@ -112,10 +105,6 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
        (.I(ov7670_xclk2_clk_wiz_0),
         .O(ov7670_xclk2));
   (* BOX_TYPE = "PRIMITIVE" *) 
-  BUFG clkout4_buf
-       (.I(clk_200_clk_wiz_0),
-        .O(clk_200));
-  (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
     .CLKFBOUT_MULT_F(6.000000),
@@ -135,7 +124,7 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
     .CLKOUT2_DUTY_CYCLE(0.500000),
     .CLKOUT2_PHASE(0.000000),
     .CLKOUT2_USE_FINE_PS("FALSE"),
-    .CLKOUT3_DIVIDE(3),
+    .CLKOUT3_DIVIDE(1),
     .CLKOUT3_DUTY_CYCLE(0.500000),
     .CLKOUT3_PHASE(0.000000),
     .CLKOUT3_USE_FINE_PS("FALSE"),
@@ -180,7 +169,7 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
         .CLKOUT1B(NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED),
         .CLKOUT2(ov7670_xclk2_clk_wiz_0),
         .CLKOUT2B(NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED),
-        .CLKOUT3(clk_200_clk_wiz_0),
+        .CLKOUT3(NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED),
         .CLKOUT3B(NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED),
         .CLKOUT4(NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED),
         .CLKOUT5(NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED),

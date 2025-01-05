@@ -65,7 +65,6 @@ module top_VGA_CAMERA (
         .vga_clk(vga_clk),     // output vga_clk
         .ov7670_xclk1(ov7670_xclk1),     // output ov7670_xclk1
         .ov7670_xclk2(ov7670_xclk2),     // output ov7670_xclk2
-        .clk_200(clk_200),     // output clk_200
         // Status and control signals
         .reset(reset), // input reset
         // Clock in ports
@@ -79,18 +78,31 @@ module top_VGA_CAMERA (
         .gray_rgb   ({vgaRed, vgaGreen, vgaBlue})
     );
 
-    SCCB_final U_SCCB_final_L (
+    top_SCCB U_top_SCCB_L (
         .clk  (clk),
         .reset(reset),
-        .scl  (SCL_L),
-        .sda  (SDA_L)
+        .sda  (SDA_L),
+        .scl  (SCL_L)
     );
-    SCCB_final U_SCCB_final_R (
+    top_SCCB U_top_SCCB_R (
         .clk  (clk),
         .reset(reset),
-        .scl  (SCL_R),
-        .sda  (SDA_R)
+        .sda  (SDA_R),
+        .scl  (SCL_R)
     );
+
+    // SCCB_final U_SCCB_final_L (
+    //     .clk  (clk),
+    //     .reset(reset),
+    //     .scl  (SCL_L),
+    //     .sda  (SDA_L)
+    // );
+    // SCCB_final U_SCCB_final_R (
+    //     .clk  (clk),
+    //     .reset(reset),
+    //     .scl  (SCL_R),
+    //     .sda  (SDA_R)
+    // );
 
     // camera_configure U_SCCB_Config_Left (
     //     .clk  (sccb_L_clk),
@@ -204,8 +216,9 @@ module top_VGA_CAMERA (
     //     .rData  (buffer3)
     // );
 
-    disparity_generator U_disparity_generator (
-        .clk    (clk_200),
+    disparity_generator_1x1 U_disparity_generator (
+        // disparity_generator U_disparity_generator (
+        .clk    (clk),
         .reset  (reset),
         .Hsync  (Hsync),
         .x_pixel(x_pixel),
@@ -272,21 +285,21 @@ module qvga_addr_decoder (
             if (x >= 320) begin
                 qvga_addr1 = y[9:1] * 160 + x[9:1];
                 qvga_en1   = 1'b1;
-                qvga_addr2 = y[9:1] * 160 + x[9:1];
-                qvga_en2   = 1'b1;
+                // qvga_addr2 = y[9:1] * 160 + x[9:1];
+                // qvga_en2   = 1'b1;
                 // qvga_addr1 = y[9:1] * 160 + x[9:1];
                 // qvga_en1   = 1'b1;
-                // qvga_addr2 = 0;
-                // qvga_en2   = 1'b0;
+                qvga_addr2 = 0;
+                qvga_en2   = 1'b0;
                 // qvga_addr3 = 0;
                 // qvga_en3   = 1'b0;
             end else begin
-                qvga_addr1 = y[9:1] * 160 + x[9:1];
-                qvga_en1   = 1'b1;
+                // qvga_addr1 = y[9:1] * 160 + x[9:1];
+                // qvga_en1   = 1'b1;
                 qvga_addr2 = y[9:1] * 160 + x[9:1];
                 qvga_en2   = 1'b1;
-                // qvga_addr1 = 0;
-                // qvga_en1   = 1'b0;
+                qvga_addr1 = 0;
+                qvga_en1   = 1'b0;
                 // qvga_addr2 = y[9:1] * 160 + x[9:1];
                 // qvga_en2   = 1'b1;
                 // qvga_addr3 = 0;
@@ -387,7 +400,6 @@ module rgb2gray (
     logic [14:0] gray;
 
     assign gray = color_rgb[15:11]*RW + color_rgb[10:5]*GW + color_rgb[4:0]*BW;
-    // assign gray = (76*color_rgb[11:8] + 150*color_rgb[7:4] + 30*color_rgb[3:0]) / 256;
 
     assign gray_rgb = {gray[14:10], gray[14:9], gray[14:10]};
 endmodule
