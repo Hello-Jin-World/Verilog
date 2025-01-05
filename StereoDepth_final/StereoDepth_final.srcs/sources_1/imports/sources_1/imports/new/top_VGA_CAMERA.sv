@@ -45,7 +45,7 @@ module top_VGA_CAMERA (
     logic [15:0] wData1, wData2, buffer1, buffer2, buffer;
     logic qvga_en1, qvga_en2, qvga_en3;
     logic [14:0] qvga_addr1, qvga_addr2, qvga_addr3;
-    logic vga_clk, sccb_L_clk, sccb_R_clk;
+    logic vga_clk, clk_200;
     logic [5:0] buffer3;
 
     // logic [15:0] rData_for_SAD1;
@@ -60,14 +60,12 @@ module top_VGA_CAMERA (
     // assign vgaGreen = (disp_enable) ? depth_out[10:7] : 0;
     // assign vgaBlue  = (disp_enable) ? depth_out[4:1] : 0;
 
-
     clk_wiz_0 U_clk_gene (
         // Clock out ports
         .vga_clk(vga_clk),     // output vga_clk
         .ov7670_xclk1(ov7670_xclk1),     // output ov7670_xclk1
         .ov7670_xclk2(ov7670_xclk2),     // output ov7670_xclk2
-        .sccb_L_clk(sccb_L_clk),     // output sccb_L_clk
-        .sccb_R_clk(sccb_R_clk),     // output sccb_R_clk
+        .clk_200(clk_200),     // output clk_200
         // Status and control signals
         .reset(reset), // input reset
         // Clock in ports
@@ -80,7 +78,7 @@ module top_VGA_CAMERA (
         .disp_enable(disp_enable),
         .gray_rgb   ({vgaRed, vgaGreen, vgaBlue})
     );
-    
+
     SCCB_final U_SCCB_final_L (
         .clk  (clk),
         .reset(reset),
@@ -207,7 +205,7 @@ module top_VGA_CAMERA (
     // );
 
     disparity_generator U_disparity_generator (
-        .clk    (clk),
+        .clk    (clk_200),
         .reset  (reset),
         .Hsync  (Hsync),
         .x_pixel(x_pixel),

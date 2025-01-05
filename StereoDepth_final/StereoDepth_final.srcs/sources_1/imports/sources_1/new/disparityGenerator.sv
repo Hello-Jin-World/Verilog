@@ -199,10 +199,10 @@ module disparity_generator (
 );
     localparam IDLE = 0, COMP = 1;
 
-    logic [5:0] mem_L[0:159][0:2];
-    logic [5:0] mem_R[0:159][0:2];
+    logic [5:0] mem_L[0:2][0:159];
+    logic [5:0] mem_R[0:2][0:159];
 
-    logic state_reg, state_next;
+    logic [1:0] state_reg, state_next;
     logic read_en_reg, read_en_next;
     logic [11:0] window[4:0];
     logic [5:0] window1;
@@ -217,25 +217,32 @@ module disparity_generator (
     logic [5:0] min_temp;
     logic [5:0] temp_mem[0:160-1];
 
+    logic [7:0] j, j_next;
+    logic [5:0] result;
+
     assign rData = temp_mem[x_pixel[9:2]];
 
     always_ff @(posedge clk, posedge reset) begin
         if (reset) begin
             state_reg   <= 0;
             read_en_reg <= 1;
+            j           <= 0;
         end else begin
             state_reg   <= state_next;
             read_en_reg <= read_en_next;
+            j           <= j_next;
             if (read_en_reg == 1'b1) begin
-                mem_L[(y_pixel[9:2]+1)%3][x_pixel[9:2]] <= in_L[15:10];
-                mem_R[(y_pixel[9:2]+1)%3][x_pixel[9:2]] <= in_R[15:10];
+                mem_L[y_pixel[9:2]%3][x_pixel[9:2]] <= in_L[15:10];
+                mem_R[y_pixel[9:2]%3][x_pixel[9:2]] <= in_R[15:10];
             end
+            temp_mem[j] <= result;
         end
     end
 
     always_comb begin
         state_next   = state_reg;
         read_en_next = read_en_reg;
+        j_next       = j;
         case (state_reg)
             IDLE: begin
                 if (x_pixel >= 159) begin
@@ -244,92 +251,91 @@ module disparity_generator (
                 end
             end
             COMP: begin
-                for (int j = 1; j < 160; j++) begin
-                    // temp1 = (mem_L[j] > mem_R[j]) ? (mem_L[j] - mem_R[j]) : (mem_R[j] - mem_L[j]); // Right data' 1st data. 
-                    // temp2 = (mem_L[j] > mem_R[j+1]) ? (mem_L[j] - mem_R[j+1]) : (mem_R[j+1] - mem_L[j]);       // i
-                    // temp3 = (mem_L[j] > mem_R[j+2]) ? (mem_L[j] - mem_R[j+2]) : (mem_R[j+2] - mem_L[j]);       // i
-                    // temp4 = (mem_L[j] > mem_R[j+3]) ? (mem_L[j] - mem_R[j+3]) : (mem_R[j+3] - mem_L[j]);       // i
-                    // temp5 = (mem_L[j] > mem_R[j+4]) ? (mem_L[j] - mem_R[j+4]) : (mem_R[j+4] - mem_L[j]);       // i
+                // i ===== y                j ======= x
+                for (int i = 0; i < 5; i++) begin
+                    window1 = (mem_L[0][j-1] > mem_R[0][j-1+i]) ? (mem_L[0][j-1] - mem_R[0][j-1+i]) : (mem_R[0][j-1+i] - mem_L[0][j-1]);
+                    window2 = (mem_L[0][j]   > mem_R[0][j+i])   ? (mem_L[0][j]   - mem_R[0][j+i])   : (mem_R[0][j+i]   - mem_L[0][j]);
+                    window3 = (mem_L[0][j+1] > mem_R[0][j+1+i]) ? (mem_L[0][j+1] - mem_R[0][j+1+i]) : (mem_R[0][j+1+i] - mem_L[0][j+1]);
 
-                    // i ===== y                j ======= x
+                    window4 = (mem_L[1][j-1] > mem_R[1][j-1+i]) ? (mem_L[1][j-1] - mem_R[1][j-1+i]) : (mem_R[1][j-1+i] - mem_L[1][j-1]);
+                    window5 = (mem_L[1][j]   > mem_R[1][j+i])   ? (mem_L[1][j]   - mem_R[1][j+i])   : (mem_R[1][j+i]   - mem_L[1][j]);
+                    window6 = (mem_L[1][j+1] > mem_R[1][j+1+i]) ? (mem_L[1][j+1] - mem_R[1][j+1+i]) : (mem_R[1][j+1+i] - mem_L[1][j+1]);
 
-                    for (int i = 0; i < 5; i++) begin
-                        window1 = (mem_L[j-1][j-1] > mem_R[j-1][j-1+i]) ? (mem_L[j-1][j-1] - mem_R[j-1][j-1+i]) : (mem_R[j-1][j-1+i] - mem_L[j-1][j-1]);
-                        window2 = (mem_L[j-1][j] > mem_R[j-1][j+i]) ? (mem_L[j-1][j] - mem_R[j-1][j+i]) : (mem_R[j-1][j+i] - mem_L[j-1][j]);
-                        window3 = (mem_L[j-1][j+1] > mem_R[j-1][j+1+i]) ? (mem_L[j-1][j+1] - mem_R[j-1][j+1+i]) : (mem_R[j-1][j+1+i] - mem_L[j-1][j+1]);
-                        window4 = (mem_L[j][j-1] > mem_R[j][j-1+i]) ? (mem_L[j][j-1] - mem_R[j][j-1+i]) : (mem_R[j][j-1+i] - mem_L[j][j-1]);
-                        window5 = (mem_L[j][j] > mem_R[j][j+i]) ? (mem_L[j][j] - mem_R[j][j+i]) : (mem_R[j][j+i] - mem_L[j][j]);
-                        window6 = (mem_L[j][j+1] > mem_R[j][j+1+i]) ? (mem_L[j][j+1] - mem_R[j][j+1+i]) : (mem_R[j][j+1+i] - mem_L[j][j+1]);
-                        window7 = (mem_L[j+1][j-1] > mem_R[j+1][j-1+i]) ? (mem_L[j+1][j-1] - mem_R[j+1][j-1+i]) : (mem_R[j+1][j-1+i] - mem_L[j+1][j-1]);
-                        window8 = (mem_L[j+1][j] > mem_R[j+1][j+i]) ? (mem_L[j+1][j] - mem_R[j+1][j+i]) : (mem_R[j+1][j+i] - mem_L[j+1][j]);
-                        window9 = (mem_L[j+1][j+1] > mem_R[j+1][j+1+i]) ? (mem_L[j+1][j+1] - mem_R[j+1][j+1+i]) : (mem_R[j+1][j+1+i] - mem_L[j+1][j+1]);
-                        window[i] = window1 + window2 + window3 + window4 + window5 + window6 + window7 + window8 + window9;
-                    end
+                    window7 = (mem_L[2][j-1] > mem_R[2][j-1+i]) ? (mem_L[2][j-1] - mem_R[2][j-1+i]) : (mem_R[2][j-1+i] - mem_L[2][j-1]);
+                    window8 = (mem_L[2][j]   > mem_R[2][j+i])   ? (mem_L[2][j]   - mem_R[2][j+i])   : (mem_R[2][j+i]   - mem_L[2][j]);
+                    window9 = (mem_L[2][j+1] > mem_R[2][j+1+i]) ? (mem_L[2][j+1] - mem_R[2][j+1+i]) : (mem_R[2][j+1+i] - mem_L[2][j+1]);
+                    window[i] = window1 + window2 + window3 + window4 + window5 + window6 + window7 + window8 + window9;
+                end
 
-                    if (window[0] < window[1]) begin
-                        if (window[0] < window[2]) begin
-                            if (window[0] < window[3]) begin
-                                if (window[0] < window[4]) begin
-                                    temp_mem[j] = 0;
-                                end else begin
-                                    temp_mem[j] = 63;
-                                end
+                if (window[0] < window[1]) begin
+                    if (window[0] < window[2]) begin
+                        if (window[0] < window[3]) begin
+                            if (window[0] < window[4]) begin
+                                result = 63;
                             end else begin
-                                if (window[3] < window[4]) begin
-                                    temp_mem[j] = 40;
-                                end else begin
-                                    temp_mem[j] = 63;
-                                end
+                                result = 0;
                             end
                         end else begin
-                            if (window[2] < window[3]) begin
-                                if (window[2] < window[4]) begin
-                                    temp_mem[j] = 25;
-                                end else begin
-                                    temp_mem[j] = 63;
-                                end
+                            if (window[3] < window[4]) begin
+                                result = 14;
                             end else begin
-                                if (window[3] < window[4]) begin
-                                    temp_mem[j] = 40;
-                                end else begin
-                                    temp_mem[j] = 63;
-                                end
+                                result = 0;
                             end
                         end
                     end else begin
-                        if (window[1] < window[2]) begin
-                            if (window[1] < window[3]) begin
-                                if (window[1] < window[4]) begin
-                                    temp_mem[j] = 10;
-                                end else begin
-                                    temp_mem[j] = 63;
-                                end
+                        if (window[2] < window[3]) begin
+                            if (window[2] < window[4]) begin
+                                result = 43;
                             end else begin
-                                if (window[3] < window[4]) begin
-                                    temp_mem[j] = 40;
-                                end else begin
-                                    temp_mem[j] = 63;
-                                end
+                                result = 0;
                             end
                         end else begin
-                            if (window[2] < window[3]) begin
-                                if (window[2] < window[4]) begin
-                                    temp_mem[j] = 25;
-                                end else begin
-                                    temp_mem[j] = 63;
-                                end
+                            if (window[3] < window[4]) begin
+                                result = 14;
                             end else begin
-                                if (window[3] < window[4]) begin
-                                    temp_mem[j] = 40;
-                                end else begin
-                                    temp_mem[j] = 63;
-                                end
+                                result = 0;
+                            end
+                        end
+                    end
+                end else begin
+                    if (window[1] < window[2]) begin
+                        if (window[1] < window[3]) begin
+                            if (window[1] < window[4]) begin
+                                result = 27;
+                            end else begin
+                                result = 0;
+                            end
+                        end else begin
+                            if (window[3] < window[4]) begin
+                                result = 14;
+                            end else begin
+                                result = 0;
+                            end
+                        end
+                    end else begin
+                        if (window[2] < window[3]) begin
+                            if (window[2] < window[4]) begin
+                                result = 43;
+                            end else begin
+                                result = 0;
+                            end
+                        end else begin
+                            if (window[3] < window[4]) begin
+                                result = 14;
+                            end else begin
+                                result = 0;
                             end
                         end
                     end
                 end
-                state_next   = IDLE;
-                read_en_next = 1;
+                if (j == 119) begin
+                    j_next       = 0;
+                    state_next   = IDLE;
+                    read_en_next = 1;
+                end else begin
+                    j_next     = j + 1;
+                    state_next = COMP;
+                end
             end
         endcase
     end
