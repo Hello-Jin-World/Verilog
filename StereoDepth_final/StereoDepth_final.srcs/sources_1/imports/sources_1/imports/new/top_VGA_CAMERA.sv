@@ -225,8 +225,8 @@ module top_VGA_CAMERA (
         .Hsync  (Hsync),
         .x_pixel(x_pixel),
         .y_pixel(y_pixel),
-        .in_L   (gray_rgb_L),
-        .in_R   (gray_rgb_R),
+        .in_L   (gray_rgb_R),
+        .in_R   (gray_rgb_L),
         .rData  (buffer3)
     );
     // disparity_generator U_disparity_generator_hahahah (

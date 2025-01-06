@@ -70,7 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_msg_config -id {Common 17-41} -limit 10000000
+set_param chipscope.maxJobs 1
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -89,9 +90,9 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
-  D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/sources_1/new/DepthAlgorithm.sv
   D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/sources_1/imports/sources_1/imports/new/FrameBuffer.sv
   {D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/sources_1/imports/카카오톡 받은 파일/SCCB.sv}
+  D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/sources_1/imports/sources_1/new/disparityGenerator.sv
   D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/sources_1/imports/sources_1/imports/new/ov7670_SetData.sv
   D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/sources_1/imports/sources_1/imports/new/vga_controller.sv
   D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/sources_1/imports/sources_1/imports/new/top_VGA_CAMERA.sv
