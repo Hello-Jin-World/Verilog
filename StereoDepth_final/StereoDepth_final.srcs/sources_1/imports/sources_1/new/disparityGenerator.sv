@@ -72,108 +72,108 @@ module disparity_generator_1x1 (
                 //     endcase
                 // end
 
-                for (int j = 0; j < 160; j++) begin
-                    temp1 = (mem_L[j] > mem_R[j])   ? (mem_L[j] - mem_R[j])   : (mem_R[j] - mem_L[j]);
-                    temp2 = (mem_L[j] > mem_R[j+1]) ? (mem_L[j] - mem_R[j+1]) : (mem_R[j+1] - mem_L[j]);
-                    temp3 = (mem_L[j] > mem_R[j+2]) ? (mem_L[j] - mem_R[j+2]) : (mem_R[j+2] - mem_L[j]);
-                    temp4 = (mem_L[j] > mem_R[j+3]) ? (mem_L[j] - mem_R[j+3]) : (mem_R[j+3] - mem_L[j]);
-                    temp5 = (mem_L[j] > mem_R[j+4]) ? (mem_L[j] - mem_R[j+4]) : (mem_R[j+4] - mem_L[j]);
-
-                    temp_min = temp1;
-
-                    if (temp2 < temp_min) temp_min = temp2;
-                    if (temp3 < temp_min) temp_min = temp3;
-                    if (temp4 < temp_min) temp_min = temp4;
-                    if (temp5 < temp_min) temp_min = temp5;
-
-                    if (temp_min == temp1) begin
-                        // temp_mem[j] = 630 * 0.1 / 1;
-                        temp_mem[j] = 63;
-                    end else if (temp_min == temp2) begin
-                        // temp_mem[j] = 630 * 0.1 / 2;
-                        temp_mem[j] = 40;
-                    end else if (temp_min == temp3) begin
-                        // temp_mem[j] = 630 * 0.1 / 3;
-                        temp_mem[j] = 25;
-                    end else if (temp_min == temp4) begin
-                        // temp_mem[j] = 630 * 0.1 / 4;
-                        temp_mem[j] = 10;
-                    end else begin
-                        // temp_mem[j] = 630 * 0.1 / 5;
-                        temp_mem[j] = 0;
-                    end
-                end
-
-
                 // for (int j = 0; j < 160; j++) begin
-                //     temp1 = (mem_L[j] > mem_R[j]) ? (mem_L[j] - mem_R[j]) : (mem_R[j] - mem_L[j]); // Right data' 1st data. 
-                //     temp2 = (mem_L[j] > mem_R[j+1]) ? (mem_L[j] - mem_R[j+1]) : (mem_R[j+1] - mem_L[j]);       // i
-                //     temp3 = (mem_L[j] > mem_R[j+2]) ? (mem_L[j] - mem_R[j+2]) : (mem_R[j+2] - mem_L[j]);       // i
-                //     temp4 = (mem_L[j] > mem_R[j+3]) ? (mem_L[j] - mem_R[j+3]) : (mem_R[j+3] - mem_L[j]);       // i
-                //     temp5 = (mem_L[j] > mem_R[j+4]) ? (mem_L[j] - mem_R[j+4]) : (mem_R[j+4] - mem_L[j]);       // i
+                //     temp1 = (mem_L[j] > mem_R[j])   ? (mem_L[j] - mem_R[j])   : (mem_R[j] - mem_L[j]);
+                //     temp2 = (mem_L[j] > mem_R[j+1]) ? (mem_L[j] - mem_R[j+1]) : (mem_R[j+1] - mem_L[j]);
+                //     temp3 = (mem_L[j] > mem_R[j+2]) ? (mem_L[j] - mem_R[j+2]) : (mem_R[j+2] - mem_L[j]);
+                //     temp4 = (mem_L[j] > mem_R[j+3]) ? (mem_L[j] - mem_R[j+3]) : (mem_R[j+3] - mem_L[j]);
+                //     temp5 = (mem_L[j] > mem_R[j+4]) ? (mem_L[j] - mem_R[j+4]) : (mem_R[j+4] - mem_L[j]);
 
-                //     if (temp1 < temp2) begin
-                //         if (temp1 < temp3) begin
-                //             if (temp1 < temp4) begin
-                //                 if (temp1 < temp5) begin
-                //                     temp_mem[j] = 0;
-                //                 end else begin
-                //                     temp_mem[j] = 63;
-                //                 end
-                //             end else begin
-                //                 if (temp4 < temp5) begin
-                //                     temp_mem[j] = 40;
-                //                 end else begin
-                //                     temp_mem[j] = 63;
-                //                 end
-                //             end
-                //         end else begin
-                //             if (temp3 < temp4) begin
-                //                 if (temp3 < temp5) begin
-                //                     temp_mem[j] = 25;
-                //                 end else begin
-                //                     temp_mem[j] = 63;
-                //                 end
-                //             end else begin
-                //                 if (temp4 < temp5) begin
-                //                     temp_mem[j] = 40;
-                //                 end else begin
-                //                     temp_mem[j] = 63;
-                //                 end
-                //             end
-                //         end
+                //     temp_min = temp1;
+
+                //     if (temp2 < temp_min) temp_min = temp2;
+                //     if (temp3 < temp_min) temp_min = temp3;
+                //     if (temp4 < temp_min) temp_min = temp4;
+                //     if (temp5 < temp_min) temp_min = temp5;
+
+                //     if (temp_min == temp1) begin
+                //         // temp_mem[j] = 630 * 0.1 / 1;
+                //         temp_mem[j] = 63;
+                //     end else if (temp_min == temp2) begin
+                //         // temp_mem[j] = 630 * 0.1 / 2;
+                //         temp_mem[j] = 40;
+                //     end else if (temp_min == temp3) begin
+                //         // temp_mem[j] = 630 * 0.1 / 3;
+                //         temp_mem[j] = 25;
+                //     end else if (temp_min == temp4) begin
+                //         // temp_mem[j] = 630 * 0.1 / 4;
+                //         temp_mem[j] = 10;
                 //     end else begin
-                //         if (temp2 < temp3) begin
-                //             if (temp2 < temp4) begin
-                //                 if (temp2 < temp5) begin
-                //                     temp_mem[j] = 10;
-                //                 end else begin
-                //                     temp_mem[j] = 63;
-                //                 end
-                //             end else begin
-                //                 if (temp4 < temp5) begin
-                //                     temp_mem[j] = 40;
-                //                 end else begin
-                //                     temp_mem[j] = 63;
-                //                 end
-                //             end
-                //         end else begin
-                //             if (temp3 < temp4) begin
-                //                 if (temp3 < temp5) begin
-                //                     temp_mem[j] = 25;
-                //                 end else begin
-                //                     temp_mem[j] = 63;
-                //                 end
-                //             end else begin
-                //                 if (temp4 < temp5) begin
-                //                     temp_mem[j] = 40;
-                //                 end else begin
-                //                     temp_mem[j] = 63;
-                //                 end
-                //             end
-                //         end
+                //         // temp_mem[j] = 630 * 0.1 / 5;
+                //         temp_mem[j] = 0;
                 //     end
                 // end
+
+
+                for (int j = 0; j < 160; j++) begin
+                    temp1 = (mem_L[j] > mem_R[j]) ? (mem_L[j] - mem_R[j]) : (mem_R[j] - mem_L[j]); // Right data' 1st data. 
+                    temp2 = (mem_L[j] > mem_R[j+1]) ? (mem_L[j] - mem_R[j+1]) : (mem_R[j+1] - mem_L[j]);       // i
+                    temp3 = (mem_L[j] > mem_R[j+2]) ? (mem_L[j] - mem_R[j+2]) : (mem_R[j+2] - mem_L[j]);       // i
+                    temp4 = (mem_L[j] > mem_R[j+3]) ? (mem_L[j] - mem_R[j+3]) : (mem_R[j+3] - mem_L[j]);       // i
+                    temp5 = (mem_L[j] > mem_R[j+4]) ? (mem_L[j] - mem_R[j+4]) : (mem_R[j+4] - mem_L[j]);       // i
+
+                    if (temp1 < temp2) begin
+                        if (temp1 < temp3) begin
+                            if (temp1 < temp4) begin
+                                if (temp1 < temp5) begin
+                                    temp_mem[j] = 0;
+                                end else begin
+                                    temp_mem[j] = 63;
+                                end
+                            end else begin
+                                if (temp4 < temp5) begin
+                                    temp_mem[j] = 40;
+                                end else begin
+                                    temp_mem[j] = 63;
+                                end
+                            end
+                        end else begin
+                            if (temp3 < temp4) begin
+                                if (temp3 < temp5) begin
+                                    temp_mem[j] = 25;
+                                end else begin
+                                    temp_mem[j] = 63;
+                                end
+                            end else begin
+                                if (temp4 < temp5) begin
+                                    temp_mem[j] = 40;
+                                end else begin
+                                    temp_mem[j] = 63;
+                                end
+                            end
+                        end
+                    end else begin
+                        if (temp2 < temp3) begin
+                            if (temp2 < temp4) begin
+                                if (temp2 < temp5) begin
+                                    temp_mem[j] = 10;
+                                end else begin
+                                    temp_mem[j] = 63;
+                                end
+                            end else begin
+                                if (temp4 < temp5) begin
+                                    temp_mem[j] = 40;
+                                end else begin
+                                    temp_mem[j] = 63;
+                                end
+                            end
+                        end else begin
+                            if (temp3 < temp4) begin
+                                if (temp3 < temp5) begin
+                                    temp_mem[j] = 25;
+                                end else begin
+                                    temp_mem[j] = 63;
+                                end
+                            end else begin
+                                if (temp4 < temp5) begin
+                                    temp_mem[j] = 40;
+                                end else begin
+                                    temp_mem[j] = 63;
+                                end
+                            end
+                        end
+                    end
+                end
                 state_next   = IDLE;
                 read_en_next = 1;
             end
