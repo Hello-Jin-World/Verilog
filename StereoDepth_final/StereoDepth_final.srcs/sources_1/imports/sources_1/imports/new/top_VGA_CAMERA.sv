@@ -216,7 +216,9 @@ module top_VGA_CAMERA (
     //     .rData  (buffer3)
     // );
 
-    disparity_generator_1x1 U_disparity_generator (
+    DepthAlgorithm_window U_DepthAlgorithm_window (
+        //DepthAlgorithm U_DepthAlgorithm (
+        // disparity_generator_1x1 U_disparity_generator (
         // disparity_generator U_disparity_generator (
         .clk    (clk),
         .reset  (reset),
