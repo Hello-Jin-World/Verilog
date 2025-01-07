@@ -52,7 +52,7 @@ module top_VGA_CAMERA (
     // logic [15:0] rData_for_SAD2;
     // logic [11:0] gray_for_SAD1;
     // logic [11:0] gray_for_SAD2;
-    logic [15:0] gray_rgb_L, gray_rgb_R;
+    logic [13:0] gray_rgb_L, gray_rgb_R;
 
     // Disparity signal
     logic [15:0] depth_out;
@@ -200,19 +200,19 @@ module top_VGA_CAMERA (
 
     rgb2gray U_rgb2gray_L (
         .color_rgb(buffer1),
-        .gray_rgb (gray_rgb_L)
+        .gray (gray_rgb_L)
     );
     rgb2gray U_rgb2gray_R (
         .color_rgb(buffer2),
-        .gray_rgb (gray_rgb_R)
+        .gray (gray_rgb_R)
     );
 
-    // DepthAlgorithm_window U_DepthAlgorithm_window (
+    DepthAlgorithm_window U_DepthAlgorithm_window (
     //DepthAlgorithm U_DepthAlgorithm (
     // disparity_generator_1x1 U_disparity_generator (
     // disparity_generator U_disparity_generator (
-    disparity_generator_3x3 U_disparity_generator_3x3 (
-        .clk    (clk_200),
+    // disparity_generator_3x3 U_disparity_generator_3x3 (
+        .clk    (clk),
         .reset  (reset),
         .Hsync  (Hsync),
         .x_pixel(x_pixel),
@@ -222,17 +222,17 @@ module top_VGA_CAMERA (
         .rData  (buffer3)
     );
 
-    frameBuffer U_FrameBufferDepth (
-        // write side ov7670
-        .wclk (clk_200),
-        .we   (),
-        .wAddr(),
-        .wData(buffer3),
-        .rclk (vga_clk),
-        .oe   (qvga_en3),
-        .rAddr(qvga_addr3),
-        .rData(buffer3)
-    );
+    // frameBuffer U_FrameBufferDepth (
+    //     // write side ov7670
+    //     .wclk (clk_200),
+    //     .we   (),
+    //     .wAddr(),
+    //     .wData(buffer3),
+    //     .rclk (vga_clk),
+    //     .oe   (qvga_en3),
+    //     .rAddr(qvga_addr3),
+    //     .rData(buffer3)
+    // );
 endmodule
 
 module qvga_addr_decoder (
@@ -380,16 +380,16 @@ endmodule
 
 module rgb2gray (
     input  logic [15:0] color_rgb,
-    output logic [15:0] gray_rgb
+    output logic [13:0] gray
 );
 
-    localparam RW = 8'h4c, GW = 8'h96, BW = 8'h1e;
+    localparam RW = 8'h47; // weight for red
+    localparam GW = 8'h96; // weight for green
+    localparam BW = 8'h1D; // weight for blue
 
-    logic [14:0] gray;
+    // localparam RW = 8'h4c, GW = 8'h96, BW = 8'h1e;
 
     assign gray = color_rgb[15:11]*RW + color_rgb[10:5]*GW + color_rgb[4:0]*BW;
-
-    assign gray_rgb = {gray[14:10], gray[14:9], gray[14:10]};
 endmodule
 
 

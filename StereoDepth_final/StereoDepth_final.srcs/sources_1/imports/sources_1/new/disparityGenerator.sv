@@ -191,6 +191,7 @@ module disparity_generator_3x3 (
     input  logic [ 9:0] y_pixel,
     input  logic [15:0] in_L,
     input  logic [15:0] in_R,
+    output logic [ 5:0] addr,
     output logic [ 5:0] rData
 );
     localparam IDLE = 0, COMP = 1;
@@ -198,7 +199,7 @@ module disparity_generator_3x3 (
     logic [5:0] mem_L[0:2][0:159];
     logic [5:0] mem_R[0:2][0:159];
 
-    logic [1:0] state_reg, state_next;
+    logic state_reg, state_next;
     logic read_en_reg, read_en_next;
     logic [11:0] window[4:0];
     logic [5:0] window1;
@@ -214,9 +215,13 @@ module disparity_generator_3x3 (
     logic [5:0] temp_mem[0:160-1];
 
     logic [7:0] j, j_next;
+    logic [7:0] k, k_next;
     logic [5:0] result;
 
     assign rData = temp_mem[x_pixel[9:2]];
+
+    // assign rData = result;
+    assign addr = j;
 
     always_ff @(posedge clk, posedge reset) begin
         if (reset) begin
@@ -241,7 +246,7 @@ module disparity_generator_3x3 (
         j_next       = j;
         case (state_reg)
             IDLE: begin
-                if (x_pixel >= 159) begin
+                if (x_pixel[9:1] >= 159) begin
                     state_next   = COMP;
                     read_en_next = 0;
                 end

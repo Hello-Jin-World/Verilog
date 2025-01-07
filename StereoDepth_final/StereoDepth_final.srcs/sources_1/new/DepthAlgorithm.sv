@@ -6,18 +6,18 @@ module DepthAlgorithm (
     input  logic        Hsync,
     input  logic [ 9:0] x_pixel,
     input  logic [ 9:0] y_pixel,
-    input  logic [15:0] in_L,
-    input  logic [15:0] in_R,
+    input  logic [13:0] in_L,
+    input  logic [13:0] in_R,
     output logic [ 5:0] rData
 );
     localparam IDLE = 0, COMP = 1;
 
-    logic [5:0] mem_L[0:159];
-    logic [5:0] mem_R[0:159];
+    logic [13:0] mem_L[0:159];
+    logic [13:0] mem_R[0:159];
 
     logic [1:0] state_reg, state_next;
     logic read_en_reg, read_en_next;
-    logic [5:0] temp1, temp2, temp3, temp4, temp5, temp_min;
+    logic [13:0] temp1, temp2, temp3, temp4, temp5, temp_min;
     logic [5:0] temp_mem[0:160-1];
     logic [6:0] i_reg, i_next;
 
@@ -35,8 +35,8 @@ module DepthAlgorithm (
             read_en_reg <= read_en_next;
             i_reg       <= i_next;
             if (read_en_reg == 1'b1) begin
-                mem_L[x_pixel[9:2]] <= in_L[15:10];
-                mem_R[x_pixel[9:2]] <= in_R[15:10];
+                mem_L[x_pixel[9:2]] <= in_L;
+                mem_R[x_pixel[9:2]] <= in_R;
             end
         end
     end
@@ -87,50 +87,69 @@ module DepthAlgorithm_window (
     input  logic        Hsync,
     input  logic [ 9:0] x_pixel,
     input  logic [ 9:0] y_pixel,
-    input  logic [15:0] in_L,
-    input  logic [15:0] in_R,
-    output logic [15:0] rData
+    input  logic [13:0] in_L,
+    input  logic [13:0] in_R,
+    output logic [ 5:0] rData
 );
+
+    // ila_0 your_instance_name (
+    //     .clk(clk),  // input wire clk
+    //     .probe0 (x_pixel),   // input wire [9:0]  probe0  
+    //     .probe1 (y_pixel),   // input wire [9:0]  probe1 
+    //     .probe2 (in_L),   // input wire [15:0]  probe2 
+    //     .probe3 (in_R),   // input wire [15:0]  probe3 
+    //     .probe4 (rData),   // input wire [5:0]  probe4 
+    //     .probe5 (mem_L[0][j]),   // input wire [5:0]  probe5 
+    //     .probe6 (mem_R[0][j]),   // input wire [5:0]  probe6 
+    //     .probe7 (state_reg),   // input wire [0:0]  probe7 
+    //     .probe8 (read_en_reg),   // input wire [0:0]  probe8 
+    //     .probe9 (window_cost[0]),   // input wire [11:0]  probe9 
+    //     .probe10(window_cost[1]),  // input wire [11:0]  probe10 
+    //     .probe11(window_cost[2]),  // input wire [11:0]  probe11 
+    //     .probe12(window_cost[3]),  // input wire [11:0]  probe12 
+    //     .probe13(window_cost[4]),  // input wire [11:0]  probe13 
+    //     .probe14(temp_mem[j]),  // input wire [5:0]  probe14 
+    //     .probe15(j)   // input wire [7:0]  probe15
+    // );
 
     localparam IDLE = 0, COMP = 1;
 
-    logic [5:0] mem_L[0:2][0:159];
-    logic [5:0] mem_R[0:2][0:159];
-    logic [1:0] state_reg, state_next;
+    logic [13:0] mem_L[0:2][0:159];
+    logic [13:0] mem_R[0:2][0:159];
+    logic state_reg, state_next;
     logic read_en_reg, read_en_next;
-    logic [11:0] window_cost[4:0];
+    logic [18:0] window_cost[4:0];
     logic [5:0] temp_mem[0:160-1];
     logic [7:0] j, j_next;
-    logic [5:0] result;
 
     // Pipeline registers
-    logic [5:0] window_L[0:2][0:2];
-    logic [5:0] window_R[0:2][0:2];
+    logic [13:0] window_L[0:2][0:2];
+    logic [13:0] window_R[0:2][0:2];
     logic [11:0] cost_reg[0:4];
     logic [5:0] depth_reg;
-    logic [5:0] temp_R[0:2][0:2]; // Temporary packed array for passing to calc_window_cost
+    logic [13:0] temp_R[0:2][0:2]; // Temporary packed array for passing to calc_window_cost
 
     assign rData = temp_mem[x_pixel[9:2]];
 
-    function logic [11:0] calc_window_cost(input logic [5:0] L[0:2][0:2],
-                                           input logic [5:0] R[0:2][0:2]);
-        logic [11:0] cost = 0;
+    function logic [18:0] calc_window_cost(input logic [13:0] L[0:2][0:2],
+                                           input logic [13:0] R[0:2][0:2]);
+        logic [18:0] cost = 0;
         for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 3; j++)
-                cost += (L[i][j] > R[i][j]) ? (L[i][j] - R[i][j]) : (R[i][j] - L[i][j]);
+            for (int w = 0; w < 3; w++)
+                cost += (L[i][w] > R[i][w]) ? (L[i][w] - R[i][w]) : (R[i][w] - L[i][w]);
         return cost;
     endfunction
 
-    function logic [5:0] get_depth(logic [11:0] costs[5]);
+    function logic [5:0] get_depth(logic [18:0] costs[5]);
         logic [2:0] min_idx = 0;
-        for (int i = 1; i < 5; i++) if (costs[i] < costs[min_idx]) min_idx = i;
+        for (int i = 0; i < 5; i++) if (costs[i] < costs[min_idx]) min_idx = i;
 
         case (min_idx)
-            0: return 63;
-            1: return 27;
-            2: return 43;
-            3: return 14;
-            default: return 0;
+            0: return 120 * 0.5 / 1;
+            1: return 120 * 0.5 / 2;
+            2: return 120 * 0.5 / 3;
+            3: return 120 * 0.5 / 4;
+            default: return 120 * 0.5 / 5;
         endcase
     endfunction
 
@@ -146,8 +165,8 @@ module DepthAlgorithm_window (
 
             // Pipeline Stage 1: Load window data
             if (read_en_reg == 1'b1) begin
-                mem_L[y_pixel[9:2]%3][x_pixel[9:2]] <= in_L[15:10];
-                mem_R[y_pixel[9:2]%3][x_pixel[9:2]] <= in_R[15:10];
+                mem_L[y_pixel[9:2]%3][x_pixel[9:2]] <= in_L[13:8];
+                mem_R[y_pixel[9:2]%3][x_pixel[9:2]] <= in_R[13:8];
             end
 
             // Pipeline Stage 2: Setup window data
@@ -187,10 +206,10 @@ module DepthAlgorithm_window (
 
 
             // Pipeline Stage 4: Determine depth
-            depth_reg <= get_depth(window_cost);
+            temp_mem[j] <= get_depth(window_cost);
 
             // Pipeline Stage 5: Store result
-            temp_mem[j] <= depth_reg;
+            // temp_mem[j] <= depth_reg;
         end
     end
 
@@ -201,7 +220,7 @@ module DepthAlgorithm_window (
 
         case (state_reg)
             IDLE: begin
-                if (x_pixel >= 159) begin
+                if (x_pixel[9:1] == 159) begin
                     state_next   = COMP;
                     read_en_next = 0;
                 end
