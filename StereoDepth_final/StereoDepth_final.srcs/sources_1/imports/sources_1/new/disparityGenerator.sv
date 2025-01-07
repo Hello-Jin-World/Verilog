@@ -191,7 +191,7 @@ module disparity_generator_3x3 (
     input  logic [ 9:0] y_pixel,
     input  logic [15:0] in_L,
     input  logic [15:0] in_R,
-    output logic [15:0] rData
+    output logic [ 5:0] rData
 );
     localparam IDLE = 0, COMP = 1;
 
@@ -324,7 +324,7 @@ module disparity_generator_3x3 (
                         end
                     end
                 end
-                if (j == 119) begin
+                if (j == 159) begin
                     j_next       = 0;
                     state_next   = IDLE;
                     read_en_next = 1;

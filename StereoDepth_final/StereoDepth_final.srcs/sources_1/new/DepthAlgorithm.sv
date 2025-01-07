@@ -91,6 +91,7 @@ module DepthAlgorithm_window (
     input  logic [15:0] in_R,
     output logic [15:0] rData
 );
+
     localparam IDLE = 0, COMP = 1;
 
     logic [5:0] mem_L[0:2][0:159];
@@ -158,8 +159,6 @@ module DepthAlgorithm_window (
             end
 
             // Pipeline Stage 3: Calculate costs (Unrolled loop)
-
-
             // Prepare packed array for each disparity value and calculate costs
             // Disparity 0
             for (int i = 0; i < 3; i++)
@@ -208,7 +207,7 @@ module DepthAlgorithm_window (
                 end
             end
             COMP: begin
-                if (j == 119) begin
+                if (j == 159) begin
                     j_next       = 0;
                     state_next   = IDLE;
                     read_en_next = 1;

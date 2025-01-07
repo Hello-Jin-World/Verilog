@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Tue Jan  7 04:05:08 2025
-| Host         : DESKTOP-PFRE25G running 64-bit major release  (build 9200)
+| Date         : Tue Jan  7 10:38:50 2025
+| Host         : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_VGA_CAMERA_utilization_synth.rpt -pb top_VGA_CAMERA_utilization_synth.pb
 | Design       : top_VGA_CAMERA
 | Device       : 7a35tcpg236-1
@@ -30,14 +30,14 @@ Table of Contents
 +-------------------------+-------+-------+-----------+-------+
 |        Site Type        |  Used | Fixed | Available | Util% |
 +-------------------------+-------+-------+-----------+-------+
-| Slice LUTs*             | 12489 |     0 |     20800 | 60.04 |
-|   LUT as Logic          | 12489 |     0 |     20800 | 60.04 |
+| Slice LUTs*             | 12241 |     0 |     20800 | 58.85 |
+|   LUT as Logic          | 12241 |     0 |     20800 | 58.85 |
 |   LUT as Memory         |     0 |     0 |      9600 |  0.00 |
-| Slice Registers         |  2474 |     0 |     41600 |  5.95 |
-|   Register as Flip Flop |  1840 |     0 |     41600 |  4.42 |
-|   Register as Latch     |   634 |     0 |     41600 |  1.52 |
-| F7 Muxes                |    84 |     0 |     16300 |  0.52 |
-| F8 Muxes                |    40 |     0 |      8150 |  0.49 |
+| Slice Registers         |  5751 |     0 |     41600 | 13.82 |
+|   Register as Flip Flop |  5747 |     0 |     41600 | 13.81 |
+|   Register as Latch     |     4 |     0 |     41600 | <0.01 |
+| F7 Muxes                |  3894 |     0 |     16300 | 23.89 |
+| F8 Muxes                |  1885 |     0 |      8150 | 23.13 |
 +-------------------------+-------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -55,9 +55,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 3     |          Yes |           - |          Set |
-| 871   |          Yes |           - |        Reset |
+| 308   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 1600  |          Yes |       Reset |            - |
+| 5440  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -149,30 +149,30 @@ Table of Contents
 7. Primitives
 -------------
 
-+----------+------+---------------------+
-| Ref Name | Used | Functional Category |
-+----------+------+---------------------+
-| LUT5     | 6137 |                 LUT |
-| LUT2     | 5733 |                 LUT |
-| LUT6     | 3751 |                 LUT |
-| CARRY4   | 1648 |          CarryLogic |
-| FDRE     | 1600 |        Flop & Latch |
-| LUT3     |  875 |                 LUT |
-| LDCE     |  634 |        Flop & Latch |
-| LUT4     |  252 |                 LUT |
-| FDCE     |  237 |        Flop & Latch |
-| MUXF7    |   84 |               MuxFx |
-| MUXF8    |   40 |               MuxFx |
-| RAMB36E1 |   32 |        Block Memory |
-| IBUF     |   25 |                  IO |
-| LUT1     |   20 |                 LUT |
-| OBUF     |   18 |                  IO |
-| BUFG     |    5 |               Clock |
-| FDPE     |    3 |        Flop & Latch |
-| OBUFT    |    2 |                  IO |
-| RAMB18E1 |    1 |        Block Memory |
-| DSP48E1  |    1 |    Block Arithmetic |
-+----------+------+---------------------+
++----------+-------+---------------------+
+| Ref Name |  Used | Functional Category |
++----------+-------+---------------------+
+| LUT6     | 10228 |                 LUT |
+| FDRE     |  5440 |        Flop & Latch |
+| MUXF7    |  3894 |               MuxFx |
+| MUXF8    |  1885 |               MuxFx |
+| LUT3     |  1140 |                 LUT |
+| LUT5     |   888 |                 LUT |
+| LUT2     |   573 |                 LUT |
+| LUT4     |   432 |                 LUT |
+| FDCE     |   304 |        Flop & Latch |
+| CARRY4   |   223 |          CarryLogic |
+| RAMB36E1 |    32 |        Block Memory |
+| IBUF     |    25 |                  IO |
+| LUT1     |    23 |                 LUT |
+| OBUF     |    18 |                  IO |
+| BUFG     |     5 |               Clock |
+| LDCE     |     4 |        Flop & Latch |
+| FDPE     |     3 |        Flop & Latch |
+| OBUFT    |     2 |                  IO |
+| RAMB18E1 |     1 |        Block Memory |
+| DSP48E1  |     1 |    Block Arithmetic |
++----------+-------+---------------------+
 
 
 8. Black Boxes

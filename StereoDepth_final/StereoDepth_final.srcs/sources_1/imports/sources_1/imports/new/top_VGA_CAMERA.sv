@@ -62,13 +62,14 @@ module top_VGA_CAMERA (
 
     clk_wiz_0 U_clk_gene (
         // Clock out ports
-        .vga_clk(vga_clk),     // output vga_clk
-        .ov7670_xclk1(ov7670_xclk1),     // output ov7670_xclk1
-        .ov7670_xclk2(ov7670_xclk2),     // output ov7670_xclk2
+        .vga_clk     (vga_clk),       // output vga_clk
+        .ov7670_xclk1(ov7670_xclk1),  // output ov7670_xclk1
+        .ov7670_xclk2(ov7670_xclk2),  // output ov7670_xclk2
+        .clk_200     (clk_200),       // output clk_200
         // Status and control signals
-        .reset(reset), // input reset
+        .reset       (reset),         // input reset
         // Clock in ports
-        .clk_in1(clk)
+        .clk_in1     (clk)
     );  // input clk_in1
 
     rbt2gray U_rbt2gray (
@@ -206,21 +207,12 @@ module top_VGA_CAMERA (
         .gray_rgb (gray_rgb_R)
     );
 
-    // disparity_pipeline U_disparity_pipeline (
-    //     .clk    (clk),
-    //     .reset  (reset),
-    //     .Hsync  (Hsync),
-    //     .in_L   (gray_rgb_L),
-    //     .in_R   (gray_rgb_R),
-    //     .x_pixel(x_pixel),
-    //     .rData  (buffer3)
-    // );
-
-    DepthAlgorithm_window U_DepthAlgorithm_window (
-        //DepthAlgorithm U_DepthAlgorithm (
-        // disparity_generator_1x1 U_disparity_generator (
-        // disparity_generator U_disparity_generator (
-        .clk    (clk),
+    // DepthAlgorithm_window U_DepthAlgorithm_window (
+    //DepthAlgorithm U_DepthAlgorithm (
+    // disparity_generator_1x1 U_disparity_generator (
+    // disparity_generator U_disparity_generator (
+    disparity_generator_3x3 U_disparity_generator_3x3 (
+        .clk    (clk_200),
         .reset  (reset),
         .Hsync  (Hsync),
         .x_pixel(x_pixel),
@@ -229,24 +221,18 @@ module top_VGA_CAMERA (
         .in_R   (gray_rgb_L),
         .rData  (buffer3)
     );
-    // disparity_generator U_disparity_generator_hahahah (
-    //     .clk   (clk),
-    //     .reset (reset),
-    //     .wclk1 (ov7670_pclk1),
-    //     .we1   (we1),
-    //     .wAddr1(wAddr1),
-    //     .wData1(wData1),
-    //     .wclk2 (ov7670_pclk2),
-    //     .we2   (we2),
-    //     .wAddr2(wAddr2),
-    //     .wData2(wData2),
-    //     .rclk (vga_clk),
-    //     .oe   (qvga_en3),
-    //     .rAddr(qvga_addr3),
-    //     .rData(buffer3)
-    // );
 
-
+    frameBuffer U_FrameBufferDepth (
+        // write side ov7670
+        .wclk (clk_200),
+        .we   (),
+        .wAddr(),
+        .wData(buffer3),
+        .rclk (vga_clk),
+        .oe   (qvga_en3),
+        .rAddr(qvga_addr3),
+        .rData(buffer3)
+    );
 endmodule
 
 module qvga_addr_decoder (
