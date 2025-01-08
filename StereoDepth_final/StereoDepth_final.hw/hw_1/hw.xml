@@ -5,11 +5,25 @@
 
 <hwsession version="1" minor="2">
   <device name="xc7a35t_0" gui_info="dashboard1=hw_ila_1[xc7a35t_0/hw_ila_1/Settings=ILA_SETTINGS_1;xc7a35t_0/hw_ila_1/Status=ILA_STATUS_1;xc7a35t_0/hw_ila_1/Trigger Setup=ILA_TRIGGER_1;xc7a35t_0/hw_ila_1/Waveform=ILA_WAVE_1;xc7a35t_0/hw_ila_1/Capture Setup=ILA_CAPTURE_1;]"/>
+  <ObjectList object_type="hw_cfgmem" gui_info="">
+    <Object name="" gui_info="">
+      <Properties Property="PROGRAM.ADDRESS_RANGE" value="use_file"/>
+      <Properties Property="PROGRAM.BLANK_CHECK" value="0"/>
+      <Properties Property="PROGRAM.CFG_PROGRAM" value="1"/>
+      <Properties Property="PROGRAM.CHECKSUM" value="0"/>
+      <Properties Property="PROGRAM.ERASE" value="1"/>
+      <Properties Property="PROGRAM.FILES" value="$_project_name_.runs/impl_1/top_VGA_CAMERA.bin"/>
+      <Properties Property="PROGRAM.PRM_FILE" value=""/>
+      <Properties Property="PROGRAM.UNUSED_PIN_TERMINATION" value="pull-none"/>
+      <Properties Property="PROGRAM.VERIFY" value="1"/>
+    </Object>
+  </ObjectList>
   <ObjectList object_type="hw_device" gui_info="">
     <Object name="xc7a35t_0" gui_info="">
       <Properties Property="FULL_PROBES.FILE" value=""/>
       <Properties Property="PROBES.FILE" value=""/>
       <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/top_VGA_CAMERA.bit"/>
+      <Properties Property="PROGRAM.HW_CFGMEM_PART" value="mx25l3233f-spi-x1_x2_x4"/>
       <Properties Property="SLR.COUNT" value="1"/>
     </Object>
   </ObjectList>
@@ -19,10 +33,15 @@
       <Properties Property="CONTROL.TRIGGER_POSITION" value="0"/>
       <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
     </Object>
+    <Object name="U_DepthAlgorithm_window_3x3/your_instance_name" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
   </ObjectList>
   <ObjectList object_type="hw_probe" gui_info="">
     <Object name="U_DepthAlgorithm_window/x_pixel[9:0]" gui_info="Trigger Setup=0"/>
     <Object name="U_DepthAlgorithm_window/y_pixel[8:0]" gui_info="Trigger Setup=1"/>
+    <Object name="U_DepthAlgorithm_window_3x3/x_pixel[9:0]" gui_info="Trigger Setup=0"/>
   </ObjectList>
   <probeset name="hw project" active="false">
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
@@ -729,6 +748,834 @@
       </probeOptions>
       <nets>
         <net name="U_DepthAlgorithm_window/your_instance_name_i_18_n_0"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq14&apos;hXXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq14&apos;hXXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="UNSIGNED"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe2[13:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq14&apos;hXXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/in_L[13]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_L[12]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_L[11]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_L[10]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_L[9]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_L[8]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_L[7]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_L[6]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_L[5]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_L[4]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_L[3]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_L[2]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_L[1]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_L[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq14&apos;hXXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq14&apos;hXXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="UNSIGNED"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe3[13:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq14&apos;hXXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/in_R[13]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_R[12]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_R[11]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_R[10]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_R[9]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_R[8]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_R[7]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_R[6]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_R[5]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_R[4]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_R[3]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_R[2]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_R[1]"/>
+        <net name="U_DepthAlgorithm_window_3x3/in_R[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq8&apos;hXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="UNSIGNED"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe15[7:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/j[7]"/>
+        <net name="U_DepthAlgorithm_window_3x3/j[6]"/>
+        <net name="U_DepthAlgorithm_window_3x3/j[5]"/>
+        <net name="U_DepthAlgorithm_window_3x3/j[4]"/>
+        <net name="U_DepthAlgorithm_window_3x3/j[3]"/>
+        <net name="U_DepthAlgorithm_window_3x3/j[2]"/>
+        <net name="U_DepthAlgorithm_window_3x3/j[1]"/>
+        <net name="U_DepthAlgorithm_window_3x3/j[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="UNSIGNED"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe17[3:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq4&apos;hX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/min_idx[3]"/>
+        <net name="U_DepthAlgorithm_window_3x3/min_idx[2]"/>
+        <net name="U_DepthAlgorithm_window_3x3/min_idx[1]"/>
+        <net name="U_DepthAlgorithm_window_3x3/min_idx[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe1[9]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/n_0_0"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe1[9]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/n_0_2"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq6&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq6&apos;hXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="BINARY"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe4[5:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq6&apos;hXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/rData[5]"/>
+        <net name="U_DepthAlgorithm_window_3x3/rData[4]"/>
+        <net name="U_DepthAlgorithm_window_3x3/rData[3]"/>
+        <net name="U_DepthAlgorithm_window_3x3/rData[2]"/>
+        <net name="U_DepthAlgorithm_window_3x3/rData[1]"/>
+        <net name="U_DepthAlgorithm_window_3x3/rData[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe16[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/state_reg"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="BINARY"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe5[35:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][35]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][34]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][33]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][32]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][31]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][30]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][29]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][28]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][27]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][26]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][25]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][24]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][23]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][22]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][21]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][20]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][19]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][18]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][17]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][16]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][15]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][14]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][13]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][12]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][11]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][10]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][9]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][8]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][7]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][6]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][5]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][4]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][3]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][2]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][1]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[0][0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="BINARY"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe6[35:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][35]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][34]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][33]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][32]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][31]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][30]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][29]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][28]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][27]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][26]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][25]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][24]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][23]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][22]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][21]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][20]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][19]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][18]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][17]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][16]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][15]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][14]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][13]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][12]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][11]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][10]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][9]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][8]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][7]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][6]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][5]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][4]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][3]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][2]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][1]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[1][0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="BINARY"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe7[35:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][35]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][34]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][33]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][32]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][31]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][30]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][29]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][28]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][27]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][26]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][25]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][24]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][23]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][22]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][21]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][20]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][19]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][18]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][17]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][16]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][15]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][14]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][13]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][12]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][11]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][10]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][9]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][8]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][7]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][6]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][5]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][4]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][3]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][2]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][1]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[2][0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="BINARY"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe8[35:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][35]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][34]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][33]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][32]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][31]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][30]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][29]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][28]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][27]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][26]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][25]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][24]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][23]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][22]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][21]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][20]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][19]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][18]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][17]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][16]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][15]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][14]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][13]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][12]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][11]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][10]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][9]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][8]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][7]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][6]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][5]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][4]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][3]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][2]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][1]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[3][0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="BINARY"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe9[35:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][35]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][34]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][33]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][32]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][31]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][30]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][29]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][28]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][27]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][26]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][25]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][24]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][23]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][22]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][21]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][20]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][19]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][18]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][17]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][16]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][15]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][14]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][13]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][12]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][11]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][10]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][9]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][8]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][7]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][6]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][5]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][4]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][3]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][2]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][1]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[4][0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="BINARY"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe10[35:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][35]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][34]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][33]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][32]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][31]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][30]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][29]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][28]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][27]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][26]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][25]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][24]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][23]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][22]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][21]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][20]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][19]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][18]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][17]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][16]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][15]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][14]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][13]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][12]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][11]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][10]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][9]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][8]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][7]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][6]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][5]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][4]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][3]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][2]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][1]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[5][0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="BINARY"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe11[35:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][35]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][34]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][33]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][32]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][31]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][30]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][29]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][28]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][27]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][26]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][25]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][24]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][23]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][22]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][21]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][20]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][19]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][18]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][17]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][16]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][15]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][14]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][13]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][12]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][11]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][10]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][9]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][8]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][7]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][6]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][5]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][4]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][3]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][2]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][1]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[6][0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="BINARY"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe12[35:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][35]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][34]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][33]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][32]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][31]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][30]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][29]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][28]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][27]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][26]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][25]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][24]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][23]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][22]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][21]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][20]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][19]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][18]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][17]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][16]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][15]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][14]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][13]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][12]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][11]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][10]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][9]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][8]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][7]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][6]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][5]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][4]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][3]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][2]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][1]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[7][0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="BINARY"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe13[35:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][35]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][34]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][33]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][32]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][31]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][30]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][29]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][28]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][27]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][26]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][25]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][24]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][23]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][22]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][21]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][20]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][19]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][18]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][17]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][16]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][15]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][14]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][13]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][12]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][11]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][10]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][9]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][8]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][7]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][6]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][5]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][4]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][3]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][2]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][1]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[8][0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="BINARY"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe14[35:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq36&apos;hX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][35]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][34]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][33]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][32]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][31]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][30]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][29]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][28]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][27]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][26]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][25]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][24]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][23]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][22]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][21]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][20]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][19]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][18]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][17]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][16]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][15]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][14]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][13]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][12]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][11]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][10]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][9]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][8]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][7]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][6]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][5]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][4]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][3]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][2]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][1]"/>
+        <net name="U_DepthAlgorithm_window_3x3/window_cost[9][0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq10&apos;hXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq10&apos;u319"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="UNSIGNED"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[9:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq10&apos;u319"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/x_pixel[9]"/>
+        <net name="U_DepthAlgorithm_window_3x3/x_pixel[8]"/>
+        <net name="U_DepthAlgorithm_window_3x3/x_pixel[7]"/>
+        <net name="U_DepthAlgorithm_window_3x3/x_pixel[6]"/>
+        <net name="U_DepthAlgorithm_window_3x3/x_pixel[5]"/>
+        <net name="U_DepthAlgorithm_window_3x3/x_pixel[4]"/>
+        <net name="U_DepthAlgorithm_window_3x3/x_pixel[3]"/>
+        <net name="U_DepthAlgorithm_window_3x3/x_pixel[2]"/>
+        <net name="U_DepthAlgorithm_window_3x3/x_pixel[1]"/>
+        <net name="U_DepthAlgorithm_window_3x3/x_pixel[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq9&apos;hXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq9&apos;hXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="UNSIGNED"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe1[8:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq9&apos;hXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="U_DepthAlgorithm_window_3x3/y_pixel[8]"/>
+        <net name="U_DepthAlgorithm_window_3x3/y_pixel[7]"/>
+        <net name="U_DepthAlgorithm_window_3x3/y_pixel[6]"/>
+        <net name="U_DepthAlgorithm_window_3x3/y_pixel[5]"/>
+        <net name="U_DepthAlgorithm_window_3x3/y_pixel[4]"/>
+        <net name="U_DepthAlgorithm_window_3x3/y_pixel[3]"/>
+        <net name="U_DepthAlgorithm_window_3x3/y_pixel[2]"/>
+        <net name="U_DepthAlgorithm_window_3x3/y_pixel[1]"/>
+        <net name="U_DepthAlgorithm_window_3x3/y_pixel[0]"/>
       </nets>
     </probe>
   </probeset>

@@ -131,12 +131,10 @@ class sccb_driver extends uvm_driver #(seq_item);  // receive seq_time
             #20;
             ////////////////////////////////////////////////////////////////////////////////
 
-
             //////////////////////////    RANDOM WRITE DATA     //////////////////////////// 
             sccbIntf.data = {24'b0, sccb_seq_item.sccb_wData};
             #20;
             ////////////////////////////////////////////////////////////////////////////////
-
 
             ////////////////////////    CCR DATA, START BIT     //////////////////////////// 
             sccbIntf.start = 1'b1;
@@ -151,7 +149,6 @@ class sccb_driver extends uvm_driver #(seq_item);  // receive seq_time
             sccbIntf.write = 1;
             repeat (9) @(posedge sccbIntf.scl);
             ////////////////////////////////////////////////////////////////////////////////
-
 
             /////////////////////////    FOR DUT STABILITY      ////////////////////////////
             wait (sccbIntf.scl == 1);
@@ -192,8 +189,9 @@ class sccb_monitor extends uvm_monitor;
         forever begin
             ///////////////////     GETTING SOFTWARE RANDOM DATA      ///////////////////
             // @(posedge sccbIntf.write);
+            @(negedge sccbIntf.scl);
             repeat (9) @(posedge sccbIntf.scl);
-            
+
             random_sccb_addr  = sccbIntf.reg_addr[7:0];
             // @(posedge sccbIntf.PWRITE);
             random_sccb_wData = sccbIntf.data[7:0];
@@ -219,6 +217,8 @@ class sccb_monitor extends uvm_monitor;
                     read_sccb_wData[7-i] = 1'b0;
                 end
             end
+
+            @(posedge sccbIntf.scl);
             /////////////////////////////////////////////////////////////////////////////
             sccb_seq_item.rData      = sccbIntf.data;
             sccb_seq_item.addr       = sccbIntf.reg_addr;
@@ -232,6 +232,11 @@ class sccb_monitor extends uvm_monitor;
             sccb_seq_item.got_addr   = read_sccb_addr;
             sccb_seq_item.got_wData  = read_sccb_wData;
             /////////////////////////////////////////////////////////////////////////////
+
+            /////////////////////////    FOR DUT STABILITY      ////////////////////////////
+            wait (sccbIntf.scl == 1);
+            wait (sccbIntf.sda == 1);
+            ////////////////////////////////////////////////////////////////////////////////
             `uvm_info("MON", "Send data to Scoreboard", UVM_NONE);
             send.write(sccb_seq_item);
         end

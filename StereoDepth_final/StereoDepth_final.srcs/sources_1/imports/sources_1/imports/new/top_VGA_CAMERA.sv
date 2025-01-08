@@ -457,7 +457,7 @@ module depth2rgb (
                 {
                     4'd0, 2'b11
                 } : begin
-                    rgb = 16'h0000; // 빨간색과 검정색 중간 (어두운 빨간색)
+                    rgb = 16'h8000; // 빨간색과 검정색 중간 (어두운 빨간색)
                 end
                 default: begin
                     rgb = 16'h0000;  // 기본값: 검정색

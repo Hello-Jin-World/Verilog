@@ -92,25 +92,7 @@ module DepthAlgorithm_window_3x3 (
     output logic [ 5:0] rData
 );
 
-    // ila_0 your_instance_name (
-    //     .clk(clk),  // input wire clk
-    //     .probe0 (x_pixel),   // input wire [9:0]  probe0  
-    //     .probe1 (y_pixel),   // input wire [9:0]  probe1 
-    //     .probe2 (in_L),   // input wire [15:0]  probe2 
-    //     .probe3 (in_R),   // input wire [15:0]  probe3 
-    //     .probe4 (rData),   // input wire [5:0]  probe4 
-    //     .probe5 (mem_L[0][j]),   // input wire [5:0]  probe5 
-    //     .probe6 (mem_R[0][j]),   // input wire [5:0]  probe6 
-    //     .probe7 (state_reg),   // input wire [0:0]  probe7 
-    //     .probe8 (read_en_reg),   // input wire [0:0]  probe8 
-    //     .probe9 (window_cost[0]),   // input wire [11:0]  probe9 
-    //     .probe10(window_cost[1]),  // input wire [11:0]  probe10 
-    //     .probe11(window_cost[2]),  // input wire [11:0]  probe11 
-    //     .probe12(window_cost[3]),  // input wire [11:0]  probe12 
-    //     .probe13(window_cost[4]),  // input wire [11:0]  probe13 
-    //     .probe14(temp_mem[j]),  // input wire [5:0]  probe14 
-    //     .probe15(j)   // input wire [7:0]  probe15
-    // );
+
 
     localparam IDLE = 0, COMP = 1;
 
@@ -118,7 +100,7 @@ module DepthAlgorithm_window_3x3 (
     logic [13:0] mem_R[0:2][0:159];
     logic state_reg, state_next;
     logic read_en_reg, read_en_next;
-    logic [18:0] window_cost[9:0];
+    logic [35:0] window_cost[9:0];
     logic [5:0] temp_mem[0:160-1];
     logic [7:0] j, j_next;
 
@@ -128,20 +110,37 @@ module DepthAlgorithm_window_3x3 (
     logic [5:0] depth_reg;
     logic [13:0] temp_R[0:2][0:2]; // Temporary packed array for passing to calc_window_cost
 
-    assign rData = temp_mem[x_pixel[9:2]];
 
-    function logic [18:0] calc_window_cost(input logic [13:0] L[0:2][0:2],
+    assign rData = temp_mem[x_pixel[9:1]];
+
+    logic [35:0] cost_sq;
+    logic [ 3:0] min_idx;
+    logic stop;
+
+    function logic [35:0] calc_window_cost(input logic [13:0] L[0:2][0:2],
                                            input logic [13:0] R[0:2][0:2]);
-        logic [18:0] cost = 0;
+        logic [17:0] cost;
         for (int i = 0; i < 3; i++)
             for (int w = 0; w < 3; w++)
                 cost += (L[i][w] > R[i][w]) ? (L[i][w] - R[i][w]) : (R[i][w] - L[i][w]);
-        return cost;
+        cost_sq = cost * cost;
+        return cost_sq;
     endfunction
 
-    function logic [3:0] get_depth(logic [18:0] costs[10]);
-        logic [3:0] min_idx = 0;
-        for (int i = 0; i < 10; i++) if (costs[i] < costs[min_idx]) min_idx = i;
+    function logic [3:0] get_depth(logic [35:0] costs[9:0]);
+        // for (int i = 0; i < 10; i++) if (costs[i] < costs[min_idx]) min_idx = i;
+        // logic [3:0] min_idx = 0;  // 초기값 설정
+        for (int i = 1; i < 10; i++) begin
+            if (!stop) begin
+                if (costs[i] < costs[min_idx]) begin
+                    min_idx = i;  // 현재 인덱스 업데이트
+                end else begin
+                    stop = 1;  // 값이 커지면 비교 중단
+                end
+            end
+        end
+
+
 
         case (min_idx)
             0: return 15;
@@ -167,6 +166,7 @@ module DepthAlgorithm_window_3x3 (
             state_reg   <= 0;
             read_en_reg <= 1;
             j           <= 0;
+            cost_sq     <= 0;
         end else begin
             state_reg   <= state_next;
             read_en_reg <= read_en_next;
@@ -174,8 +174,8 @@ module DepthAlgorithm_window_3x3 (
 
             // Pipeline Stage 1: Load window data
             if (read_en_reg == 1'b1) begin
-                mem_L[y_pixel[9:2]%3][x_pixel[9:2]] <= in_L;
-                mem_R[y_pixel[9:2]%3][x_pixel[9:2]] <= in_R;
+                mem_L[y_pixel[9:1]%3][x_pixel[9:1]] <= in_L;
+                mem_R[y_pixel[9:1]%3][x_pixel[9:1]] <= in_R;
             end
 
             // Pipeline Stage 2: Setup window data
@@ -215,34 +215,34 @@ module DepthAlgorithm_window_3x3 (
 
             // Disparity 5
             for (int i = 0; i < 3; i++)
-                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+4];
+                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+5];
             window_cost[5] <= calc_window_cost(window_L, temp_R);
 
             // Disparity 6
             for (int i = 0; i < 3; i++)
-                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+4];
+                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+6];
             window_cost[6] <= calc_window_cost(window_L, temp_R);
 
             // Disparity 7
             for (int i = 0; i < 3; i++)
-                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+4];
+                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+7];
             window_cost[7] <= calc_window_cost(window_L, temp_R);
 
             // Disparity 8
             for (int i = 0; i < 3; i++)
-                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+4];
+                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+8];
             window_cost[8] <= calc_window_cost(window_L, temp_R);
 
             // Disparity 9
             for (int i = 0; i < 3; i++)
-                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+4];
+                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+9];
             window_cost[9] <= calc_window_cost(window_L, temp_R);
 
             // Pipeline Stage 4: Determine depth
-            temp_mem[j] <= {get_depth(window_cost), 2'b11};
+            depth_reg <= {get_depth(window_cost), 2'b11};
 
             // Pipeline Stage 5: Store result
-            // temp_mem[j] <= depth_reg;
+            temp_mem[j] <= depth_reg;
         end
     end
 
@@ -270,6 +270,30 @@ module DepthAlgorithm_window_3x3 (
             end
         endcase
     end
+
+    // ila_1 your_instance_name (
+    //     .clk(clk),  // input wire clk
+
+
+    //     .probe0(x_pixel),  // input wire [9:0]  probe0  
+    //     .probe1(y_pixel),  // input wire [9:0]  probe1 
+    //     .probe2(in_L),  // input wire [13:0]  probe2 
+    //     .probe3(in_R),  // input wire [13:0]  probe3 
+    //     .probe4(rData),  // input wire [5:0]  probe4 
+    //     .probe5(window_cost[0]),  // input wire [35:0]  probe5 
+    //     .probe6(window_cost[1]),  // input wire [35:0]  probe6 
+    //     .probe7(window_cost[2]),  // input wire [35:0]  probe7 
+    //     .probe8(window_cost[3]),  // input wire [35:0]  probe8 
+    //     .probe9(window_cost[4]),  // input wire [35:0]  probe9 
+    //     .probe10(window_cost[5]),  // input wire [35:0]  probe10 
+    //     .probe11(window_cost[6]),  // input wire [35:0]  probe11 
+    //     .probe12(window_cost[7]),  // input wire [35:0]  probe12 
+    //     .probe13(window_cost[8]),  // input wire [35:0]  probe13 
+    //     .probe14(window_cost[9]),  // input wire [35:0]  probe14 
+    //     .probe15(j),  // input wire [7:0]  probe15 
+    //     .probe16(state_reg),  // input wire [0:0]  probe16
+    //     .probe17(min_idx)  // input wire [3:0]  probe17
+    // );
 endmodule
 
 module DepthAlgorithm_window_5x5 (
@@ -412,6 +436,9 @@ module DepthAlgorithm_window_5x5 (
             end
         endcase
     end
+
+
+
 endmodule
 /*
 module DepthAlgorithm_window (
