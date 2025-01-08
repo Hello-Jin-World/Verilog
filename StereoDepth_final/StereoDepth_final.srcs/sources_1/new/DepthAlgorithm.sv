@@ -81,7 +81,7 @@ module DepthAlgorithm (
 
 endmodule
 
-module DepthAlgorithm_window (
+module DepthAlgorithm_window_3x3 (
     input  logic        clk,
     input  logic        reset,
     input  logic        Hsync,
@@ -118,14 +118,13 @@ module DepthAlgorithm_window (
     logic [13:0] mem_R[0:2][0:159];
     logic state_reg, state_next;
     logic read_en_reg, read_en_next;
-    logic [18:0] window_cost[4:0];
+    logic [18:0] window_cost[9:0];
     logic [5:0] temp_mem[0:160-1];
     logic [7:0] j, j_next;
 
     // Pipeline registers
     logic [13:0] window_L[0:2][0:2];
     logic [13:0] window_R[0:2][0:2];
-    logic [11:0] cost_reg[0:4];
     logic [5:0] depth_reg;
     logic [13:0] temp_R[0:2][0:2]; // Temporary packed array for passing to calc_window_cost
 
@@ -140,16 +139,26 @@ module DepthAlgorithm_window (
         return cost;
     endfunction
 
-    function logic [5:0] get_depth(logic [18:0] costs[5]);
-        logic [2:0] min_idx = 0;
-        for (int i = 0; i < 5; i++) if (costs[i] < costs[min_idx]) min_idx = i;
+    function logic [3:0] get_depth(logic [18:0] costs[10]);
+        logic [3:0] min_idx = 0;
+        for (int i = 0; i < 10; i++) if (costs[i] < costs[min_idx]) min_idx = i;
 
         case (min_idx)
-            0: return 120 * 0.5 / 1;
-            1: return 120 * 0.5 / 2;
-            2: return 120 * 0.5 / 3;
-            3: return 120 * 0.5 / 4;
-            default: return 120 * 0.5 / 5;
+            0: return 15;
+            1: return 13;
+            2: return 12;
+            3: return 11;
+            4: return 9;
+            5: return 7;
+            6: return 5;
+            7: return 3;
+            8: return 1;
+            default: return 0;
+            // 0: return 120 * 0.5 / 1;
+            // 1: return 120 * 0.5 / 2;
+            // 2: return 120 * 0.5 / 3;
+            // 3: return 120 * 0.5 / 4;
+            // default: return 120 * 0.5 / 5;
         endcase
     endfunction
 
@@ -165,8 +174,8 @@ module DepthAlgorithm_window (
 
             // Pipeline Stage 1: Load window data
             if (read_en_reg == 1'b1) begin
-                mem_L[y_pixel[9:2]%3][x_pixel[9:2]] <= in_L[13:8];
-                mem_R[y_pixel[9:2]%3][x_pixel[9:2]] <= in_R[13:8];
+                mem_L[y_pixel[9:2]%3][x_pixel[9:2]] <= in_L;
+                mem_R[y_pixel[9:2]%3][x_pixel[9:2]] <= in_R;
             end
 
             // Pipeline Stage 2: Setup window data
@@ -204,9 +213,33 @@ module DepthAlgorithm_window (
                 for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+4];
             window_cost[4] <= calc_window_cost(window_L, temp_R);
 
+            // Disparity 5
+            for (int i = 0; i < 3; i++)
+                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+4];
+            window_cost[5] <= calc_window_cost(window_L, temp_R);
+
+            // Disparity 6
+            for (int i = 0; i < 3; i++)
+                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+4];
+            window_cost[6] <= calc_window_cost(window_L, temp_R);
+
+            // Disparity 7
+            for (int i = 0; i < 3; i++)
+                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+4];
+            window_cost[7] <= calc_window_cost(window_L, temp_R);
+
+            // Disparity 8
+            for (int i = 0; i < 3; i++)
+                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+4];
+            window_cost[8] <= calc_window_cost(window_L, temp_R);
+
+            // Disparity 9
+            for (int i = 0; i < 3; i++)
+                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+4];
+            window_cost[9] <= calc_window_cost(window_L, temp_R);
 
             // Pipeline Stage 4: Determine depth
-            temp_mem[j] <= get_depth(window_cost);
+            temp_mem[j] <= {get_depth(window_cost), 2'b11};
 
             // Pipeline Stage 5: Store result
             // temp_mem[j] <= depth_reg;
@@ -239,6 +272,147 @@ module DepthAlgorithm_window (
     end
 endmodule
 
+module DepthAlgorithm_window_5x5 (
+    input  logic        clk,
+    input  logic        reset,
+    input  logic        Hsync,
+    input  logic [ 9:0] x_pixel,
+    input  logic [ 9:0] y_pixel,
+    input  logic [13:0] in_L,
+    input  logic [13:0] in_R,
+    output logic [ 5:0] rData
+);
+
+    localparam IDLE = 0, COMP = 1;
+    logic [13:0] mem_L[0:4][0:159];
+    logic [13:0] mem_R[0:4][0:159];
+    logic state_reg, state_next;
+    logic read_en_reg, read_en_next;
+    logic [18:0] window_cost[4:0];
+    logic [5:0] temp_mem[0:160-1];
+    logic [7:0] j, j_next;
+
+    // Pipeline registers
+    logic [13:0] window_L[0:4][0:4];
+    logic [13:0] window_R[0:4][0:4];
+    logic [11:0] cost_reg[0:24];
+    logic [5:0] depth_reg;
+    logic [13:0] temp_R[0:4][0:4]; // Temporary packed array for passing to calc_window_cost
+
+    assign rData = temp_mem[x_pixel[9:2]];
+
+    function logic [18:0] calc_window_cost(input logic [13:0] L[0:4][0:4],
+                                           input logic [13:0] R[0:4][0:4]);
+        logic [18:0] cost = 0;
+        for (int i = 0; i < 5; i++)
+            for (int w = 0; w < 5; w++)
+                cost += (L[i][w] > R[i][w]) ? (L[i][w] - R[i][w]) : (R[i][w] - L[i][w]);
+        return cost;
+    endfunction
+
+    function logic [3:0] get_depth(logic [18:0] costs[5]);
+        logic [2:0] min_idx = 0;
+        for (int i = 0; i < 5; i++) if (costs[i] < costs[min_idx]) min_idx = i;
+
+        case (min_idx)
+            0: return 15;
+            1: return 12;
+            2: return 8;
+            3: return 3;
+            default: return 0;
+            // 0: return 120 * 0.5 / 1;
+            // 1: return 120 * 0.5 / 2;
+            // 2: return 120 * 0.5 / 3;
+            // 3: return 120 * 0.5 / 4;
+            // default: return 120 * 0.5 / 5;
+        endcase
+    endfunction
+
+    always_ff @(posedge clk, posedge reset) begin
+        if (reset) begin
+            state_reg   <= 0;
+            read_en_reg <= 1;
+            j           <= 0;
+        end else begin
+            state_reg   <= state_next;
+            read_en_reg <= read_en_next;
+            j           <= j_next;
+
+            // Pipeline Stage 1: Load window data
+            if (read_en_reg == 1'b1) begin
+                mem_L[y_pixel[9:2]%3][x_pixel[9:2]] <= in_L;
+                mem_R[y_pixel[9:2]%3][x_pixel[9:2]] <= in_R;
+            end
+
+            // Pipeline Stage 2: Setup window data
+            for (int i = 0; i < 5; i++) begin
+                for (int k = 0; k < 5; k++) begin
+                    window_L[i][k] <= mem_L[i][j+k];
+                    window_R[i][k] <= mem_R[i][j+k];
+                end
+            end
+
+            // Pipeline Stage 3: Calculate costs (Unrolled loop)
+            // Prepare packed array for each disparity value and calculate costs
+            // Disparity 0
+            for (int i = 0; i < 5; i++)
+                for (int k = 0; k < 5; k++) temp_R[i][k] = window_R[i][k];
+            window_cost[0] <= calc_window_cost(window_L, temp_R);
+
+            // Disparity 1
+            for (int i = 0; i < 5; i++)
+                for (int k = 0; k < 5; k++) temp_R[i][k] = window_R[i][k+1];
+            window_cost[1] <= calc_window_cost(window_L, temp_R);
+
+            // Disparity 2
+            for (int i = 0; i < 5; i++)
+                for (int k = 0; k < 5; k++) temp_R[i][k] = window_R[i][k+2];
+            window_cost[2] <= calc_window_cost(window_L, temp_R);
+
+            // Disparity 3
+            for (int i = 0; i < 5; i++)
+                for (int k = 0; k < 5; k++) temp_R[i][k] = window_R[i][k+3];
+            window_cost[3] <= calc_window_cost(window_L, temp_R);
+
+            // Disparity 4
+            for (int i = 0; i < 5; i++)
+                for (int k = 0; k < 5; k++) temp_R[i][k] = window_R[i][k+4];
+            window_cost[4] <= calc_window_cost(window_L, temp_R);
+
+
+            // Pipeline Stage 4: Determine depth
+            temp_mem[j] <= {get_depth(window_cost), 2'b11};
+
+            // Pipeline Stage 5: Store result
+            // temp_mem[j] <= depth_reg;
+        end
+    end
+
+    always_comb begin
+        state_next   = state_reg;
+        read_en_next = read_en_reg;
+        j_next       = j;
+
+        case (state_reg)
+            IDLE: begin
+                if (x_pixel[9:1] == 159) begin
+                    state_next   = COMP;
+                    read_en_next = 0;
+                end
+            end
+            COMP: begin
+                if (j == 159) begin
+                    j_next       = 0;
+                    state_next   = IDLE;
+                    read_en_next = 1;
+                end else begin
+                    j_next     = j + 1;
+                    state_next = COMP;
+                end
+            end
+        endcase
+    end
+endmodule
 /*
 module DepthAlgorithm_window (
     input  logic        clk,

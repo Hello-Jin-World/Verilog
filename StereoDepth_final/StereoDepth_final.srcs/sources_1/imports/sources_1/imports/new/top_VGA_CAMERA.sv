@@ -6,6 +6,7 @@ module top_VGA_CAMERA (
     input  logic       clk,
     input  logic       reset,
     input  logic       gray_sw,
+    input  logic       depth2rgb_sw,
     // input  logic       start,
     // output wire        SCL_L,
     // output wire        SDA_L,
@@ -55,7 +56,7 @@ module top_VGA_CAMERA (
     logic [13:0] gray_rgb_L, gray_rgb_R;
 
     // Disparity signal
-    logic [15:0] depth_out;
+    logic [15:0] depth_out, depth_rgb;
     // assign vgaRed   = (disp_enable) ? depth_out[15:12] : 0;
     // assign vgaGreen = (disp_enable) ? depth_out[10:7] : 0;
     // assign vgaBlue  = (disp_enable) ? depth_out[4:1] : 0;
@@ -124,7 +125,7 @@ module top_VGA_CAMERA (
     display_mux_2x1 U_display_mux_2x1 (
         .Left_Data(buffer1),
         .Right_Data(buffer2),
-        .Disparity_Data({buffer3[5:1], buffer3, buffer3[5:1]}),
+        .Disparity_Data(depth_rgb),
         .x(x_pixel),
         .y(y_pixel),
         .Out_Data(depth_out)
@@ -200,18 +201,19 @@ module top_VGA_CAMERA (
 
     rgb2gray U_rgb2gray_L (
         .color_rgb(buffer1),
-        .gray (gray_rgb_L)
+        .gray(gray_rgb_L)
     );
     rgb2gray U_rgb2gray_R (
         .color_rgb(buffer2),
-        .gray (gray_rgb_R)
+        .gray(gray_rgb_R)
     );
 
-    DepthAlgorithm_window U_DepthAlgorithm_window (
-    //DepthAlgorithm U_DepthAlgorithm (
-    // disparity_generator_1x1 U_disparity_generator (
-    // disparity_generator U_disparity_generator (
-    // disparity_generator_3x3 U_disparity_generator_3x3 (
+    // DepthAlgorithm_window_5x5 U_DepthAlgorithm_window_5x5 (
+    DepthAlgorithm_window_3x3 U_DepthAlgorithm_window_3x3 (
+        //DepthAlgorithm U_DepthAlgorithm (
+        // disparity_generator_1x1 U_disparity_generator (
+        // disparity_generator U_disparity_generator (
+        // disparity_generator_3x3 U_disparity_generator_3x3 (
         .clk    (clk),
         .reset  (reset),
         .Hsync  (Hsync),
@@ -220,6 +222,12 @@ module top_VGA_CAMERA (
         .in_L   (gray_rgb_R),
         .in_R   (gray_rgb_L),
         .rData  (buffer3)
+    );
+
+    depth2rgb U_depth2rgb (
+        .depth       (buffer3),
+        .depth2rgb_sw(depth2rgb_sw),
+        .rgb         (depth_rgb)
     );
 
     // frameBuffer U_FrameBufferDepth (
@@ -383,15 +391,85 @@ module rgb2gray (
     output logic [13:0] gray
 );
 
-    localparam RW = 8'h47; // weight for red
-    localparam GW = 8'h96; // weight for green
-    localparam BW = 8'h1D; // weight for blue
+    localparam RW = 8'h47;  // weight for red
+    localparam GW = 8'h96;  // weight for green
+    localparam BW = 8'h1D;  // weight for blue
 
     // localparam RW = 8'h4c, GW = 8'h96, BW = 8'h1e;
 
     assign gray = color_rgb[15:11]*RW + color_rgb[10:5]*GW + color_rgb[4:0]*BW;
 endmodule
 
+module depth2rgb (
+    input  logic [ 5:0] depth,
+    input  logic        depth2rgb_sw,
+    output logic [15:0] rgb
+);
 
+    always_comb begin
+        if (depth2rgb_sw) begin
+            case (depth)
+                {
+                    4'd15, 2'b11
+                } : begin
+                    rgb = 16'hF81F;  // 보라색
+                end
+                {
+                    4'd13, 2'b11
+                } : begin
+                    rgb = 16'hB817;  // 보라색과 파란색 중간
+                end
+                {
+                    4'd12, 2'b11
+                } : begin
+                    rgb = 16'h001F;  // 파란색
+                end
+                {
+                    4'd11, 2'b11
+                } : begin
+                    rgb = 16'h03AF;  // 파란색과 초록색 중간
+                end
+                {
+                    4'd9, 2'b11
+                } : begin
+                    rgb = 16'h07E0;  // 초록색
+                end
+                {
+                    4'd7, 2'b11
+                } : begin
+                    rgb = 16'h7FF0;  // 초록색과 노란색 중간
+                end
+                {
+                    4'd5, 2'b11
+                } : begin
+                    rgb = 16'hFFE0;  // 노란색
+                end
+                {
+                    4'd3, 2'b11
+                } : begin
+                    rgb = 16'hFC60;  // 노란색과 빨간색 중간
+                end
+                {
+                    4'd1, 2'b11
+                } : begin
+                    rgb = 16'hF800;  // 빨간색
+                end
+                {
+                    4'd0, 2'b11
+                } : begin
+                    rgb = 16'h0000; // 빨간색과 검정색 중간 (어두운 빨간색)
+                end
+                default: begin
+                    rgb = 16'h0000;  // 기본값: 검정색
+                end
+            endcase
+        end else begin
+            rgb = {
+                depth[5:1], depth[5:0], depth[5:1]
+            };  // 6비트 깊이를 16비트 RGB로 변환
+        end
+    end
+
+endmodule
 
 
