@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Thu Jan  9 20:59:23 2025
+// Date        : Thu Jan  9 21:50:40 2025
 // Host        : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
@@ -17,17 +17,14 @@ module clk_wiz_0
    (vga_clk,
     ov7670_xclk1,
     ov7670_xclk2,
-    clk_45,
     reset,
     clk_in1);
   output vga_clk;
   output ov7670_xclk1;
   output ov7670_xclk2;
-  output clk_45;
   input reset;
   input clk_in1;
 
-  wire clk_45;
   (* IBUF_LOW_PWR *) wire clk_in1;
   wire ov7670_xclk1;
   wire ov7670_xclk2;
@@ -35,8 +32,7 @@ module clk_wiz_0
   wire vga_clk;
 
   clk_wiz_0_clk_wiz_0_clk_wiz inst
-       (.clk_45(clk_45),
-        .clk_in1(clk_in1),
+       (.clk_in1(clk_in1),
         .ov7670_xclk1(ov7670_xclk1),
         .ov7670_xclk2(ov7670_xclk2),
         .reset(reset),
@@ -48,18 +44,14 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
    (vga_clk,
     ov7670_xclk1,
     ov7670_xclk2,
-    clk_45,
     reset,
     clk_in1);
   output vga_clk;
   output ov7670_xclk1;
   output ov7670_xclk2;
-  output clk_45;
   input reset;
   input clk_in1;
 
-  wire clk_45;
-  wire clk_45_clk_wiz_0;
   wire clk_in1;
   wire clk_in1_clk_wiz_0;
   wire clkfbout_buf_clk_wiz_0;
@@ -77,6 +69,7 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
   wire NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED;
+  wire NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED;
@@ -112,30 +105,26 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
        (.I(ov7670_xclk2_clk_wiz_0),
         .O(ov7670_xclk2));
   (* BOX_TYPE = "PRIMITIVE" *) 
-  BUFG clkout4_buf
-       (.I(clk_45_clk_wiz_0),
-        .O(clk_45));
-  (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
-    .CLKFBOUT_MULT_F(26.875000),
+    .CLKFBOUT_MULT_F(6.000000),
     .CLKFBOUT_PHASE(0.000000),
     .CLKFBOUT_USE_FINE_PS("FALSE"),
     .CLKIN1_PERIOD(10.000000),
     .CLKIN2_PERIOD(0.000000),
-    .CLKOUT0_DIVIDE_F(26.875000),
+    .CLKOUT0_DIVIDE_F(24.000000),
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
     .CLKOUT0_USE_FINE_PS("FALSE"),
-    .CLKOUT1_DIVIDE(28),
+    .CLKOUT1_DIVIDE(25),
     .CLKOUT1_DUTY_CYCLE(0.500000),
     .CLKOUT1_PHASE(0.000000),
     .CLKOUT1_USE_FINE_PS("FALSE"),
-    .CLKOUT2_DIVIDE(28),
+    .CLKOUT2_DIVIDE(25),
     .CLKOUT2_DUTY_CYCLE(0.500000),
     .CLKOUT2_PHASE(0.000000),
     .CLKOUT2_USE_FINE_PS("FALSE"),
-    .CLKOUT3_DIVIDE(15),
+    .CLKOUT3_DIVIDE(1),
     .CLKOUT3_DUTY_CYCLE(0.500000),
     .CLKOUT3_PHASE(0.000000),
     .CLKOUT3_USE_FINE_PS("FALSE"),
@@ -153,7 +142,7 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
     .CLKOUT6_PHASE(0.000000),
     .CLKOUT6_USE_FINE_PS("FALSE"),
     .COMPENSATION("ZHOLD"),
-    .DIVCLK_DIVIDE(4),
+    .DIVCLK_DIVIDE(1),
     .IS_CLKINSEL_INVERTED(1'b0),
     .IS_PSEN_INVERTED(1'b0),
     .IS_PSINCDEC_INVERTED(1'b0),
@@ -180,7 +169,7 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
         .CLKOUT1B(NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED),
         .CLKOUT2(ov7670_xclk2_clk_wiz_0),
         .CLKOUT2B(NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED),
-        .CLKOUT3(clk_45_clk_wiz_0),
+        .CLKOUT3(NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED),
         .CLKOUT3B(NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED),
         .CLKOUT4(NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED),
         .CLKOUT5(NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED),

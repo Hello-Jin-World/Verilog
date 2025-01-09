@@ -46,7 +46,7 @@ module top_VGA_CAMERA (
     logic [15:0] wData1, wData2, buffer1, buffer2, buffer;
     logic qvga_en1, qvga_en2, qvga_en3;
     logic [14:0] qvga_addr1, qvga_addr2, qvga_addr3;
-    logic vga_clk, clk_45;
+    logic vga_clk;
     logic [5:0] buffer3;
 
     // logic [15:0] rData_for_SAD1;
@@ -66,7 +66,6 @@ module top_VGA_CAMERA (
         .vga_clk     (vga_clk),       // output vga_clk
         .ov7670_xclk1(ov7670_xclk1),  // output ov7670_xclk1
         .ov7670_xclk2(ov7670_xclk2),  // output ov7670_xclk2
-        .clk_45      (clk_45),        // output clk_50
         // Status and control signals
         .reset       (reset),         // input reset
         // Clock in ports
@@ -221,7 +220,7 @@ module top_VGA_CAMERA (
         // disparity_generator_1x1 U_disparity_generator (
         // disparity_generator U_disparity_generator (
         // disparity_generator_3x3 U_disparity_generator_3x3 (
-        .clk    (clk_45),
+        .clk    (clk),
         .reset  (reset),
         .x_pixel(x_pixel),
         .y_pixel(y_pixel),

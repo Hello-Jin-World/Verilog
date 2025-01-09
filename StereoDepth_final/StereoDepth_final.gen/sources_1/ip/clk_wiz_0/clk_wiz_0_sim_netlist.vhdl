@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
--- Date        : Thu Jan  9 20:59:23 2025
+-- Date        : Thu Jan  9 21:50:40 2025
 -- Host        : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl
@@ -19,7 +19,6 @@ entity clk_wiz_0_clk_wiz_0_clk_wiz is
     vga_clk : out STD_LOGIC;
     ov7670_xclk1 : out STD_LOGIC;
     ov7670_xclk2 : out STD_LOGIC;
-    clk_45 : out STD_LOGIC;
     reset : in STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
@@ -28,7 +27,6 @@ entity clk_wiz_0_clk_wiz_0_clk_wiz is
 end clk_wiz_0_clk_wiz_0_clk_wiz;
 
 architecture STRUCTURE of clk_wiz_0_clk_wiz_0_clk_wiz is
-  signal clk_45_clk_wiz_0 : STD_LOGIC;
   signal clk_in1_clk_wiz_0 : STD_LOGIC;
   signal clkfbout_buf_clk_wiz_0 : STD_LOGIC;
   signal clkfbout_clk_wiz_0 : STD_LOGIC;
@@ -41,6 +39,7 @@ architecture STRUCTURE of clk_wiz_0_clk_wiz_0_clk_wiz is
   signal NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED : STD_LOGIC;
+  signal NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED : STD_LOGIC;
@@ -61,7 +60,6 @@ architecture STRUCTURE of clk_wiz_0_clk_wiz_0_clk_wiz is
   attribute BOX_TYPE of clkout1_buf : label is "PRIMITIVE";
   attribute BOX_TYPE of clkout2_buf : label is "PRIMITIVE";
   attribute BOX_TYPE of clkout3_buf : label is "PRIMITIVE";
-  attribute BOX_TYPE of clkout4_buf : label is "PRIMITIVE";
   attribute BOX_TYPE of mmcm_adv_inst : label is "PRIMITIVE";
 begin
 clkf_buf: unisim.vcomponents.BUFG
@@ -92,32 +90,27 @@ clkout3_buf: unisim.vcomponents.BUFG
       I => ov7670_xclk2_clk_wiz_0,
       O => ov7670_xclk2
     );
-clkout4_buf: unisim.vcomponents.BUFG
-     port map (
-      I => clk_45_clk_wiz_0,
-      O => clk_45
-    );
 mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
     generic map(
       BANDWIDTH => "OPTIMIZED",
-      CLKFBOUT_MULT_F => 26.875000,
+      CLKFBOUT_MULT_F => 6.000000,
       CLKFBOUT_PHASE => 0.000000,
       CLKFBOUT_USE_FINE_PS => false,
       CLKIN1_PERIOD => 10.000000,
       CLKIN2_PERIOD => 0.000000,
-      CLKOUT0_DIVIDE_F => 26.875000,
+      CLKOUT0_DIVIDE_F => 24.000000,
       CLKOUT0_DUTY_CYCLE => 0.500000,
       CLKOUT0_PHASE => 0.000000,
       CLKOUT0_USE_FINE_PS => false,
-      CLKOUT1_DIVIDE => 28,
+      CLKOUT1_DIVIDE => 25,
       CLKOUT1_DUTY_CYCLE => 0.500000,
       CLKOUT1_PHASE => 0.000000,
       CLKOUT1_USE_FINE_PS => false,
-      CLKOUT2_DIVIDE => 28,
+      CLKOUT2_DIVIDE => 25,
       CLKOUT2_DUTY_CYCLE => 0.500000,
       CLKOUT2_PHASE => 0.000000,
       CLKOUT2_USE_FINE_PS => false,
-      CLKOUT3_DIVIDE => 15,
+      CLKOUT3_DIVIDE => 1,
       CLKOUT3_DUTY_CYCLE => 0.500000,
       CLKOUT3_PHASE => 0.000000,
       CLKOUT3_USE_FINE_PS => false,
@@ -135,7 +128,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKOUT6_PHASE => 0.000000,
       CLKOUT6_USE_FINE_PS => false,
       COMPENSATION => "ZHOLD",
-      DIVCLK_DIVIDE => 4,
+      DIVCLK_DIVIDE => 1,
       IS_CLKINSEL_INVERTED => '0',
       IS_PSEN_INVERTED => '0',
       IS_PSINCDEC_INVERTED => '0',
@@ -163,7 +156,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKOUT1B => NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED,
       CLKOUT2 => ov7670_xclk2_clk_wiz_0,
       CLKOUT2B => NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED,
-      CLKOUT3 => clk_45_clk_wiz_0,
+      CLKOUT3 => NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED,
       CLKOUT3B => NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED,
       CLKOUT4 => NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED,
       CLKOUT5 => NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED,
@@ -193,7 +186,6 @@ entity clk_wiz_0 is
     vga_clk : out STD_LOGIC;
     ov7670_xclk1 : out STD_LOGIC;
     ov7670_xclk2 : out STD_LOGIC;
-    clk_45 : out STD_LOGIC;
     reset : in STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
@@ -205,7 +197,6 @@ architecture STRUCTURE of clk_wiz_0 is
 begin
 inst: entity work.clk_wiz_0_clk_wiz_0_clk_wiz
      port map (
-      clk_45 => clk_45,
       clk_in1 => clk_in1,
       ov7670_xclk1 => ov7670_xclk1,
       ov7670_xclk2 => ov7670_xclk2,
