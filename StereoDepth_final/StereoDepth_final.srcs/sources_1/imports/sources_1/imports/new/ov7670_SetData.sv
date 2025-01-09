@@ -19,6 +19,7 @@ module ov7670_SetData (
 
     assign we = we_reg;
     assign wAddr = v_counter_reg * 160 + pix_counter_reg[9:1];
+    // assign wAddr = pix_counter_reg * 160 + v_counter_reg[9:1];
     // assign wAddr = v_counter_reg * 320 + pix_counter_reg[9:1];
     // assign wAddr = pix_counter_reg[9:1]; 
     assign wData = temp_reg;

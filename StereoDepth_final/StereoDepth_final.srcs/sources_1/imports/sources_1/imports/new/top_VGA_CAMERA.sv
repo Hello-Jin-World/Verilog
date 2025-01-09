@@ -46,7 +46,7 @@ module top_VGA_CAMERA (
     logic [15:0] wData1, wData2, buffer1, buffer2, buffer;
     logic qvga_en1, qvga_en2, qvga_en3;
     logic [14:0] qvga_addr1, qvga_addr2, qvga_addr3;
-    logic vga_clk, clk_200;
+    logic vga_clk, clk_50;
     logic [5:0] buffer3;
 
     // logic [15:0] rData_for_SAD1;
@@ -66,7 +66,7 @@ module top_VGA_CAMERA (
         .vga_clk     (vga_clk),       // output vga_clk
         .ov7670_xclk1(ov7670_xclk1),  // output ov7670_xclk1
         .ov7670_xclk2(ov7670_xclk2),  // output ov7670_xclk2
-        .clk_200     (clk_200),       // output clk_200
+        .clk_50      (clk_50),        // output clk_50
         // Status and control signals
         .reset       (reset),         // input reset
         // Clock in ports
@@ -122,10 +122,17 @@ module top_VGA_CAMERA (
     //     .done ()
     // );
 
+    logic [13:0] average_gray;
+
+    assign average_gray = (gray_rgb_L + gray_rgb_R) / 2;
+
     display_mux_2x1 U_display_mux_2x1 (
         .Left_Data(buffer1),
         .Right_Data(buffer2),
         .Disparity_Data(depth_rgb),
+        .Average_Data({
+            average_gray[13:9], average_gray[13:8], average_gray[13:9]
+        }),
         .x(x_pixel),
         .y(y_pixel),
         .Out_Data(depth_out)
@@ -190,7 +197,7 @@ module top_VGA_CAMERA (
     );
 
     vga_controller U_vga_controller (
-        .clk        (vga_clk),
+        .clk        (clk),
         .reset      (reset),
         .h_sync     (Hsync),
         .v_sync     (Vsync),
@@ -201,22 +208,21 @@ module top_VGA_CAMERA (
 
     rgb2gray U_rgb2gray_L (
         .color_rgb(buffer1),
-        .gray(gray_rgb_L)
+        .gray     (gray_rgb_L)
     );
     rgb2gray U_rgb2gray_R (
         .color_rgb(buffer2),
-        .gray(gray_rgb_R)
+        .gray     (gray_rgb_R)
     );
-
-    // DepthAlgorithm_window_5x5 U_DepthAlgorithm_window_5x5 (
-    DepthAlgorithm_window_3x3 U_DepthAlgorithm_window_3x3 (
+    DepthAlgorithm_Census U_DepthAlgorithm_Census (
+        // DepthAlgorithm_window_5x5 U_DepthAlgorithm_window_5x5 (
+        // DepthAlgorithm_window_3x3 U_DepthAlgorithm_window_3x3 (
         //DepthAlgorithm U_DepthAlgorithm (
         // disparity_generator_1x1 U_disparity_generator (
         // disparity_generator U_disparity_generator (
         // disparity_generator_3x3 U_disparity_generator_3x3 (
-        .clk    (clk),
+        .clk    (clk_50),
         .reset  (reset),
-        .Hsync  (Hsync),
         .x_pixel(x_pixel),
         .y_pixel(y_pixel),
         .in_L   (gray_rgb_R),
@@ -230,9 +236,10 @@ module top_VGA_CAMERA (
         .rgb         (depth_rgb)
     );
 
+
     // frameBuffer U_FrameBufferDepth (
     //     // write side ov7670
-    //     .wclk (clk_200),
+    //     .wclk (clk_50),
     //     .we   (),
     //     .wAddr(),
     //     .wData(buffer3),
@@ -323,10 +330,14 @@ module qvga_addr_decoder (
                 // qvga_addr2 = 0;
                 // qvga_en2   = 1'b0;
             end else begin
-                qvga_addr1 = 0;
-                qvga_en1   = 1'b0;
-                qvga_addr2 = 0;
-                qvga_en2   = 1'b0;
+                qvga_addr1 = (y[9:1] - 120) * 160 + x[9:1];
+                qvga_en1   = 1'b1;
+                qvga_addr2 = (y[9:1] - 120) * 160 + x[9:1];
+                qvga_en2   = 1'b1;
+                // qvga_addr1 = 0;
+                // qvga_en1   = 1'b0;
+                // qvga_addr2 = 0;
+                // qvga_en2   = 1'b0;
                 // qvga_addr3 = 0;
                 // qvga_en3   = 1'b0;
             end
@@ -340,32 +351,29 @@ module display_mux_2x1 (
     input logic [15:0] Left_Data,
     input logic [15:0] Right_Data,
     input logic [15:0] Disparity_Data,  // Added for disparity output
+    input logic [15:0] Average_Data,  // Added for disparity output
     input logic [9:0] x,
     input logic [9:0] y,
     input logic qvga_en3,  // Added input for enabling disparity region
     output logic [15:0] Out_Data
 );
 
-    // always_comb begin
-    //     if (x < 640 && y < 480) begin
-    //         Out_Data = Disparity_Data;
-    //     end else begin
-    //         Out_Data = 16'd0;
-    //     end
-    // end
-
     always_comb begin
-        if (x < 320 && y < 240) begin
-            Out_Data = Right_Data;
-        end else if (x >= 320 && y < 240) begin
-            Out_Data = Left_Data;
-        end else if (x < 320 && y >= 240) begin
-            Out_Data = Disparity_Data;
+
+        if (y < 240) begin
+            if (x >= 320) begin
+                Out_Data = Left_Data;
+            end else begin
+                Out_Data = Right_Data;
+            end
         end else begin
-            Out_Data = 16'd0;
+            if (x < 320) begin
+                Out_Data = Disparity_Data;
+            end else begin
+                Out_Data = Average_Data;
+            end
         end
     end
-
 endmodule
 
 

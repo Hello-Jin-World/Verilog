@@ -56,10 +56,10 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// _vga_clk__25.00000______0.000______50.0______200.470____132.063
-// ov7670_xclk1__24.00000______0.000______50.0______202.114____132.063
-// ov7670_xclk2__24.00000______0.000______50.0______202.114____132.063
-// _clk_200__200.00000______0.000______50.0______132.221____132.063
+// _vga_clk__25.00000______0.000______50.0______389.092____307.569
+// ov7670_xclk1__23.99554______0.000______50.0______392.124____307.569
+// ov7670_xclk2__23.99554______0.000______50.0______392.124____307.569
+// __clk_50__44.79167______0.000______50.0______347.889____307.569
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -75,7 +75,7 @@ module clk_wiz_0_clk_wiz
   output        vga_clk,
   output        ov7670_xclk1,
   output        ov7670_xclk2,
-  output        clk_200,
+  output        clk_50,
   // Status and control signals
   input         reset,
   input         clk_in1
@@ -101,7 +101,7 @@ wire clk_in2_clk_wiz_0;
   wire        vga_clk_clk_wiz_0;
   wire        ov7670_xclk1_clk_wiz_0;
   wire        ov7670_xclk2_clk_wiz_0;
-  wire        clk_200_clk_wiz_0;
+  wire        clk_50_clk_wiz_0;
   wire        sccb_L_clk_clk_wiz_0;
   wire        sccb_R_clk_clk_wiz_0;
   wire        clk_out7_clk_wiz_0;
@@ -129,27 +129,27 @@ wire clk_in2_clk_wiz_0;
     .CLKOUT4_CASCADE      ("FALSE"),
     .COMPENSATION         ("ZHOLD"),
     .STARTUP_WAIT         ("FALSE"),
-    .DIVCLK_DIVIDE        (1),
-    .CLKFBOUT_MULT_F      (6.000),
+    .DIVCLK_DIVIDE        (4),
+    .CLKFBOUT_MULT_F      (26.875),
     .CLKFBOUT_PHASE       (0.000),
     .CLKFBOUT_USE_FINE_PS ("FALSE"),
-    .CLKOUT0_DIVIDE_F     (24.000),
+    .CLKOUT0_DIVIDE_F     (26.875),
     .CLKOUT0_PHASE        (0.000),
     .CLKOUT0_DUTY_CYCLE   (0.500),
     .CLKOUT0_USE_FINE_PS  ("FALSE"),
-    .CLKOUT1_DIVIDE       (25),
+    .CLKOUT1_DIVIDE       (28),
     .CLKOUT1_PHASE        (0.000),
     .CLKOUT1_DUTY_CYCLE   (0.500),
     .CLKOUT1_USE_FINE_PS  ("FALSE"),
-    .CLKOUT2_DIVIDE       (25),
+    .CLKOUT2_DIVIDE       (28),
     .CLKOUT2_PHASE        (0.000),
     .CLKOUT2_DUTY_CYCLE   (0.500),
     .CLKOUT2_USE_FINE_PS  ("FALSE"),
-    .CLKOUT3_DIVIDE       (3),
+    .CLKOUT3_DIVIDE       (15),
     .CLKOUT3_PHASE        (0.000),
     .CLKOUT3_DUTY_CYCLE   (0.500),
     .CLKOUT3_USE_FINE_PS  ("FALSE"),
-    .CLKIN1_PERIOD        (10.0))
+    .CLKIN1_PERIOD        (10.000))
   mmcm_adv_inst
     // Output clocks
    (
@@ -161,7 +161,7 @@ wire clk_in2_clk_wiz_0;
     .CLKOUT1B            (clkout1b_unused),
     .CLKOUT2             (ov7670_xclk2_clk_wiz_0),
     .CLKOUT2B            (clkout2b_unused),
-    .CLKOUT3             (clk_200_clk_wiz_0),
+    .CLKOUT3             (clk_50_clk_wiz_0),
     .CLKOUT3B            (clkout3b_unused),
     .CLKOUT4             (clkout4_unused),
     .CLKOUT5             (clkout5_unused),
@@ -221,8 +221,8 @@ wire clk_in2_clk_wiz_0;
     .I   (ov7670_xclk2_clk_wiz_0));
 
   BUFG clkout4_buf
-   (.O   (clk_200),
-    .I   (clk_200_clk_wiz_0));
+   (.O   (clk_50),
+    .I   (clk_50_clk_wiz_0));
 
 
 
