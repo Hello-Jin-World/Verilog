@@ -2,21 +2,21 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Thu Jan  9 21:53:18 2025
-# Process ID: 21256
-# Current directory: D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1
+# Start of session at: Fri Jan 10 05:20:19 2025
+# Process ID: 19920
+# Current directory: D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1
 # Command line: vivado.exe -log top_VGA_CAMERA.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_VGA_CAMERA.tcl -notrace
-# Log file: D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1/top_VGA_CAMERA.vdi
-# Journal file: D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1\vivado.jou
+# Log file: D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1/top_VGA_CAMERA.vdi
+# Journal file: D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
 source top_VGA_CAMERA.tcl -notrace
 Command: link_design -top top_VGA_CAMERA -part xc7a35tcpg236-1
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
-INFO: [Project 1-454] Reading design checkpoint 'd:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp' for cell 'U_clk_gene'
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.135 . Memory (MB): peak = 1105.316 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 7353 Unisim elements for replacement
+INFO: [Project 1-454] Reading design checkpoint 'd:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp' for cell 'U_clk_gene'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.209 . Memory (MB): peak = 1088.961 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 6592 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'top_VGA_CAMERA' is not ideal for floorplanning, since the cellview 'DepthAlgorithm_Census' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-479] Netlist was created with Vivado 2020.2
@@ -24,23 +24,23 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 WARNING: [Opt 31-35] Removing redundant IBUF, U_clk_gene/inst/clkin1_ibufg, from the path connected to top-level port: clk 
 Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
 WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'U_clk_gene/clk_in1' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
-Parsing XDC File [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'U_clk_gene/inst'
-Finished Parsing XDC File [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'U_clk_gene/inst'
-Parsing XDC File [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'U_clk_gene/inst'
-INFO: [Timing 38-35] Done setting XDC timing constraints. [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
-INFO: [Timing 38-2] Deriving generated clocks [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
-get_clocks: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1511.555 ; gain = 406.238
-Finished Parsing XDC File [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'U_clk_gene/inst'
-Parsing XDC File [D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
-Finished Parsing XDC File [D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+Parsing XDC File [d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'U_clk_gene/inst'
+Finished Parsing XDC File [d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'U_clk_gene/inst'
+Parsing XDC File [d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'U_clk_gene/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
+get_clocks: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 1608.371 ; gain = 519.410
+Finished Parsing XDC File [d:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'U_clk_gene/inst'
+Parsing XDC File [D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
+Finished Parsing XDC File [D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1511.555 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1608.371 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 10 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:15 . Memory (MB): peak = 1511.555 ; gain = 406.238
+link_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1608.371 ; gain = 519.410
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
@@ -53,58 +53,58 @@ WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port SDA_R expects
 INFO: [Project 1-461] DRC finished with 0 Errors, 2 Warnings
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.824 . Memory (MB): peak = 1511.555 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1608.371 ; gain = 0.000
 
 Starting Cache Timing Information Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Cache Timing Information Task | Checksum: 11a40fd32
+Ending Cache Timing Information Task | Checksum: 1dda32b0e
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.806 . Memory (MB): peak = 1522.141 ; gain = 10.586
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1617.555 ; gain = 9.184
 
 Starting Logic Optimization Task
 
 Phase 1 Retarget
 INFO: [Opt 31-138] Pushed 2 inverter(s) to 2 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 1 Retarget | Checksum: 1a822dbd2
+Phase 1 Retarget | Checksum: 17543068f
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.807 . Memory (MB): peak = 1736.555 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1832.270 ; gain = 0.000
 INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 5 cells
 INFO: [Opt 31-1021] In phase Retarget, 2 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 2 Constant propagation
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Phase 2 Constant propagation | Checksum: 1f1dc141e
+Phase 2 Constant propagation | Checksum: 18a7a6b3a
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.955 . Memory (MB): peak = 1736.555 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1832.270 ; gain = 0.000
 INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
 
 Phase 3 Sweep
-Phase 3 Sweep | Checksum: 1a9762d17
+Phase 3 Sweep | Checksum: 1376b43e3
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1736.555 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1832.270 ; gain = 0.000
 INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
 INFO: [Opt 31-1021] In phase Sweep, 2 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 4 BUFG optimization
-INFO: [Opt 31-194] Inserted BUFG clk_IBUF_BUFG_inst to drive 14355 load(s) on clock net clk_IBUF_BUFG
+INFO: [Opt 31-194] Inserted BUFG clk_IBUF_BUFG_inst to drive 14357 load(s) on clock net clk_IBUF_BUFG
 INFO: [Opt 31-193] Inserted 1 BUFG(s) on clock nets
-Phase 4 BUFG optimization | Checksum: 186d0746b
+Phase 4 BUFG optimization | Checksum: 144a4cf71
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1736.555 ; gain = 0.000
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1832.270 ; gain = 0.000
 INFO: [Opt 31-662] Phase BUFG optimization created 1 cells of which 1 are BUFGs and removed 0 cells.
 
 Phase 5 Shift Register Optimization
 INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
-Phase 5 Shift Register Optimization | Checksum: 186d0746b
+Phase 5 Shift Register Optimization | Checksum: 144a4cf71
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1736.555 ; gain = 0.000
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1832.270 ; gain = 0.000
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 6 Post Processing Netlist
-Phase 6 Post Processing Netlist | Checksum: 186d0746b
+Phase 6 Post Processing Netlist | Checksum: 144a4cf71
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1736.555 ; gain = 0.000
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1832.270 ; gain = 0.000
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
 Opt_design Change Summary
 =========================
@@ -125,10 +125,10 @@ Opt_design Change Summary
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1736.555 ; gain = 0.000
-Ending Logic Optimization Task | Checksum: 1431e1d65
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 1832.270 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 156152fe8
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1736.555 ; gain = 0.000
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1832.270 ; gain = 0.000
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
@@ -144,40 +144,41 @@ Starting PowerOpt Patch Enables Task
 INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 33 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
 INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
 Number of BRAM Ports augmented: 0 newly gated: 0 Total Ports: 66
-Ending PowerOpt Patch Enables Task | Checksum: 1431e1d65
+Ending PowerOpt Patch Enables Task | Checksum: 156152fe8
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.123 . Memory (MB): peak = 1890.023 ; gain = 0.000
-Ending Power Optimization Task | Checksum: 1431e1d65
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.192 . Memory (MB): peak = 1978.203 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 156152fe8
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1890.023 ; gain = 153.469
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 1978.203 ; gain = 145.934
 
 Starting Final Cleanup Task
-Ending Final Cleanup Task | Checksum: 1431e1d65
+Ending Final Cleanup Task | Checksum: 156152fe8
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1978.203 ; gain = 0.000
 
 Starting Netlist Obfuscation Task
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1890.023 ; gain = 0.000
-Ending Netlist Obfuscation Task | Checksum: 1431e1d65
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1978.203 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 156152fe8
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1978.203 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
 36 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 1890.023 ; gain = 378.469
+opt_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:14 . Memory (MB): peak = 1978.203 ; gain = 369.832
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1890.023 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1/top_VGA_CAMERA_opt.dcp' has been generated.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1978.203 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1/top_VGA_CAMERA_opt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1978.203 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_drc -file top_VGA_CAMERA_drc_opted.rpt -pb top_VGA_CAMERA_drc_opted.pb -rpx top_VGA_CAMERA_drc_opted.rpx
 Command: report_drc -file top_VGA_CAMERA_drc_opted.rpt -pb top_VGA_CAMERA_drc_opted.pb -rpx top_VGA_CAMERA_drc_opted.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
 INFO: [DRC 23-27] Running DRC with 2 threads
-INFO: [Coretcl 2-168] The results of DRC are in file D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1/top_VGA_CAMERA_drc_opted.rpt.
+INFO: [Coretcl 2-168] The results of DRC are in file D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1/top_VGA_CAMERA_drc_opted.rpt.
 report_drc completed successfully
 Command: place_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
@@ -190,12 +191,12 @@ INFO: [DRC 23-27] Running DRC with 2 threads
 WARNING: [DRC CHECK-3] Report rule limit reached: REQP-1839 rule limit reached: 20 violations have been found.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/pix_counter_reg_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/pix_counter_reg_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/pix_counter_reg_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/pix_counter_reg_reg[9]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/v_counter_reg_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/v_counter_reg_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/v_counter_reg_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/v_counter_reg_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/v_counter_reg_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/v_counter_reg_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/v_counter_reg_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[14] (net: U_FrameBufferLeft/ADDRARDADDR[14]) which is driven by a register (U_OV7670_SetDataLeft/pix_counter_reg_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[14] (net: U_FrameBufferLeft/ADDRARDADDR[14]) which is driven by a register (U_OV7670_SetDataLeft/pix_counter_reg_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[14] (net: U_FrameBufferLeft/ADDRARDADDR[14]) which is driven by a register (U_OV7670_SetDataLeft/pix_counter_reg_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
@@ -235,84 +236,84 @@ INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1890.023 ; gain = 0.000
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: d4096b7c
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1978.203 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 12b0697dc
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1890.023 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1978.203 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1978.203 ; gain = 0.000
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1346bceb5
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 89a7227a
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1978.203 ; gain = 0.000
 
 Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: 19b0f351b
+Phase 1.3 Build Placer Netlist Model | Checksum: c9d3eeb6
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 1978.203 ; gain = 0.000
 
 Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: 19b0f351b
+Phase 1.4 Constrain Clocks/Macros | Checksum: c9d3eeb6
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1890.023 ; gain = 0.000
-Phase 1 Placer Initialization | Checksum: 19b0f351b
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 1978.203 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: c9d3eeb6
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 1978.203 ; gain = 0.000
 
 Phase 2 Global Placement
 
 Phase 2.1 Floorplanning
-Phase 2.1 Floorplanning | Checksum: 23088c9b1
+Phase 2.1 Floorplanning | Checksum: 11c5cb0c5
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 1978.203 ; gain = 0.000
 
 Phase 2.2 Update Timing before SLR Path Opt
-Phase 2.2 Update Timing before SLR Path Opt | Checksum: 1abb0c99c
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: bc325dd8
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 1978.203 ; gain = 0.000
 
 Phase 2.3 Global Placement Core
 
 Phase 2.3.1 Physical Synthesis In Placer
-INFO: [Physopt 32-1035] Found 3 LUTNM shape to break, 108 LUT instances to create LUTNM shape
-INFO: [Physopt 32-1044] Break lutnm for timing: one critical 1, two critical 2, total 3, new lutff created 0
-INFO: [Physopt 32-775] End 1 Pass. Optimized 43 nets or cells. Created 3 new cells, deleted 40 existing cells and moved 0 existing cell
-INFO: [Physopt 32-76] Pass 1. Identified 1 candidate net for fanout optimization.
+INFO: [Physopt 32-1035] Found 1 LUTNM shape to break, 201 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 1, two critical 0, total 1, new lutff created 0
+INFO: [Physopt 32-775] End 1 Pass. Optimized 90 nets or cells. Created 1 new cell, deleted 89 existing cells and moved 0 existing cell
+INFO: [Physopt 32-76] Pass 1. Identified 2 candidate nets for fanout optimization.
+INFO: [Physopt 32-81] Processed net U_DepthAlgorithm_Census/j[0]. Replicated 57 times.
 INFO: [Physopt 32-81] Processed net U_DepthAlgorithm_Census/j[1]. Replicated 55 times.
-INFO: [Physopt 32-232] Optimized 1 net. Created 55 new instances.
-INFO: [Physopt 32-775] End 1 Pass. Optimized 1 net or cell. Created 55 new cells, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.169 . Memory (MB): peak = 1890.023 ; gain = 0.000
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_7 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[10] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_10 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[14] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_6 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[12] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_8 could not be replicated
+INFO: [Physopt 32-232] Optimized 2 nets. Created 112 new instances.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 2 nets or cells. Created 112 new cells, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.260 . Memory (MB): peak = 1978.203 ; gain = 0.000
 INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_15__0 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[4] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_16 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_18 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_14 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[4] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_16 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[8] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_12 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[12] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_8 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[11] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_9 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[0] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_20 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[9] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_11 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_10 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_19 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[3] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_17 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[14] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_6 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[7] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_13 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[13] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_7 could not be replicated
 INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_15 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[9] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_11 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[6] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_14 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[7] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_13 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[8] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_12__0 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[0] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_20__0 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[4] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_16__0 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[11] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_9__0 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_14__0 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_18__0 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[7] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_13__0 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[11] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_9 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_10__0 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_19__0 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[9] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_11__0 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[3] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_17 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[8] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_12 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[2] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_18 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[14] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_6__0 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[3] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_17__0 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[12] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_8__0 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[13] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_7__0 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[1] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_19 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[0] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_20 could not be replicated
-INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/h_counter_reg[6]_2 could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_1__0 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[14] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_6__0 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[2] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_18__0 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[9] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_11__0 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[10] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_10__0 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[6] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_14__0 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[4] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_16__0 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_7__0 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[3] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_17__0 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[1] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_19__0 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[11] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_9__0 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[7] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_13__0 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[8] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_12__0 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[12] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_8__0 could not be replicated
+INFO: [Physopt 32-117] Net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[0] could not be optimized because driver U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_20__0 could not be replicated
 INFO: [Physopt 32-68] No nets found for critical-cell optimization.
 INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
@@ -328,7 +329,7 @@ INFO: [Physopt 32-846] No candidate cells for URAM register optimization found i
 INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
 INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1978.203 ; gain = 0.000
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -337,8 +338,8 @@ Summary of Physical Synthesis Optimizations
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 |  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-|  LUT Combining                                    |            3  |             40  |                    43  |           0  |           1  |  00:00:00  |
-|  Very High Fanout                                 |           55  |              0  |                     1  |           0  |           1  |  00:00:03  |
+|  LUT Combining                                    |            1  |             89  |                    90  |           0  |           1  |  00:00:01  |
+|  Very High Fanout                                 |          112  |              0  |                     2  |           0  |           1  |  00:00:09  |
 |  Critical Cell                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
@@ -346,69 +347,69 @@ Summary of Physical Synthesis Optimizations
 |  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Total                                            |           58  |             40  |                    44  |           0  |           9  |  00:00:04  |
+|  Total                                            |          113  |             89  |                    92  |           0  |           9  |  00:00:10  |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Phase 2.3.1 Physical Synthesis In Placer | Checksum: 903905de
+Phase 2.3.1 Physical Synthesis In Placer | Checksum: 218d858c2
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:21 . Memory (MB): peak = 1890.023 ; gain = 0.000
-Phase 2.3 Global Placement Core | Checksum: 19842adcc
+Time (s): cpu = 00:00:53 ; elapsed = 00:00:35 . Memory (MB): peak = 1978.203 ; gain = 0.000
+Phase 2.3 Global Placement Core | Checksum: 19a8e6c0b
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:21 . Memory (MB): peak = 1890.023 ; gain = 0.000
-Phase 2 Global Placement | Checksum: 19842adcc
+Time (s): cpu = 00:00:54 ; elapsed = 00:00:36 . Memory (MB): peak = 1978.203 ; gain = 0.000
+Phase 2 Global Placement | Checksum: 19a8e6c0b
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:21 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Time (s): cpu = 00:00:54 ; elapsed = 00:00:36 . Memory (MB): peak = 1978.203 ; gain = 0.000
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 1e6478a0c
+Phase 3.1 Commit Multi Column Macros | Checksum: f1469dd6
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:22 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Time (s): cpu = 00:00:57 ; elapsed = 00:00:38 . Memory (MB): peak = 1978.203 ; gain = 0.000
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1a3cba814
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 213cecb69
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:24 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:40 . Memory (MB): peak = 1978.203 ; gain = 0.000
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: 18a6018a4
+Phase 3.3 Area Swap Optimization | Checksum: 23277a4cb
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:24 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:41 . Memory (MB): peak = 1978.203 ; gain = 0.000
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: 12b508376
+Phase 3.4 Pipeline Register Optimization | Checksum: 199fe46a6
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:24 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:41 . Memory (MB): peak = 1978.203 ; gain = 0.000
 
 Phase 3.5 Fast Optimization
-Phase 3.5 Fast Optimization | Checksum: 1a1a0e3ec
+Phase 3.5 Fast Optimization | Checksum: 24e9294c5
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:44 . Memory (MB): peak = 1978.203 ; gain = 0.000
 
 Phase 3.6 Small Shape Detail Placement
-Phase 3.6 Small Shape Detail Placement | Checksum: d62fffab
+Phase 3.6 Small Shape Detail Placement | Checksum: 1f84d3fe1
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:37 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Time (s): cpu = 00:01:23 ; elapsed = 00:01:04 . Memory (MB): peak = 1978.203 ; gain = 0.000
 
 Phase 3.7 Re-assign LUT pins
-Phase 3.7 Re-assign LUT pins | Checksum: 59581a23
+Phase 3.7 Re-assign LUT pins | Checksum: 176047ad8
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:38 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Time (s): cpu = 00:01:24 ; elapsed = 00:01:06 . Memory (MB): peak = 1978.203 ; gain = 0.000
 
 Phase 3.8 Pipeline Register Optimization
-Phase 3.8 Pipeline Register Optimization | Checksum: f864a731
+Phase 3.8 Pipeline Register Optimization | Checksum: df909c83
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:38 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Time (s): cpu = 00:01:24 ; elapsed = 00:01:07 . Memory (MB): peak = 1978.203 ; gain = 0.000
 
 Phase 3.9 Fast Optimization
-Phase 3.9 Fast Optimization | Checksum: b0448988
+Phase 3.9 Fast Optimization | Checksum: f49891de
 
-Time (s): cpu = 00:00:14 ; elapsed = 00:00:42 . Memory (MB): peak = 1890.023 ; gain = 0.000
-Phase 3 Detail Placement | Checksum: b0448988
+Time (s): cpu = 00:01:33 ; elapsed = 00:01:12 . Memory (MB): peak = 1978.203 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: f49891de
 
-Time (s): cpu = 00:00:14 ; elapsed = 00:00:42 . Memory (MB): peak = 1890.023 ; gain = 0.000
+Time (s): cpu = 00:01:33 ; elapsed = 00:01:13 . Memory (MB): peak = 1978.203 ; gain = 0.000
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -416,7 +417,7 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-Post Placement Optimization Initialization | Checksum: 143b8ae37
+Post Placement Optimization Initialization | Checksum: 18bb650b1
 
 Phase 4.1.1.1 BUFG Insertion
 
@@ -424,28 +425,28 @@ Starting Physical Synthesis Task
 
 Phase 1 Physical Synthesis Initialization
 INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.261 | TNS=-2124.607 |
-Phase 1 Physical Synthesis Initialization | Checksum: 10bcbafe9
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.909 | TNS=-2257.235 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1f1ef9bc7
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.622 . Memory (MB): peak = 1909.609 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.946 . Memory (MB): peak = 1986.934 ; gain = 0.000
 INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
-Ending Physical Synthesis Task | Checksum: 7c04fe4b
+Ending Physical Synthesis Task | Checksum: 1b5a6d5d3
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.788 . Memory (MB): peak = 1909.609 ; gain = 0.000
-Phase 4.1.1.1 BUFG Insertion | Checksum: 143b8ae37
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1986.934 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 18bb650b1
 
-Time (s): cpu = 00:00:15 ; elapsed = 00:00:47 . Memory (MB): peak = 1909.609 ; gain = 19.586
-INFO: [Place 30-746] Post Placement Timing Summary WNS=-5.089. For the most accurate timing information please run report_timing.
+Time (s): cpu = 00:01:43 ; elapsed = 00:01:19 . Memory (MB): peak = 1986.934 ; gain = 8.730
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-5.213. For the most accurate timing information please run report_timing.
 
-Time (s): cpu = 00:00:25 ; elapsed = 00:01:17 . Memory (MB): peak = 1909.609 ; gain = 19.586
-Phase 4.1 Post Commit Optimization | Checksum: 167445bda
+Time (s): cpu = 00:02:42 ; elapsed = 00:02:19 . Memory (MB): peak = 1986.934 ; gain = 8.730
+Phase 4.1 Post Commit Optimization | Checksum: 28cca3219
 
-Time (s): cpu = 00:00:25 ; elapsed = 00:01:17 . Memory (MB): peak = 1909.609 ; gain = 19.586
+Time (s): cpu = 00:02:42 ; elapsed = 00:02:19 . Memory (MB): peak = 1986.934 ; gain = 8.730
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: 167445bda
+Phase 4.2 Post Placement Cleanup | Checksum: 28cca3219
 
-Time (s): cpu = 00:00:25 ; elapsed = 00:01:17 . Memory (MB): peak = 1909.609 ; gain = 19.586
+Time (s): cpu = 00:02:42 ; elapsed = 00:02:19 . Memory (MB): peak = 1986.934 ; gain = 8.730
 
 Phase 4.3 Placer Reporting
 
@@ -455,461 +456,460 @@ INFO: [Place 30-612] Post-Placement Estimated Congestion
 |           | Global Congestion | Short Congestion  |
 | Direction | Region Size       | Region Size       |
 |___________|___________________|___________________|
-|      North|                1x1|                2x2|
+|      North|                2x2|                4x4|
 |___________|___________________|___________________|
-|      South|                1x1|                4x4|
+|      South|                2x2|                4x4|
 |___________|___________________|___________________|
-|       East|                1x1|                2x2|
+|       East|                1x1|                1x1|
 |___________|___________________|___________________|
 |       West|                1x1|                1x1|
 |___________|___________________|___________________|
 
-Phase 4.3.1 Print Estimated Congestion | Checksum: 167445bda
+Phase 4.3.1 Print Estimated Congestion | Checksum: 28cca3219
 
-Time (s): cpu = 00:00:25 ; elapsed = 00:01:17 . Memory (MB): peak = 1909.609 ; gain = 19.586
-Phase 4.3 Placer Reporting | Checksum: 167445bda
+Time (s): cpu = 00:02:42 ; elapsed = 00:02:19 . Memory (MB): peak = 1986.934 ; gain = 8.730
+Phase 4.3 Placer Reporting | Checksum: 28cca3219
 
-Time (s): cpu = 00:00:25 ; elapsed = 00:01:17 . Memory (MB): peak = 1909.609 ; gain = 19.586
+Time (s): cpu = 00:02:42 ; elapsed = 00:02:20 . Memory (MB): peak = 1986.934 ; gain = 8.730
 
 Phase 4.4 Final Placement Cleanup
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1909.609 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1986.934 ; gain = 0.000
 
-Time (s): cpu = 00:00:25 ; elapsed = 00:01:17 . Memory (MB): peak = 1909.609 ; gain = 19.586
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 16bc0d204
+Time (s): cpu = 00:02:42 ; elapsed = 00:02:20 . Memory (MB): peak = 1986.934 ; gain = 8.730
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 23759b36f
 
-Time (s): cpu = 00:00:25 ; elapsed = 00:01:17 . Memory (MB): peak = 1909.609 ; gain = 19.586
-Ending Placer Task | Checksum: 7243f77b
+Time (s): cpu = 00:02:43 ; elapsed = 00:02:20 . Memory (MB): peak = 1986.934 ; gain = 8.730
+Ending Placer Task | Checksum: 144428bd9
 
-Time (s): cpu = 00:00:25 ; elapsed = 00:01:17 . Memory (MB): peak = 1909.609 ; gain = 19.586
+Time (s): cpu = 00:02:43 ; elapsed = 00:02:20 . Memory (MB): peak = 1986.934 ; gain = 8.730
 INFO: [Common 17-83] Releasing license: Implementation
 111 Infos, 44 Warnings, 0 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:00:26 ; elapsed = 00:01:19 . Memory (MB): peak = 1909.609 ; gain = 19.586
+place_design: Time (s): cpu = 00:02:46 ; elapsed = 00:02:21 . Memory (MB): peak = 1986.934 ; gain = 8.730
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1909.609 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1/top_VGA_CAMERA_placed.dcp' has been generated.
+Write XDEF Complete: Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1986.934 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1/top_VGA_CAMERA_placed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1986.934 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_io -file top_VGA_CAMERA_io_placed.rpt
-report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1909.609 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 1986.934 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file top_VGA_CAMERA_utilization_placed.rpt -pb top_VGA_CAMERA_utilization_placed.pb
 INFO: [runtcl-4] Executing : report_control_sets -verbose -file top_VGA_CAMERA_control_sets_placed.rpt
-report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 1909.609 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 1986.934 ; gain = 0.000
 Command: phys_opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1912.562 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1989.613 ; gain = 0.000
 
 Starting Physical Synthesis Task
 
 Phase 1 Physical Synthesis Initialization
 INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.089 | TNS=-2088.400 |
-Phase 1 Physical Synthesis Initialization | Checksum: b92e9fb3
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.213 | TNS=-2216.789 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1c3b9cc85
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1922.500 ; gain = 9.938
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.089 | TNS=-2088.400 |
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 1999.824 ; gain = 10.211
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.213 | TNS=-2216.789 |
 
 Phase 2 DSP Register Optimization
 INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
 INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Phase 2 DSP Register Optimization | Checksum: b92e9fb3
+Phase 2 DSP Register Optimization | Checksum: 1c3b9cc85
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1922.500 ; gain = 9.938
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 1999.824 ; gain = 10.211
 
 Phase 3 Critical Path Optimization
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.089 | TNS=-2088.400 |
-INFO: [Physopt 32-702] Processed net U_FrameBufferLeft/rData[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/Q[0].  Re-placed instance U_vga_controller/U_Pixel_Counter/v_counter_reg[1]
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/Q[0]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.053 | TNS=-2071.120 |
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/Q[4]. Replicated 1 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/Q[4]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.053 | TNS=-2071.120 |
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/Q[4]. Replicated 1 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/Q[4]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.048 | TNS=-2068.720 |
-INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/Q[4] was not replicated.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.213 | TNS=-2216.789 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/Q[2].  Re-placed instance U_vga_controller/U_Pixel_Counter/v_counter_reg[3]
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/Q[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.189 | TNS=-2205.269 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/Q[3].  Did not re-place instance U_vga_controller/U_Pixel_Counter/v_counter_reg[4]
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/Q[3]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/Q[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.181 | TNS=-2201.429 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/Q[2].  Did not re-place instance U_vga_controller/U_Pixel_Counter/v_counter_reg[3]
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/Q[2] was not replicated.
 Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/Q[4].  Did not re-place instance U_vga_controller/U_Pixel_Counter/v_counter_reg[5]
-INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/Q[4] was not replicated.
-Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
-INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/Q[4]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]. Replicated 3 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.957 | TNS=-2065.897 |
-INFO: [Physopt 32-702] Processed net U_FrameBufferLeft/rData[8]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[3]. Replicated 2 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[3]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.888 | TNS=-2064.177 |
+INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/Q[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.150 | TNS=-2200.585 |
 INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[9]. Replicated 2 times.
 INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[9]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.887 | TNS=-2062.665 |
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[4]. Replicated 2 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[4]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.887 | TNS=-2062.083 |
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]. Replicated 2 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.871 | TNS=-2060.790 |
-INFO: [Physopt 32-702] Processed net U_FrameBufferLeft/rData[13]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[8]. Replicated 2 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[8]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.862 | TNS=-2059.905 |
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]_repN_1.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_15__0_replica_1
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.855 | TNS=-2059.547 |
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.138 | TNS=-2199.006 |
 INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[14]. Replicated 2 times.
 INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[14]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.851 | TNS=-2058.399 |
-INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[8]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[4]. Replicated 2 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[4]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.850 | TNS=-2057.129 |
-INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[6]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5]. Replicated 2 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.842 | TNS=-2054.267 |
-INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10] was not replicated.
-Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_10__0
-INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10] was not replicated.
-Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.841 | TNS=-2048.651 |
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[10]. Replicated 2 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[10]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.841 | TNS=-2047.824 |
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]. Replicated 2 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.826 | TNS=-2046.392 |
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[8]. Replicated 3 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[8]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.822 | TNS=-2040.163 |
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[0]. Replicated 2 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[0]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.821 | TNS=-2038.600 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_15__0_replica_1
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]_repN_1. Replicated 1 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.817 | TNS=-2038.609 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_15__0_replica_1
-INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]_repN_1 was not replicated.
-Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.803 | TNS=-2037.815 |
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.098 | TNS=-2198.359 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[12]. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6]. Replicated 2 times.
 INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.792 | TNS=-2037.117 |
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]. Replicated 2 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.791 | TNS=-2037.095 |
-INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[14]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[14]. Replicated 1 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[14]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.785 | TNS=-2036.883 |
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.098 | TNS=-2197.519 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[8]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.096 | TNS=-2196.880 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_15__0
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]. Replicated 7 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.096 | TNS=-2193.736 |
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1].  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_19
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.091 | TNS=-2191.394 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10]. Replicated 3 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.087 | TNS=-2184.921 |
 INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[15]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[11]. Replicated 3 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[11]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.759 | TNS=-2031.133 |
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[12]. Replicated 3 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[12]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.743 | TNS=-2029.590 |
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[13]. Replicated 3 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[13]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.741 | TNS=-2024.701 |
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5]_repN_1.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_15_replica_1
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.730 | TNS=-2024.307 |
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]. Replicated 2 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.071 | TNS=-2183.815 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_15__0_replica
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]_repN. Replicated 3 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.044 | TNS=-2183.632 |
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[7]. Replicated 3 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[7]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.023 | TNS=-2177.842 |
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[0]. Replicated 2 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.018 | TNS=-2176.685 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_15__0
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]. Replicated 2 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.008 | TNS=-2175.706 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_15__0
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-5.007 | TNS=-2174.672 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_14_replica
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6]_repN. Replicated 4 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.996 | TNS=-2174.745 |
 INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[4]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[6]. Replicated 3 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[6]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.727 | TNS=-2018.297 |
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[4]_repN.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_16_replica
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[4]_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.726 | TNS=-2017.755 |
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[11]. Replicated 3 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[11]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.723 | TNS=-2011.040 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_7_replica
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]_repN. Replicated 4 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.719 | TNS=-2010.617 |
-INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[3]. Replicated 3 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[3]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.715 | TNS=-2002.099 |
-INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[3]. Replicated 2 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.987 | TNS=-2169.648 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6]_repN_2.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_14_replica_2
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6]_repN_2. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.981 | TNS=-2169.293 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferLeft/rData[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[10]. Replicated 2 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[10]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.980 | TNS=-2170.649 |
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_18
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.979 | TNS=-2170.355 |
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_18
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.979 | TNS=-2168.529 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[12] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[12].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_8
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[12] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[12]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.973 | TNS=-2162.561 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferLeft/rData[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5]. Replicated 2 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.964 | TNS=-2162.143 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_14_replica_1
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6]_repN_1. Replicated 2 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6]_repN_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.961 | TNS=-2161.921 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferLeft/rData[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]. Replicated 3 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.946 | TNS=-2157.134 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]_repN_8.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_15__0_replica_8
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]_repN_8. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.943 | TNS=-2156.617 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_10
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.942 | TNS=-2156.577 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_10_replica
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10]_repN. Replicated 2 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.934 | TNS=-2156.308 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_10_replica
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10]_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.931 | TNS=-2155.624 |
+INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]_repN.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_19_replica
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.926 | TNS=-2155.951 |
+INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[9]_repN.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_11_replica
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[9]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.920 | TNS=-2155.597 |
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[4]. Replicated 2 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.918 | TNS=-2156.365 |
+INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6].  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_14
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.914 | TNS=-2152.231 |
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[1]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.914 | TNS=-2151.882 |
 INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[9]. Replicated 2 times.
 INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[9]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.714 | TNS=-2001.060 |
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[1]. Replicated 2 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[1]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.683 | TNS=-2000.323 |
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5].  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_15
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.682 | TNS=-1998.267 |
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[12]. Replicated 2 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[12]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.682 | TNS=-1995.095 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[4]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_16__0_replica_1
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[4]_repN_1. Replicated 1 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[4]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.681 | TNS=-1995.015 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[4]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_16_replica
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[4]_repN. Replicated 1 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[4]_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.681 | TNS=-1995.079 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[4]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_16__0_replica_1
-INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[4]_repN_1 was not replicated.
-Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[4]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.681 | TNS=-1994.027 |
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[7]. Replicated 1 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[7]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.676 | TNS=-1993.647 |
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[7]. Replicated 3 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[7]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.674 | TNS=-1987.277 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[9]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_11_replica_1
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[9]_repN_1. Replicated 3 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[9]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.668 | TNS=-1986.704 |
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[4]_repN_2.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_16_replica_2
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[4]_repN_2. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.667 | TNS=-1986.696 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]_repN_2.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_7_replica_2
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]_repN_2. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.666 | TNS=-1986.551 |
-INFO: [Physopt 32-663] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][42]_531[8].  Re-placed instance U_DepthAlgorithm_Census/mem_R_reg[2][42][8]
-INFO: [Physopt 32-735] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][42]_531[8]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.666 | TNS=-1986.216 |
-INFO: [Physopt 32-662] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][122]_611[3].  Did not re-place instance U_DepthAlgorithm_Census/mem_R_reg[2][122][3]
-INFO: [Physopt 32-702] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][122]_611[3]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/Q[6] was not replicated.
-Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/Q[6].  Re-placed instance U_vga_controller/U_Pixel_Counter/v_counter_reg[7]
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/Q[6]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.666 | TNS=-1985.951 |
-INFO: [Physopt 32-663] Processed net U_DepthAlgorithm_Census/mem_L_reg_n_0_[2][45][1].  Re-placed instance U_DepthAlgorithm_Census/mem_L_reg[2][45][1]
-INFO: [Physopt 32-735] Processed net U_DepthAlgorithm_Census/mem_L_reg_n_0_[2][45][1]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.666 | TNS=-1985.941 |
-INFO: [Physopt 32-663] Processed net U_DepthAlgorithm_Census/mem_L_reg_n_0_[2][45][2].  Re-placed instance U_DepthAlgorithm_Census/mem_L_reg[2][45][2]
-INFO: [Physopt 32-735] Processed net U_DepthAlgorithm_Census/mem_L_reg_n_0_[2][45][2]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.666 | TNS=-1985.931 |
-INFO: [Physopt 32-663] Processed net U_DepthAlgorithm_Census/mem_L_reg_n_0_[2][45][3].  Re-placed instance U_DepthAlgorithm_Census/mem_L_reg[2][45][3]
-INFO: [Physopt 32-735] Processed net U_DepthAlgorithm_Census/mem_L_reg_n_0_[2][45][3]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.666 | TNS=-1985.921 |
-INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/Q[6] was not replicated.
-Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/Q[6].  Did not re-place instance U_vga_controller/U_Pixel_Counter/v_counter_reg[7]
-INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/Q[6] was not replicated.
-Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
-INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/Q[6]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/mem_R[1][16][13]_i_2_n_0.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_R[1][16][13]_i_2
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/mem_R[1][16][13]_i_2_n_0. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.666 | TNS=-1985.900 |
-INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[8]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/Q[4].  Did not re-place instance U_vga_controller/U_Pixel_Counter/v_counter_reg[5]
-INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/Q[4]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[9]_repN_1.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_11_replica_1
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[9]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.664 | TNS=-1985.880 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[2].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_18
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[2]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.661 | TNS=-1981.080 |
-INFO: [Physopt 32-702] Processed net U_FrameBufferLeft/rData[12]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_15__0_replica
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[5]_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.660 | TNS=-1978.635 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[4]_repN_2.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_16_replica_2
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[4]_repN_2. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.654 | TNS=-1978.270 |
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[10]_repN.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_10_replica
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[10]_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.647 | TNS=-1977.373 |
-INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[6]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[0].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_20
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[0]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.643 | TNS=-1973.981 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[9]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_11_replica_1
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[9]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.643 | TNS=-1973.247 |
-INFO: [Physopt 32-702] Processed net U_FrameBufferLeft/rData[13]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_14__0_replica
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6]_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.642 | TNS=-1972.293 |
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[1]_repN.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_19_replica
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[1]_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.642 | TNS=-1972.455 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_15_replica_1
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.913 | TNS=-2151.260 |
+INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5]_repN_1.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_15_replica_1
 INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.641 | TNS=-1969.920 |
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[14]_repN.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_6_replica
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[14]_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.630 | TNS=-1969.379 |
-INFO: [Physopt 32-702] Processed net U_FrameBufferLeft/rData[6]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[9].  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_11__0
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[9]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.630 | TNS=-1969.038 |
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[9]_repN_1.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_11__0_replica_1
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[9]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.627 | TNS=-1969.003 |
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[7].  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_13__0
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[7]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.618 | TNS=-1966.686 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_19__0_replica
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.912 | TNS=-2150.724 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_19_replica_1
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]_repN_1. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]_repN_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.912 | TNS=-2150.814 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_19_replica
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]_repN. Replicated 3 times.
 INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.618 | TNS=-1966.032 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[9]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_11__0_replica_1
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[9]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.615 | TNS=-1965.393 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[1]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_19_replica
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[1]_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.607 | TNS=-1963.288 |
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[4].  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_16
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[4]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.607 | TNS=-1959.980 |
-INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[14]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]_repN_3.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_7_replica_3
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]_repN_3. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.603 | TNS=-1959.849 |
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.910 | TNS=-2150.366 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_15_replica_1
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5]_repN_1. Replicated 4 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5]_repN_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.906 | TNS=-2149.999 |
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[13] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[13].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_7
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[13] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[13]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.905 | TNS=-2146.943 |
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[8]. Replicated 3 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[8]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.905 | TNS=-2141.632 |
+INFO: [Physopt 32-663] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][80]_419[13].  Re-placed instance U_DepthAlgorithm_Census/mem_R_reg[2][80][13]
+INFO: [Physopt 32-735] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][80]_419[13]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.905 | TNS=-2141.406 |
+INFO: [Physopt 32-663] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][111]_447[13].  Re-placed instance U_DepthAlgorithm_Census/mem_R_reg[2][111][13]
+INFO: [Physopt 32-735] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][111]_447[13]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.905 | TNS=-2141.210 |
+INFO: [Physopt 32-663] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][105]_444[13].  Re-placed instance U_DepthAlgorithm_Census/mem_R_reg[2][105][13]
+INFO: [Physopt 32-735] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][105]_444[13]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.905 | TNS=-2141.002 |
+INFO: [Physopt 32-663] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][11]_350[13].  Re-placed instance U_DepthAlgorithm_Census/mem_R_reg[2][11][13]
+INFO: [Physopt 32-735] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][11]_350[13]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.905 | TNS=-2140.843 |
+INFO: [Physopt 32-663] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][64]_403[13].  Re-placed instance U_DepthAlgorithm_Census/mem_R_reg[2][64][13]
+INFO: [Physopt 32-735] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][64]_403[13]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.905 | TNS=-2140.729 |
+INFO: [Physopt 32-663] Processed net U_DepthAlgorithm_Census/mem_R_reg[0][22]_41[12].  Re-placed instance U_DepthAlgorithm_Census/mem_R_reg[0][22][12]
+INFO: [Physopt 32-735] Processed net U_DepthAlgorithm_Census/mem_R_reg[0][22]_41[12]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.905 | TNS=-2140.613 |
+INFO: [Physopt 32-663] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][98]_437[13].  Re-placed instance U_DepthAlgorithm_Census/mem_R_reg[2][98][13]
+INFO: [Physopt 32-735] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][98]_437[13]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.905 | TNS=-2140.503 |
+INFO: [Physopt 32-663] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][44]_383[13].  Re-placed instance U_DepthAlgorithm_Census/mem_R_reg[2][44][13]
+INFO: [Physopt 32-735] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][44]_383[13]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.905 | TNS=-2140.408 |
+INFO: [Physopt 32-663] Processed net U_DepthAlgorithm_Census/mem_R_reg[0][49]_68[12].  Re-placed instance U_DepthAlgorithm_Census/mem_R_reg[0][49][12]
+INFO: [Physopt 32-735] Processed net U_DepthAlgorithm_Census/mem_R_reg[0][49]_68[12]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.905 | TNS=-2140.351 |
+INFO: [Physopt 32-663] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][108]_454[13].  Re-placed instance U_DepthAlgorithm_Census/mem_R_reg[2][108][13]
+INFO: [Physopt 32-735] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][108]_454[13]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.905 | TNS=-2140.294 |
+INFO: [Physopt 32-662] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][47]_386[13].  Did not re-place instance U_DepthAlgorithm_Census/mem_R_reg[2][47][13]
+INFO: [Physopt 32-702] Processed net U_DepthAlgorithm_Census/mem_R_reg[2][47]_386[13]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net U_clk_gene/inst/vga_clk_clk_wiz_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net U_rgb2gray_L/mem_R_reg[0][0][12]_i_1_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net U_rgb2gray_L/mem_R[0][0][12]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net U_FrameBufferLeft/mem_R_reg[0][0][12]_i_7_0[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net U_FrameBufferLeft/mem_R_reg[0][0][12]_i_7_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net U_rgb2gray_L/mem_reg_0_15[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net U_rgb2gray_L/mem_reg_0_3[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net U_rgb2gray_L/gray0__1_carry_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net U_FrameBufferLeft/mem_reg_0_3_0[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net U_FrameBufferLeft/mem_reg_0_0_0[0].  Re-placed instance U_FrameBufferLeft/gray0__1_carry_i_3__0
+INFO: [Physopt 32-735] Processed net U_FrameBufferLeft/mem_reg_0_0_0[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.905 | TNS=-2139.890 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/Q[2].  Did not re-place instance U_vga_controller/U_Pixel_Counter/v_counter_reg[3]
+INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/Q[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]_repN_2.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_19_replica_2
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]_repN_2. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.904 | TNS=-2139.709 |
 INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[12]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[14].  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_6
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[14]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.601 | TNS=-1956.517 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[4]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_16_replica_1
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[4]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.583 | TNS=-1954.685 |
-INFO: [Physopt 32-702] Processed net U_FrameBufferLeft/rData[1]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[3]_repN_1.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_17__0_replica_1
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[3]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.576 | TNS=-1953.853 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_7_replica_1
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.565 | TNS=-1951.957 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[3]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_17__0_replica_1
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[3]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.563 | TNS=-1951.132 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[14].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_6
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[14]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.563 | TNS=-1948.371 |
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[8]_repN.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_12__0_replica
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[8]_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.560 | TNS=-1948.186 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[11]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_9__0_replica
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[11]_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.556 | TNS=-1947.427 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_18__0_replica
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.555 | TNS=-1946.806 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[12].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_8
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[12]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.548 | TNS=-1943.935 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_14__0_replica_1
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.547 | TNS=-1941.525 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[14]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_6_replica
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[14]_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.547 | TNS=-1939.855 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_15
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.543 | TNS=-1936.306 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[8]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_12_replica_1
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[8]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.542 | TNS=-1934.711 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[14]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_6__0_replica_1
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[14]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.540 | TNS=-1934.090 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[10]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_10_replica
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[10]_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.535 | TNS=-1933.050 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[11]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_9_replica_1
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[11]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.531 | TNS=-1932.055 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[4]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_16__0_replica
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_19_replica
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.900 | TNS=-2139.069 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[9]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_11_replica
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[9]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.891 | TNS=-2138.217 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[3].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_17
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[3]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.890 | TNS=-2136.849 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferLeft/rData[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5]_repN_2.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_15_replica_2
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[5]_repN_2. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.888 | TNS=-2136.338 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[4]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_16_replica
 INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[4]_repN. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.525 | TNS=-1930.185 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[6].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_14
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[6]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.522 | TNS=-1928.685 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]_repN_2.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_7_replica_2
-INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]_repN_2. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/D[0].  Re-placed instance U_vga_controller/U_Pixel_Counter/qvga_addr10_i_4
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/D[0]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.514 | TNS=-1924.845 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/Q[4]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/v_counter_reg[5]_replica_1
-INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/Q[4]_repN_1. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/D[2].  Re-placed instance U_vga_controller/U_Pixel_Counter/qvga_addr10_i_2
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/D[2]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.507 | TNS=-1921.485 |
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/D[3].  Re-placed instance U_vga_controller/U_Pixel_Counter/qvga_addr10_i_1
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/D[3]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.497 | TNS=-1916.685 |
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/D[2].  Did not re-place instance U_vga_controller/U_Pixel_Counter/qvga_addr10_i_2
-INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/D[2]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net U_qvga_addr_decoder/P[13]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net clk_IBUF. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net clk. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.497 | TNS=-1916.685 |
-Phase 3 Critical Path Optimization | Checksum: b92e9fb3
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.880 | TNS=-2134.508 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[8]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[14]_repN_1.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_6_replica_1
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[14]_repN_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.879 | TNS=-2134.216 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[2].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_18__0
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.872 | TNS=-2127.560 |
+INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[7]_repN.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_13_replica
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[7]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.872 | TNS=-2127.140 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[7]_repN_2.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_13_replica_2
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[7]_repN_2. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.871 | TNS=-2125.848 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[4]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1].  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_19
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.867 | TNS=-2123.416 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[0]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_20_replica_1
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[0]_repN_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.867 | TNS=-2122.391 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[7]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_13_replica
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[7]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.866 | TNS=-2121.376 |
+INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]_repN_1.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_19_replica_1
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[1]_repN_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.865 | TNS=-2121.246 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferLeft/rData[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[1].  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_19__0
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.865 | TNS=-2121.098 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[9]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_11_replica_1
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[9]_repN_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.861 | TNS=-2120.103 |
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.861 | TNS=-2120.103 |
+Phase 3 Critical Path Optimization | Checksum: 1c3b9cc85
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:26 . Memory (MB): peak = 1922.500 ; gain = 9.938
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:30 . Memory (MB): peak = 1999.824 ; gain = 10.211
 
 Phase 4 Critical Path Optimization
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.497 | TNS=-1916.685 |
-INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[8]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/Q[4]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/v_counter_reg[5]_replica_1
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/Q[4]_repN_1. Replicated 2 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/Q[4]_repN_1. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.481 | TNS=-1909.005 |
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/Q[5]. Replicated 1 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/Q[5]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.481 | TNS=-1909.005 |
-INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/Q[5]. Replicated 1 times.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/Q[5]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.481 | TNS=-1909.005 |
-INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/Q[5] was not replicated.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.861 | TNS=-2120.103 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/Q[2].  Did not re-place instance U_vga_controller/U_Pixel_Counter/v_counter_reg[3]
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/Q[2] was not replicated.
 Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/Q[5].  Did not re-place instance U_vga_controller/U_Pixel_Counter/v_counter_reg[6]
-INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/Q[5] was not replicated.
+INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/Q[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[11]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[11]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.855 | TNS=-2120.187 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferLeft/rData[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[1]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.850 | TNS=-2119.912 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_14_replica_1
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6]_repN_1 was not replicated.
 Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
-INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/Q[5]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]_repN_2.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_7_replica_2
-INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]_repN_2. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/D[1].  Re-placed instance U_vga_controller/U_Pixel_Counter/qvga_addr10_i_3
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[6]_repN_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.848 | TNS=-2119.140 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[0].  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_20
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.847 | TNS=-2115.589 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[14]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_6_replica_1
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[14]_repN_1. Replicated 3 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[14]_repN_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.847 | TNS=-2115.520 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_18_replica
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]_repN. Replicated 2 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.846 | TNS=-2115.378 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferLeft/rData[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[10]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_10__0_replica
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[10]_repN. Replicated 4 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[10]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.842 | TNS=-2114.504 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_18_replica
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.841 | TNS=-2114.090 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[14]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_6_replica_1
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[14]_repN_1 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[14]_repN_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.839 | TNS=-2113.676 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10]_repN_3.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_10_replica_3
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[10]_repN_3. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.834 | TNS=-2113.397 |
+INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[4]_repN_1.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_16_replica_1
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[4]_repN_1. Replicated 3 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[4]_repN_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.830 | TNS=-2112.622 |
+INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[10]_repN_1.  Re-placed instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_10__0_replica_1
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[10]_repN_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.821 | TNS=-2111.344 |
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_18
+INFO: [Physopt 32-81] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.821 | TNS=-2111.108 |
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_18
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/D[1].  Re-placed instance U_vga_controller/U_Pixel_Counter/qvga_addr10_i_6
 INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/D[1]. Optimization improves timing on the net.
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.479 | TNS=-1908.045 |
-INFO: [Common 17-14] Message 'Physopt 32-619' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/v_counter_reg[3]_0[1].  Did not re-place instance U_vga_controller/U_Pixel_Counter/qvga_addr10_i_6
-INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/v_counter_reg[3]_0[1] was not replicated.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.808 | TNS=-2104.868 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/Q[3]_repN.  Did not re-place instance U_vga_controller/U_Pixel_Counter/v_counter_reg[4]_replica
+INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/Q[3]_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net U_vga_controller/U_Pixel_Counter/D[2].  Re-placed instance U_vga_controller/U_Pixel_Counter/qvga_addr10_i_5
+INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/D[2]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.744 | TNS=-2074.147 |
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/Q[0].  Did not re-place instance U_vga_controller/U_Pixel_Counter/v_counter_reg[1]
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/Q[0] was not replicated.
 Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
-INFO: [Physopt 32-735] Processed net U_vga_controller/U_Pixel_Counter/v_counter_reg[3]_0[1]. Optimization improves timing on the net.
-INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/Q[4] was not replicated.
+INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/Q[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/DI[0].  Did not re-place instance U_vga_controller/U_Pixel_Counter/qvga_addr10_i_8
+INFO: [Physopt 32-572] Net U_vga_controller/U_Pixel_Counter/DI[0] was not replicated.
 Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/Q[4].  Did not re-place instance U_vga_controller/U_Pixel_Counter/v_counter_reg[5]
-INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/Q[4]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/D[0].  Did not re-place instance U_vga_controller/U_Pixel_Counter/qvga_addr10_i_4
-INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/D[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net U_qvga_addr_decoder/P[13]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/DI[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net U_qvga_addr_decoder/P[2]. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net clk_IBUF. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net clk. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[8]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/Q[4].  Did not re-place instance U_vga_controller/U_Pixel_Counter/v_counter_reg[5]
-INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/Q[4]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]_repN_2.  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_7_replica_2
-INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/ADDRBWRADDR[13]_repN_2. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/D[0].  Did not re-place instance U_vga_controller/U_Pixel_Counter/qvga_addr10_i_4
-INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/D[0]. Optimizations did not improve timing on the net.
-INFO: [Physopt 32-702] Processed net U_qvga_addr_decoder/P[13]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net U_FrameBufferRight/rData[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/Q[0].  Did not re-place instance U_vga_controller/U_Pixel_Counter/v_counter_reg[1]
+INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/Q[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2].  Did not re-place instance U_vga_controller/U_Pixel_Counter/mem_reg_0_0_i_18
+INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/qvga_addr10_0[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net U_vga_controller/U_Pixel_Counter/DI[0].  Did not re-place instance U_vga_controller/U_Pixel_Counter/qvga_addr10_i_8
+INFO: [Physopt 32-702] Processed net U_vga_controller/U_Pixel_Counter/DI[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net U_qvga_addr_decoder/P[2]. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net clk_IBUF. Optimizations did not improve timing on the net.
 INFO: [Physopt 32-702] Processed net clk. Optimizations did not improve timing on the net.
-Phase 4 Critical Path Optimization | Checksum: b92e9fb3
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-4.744 | TNS=-2074.147 |
+Phase 4 Critical Path Optimization | Checksum: 1c3b9cc85
 
-Time (s): cpu = 00:00:14 ; elapsed = 00:00:34 . Memory (MB): peak = 1922.500 ; gain = 9.938
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1922.500 ; gain = 0.000
-INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-4.457 | TNS=-1897.485 |
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:43 . Memory (MB): peak = 1999.824 ; gain = 10.211
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1999.824 ; gain = 0.000
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-4.744 | TNS=-2074.147 |
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -919,26 +919,27 @@ Summary of Physical Synthesis Optimizations
 |  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 |  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Critical Path  |          0.632  |        190.915  |           77  |              0  |                    96  |           0  |           2  |  00:00:32  |
-|  Total          |          0.632  |        190.915  |           77  |              0  |                    96  |           0  |           3  |  00:00:32  |
+|  Critical Path  |          0.469  |        142.642  |           81  |              0  |                    84  |           0  |           2  |  00:00:40  |
+|  Total          |          0.469  |        142.642  |           81  |              0  |                    84  |           0  |           3  |  00:00:40  |
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1922.500 ; gain = 0.000
-Ending Physical Synthesis Task | Checksum: 2152e98d1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1999.824 ; gain = 0.000
+Ending Physical Synthesis Task | Checksum: 1fe404c73
 
-Time (s): cpu = 00:00:14 ; elapsed = 00:00:34 . Memory (MB): peak = 1922.500 ; gain = 9.938
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:43 . Memory (MB): peak = 1999.824 ; gain = 10.211
 INFO: [Common 17-83] Releasing license: Implementation
-491 Infos, 44 Warnings, 0 Critical Warnings and 0 Errors encountered.
+481 Infos, 44 Warnings, 0 Critical Warnings and 0 Errors encountered.
 phys_opt_design completed successfully
-phys_opt_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:37 . Memory (MB): peak = 1922.500 ; gain = 12.891
+phys_opt_design: Time (s): cpu = 00:01:23 ; elapsed = 00:00:48 . Memory (MB): peak = 1999.824 ; gain = 12.891
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1930.227 ; gain = 7.727
-INFO: [Common 17-1381] The checkpoint 'D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1/top_VGA_CAMERA_physopt.dcp' has been generated.
+Write XDEF Complete: Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 2008.336 ; gain = 8.512
+INFO: [Common 17-1381] The checkpoint 'D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1/top_VGA_CAMERA_physopt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 2008.336 ; gain = 8.512
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
@@ -953,41 +954,41 @@ INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more in
 
 Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
-Checksum: PlaceDB: c408e3ec ConstDB: 0 ShapeSum: aebc4873 RouteDB: 0
+Checksum: PlaceDB: eea122c1 ConstDB: 0 ShapeSum: 427bc59a RouteDB: 0
 
 Phase 1 Build RT Design
-Phase 1 Build RT Design | Checksum: b17c2261
+Phase 1 Build RT Design | Checksum: 1a9afbbef
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 2007.988 ; gain = 67.527
-Post Restoration Checksum: NetGraph: 47a6cc62 NumContArr: 69d555ff Constraints: 0 Timing: 0
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:15 . Memory (MB): peak = 2083.777 ; gain = 66.148
+Post Restoration Checksum: NetGraph: bf4cf0c5 NumContArr: ea62cb2a Constraints: 0 Timing: 0
 
 Phase 2 Router Initialization
 
 Phase 2.1 Create Timer
-Phase 2.1 Create Timer | Checksum: b17c2261
+Phase 2.1 Create Timer | Checksum: 1a9afbbef
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 2007.988 ; gain = 67.527
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 2083.777 ; gain = 66.148
 
 Phase 2.2 Fix Topology Constraints
-Phase 2.2 Fix Topology Constraints | Checksum: b17c2261
+Phase 2.2 Fix Topology Constraints | Checksum: 1a9afbbef
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 2013.066 ; gain = 72.605
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 2088.242 ; gain = 70.613
 
 Phase 2.3 Pre Route Cleanup
-Phase 2.3 Pre Route Cleanup | Checksum: b17c2261
+Phase 2.3 Pre Route Cleanup | Checksum: 1a9afbbef
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 2013.066 ; gain = 72.605
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 2088.242 ; gain = 70.613
  Number of Nodes with overlaps = 0
 
 Phase 2.4 Update Timing
-Phase 2.4 Update Timing | Checksum: 62d44a8d
+Phase 2.4 Update Timing | Checksum: 2542c1af2
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:16 . Memory (MB): peak = 2034.289 ; gain = 93.828
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.361 | TNS=-1840.600| WHS=-0.581 | THS=-39.381|
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:24 . Memory (MB): peak = 2108.785 ; gain = 91.156
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.656 | TNS=-2016.231| WHS=-0.507 | THS=-10.690|
 
-Phase 2 Router Initialization | Checksum: 56e2eab3
+Phase 2 Router Initialization | Checksum: 1ccfe777f
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:19 . Memory (MB): peak = 2071.051 ; gain = 130.590
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:27 . Memory (MB): peak = 2138.988 ; gain = 121.359
 
 Router Utilization Summary
   Global Vertical Routing Utilization    = 0 %
@@ -995,9 +996,9 @@ Router Utilization Summary
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
-  Number of Failed Nets               = 20008
+  Number of Failed Nets               = 21455
     (Failed Nets is the sum of unrouted and partially routed nets)
-  Number of Unrouted Nets             = 20008
+  Number of Unrouted Nets             = 21455
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
@@ -1005,87 +1006,87 @@ Router Utilization Summary
 Phase 3 Initial Routing
 
 Phase 3.1 Global Routing
-Phase 3.1 Global Routing | Checksum: 56e2eab3
+Phase 3.1 Global Routing | Checksum: 1ccfe777f
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:19 . Memory (MB): peak = 2071.051 ; gain = 130.590
-Phase 3 Initial Routing | Checksum: 11075aff6
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:27 . Memory (MB): peak = 2138.988 ; gain = 121.359
+Phase 3 Initial Routing | Checksum: 136b441f7
 
-Time (s): cpu = 00:00:14 ; elapsed = 00:00:28 . Memory (MB): peak = 2120.836 ; gain = 180.375
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:39 . Memory (MB): peak = 2172.262 ; gain = 154.633
 
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 6513
- Number of Nodes with overlaps = 485
- Number of Nodes with overlaps = 102
- Number of Nodes with overlaps = 39
+ Number of Nodes with overlaps = 5999
+ Number of Nodes with overlaps = 352
+ Number of Nodes with overlaps = 70
  Number of Nodes with overlaps = 11
- Number of Nodes with overlaps = 7
- Number of Nodes with overlaps = 2
- Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.608 | TNS=-1897.210| WHS=N/A    | THS=N/A    |
-
-Phase 4.1 Global Iteration 0 | Checksum: 23cdc3441
-
-Time (s): cpu = 00:00:52 ; elapsed = 00:02:02 . Memory (MB): peak = 2148.445 ; gain = 207.984
-
-Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.604 | TNS=-1895.498| WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-5.133 | TNS=-2085.401| WHS=N/A    | THS=N/A    |
 
-Phase 4.2 Global Iteration 1 | Checksum: 187d88b72
+Phase 4.1 Global Iteration 0 | Checksum: 166f30810
 
-Time (s): cpu = 00:00:53 ; elapsed = 00:02:05 . Memory (MB): peak = 2148.445 ; gain = 207.984
-Phase 4 Rip-up And Reroute | Checksum: 187d88b72
+Time (s): cpu = 00:02:00 ; elapsed = 00:01:27 . Memory (MB): peak = 2188.688 ; gain = 171.059
 
-Time (s): cpu = 00:00:53 ; elapsed = 00:02:05 . Memory (MB): peak = 2148.445 ; gain = 207.984
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 44
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-5.719 | TNS=-2098.507| WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: f6e7cf75
+
+Time (s): cpu = 00:02:05 ; elapsed = 00:01:31 . Memory (MB): peak = 2188.688 ; gain = 171.059
+Phase 4 Rip-up And Reroute | Checksum: f6e7cf75
+
+Time (s): cpu = 00:02:05 ; elapsed = 00:01:32 . Memory (MB): peak = 2188.688 ; gain = 171.059
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
 
 Phase 5.1.1 Update Timing
-Phase 5.1.1 Update Timing | Checksum: 1a433c307
+Phase 5.1.1 Update Timing | Checksum: 16330d887
 
-Time (s): cpu = 00:00:53 ; elapsed = 00:02:06 . Memory (MB): peak = 2148.445 ; gain = 207.984
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.604 | TNS=-1895.498| WHS=N/A    | THS=N/A    |
+Time (s): cpu = 00:02:07 ; elapsed = 00:01:33 . Memory (MB): peak = 2188.688 ; gain = 171.059
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-5.133 | TNS=-2085.384| WHS=N/A    | THS=N/A    |
 
  Number of Nodes with overlaps = 0
-Phase 5.1 Delay CleanUp | Checksum: 123d8d875
+Phase 5.1 Delay CleanUp | Checksum: 1ecd5e29c
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:02:07 . Memory (MB): peak = 2148.445 ; gain = 207.984
+Time (s): cpu = 00:02:09 ; elapsed = 00:01:34 . Memory (MB): peak = 2188.688 ; gain = 171.059
 
 Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: 123d8d875
+Phase 5.2 Clock Skew Optimization | Checksum: 1ecd5e29c
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:02:07 . Memory (MB): peak = 2148.445 ; gain = 207.984
-Phase 5 Delay and Skew Optimization | Checksum: 123d8d875
+Time (s): cpu = 00:02:09 ; elapsed = 00:01:34 . Memory (MB): peak = 2188.688 ; gain = 171.059
+Phase 5 Delay and Skew Optimization | Checksum: 1ecd5e29c
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:02:07 . Memory (MB): peak = 2148.445 ; gain = 207.984
+Time (s): cpu = 00:02:10 ; elapsed = 00:01:34 . Memory (MB): peak = 2188.688 ; gain = 171.059
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: cdbaeb67
+Phase 6.1.1 Update Timing | Checksum: 15261f776
 
-Time (s): cpu = 00:00:55 ; elapsed = 00:02:08 . Memory (MB): peak = 2148.445 ; gain = 207.984
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.592 | TNS=-1891.319| WHS=-0.464 | THS=-0.916 |
+Time (s): cpu = 00:02:12 ; elapsed = 00:01:36 . Memory (MB): peak = 2188.688 ; gain = 171.059
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.999 | TNS=-2085.094| WHS=-0.461 | THS=-0.759 |
 
-Phase 6.1 Hold Fix Iter | Checksum: 19db93b72
+Phase 6.1 Hold Fix Iter | Checksum: 274c54578
 
-Time (s): cpu = 00:00:55 ; elapsed = 00:02:08 . Memory (MB): peak = 2148.445 ; gain = 207.984
-Phase 6 Post Hold Fix | Checksum: 1bad011df
+Time (s): cpu = 00:02:12 ; elapsed = 00:01:36 . Memory (MB): peak = 2188.688 ; gain = 171.059
+Phase 6 Post Hold Fix | Checksum: 23994cfb2
 
-Time (s): cpu = 00:00:55 ; elapsed = 00:02:08 . Memory (MB): peak = 2148.445 ; gain = 207.984
+Time (s): cpu = 00:02:13 ; elapsed = 00:01:37 . Memory (MB): peak = 2188.688 ; gain = 171.059
 
 Phase 7 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 23.2959 %
-  Global Horizontal Routing Utilization  = 21.3099 %
+  Global Vertical Routing Utilization    = 24.6404 %
+  Global Horizontal Routing Utilization  = 22.0401 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -1096,27 +1097,18 @@ Router Utilization Summary
   Number of Node Overlaps             = 0
 
 Congestion Report
-North Dir 1x1 Area, Max Cong = 98.1982%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
-   INT_L_X24Y71 -> INT_L_X24Y71
-   INT_L_X20Y70 -> INT_L_X20Y70
-   INT_R_X25Y70 -> INT_R_X25Y70
-   INT_R_X25Y60 -> INT_R_X25Y60
-   INT_L_X20Y59 -> INT_L_X20Y59
-South Dir 1x1 Area, Max Cong = 93.6937%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
-   INT_L_X10Y99 -> INT_L_X10Y99
-   INT_R_X11Y98 -> INT_R_X11Y98
-   INT_L_X24Y94 -> INT_L_X24Y94
-   INT_R_X25Y93 -> INT_R_X25Y93
-   INT_R_X27Y74 -> INT_R_X27Y74
-East Dir 1x1 Area, Max Cong = 100%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
-   INT_L_X26Y92 -> INT_L_X26Y92
-   INT_L_X24Y83 -> INT_L_X24Y83
-   INT_R_X25Y43 -> INT_R_X25Y43
-   INT_L_X24Y42 -> INT_L_X24Y42
-   INT_L_X26Y41 -> INT_L_X26Y41
-West Dir 1x1 Area, Max Cong = 94.1176%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
-   INT_L_X18Y102 -> INT_L_X18Y102
-   INT_L_X22Y48 -> INT_L_X22Y48
+North Dir 2x2 Area, Max Cong = 89.1892%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X20Y62 -> INT_R_X21Y63
+South Dir 1x1 Area, Max Cong = 97.2973%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X20Y103 -> INT_L_X20Y103
+   INT_R_X21Y101 -> INT_R_X21Y101
+   INT_L_X10Y98 -> INT_L_X10Y98
+   INT_R_X21Y78 -> INT_R_X21Y78
+East Dir 2x2 Area, Max Cong = 90.0735%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X24Y66 -> INT_R_X25Y67
+West Dir 1x1 Area, Max Cong = 86.7647%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X22Y70 -> INT_L_X22Y70
+   INT_L_X24Y68 -> INT_L_X24Y68
 
 ------------------------------
 Reporting congestion hotspots
@@ -1124,88 +1116,89 @@ Reporting congestion hotspots
 Direction: North
 ----------------
 Congested clusters found at Level 0
-Effective congestion level: 1 Aspect Ratio: 0.333333 Sparse Ratio: 0.75
+Effective congestion level: 2 Aspect Ratio: 1 Sparse Ratio: 0.5
 Direction: South
 ----------------
 Congested clusters found at Level 0
-Effective congestion level: 1 Aspect Ratio: 0.5 Sparse Ratio: 0.5
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 1
 Direction: East
 ----------------
 Congested clusters found at Level 0
-Effective congestion level: 1 Aspect Ratio: 0.5 Sparse Ratio: 0.5
+Effective congestion level: 1 Aspect Ratio: 0.75 Sparse Ratio: 1.75
 Direction: West
 ----------------
 Congested clusters found at Level 0
-Effective congestion level: 1 Aspect Ratio: 0.5 Sparse Ratio: 0.5
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 1
 
-Phase 7 Route finalize | Checksum: 139374587
+Phase 7 Route finalize | Checksum: 22bbc7548
 
-Time (s): cpu = 00:00:55 ; elapsed = 00:02:08 . Memory (MB): peak = 2148.445 ; gain = 207.984
+Time (s): cpu = 00:02:13 ; elapsed = 00:01:37 . Memory (MB): peak = 2188.688 ; gain = 171.059
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 139374587
+Phase 8 Verifying routed nets | Checksum: 22bbc7548
 
-Time (s): cpu = 00:00:55 ; elapsed = 00:02:08 . Memory (MB): peak = 2148.445 ; gain = 207.984
+Time (s): cpu = 00:02:13 ; elapsed = 00:01:37 . Memory (MB): peak = 2188.688 ; gain = 171.059
 
 Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 1bd269f3d
+Phase 9 Depositing Routes | Checksum: 1d79cdec4
 
-Time (s): cpu = 00:00:56 ; elapsed = 00:02:10 . Memory (MB): peak = 2148.445 ; gain = 207.984
+Time (s): cpu = 00:02:16 ; elapsed = 00:01:40 . Memory (MB): peak = 2188.688 ; gain = 171.059
 
 Phase 10 Post Router Timing
 
 Phase 10.1 Update Timing
-Phase 10.1 Update Timing | Checksum: 26a445007
+Phase 10.1 Update Timing | Checksum: 1a64fd552
 
-Time (s): cpu = 00:00:56 ; elapsed = 00:02:12 . Memory (MB): peak = 2148.445 ; gain = 207.984
-INFO: [Route 35-57] Estimated Timing Summary | WNS=-4.592 | TNS=-1899.899| WHS=0.091  | THS=0.000  |
+Time (s): cpu = 00:02:19 ; elapsed = 00:01:42 . Memory (MB): peak = 2188.688 ; gain = 171.059
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-4.999 | TNS=-2921.409| WHS=0.064  | THS=0.000  |
 
 WARNING: [Route 35-328] Router estimated timing not met.
 Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
-Phase 10 Post Router Timing | Checksum: 26a445007
+Phase 10 Post Router Timing | Checksum: 1a64fd552
 
-Time (s): cpu = 00:00:56 ; elapsed = 00:02:12 . Memory (MB): peak = 2148.445 ; gain = 207.984
+Time (s): cpu = 00:02:19 ; elapsed = 00:01:42 . Memory (MB): peak = 2188.688 ; gain = 171.059
 INFO: [Route 35-16] Router Completed Successfully
 
-Time (s): cpu = 00:00:56 ; elapsed = 00:02:12 . Memory (MB): peak = 2148.445 ; gain = 207.984
+Time (s): cpu = 00:02:19 ; elapsed = 00:01:43 . Memory (MB): peak = 2188.688 ; gain = 171.059
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
-509 Infos, 45 Warnings, 0 Critical Warnings and 0 Errors encountered.
+499 Infos, 45 Warnings, 0 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:00:59 ; elapsed = 00:02:16 . Memory (MB): peak = 2148.445 ; gain = 218.219
+route_design: Time (s): cpu = 00:02:29 ; elapsed = 00:01:49 . Memory (MB): peak = 2188.688 ; gain = 180.352
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:04 ; elapsed = 00:00:02 . Memory (MB): peak = 2148.445 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1/top_VGA_CAMERA_routed.dcp' has been generated.
+Write XDEF Complete: Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 2188.688 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1/top_VGA_CAMERA_routed.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 2188.688 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_drc -file top_VGA_CAMERA_drc_routed.rpt -pb top_VGA_CAMERA_drc_routed.pb -rpx top_VGA_CAMERA_drc_routed.rpx
 Command: report_drc -file top_VGA_CAMERA_drc_routed.rpt -pb top_VGA_CAMERA_drc_routed.pb -rpx top_VGA_CAMERA_drc_routed.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
 INFO: [DRC 23-27] Running DRC with 2 threads
-INFO: [Coretcl 2-168] The results of DRC are in file D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1/top_VGA_CAMERA_drc_routed.rpt.
+INFO: [Coretcl 2-168] The results of DRC are in file D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1/top_VGA_CAMERA_drc_routed.rpt.
 report_drc completed successfully
-report_drc: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2148.445 ; gain = 0.000
+report_drc: Time (s): cpu = 00:00:16 ; elapsed = 00:00:09 . Memory (MB): peak = 2203.586 ; gain = 14.898
 INFO: [runtcl-4] Executing : report_methodology -file top_VGA_CAMERA_methodology_drc_routed.rpt -pb top_VGA_CAMERA_methodology_drc_routed.pb -rpx top_VGA_CAMERA_methodology_drc_routed.rpx
 Command: report_methodology -file top_VGA_CAMERA_methodology_drc_routed.rpt -pb top_VGA_CAMERA_methodology_drc_routed.pb -rpx top_VGA_CAMERA_methodology_drc_routed.rpx
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [DRC 23-133] Running Methodology with 2 threads
-INFO: [Coretcl 2-1520] The results of Report Methodology are in file D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1/top_VGA_CAMERA_methodology_drc_routed.rpt.
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1/top_VGA_CAMERA_methodology_drc_routed.rpt.
 report_methodology completed successfully
-report_methodology: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2148.445 ; gain = 0.000
+report_methodology: Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 2204.504 ; gain = 0.918
 INFO: [runtcl-4] Executing : report_power -file top_VGA_CAMERA_power_routed.rpt -pb top_VGA_CAMERA_power_summary_routed.pb -rpx top_VGA_CAMERA_power_routed.rpx
 Command: report_power -file top_VGA_CAMERA_power_routed.rpt -pb top_VGA_CAMERA_power_summary_routed.pb -rpx top_VGA_CAMERA_power_routed.rpx
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 Running Vector-less Activity Propagation...
 
 Finished Running Vector-less Activity Propagation
-521 Infos, 45 Warnings, 0 Critical Warnings and 0 Errors encountered.
+511 Infos, 45 Warnings, 0 Critical Warnings and 0 Errors encountered.
 report_power completed successfully
-report_power: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 2148.445 ; gain = 0.000
+report_power: Time (s): cpu = 00:00:19 ; elapsed = 00:00:12 . Memory (MB): peak = 2210.719 ; gain = 6.215
 INFO: [runtcl-4] Executing : report_route_status -file top_VGA_CAMERA_route_status.rpt -pb top_VGA_CAMERA_route_status.pb
 INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file top_VGA_CAMERA_timing_summary_routed.rpt -pb top_VGA_CAMERA_timing_summary_routed.pb -rpx top_VGA_CAMERA_timing_summary_routed.rpx -warn_on_violation 
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
@@ -1229,12 +1222,12 @@ WARNING: [DRC DPOP-1] PREG Output pipelining: DSP U_qvga_addr_decoder/qvga_addr1
 WARNING: [DRC DPOP-2] MREG Output pipelining: DSP U_qvga_addr_decoder/qvga_addr10 multiplier stage U_qvga_addr_decoder/qvga_addr10/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/pix_counter_reg_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/pix_counter_reg_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/pix_counter_reg_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/pix_counter_reg_reg[9]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/v_counter_reg_reg[0]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/v_counter_reg_reg[2]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/v_counter_reg_reg[3]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/v_counter_reg_reg[4]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/v_counter_reg_reg[5]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/v_counter_reg_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
-WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[13] (net: U_FrameBufferLeft/ADDRARDADDR[13]) which is driven by a register (U_OV7670_SetDataLeft/v_counter_reg_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[14] (net: U_FrameBufferLeft/ADDRARDADDR[14]) which is driven by a register (U_OV7670_SetDataLeft/pix_counter_reg_reg[6]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[14] (net: U_FrameBufferLeft/ADDRARDADDR[14]) which is driven by a register (U_OV7670_SetDataLeft/pix_counter_reg_reg[7]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 WARNING: [DRC REQP-1839] RAMB36 async control check: The RAMB36E1 U_FrameBufferLeft/mem_reg_0_0 has an input control pin U_FrameBufferLeft/mem_reg_0_0/ADDRARDADDR[14] (net: U_FrameBufferLeft/ADDRARDADDR[14]) which is driven by a register (U_OV7670_SetDataLeft/pix_counter_reg_reg[8]) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
@@ -1279,5 +1272,5 @@ INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK 
 INFO: [Common 17-83] Releasing license: Implementation
 12 Infos, 40 Warnings, 0 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 2659.738 ; gain = 507.922
-INFO: [Common 17-206] Exiting Vivado at Thu Jan  9 21:58:57 2025...
+write_bitstream: Time (s): cpu = 00:00:29 ; elapsed = 00:00:43 . Memory (MB): peak = 2733.844 ; gain = 509.707
+INFO: [Common 17-206] Exiting Vivado at Fri Jan 10 05:27:43 2025...

@@ -216,7 +216,7 @@ module top_VGA_CAMERA (
     DepthAlgorithm_Census U_DepthAlgorithm_Census (
         // DepthAlgorithm_window_5x5 U_DepthAlgorithm_window_5x5 (
         // DepthAlgorithm_window_3x3 U_DepthAlgorithm_window_3x3 (
-        //DepthAlgorithm U_DepthAlgorithm (
+        // DepthAlgorithm U_DepthAlgorithm (
         // disparity_generator_1x1 U_disparity_generator (
         // disparity_generator U_disparity_generator (
         // disparity_generator_3x3 U_disparity_generator_3x3 (

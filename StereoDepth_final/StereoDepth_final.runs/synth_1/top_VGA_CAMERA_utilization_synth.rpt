@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Thu Jan  9 21:53:11 2025
-| Host         : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
+| Date         : Fri Jan 10 05:20:11 2025
+| Host         : DESKTOP-PFRE25G running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_VGA_CAMERA_utilization_synth.rpt -pb top_VGA_CAMERA_utilization_synth.pb
 | Design       : top_VGA_CAMERA
 | Device       : 7a35tcpg236-1
@@ -30,14 +30,14 @@ Table of Contents
 +-------------------------+-------+-------+-----------+-------+
 |        Site Type        |  Used | Fixed | Available | Util% |
 +-------------------------+-------+-------+-----------+-------+
-| Slice LUTs*             | 12635 |     0 |     20800 | 60.75 |
-|   LUT as Logic          | 12635 |     0 |     20800 | 60.75 |
+| Slice LUTs*             | 13309 |     0 |     20800 | 63.99 |
+|   LUT as Logic          | 13309 |     0 |     20800 | 63.99 |
 |   LUT as Memory         |     0 |     0 |      9600 |  0.00 |
-| Slice Registers         | 14506 |     0 |     41600 | 34.87 |
-|   Register as Flip Flop | 14506 |     0 |     41600 | 34.87 |
+| Slice Registers         | 14508 |     0 |     41600 | 34.88 |
+|   Register as Flip Flop | 14508 |     0 |     41600 | 34.88 |
 |   Register as Latch     |     0 |     0 |     41600 |  0.00 |
-| F7 Muxes                |  4812 |     0 |     16300 | 29.52 |
-| F8 Muxes                |  2392 |     0 |      8150 | 29.35 |
+| F7 Muxes                |  4357 |     0 |     16300 | 26.73 |
+| F8 Muxes                |  2086 |     0 |      8150 | 25.60 |
 +-------------------------+-------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -54,8 +54,8 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 2     |          Yes |           - |          Set |
-| 313   |          Yes |           - |        Reset |
+| 5     |          Yes |           - |          Set |
+| 312   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 14191 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -153,22 +153,22 @@ Table of Contents
 | Ref Name |  Used | Functional Category |
 +----------+-------+---------------------+
 | FDRE     | 14191 |        Flop & Latch |
-| LUT6     | 11559 |                 LUT |
-| MUXF7    |  4812 |               MuxFx |
-| MUXF8    |  2392 |               MuxFx |
-| LUT4     |   649 |                 LUT |
-| LUT5     |   451 |                 LUT |
-| FDCE     |   313 |        Flop & Latch |
-| LUT2     |   250 |                 LUT |
-| LUT3     |   212 |                 LUT |
+| LUT6     | 11770 |                 LUT |
+| MUXF7    |  4357 |               MuxFx |
+| MUXF8    |  2086 |               MuxFx |
+| LUT4     |  1011 |                 LUT |
+| LUT3     |   944 |                 LUT |
+| FDCE     |   312 |        Flop & Latch |
+| LUT2     |   284 |                 LUT |
+| LUT5     |   233 |                 LUT |
 | CARRY4   |   114 |          CarryLogic |
 | RAMB36E1 |    32 |        Block Memory |
 | IBUF     |    26 |                  IO |
 | OBUF     |    18 |                  IO |
 | LUT1     |    17 |                 LUT |
+| FDPE     |     5 |        Flop & Latch |
 | BUFG     |     4 |               Clock |
 | OBUFT    |     2 |                  IO |
-| FDPE     |     2 |        Flop & Latch |
 | RAMB18E1 |     1 |        Block Memory |
 | DSP48E1  |     1 |    Block Arithmetic |
 +----------+-------+---------------------+

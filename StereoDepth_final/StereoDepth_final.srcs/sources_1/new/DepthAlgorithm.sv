@@ -3,7 +3,6 @@
 module DepthAlgorithm (
     input  logic        clk,
     input  logic        reset,
-    input  logic        Hsync,
     input  logic [ 9:0] x_pixel,
     input  logic [ 9:0] y_pixel,
     input  logic [13:0] in_L,
@@ -23,7 +22,7 @@ module DepthAlgorithm (
 
     // logic [6:0]  min_temp, min_index, i, temp;
 
-    assign rData = temp_mem[x_pixel[9:2]];
+    assign rData = temp_mem[x_pixel[9:1]];
 
     always_ff @(posedge clk, posedge reset) begin
         if (reset) begin
@@ -35,8 +34,8 @@ module DepthAlgorithm (
             read_en_reg <= read_en_next;
             i_reg       <= i_next;
             if (read_en_reg == 1'b1) begin
-                mem_L[x_pixel[9:2]] <= in_L;
-                mem_R[x_pixel[9:2]] <= in_R;
+                mem_L[x_pixel[9:1]] <= in_L;
+                mem_R[x_pixel[9:1]] <= in_R;
             end
         end
     end
@@ -47,7 +46,7 @@ module DepthAlgorithm (
         i_next       = i_reg;
         case (state_reg)
             IDLE: begin
-                if (x_pixel >= 159) begin
+                if (x_pixel[9:1] == 319) begin
                     state_next   = COMP;
                     read_en_next = 0;
                 end
@@ -84,7 +83,6 @@ endmodule
 module DepthAlgorithm_window_3x3 (
     input  logic        clk,
     input  logic        reset,
-    input  logic        Hsync,
     input  logic [ 9:0] x_pixel,
     input  logic [ 9:0] y_pixel,
     input  logic [13:0] in_L,
@@ -127,17 +125,12 @@ module DepthAlgorithm_window_3x3 (
 
     function logic [3:0] get_depth(logic [35:0] costs[9:0]);
         // for (int i = 0; i < 10; i++) if (costs[i] < costs[min_idx]) min_idx = i;
-
         logic [3:0] min_idx = 0;
-        if (costs[1] < costs[min_idx]) min_idx = 1;
-        if (costs[2] < costs[min_idx]) min_idx = 2;
-        if (costs[3] < costs[min_idx]) min_idx = 3;
-        if (costs[4] < costs[min_idx]) min_idx = 4;
-        if (costs[5] < costs[min_idx]) min_idx = 5;
-        if (costs[6] < costs[min_idx]) min_idx = 6;
-        if (costs[7] < costs[min_idx]) min_idx = 7;
-        if (costs[8] < costs[min_idx]) min_idx = 8;
-        if (costs[9] < costs[min_idx]) min_idx = 9;
+        for (int i = 1; i < 10; i++) begin
+            if (costs[i] < costs[min_idx]) begin
+                min_idx = i;
+            end
+        end
 
         case (min_idx)
             0: return 15;
@@ -310,7 +303,7 @@ module DepthAlgorithm_Census (
     logic [13:0] mem_R[0:2][0:159];
     logic state_reg, state_next;
     logic read_en_reg, read_en_next;
-    logic [3:0] window_cost[9:0];
+    logic [3:0] window_cost[15:0];
     logic [5:0] temp_mem[0:160-1];
     logic [7:0] j, j_next;
 
@@ -326,6 +319,8 @@ module DepthAlgorithm_Census (
     logic [3:0] min_idx;
     logic stop;
 
+
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function logic [3:0] window_cost_census(input logic [13:0] L[0:2][0:2],
                                             input logic [13:0] R[0:2][0:2]);
         logic       cost_L          [8:0];
@@ -363,50 +358,42 @@ module DepthAlgorithm_Census (
 
         return cost_census;
     endfunction
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    function logic [35:0] calc_window_cost(input logic [13:0] L[0:2][0:2],
-                                           input logic [13:0] R[0:2][0:2]);
-        logic [17:0] cost = 0;
-        logic [35:0] cost_sq = 0;
-        for (int i = 0; i < 3; i++)
-            for (int w = 0; w < 3; w++)
-                cost += (L[i][w] > R[i][w]) ? (L[i][w] - R[i][w]) : (R[i][w] - L[i][w]);
-        cost_sq = cost * cost;
-        return cost_sq;
-    endfunction
-
-
-    function logic [3:0] get_depth(logic [3:0] costs[10]);
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    function logic [3:0] get_depth(logic [3:0] costs[16]);
         // for (int i = 0; i < 10; i++) if (costs[i] < costs[min_idx]) min_idx = i;
 
         logic [3:0] min_idx = 0;
-        for (int i = 1; i < 10; i++) begin
+        for (int i = 1; i < 16; i++) begin
             if (costs[i] < costs[min_idx]) begin
                 min_idx = i;
             end
         end
 
-        // return 15 / ((min_idx+1)*);
+        return min_idx;
 
-        case (min_idx)
-            0: return 15;
-            1: return 13;
-            2: return 12;
-            3: return 11;
-            4: return 9;
-            5: return 7;
-            6: return 5;
-            7: return 3;
-            8: return 1;
-            default: return 0;
-            // 0: return 120 * 0.5 / 1;
-            // 1: return 120 * 0.5 / 2;
-            // 2: return 120 * 0.5 / 3;
-            // 3: return 120 * 0.5 / 4;
-            // default: return 120 * 0.5 / 5;
-        endcase
+        // case (min_idx)
+        //     0: return 15;
+        //     1: return 13;
+        //     2: return 12;
+        //     3: return 11;
+        //     4: return 9;
+        //     5: return 7;
+        //     6: return 5;
+        //     7: return 3;
+        //     8: return 1;
+        //     default: return 0;
+        //     // 0: return 120 * 0.5 / 1;
+        //     // 1: return 120 * 0.5 / 2;
+        //     // 2: return 120 * 0.5 / 3;
+        //     // 3: return 120 * 0.5 / 4;
+        //     // default: return 120 * 0.5 / 5;
+        // endcase
     endfunction
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     always_ff @(posedge clk, posedge reset) begin
         if (reset) begin
             state_reg   <= 0;
@@ -418,12 +405,12 @@ module DepthAlgorithm_Census (
             j           <= j_next;
 
             // Pipeline Stage 1: Load window data
-            // if (read_en_reg == 1'b1) begin
-            if (x_pixel < 320 && y_pixel > 239) begin
+            if (read_en_reg) begin
                 mem_L[y_pixel[9:1]%3][x_pixel[9:1]] <= in_L;
                 mem_R[y_pixel[9:1]%3][x_pixel[9:1]] <= in_R;
             end
             // end
+
 
             // Pipeline Stage 2: Setup window data
             for (int i = 0; i < 3; i++) begin
@@ -485,14 +472,47 @@ module DepthAlgorithm_Census (
                 for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+9];
             window_cost[9] <= window_cost_census(window_L, temp_R);
 
-            // Pipeline Stage 4: Determine depth
+            // Disparity 10
+            for (int i = 0; i < 3; i++)
+                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+10];
+            window_cost[10] <= window_cost_census(window_L, temp_R);
+
+            // Disparity 11
+            for (int i = 0; i < 3; i++)
+                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+11];
+            window_cost[11] <= window_cost_census(window_L, temp_R);
+
+            // Disparity 12
+            for (int i = 0; i < 3; i++)
+                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+12];
+            window_cost[12] <= window_cost_census(window_L, temp_R);
+
+            // Disparity 13
+            for (int i = 0; i < 3; i++)
+                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+13];
+            window_cost[13] <= window_cost_census(window_L, temp_R);
+
+            // Disparity 14
+            for (int i = 0; i < 3; i++)
+                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+14];
+            window_cost[14] <= window_cost_census(window_L, temp_R);
+
+            // Disparity 15
+            for (int i = 0; i < 3; i++)
+                for (int k = 0; k < 3; k++) temp_R[i][k] = window_R[i][k+15];
+            window_cost[15] <= window_cost_census(window_L, temp_R);
+
+
+           // Pipeline Stage 4: Determine depth
             depth_reg <= {get_depth(window_cost), 2'b11};
 
             // Pipeline Stage 5: Store result
             temp_mem[j] <= depth_reg;
         end
     end
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     always_comb begin
         state_next   = state_reg;
         read_en_next = read_en_reg;

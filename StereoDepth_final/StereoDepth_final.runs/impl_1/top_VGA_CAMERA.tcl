@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1/top_VGA_CAMERA.tcl"
+  variable script "D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/impl_1/top_VGA_CAMERA.tcl"
   variable category "vivado_impl"
 }
 
@@ -122,27 +122,26 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 4
+  set_param chipscope.maxJobs 1
   set_param xicom.use_bs_reader 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a35tcpg236-1
-  set_property board_part_repo_paths {C:/Users/kccistc/AppData/Roaming/Xilinx/Vivado/2020.2/xhub/board_store/xilinx_board_store} [current_project]
   set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.cache/wt [current_project]
-  set_property parent.project_path D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.xpr [current_project]
-  set_property ip_output_repo D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.cache/ip [current_project]
+  set_property webtalk.parent_dir D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.cache/wt [current_project]
+  set_property parent.project_path D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.xpr [current_project]
+  set_property ip_output_repo D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_CDC [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/synth_1/top_VGA_CAMERA.dcp
-  read_ip -quiet D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+  add_files -quiet D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/synth_1/top_VGA_CAMERA.dcp
+  read_ip -quiet D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc
+  read_xdc D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }
