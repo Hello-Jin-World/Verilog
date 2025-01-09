@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
--- Date        : Thu Jan  9 19:33:36 2025
+-- Date        : Thu Jan  9 20:59:23 2025
 -- Host        : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl
@@ -19,7 +19,7 @@ entity clk_wiz_0_clk_wiz_0_clk_wiz is
     vga_clk : out STD_LOGIC;
     ov7670_xclk1 : out STD_LOGIC;
     ov7670_xclk2 : out STD_LOGIC;
-    clk_50 : out STD_LOGIC;
+    clk_45 : out STD_LOGIC;
     reset : in STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
@@ -28,7 +28,7 @@ entity clk_wiz_0_clk_wiz_0_clk_wiz is
 end clk_wiz_0_clk_wiz_0_clk_wiz;
 
 architecture STRUCTURE of clk_wiz_0_clk_wiz_0_clk_wiz is
-  signal clk_50_clk_wiz_0 : STD_LOGIC;
+  signal clk_45_clk_wiz_0 : STD_LOGIC;
   signal clk_in1_clk_wiz_0 : STD_LOGIC;
   signal clkfbout_buf_clk_wiz_0 : STD_LOGIC;
   signal clkfbout_clk_wiz_0 : STD_LOGIC;
@@ -94,8 +94,8 @@ clkout3_buf: unisim.vcomponents.BUFG
     );
 clkout4_buf: unisim.vcomponents.BUFG
      port map (
-      I => clk_50_clk_wiz_0,
-      O => clk_50
+      I => clk_45_clk_wiz_0,
+      O => clk_45
     );
 mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
     generic map(
@@ -163,7 +163,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKOUT1B => NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED,
       CLKOUT2 => ov7670_xclk2_clk_wiz_0,
       CLKOUT2B => NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED,
-      CLKOUT3 => clk_50_clk_wiz_0,
+      CLKOUT3 => clk_45_clk_wiz_0,
       CLKOUT3B => NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED,
       CLKOUT4 => NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED,
       CLKOUT5 => NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED,
@@ -193,7 +193,7 @@ entity clk_wiz_0 is
     vga_clk : out STD_LOGIC;
     ov7670_xclk1 : out STD_LOGIC;
     ov7670_xclk2 : out STD_LOGIC;
-    clk_50 : out STD_LOGIC;
+    clk_45 : out STD_LOGIC;
     reset : in STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
@@ -205,7 +205,7 @@ architecture STRUCTURE of clk_wiz_0 is
 begin
 inst: entity work.clk_wiz_0_clk_wiz_0_clk_wiz
      port map (
-      clk_50 => clk_50,
+      clk_45 => clk_45,
       clk_in1 => clk_in1,
       ov7670_xclk1 => ov7670_xclk1,
       ov7670_xclk2 => ov7670_xclk2,

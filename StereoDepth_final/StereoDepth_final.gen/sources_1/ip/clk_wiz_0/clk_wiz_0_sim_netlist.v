@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Thu Jan  9 19:33:36 2025
+// Date        : Thu Jan  9 20:59:23 2025
 // Host        : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
@@ -17,17 +17,17 @@ module clk_wiz_0
    (vga_clk,
     ov7670_xclk1,
     ov7670_xclk2,
-    clk_50,
+    clk_45,
     reset,
     clk_in1);
   output vga_clk;
   output ov7670_xclk1;
   output ov7670_xclk2;
-  output clk_50;
+  output clk_45;
   input reset;
   input clk_in1;
 
-  wire clk_50;
+  wire clk_45;
   (* IBUF_LOW_PWR *) wire clk_in1;
   wire ov7670_xclk1;
   wire ov7670_xclk2;
@@ -35,7 +35,7 @@ module clk_wiz_0
   wire vga_clk;
 
   clk_wiz_0_clk_wiz_0_clk_wiz inst
-       (.clk_50(clk_50),
+       (.clk_45(clk_45),
         .clk_in1(clk_in1),
         .ov7670_xclk1(ov7670_xclk1),
         .ov7670_xclk2(ov7670_xclk2),
@@ -48,18 +48,18 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
    (vga_clk,
     ov7670_xclk1,
     ov7670_xclk2,
-    clk_50,
+    clk_45,
     reset,
     clk_in1);
   output vga_clk;
   output ov7670_xclk1;
   output ov7670_xclk2;
-  output clk_50;
+  output clk_45;
   input reset;
   input clk_in1;
 
-  wire clk_50;
-  wire clk_50_clk_wiz_0;
+  wire clk_45;
+  wire clk_45_clk_wiz_0;
   wire clk_in1;
   wire clk_in1_clk_wiz_0;
   wire clkfbout_buf_clk_wiz_0;
@@ -113,8 +113,8 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
         .O(ov7670_xclk2));
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFG clkout4_buf
-       (.I(clk_50_clk_wiz_0),
-        .O(clk_50));
+       (.I(clk_45_clk_wiz_0),
+        .O(clk_45));
   (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
@@ -180,7 +180,7 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
         .CLKOUT1B(NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED),
         .CLKOUT2(ov7670_xclk2_clk_wiz_0),
         .CLKOUT2B(NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED),
-        .CLKOUT3(clk_50_clk_wiz_0),
+        .CLKOUT3(clk_45_clk_wiz_0),
         .CLKOUT3B(NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED),
         .CLKOUT4(NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED),
         .CLKOUT5(NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED),
