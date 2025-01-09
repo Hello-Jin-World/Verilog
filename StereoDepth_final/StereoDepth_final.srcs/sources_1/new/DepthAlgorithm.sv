@@ -129,13 +129,41 @@ module DepthAlgorithm_window_3x3 (
 
     function logic [3:0] get_depth(logic [35:0] costs[9:0]);
         // for (int i = 0; i < 10; i++) if (costs[i] < costs[min_idx]) min_idx = i;
-        // logic [3:0] min_idx = 0;  // 초기값 설정
-        for (int i = 1; i < 10; i++) begin
-            if (!stop) begin
-                if (costs[i] < costs[min_idx]) begin
-                    min_idx = i;  // 현재 인덱스 업데이트
+
+        if (costs[0] < costs[1]) begin
+            min_idx = 0;
+        end else begin
+            if (costs[1] < costs[2]) begin
+                min_idx = 1;
+            end else begin
+                if (costs[2] < costs[3]) begin
+                    min_idx = 2;
                 end else begin
-                    stop = 1;  // 값이 커지면 비교 중단
+                    if (costs[3] < costs[4]) begin
+                        min_idx = 3;
+                    end else begin
+                        if (costs[4] < costs[5]) begin
+                            min_idx = 4;
+                        end else begin
+                            if (costs[5] < costs[6]) begin
+                                min_idx = 5;
+                            end else begin
+                                if (costs[6] < costs[7]) begin
+                                    min_idx = 6;
+                                end else begin
+                                    if (costs[7] < costs[8]) begin
+                                        min_idx = 7;
+                                    end else begin
+                                        if (costs[8] < costs[9]) begin
+                                            min_idx = 8;
+                                        end else begin
+                                            min_idx = 9;
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
                 end
             end
         end
