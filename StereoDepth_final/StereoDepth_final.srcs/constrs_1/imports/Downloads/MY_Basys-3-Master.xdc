@@ -97,11 +97,11 @@ set_property -dict { PACKAGE_PIN G3  IOSTANDARD LVCMOS33 } [get_ports { ov7670_d
 
 ##Pmod Header JB
 
-set_property -dict { PACKAGE_PIN A14  IOSTANDARD LVCMOS33 } [get_ports { SCL_R }]; #IO_L6P_T0_16       ,Sch=JB1
+# set_property -dict { PACKAGE_PIN A14  IOSTANDARD LVCMOS33 } [get_ports { SCL_R }]; #IO_L6P_T0_16       ,Sch=JB1
 set_property -dict { PACKAGE_PIN A16  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[0] }]; #IO_L12P_T1_MRCC_16 ,Sch=JB2
 set_property -dict { PACKAGE_PIN B15  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[2] }]; #IO_L11N_T1_SRCC_16 ,Sch=JB3
 set_property -dict { PACKAGE_PIN B16  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[4] }]; #IO_L13N_T2_MRCC_16 ,Sch=JB4
-set_property -dict { PACKAGE_PIN A15  IOSTANDARD LVCMOS33 } [get_ports { SDA_R }]; #IO_L9N_T0_VREF_16  ,Sch=JB7
+# set_property -dict { PACKAGE_PIN A15  IOSTANDARD LVCMOS33 } [get_ports { SDA_R }]; #IO_L9N_T0_VREF_16  ,Sch=JB7
 set_property -dict { PACKAGE_PIN A17  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[1] }]; #IO_L12N_T1_MRCC_16 ,Sch=JB8
 set_property -dict { PACKAGE_PIN C15  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[3] }]; #IO_L11P_T1_SRCC_16 ,Sch=JB9
 set_property -dict { PACKAGE_PIN C16  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[5] }]; #IO_L13P_T2_MRCC_16 ,Sch=JB10
@@ -123,9 +123,9 @@ set_property -dict { PACKAGE_PIN P17  IOSTANDARD LVCMOS33 } [get_ports { ov7670_
 
 set_property -dict { PACKAGE_PIN J3  IOSTANDARD LVCMOS33 } [get_ports { ov7670_xclk2 }]; #IO_L7P_T1_AD6P_35     ,Sch=XA1_P
 set_property -dict { PACKAGE_PIN L3  IOSTANDARD LVCMOS33 } [get_ports { ov7670_href2 }]; #IO_L7N_T1_AD6N_35     ,Sch=XA2_P
-set_property -dict { PACKAGE_PIN M2  IOSTANDARD LVCMOS33 } [get_ports { SDA_L }]; #IO_L8P_T1_AD14P_35    ,Sch=XA3_P
+# set_property -dict { PACKAGE_PIN M2  IOSTANDARD LVCMOS33 } [get_ports { SDA_L }]; #IO_L8P_T1_AD14P_35    ,Sch=XA3_P
 # set_property -dict { PACKAGE_PIN N2  IOSTANDARD LVCMOS33 } [get_ports {  }]; #IO_L8N_T1_AD14N_35    ,Sch=XA4_P
-set_property -dict { PACKAGE_PIN K3  IOSTANDARD LVCMOS33 } [get_ports { SCL_L }]; #IO_L9P_T1_DQS_AD7P_35 ,Sch=XA1_N
+# set_property -dict { PACKAGE_PIN K3  IOSTANDARD LVCMOS33 } [get_ports { SCL_L }]; #IO_L9P_T1_DQS_AD7P_35 ,Sch=XA1_N
 set_property -dict { PACKAGE_PIN M3  IOSTANDARD LVCMOS33 } [get_ports { ov7670_v_sync2 }]; #IO_L9N_T1_DQS_AD7N_35 ,Sch=XA2_N
 # set_property -dict { PACKAGE_PIN M1  IOSTANDARD LVCMOS33 } [get_ports {  }]; #IO_L10P_T1_AD15P_35   ,Sch=XA3_N
 set_property -dict { PACKAGE_PIN N1  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data2[1] }]; #IO_L10N_T1_AD15N_35   ,Sch=XA4_N

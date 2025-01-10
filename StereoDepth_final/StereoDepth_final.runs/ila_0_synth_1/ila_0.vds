@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Tue Jan  7 18:05:54 2025
-# Process ID: 23220
+# Start of session at: Fri Jan 10 14:12:51 2025
+# Process ID: 20564
 # Current directory: D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/ila_0_synth_1
 # Command line: vivado.exe -log ila_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ila_0.tcl
 # Log file: D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/ila_0_synth_1/ila_0.vds
@@ -17,9 +17,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 28856
+INFO: [Synth 8-7075] Helper process launched with PID 1572
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 1105.980 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 1103.887 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'ila_0' [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/ila_0/synth/ila_0.v:84]
 INFO: [Synth 8-6157] synthesizing module 'CFGLUT5' [C:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1524]
@@ -34,28 +34,28 @@ INFO: [Synth 8-6157] synthesizing module 'SRLC16E' [C:/Xilinx/Vivado/2020.2/scri
 INFO: [Synth 8-6155] done synthesizing module 'SRLC16E' (23#1) [C:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:78123]
 INFO: [Synth 8-6157] synthesizing module 'FDRE' [C:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:13724]
 INFO: [Synth 8-6155] done synthesizing module 'FDRE' (28#1) [C:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:13724]
-WARNING: [Synth 8-7071] port 'clk_nobuf' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/ila_0/synth/ila_0.v:3239]
-WARNING: [Synth 8-7071] port 'clkdiv_out' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/ila_0/synth/ila_0.v:3239]
-WARNING: [Synth 8-7071] port 'trig_in' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/ila_0/synth/ila_0.v:3239]
-WARNING: [Synth 8-7071] port 'trig_in_ack' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/ila_0/synth/ila_0.v:3239]
-WARNING: [Synth 8-7071] port 'trig_out' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/ila_0/synth/ila_0.v:3239]
-WARNING: [Synth 8-7071] port 'trig_out_ack' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/ila_0/synth/ila_0.v:3239]
-WARNING: [Synth 8-7023] instance 'inst' of module 'ila_v6_2_11_ila' has 1033 connections declared, but only 1027 given [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/ila_0/synth/ila_0.v:3239]
+WARNING: [Synth 8-7071] port 'clk_nobuf' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/ila_0/synth/ila_0.v:3243]
+WARNING: [Synth 8-7071] port 'clkdiv_out' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/ila_0/synth/ila_0.v:3243]
+WARNING: [Synth 8-7071] port 'trig_in' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/ila_0/synth/ila_0.v:3243]
+WARNING: [Synth 8-7071] port 'trig_in_ack' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/ila_0/synth/ila_0.v:3243]
+WARNING: [Synth 8-7071] port 'trig_out' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/ila_0/synth/ila_0.v:3243]
+WARNING: [Synth 8-7071] port 'trig_out_ack' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/ila_0/synth/ila_0.v:3243]
+WARNING: [Synth 8-7023] instance 'inst' of module 'ila_v6_2_11_ila' has 1033 connections declared, but only 1027 given [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/ila_0/synth/ila_0.v:3243]
 INFO: [Synth 8-6155] done synthesizing module 'ila_0' (46#1) [d:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.gen/sources_1/ip/ila_0/synth/ila_0.v:84]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:42 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:39 . Memory (MB): peak = 1496.336 ; gain = 392.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:43 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:40 . Memory (MB): peak = 1496.336 ; gain = 392.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:43 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:40 . Memory (MB): peak = 1496.336 ; gain = 392.449
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.153 . Memory (MB): peak = 1496.398 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 210 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.131 . Memory (MB): peak = 1496.336 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 182 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -69,29 +69,29 @@ Parsing XDC File [D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.
 Finished Parsing XDC File [D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/ila_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1496.398 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1496.336 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 152 instances were transformed.
-  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 132 instances
-  CFGLUT5 => SRLC32E: 20 instances
+  A total of 130 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 108 instances
+  CFGLUT5 => SRLC32E: 22 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.211 . Memory (MB): peak = 1496.398 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.168 . Memory (MB): peak = 1496.336 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:52 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:48 . Memory (MB): peak = 1496.336 ; gain = 392.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:52 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:48 . Memory (MB): peak = 1496.336 ; gain = 392.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/ila_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:52 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:48 . Memory (MB): peak = 1496.336 ; gain = 392.449
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized0'
@@ -111,6 +111,8 @@ INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in modul
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized14'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized15'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized16'
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized17'
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized18'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'ltlib_v1_0_0_generic_memrd'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -296,6 +298,26 @@ INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in m
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
 *
+                    IDLE |                             0001 |                             0001
+                     REG |                             0010 |                             0010
+                     P2S |                             0100 |                             0100
+                     S2P |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized17'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                    IDLE |                             0001 |                             0001
+                     REG |                             0010 |                             0010
+                     P2S |                             0100 |                             0100
+                     S2P |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized18'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
               RESET_ADDR |                          0000001 |                          0000001
             REQUEST_READ |                          0000010 |                          0000010
            WAIT_READ_ACK |                          0000100 |                          0000100
@@ -306,7 +328,7 @@ INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in m
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'ltlib_v1_0_0_generic_memrd'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:55 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:50 . Memory (MB): peak = 1496.336 ; gain = 392.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -327,25 +349,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:01:09 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:01:03 . Memory (MB): peak = 1496.336 ; gain = 392.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:01:16 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:01:10 . Memory (MB): peak = 1496.336 ; gain = 392.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:01:16 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:01:10 . Memory (MB): peak = 1496.336 ; gain = 392.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:01:17 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:01:11 . Memory (MB): peak = 1496.336 ; gain = 392.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -403,37 +425,37 @@ INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[0] to constant 0
 INFO: [Synth 8-3295] tying undriven pin inst:trig_in to constant 0
 INFO: [Synth 8-3295] tying undriven pin inst:trig_out_ack to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:01:20 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:01:14 . Memory (MB): peak = 1496.336 ; gain = 392.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:01:20 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:01:14 . Memory (MB): peak = 1496.336 ; gain = 392.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:01:21 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:01:14 . Memory (MB): peak = 1496.336 ; gain = 392.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:01:21 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:01:14 . Memory (MB): peak = 1496.336 ; gain = 392.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:01:21 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:01:14 . Memory (MB): peak = 1496.336 ; gain = 392.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:01:21 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:01:14 . Memory (MB): peak = 1496.336 ; gain = 392.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -449,50 +471,51 @@ Report Cell Usage:
 +------+---------+------+
 |      |Cell     |Count |
 +------+---------+------+
-|1     |CARRY4   |    53|
-|2     |CFGLUT5  |   152|
+|1     |CARRY4   |    49|
+|2     |CFGLUT5  |   130|
 |3     |LUT1     |    46|
-|4     |LUT2     |    67|
-|5     |LUT3     |   118|
-|6     |LUT4     |   211|
-|7     |LUT5     |   107|
-|8     |LUT6     |   683|
-|9     |MUXF7    |    43|
-|10    |MUXF8    |    16|
-|11    |RAMB18E1 |     1|
-|12    |RAMB36E1 |     4|
-|13    |SRL16E   |   150|
-|14    |SRLC16E  |     2|
-|15    |SRLC32E  |    17|
-|16    |FDRE     |  2334|
-|17    |FDSE     |    10|
+|4     |LUT2     |    64|
+|5     |LUT3     |   127|
+|6     |LUT4     |   238|
+|7     |LUT5     |    85|
+|8     |LUT6     |   733|
+|9     |MUXF7    |     4|
+|10    |RAMB18E1 |     1|
+|11    |RAMB36E1 |     2|
+|12    |SRL16E   |    76|
+|13    |SRLC16E  |     2|
+|14    |SRLC32E  |    17|
+|15    |FDRE     |  2133|
+|16    |FDSE     |    10|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:01:21 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:01:14 . Memory (MB): peak = 1496.336 ; gain = 392.449
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:01:16 . Memory (MB): peak = 1496.398 ; gain = 390.418
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:01:21 . Memory (MB): peak = 1496.398 ; gain = 390.418
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:01:10 . Memory (MB): peak = 1496.336 ; gain = 392.449
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:01:14 . Memory (MB): peak = 1496.336 ; gain = 392.449
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.080 . Memory (MB): peak = 1496.398 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 269 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 1496.336 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 186 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1496.398 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1496.336 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 152 instances were transformed.
-  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 132 instances
-  CFGLUT5 => SRLC32E: 20 instances
+  A total of 130 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 108 instances
+  CFGLUT5 => SRLC32E: 22 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-108 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+112 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:01:28 . Memory (MB): peak = 1496.398 ; gain = 390.418
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:01:21 . Memory (MB): peak = 1496.336 ; gain = 392.449
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
 INFO: [Common 17-1381] The checkpoint 'D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/ila_0_synth_1/ila_0.dcp' has been generated.
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP ila_0, cache-ID = a85806eb7faddf24
-INFO: [Coretcl 2-1174] Renamed 196 cell refs.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP ila_0, cache-ID = 18a96b10f620b241
+INFO: [Coretcl 2-1174] Renamed 194 cell refs.
 INFO: [Common 17-1381] The checkpoint 'D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.runs/ila_0_synth_1/ila_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file ila_0_utilization_synth.rpt -pb ila_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jan  7 18:07:33 2025...
+INFO: [Common 17-206] Exiting Vivado at Fri Jan 10 14:14:23 2025...

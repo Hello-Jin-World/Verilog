@@ -15,151 +15,172 @@
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="288"></NameColumnWidth>
-      <ValueColumnWidth column_width="108"></ValueColumnWidth>
+      <ValueColumnWidth column_width="104"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="18" />
+   <WVObjectSize size="21" />
    <wave_markers>
    </wave_markers>
-   <wvobject fp_name="U_DepthAlgorithm_window_3x3/in_R" type="array">
+   <wvobject fp_name="U_DepthAlgorithm_Census/&lt;const0&gt;" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_DepthAlgorithm_window_3x3/in_R[13:0]</obj_property>
-      <obj_property name="ObjectShortName">in_R[13:0]</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/&lt;const0&gt;</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_DepthAlgorithm_Census/&lt;const0&gt;_1" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/&lt;const0&gt;_1</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_1</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_DepthAlgorithm_Census/&lt;const0&gt;_2" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/&lt;const0&gt;_2</obj_property>
+      <obj_property name="ObjectShortName">&lt;const0&gt;_2</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_DepthAlgorithm_Census/j" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/j[3:0]</obj_property>
+      <obj_property name="ObjectShortName">j[3:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_DepthAlgorithm_window_3x3/in_L" type="array">
+   <wvobject fp_name="U_DepthAlgorithm_Census/state_reg" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_DepthAlgorithm_window_3x3/in_L[13:0]</obj_property>
-      <obj_property name="ObjectShortName">in_L[13:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_DepthAlgorithm_window_3x3/x_pixel" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_DepthAlgorithm_window_3x3/x_pixel[9:0]</obj_property>
-      <obj_property name="ObjectShortName">x_pixel[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_DepthAlgorithm_window_3x3/y_pixel" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_DepthAlgorithm_window_3x3/y_pixel[8:0]</obj_property>
-      <obj_property name="ObjectShortName">y_pixel[8:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_DepthAlgorithm_window_3x3/window_cost[0]" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_DepthAlgorithm_window_3x3/window_cost[0][35:0]</obj_property>
-      <obj_property name="ObjectShortName">window_cost[0][35:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_DepthAlgorithm_window_3x3/window_cost[1]" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_DepthAlgorithm_window_3x3/window_cost[1][35:0]</obj_property>
-      <obj_property name="ObjectShortName">window_cost[1][35:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_DepthAlgorithm_window_3x3/window_cost[2]" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_DepthAlgorithm_window_3x3/window_cost[2][35:0]</obj_property>
-      <obj_property name="ObjectShortName">window_cost[2][35:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_DepthAlgorithm_window_3x3/window_cost[3]" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_DepthAlgorithm_window_3x3/window_cost[3][35:0]</obj_property>
-      <obj_property name="ObjectShortName">window_cost[3][35:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_DepthAlgorithm_window_3x3/window_cost[4]" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_DepthAlgorithm_window_3x3/window_cost[4][35:0]</obj_property>
-      <obj_property name="ObjectShortName">window_cost[4][35:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_DepthAlgorithm_window_3x3/window_cost[5]" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_DepthAlgorithm_window_3x3/window_cost[5][35:0]</obj_property>
-      <obj_property name="ObjectShortName">window_cost[5][35:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_DepthAlgorithm_window_3x3/window_cost[6]" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_DepthAlgorithm_window_3x3/window_cost[6][35:0]</obj_property>
-      <obj_property name="ObjectShortName">window_cost[6][35:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_DepthAlgorithm_window_3x3/window_cost[7]" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_DepthAlgorithm_window_3x3/window_cost[7][35:0]</obj_property>
-      <obj_property name="ObjectShortName">window_cost[7][35:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_DepthAlgorithm_window_3x3/window_cost[8]" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_DepthAlgorithm_window_3x3/window_cost[8][35:0]</obj_property>
-      <obj_property name="ObjectShortName">window_cost[8][35:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_DepthAlgorithm_window_3x3/window_cost[9]" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_DepthAlgorithm_window_3x3/window_cost[9][35:0]</obj_property>
-      <obj_property name="ObjectShortName">window_cost[9][35:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_DepthAlgorithm_window_3x3/rData" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_DepthAlgorithm_window_3x3/rData[5:0]</obj_property>
-      <obj_property name="ObjectShortName">rData[5:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_DepthAlgorithm_window_3x3/j" type="array">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_DepthAlgorithm_window_3x3/j[7:0]</obj_property>
-      <obj_property name="ObjectShortName">j[7:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject fp_name="U_DepthAlgorithm_window_3x3/state_reg" type="logic">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_DepthAlgorithm_window_3x3/state_reg</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/state_reg</obj_property>
       <obj_property name="ObjectShortName">state_reg</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="U_DepthAlgorithm_window_3x3/min_idx" type="array">
+   <wvobject fp_name="U_DepthAlgorithm_Census/window_cost[0]" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">U_DepthAlgorithm_window_3x3/min_idx[3:0]</obj_property>
-      <obj_property name="ObjectShortName">min_idx[3:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/window_cost[0][3:0]</obj_property>
+      <obj_property name="ObjectShortName">window_cost[0][3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_DepthAlgorithm_Census/window_cost[1]" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/window_cost[1][3:0]</obj_property>
+      <obj_property name="ObjectShortName">window_cost[1][3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_DepthAlgorithm_Census/window_cost[2]" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/window_cost[2][3:0]</obj_property>
+      <obj_property name="ObjectShortName">window_cost[2][3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_DepthAlgorithm_Census/window_cost[3]" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/window_cost[3][3:0]</obj_property>
+      <obj_property name="ObjectShortName">window_cost[3][3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_DepthAlgorithm_Census/window_cost[4]" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/window_cost[4][3:0]</obj_property>
+      <obj_property name="ObjectShortName">window_cost[4][3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_DepthAlgorithm_Census/window_cost[5]" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/window_cost[5][3:0]</obj_property>
+      <obj_property name="ObjectShortName">window_cost[5][3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_DepthAlgorithm_Census/window_cost[6]" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/window_cost[6][3:0]</obj_property>
+      <obj_property name="ObjectShortName">window_cost[6][3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_DepthAlgorithm_Census/window_cost[7]" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/window_cost[7][3:0]</obj_property>
+      <obj_property name="ObjectShortName">window_cost[7][3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_DepthAlgorithm_Census/window_cost[8]" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/window_cost[8][3:0]</obj_property>
+      <obj_property name="ObjectShortName">window_cost[8][3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_DepthAlgorithm_Census/window_cost[9]" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/window_cost[9][3:0]</obj_property>
+      <obj_property name="ObjectShortName">window_cost[9][3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_DepthAlgorithm_Census/window_cost[10]" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/window_cost[10][3:0]</obj_property>
+      <obj_property name="ObjectShortName">window_cost[10][3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_DepthAlgorithm_Census/window_cost[11]" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/window_cost[11][3:0]</obj_property>
+      <obj_property name="ObjectShortName">window_cost[11][3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_DepthAlgorithm_Census/window_cost[12]" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/window_cost[12][3:0]</obj_property>
+      <obj_property name="ObjectShortName">window_cost[12][3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_DepthAlgorithm_Census/window_cost[13]" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/window_cost[13][3:0]</obj_property>
+      <obj_property name="ObjectShortName">window_cost[13][3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_DepthAlgorithm_Census/window_cost[14]" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/window_cost[14][3:0]</obj_property>
+      <obj_property name="ObjectShortName">window_cost[14][3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="U_DepthAlgorithm_Census/window_cost[15]" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">U_DepthAlgorithm_Census/window_cost[15][3:0]</obj_property>
+      <obj_property name="ObjectShortName">window_cost[15][3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

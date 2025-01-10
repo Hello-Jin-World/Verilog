@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:D:/Verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc rfile:../../../StereoDepth_final.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:D:/GitHub/verilog/Verilog/StereoDepth_final/StereoDepth_final.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc rfile:../../../StereoDepth_final.srcs/constrs_1/imports/Downloads/MY_Basys-3-Master.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN W5   IOSTANDARD LVCMOS33 } [get_ports { clk }]; #IO_L12P_T1_MRCC_34 ,Sch=CLK100MHZ
 set_property src_info {type:XDC file:1 line:14 export:INPUT save:INPUT read:READ} [current_design]
@@ -23,16 +23,12 @@ set_property src_info {type:XDC file:1 line:86 export:INPUT save:INPUT read:READ
 set_property -dict { PACKAGE_PIN H2  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data2[5] }]; #IO_L2P_T0_AD12P_35    ,Sch=JA9
 set_property src_info {type:XDC file:1 line:87 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN G3  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data2[7] }]; #IO_L1P_T0_AD4P_35     ,Sch=JA10
-set_property src_info {type:XDC file:1 line:100 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN A14  IOSTANDARD LVCMOS33 } [get_ports { SCL_R }]; #IO_L6P_T0_16       ,Sch=JB1
 set_property src_info {type:XDC file:1 line:101 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN A16  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[0] }]; #IO_L12P_T1_MRCC_16 ,Sch=JB2
 set_property src_info {type:XDC file:1 line:102 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN B15  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[2] }]; #IO_L11N_T1_SRCC_16 ,Sch=JB3
 set_property src_info {type:XDC file:1 line:103 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN B16  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[4] }]; #IO_L13N_T2_MRCC_16 ,Sch=JB4
-set_property src_info {type:XDC file:1 line:104 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN A15  IOSTANDARD LVCMOS33 } [get_ports { SDA_R }]; #IO_L9N_T0_VREF_16  ,Sch=JB7
 set_property src_info {type:XDC file:1 line:105 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN A17  IOSTANDARD LVCMOS33 } [get_ports { ov7670_data1[1] }]; #IO_L12N_T1_MRCC_16 ,Sch=JB8
 set_property src_info {type:XDC file:1 line:106 export:INPUT save:INPUT read:READ} [current_design]
@@ -55,10 +51,6 @@ set_property src_info {type:XDC file:1 line:124 export:INPUT save:INPUT read:REA
 set_property -dict { PACKAGE_PIN J3  IOSTANDARD LVCMOS33 } [get_ports { ov7670_xclk2 }]; #IO_L7P_T1_AD6P_35     ,Sch=XA1_P
 set_property src_info {type:XDC file:1 line:125 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN L3  IOSTANDARD LVCMOS33 } [get_ports { ov7670_href2 }]; #IO_L7N_T1_AD6N_35     ,Sch=XA2_P
-set_property src_info {type:XDC file:1 line:126 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN M2  IOSTANDARD LVCMOS33 } [get_ports { SDA_L }]; #IO_L8P_T1_AD14P_35    ,Sch=XA3_P
-set_property src_info {type:XDC file:1 line:128 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN K3  IOSTANDARD LVCMOS33 } [get_ports { SCL_L }]; #IO_L9P_T1_DQS_AD7P_35 ,Sch=XA1_N
 set_property src_info {type:XDC file:1 line:129 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN M3  IOSTANDARD LVCMOS33 } [get_ports { ov7670_v_sync2 }]; #IO_L9N_T1_DQS_AD7N_35 ,Sch=XA2_N
 set_property src_info {type:XDC file:1 line:131 export:INPUT save:INPUT read:READ} [current_design]

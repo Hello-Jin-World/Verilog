@@ -12,10 +12,10 @@ module top_VGA_CAMERA (
     // output wire        SDA_L,
     // output wire        SCL_R,
     // output wire        SDA_R,
-    output logic       SCL_L,
-    inout  wire        SDA_L,
-    output logic       SCL_R,
-    inout  wire        SDA_R,
+    // output logic       SCL_L,
+    // inout  wire        SDA_L,
+    // output logic       SCL_R,
+    // inout  wire        SDA_R,
     // ov7670 camera input signals
     output logic       ov7670_xclk1,
     input  logic       ov7670_pclk1,
@@ -46,7 +46,7 @@ module top_VGA_CAMERA (
     logic [15:0] wData1, wData2, buffer1, buffer2, buffer;
     logic qvga_en1, qvga_en2, qvga_en3;
     logic [14:0] qvga_addr1, qvga_addr2, qvga_addr3;
-    logic vga_clk;
+    logic vga_clk, clk_50;
     logic [5:0] buffer3;
 
     // logic [15:0] rData_for_SAD1;
@@ -66,6 +66,7 @@ module top_VGA_CAMERA (
         .vga_clk     (vga_clk),       // output vga_clk
         .ov7670_xclk1(ov7670_xclk1),  // output ov7670_xclk1
         .ov7670_xclk2(ov7670_xclk2),  // output ov7670_xclk2
+        .clk_50      (clk_50),        // output clk_50
         // Status and control signals
         .reset       (reset),         // input reset
         // Clock in ports
@@ -79,18 +80,18 @@ module top_VGA_CAMERA (
         .gray_rgb   ({vgaRed, vgaGreen, vgaBlue})
     );
 
-    top_SCCB U_top_SCCB_L (
-        .clk  (clk),
-        .reset(reset),
-        .sda  (SDA_L),
-        .scl  (SCL_L)
-    );
-    top_SCCB U_top_SCCB_R (
-        .clk  (clk),
-        .reset(reset),
-        .sda  (SDA_R),
-        .scl  (SCL_R)
-    );
+    // top_SCCB U_top_SCCB_L (
+    //     .clk  (clk),
+    //     .reset(reset),
+    //     .sda  (SDA_L),
+    //     .scl  (SCL_L)
+    // );
+    // top_SCCB U_top_SCCB_R (
+    //     .clk  (clk),
+    //     .reset(reset),
+    //     .sda  (SDA_R),
+    //     .scl  (SCL_R)
+    // );
 
     // SCCB_final U_SCCB_final_L (
     //     .clk  (clk),
@@ -196,7 +197,7 @@ module top_VGA_CAMERA (
     );
 
     vga_controller U_vga_controller (
-        .clk        (clk),
+        .clk        (vga_clk),
         .reset      (reset),
         .h_sync     (Hsync),
         .v_sync     (Vsync),
@@ -213,6 +214,12 @@ module top_VGA_CAMERA (
         .color_rgb(buffer2),
         .gray     (gray_rgb_R)
     );
+
+
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+    // DepthAlgorithm_Census_FSM U_DepthAlgorithm_Census_FSM (
     DepthAlgorithm_Census U_DepthAlgorithm_Census (
         // DepthAlgorithm_window_5x5 U_DepthAlgorithm_window_5x5 (
         // DepthAlgorithm_window_3x3 U_DepthAlgorithm_window_3x3 (
@@ -220,7 +227,7 @@ module top_VGA_CAMERA (
         // disparity_generator_1x1 U_disparity_generator (
         // disparity_generator U_disparity_generator (
         // disparity_generator_3x3 U_disparity_generator_3x3 (
-        .clk    (clk),
+        .clk    (clk_50),
         .reset  (reset),
         .x_pixel(x_pixel),
         .y_pixel(y_pixel),
@@ -228,6 +235,21 @@ module top_VGA_CAMERA (
         .in_R   (gray_rgb_L),
         .rData  (buffer3)
     );
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+    // ila_2 U_ila_2 (
+    //     .clk(clk),  // input wire clk
+
+
+    //     .probe0(buffer3[5:2]),  // input wire [3:0]  probe0  
+    //     .probe1(depth2rgb_sw),  // input wire [0:0]  probe1 
+    //     .probe2(depth_rgb[15:12]),  // input wire [3:0]  probe2 
+    //     .probe3(depth_rgb[10:7]),  // input wire [3:0]  probe3 
+    //     .probe4(depth_rgb[4:1])  // input wire [3:0]  probe4
+    // );
+
 
     depth2rgb U_depth2rgb (
         .depth       (buffer3),
@@ -347,13 +369,12 @@ endmodule
 
 
 module display_mux_2x1 (
-    input logic [15:0] Left_Data,
-    input logic [15:0] Right_Data,
-    input logic [15:0] Disparity_Data,  // Added for disparity output
-    input logic [15:0] Average_Data,  // Added for disparity output
-    input logic [9:0] x,
-    input logic [9:0] y,
-    input logic qvga_en3,  // Added input for enabling disparity region
+    input  logic [15:0] Left_Data,
+    input  logic [15:0] Right_Data,
+    input  logic [15:0] Disparity_Data,  // Added for disparity output
+    input  logic [15:0] Average_Data,    // Added for disparity output
+    input  logic [ 9:0] x,
+    input  logic [ 9:0] y,
     output logic [15:0] Out_Data
 );
 
@@ -413,63 +434,100 @@ module depth2rgb (
     output logic [15:0] rgb
 );
 
+
+
     always_comb begin
         if (depth2rgb_sw) begin
-            case (depth)
-                {
-                    4'd15, 2'b11
-                } : begin
-                    rgb = 16'hF81F;  // 보라색
+            case (depth[5:2])
+                4'd15: begin
+                    rgb = {
+                        4'b0000, 1'b1, 4'b0000, 2'b00, 4'b1111, 1'b1
+                    };  // 진한 파란색
                 end
-                {
-                    4'd13, 2'b11
-                } : begin
-                    rgb = 16'hB817;  // 보라색과 파란색 중간
+                4'd14: begin
+                    rgb = {
+                        4'b0000, 1'b1, 4'b0011, 2'b00, 4'b1100, 1'b1
+                    };  // 중간 파란색
                 end
-                {
-                    4'd12, 2'b11
-                } : begin
-                    rgb = 16'h001F;  // 파란색
+                4'd13: begin
+                    rgb = {
+                        4'b0000, 1'b1, 4'b0111, 2'b00, 4'b1100, 1'b1
+                    };  // 옅은 파란색
                 end
-                {
-                    4'd11, 2'b11
-                } : begin
-                    rgb = 16'h03AF;  // 파란색과 초록색 중간
+                4'd12: begin
+                    rgb = {
+                        4'b0000, 1'b1, 4'b1100, 2'b00, 4'b1111, 1'b1
+                    };  // 청록색
                 end
-                {
-                    4'd9, 2'b11
-                } : begin
-                    rgb = 16'h07E0;  // 초록색
+                4'd11: begin
+                    rgb = {
+                        4'b0000, 1'b1, 4'b1100, 2'b00, 4'b1100, 1'b1
+                    };  // 옅은 청록색
                 end
-                {
-                    4'd7, 2'b11
-                } : begin
-                    rgb = 16'h7FF0;  // 초록색과 노란색 중간
+                4'd10: begin
+                    rgb = {
+                        4'b0011, 1'b1, 4'b1100, 2'b00, 4'b0000, 1'b1
+                    };  // 연두색
                 end
-                {
-                    4'd5, 2'b11
-                } : begin
-                    rgb = 16'hFFE0;  // 노란색
+                4'd9: begin
+                    rgb = {
+                        4'b0000, 1'b1, 4'b1111, 2'b00, 4'b0000, 1'b1
+                    };  // 녹색
                 end
-                {
-                    4'd3, 2'b11
-                } : begin
-                    rgb = 16'hFC60;  // 노란색과 빨간색 중간
+                4'd8: begin
+                    rgb = {
+                        4'b1000, 1'b1, 4'b1111, 2'b00, 4'b0000, 1'b1
+                    };  // 초록-노랑
                 end
-                {
-                    4'd1, 2'b11
-                } : begin
-                    rgb = 16'hF800;  // 빨간색
+                4'd7: begin
+                    rgb = {
+                        4'b1111, 1'b1, 4'b1111, 2'b00, 4'b0000, 1'b1
+                    };  // 노란색
                 end
-                {
-                    4'd0, 2'b11
-                } : begin
-                    rgb = 16'h8000; // 빨간색과 검정색 중간 (어두운 빨간색)
+                4'd6: begin
+                    rgb = {
+                        4'b1111, 1'b1, 4'b1100, 2'b00, 4'b0000, 1'b1
+                    };  // 주황-노랑
+                end
+                4'd5: begin
+                    rgb = {
+                        4'b1111, 1'b1, 4'b0110, 2'b00, 4'b0000, 1'b1
+                    };  // 옅은 주황색
+                end
+                4'd4: begin
+                    rgb = {
+                        4'b1111, 1'b1, 4'b0011, 2'b00, 4'b0000, 1'b1
+                    };  // 주황색
+                end
+                4'd3: begin
+                    rgb = {
+                        4'b1111, 1'b1, 4'b0010, 2'b00, 4'b0000, 1'b1
+                    };  // 붉은 주황색
+                end
+                4'd2: begin
+                    rgb = {
+                        4'b1111, 1'b1, 4'b0001, 2'b00, 4'b0000, 1'b1
+                    };  // 연한 빨강색
+                end
+                4'd1: begin
+                    rgb = {
+                        4'b1111, 1'b1, 4'b0000, 2'b00, 4'b1000, 1'b1
+                    };  // 중간 빨강색
+                end
+                4'd0: begin
+                    rgb = {
+                        4'b1111, 1'b1, 4'b0000, 2'b00, 4'b0000, 1'b1
+                    };  // 진한 빨강색
                 end
                 default: begin
-                    rgb = 16'h0000;  // 기본값: 검정색
+                    rgb = {
+                        4'b0000, 1'b1, 4'b0000, 2'b00, 4'b0000, 1'b1
+                    };  // 기본값: 검정색
                 end
             endcase
+
+
+
         end else begin
             rgb = {
                 depth[5:1], depth[5:0], depth[5:1]
