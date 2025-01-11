@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Fri Jan 10 19:35:15 2025
-| Host         : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
+| Date         : Sat Jan 11 11:54:57 2025
+| Host         : DESKTOP-PFRE25G running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_VGA_CAMERA_utilization_synth.rpt -pb top_VGA_CAMERA_utilization_synth.pb
 | Design       : top_VGA_CAMERA
 | Device       : 7a35tcpg236-1
@@ -30,14 +30,14 @@ Table of Contents
 +-------------------------+-------+-------+-----------+-------+
 |        Site Type        |  Used | Fixed | Available | Util% |
 +-------------------------+-------+-------+-----------+-------+
-| Slice LUTs*             | 13239 |     0 |     20800 | 63.65 |
-|   LUT as Logic          | 13239 |     0 |     20800 | 63.65 |
+| Slice LUTs*             | 11526 |     0 |     20800 | 55.41 |
+|   LUT as Logic          | 11526 |     0 |     20800 | 55.41 |
 |   LUT as Memory         |     0 |     0 |      9600 |  0.00 |
-| Slice Registers         | 14554 |     0 |     41600 | 34.99 |
-|   Register as Flip Flop | 14550 |     0 |     41600 | 34.98 |
+| Slice Registers         | 12668 |     0 |     41600 | 30.45 |
+|   Register as Flip Flop | 12664 |     0 |     41600 | 30.44 |
 |   Register as Latch     |     4 |     0 |     41600 | <0.01 |
-| F7 Muxes                |  4784 |     0 |     16300 | 29.35 |
-| F8 Muxes                |  2336 |     0 |      8150 | 28.66 |
+| F7 Muxes                |  4112 |     0 |     16300 | 25.23 |
+| F8 Muxes                |  2008 |     0 |      8150 | 24.64 |
 +-------------------------+-------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -54,10 +54,10 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 68    |          Yes |           - |          Set |
-| 794   |          Yes |           - |        Reset |
+| 66    |          Yes |           - |          Set |
+| 866   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 13692 |          Yes |       Reset |            - |
+| 11736 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -151,21 +151,21 @@ Table of Contents
 +----------+-------+---------------------+
 | Ref Name |  Used | Functional Category |
 +----------+-------+---------------------+
-| FDRE     | 13692 |        Flop & Latch |
-| LUT6     | 11492 |                 LUT |
-| MUXF7    |  4784 |               MuxFx |
-| MUXF8    |  2336 |               MuxFx |
-| LUT3     |  1075 |                 LUT |
-| FDCE     |   790 |        Flop & Latch |
-| LUT5     |   762 |                 LUT |
-| LUT4     |   394 |                 LUT |
-| LUT2     |   240 |                 LUT |
+| FDRE     | 11736 |        Flop & Latch |
+| LUT6     | 10053 |                 LUT |
+| MUXF7    |  4112 |               MuxFx |
+| MUXF8    |  2008 |               MuxFx |
+| LUT3     |   935 |                 LUT |
+| FDCE     |   862 |        Flop & Latch |
+| LUT5     |   490 |                 LUT |
+| LUT4     |   414 |                 LUT |
+| LUT2     |   347 |                 LUT |
 | CARRY4   |   110 |          CarryLogic |
-| FDPE     |    68 |        Flop & Latch |
+| FDPE     |    66 |        Flop & Latch |
 | RAMB36E1 |    32 |        Block Memory |
 | IBUF     |    25 |                  IO |
-| LUT1     |    18 |                 LUT |
 | OBUF     |    16 |                  IO |
+| LUT1     |    14 |                 LUT |
 | LDCE     |     4 |        Flop & Latch |
 | BUFG     |     2 |               Clock |
 | DSP48E1  |     1 |    Block Arithmetic |

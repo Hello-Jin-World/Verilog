@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Fri Jan 10 19:39:22 2025
-| Host             : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
+| Date             : Sat Jan 11 11:59:03 2025
+| Host             : DESKTOP-PFRE25G running 64-bit major release  (build 9200)
 | Command          : report_power -file top_VGA_CAMERA_power_routed.rpt -pb top_VGA_CAMERA_power_summary_routed.pb -rpx top_VGA_CAMERA_power_routed.rpx
 | Design           : top_VGA_CAMERA
 | Device           : xc7a35tcpg236-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.228        |
+| Total On-Chip Power (W)  | 0.222        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.155        |
+| Dynamic (W)              | 0.148        |
 | Device Static (W)        | 0.074        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 83.9         |
@@ -52,21 +52,21 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.016 |       14 |       --- |             --- |
-| Slice Logic    |     0.005 |    35786 |       --- |             --- |
-|   LUT as Logic |     0.005 |    13087 |     20800 |           62.92 |
-|   F7/F8 Muxes  |    <0.001 |     7120 |     32600 |           21.84 |
-|   Register     |    <0.001 |    14554 |     41600 |           34.99 |
+| Clocks         |     0.014 |       14 |       --- |             --- |
+| Slice Logic    |     0.004 |    31176 |       --- |             --- |
+|   LUT as Logic |     0.004 |    11412 |     20800 |           54.87 |
+|   F7/F8 Muxes  |    <0.001 |     6120 |     32600 |           18.77 |
+|   Register     |    <0.001 |    12668 |     41600 |           30.45 |
 |   CARRY4       |    <0.001 |      110 |      8150 |            1.35 |
 |   BUFG         |    <0.001 |        2 |        32 |            6.25 |
 |   Others       |     0.000 |       26 |       --- |             --- |
-| Signals        |     0.024 |    21021 |       --- |             --- |
+| Signals        |     0.020 |    18451 |       --- |             --- |
 | Block RAM      |     0.015 |       32 |        50 |           64.00 |
 | MMCM           |     0.085 |        1 |         5 |           20.00 |
 | DSPs           |    <0.001 |        1 |        90 |            1.11 |
 | I/O            |     0.010 |       42 |       106 |           39.62 |
 | Static Power   |     0.074 |          |           |                 |
-| Total          |     0.228 |          |           |                 |
+| Total          |     0.222 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.070 |       0.059 |      0.011 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.063 |       0.052 |      0.011 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.060 |       0.047 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.004 |       0.003 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -156,14 +156,14 @@ Table of Contents
 +---------------------------+-----------+
 | Name                      | Power (W) |
 +---------------------------+-----------+
-| top_VGA_CAMERA            |     0.155 |
-|   U_DepthAlgorithm_Census |     0.025 |
+| top_VGA_CAMERA            |     0.148 |
+|   U_DepthAlgorithm_Census |     0.020 |
 |   U_FrameBufferLeft       |     0.008 |
 |   U_FrameBufferRight      |     0.008 |
 |   U_clk_gene              |     0.085 |
 |     inst                  |     0.085 |
-|   U_rgb2gray_L            |     0.007 |
-|   U_rgb2gray_R            |     0.007 |
+|   U_rgb2gray_L            |     0.006 |
+|   U_rgb2gray_R            |     0.006 |
 |   U_vga_controller        |     0.002 |
 |     U_Pixel_Counter       |     0.002 |
 +---------------------------+-----------+

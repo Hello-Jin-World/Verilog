@@ -471,8 +471,8 @@ module DepthAlgorithm_Census (
     input  logic        reset,
     input  logic [ 9:0] x_pixel,
     input  logic [ 9:0] y_pixel,
-    input  logic [13:0] in_L,
-    input  logic [13:0] in_R,
+    input  logic [11:0] in_L,
+    input  logic [11:0] in_R,
     output logic [ 5:0] rData
 );
 
@@ -490,27 +490,12 @@ module DepthAlgorithm_Census (
     // Pipeline registers
     logic [13:0] window_L  [0:2][0:2];
     logic [13:0] window_R0 [0:2][0:2];
-    // logic [13:0] window_R1[0:2][0:2];
-    // logic [13:0] window_R2[0:2][0:2];
-    // logic [13:0] window_R3[0:2][0:2];
-    // logic [13:0] window_R4[0:2][0:2];
-    // logic [13:0] window_R5[0:2][0:2];
-    // logic [13:0] window_R6[0:2][0:2];
-    // logic [13:0] window_R7[0:2][0:2];
-    // logic [13:0] window_R8[0:2][0:2];
-    // logic [13:0] window_R9[0:2][0:2];
-    // logic [13:0] window_R10[0:2][0:2];
-    // logic [13:0] window_R11[0:2][0:2];
-    // logic [13:0] window_R12[0:2][0:2];
-    // logic [13:0] window_R13[0:2][0:2];
-    // logic [13:0] window_R14[0:2][0:2];
-    // logic [13:0] window_R15[0:2][0:2];
     logic [ 5:0] depth_reg;
     logic [3:0] index_reg, index_next;
     logic [13:0] temp_R[0:2][0:2]; // Temporary packed array for passing to calc_window_cost
 
-    logic [15:0] is_smaller;  // 각 비용이 다른 모든 비용보다 작은지 표시
-    logic [3:0] min_idx;  // 최소값의 인덱스
+    logic [15:0] is_smaller;
+    logic [3:0] min_idx;
     assign rData = temp_mem[x_pixel[9:1]];
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -688,8 +673,9 @@ module DepthAlgorithm_Census (
                 end
             end
             COMP: begin
-                if (index_reg == 7) begin
+                if (index_reg == 15) begin
                     state_next = J_PULSE;
+                    index_next = 0;
                 end else begin
                     index_next = index_reg + 1;
                 end

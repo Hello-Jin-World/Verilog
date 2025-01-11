@@ -274,89 +274,63 @@ module OV7670_config_rom (
     //FFFF is end of rom, FFF0 is delay
     always @(posedge clk) begin
         case (addr)
-            0: dout <= 16'h12_80;  //reset
-            1: dout <= 16'hFF_F0;  //delay
-            2: dout <= 16'h12_14;  // COM7,     set RGB color output
-            3: dout <= 16'h11_80;  // CLKRC     internal PLL matches input clock
-            4: dout <= 16'h0C_00;  // COM3,     default settings
-            5: dout <= 16'h3E_00;  // COM14,    no scaling, normal pclock
-            6: dout <= 16'h04_00;  // COM1,     disable CCIR656
-            7: dout <= 16'h40_d0;  //COM15,     RGB565, full output range
-            8: dout <= 16'h3a_04;  //TSLB       
-            9: dout <= 16'h14_18;  //COM9       MAX AGC value x4
-            10: dout <= 16'h4F_B3;  //MTX1       
-            11: dout <= 16'h50_B3;  //MTX2
-            12: dout <= 16'h51_00;  //MTX3
-            13: dout <= 16'h52_3d;  //MTX4
-            14: dout <= 16'h53_A7;  //MTX5
-            15: dout <= 16'h54_E4;  //MTX6
-            16: dout <= 16'h58_9E;  //MTXS
-            17:
-            dout <= 16'h3D_C0; //COM13      sets gamma enable, does not preserve reserved bits, may be wrong?
-            18: dout <= 16'h17_16;  //HSTART     start high 8 bits
-            19:
-            dout <= 16'h18_04; //HSTOP      stop high 8 bits //these kill the odd colored line
-            20: dout <= 16'h32_9A;  //91  //HREF       edge offset
-            21: dout <= 16'h19_02;  //VSTART     start high 8 bits
-            22: dout <= 16'h1A_7A;  //VSTOP      stop high 8 bits
-            23: dout <= 16'h03_00;  // 00 //VREF       vsync edge offset
-            24: dout <= 16'h0F_41;  //COM6       reset timings
-            25:
-            dout <= 16'h1E_00; //MVFP       disable mirror / flip //might have magic value of 03
-            26: dout <= 16'h33_0B;  //CHLF       //magic value from the internet
-            27: dout <= 16'h3C_78;  //COM12      no HREF when VSYNC low
-            28: dout <= 16'h69_00;  //GFIX       fix gain control
-            29: dout <= 16'h74_00;  //REG74      Digital gain control
-            30:
-            dout <= 16'hB0_84; //RSVD       magic value from the internet *required* for good color
-            31: dout <= 16'hB1_0c;  //ABLC1
-            32: dout <= 16'hB2_0e;  //RSVD       more magic internet values
-            33: dout <= 16'hB3_80;  //THL_ST
-            //begin mystery scaling numbers
-            34: dout <= 16'h70_3a;
-            35: dout <= 16'h71_35;
-            36: dout <= 16'h72_21;
-            37: dout <= 16'h73_f0;
-            38: dout <= 16'ha2_02;
-            //gamma curve values
-            39: dout <= 16'h7a_20;
-            40: dout <= 16'h7b_10;
-            41: dout <= 16'h7c_1e;
-            42: dout <= 16'h7d_35;
-            43: dout <= 16'h7e_5a;
-            44: dout <= 16'h7f_69;
-            45: dout <= 16'h80_76;
-            46: dout <= 16'h81_80;
-            47: dout <= 16'h82_88;
-            48: dout <= 16'h83_8f;
-            49: dout <= 16'h84_96;
-            50: dout <= 16'h85_a3;
-            51: dout <= 16'h86_af;
-            52: dout <= 16'h87_c4;
-            53: dout <= 16'h88_d7;
-            54: dout <= 16'h89_e8;
-            //AGC and AEC
-            55: dout <= 16'h13_e0;  //COM8, disable AGC / AEC
-            56: dout <= 16'h00_00;  //set gain reg to 0 for AGC
-            57: dout <= 16'h10_00;  //set ARCJ reg to 0
-            58: dout <= 16'h0d_40;  //magic reserved bit for COM4
-            59: dout <= 16'h14_18;  //COM9, 4x gain + magic bit
-            60: dout <= 16'ha5_05;  // BD50MAX
-            61: dout <= 16'hab_07;  //DB60MAX
-            62: dout <= 16'h24_95;  //AGC upper limit
-            63: dout <= 16'h25_33;  //AGC lower limit
-            64: dout <= 16'h26_e3;  //AGC/AEC fast mode op region
-            65: dout <= 16'h9f_78;  //HAECC1
-            66: dout <= 16'ha0_68;  //HAECC2
-            67: dout <= 16'ha1_03;  //magic
-            68: dout <= 16'ha6_d8;  //HAECC3
-            69: dout <= 16'ha7_d8;  //HAECC4
-            70: dout <= 16'ha8_f0;  //HAECC5
-            71: dout <= 16'ha9_90;  //HAECC6
-            72: dout <= 16'haa_94;  //HAECC7
-            73: dout <= 16'h13_e7;  //COM8, enable AGC / AEC
-            74: dout <= 16'h69_07;
-            default: dout <= 16'hFF_FF;  //mark end of ROM
+            8'h00: dout <= 16'h1280; // COM7   Reset
+            8'h01: dout <= 16'h1280; // COM7   Reset
+            8'h02: dout <= 16'h1200; // COM7   Size & RGB output
+            8'h03: dout <= 16'h1100; // CLKRC  Prescaler - Fin/(1+1)
+            8'h04: dout <= 16'h0C00; // COM3   Enable scaling, all others off
+            8'h05: dout <= 16'h3E00; // COM14  PCLK scaling off
+            8'h06: dout <= 16'h8C00; // RGB444 Set RGB format
+            8'h07: dout <= 16'h0400; // COM1   No CCIR601
+            8'h08: dout <= 16'h4010; // COM15  Full 0-255 output, RGB 565
+            8'h09: dout <= 16'h3A04; // TSLB   UV ordering, do not auto-reset window
+            8'h0A: dout <= 16'h1438; // COM9   AGC Ceiling
+            8'h0B: dout <= 16'h4FB3; // MTX1   Color conversion matrix
+            8'h0C: dout <= 16'h50B3; // MTX2   Color conversion matrix
+            8'h0D: dout <= 16'h5100; // MTX3   Color conversion matrix
+            8'h0E: dout <= 16'h523D; // MTX4   Color conversion matrix
+            8'h0F: dout <= 16'h53A7; // MTX5   Color conversion matrix
+            8'h10: dout <= 16'h54E4; // MTX6   Color conversion matrix
+            8'h11: dout <= 16'h589E; // MTXS   Matrix sign and auto contrast
+            8'h12: dout <= 16'h3DC0; // COM13  Gamma and UV Auto adjust
+            8'h13: dout <= 16'h1100; // CLKRC  Prescaler
+            8'h14: dout <= 16'h1711; // HSTART HREF start
+            8'h15: dout <= 16'h1861; // HSTOP  HREF stop
+            8'h16: dout <= 16'h32A4; // HREF   Edge offset
+            8'h17: dout <= 16'h1903; // VSTART VSYNC start
+            8'h18: dout <= 16'h1A7B; // VSTOP  VSYNC stop
+            8'h19: dout <= 16'h030A; // VREF   VSYNC low bits
+            8'h1A: dout <= 16'h0E61; // COM5   Miscellaneous
+            8'h1B: dout <= 16'h0F4B; // COM6   Miscellaneous
+            8'h1C: dout <= 16'h1602;
+            8'h1D: dout <= 16'h1E37; // MVFP   Flip and mirror image
+            8'h1E: dout <= 16'h2102;
+            8'h1F: dout <= 16'h2291;
+            8'h20: dout <= 16'h2907;
+            8'h21: dout <= 16'h330B;
+            8'h22: dout <= 16'h350B;
+            8'h23: dout <= 16'h371D;
+            8'h24: dout <= 16'h3871;
+            8'h25: dout <= 16'h392A;
+            8'h26: dout <= 16'h3C78; // COM12
+            8'h27: dout <= 16'h4D40;
+            8'h28: dout <= 16'h4E20;
+            8'h29: dout <= 16'h6900; // GFIX
+            8'h2A: dout <= 16'h6B4A;
+            8'h2B: dout <= 16'h7410;
+            8'h2C: dout <= 16'h8D4F;
+            8'h2D: dout <= 16'h8E00;
+            8'h2E: dout <= 16'h8F00;
+            8'h2F: dout <= 16'h9000;
+            8'h30: dout <= 16'h9100;
+            8'h31: dout <= 16'h9600;
+            8'h32: dout <= 16'h9A00;
+            8'h33: dout <= 16'hB084;
+            8'h34: dout <= 16'hB10C;
+            8'h35: dout <= 16'hB20E;
+            8'h36: dout <= 16'hB382;
+            8'h37: dout <= 16'hB80A;
+            default: dout <= 16'hFFFF; // End marker
         endcase
     end
 endmodule
