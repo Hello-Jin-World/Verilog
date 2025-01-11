@@ -58,7 +58,6 @@
 // _vga_clk__25.00000______0.000______50.0______200.470____132.063
 // ov7670_xclk1__24.00000______0.000______50.0______202.114____132.063
 // ov7670_xclk2__24.00000______0.000______50.0______202.114____132.063
-// __clk_50__50.00000______0.000______50.0______174.353____132.063
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -77,7 +76,6 @@
     .vga_clk(vga_clk),     // output vga_clk
     .ov7670_xclk1(ov7670_xclk1),     // output ov7670_xclk1
     .ov7670_xclk2(ov7670_xclk2),     // output ov7670_xclk2
-    .clk_50(clk_50),     // output clk_50
     // Status and control signals
     .reset(reset), // input reset
    // Clock in ports

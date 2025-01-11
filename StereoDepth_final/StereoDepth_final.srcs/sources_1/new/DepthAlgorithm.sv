@@ -467,15 +467,15 @@ module DepthAlgorithm_window_3x3 (
 endmodule
 
 module DepthAlgorithm_Census (
+    // input  logic        clk_sys,
     input  logic        clk,
     input  logic        reset,
     input  logic [ 9:0] x_pixel,
     input  logic [ 9:0] y_pixel,
-    input  logic [11:0] in_L,
-    input  logic [11:0] in_R,
+    input  logic [10:0] in_L,
+    input  logic [10:0] in_R,
     output logic [ 5:0] rData
 );
-
 
     localparam IDLE = 0, COMP = 1, J_PULSE = 2;
 
@@ -483,6 +483,7 @@ module DepthAlgorithm_Census (
     logic [13:0] mem_R[0:2][0:159];
     logic [1:0] state_reg, state_next;
     logic read_en_reg, read_en_next;
+    // logic [3:0] window_cost[15:0];
     logic [3:0] window_cost[15:0];
     logic [5:0] temp_mem[0:160-1];
     logic [7:0] j, j_next;
@@ -492,121 +493,128 @@ module DepthAlgorithm_Census (
     logic [13:0] window_R0 [0:2][0:2];
     logic [ 5:0] depth_reg;
     logic [3:0] index_reg, index_next;
-    logic [13:0] temp_R[0:2][0:2]; // Temporary packed array for passing to calc_window_cost
 
     logic [15:0] is_smaller;
-    logic [3:0] min_idx;
+    logic [ 3:0] min_idx;
     assign rData = temp_mem[x_pixel[9:1]];
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function automatic logic [3:0] window_cost_census(
         input logic [13:0] L[0:2][0:2], input logic [13:0] R[0:2][0:2]);
-        logic       cost_L          [8:0];
-        logic       cost_R          [8:0];
-        logic       compare         [8:0];
-        logic [3:0] cost_census = 0;
+        logic        cost_L             [8:0];
+        logic        cost_R             [8:0];
+        // logic       compare         [8:0];
+        logic [ 3:0] cost_census = 0;
+        logic [15:0] average_pixels_L;
+        logic [15:0] average_pixels_R;
+
+        average_pixels_L = (L[0][0] + L[0][1] + L[0][2] + L[1][0] + L[1][1] + L[1][2] + L[2][0] + L[2][1] + L[2][2]) / 9;
+        average_pixels_R = (R[0][0] + R[0][1] + R[0][2] + R[1][0] + R[1][1] + R[1][2] + R[2][0] + R[2][1] + R[2][2]) / 9;
 
         // Census Transform
         for (int i = 0; i < 3; i++) begin
             for (int w = 0; w < 3; w++) begin
-                cost_L[w+(i*3)] = (L[i][w] > L[1][1]) ? 0 : 1;
+                cost_L[w+(i*3)] = (L[i][w] > average_pixels_L) ? 1 : 0;
             end
         end
 
         for (int i = 0; i < 3; i++) begin
             for (int w = 0; w < 3; w++) begin
-                cost_R[w+(i*3)] = (R[i][w] > R[1][1]) ? 0 : 1;
+                cost_R[w+(i*3)] = (R[i][w] > average_pixels_R) ? 1 : 0;
             end
         end
 
-        // Bitstring Transform
+        // Bitstring Transform & Hamming Distance
 
-        for (int i = 0; i < 9; i++) begin
-            compare[i] = (cost_L[i] == cost_R[i]) ? 0 : 1;
-        end
-
-        // Hamming Distance
         for (int i = 0; i < 9; i++) begin
             if (i != 4) begin
-                if (compare[i] == 1) begin
-                    cost_census += 1;
+                if (cost_L[i] != cost_R[i]) begin
+                    cost_census = cost_census + 1;
                 end
             end
         end
+
+        // // Hamming Distance
+        // for (int i = 0; i < 9; i++) begin
+        //     if (i != 4) begin
+        //         if (compare[i] == 1) begin
+        //             cost_census += 1;
+        //         end
+        //     end
+        // end
 
         return cost_census;
     endfunction
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // 병렬 비교를 통한 최소값 찾기
-    function automatic logic [3:0] get_depth(logic [3:0] costs[16]);
-        logic [15:0] local_is_smaller;
-        logic [ 3:0] local_min_idx;
 
-        // 각 비용이 다른 모든 비용보다 작은지 병렬로 비교
-        for (int i = 0; i < 16; i++) begin
-            local_is_smaller[i] = 1'b1;  // 초기값은 true
-            for (int j = 0; j < 16; j++) begin
-                if (i != j && costs[i] >= costs[j]) begin
-                    local_is_smaller[i] = 1'b0;  // 더 작은 값이 있으면 false
-                    break;
-                end
-            end
-        end
-
-        // 가장 작은 값의 인덱스 찾기
-        local_min_idx = 0;
-        for (int i = 0; i < 16; i++) begin
-            if (local_is_smaller[i]) begin
-                local_min_idx = i[3:0];
-                break;
-            end
-        end
-
-        return local_min_idx;
-    endfunction
-
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // function automatic logic [3:0] get_depth(logic [3:0] costs[16]);
-    //     // for (int i = 0; i < 10; i++) if (costs[i] < costs[min_idx]) min_idx = i;
-    //     logic [3:0] min_idx = 0;
-    //     logic [3:0] min_cost = costs[0];
+    // function automatic logic [3:0] get_depth(logic [3:0] costs[10]);
+    //     logic [15:0] local_is_smaller;
+    //     logic [ 3:0] local_min_idx;
 
-    //     // Find minimum cost index
-    //     for (int i = 1; i < 16; i++) begin
-    //         if (costs[i] < min_cost) begin
-    //             min_cost = costs[i];
-    //             min_idx  = i;
+    //     // for (int i = 0; i < 16; i++) begin
+    //     for (int i = 0; i < 10; i++) begin
+    //         local_is_smaller[i] = 1'b1;  // 초기값은 true
+    //         // for (int j = 0; j < 16; j++) begin
+    //         for (int j = 0; j < 10; j++) begin
+    //             if (i != j && costs[i] >= costs[j]) begin
+    //                 local_is_smaller[i] = 1'b0;  // 더 작은 값이 있으면 false
+    //                 break;
+    //             end
     //         end
     //     end
 
-    //     return min_idx / 2;
+    //     local_min_idx = 0;
+    //     for (int i = 0; i < 16; i++) begin
+    //         if (local_is_smaller[i]) begin
+    //             local_min_idx = i[3:0];
+    //             break;
+    //         end
+    //     end
 
+    //     return local_min_idx;
     // endfunction
+
+    // function automatic logic [3:0] get_depth(logic [3:0] costs[16]);
+    function automatic logic [3:0] get_depth(logic [3:0] costs[16]);
+        logic [3:0] min_idx = 0;
+        logic [3:0] min_cost = costs[0];
+
+        // Find minimum cost index
+        for (int i = 1; i < 16; i++) begin
+            if (costs[i] < min_cost) begin
+                min_cost = costs[i];
+                min_idx  = i;
+            end
+        end
+
+        return min_idx;
+    endfunction
+    
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // ila_0 U_ila_0 (
-    //     .clk(clk),  // input wire clk
-
-
-    //     .probe0 (state_reg),    // input wire [3:0]  probe0  
-    //     .probe1 (depth_reg[5:2]),   // input wire [3:0]  probe1 
-    //     .probe2 (window_cost[0]),   // input wire [3:0]  probe2 
-    //     .probe3 (window_cost[1]),   // input wire [3:0]  probe3 
-    //     .probe4 (window_cost[2]),   // input wire [3:0]  probe4 
-    //     .probe5 (window_cost[3]),   // input wire [3:0]  probe5 
-    //     .probe6 (window_cost[4]),   // input wire [3:0]  probe6 
-    //     .probe7 (window_cost[5]),   // input wire [3:0]  probe7 
-    //     .probe8 (window_cost[6]),   // input wire [3:0]  probe8 
-    //     .probe9 (window_cost[7]),   // input wire [3:0]  probe9 
-    //     .probe10(window_cost[8]),   // input wire [3:0]  probe10 
-    //     .probe11(window_cost[9]),   // input wire [3:0]  probe11 
+    //     .clk(clk_sys),  // input wire clk
+    //     .probe0(rData[5:2]),  // input wire [3:0]  probe0  
+    //     .probe1(depth_reg[5:2]),  // input wire [3:0]  probe1 
+    //     .probe2(window_cost[0]),  // input wire [3:0]  probe2 
+    //     .probe3(window_cost[1]),  // input wire [3:0]  probe3 
+    //     .probe4(window_cost[2]),  // input wire [3:0]  probe4 
+    //     .probe5(window_cost[3]),  // input wire [3:0]  probe5 
+    //     .probe6(window_cost[4]),  // input wire [3:0]  probe6 
+    //     .probe7(window_cost[5]),  // input wire [3:0]  probe7 
+    //     .probe8(window_cost[6]),  // input wire [3:0]  probe8 
+    //     .probe9(window_cost[7]),  // input wire [3:0]  probe9 
+    //     .probe10(window_cost[8]),  // input wire [3:0]  probe10 
+    //     .probe11(window_cost[9]),  // input wire [3:0]  probe11 
     //     .probe12(window_cost[10]),  // input wire [3:0]  probe12 
     //     .probe13(window_cost[11]),  // input wire [3:0]  probe13 
     //     .probe14(window_cost[12]),  // input wire [3:0]  probe14 
     //     .probe15(window_cost[13]),  // input wire [3:0]  probe15 
     //     .probe16(window_cost[14]),  // input wire [3:0]  probe16 
-    //     .probe17(window_cost[15])   // input wire [3:0]  probe17
+    //     .probe17(window_cost[15])  // input wire [3:0]  probe17
     // );
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     always_ff @(posedge clk, posedge reset) begin
@@ -616,7 +624,8 @@ module DepthAlgorithm_Census (
             j           <= 0;
             depth_reg   <= 0;
             index_reg   <= 0;
-            for (int i = 0; i < 16; i++) begin
+            // for (int i = 0; i < 16; i++) begin
+            for (int i = 0; i < 8; i++) begin
                 window_cost[i] <= 4'hF;
             end
             for (int i = 0; i < 160; i++) begin
@@ -646,12 +655,15 @@ module DepthAlgorithm_Census (
 
             // Pipeline Stage 3: Calculate costs (Unrolled loop)
             // Prepare packed array for each disparity value and calculate costs
-            // Disparity 0
             window_cost[index_reg] <= window_cost_census(window_L, window_R0);
 
 
             // Pipeline Stage 4: Determine depth
-            depth_reg <= {get_depth(window_cost), 2'b11};
+            // if (index_reg == 15) begin
+            if (index_reg == 15) begin
+                depth_reg <= {get_depth(window_cost), 2'b11};
+            end
+            // depth_reg <= {get_depth(window_cost), 2'b11};
 
             // Pipeline Stage 5: Store result
             temp_mem[j] <= depth_reg;
@@ -673,6 +685,7 @@ module DepthAlgorithm_Census (
                 end
             end
             COMP: begin
+                // if (index_reg == 15) begin
                 if (index_reg == 15) begin
                     state_next = J_PULSE;
                     index_next = 0;
@@ -700,7 +713,7 @@ module DepthAlgorithm_window_5x5 (
     input  logic        Hsync,
     input  logic [ 9:0] x_pixel,
     input  logic [ 9:0] y_pixel,
-    input  logic [13:0] in_L,
+    input  logic [11:0] in_L,
     input  logic [13:0] in_R,
     output logic [ 5:0] rData
 );
