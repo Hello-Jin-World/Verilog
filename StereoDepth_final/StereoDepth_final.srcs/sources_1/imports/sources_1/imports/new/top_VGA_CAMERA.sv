@@ -7,6 +7,8 @@ module top_VGA_CAMERA (
     input  logic       reset,
     input  logic       gray_sw,
     input  logic       depth2rgb_sw,
+    input  logic       ssd_sad_select,
+    input  logic       census_select,
     // input  logic [5:0] crop_sw,
     // input  logic       start,
     // output wire        SCL_L,
@@ -214,46 +216,35 @@ module top_VGA_CAMERA (
         .gray     (gray_R)
     );
 
-    // adaptive_gray U_adaptive_gray (
-    //     .gray_L    (gray_L),
-    //     .gray_R    (gray_R),
-    //     .gray_rgb_L(gray_rgb_L),
-    //     .gray_rgb_R(gray_rgb_R)
+    // DepthAlgorithm_window_5x5 U_DepthAlgorithm_window_5x5 (
+    // DepthAlgorithm_window_3x3 U_DepthAlgorithm_window_3x3 (
+    // DepthAlgorithm U_DepthAlgorithm (
+    // disparity_generator_1x1 U_disparity_generator (
+    // disparity_generator U_disparity_generator (
+    // disparity_generator_3x3 U_disparity_generator_3x3 (
+    // .clk_sys(clk),
+    //     .clk    (vga_clk),
+    //     .reset  (reset),
+    //     .x_pixel(x_pixel),
+    //     .y_pixel(y_pixel),
+    //     .in_L   (gray_L[13:3]),
+    //     .in_R   (gray_R[13:3]),
+    //     .rData  (buffer3)
     // );
 
 
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-    // DepthAlgorithm_Census_FSM U_DepthAlgorithm_Census_FSM (
-    DepthAlgorithm_Census U_DepthAlgorithm_Census (
-        // DepthAlgorithm_window_5x5 U_DepthAlgorithm_window_5x5 (
-        // DepthAlgorithm_window_3x3 U_DepthAlgorithm_window_3x3 (
-        // DepthAlgorithm U_DepthAlgorithm (
-        // disparity_generator_1x1 U_disparity_generator (
-        // disparity_generator U_disparity_generator (
-        // disparity_generator_3x3 U_disparity_generator_3x3 (
-        // .clk_sys(clk),
-        .clk    (vga_clk),
-        .reset  (reset),
-        .x_pixel(x_pixel),
-        .y_pixel(y_pixel),
-        .in_L   (gray_L[13:3]),
-        .in_R   (gray_R[13:3]),
-        .rData  (buffer3)
+    SAD_SSD_CENSUS U_SAD_SSD_CENSUS (
+        .clk           (vga_clk),
+        .reset         (reset),
+        .ssd_sad_select(ssd_sad_select),
+        .census_select (census_select),
+        .x_pixel       (x_pixel),
+        .y_pixel       (y_pixel),
+        .in_L          (gray_L[13:3]),
+        .in_R          (gray_R[13:3]),
+        .rData         (buffer3)
     );
     /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-    // ila_2 U_ila_2 (
-    //     .clk(clk),  // input wire clk
-
-
-    //     .probe0(buffer3[5:2]),  // input wire [3:0]  probe0  
-    //     .probe1(depth2rgb_sw),  // input wire [0:0]  probe1 
-    //     .probe2(depth_rgb[15:12]),  // input wire [3:0]  probe2 
-    //     .probe3(depth_rgb[10:7]),  // input wire [3:0]  probe3 
-    //     .probe4(depth_rgb[4:1])  // input wire [3:0]  probe4
-    // );
 
 
     depth2rgb U_depth2rgb (
@@ -264,34 +255,6 @@ module top_VGA_CAMERA (
 
 endmodule
 
-module adaptive_gray (
-    input  logic [13:0] gray_L,
-    input  logic [13:0] gray_R,
-    output logic [13:0] gray_rgb_L,
-    output logic [13:0] gray_rgb_R
-);
-
-    always_comb begin
-        if (gray_L > gray_R) begin
-            if (gray_L - gray_R < 5) begin
-                gray_rgb_L = gray_L;
-                gray_rgb_R = gray_L;
-            end else begin
-                gray_rgb_L = gray_L;
-                gray_rgb_R = gray_R;
-            end
-        end else begin
-            if (gray_R - gray_L < 5) begin
-                gray_rgb_L = gray_R;
-                gray_rgb_R = gray_R;
-            end else begin
-                gray_rgb_L = gray_L;
-                gray_rgb_R = gray_R;
-            end
-        end
-    end
-
-endmodule
 
 module qvga_addr_decoder (
     input  logic [ 9:0] x,
@@ -300,8 +263,6 @@ module qvga_addr_decoder (
     output logic [14:0] qvga_addr1,
     output logic        qvga_en2,
     output logic [14:0] qvga_addr2
-    // output logic        qvga_en3,
-    // output logic [14:0] qvga_addr3
 );
 
 

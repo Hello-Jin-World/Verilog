@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Sat Jan 11 21:42:52 2025
-| Host         : DESKTOP-7CFQ9ND running 64-bit major release  (build 9200)
+| Date         : Sun Jan 12 09:06:44 2025
+| Host         : DESKTOP-PFRE25G running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_VGA_CAMERA_methodology_drc_routed.rpt -pb top_VGA_CAMERA_methodology_drc_routed.pb -rpx top_VGA_CAMERA_methodology_drc_routed.rpx
 | Design       : top_VGA_CAMERA
 | Device       : xc7a35tcpg236-1
@@ -598,22 +598,22 @@ Related violations: <none>
 
 TIMING-20#1 Warning
 Non-clocked latch  
-The latch U_DepthAlgorithm_Census/index_next_reg[0] cannot be properly analyzed as its control pin U_DepthAlgorithm_Census/index_next_reg[0]/G is not reached by a timing clock
+The latch U_SAD_SSD_CENSUS/index_next_reg[0] cannot be properly analyzed as its control pin U_SAD_SSD_CENSUS/index_next_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#2 Warning
 Non-clocked latch  
-The latch U_DepthAlgorithm_Census/index_next_reg[1] cannot be properly analyzed as its control pin U_DepthAlgorithm_Census/index_next_reg[1]/G is not reached by a timing clock
+The latch U_SAD_SSD_CENSUS/index_next_reg[1] cannot be properly analyzed as its control pin U_SAD_SSD_CENSUS/index_next_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#3 Warning
 Non-clocked latch  
-The latch U_DepthAlgorithm_Census/index_next_reg[2] cannot be properly analyzed as its control pin U_DepthAlgorithm_Census/index_next_reg[2]/G is not reached by a timing clock
+The latch U_SAD_SSD_CENSUS/index_next_reg[2] cannot be properly analyzed as its control pin U_SAD_SSD_CENSUS/index_next_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#4 Warning
 Non-clocked latch  
-The latch U_DepthAlgorithm_Census/index_next_reg[3] cannot be properly analyzed as its control pin U_DepthAlgorithm_Census/index_next_reg[3]/G is not reached by a timing clock
+The latch U_SAD_SSD_CENSUS/index_next_reg[3] cannot be properly analyzed as its control pin U_SAD_SSD_CENSUS/index_next_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-56#1 Warning
@@ -638,7 +638,7 @@ Related violations: <none>
 
 ULMTCS-1#1 Warning
 Control Sets use limits recommend reduction  
-This design uses 670 control sets (vs. available limit of 8150, determined by 1 control set per CLB). This exceeds the control set use guideline of 7.5 percent. This is at a level where reduction is RECOMMENDED (see UG949). Use report_control_sets to get more details.
+This design uses 669 control sets (vs. available limit of 8150, determined by 1 control set per CLB). This exceeds the control set use guideline of 7.5 percent. This is at a level where reduction is RECOMMENDED (see UG949). Use report_control_sets to get more details.
 Related violations: <none>
 
 

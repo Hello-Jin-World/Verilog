@@ -25,8 +25,8 @@ set_property -dict { PACKAGE_PIN V16  IOSTANDARD LVCMOS33 } [get_ports { depth2r
 # set_property -dict { PACKAGE_PIN R3   IOSTANDARD LVCMOS33 } [get_ports { crop_sw[1] }]; #IO_L2P_T0_34               ,Sch=SW11
 # set_property -dict { PACKAGE_PIN W2   IOSTANDARD LVCMOS33 } [get_ports { crop_sw[2] }]; #IO_L5N_T0_34               ,Sch=SW12
 # set_property -dict { PACKAGE_PIN U1   IOSTANDARD LVCMOS33 } [get_ports { crop_sw[3] }]; #IO_L3N_T0_DQS_34           ,Sch=SW13
-# set_property -dict { PACKAGE_PIN T1   IOSTANDARD LVCMOS33 } [get_ports { crop_sw[4] }]; #IO_L3P_T0_DQS_34           ,Sch=SW14
-# set_property -dict { PACKAGE_PIN R2   IOSTANDARD LVCMOS33 } [get_ports { crop_sw[5] }]; #IO_L1P_T0_34               ,Sch=SW15
+set_property -dict { PACKAGE_PIN T1   IOSTANDARD LVCMOS33 } [get_ports { census_select }]; #IO_L3P_T0_DQS_34           ,Sch=SW14
+set_property -dict { PACKAGE_PIN R2   IOSTANDARD LVCMOS33 } [get_ports {  ssd_sad_select}]; #IO_L1P_T0_34               ,Sch=SW15
 
 
 ## LEDs
