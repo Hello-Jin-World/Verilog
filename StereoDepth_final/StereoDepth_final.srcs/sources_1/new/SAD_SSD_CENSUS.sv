@@ -37,34 +37,38 @@ module SAD_SSD_CENSUS (
     function automatic logic [35:0] window_cost_sad_ssd(
         input logic [13:0] L[0:2][0:2], input logic [13:0] R[0:2][0:2]);
 
-        logic [17:0] cost = 0;
-        logic [35:0] cost_sq = 0;
+        logic [35:0] cost = 0;
 
         for (int i = 0; i < 3; i++) begin
             for (int w = 0; w < 3; w++) begin
-                cost += (L[i][w] > R[i][w]) ? (L[i][w] - R[i][w]) : (R[i][w] - L[i][w]);
+                if (ssd_sad_select) begin
+                    cost += (L[i][w] > R[i][w]) ? (L[i][w] - R[i][w]) * (L[i][w] - R[i][w]) : (R[i][w] - L[i][w]) * (R[i][w] - L[i][w]);
+                end else begin
+                    cost += (L[i][w] > R[i][w]) ? (L[i][w] - R[i][w]) : (R[i][w] - L[i][w]);
+                end
             end
         end
 
-        if (ssd_sad_select) begin
-            cost_sq = cost * cost;
-        end else begin
-            cost_sq = cost;
-        end
 
-        return cost_sq;
+        return cost;
     endfunction
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
     ///////////////////////////////             SAD & SSD Get Disparity              /////////////////////////////
     function automatic logic [3:0] get_depth_sad_ssd(logic [35:0] costs[16]);
-        logic [3:0] min_idx = 0;
+        logic [ 3:0] min_idx = 0;
+        logic [35:0] min_cost = costs[0];
+
+        // Find minimum cost index
         for (int i = 1; i < 16; i++) begin
-            if (costs[i] < costs[min_idx]) begin
-                min_idx = i;
+            if (costs[i] < min_cost) begin
+                min_cost = costs[i];
+                min_idx  = i;
             end
         end
+
+        return min_idx;
     endfunction
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -237,7 +241,7 @@ endmodule
 
 
 
-module SAD_SSD_CENSUS_5x5(
+module SAD_SSD_CENSUS_5x5 (
     input  logic        clk,
     input  logic        reset,
     input  logic [ 9:0] x_pixel,
@@ -259,11 +263,11 @@ module SAD_SSD_CENSUS_5x5(
 
     // Pipeline registers
     logic [10:0] window_L  [0:4][0:4];
-    logic [10:0] window_R [0:4][0:4];
+    logic [10:0] window_R  [0:4][0:4];
     logic [ 5:0] depth_reg;
     logic [3:0] index_reg, index_next;
 
-    logic [ 3:0] min_idx;
+    logic [3:0] min_idx;
     assign rData = temp_mem[x_pixel[9:1]];
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -366,7 +370,7 @@ module SAD_SSD_CENSUS_5x5(
             // Pipeline Stage 2: Setup window data
             for (int i = 0; i < 5; i++) begin
                 for (int k = 0; k < 5; k++) begin
-                    window_L[i][k]  <= mem_L[i][j+k];
+                    window_L[i][k] <= mem_L[i][j+k];
                     window_R[i][k] <= mem_R[i][j+k+index_reg];
                 end
             end
