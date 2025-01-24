@@ -1,4 +1,7 @@
-Running: xsim.dir/UVM_SCCB_behav/xsimk.exe -simmode gui -wdb UVM_SCCB_behav.wdb -simrunnum 0 -socket 50807
+Running: xsim.dir/UVM_SCCB_behav/xsimk.exe -simmode gui -wdb UVM_SCCB_behav.wdb -simrunnum 0 -socket 51028
 Design successfully loaded
-Design Loading Memory Usage: 14196 KB (Peak: 14196 KB)
+Design Loading Memory Usage: 14228 KB (Peak: 14228 KB)
 Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 682940 KB (Peak: 682940 KB)
+Simulation CPU Usage: 64515 ms
