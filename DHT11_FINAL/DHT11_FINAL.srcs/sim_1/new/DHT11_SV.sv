@@ -328,13 +328,14 @@ class monitor;
             trans = new();
             @(mon_next_event);
             repeat (5) @(posedge dht11_intf.clk);
+            // DUT data
             trans.hum_int  = dht11_intf.hum_int;
             trans.hum_dec  = dht11_intf.hum_dec;
             trans.tem_int  = dht11_intf.tem_int;
             trans.tem_dec  = dht11_intf.tem_dec;
             trans.checksum = dht11_intf.checksum;
+            // Reference data
             trans.sw_40bit = dht11_intf.sw_40bit;
-            // trans.rand_hum_tem = dht11_intf.rand_hum_tem;
             @(posedge dht11_intf.clk);
             mon2scb_mbox.put(trans);
             trans.display("MON");
