@@ -297,6 +297,7 @@ class driver;
             trans.display("DRV");
             start_dht11();
             #1;
+            // Transmit Golden Reference to Monitor & Scoreboard
             dht11_intf.sw_40bit = trans.sw_40bit;
             #1;
             ->mon_next_event;
