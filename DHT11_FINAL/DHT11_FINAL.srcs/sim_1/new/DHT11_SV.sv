@@ -242,7 +242,8 @@ class driver;
             $display("%d", trans.set_up_time);
         end
         /////////////////////////////////////////////////////////// check sum
-        trans.sw_40bit[7:0] = trans.sw_40bit[39:32] + trans.sw_40bit[31:24] + trans.sw_40bit[23:16] + trans.sw_40bit[15:8];
+        trans.sw_40bit[7:0] = trans.sw_40bit[39:32] + trans.sw_40bit[31:24]
+                            + trans.sw_40bit[23:16] + trans.sw_40bit[15:8];
         for (int i = 0; i < 8; i++) begin
             if (trans.sw_40bit[7-i] == 1) begin
                 dht11_intf.out_data = 1'b0;
